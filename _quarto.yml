@@ -2,23 +2,17 @@ project:
   type: book
   output-dir: docs
 
-  # Render-Liste: Buch-Kapitel werden über book.chapters gerendert.
-  # Slides separat einbinden, damit sie nicht als Buch-Kapitel interpretiert werden.
-  render:
-    - "*.qmd"
-    - "parts/*.qmd"
-    - "appendix/*.qmd"
-    - "slides/*.qmd"
-
-# Installation der deutschen Silbentrennung für Latex, für die PDF-Generierung. Kann weggelassen werden, wenn das schon installiert ist.
-#  pre-render:
-#    - bash tools/setup-latex.sh
+  # Pre-Render: rendert die RevealJS-Slideshows im slides/-Ordner vor dem
+  # eigentlichen Buch-Build. Quarto-Books rendern sonst nur book.chapters.
+  pre-render:
+    - bash tools/render-slides.sh
 
   resources:
     - "interactions/**"
     - "images/**"
     - "data/**"
     - "handouts/**"
+    - "slides/**"
     - ".nojekyll"
 
 book:

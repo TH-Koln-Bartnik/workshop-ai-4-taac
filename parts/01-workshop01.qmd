@@ -18,16 +18,6 @@ subtitle: "Dienstag, 12.05.2026 · 16:00–19:00 · Campus Südstadt"
 - einen Tutor-Bot für das eigene Fachgebiet bauen und mit einer kleinen **Test-Suite** systematisch prüfen.
 :::
 
-## Vorbereitung
-
-Was Sie vor dem Termin erledigen:
-
-- **Diagnose-Quiz** absolvieren (10 Items, ca. 8 Minuten) → [Quiz starten](../interactions/diagnose-quiz.html){target="_blank"}. Ergebnis aufheben, am Ende des Workshops gibt es einen Re-Test mit Pre/Post-Vergleich.
-- **AAA-Mapper** durchspielen (29 Tätigkeiten aus dem O\*NET-Berufsbild *Accountants and Auditors*, ca. 15–20 Minuten) → [AAA-Mapper starten](../interactions/onet-aaa-mapper.html){target="_blank"}. Auswertung mitbringen — Diskussionsmaterial für den Block *Delegate*.
-- **Zugänge** anlegen oder prüfen: Account in der GWDG Academic Cloud, kostenfreier Account auf `arena.ai`, mindestens ein Free-Account bei einem starken Modell (Claude, ChatGPT, Gemini oder Perplexity). Für Übung 3 zusätzlich: NotebookLM ([notebooklm.google.com](https://notebooklm.google.com){target="_blank"}).
-- **Lesen** (optional, 15 Minuten): [Wissensbasis · LLM-Grundlagen](06-wissensbasis.qmd#sec-llm-grundlagen) und [Wissensbasis · Welches Modell?](06-wissensbasis.qmd#sec-welches-modell).
-- **Mitbringen**: Notebook mit Browser, Kopfhörer, eine offene Fachfrage aus Ihrem Studium oder einer früheren Praxisphase (kein Mandantenbezug).
-
 ## Inhalte des Workshops
 
 Drei Stunden, eng verzahnt aus fünf kurzen Inputs (zusammen 53 Minuten), vier Übungen mit je 15 Minuten Bearbeitung plus Think-Pair-Share und Plenum-Auflösung (zusammen 88 Minuten), einer Pause (10 Minuten) und Begrüßung/Abschluss (9 Minuten). Alle Übungen sind im Block eingebettet, in dem ihr inhaltlicher Anker liegt — nicht in einen separaten Übungsteil verschoben.
