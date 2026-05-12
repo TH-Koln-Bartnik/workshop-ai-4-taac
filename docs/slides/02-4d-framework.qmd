@@ -1,0 +1,91 @@
+---
+title: "4D-Framework — Kurzdurchlauf"
+subtitle: "Workshop 1 · Block 2 · 7 Minuten"
+author: "Prof. Dr. Roman Bartnik"
+format:
+  revealjs:
+    theme: [default, ../styles.scss]
+    slide-number: c/t
+    chalkboard: true
+    incremental: false
+    logo: ../images/th-koeln-logo.png
+    footer: 'Workshop „KI in Tax, Audit & Advisory" · TH Köln · Block 2'
+    transition: fade
+    width: 1280
+    height: 720
+    title-slide-attributes:
+      data-background-color: "#ffffff"
+---
+
+# Vier Kompetenzen, die KI-Kompetenz ausmachen {background-color="#ffffff"}
+
+::: {.columns}
+
+::: {.column width="55%"}
+::: incremental
+- **Delegate** — ob, wann, wie KI einsetzen
+- **Describe** — präzise sagen, was man will
+- **Discern** — Outputs kritisch prüfen
+- **Diligence** — Verantwortung übernehmen
+:::
+:::
+
+::: {.column width="45%"}
+::: {.fragment}
+![](../images/teaching-new-genai-processes.png){fig-align="center" width="95%"}
+:::
+:::
+
+::::
+
+::: notes
+Jede der vier Kompetenzen hat drei Subkategorien — nach Dakan und Feller (2025). Delegate: Problem-, Platform-, Task-Awareness. Describe: Product-, Process-, Performance-Description. Discern: Product-, Process-, Performance-Discernment. Diligence: Creation-, Transparency-, Deployment-Diligence. Heute sind die ersten drei Ds dran; Diligence am Mittwoch in voller Tiefe.
+:::
+
+# Zwei Loops, die das Framework lebendig machen {background-color="#ffffff"}
+
+::: {.columns}
+
+::: {.column width="55%"}
+::: incremental
+- **Delegate–Diligence** — der strategische Loop, pro Auftrag
+- **Describe–Discern** — der operative Loop, pro Prompt
+- Loops laufen in beide Richtungen
+:::
+:::
+
+::: {.column width="45%"}
+::: {.fragment}
+![](../images/centaur-genai.png){fig-align="center" width="95%"}
+:::
+:::
+
+::::
+
+::: notes
+Centaur-Bild als Symbol: Mensch und KI als Gespann, Verantwortung sitzt beim Reiter. Delegate-Diligence ist der strategische Rahmen — was übergebe ich überhaupt, wofür stehe ich gerade. Describe-Discern ist die operative Schleife, die Sie pro Prompt mehrfach durchlaufen: besser beschreiben, neuen Output prüfen, wieder besser beschreiben. Beide Loops sind in der Praxis ineinander verschränkt.
+:::
+
+# Heute drei Ds, morgen das vierte {background-color="#ffffff"}
+
+::: {.columns}
+
+::: {.column width="55%"}
+::: incremental
+- **Heute:** Delegate (Block 3) · Describe (Block 4) · Discern (Block 5)
+- **Heute Übungen:** Diagnose-Quiz, Modellvergleich, Tutor-Bot, Test-Suite
+- **Morgen:** Diligence in voller Tiefe — Berufsrecht, Audit-Trail, Personal AI Policy
+:::
+:::
+
+::: {.column width="45%"}
+::: {.fragment}
+![](../images/jagged-frontier-genai.png){fig-align="center" width="95%"}
+:::
+:::
+
+::::
+
+::: notes
+Cliffhanger zu Tag 2 setzen: Diligence ist nicht weniger wichtig, sie braucht aber die Erfahrung aus den ersten drei Ds als Material. Wer heute keinen Tutor-Bot baut, hat morgen nichts zu dokumentieren. Die Jagged Frontier ist der inhaltliche Hintergrund — gerade weil KI uneben stark ist, brauchen wir alle vier Kompetenzen.
+:::

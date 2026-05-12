@@ -178,6 +178,3 @@ Vorschlag-Prompt für diesen Workshop:
 > Ich bereite Workshop 1 (AI Fluency Framework) im Modul *KI in Tax, Audit & Advisory* vor. Bitte erklären Sie mir die Unterscheidung *Process Automation* versus *Cognitive Automation* an einem konkreten Beispiel meiner Wahl: [Beispiel einfügen]. Fragen Sie mich nach meinem Vorwissen, geben Sie eine kurze Lay-Erklärung vor jedem Fachbegriff und stellen Sie am Ende drei Diagnose-Fragen, mit denen ich mein Verständnis selbst prüfen kann.
 :::
 
-## Persönliche Anmerkungen
-
-*Platzhalter für eigene Notizen — z. B. raumbezogene Hinweise, Beispielwahl pro Kohorte, Anpassung der Übungs-Beispiele.*
