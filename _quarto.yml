@@ -2,17 +2,16 @@ project:
   type: book
   output-dir: docs
 
-  # Pre-Render: rendert die RevealJS-Slideshows im slides/-Ordner vor dem
-  # eigentlichen Buch-Build. Quarto-Books rendern sonst nur book.chapters.
-  pre-render:
-    - bash tools/render-slides.sh
+  # Pre-Render-Hook für Slideshows ist deaktiviert — Slides werden im aktuellen
+  # Online-Skript nicht referenziert. Vor Wiedereinsatz unten einkommentieren.
+  # pre-render:
+  #   - bash tools/render-slides.sh
 
   resources:
     - "interactions/**"
     - "images/**"
     - "data/**"
     - "handouts/**"
-    - "slides/**"
     - ".nojekyll"
 
 book:

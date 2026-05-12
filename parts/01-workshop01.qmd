@@ -32,7 +32,7 @@ Begrüßung, Lernziele, Hinweis auf den Tutor, kurze Verständigung über Vorerf
 
 :::: week-card
 ::: card-header
-🟦 Block 1 — Process vs. Cognitive Automation · 10 Min · [▶ Folien](../slides/01-process-vs-cognitive.html){.assignment-badge target="_blank"}
+🟦 Block 1 — Process vs. Cognitive Automation · 10 Min
 :::
 
 **Process Automation** — regelbasiertes Abarbeiten strukturierter Workflows ohne Verstehen. **Cognitive Automation** — KI-gestütztes Schließen, Klassifizieren, Zusammenfassen unstrukturierter Inhalte. Das *Service-Automation-Continuum* nach @lacity2021becoming und @willcocks2024evolution ordnet beide Kategorien plus *Intelligent Automation* als orchestrierende Schicht in eine kohärente Sourcing-Strategie ein.
@@ -46,7 +46,7 @@ Drei Verankerungs-Beispiele aus Tax/Audit: Bank-zu-SAP-Abstimmung (Process); sem
 
 :::: week-card
 ::: card-header
-🟦 Block 2 — 4D-Framework Kurzdurchlauf · 7 Min · [▶ Folien](../slides/02-4d-framework.html){.assignment-badge target="_blank"}
+🟦 Block 2 — 4D-Framework Kurzdurchlauf · 7 Min
 :::
 
 Vier Kernkompetenzen, je drei Subkategorien nach @dakan2025framework. **Delegate** (Problem-, Platform-, Task-Awareness) · **Describe** (Product-, Process-, Performance-Description) · **Discern** (Product-, Process-, Performance-Discernment) · **Diligence** (Creation-, Transparency-, Deployment-Diligence). Zwei Loops: *Delegate–Diligence* (strategisch), *Describe–Discern* (operativ). Heute behandeln wir Delegate, Describe und Discern in dieser Reihenfolge; Diligence wird morgen vertieft.
@@ -54,7 +54,7 @@ Vier Kernkompetenzen, je drei Subkategorien nach @dakan2025framework. **Delegate
 
 :::: week-card
 ::: card-header
-🟦 Block 3 — Delegate: Modell, Harness, agentische Nutzung · 12 Min · [▶ Folien](../slides/03-delegate.html){.assignment-badge target="_blank"}
+🟦 Block 3 — Delegate: Modell, Harness, agentische Nutzung · 12 Min
 :::
 
 Drei Konfigurationen sauber trennen:
@@ -81,7 +81,7 @@ Die didaktische Pointe: Wer Aufgaben delegieren will, muss wissen, in welcher de
 
 :::: week-card
 ::: card-header
-🟦 Block 4 — Describe: RTF und CREATE · 12 Min · [▶ Folien](../slides/04-describe.html){.assignment-badge target="_blank"}
+🟦 Block 4 — Describe: RTF und CREATE · 12 Min
 :::
 
 Leitanalogie: Der Chatbot ist eher ein junger Nachhilfeschüler als ein Taschenrechner — er versteht Anweisungen, braucht Kontext, möchte gezeigt bekommen, was Sie wollen, und wird mit Beispielen besser. Inhaltlicher Anker: das Kapitel *How to speak* aus dem begleitenden Lehrbuch [@bartnik2026genai4teaching].
@@ -96,7 +96,7 @@ Zwei Schemata:
 
 :::: week-card
 ::: card-header
-🟦 Block 5 — Discern: Outputs systematisch prüfen · 12 Min · [▶ Folien](../slides/05-discern.html){.assignment-badge target="_blank"}
+🟦 Block 5 — Discern: Outputs systematisch prüfen · 12 Min
 :::
 
 Zwei Ideen, eine Übersetzung auf Tax/Audit:
@@ -151,7 +151,6 @@ Für Workshop 2 brauchen Sie zwei kostenfreie Accounts. Bitte vor der Sitzung am
 
 ## Hintergrund / Werkzeuge / Ressourcen
 
-- **Foliensatz** — `gen-ai-allgemeine-empfehlungen-2026-05.pptx` (Chat versus erweitertes Sprachmodell, drei Lizenz-Tiers, Harness, *Jagged Frontier*).
 - **Originalmaterial 4D-Framework** — Cheat Sheet und Practical Overview von @dakan2025framework.
 - **Begleitlehrbuch** — [Kapitel 2.4 *How to speak*](https://th-koln-bartnik.github.io/genai4teaching/kapitel02.html#sec-how-to-speak){target="_blank"} und [Kapitel 7 *Tutor-Prompt-Sammlung*](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html#sec-general-tutor){target="_blank"}.
 - **O\*NET-Berufsbild** — [Accountants and Auditors (13-2011.00)](https://www.onetonline.org/link/summary/13-2011.00){target="_blank"} als Faktenbasis für Übung 2.

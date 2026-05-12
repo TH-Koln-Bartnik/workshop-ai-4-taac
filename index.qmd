@@ -54,12 +54,6 @@ Der Tutor begleitet Sie durch alle Übungen. Er kennt das 4D-Framework, die Übu
 In keinem Fall reale Mandantendaten in KI-Tools eingeben. Free-Tier-Dienste sind für Mandantenarbeit grundsätzlich nicht geeignet. Hintergrund: WPO § 43, StBerG § 57, DSGVO. Die berufsrechtliche Vertiefung folgt in Workshop 2.
 :::
 
-## Intro-Slideshow
-
-Zum Einstieg in Workshop 1 verwende ich eine kurze Vorstellungs-Slideshow — sechs Folien zur Begrüßung, zur Vorstellungsrunde und zum inhaltlichen Bogen über die zwei Workshop-Tage.
-
-[Intro-Slideshow öffnen →](slides/intro-vorstellung.html){target="_blank"}
-
 ## Lizenz
 
 Inhalte unter CC BY-NC-SA 4.0 (siehe `LICENSE`). Verwendete Quellen werden inline zitiert und am Ende jedes Kapitels aufgelistet.
