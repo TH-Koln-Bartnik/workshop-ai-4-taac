@@ -1,6 +1,6 @@
 ---
 title: "Übungen Workshop 2"
-subtitle: "BPMN · UiPath · integrierter 4D-Use-Case mit eingebetteten Übungen 4 und 5"
+subtitle: "BPMN · UiPath · integrierter 4D-Use-Case mit Diligence-Schwerpunkt"
 ---
 
 ::: th-color-bar
@@ -9,146 +9,162 @@ subtitle: "BPMN · UiPath · integrierter 4D-Use-Case mit eingebetteten Übungen
 ::: lernziel-box
 #### Was Sie nach diesen drei Übungsblöcken können
 
-- einen einfachen Rechnungseingangsprozess in **BPMN** modellieren,
-- einen **UiPath-Bot** lesen, der eine Excel einliest, prüft und ein PDF erzeugt,
-- einen vollständigen **4D-Durchlauf** an einem realistischen Tax-Sachverhalt durchführen — inklusive RAG-Bewertung (Übung 4) und Output-Verbesserung (Übung 5).
+- einen einfachen Rechnungseingangsprozess in **BPMN** modellieren und einzelne Aktivitäten den Kategorien *Process* oder *Cognitive Automation* zuordnen,
+- einen vorbereiteten **UiPath-Bot** lesen, ausführen und in einem Punkt anpassen,
+- einen vollständigen **4D-Durchlauf** an einem realistischen Tax-Sachverhalt führen — mit Schwerpunkt auf **Diligence** und einem mandantentauglichen Audit-Trail.
 :::
+
+Jede Übung folgt dem Muster: *Ziel · Setup · Schritte · Deliverable · Bewertung · Tutor-Prompt · Was-wenn*. Diskussion am Tisch und im Plenum nach jeder Übung.
 
 ## BPMN-Modellierung — Rechnungseingang {#sec-bpmn}
 
-**Modus:** in-class · Einzel oder Paar · **Dauer:** 40 Min.
+**Modus:** in-class · Einzel oder Paar · **Dauer:** 40 Min · **4D-Bezug:** Delegate / Operative Brücke zu *Process vs. Cognitive Automation*.
 
 ### Ziel
 
-Einen einfachen Rechnungseingangsprozess in Signavio (oder Alternative) als BPMN-Diagramm modellieren — als Vorbereitung dafür, im nächsten Schritt einzelne Aktivitäten durch KI- oder RPA-Bausteine zu ersetzen.
+Einen einfachen Rechnungseingangsprozess in Signavio (oder Alternative) als BPMN-Diagramm modellieren — und im zweiten Schritt einzelne Aktivitäten den Kategorien *Process Automation* oder *Cognitive Automation* zuordnen. Damit übersetzen Sie Ihre Diagnose-Quiz-Klassifikation aus Workshop 1 in einen konkreten Workflow.
 
 ### Setup
 
-- Browser mit Zugang zu Signavio (oder bpmn.io als freie Alternative).
+- Browser mit Zugang zu Signavio (oder [bpmn.io](https://bpmn.io){target="_blank"} als freie Alternative).
 - Sachverhalt: *Rechnungseingang in einer mittelgroßen Steuerkanzlei* — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung.
 
 ### Schritte
 
-1. *[Platzhalter — Detail-Schritte aus Materialvorlage übernehmen.]*
-2. Swimlanes setzen (mind. zwei Rollen).
-3. Aktivitäten platzieren (mind. fünf), Reihenfolge mit Sequenzflüssen verbinden.
-4. Mind. einen Entscheidungspunkt (XOR) einsetzen.
-5. Eine Aktivität markieren, die sich für **Process Automation** eignet, und eine andere, die sich für **Cognitive Automation** eignet — mit kurzer Begründung.
+1. Sachverhalt durchlesen, mindestens zwei Rollen identifizieren (z. B. *Sachbearbeiter*, *Partner*).
+2. Swimlanes setzen (mindestens zwei Rollen).
+3. Mindestens fünf Aktivitäten platzieren, Reihenfolge mit Sequenzflüssen verbinden.
+4. Mindestens einen Entscheidungspunkt (XOR-Gateway) einsetzen.
+5. Jede Aktivität mit einer Markierung versehen: *P* (Process Automation), *C* (Cognitive Automation) oder *H* (Hybrid). Begründung in einem Satz pro Aktivität.
+
+### Erweiterung für schnelle Studierende
+
+Eine Aktivität auswählen, die heute *H* (Hybrid) ist, und in zwei aufeinanderfolgende Aktivitäten zerlegen — eine reine Process-Aktivität, eine reine Cognitive-Aktivität. Hinweis: Das ist der Hauptmechanismus, mit dem reale Workflows automatisierbar werden.
 
 ### Deliverable
 
-BPMN-Diagramm (Export als PNG oder PDF) plus Begründungstext (max. 100 Wörter).
+BPMN-Diagramm (Export als PNG oder PDF) plus Begründungstabelle mit fünf Zeilen — Aktivität · Markierung · Begründung.
 
 ### Bewertungskriterien
 
-Korrekte BPMN-Notation · Sinnhaftigkeit der Swimlane-Aufteilung · Plausibilität der Process-/Cognitive-Markierung.
+Korrekte BPMN-Notation · Sinnhaftigkeit der Swimlane-Aufteilung · Plausibilität der P/C/H-Markierung · Qualität der Aktivitätenzerlegung in der Erweiterung.
 
 ### Tutor-Prompt
 
-::: {.callout-tip}
-> Ich modelliere in Übung *BPMN-Rechnungseingang* einen Prozess in Signavio. Hier mein Modell-Stand: [kurze Beschreibung]. Stellen Sie mir **drei BPMN-spezifische Diagnose-Fragen**, an denen ich erkenne, ob meine Notation sauber ist — und schlagen Sie **eine** Aktivität vor, die ich präziser benennen sollte.
+::: callout-tip
+> Ich modelliere in der Übung *BPMN-Rechnungseingang* einen Prozess in Signavio. Hier mein aktueller Modell-Stand: [kurze Beschreibung]. Stellen Sie mir **drei BPMN-spezifische Diagnose-Fragen**, an denen ich erkenne, ob meine Notation sauber ist — und schlagen Sie **eine** Aktivität vor, die ich präziser benennen sollte.
 :::
 
 ### Was, wenn …
 
-::: {.callout-warning}
-- **Signavio-Zugang fehlt?** → bpmn.io als freie Web-Variante nutzen, später ins Signavio importieren.
-- **Diagramm wird zu groß?** → Ein Sub-Prozess als Collapsed-Aktivität auslagern.
+::: callout-warning
+- **Signavio-Zugang fehlt?** → [bpmn.io](https://bpmn.io){target="_blank"} als freie Web-Variante nutzen, Diagramm später ins Signavio importieren.
+- **Diagramm wird zu groß für eine Seite?** → Sub-Prozess als Collapsed-Aktivität auslagern.
+- **Aktivität lässt sich nicht eindeutig markieren?** → Genau das ist ein Hybrid-Kandidat — markieren als *H* und in der Erweiterungs-Aufgabe zerlegen.
 :::
 
-## UiPath-Bot — Excel zu PDF {#sec-uipath}
+## UiPath-Bot lesen und anpassen {#sec-uipath}
 
-**Modus:** in-class · Einzel · **Dauer:** 40 Min.
+**Modus:** in-class · Einzel · **Dauer:** 40 Min · **4D-Bezug:** Delegate / praktische Anschauung von Process Automation.
 
 ### Ziel
 
-Einen vorbereiteten UiPath-Bot **lesen, ausführen und in einem Punkt anpassen**. Der Bot lesen eine Excel-Datei, prüft eine Bedingung und erzeugt ein PDF.
+Einen vorbereiteten UiPath-Bot **lesen, ausführen und in einem Punkt anpassen**. Der Bot liest eine Excel-Datei mit Eingangsrechnungen, prüft eine Bedingung (USt-ID-Validität, Schwellwert) und erzeugt eine zusammenfassende PDF.
 
 ### Setup
 
-- UiPath Studio oder UiPath Cloud (ggf. Screencast plus Vorlagedatei).
-- Beispiel-Excel mit Eingangsrechnungen, Vorlage-Bot im Skripts-Repository.
+- UiPath Studio oder UiPath Cloud-Account; alternativ Screencast plus Vorlage-Dateien aus dem Workshop-Repo.
+- Beispiel-Excel `data/eingangsrechnungen-beispiel.xlsx` (mindestens fünfzehn Zeilen, davon einige mit fehlender oder ungültiger USt-ID).
+- Vorlage-Bot `code/uipath-excel-zu-pdf-template.xaml`.
 
 ### Schritte
 
-1. *[Platzhalter — Schritte aus Bot-Vorlage übernehmen.]*
-2. Bot starten, Output beobachten, Workflow-Struktur lesen.
-3. Eine Aktivität anpassen — z. B. Schwellwert für die sachliche Prüfung ändern.
-4. Ergebnis vorher/nachher dokumentieren.
+1. Bot öffnen, Workflow-Struktur lesen: welche Activities, in welcher Reihenfolge?
+2. Bot mit Beispiel-Excel starten, Output-PDF prüfen.
+3. Eine Aktivität anpassen — Vorschlag: Schwellwert für die sachliche Prüfung ändern oder ein zusätzliches Prüfkriterium ergänzen (etwa „nur Rechnungen über 1.000 Euro in den Report").
+4. Ergebnis vorher/nachher dokumentieren — zwei Screenshots plus Drei-Sätze-Beschreibung.
+
+### Erweiterung für schnelle Studierende
+
+Schlagen Sie eine Stelle im Bot vor, an der Cognitive Automation den Bot **ergänzen** könnte — etwa ein LLM-Aufruf zur Klassifikation des Rechnungsbetreffs oder eine OCR-Schicht für unstrukturierte PDF-Eingaben. Welche Activity würde dazu hinzukommen? Welche neue Fehlerquelle entsteht?
 
 ### Deliverable
 
-Screenshot des angepassten Workflows plus 3-Sätze-Beschreibung der Änderung.
+Screenshot des angepassten Workflows plus Drei-Sätze-Beschreibung der Änderung und der Vorher/Nachher-Wirkung.
 
 ### Bewertungskriterien
 
-Lesbarkeit der Anpassung · korrekt veränderter Output · saubere Beschreibung.
+Lesbarkeit der Anpassung · korrekt veränderter Output · saubere Beschreibung · Plausibilität des Cognitive-Erweiterungsvorschlags (bei der Erweiterung).
 
 ### Tutor-Prompt
 
-::: {.callout-tip}
-> Ich arbeite in Übung *UiPath-Bot Excel→PDF* an einem vorhandenen Bot. Hier ist die Aktivität, die ich anpassen will: [einfügen]. Erklären Sie mir die **drei häufigsten Fehlerquellen**, wenn ich genau diese Stelle ändere — und schlagen Sie **eine** kleine Sicherheitsprüfung vor, die ich vor der Anpassung einbauen kann.
+::: callout-tip
+> Ich arbeite in der Übung *UiPath-Bot Excel → PDF* an einem vorhandenen Bot. Hier ist die Aktivität, die ich anpassen will: [einfügen]. Erklären Sie mir die **drei häufigsten Fehlerquellen**, wenn ich genau diese Stelle ändere — und schlagen Sie **eine** kleine Sicherheitsprüfung vor, die ich vor der Anpassung einbauen kann.
 :::
 
 ### Was, wenn …
 
-::: {.callout-warning}
-- **Bot startet nicht?** → Selektor- vs. Pfad-Probleme prüfen, Logs lesen.
+::: callout-warning
+- **Bot startet nicht?** → Selektor- und Pfad-Probleme prüfen, Logs lesen.
 - **Excel-Datei nicht gefunden?** → Absolute Pfade vermeiden, Variablen statt Hardcode.
+- **Kein UiPath-Zugang?** → Screencast plus Vorlage-Dateien aus dem Workshop-Repo nutzen, die Anpassung schriftlich beschreiben.
 :::
 
-## 4D-Use-Case — grenzüberschreitende Dienstleistung {#sec-4d-usecase}
+![Warum technische Implementierungen scheitern — Datenqualität, Tool-Integration und das Spannungsfeld Standard vs. Custom dominieren. Adaptiert nach Flyvbjerg & Gardner (2023) und Finney & Corbett (2007).](../images/why-do-tech-implementations-fail-data-qual-tool-integration-standards-vs-custom-TAM-flyvbjerg_gardner-2023_finney-corbett-2007.png){fig-alt="Visualisierung typischer Scheitergründe technischer Implementierungen mit den Treibern Datenqualität, Tool-Integration und Standard-versus-Custom-Konfiguration"}
 
-**Modus:** in-class · Paar oder Dreierteam · **Dauer:** 40 Min · **enthält Übung 4 und Übung 5.**
+## Integrierter 4D-Use-Case mit Diligence-Schwerpunkt {#sec-4d-usecase}
+
+**Modus:** in-class · Paar oder Dreierteam · **Dauer:** 40 Min · **4D-Bezug:** alle vier Kompetenzen, Schwerpunkt Diligence.
 
 ### Ziel
 
-Einen realistischen Sachverhalt in einem Durchgang durch alle vier 4D-Kompetenzen führen, dabei die RAG-Bewertung (**Übung 4**) und das Verbessern eines KI-Outputs (**Übung 5**) eingebettet üben.
+Einen realistischen Sachverhalt in einem Durchgang durch alle vier 4D-Kompetenzen führen — mit besonderem Gewicht auf der Diligence-Dokumentation. Diese Übung ist die direkte Vorlage für die beiden Hausaufgaben *Dilemma der Mitte* und *Personal AI Policy*.
 
-::: {.callout-note}
-## Was ist RAG?
-
-**RAG** (Retrieval-Augmented Generation) — eine **Mischtechnik**, bei der das Sprachmodell vor der Antwort eigene Quellen nachschlägt, statt allein aus dem Trainingsdaten-Gedächtnis zu sprechen. *Bild:* statt aus dem Kopf zu antworten, schlägt das Modell zuerst in der Bibliothek nach. Wirkung: weniger Halluzinationen, dafür neue Risiken bei Quellenauswahl und -interpretation.
-:::
+![Centaur-Modell — Mensch und KI als verbundenes, aber unterscheidbares Gespann; die Verantwortung bleibt sichtbar beim Reiter. Adaptiert nach Mollick (2024).](../images/centaur-genai.png){fig-alt="Symbolbild eines Centaur als Metapher für die Mensch-KI-Kooperation, in der Mensch und KI ein zusammenwirkendes, aber klar unterscheidbares Gespann bilden"}
 
 ### Setup
 
-- Sachverhalt: umsatzsteuerliche Behandlung einer **grenzüberschreitenden Dienstleistung** (z. B. Beratungsleistung einer deutschen Kanzlei an einen Kunden in den Niederlanden).
-- Mindestens ein KI-System mit Web-Search und ein KI-System mit eigenem Datei-Upload (RAG-fähig).
-- Bewertungsraster für Übung 4 und Übung 5 (PDF-Vorlage in `data/`).
+- Sachverhalt (fiktiv, kein Mandantenbezug): **Eine deutsche IT-Beratung erbringt eine Cloud-Migrations-Beratung im Wert von 80.000 € für einen Kunden mit Sitz in Boston, USA. Die Frage des Mandanten lautet: Ist die Leistung in Deutschland umsatzsteuerbar — und wenn ja, mit welcher Steuerklasse?**
+- Mindestens ein KI-System mit Web-Search und einem starken Modell aus Workshop 1.
+- Audit-Trail-Vorlage `data/audit-trail-vorlage.md` (vier Spalten: *Schritt · Tool · Eingabe · Output*).
 
 ### Ablauf — vier Stationen
 
-1. **Delegation** — Was übergebe ich an die KI? Welche Teilaufgaben behalte ich? (5 Min)
-2. **Description** — System-Prompt aus Übung 2 anpassen, Sachverhalt sauber beschreiben. (5 Min)
-3. **Discernment — Übung 4: RAG-Bewertung** *(20 Min, eingebettet).*
-   - Output mit RAG vs. Output ohne RAG vergleichen.
-   - Quellen-Check: Existiert die zitierte Quelle? Steht dort wirklich, was zitiert ist?
-   - Halluzinations-Risiko bewerten (Skala 1–5), drei konkrete Belege markieren.
-4. **Discernment — Übung 5: Output verbessern** *(20 Min, eingebettet).*
-   - Den schwächsten der drei Outputs identifizieren.
-   - Drei gezielte Folge-Prompts formulieren, die den Output schärfen.
-   - Final-Version mit Begründung der Änderungen erstellen.
-5. **Diligence** — Audit-Trail dokumentieren: welche Tools, welche Prompts, welche Quellen, welche Eingriffe? (Block-übergreifend, 10 Min am Ende.)
+1. **Delegate (5 Min).** Entscheiden: Welches Modell mit welcher Harness? Begründung in einem Satz. Welche Teilaufgaben behalten Sie als Berufsträger:in selbst (Endbewertung, Mandantenkommunikation, Rechtsprüfung)?
+2. **Describe (5 Min).** Prompt nach RTF oder CREATE strukturieren — Rolle (z. B. „Sie sind Steuerberaterin mit Schwerpunkt internationales Umsatzsteuerrecht"), Sachverhalt, Frage, gewünschtes Format (Memo mit Quellen). Den Prompt absenden.
+3. **Discern (10 Min).** Output prüfen mit den drei Werkzeugen aus Workshop 1: *(a)* Faithfulness — passt die Antwort zu den genannten Quellen? *(b)* Existieren die zitierten Quellen wirklich? Stichprobe von zwei Quellen verifizieren. *(c)* Test-Suite — eine Stelle finden, die Sie auch ohne KI als wahr oder falsch erkennen können (Honey-Pot). Bewerten Sie den Output als rot, gelb oder grün.
+4. **Diligence (20 Min — der Schwerpunkt).** Drei Teil-Schritte:
+   - **Creation Diligence** — Audit-Trail-Vorlage ausfüllen: Welche Tools, welche Eingaben, welche Outputs? Wäre die Eingabe DSGVO-konform, falls dieser Sachverhalt einen realen Mandanten beträfe? Hier konkretisieren Sie WPO § 43 und StBerG § 57.
+   - **Transparency Diligence** — Eine Mandantenkommunikation formulieren (max. fünf Sätze), die offen legt, wo KI beteiligt war und welche Punkte Sie als Berufsträger:in selbst verantworten. Maßgabe EU AI Act Art. 50: KI-Beteiligung ist transparent zu machen.
+   - **Deployment Diligence** — Ein Schluss-Satz, mit dem Sie persönlich für das Memo gerade stehen: „Ich übernehme die Verantwortung für diese Stellungnahme, gestützt auf [konkrete Quellen]. Die KI-Beteiligung beschränkt sich auf [konkrete Schritte]." Notieren Sie eine Faustregel für Ihre Personal AI Policy.
+
+### Erweiterung für schnelle Studierende
+
+Übersetzen Sie den vollständigen Audit-Trail in eine *Personal-AI-Policy-Regel* — eine Wenn-Dann-Aussage, die Sie sich für ähnliche Fälle vornehmen. Beispiel: „*Wenn* der Sachverhalt einen US-Mandanten betrifft, *dann* verifiziere ich mindestens zwei Quellen aus deutschen Quellen (BMF-Schreiben, DStR-Artikel) und keine reine LLM-Antwort." Diese Regel ist Saatkorn für die Hausaufgabe *Personal AI Policy*.
 
 ### Deliverable
 
-Ein dreiteiliges Dossier: ausgefülltes Bewertungsraster (Übung 4), Final-Output mit Iterationslog (Übung 5), Audit-Trail-Bogen (Diligence).
+Ein vierteiliges Dossier: ausgefüllter Audit-Trail (Creation Diligence), Mandantenkommunikation (Transparency Diligence), Verantwortungs-Schluss-Satz (Deployment Diligence), Saatkorn-Regel für die Personal AI Policy (Erweiterung).
 
 ### Bewertungskriterien
 
-Trennschärfe RAG vs. Kein-RAG · Belegtiefe in der Quellenprüfung · Konkretheit der Folge-Prompts · Vollständigkeit des Audit-Trails.
+Vollständigkeit des Audit-Trails · DSGVO-Bewertung des Eingabe-Materials · Mandantentauglichkeit der Transparenz-Kommunikation · Konkretheit des Verantwortungs-Schluss-Satzes · Übertragbarkeit der Policy-Regel.
 
 ### Tutor-Prompt
 
-::: {.callout-tip}
-> Ich bin im 4D-Use-Case (grenzüberschreitende Dienstleistung) bei Station **Discernment**. Hier ist mein bisheriger KI-Output: [einfügen]. Helfen Sie mir, **drei konkrete Halluzinationskandidaten** zu markieren — und formulieren Sie für jeden Kandidaten eine **Diagnose-Frage**, mit der ich den Verdacht erhärten oder entkräften kann. Bitte ohne Ihre eigene Antwort vorwegzunehmen.
+::: callout-tip
+> Ich arbeite im 4D-Use-Case (grenzüberschreitende Dienstleistung) an **Diligence**. Hier ist mein bisheriger Output und mein Audit-Trail-Entwurf: [einfügen]. Stellen Sie mir **drei berufsrechtliche Diagnose-Fragen** aus WPO § 43, StBerG § 57 oder DSGVO Art. 5, die ich an meinen Audit-Trail anlegen sollte — ohne meinen Schluss-Satz vorwegzunehmen.
 :::
 
 ### Was, wenn …
 
-::: {.callout-warning}
+::: callout-warning
 - **Output sieht plausibel aus, ich finde keinen Fehler?** → Eine bekannte Stelle mit klarer Antwort dazwischenmischen (Honey-Pot) und prüfen, ob das Modell sie korrekt behandelt.
-- **RAG-Tool zitiert eine Quelle, die nicht existiert?** → Notieren als Beobachtung. Das ist Discernment-Material.
-- **Audit-Trail wird zu lang?** → Auf drei Spalten reduzieren: *Was getan · Warum · Welcher 4D-Bezug.*
+- **KI-Tool zitiert eine Quelle, die nicht existiert?** → Notieren als Beobachtung. Das ist Diligence-Material und gehört in den Audit-Trail.
+- **Audit-Trail wird zu lang?** → Auf vier Spalten reduzieren: *Schritt · Tool · Eingabe · Output.* Detaillierte Begründung in der Spalte *Output*.
+- **Transparenzformulierung wirkt zu technisch?** → Mandantenperspektive einnehmen, in zwei Sätzen erklären, *was* die KI getan hat und *was* Sie persönlich verantworten.
 :::
+
+## Quellen
+
+@dakan2025framework · @omg2014bpmn · @lacity2021becoming · @willcocks2024evolution · @lacity2016new · @coombs2020strategic · @davenport2018artificial

@@ -34,6 +34,8 @@ Drei Kernunterscheidungen, die durchgehend in beiden Workshops auftauchen.
 
 **Harness** — der **Werkzeugring** um das LLM herum: Web-Search, Code-Interpreter, Datei-Upload, Memory, Tool-Calling. Die Antwortqualität hängt fast immer mehr vom Harness ab als vom Modell allein [@grootendorst2025visual].
 
+![Tool-Metapher — ein LLM ohne Harness ist wie ein guter Handwerker ohne Werkzeugkasten; erst die Tools machen aus dem Modell ein System.](../images/tool-metaphor-genai.png){fig-alt="Symbolbild zur Tool-Metapher von LLM und Harness, bestehend aus Modell-Kern und einem Werkzeugkasten mit verschiedenen Funktionen"}
+
 ### Drei Lizenz-Tiers
 
 **Free** (0 €): begrenzter Kontext, oft kein Web-Search, keine vertraulichen Daten. **Casual** (~20–30 €/Monat): Pro-Tier von Claude, ChatGPT, Gemini. **Professional** (~100–200 €/Monat): Team-/Enterprise-Tiers mit Datenschutzgarantien, längeren Kontexten, mehr Tools. *Faustregel:* Mandantenarbeit nicht im Free-Tier.
@@ -43,6 +45,8 @@ Drei Kernunterscheidungen, die durchgehend in beiden Workshops auftauchen.
 ## Welches Modell? {#sec-welches-modell}
 
 Schlanke Vergleichsseite analog zu @bekes2026ai, ergänzt um drei Lizenz-Tiers und einen Berufsrechts-Abschnitt.
+
+![Skill-Profil im Finanzbereich — typische Tätigkeitsfelder, in denen sich Modell-Fähigkeiten ablesen und vergleichen lassen.](../images/skills-example-financial.png){fig-alt="Visualisierung eines Skill-Profils im Finanzbereich mit typischen Tätigkeitsfeldern als Vergleichsraster für KI-Modelle"}
 
 ### Führende Modelle (Stand 05/2026)
 

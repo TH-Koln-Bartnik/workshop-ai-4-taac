@@ -19,6 +19,8 @@ Beide Hausaufgaben sind die Capstone-Leistungen der Workshop-Reihe. Übung 6 ist
 
 **Modus:** Hausaufgabe nach Workshop 2 · **Format:** Positionspapier 500–800 Wörter · **4D-Bezug:** Diligence.
 
+![Sorgen vor GenAI im Berufsalltag — Datenschutz, Qualitätsverlust, Verantwortungsdiffusion.](../images/fear-genai-effects.png){fig-alt="Visualisierung typischer Sorgen vor KI-Einsatz im Berufsalltag, darunter Datenschutz, Qualitätsverlust und Verantwortungsdiffusion"}
+
 ### Ziel
 
 Ein konkretes **Dilemma der Mitte** beschreiben — also eine Situation, in der KI-Einsatz weder klar verboten noch klar geboten ist — und begründet Stellung beziehen.
@@ -61,6 +63,8 @@ Klarheit der Dilemma-Schilderung · Ausgewogenheit der Argumente · Begründungs
 ## Übung 7 — Personal AI Policy {#sec-uebung-7}
 
 **Modus:** Capstone-Hausaufgabe · **Format:** Eigenes Policy-Dokument · **4D-Bezug:** integrativ über alle vier Kompetenzen.
+
+![Bewusstes Lernen neuer KI-Prozesse — die eigene Praxis aktiv gestalten statt sie geschehen lassen.](../images/teaching-new-genai-processes.png){fig-alt="Symbolbild zum bewussten Erlernen und Gestalten neuer KI-gestützter Arbeitsprozesse"}
 
 ### Ziel
 

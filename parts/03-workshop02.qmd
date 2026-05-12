@@ -12,92 +12,121 @@ subtitle: "Mittwoch, 13.05.2026 · 16:00–19:00 · Campus Südstadt"
 #### Was Sie nach diesem Workshop können
 
 - einen einfachen Prozess in **BPMN** modellieren (Aktivität, Entscheidungspunkt, Swimlane),
-- einen einfachen **Bot in UiPath** lesen und in Grundzügen erklären (Excel einlesen, prüfen, PDF erzeugen),
-- KI-Output systematisch auf **Halluzinationen, Bias und Eignung** prüfen (Discernment vertieft),
-- alle vier 4D-Kompetenzen in einem **integrierten Tax-Use-Case** anwenden.
+- einen einfachen **Bot in UiPath** lesen und in Grundzügen erklären,
+- die drei Säulen von **Diligence** (Creation, Transparency, Deployment) am berufsrechtlichen Rahmen aus WPO, StBerG und DSGVO operationalisieren,
+- alle vier 4D-Kompetenzen in einem **integrierten Tax-Use-Case** anwenden, mit Diligence-Schwerpunkt.
 :::
 
 ## Vorbereitung
 
-- Workshop 1 absolviert; Übungen 1–3 durchgeführt; Take-aways notiert.
-- **Lesen**: [Wissensbasis · BPMN-Grundlagen](06-wissensbasis.qmd#sec-bpmn) und [Wissensbasis · RPA-Grundlagen](06-wissensbasis.qmd#sec-rpa).
-- **Zugang** zur BPMN-Modellierungsumgebung (Signavio oder Alternative) prüfen, alternativ Stift und Papier.
+- Workshop 1 absolviert; die vier Übungen aus Tag 1 durchgeführt; Test-Suite-Befund aus Übung 4 mitbringen.
+- **Lesen**: [Wissensbasis · BPMN-Grundlagen](06-wissensbasis.qmd#sec-bpmn), [Wissensbasis · RPA-Grundlagen](06-wissensbasis.qmd#sec-rpa) und [Wissensbasis · Recht und Berufsstand](06-wissensbasis.qmd#sec-recht).
+- **Zugang** zur BPMN-Modellierungsumgebung (Signavio oder Alternative wie bpmn.io) prüfen, alternativ Stift und Papier.
 - **UiPath**-Account oder Screencast-Ersatzmaterial bereitstellen — siehe [Quickstart](../appendix/quickstart.qmd).
-- **Mitbringen**: das Halluzinations-Beispiel aus Block F (Tag 1), eigene erste Notizen zur AI Policy.
+- **Mitbringen**: erste Notizen zur Personal AI Policy (Skelett mit drei bis fünf eigenen Regeln) für den 4D-Use-Case und die Hausaufgabe.
 
 ## Inhalte des Workshops
 
-Drei Stunden, davon 60 Minuten Theorie und Demos plus 120 Minuten Übungen. Übungen 4 und 5 sind in den 4D-Use-Case eingebettet.
+Drei Stunden, davon 60 Minuten Theorie und Demos plus 120 Minuten Übungen. Discernment wurde gestern vollständig behandelt; heute liegt der Schwerpunkt auf **Diligence** und auf der technischen Brücke aus BPMN und Process Automation. Der 4D-Use-Case schließt die Workshop-Reihe ab und bereitet die beiden Hausaufgaben (*Dilemma der Mitte*, *Personal AI Policy*) inhaltlich vor.
 
-::: {.week-card}
-::: {.card-header}
+:::: week-card
+::: card-header
 🟦 Block 0 — Recap und Brückenfrage · 5 Min
 :::
 
-Was ist hängen geblieben? Brücke von **Description** (Tag 1) zu **Discernment** (Tag 2). *Mini-Aktivierung (2 Min, eingebettet):* Padlet-Stichworte.
-:::
+Was ist aus Workshop 1 hängen geblieben? Brücke von **Discern** (Tag 1) zu **Diligence** (Tag 2) — von der systematischen Output-Prüfung zur persönlichen Verantwortung im Einsatz.
 
-::: {.week-card}
-::: {.card-header}
+![Automatisierung ist nicht neu — eine Timeline von Digitalisierung über ERP, RPA und Advanced Analytics bis zur generativen KI.](../images/digitalization-to-genai-timeline-not-so-new.png){fig-alt="Zeitstrahl der Automatisierungs-Generationen von Digitalisierung über ERP, RPA, Advanced Analytics bis hin zu generativer KI"}
+
+*Direkt zur Hand (2 Min, eingebettet):* Drei Stichworte ins Padlet: Welcher Befund aus Übung 4 (Tutor-Bot Test-Suite) hat Sie überrascht?
+::::
+
+:::: week-card
+::: card-header
 🟦 Block I — BPMN-Grundlagen und Signavio · 22 Min
 :::
 
-**BPMN** (Business Process Model and Notation) — eine **bildliche Sprache** zur Beschreibung von Geschäftsprozessen, in der Aktivitäten als abgerundete Rechtecke, Entscheidungen als Rauten und Verantwortlichkeiten als Schwimmbahnen dargestellt werden [@omg2014bpmn]. **Signavio** ist eine Modellierungsumgebung, in der diese Diagramme browserbasiert erstellt, geteilt und versioniert werden können.
+**BPMN** (Business Process Model and Notation) — eine bildliche Sprache zur Beschreibung von Geschäftsprozessen, in der Aktivitäten als abgerundete Rechtecke, Entscheidungen als Rauten und Verantwortlichkeiten als Schwimmbahnen dargestellt werden [@omg2014bpmn]. **Signavio** ist eine browserbasierte Modellierungsumgebung mit Versionierung und Teilen.
 
-*Mini-Aktivierung (4 Min):* Spesenabrechnung freigeben — Skizze auf Papier mit max. 5 Aktivitäten und genau einem Entscheidungspunkt.
-:::
+Bezug zu Workshop 1: BPMN ist die *Sprache*, in der wir später entscheiden, welche Aktivitäten sich für *Process Automation* (eine Aktivität an einen Bot delegieren) und welche sich für *Cognitive Automation* (an ein Sprachmodell) eignen.
 
-::: {.week-card}
-::: {.card-header}
+![Automatisierungs-Generationen — die heutigen Probleme mit GenAI ähneln denen, die ERP, RPA und Advanced Analytics in ihren Anfangsjahren hatten.](../images/automation-struggles-are-not-new-digitalization-erp-rpa-adv-analytics_AI-genai.png){fig-alt="Vergleichende Darstellung der Einführungsphasen von ERP, RPA, Advanced Analytics und GenAI mit jeweils ähnlichen Hürden"}
+
+*Direkt zur Hand (4 Min):* Skizzieren Sie auf Papier den Prozess *„Spesenabrechnung freigeben"* mit höchstens fünf Aktivitäten und genau einem Entscheidungspunkt — Vergleich am Tisch.
+::::
+
+:::: week-card
+::: card-header
 🟦 Block J — Process Automation mit UiPath · 15 Min
 :::
 
-**RPA** (Robotic Process Automation) — Software-Roboter, die genau das tun, was ein Mensch in einer Anwendung tun würde, nur reproduzierbar und ohne Ermüdung. **UiPath** ist eine der führenden RPA-Plattformen.
+**RPA** (Robotic Process Automation) — Software-Roboter, die genau das tun, was ein Mensch in einer Anwendung tun würde, nur reproduzierbar und ohne Ermüdung. **UiPath** ist eine der führenden RPA-Plattformen. Bezug zum gestrigen Diagnose-Quiz: Genau die Items, die Sie als *Process Automation* eingeordnet haben, sind die Kandidaten für UiPath-Bots.
 
-*Mini-Aktivierung (3 Min):* LLM-Übung — *„Wie wäre ein Excel-zu-PDF-Bot aufgebaut?"* — KI-Antwort mit Live-Demo des Bots vergleichen, Lücken markieren.
+![GenAI-Tech-Stack mit Datenqualität, Tool-Integration und Process Intelligence als Fundament. Adaptiert nach Willcocks & Lacity (2024).](../images/genai-tech-stack-data-quality-integration-process-intelligence-willcocks-lacity-2024.png){fig-alt="Geschichteter Tech-Stack mit Datenqualität als Basis, darüber Tool-Integration und Process Intelligence, mit GenAI als oberster Schicht"}
+
+*Direkt zur Hand (3 Min):* Lassen Sie sich von Ihrem starken Modell beschreiben, wie ein einfacher Excel-zu-PDF-Bot in UiPath aufgebaut wäre — anschließend Live-Demo, Lücken markieren.
+::::
+
+:::: week-card
+::: card-header
+🟧 Block K — Diligence vertieft · 16 Min
 :::
 
-::: {.week-card}
-::: {.card-header}
-🟧 Block K — Discernment vertieft · 16 Min
-:::
+Drei Säulen [@dakan2025framework]:
 
-Drei Subkompetenzen: **Product Discernment** (Stimmt der Output?) · **Process Discernment** (Wie kam das Modell darauf?) · **Performance Discernment** (Funktioniert die Lösung im Einsatz?). Halluzinationsmuster: erfundene Paragraphen, falsche Aktenzeichen, plausible aber unzutreffende Zahlen.
+- **Creation Diligence** — sorgfältige Erzeugung. Was lasse ich überhaupt entstehen? Welche Daten gebe ich rein? Bin ich befugt, diese Daten an dieses System zu schicken?
+- **Transparency Diligence** — offen legen, was die KI getan hat. Gegenüber Mandanten, Vorgesetzten, Aufsichtsbehörden. EU AI Act Art. 50 setzt seit 2025 explizite Transparenzpflichten für generative Outputs.
+- **Deployment Diligence** — verantwortlicher Einsatz im Mandat. Wer haftet, wenn der KI-Output Schaden anrichtet? Antwort: immer Sie als Berufsträger, nie der Anbieter.
 
-*Mini-Aktivierung (4 Min):* Halluzination in einer KI-Antwort zu *§ 8 KStG* identifizieren → [Hallucination-Spotter öffnen](../interactions/hallucination-spotter.html){target="_blank"}.
-:::
+Berufsrechtlicher Rahmen für Tax/Audit/Advisory:
 
-::: {.week-card}
-::: {.card-header}
+- **WPO § 43** — Berufsgrundsätze für Wirtschaftsprüfer: Eigenverantwortlichkeit, Gewissenhaftigkeit, Verschwiegenheit, Unabhängigkeit. KI-Einsatz darf keine dieser Pflichten aushöhlen.
+- **StBerG § 57** — gleichgelagerte Pflichten für Steuerberater. Verschwiegenheit ist eine *Berufspflicht*, kein Vertragsthema; ihre Verletzung ist Straftat nach § 203 StGB.
+- **DSGVO Art. 5** — Datenschutz-Grundsätze, insbesondere *Zweckbindung* und *Datenminimierung*. Free-Tier-Anbieter trainieren in der Regel auf Eingaben — damit ist Mandantenbezug ausgeschlossen.
+
+*Direkt zur Hand (4 Min):* Diligence-Self-Check mit drei Fragen — Habe ich in meinen Übungen aus Workshop 1 jemals Daten eingegeben, die ich in einer realen Mandantenarbeit nicht hätte eingeben dürfen? Habe ich KI-Beteiligung in der Test-Suite-Auswertung kenntlich gemacht? Habe ich Quellen verifiziert?
+::::
+
+:::: week-card
+::: card-header
 🟦 Block L — Setup 4D-Use-Case · 2 Min
 :::
 
-Aufgabenstellung im 4D-Use-Case einführen: umsatzsteuerliche Behandlung einer **grenzüberschreitenden Dienstleistung**. Übergang in den Übungsteil.
-:::
+Der integrierte Use-Case: **umsatzsteuerliche Behandlung einer grenzüberschreitenden Dienstleistung** für einen fiktiven Mandanten. Studierende durchlaufen alle vier Kompetenzen in Reihe — von der Delegationsentscheidung über die Prompt-Formulierung und die Output-Prüfung bis zur Diligence-Dokumentation für die Mandantenakte.
+::::
 
 ## Diskussionsfragen
 
-- An welcher Stelle Ihres BPMN-Modells wäre **Cognitive Automation** sinnvoller als **Process Automation**?
-- Welche Halluzinationsart ist im Tax-/Audit-Kontext am gefährlichsten — und warum?
-- Wie würdest Sie **Process Discernment** dokumentieren, wenn der Output später revisionsfest sein muss?
+- An welcher Stelle Ihres BPMN-Modells wäre *Cognitive Automation* sinnvoller als *Process Automation*?
+- Welche Diligence-Pflicht aus WPO § 43, StBerG § 57 oder DSGVO Art. 5 wird in Ihrer typischen KI-Nutzung am ehesten verletzt — und an welcher Stelle des Workflows?
+- Wie würden Sie *Transparency Diligence* in der Mandantenkommunikation dokumentieren, ohne den Mandanten zu verunsichern?
+- Was nehmen Sie aus den vier Übungen in Workshop 1 in Ihre Personal AI Policy auf?
 
 ## Aufgaben
 
-::: {.callout-note}
-## Drei Übungen plus eingebettete Übungen 4–5 (zusammen 120 Minuten)
+::: callout-note
+## Drei Übungen plus zwei Hausaufgaben
+
+**In-class (zusammen 120 Min):**
 
 [BPMN-Modellierung](04-uebungen-w2.qmd#sec-bpmn){.assignment-badge}
-[UiPath-Bot](04-uebungen-w2.qmd#sec-uipath){.assignment-badge}
-[4D-Use-Case (mit Übungen 4 & 5)](04-uebungen-w2.qmd#sec-4d-usecase){.assignment-badge}
+[UiPath-Bot lesen](04-uebungen-w2.qmd#sec-uipath){.assignment-badge}
+[Integrierter 4D-Use-Case](04-uebungen-w2.qmd#sec-4d-usecase){.assignment-badge}
 
-Die BPMN-Modellierung (40 Min) und der UiPath-Bot (40 Min) trainieren **Process Automation** an einem konkreten Tax-/Audit-Beispiel. Der **integrierte 4D-Use-Case** (40 Min) verbindet alle vier Kompetenzen und enthält Übung 4 (RAG-Bewertung, Discernment) und Übung 5 (Output verbessern, Discernment).
+**Hausaufgaben (nach Workshop 2):**
+
+[Dilemma der Mitte](05-hausaufgaben.qmd#sec-uebung-6){.assignment-badge}
+[Personal AI Policy](05-hausaufgaben.qmd#sec-uebung-7){.assignment-badge}
+
+BPMN-Modellierung (40 Min) und UiPath-Bot (40 Min) trainieren das technische Verständnis von Process Automation an einem Tax-Beispiel. Der **integrierte 4D-Use-Case** (40 Min) verbindet alle vier Kompetenzen mit Schwerpunkt auf **Diligence** und ist die direkte Vorlage für die beiden Hausaufgaben.
 :::
 
 ## Hintergrund / Werkzeuge / Ressourcen
 
 - **Wissensbasis** — [BPMN-Grundlagen](06-wissensbasis.qmd#sec-bpmn) · [RPA-Grundlagen](06-wissensbasis.qmd#sec-rpa) · [Recht und Berufsstand](06-wissensbasis.qmd#sec-recht).
-- **Originalmaterial** — Cheat Sheet und Practical Overview zu Discernment und Diligence aus @dakan2025framework.
+- **Originalmaterial** — Cheat Sheet und Practical Overview zu Diligence aus @dakan2025framework.
 - **Standardreferenz BPMN** — @omg2014bpmn.
+- **Service-Automation-Continuum** — @lacity2021becoming und @willcocks2024evolution als Vertiefung zur strategischen Einordnung.
 
 ## Weiterführend
 
@@ -107,13 +136,14 @@ Die BPMN-Modellierung (40 Min) und der UiPath-Bot (40 Min) trainieren **Process 
 
 ## Tutor
 
-::: {.callout-tip}
+::: callout-tip
 ## Tutor öffnen
+
 [Tutor — KI in Tax, Audit & Advisory →](https://chatgpt.com/g/PLATZHALTER-TUTOR-URL){target="_blank"}
 
 Vorschlag-Prompt für diesen Workshop:
 
-> Ich arbeite in Workshop 2 am 4D-Use-Case zur umsatzsteuerlichen Behandlung einer grenzüberschreitenden Dienstleistung. Helfen Sie mir, **Discernment** an meinem aktuellen KI-Output zu üben: Welche drei Aspekte würden Sie als Erstes prüfen, und welche **Diagnose-Frage** stelle ich dem Modell zurück, um meinen Verdacht zu erhärten?
+> Ich arbeite in Workshop 2 am 4D-Use-Case zur umsatzsteuerlichen Behandlung einer grenzüberschreitenden Dienstleistung. Helfen Sie mir, **Diligence** an meinem aktuellen Stand zu üben: Welche drei Aspekte aus WPO § 43, StBerG § 57 und DSGVO Art. 5 würden Sie als Erstes prüfen — und welche **Diagnose-Frage** sollte ich dem KI-Output zurück stellen, um meine berufsrechtliche Verantwortbarkeit sicherzustellen?
 :::
 
 ## Persönliche Anmerkungen

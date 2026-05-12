@@ -11,141 +11,157 @@ subtitle: "Dienstag, 12.05.2026 · 16:00–19:00 · Campus Südstadt"
 ::: lernziel-box
 #### Was Sie nach diesem Workshop können
 
-- die vier Kernkompetenzen des **4D-Frameworks** (Delegation, Description, Discernment, Diligence) in eigenen Worten erklären,
-- die Logik **Automation · Augmentation · Agency** als operative Heuristik für *Delegation* an konkreten Tax-/Audit-Tätigkeiten anwenden,
-- ein KI-Tool, ein KI-Modell und einen KI-Prompt **als drei getrennte Variablen** behandeln,
-- **Process Automation** und **Cognitive Automation** an konkreten Tax-/Audit-Tätigkeiten unterscheiden,
-- einen System-Prompt entwerfen, der Rolle, Zielgruppe, Format und mindestens drei Constraints festlegt,
-- ein Halluzinations-Risiko an einer KI-Antwort erkennen (Cliffhanger zu Tag 2).
+- *Process Automation* und *Cognitive Automation* an konkreten Tätigkeiten aus Tax, Audit und Advisory unterscheiden — und Grenzfälle als Hybrid benennen,
+- das **4D-Framework** (Delegate, Describe, Discern, Diligence) in eigenen Worten erklären und die beiden Loops im Kopf nachzeichnen,
+- die drei Konfigurationen **LLM allein**, **erweitertes LLM** und **Agent** unterscheiden und für eine eigene Frage die passende auswählen,
+- einen einfachen Prompt nach **RTF** und **CREATE** strukturieren und an einer Aufgabe aus dem eigenen Lerngebiet anwenden,
+- einen Tutor-Bot für das eigene Fachgebiet bauen und mit einer kleinen **Test-Suite** systematisch prüfen.
 :::
 
 ## Vorbereitung
 
-Was Sie vor dem Termin erledigst:
+Was Sie vor dem Termin erledigen:
 
-- **Diagnose-Quiz** absolvieren (8 Fragen, ca. 10 Minuten) → [Quiz starten](../interactions/diagnose-quiz.html){target="_blank"}.
-- **AAA-Mapper** durchspielen (29 Tätigkeiten aus dem O\*Net-Berufsbild *Accountants and Auditors*, ca. 15–20 Minuten) → [AAA-Mapper starten](../interactions/onet-aaa-mapper.html){target="_blank"}. Jede Tätigkeit zu *Automation*, *Augmentation* oder *Agency* zuordnen. Ergebnis als Markdown speichern und in den Workshop mitbringen — die Auswertung ist Diskussionsmaterial für **Block D (Delegation)**.
-- **Zugänge** anlegen oder prüfen: Claude (Free), ChatGPT (Free), Gemini (Free) oder Perplexity (Free) — mindestens zwei davon.
-- **Lesen**: [Wissensbasis · LLM-Grundlagen](06-wissensbasis.qmd#sec-llm-grundlagen) und [Wissensbasis · Welches Modell?](06-wissensbasis.qmd#sec-welches-modell).
-- **Mitbringen**: Notebook mit Browser, Kopfhörer, eine offene Tax-/Audit-Frage aus Ihrer Praxis (kein Mandantenbezug).
+- **Diagnose-Quiz** absolvieren (10 Items, ca. 8 Minuten) → [Quiz starten](../interactions/diagnose-quiz.html){target="_blank"}. Ergebnis aufheben, am Ende des Workshops gibt es einen Re-Test mit Pre/Post-Vergleich.
+- **AAA-Mapper** durchspielen (29 Tätigkeiten aus dem O\*NET-Berufsbild *Accountants and Auditors*, ca. 15–20 Minuten) → [AAA-Mapper starten](../interactions/onet-aaa-mapper.html){target="_blank"}. Auswertung mitbringen — Diskussionsmaterial für den Block *Delegate*.
+- **Zugänge** anlegen oder prüfen: Account in der GWDG Academic Cloud, kostenfreier Account auf `arena.ai`, mindestens ein Free-Account bei einem starken Modell (Claude, ChatGPT, Gemini oder Perplexity). Für Übung 3 zusätzlich: NotebookLM ([notebooklm.google.com](https://notebooklm.google.com){target="_blank"}).
+- **Lesen** (optional, 15 Minuten): [Wissensbasis · LLM-Grundlagen](06-wissensbasis.qmd#sec-llm-grundlagen) und [Wissensbasis · Welches Modell?](06-wissensbasis.qmd#sec-welches-modell).
+- **Mitbringen**: Notebook mit Browser, Kopfhörer, eine offene Fachfrage aus Ihrem Studium oder einer früheren Praxisphase (kein Mandantenbezug).
 
 ## Inhalte des Workshops
 
-Drei Stunden, davon 60 Minuten Theorie und Demos plus 120 Minuten Übungen. Alle Theorieblöcke enthalten eine **Mini-Aktivierung** (2–5 Minuten), die die Inhalte sofort anwendet.
+Drei Stunden, eng verzahnt aus fünf kurzen Inputs (zusammen 53 Minuten), vier Übungen mit je 15 Minuten Bearbeitung plus Think-Pair-Share und Plenum-Auflösung (zusammen 88 Minuten), einer Pause (10 Minuten) und Begrüßung/Abschluss (9 Minuten). Alle Übungen sind im Block eingebettet, in dem ihr inhaltlicher Anker liegt — nicht in einen separaten Übungsteil verschoben.
 
 :::: week-card
 ::: card-header
-🟦 Block 0 — Begrüßung und Kalibrierung · 3 Min
+🟦 Block 0 — Begrüßung und Kalibrierung · 5 Min
 :::
 
-Vorstellung, Vorerfahrung der Teilnehmenden, Ziele des Tages, Hinweis auf den Tutor. *Mini-Aktivierung: keine.*
+Begrüßung, Lernziele, Hinweis auf den Tutor, kurze Verständigung über Vorerfahrungen mit generativer KI.
 ::::
 
 :::: week-card
 ::: card-header
-🟦 Block A — Chat vs. erweitertes Sprachmodell, Modellauswahl, agentische Nutzung · 17 Min
+🟦 Block 1 — Process vs. Cognitive Automation · 10 Min
 :::
 
-LLM als Textgenerator; **Harness** als Werkzeugring um das Modell (Web-Search, Code-Interpreter, Memory, Dateizugriff). Drei Lizenz-Tiers: **Free** (0 €), **Casual** (\~20–30 €/Monat), **Professional** (\~100–200 €/Monat). Unterschied **Chat** (Single-/Multi-Turn) versus **Agent** (Multi-Step mit Tools, Memory, Schleifen). Bezugsfolien: `gen-ai-allgemeine-empfehlungen-2026-05.pptx`, Stütze @grootendorst2025visual.
+**Process Automation** — regelbasiertes Abarbeiten strukturierter Workflows ohne Verstehen. **Cognitive Automation** — KI-gestütztes Schließen, Klassifizieren, Zusammenfassen unstrukturierter Inhalte. Das *Service-Automation-Continuum* nach @lacity2021becoming und @willcocks2024evolution ordnet beide Kategorien plus *Intelligent Automation* als orchestrierende Schicht in eine kohärente Sourcing-Strategie ein.
 
-*Mini-Aktivierung (5 Min):* dieselbe Faktenfrage aus der Praxis (z. B. *„Was ändert sich 2026 bei der E-Rechnungspflicht für B2B in Deutschland?"*) parallel im **Free-Tier ohne Web-Search** und im **Free-Tier mit Web-Search-Tool** stellen — Antworten kurz vergleichen.
+![Service-Automation-Continuum von Process Automation über Cognitive Automation bis Intelligent Automation. Adaptiert nach Lacity & Willcocks (2021).](../images/automation-continuum-process-automation-cognitive-automation-lacity-willcocks-2021.png){fig-alt="Visualisierung des Service-Automation-Continuum mit den Stufen RPA, Cognitive Computing, Cognitive Automation und Intelligent Automation, jeweils mit zunehmender Komplexität und Autonomie"}
+
+Drei Verankerungs-Beispiele aus Tax/Audit: Bank-zu-SAP-Abstimmung (Process); semantische Klassifikation eingehender Belege (Cognitive); Ende-zu-Ende-Bot, der klassifiziert, einbucht und Differenzen meldet (Intelligent Automation).
+
+➡️ [Übung 1 — Diagnose-Quiz Process vs. Cognitive](02-uebungen-w1.qmd#sec-uebung-1){.assignment-badge} · 18 Min (8 Min Solo + 4 Min TPS + 3 Min Plenum + 3 Min Puffer)
 ::::
 
 :::: week-card
 ::: card-header
-🟦 Block B — Was ist AI Fluency? 4D-Übersicht · 6 Min
+🟦 Block 2 — 4D-Framework Kurzdurchlauf · 7 Min
 :::
 
-Vier Kernkompetenzen, je drei Subkategorien (@dakan2025framework). **Delegation** (Problem-, Platform-, Task-Awareness) · **Description** (Product-, Process-, Performance-Description) · **Discernment** (Product-, Process-, Performance-Discernment) · **Diligence** (Creation-, Transparency-, Deployment-Diligence). Zwei Loops: *Delegation–Diligence* (strategisch), *Description–Discernment* (operativ).
-
-*Mini-Aktivierung (2 Min) — Think-Pair-Share:* Welche der vier Kompetenzen hätte Ihnen bei Ihrer letzten Hausarbeit am meisten geholfen? Warum?
+Vier Kernkompetenzen, je drei Subkategorien nach @dakan2025framework. **Delegate** (Problem-, Platform-, Task-Awareness) · **Describe** (Product-, Process-, Performance-Description) · **Discern** (Product-, Process-, Performance-Discernment) · **Diligence** (Creation-, Transparency-, Deployment-Diligence). Zwei Loops: *Delegate–Diligence* (strategisch), *Describe–Discern* (operativ). Heute behandeln wir Delegate, Describe und Discern in dieser Reihenfolge; Diligence wird morgen vertieft.
 ::::
 
 :::: week-card
 ::: card-header
-🟦 Block C — Process vs. Cognitive Automation · 11 Min
+🟦 Block 3 — Delegate: Modell, Harness, agentische Nutzung · 12 Min
 :::
 
-**Process Automation** — regelbasiertes Abarbeiten strukturierter Workflows ohne Verständnis (z. B. Daten von Excel in PDF überführen). **Cognitive Automation** — KI-gestütztes Schließen, Klassifizieren, Zusammenfassen unstrukturierter Inhalte (z. B. Vertragsklauseln einordnen). Quellen: @lacity2016new, @coombs2020strategic, @davenport2018artificial.
+Drei Konfigurationen sauber trennen:
 
-*Mini-Aktivierung (4 Min):* Drag-and-Drop-Klassifikator — fünf Tätigkeiten in „Process", „Cognitive" oder „Hybrid" einsortieren → [Widget öffnen](../interactions/pc-classifier.html){target="_blank"}.
+- **LLM allein** — ein Textgenerator. Stellen Sie sich einen sehr belesenen Bibliothekar vor, der nur reden kann, nichts nachschlagen und nichts ausführen.
+- **Erweitertes LLM** — dasselbe Modell, eingebettet in eine *Harness* mit Tools wie Web-Search, File-Upload, Code-Execution. Der Bibliothekar bekommt eine Werkbank.
+- **Agent** — ein erweitertes LLM, das in einer Schleife arbeitet: Ziel, Plan, Werkzeug, Bewertung, neuer Plan. Der Bibliothekar erledigt eigenständig mehrschrittige Aufgaben und meldet sich erst zurück, wenn er fertig ist.
+
+![LLM-Kern und Harness als Werkzeugring — was ein Modell tatsächlich kann, hängt mindestens so stark von der Harness ab wie vom Modell selbst.](../images/llm-augmented-visualization.png){fig-alt="Visualisierung eines LLM-Kerns, umgeben von einem Werkzeugring aus Web-Search, Memory, Tools und User Interface"}
+
+Die didaktische Pointe: Wer Aufgaben delegieren will, muss wissen, in welcher der drei Konfigurationen das eigene System läuft, weil Fähigkeiten und Risikoprofil substanziell verschieden sind [@grootendorst2025visual; @mollick2024cointelligence].
+
+![Die Jagged Frontier — KI-Fähigkeiten sind unregelmäßig verteilt, mit unerwartet starken und unerwartet schwachen Bereichen. Adaptiert nach Dell'Acqua et al. (2023) und Mollick (2024).](../images/jagged-frontier-genai.png){fig-alt="Visualisierung der Jagged Frontier als zerklüftete Linie, die starke und schwache Fähigkeitsbereiche von KI-Systemen unregelmäßig trennt"}
+
+➡️ [Übung 2 — Karriereentwicklung im Modellvergleich](02-uebungen-w1.qmd#sec-uebung-2){.assignment-badge} · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)
 ::::
 
 :::: week-card
 ::: card-header
-🟦 Block D — Delegation · 13 Min
+☕ Pause · 10 Min
 :::
 
-*Was übergebe ich an die KI, was bleibt bei mir?* Drei Antwort-Stufen nach @davenport2018artificial machen die Frage operativ: **Automation** — vollständige Übergabe einer abgrenzbaren, regelhaften Tätigkeit; der Mensch prüft nur das Ergebnis. **Augmentation** — KI und Mensch arbeiten Schritt für Schritt zusammen; jeder Zwischenschritt wird gemeinsam validiert. **Agency** — die Entscheidungshoheit bleibt klar beim Menschen; die KI liefert Bausteine, prüft Hypothesen, formuliert Optionen. Aufgaben-Taxonomie nach Risiko (mechanisch · urteilsabhängig · regulatorisch heikel) und nach **Jagged Frontier** [@dellacqua2023navigating]. Praxisbezug Tax/Audit: Zusammenfassen vs. Auslegen vs. Empfehlen.
-
-**Auswertungsdiskussion (8 Min) — AAA-Mapper:** Wer den [AAA-Mapper](../interactions/onet-aaa-mapper.html){target="_blank"} in der Vorbereitung durchgespielt hat, bringt das eigene Auswertungsblatt mit. Vier Plenumsfragen: Welche der 29 Tätigkeiten landeten klar in *Automation*? Welche klar in *Agency*? Wo war die Zuordnung schwierig — und was sagt das über die Tätigkeit, die Aufgabenstruktur oder das Berufsrecht (WPO § 43, StBerG § 57) aus? Welche persönliche Heuristik nehmen Sie aus dieser Sortierung mit?
-
-*Mini-Aktivierung (3 Min):* Dem KI-Tool die Frage stellen *„Welche Werkzeuge stehen Ihnen aktuell zur Verfügung?"* — Antwort mit der offiziellen Anbieter-Doku abgleichen. Brücke zur AAA-Logik: Welche Werkzeugausstattung verschiebt eine Tätigkeit von *Agency* nach *Augmentation*, welche bis zu *Automation*?
 ::::
 
 :::: week-card
 ::: card-header
-🟦 Block E — Description · 8 Min
+🟦 Block 4 — Describe: RTF und CREATE · 12 Min
 :::
 
-Prompt-Patterns: **Rolle**, **Zielgruppe**, **Aufgabe**, **Constraints**, **Format**. Anker zu @pmi2024talking. Standard-Bausteine für Tax-/Audit-Prompts: Sachverhalt zuerst, Rechtsquelle benannt, Output-Form klar definiert (Memo, Aktenvermerk, Mandantenbrief).
+Leitanalogie: Der Chatbot ist eher ein junger Nachhilfeschüler als ein Taschenrechner — er versteht Anweisungen, braucht Kontext, möchte gezeigt bekommen, was Sie wollen, und wird mit Beispielen besser. Inhaltlicher Anker: das Kapitel *How to speak* aus dem begleitenden Lehrbuch [@bartnik2026genai4teaching].
 
-*Mini-Aktivierung (3 Min):* 10-Wort-Prompt versus 50-Wort-Prompt mit Rolle, Zielgruppe und Format zur **selben** Aufgabe — Outputs vergleichen.
+Zwei Schemata:
+
+- **RTF** — *Role, Task, Format*. Sparsam und schnell. Beispiel: „Sie sind Wirtschaftsprüferin. Erläutern Sie das Going-Concern-Prinzip. Antworten Sie in drei kurzen Absätzen für Erstsemester."
+- **CREATE** — *Character, Request, Examples, Adjustments, Type of output, Extras*. Reicher und für komplexe Aufgaben besser geeignet. Beide Schemata mit identischer Beispielaufgabe vorführen, damit der Unterschied direkt sichtbar wird.
+
+➡️ [Übung 3 — Prompt-Umbau und Tutor-Bot](02-uebungen-w1.qmd#sec-uebung-3){.assignment-badge} · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)
 ::::
 
 :::: week-card
 ::: card-header
-🟧 Block F — Discernment (Anriss) · 3 Min
+🟦 Block 5 — Discern: Outputs systematisch prüfen · 12 Min
 :::
 
-Cliffhanger für Tag 2: ein konkretes Halluzinationsbeispiel — z. B. eine erfundene BFH-Entscheidung. *Mini-Aktivierung: keine, nur Demo.*
+Zwei Ideen, eine Übersetzung auf Tax/Audit:
+
+- **RAGAS-Idee** — eine Bewertung von Antworten aus Retrieval-Augmented-Systemen entlang weniger Kerngrößen: *Faithfulness* (passt die Antwort zu den abgerufenen Quellen?), *Answer Relevance* (beantwortet sie die Frage?), *Context Precision* und *Context Recall* (wurden die richtigen Quellen abgerufen?) [@es2024ragas]. Im Kern: ein Test-Set aus Fragen mit erwarteten Antworten, das Sie immer wieder durchlaufen lassen.
+- **Red-Green-TDD nach Willison** — Testfälle zuerst. Sie schreiben fünf bis zehn Beispielfragen mit gewünschten Antworten, lassen den Agenten durchlaufen, markieren *rot* (fehlerhaft), *gelb* (teilweise) oder *grün* (korrekt). Dann iterieren Sie Prompt, Modell und Harness, bis möglichst viele Tests grün werden [@willison2025redgreen]. Die Methode kommt aus dem Test-Driven Development der Software-Entwicklung — Kent Becks „Red first" auf Prompt-Ebene übertragen.
+
+Übersetzung auf Tax/Audit: Eine kleine Sammlung typischer Berufsfragen (Anwendung des Reverse-Charge-Verfahrens, Going-Concern-Prüfung, Behandlung von Rückstellungen) wird zur Test-Suite. Genau das bauen Sie in der nächsten Übung — zum Tutor-Bot aus Übung 3.
+
+![RAG als Bücherregal-Metapher — statt aus dem Gedächtnis zu antworten, schlägt das Modell zuerst in einer externen Quelle nach.](../images/rag-hope-genai-bookshelf.png){fig-alt="Bildhafte Darstellung von Retrieval-Augmented Generation als Bücherregal, aus dem ein KI-Assistent vor der Antwort nachschlägt"}
+
+➡️ [Übung 4 — Tutor-Bot systematisch prüfen](02-uebungen-w1.qmd#sec-uebung-4){.assignment-badge} · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)
 ::::
 
 :::: week-card
 ::: card-header
-🟧 Block G — Diligence (Anriss) · 2 Min
+🟧 Block 6 — Abschluss: Diagnose-Quiz Re-Test und Brücke zu Tag 2 · 9 Min
 :::
 
-Drei Säulen: **Creation Diligence** (sorgfältige Erzeugung), **Transparency Diligence** (offen legen, was die KI getan hat), **Deployment Diligence** (verantwortlicher Einsatz im Mandat). Vertiefung in Tag 2 und Übung 6.
-::::
-
-:::: week-card
-::: card-header
-🟦 Block H — Loops und Übergang zu den Übungen · 2 Min
-:::
-
-Zwei Loops im 4D-Framework — **Delegation ↔ Diligence** (strategisch) und **Description ↔ Discernment** (operativ). Übergang in den 120-minütigen Übungsteil.
+Diagnose-Quiz erneut durchlaufen, Pre/Post-Vergleich als Spinnen- oder Balken-Diagramm. Brücke zu Workshop 2 (Mittwoch, 13.05.): **Diligence** als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.
 ::::
 
 ## Diskussionsfragen
 
-- Welcher der drei Lizenz-Tiers passt zu welcher beruflichen Situation in Tax, Audit oder Advisory? Wo liegt die Grenze des Free-Tiers?
-- Wo beginnt für Sie Delegation an die KI — und wo endet sie aus berufsrechtlichen Gründen?
-- Welche Tätigkeit aus Ihrem Alltag ist *Process*, welche *Cognitive*? Gibt es eine, die zwischen beiden liegt?
-- Wann ist ein 50-Wort-Prompt schlechter als ein 10-Wort-Prompt?
+- An welcher Stelle in Ihrem Studium würde ein Tutor-Bot Sie heute schon ersetzen — und an welcher nicht?
+- Item 9 des Diagnose-Quiz (OCR plus ERP-Einspielung) ist ein Hybrid aus *Cognitive* und *Process*. Wo verläuft die Grenze in einem realen Workflow Ihrer Wahl?
+- Welche Konfiguration aus *LLM allein · erweitertes LLM · Agent* passt zu welcher Aufgabenklasse Ihres Studienalltags? Wo lohnt sich der Aufpreis für ein stärkeres Modell oder eine reichere Harness konkret?
+- Wann ist eine Test-Suite mit fünf Fragen aussagekräftiger als eine spontane Qualitätsprüfung? Wann nicht?
 
 ## Aufgaben
 
 ::: callout-note
-## Drei In-class-Übungen (zusammen 120 Minuten)
+## Vier Übungen im Workshop, eingebettet in die Inputs
 
-[Übung 1 — Tool-Vergleich](02-uebungen-w1.qmd#sec-uebung-1){.assignment-badge} [Übung 2 — System-Prompt](02-uebungen-w1.qmd#sec-uebung-2){.assignment-badge} [Übung 3 — Constraint Challenge](02-uebungen-w1.qmd#sec-uebung-3){.assignment-badge}
+[Übung 1 — Diagnose-Quiz](02-uebungen-w1.qmd#sec-uebung-1){.assignment-badge} [Übung 2 — Karriereentwicklung](02-uebungen-w1.qmd#sec-uebung-2){.assignment-badge} [Übung 3 — Prompt-Umbau und Tutor-Bot](02-uebungen-w1.qmd#sec-uebung-3){.assignment-badge} [Übung 4 — Tutor-Bot systematisch prüfen](02-uebungen-w1.qmd#sec-uebung-4){.assignment-badge}
 
-Übung 1 (45 Min, Dreierteam) trainiert **Delegation** durch systematischen Tool-Vergleich. Übung 2 (45 Min, Einzel) und Übung 3 (30 Min, Paar) trainieren **Description** durch System-Prompt-Design und Constraint-Verschärfung.
+Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine **Erweiterungsfrage für schnelle Studierende** — wer früh fertig ist, vertieft, statt zu warten.
 :::
 
 ## Hintergrund / Werkzeuge / Ressourcen
 
-- **Wissensbasis** — [LLM-Grundlagen](06-wissensbasis.qmd#sec-llm-grundlagen) · [Welches Modell?](06-wissensbasis.qmd#sec-welches-modell) · [Prompt-Muster](06-wissensbasis.qmd#sec-prompt-muster) · [Tools & Plattformen](06-wissensbasis.qmd#sec-tools).
-- **Foliensatz** — `gen-ai-allgemeine-empfehlungen-2026-05.pptx` (Chat vs. erweitertes Sprachmodell, drei Lizenz-Tiers, Harness, Jagged Frontier).
+- **Wissensbasis** — [LLM-Grundlagen](06-wissensbasis.qmd#sec-llm-grundlagen) · [Welches Modell?](06-wissensbasis.qmd#sec-welches-modell) · [Prompt-Muster](06-wissensbasis.qmd#sec-prompt-muster) · [Tools und Plattformen](06-wissensbasis.qmd#sec-tools).
+- **Foliensatz** — `gen-ai-allgemeine-empfehlungen-2026-05.pptx` (Chat versus erweitertes Sprachmodell, drei Lizenz-Tiers, Harness, *Jagged Frontier*).
 - **Originalmaterial 4D-Framework** — Cheat Sheet und Practical Overview von @dakan2025framework.
-- **Widgets** — [AAA-Mapper](../interactions/onet-aaa-mapper.html){target="_blank"} (Vorbereitung), Diagnose-Quiz, Process-/Cognitive-Klassifikator, Prompt-Builder.
+- **Begleitlehrbuch** — [Kapitel 2.4 *How to speak*](https://th-koln-bartnik.github.io/genai4teaching/kapitel02.html#sec-how-to-speak){target="_blank"} und [Kapitel 7 *Tutor-Prompt-Sammlung*](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html#sec-general-tutor){target="_blank"}.
+- **O\*NET-Berufsbild** — [Accountants and Auditors (13-2011.00)](https://www.onetonline.org/link/summary/13-2011.00){target="_blank"} als Faktenbasis für Übung 2.
+- **Vergleichsplattform** — [arena.ai](https://arena.ai){target="_blank"} mit Side-by-Side-Modus für Übung 2.
 
 ## Weiterführend
 
-- @mollick2024cointelligence — *Co-intelligence: Living and working with AI* (Buchempfehlung als Begleitlektüre).
+- @mollick2024cointelligence — *Co-intelligence: Living and working with AI* (Begleitlektüre zum Studium).
 - @dellacqua2023navigating — *Navigating the jagged technological frontier* (HBS Working Paper, empirisch zur Produktivitätswirkung).
-- @grootendorst2025visual — *A Visual Guide to LLM Agents* (visuelle Erklärung des Harness-Konzepts).
+- @grootendorst2025visual — *A visual guide to LLM agents* (visuelle Erklärung des Harness-Konzepts und der drei Konfigurationen).
+- @willison2025redgreen — *Red-green test-driven development for agentic engineering* (didaktisch klare Einführung in TDD für KI-Systeme).
+- @es2024ragas — *RAGAS: Automated evaluation of retrieval augmented generation* (Originalpaper zur Bewertung von RAG-Systemen).
 
 ## Tutor
 
@@ -156,9 +172,9 @@ Zwei Loops im 4D-Framework — **Delegation ↔ Diligence** (strategisch) und **
 
 Vorschlag-Prompt für diesen Workshop:
 
-> Ich bereite Workshop 1 (AI Fluency Framework) im Modul *KI in Tax, Audit & Advisory* vor. Bitte erklären Sie mir das 4D-Framework anhand eines konkreten Tax-Beispiels meiner Wahl: \[Beispiel einfügen\]. Fragen Sie mich nach meinem Vorwissen, geben Sie eine Lay-Erklärung VOR jedem Fachbegriff und stellen Sie am Ende drei Diagnose-Fragen, mit denen ich mein Verständnis selbst prüfen kann.
+> Ich bereite Workshop 1 (AI Fluency Framework) im Modul *KI in Tax, Audit & Advisory* vor. Bitte erklären Sie mir die Unterscheidung *Process Automation* versus *Cognitive Automation* an einem konkreten Beispiel meiner Wahl: [Beispiel einfügen]. Fragen Sie mich nach meinem Vorwissen, geben Sie eine kurze Lay-Erklärung vor jedem Fachbegriff und stellen Sie am Ende drei Diagnose-Fragen, mit denen ich mein Verständnis selbst prüfen kann.
 :::
 
 ## Persönliche Anmerkungen
 
-*Platzhalter für eigene Notizen — z. B. raumbezogene Hinweise, Beispielwahl pro Kohorte, Anpassung der Mini-Aktivierungen.*
+*Platzhalter für eigene Notizen — z. B. raumbezogene Hinweise, Beispielwahl pro Kohorte, Anpassung der Übungs-Beispiele.*
