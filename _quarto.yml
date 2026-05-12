@@ -1,8 +1,11 @@
 project:
   type: book
   output-dir: docs
-  pre-render:
-    - tools/setup-latex.sh
+
+# Installation der deutschen Silbentrennung für Latex, für die PDF-Generierung. Kann weggelassen werden, wenn das schon installiert ist.
+#  pre-render:
+#    - bash tools/setup-latex.sh 
+
   resources:
     - "interactions/**"
     - "images/**"
@@ -34,10 +37,10 @@ book:
       chapters:
         - parts/01-workshop01.qmd
         - parts/02-uebungen-w1.qmd
-    - part: "Teil 2 — Workshop 2 (Mi, 13.05.)"
-      chapters:
-        - parts/03-workshop02.qmd
-        - parts/04-uebungen-w2.qmd
+#   - part: "Teil 2 — Workshop 2 (Mi, 13.05.)"
+#     chapters:
+#       - parts/03-workshop02.qmd
+#       - parts/04-uebungen-w2.qmd
     - part: "Teil 3 — Hausaufgaben & Wissensbasis"
       chapters:
         - parts/05-hausaufgaben.qmd

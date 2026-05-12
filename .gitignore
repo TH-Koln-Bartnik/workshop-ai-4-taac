@@ -35,6 +35,7 @@ Thumbs.db
 
 # --- Verstetigungs-Lieferungen, gehoert nicht ins Repo ---
 _persist/
+z-docs-not-synched/
 
 # --- Verwaister Sub-Klon, wird vom Push-Skript geloescht ---
 workshop-ki-4-taa/
