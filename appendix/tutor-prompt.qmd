@@ -70,6 +70,4 @@ Bei Anpassungen am Master-Prompt: Datum und Versionsnummer in den Prompt selbst 
 
 ## Tutor-Link für Studierende
 
-[Tutor — KI in Tax, Audit & Advisory →](https://chatgpt.com/g/PLATZHALTER-TUTOR-URL){target="_blank"}
-
-*[Platzhalter — finalen Tutor-Link nach Erstellung des Custom GPT / Project hier einsetzen.]*
+[Tutor — KI in Tax, Audit & Advisory →](https://chatgpt.com/g/g-6a03076b4da88191b9e9ae9580a0c2ce-ki-tutor-fur-workshop-auditing-tax-advisory){target="_blank"}

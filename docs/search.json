@@ -10,41 +10,31 @@
     ]
   },
   {
-    "objectID": "index.html#drei-referenzen",
-    "href": "index.html#drei-referenzen",
-    "title": "KI in Tax, Audit & Advisory",
-    "section": "Drei Referenzen",
-    "text": "Drei Referenzen\nBevor wir bauen, schauen wir, was möglich ist. Drei Skripte zeigen die Bandbreite.\n\n\nDakan & Feller — AI Fluency Framework\nOriginalmaterial zum 4D-Framework, auf dem Tag 1 vollständig aufbaut.\nZum Framework →\n\n\n\n\n\nWorkshop-Rhythmus über zwei Nachmittage — Inputs, eingebettete Übungen, Diskussion.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Willkommen</span>"
-    ]
-  },
-  {
     "objectID": "index.html#tagesablauf",
     "href": "index.html#tagesablauf",
     "title": "KI in Tax, Audit & Advisory",
     "section": "Tagesablauf",
-    "text": "Tagesablauf\n\n\n\n\n\n\nTermine\n\n\n\n\nWorkshop 1 — Dienstag, 12.05.2026, 16:00–19:00 Uhr\nWorkshop 2 — Mittwoch, 13.05.2026, 16:00–19:00 Uhr\nOrt — Campus Südstadt, Claudiusstraße 1 (Raumnummer wird per Mail bekanntgegeben).\n\n\n\n\n\n\n\n\n\n\n\nZeitfenster\nWorkshop 1 (Di) — AI Fluency\nWorkshop 2 (Mi) — Automatisierung & 4D-Use-Case\n\n\n\n\n16:00–17:30\nInputs und Übungen 1 (Diagnose-Quiz) und 2 (Karriereentwicklung im Modellvergleich)\nRecap, BPMN-Grundlagen, UiPath-Demo, BPMN-Übung\n\n\n17:30–17:40\nPause\nPause\n\n\n17:40–19:00\nInputs und Übungen 3 (Prompt-Umbau und Tutor-Bot) und 4 (Tutor-Bot systematisch prüfen)\nUiPath-Bot-Übung, 4D-Use-Case integriert, Discern-Vertiefung\n\n\nnach W2\nDiligence-Anriss als Brücke zu Tag 2\nHausaufgaben: Dilemma der Mitte (Positionspapier), Personal AI Policy",
+    "text": "Tagesablauf\n\n\n\n\n\n\nTermine\n\n\n\n\nWorkshop 1 — Dienstag, 12.05.2026, 16:00–19:00 Uhr\nWorkshop 2 — Mittwoch, 13.05.2026, 16:00–19:00 Uhr\nOrt — Campus Südstadt, Claudiusstraße 1 (Raumnummer wird per Mail bekanntgegeben).\n\n\n\n\n\n\n\n\n\n\n\nZeitfenster\nWorkshop 1 (Di) — AI Fluency\nWorkshop 2 (Mi) — Automatisierung & 4D-Use-Case\n\n\n\n\n16:00–17:30\nInputs und Übungen 1 (Diagnose-Quiz) und 2 (Karriereentwicklung im Modellvergleich)\nRecap, BPMN-Grundlagen, UiPath-Demo, BPMN-Übung\n\n\n17:30–17:40\nPause\nPause\n\n\n17:40–19:00\nInputs und Übungen 3 (Prompt-Umbau und Tutor-Bot) und 4 (Tutor-Bot systematisch prüfen)\nUiPath-Bot-Übung, 4D-Use-Case integriert, Discern-Vertiefung\n\n\nnach W2\nDiligence-Anriss als Brücke zu Tag 2\nHausaufgaben: Dilemma der Mitte (Positionspapier), Personal AI Policy\n\n\n\n\n\n\n\n\n\nTutor öffnen\n\n\n\nTutor — KI in Tax, Audit & Advisory →\nDer Tutor begleitet Sie durch alle Übungen. Er kennt das 4D-Framework, die Übungstexte und die Wissensbasis dieses Skripts.\n\n\n\n\n\n\n\n\nDatenschutz und Vertraulichkeit\n\n\n\nIn keinem Fall reale Mandantendaten in KI-Tools eingeben. Free-Tier-Dienste sind für Mandantenarbeit grundsätzlich nicht geeignet. Hintergrund: WPO § 43, StBerG § 57, DSGVO. Mehr in der Wissensbasis.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Willkommen</span>"
     ]
   },
   {
-    "objectID": "index.html#wie-sie-dieses-skript-benutzen",
-    "href": "index.html#wie-sie-dieses-skript-benutzen",
+    "objectID": "index.html#intro-slideshow",
+    "href": "index.html#intro-slideshow",
     "title": "KI in Tax, Audit & Advisory",
-    "section": "Wie Sie dieses Skript benutzen",
-    "text": "Wie Sie dieses Skript benutzen\nJedes Kapitel öffnet mit einer Lernziel-Box, gefolgt von Inhalt und einem Mach-mit-Block mit der eigentlichen Übung. Am Ende stehen ein Was-wenn-Kasten zum Trouble-Shooting und ein fertiger Tutor-Prompt zum Kopieren. Die Workshop-Seiten folgen acht festen H2-Sektionen: Lernziele · Vorbereitung · Inhalte · Diskussionsfragen · Aufgaben · Hintergrund · Weiterführend · Persönliche Anmerkungen.\n\n\n\n\n\n\nTutor öffnen\n\n\n\nTutor — KI in Tax, Audit & Advisory →\nDer Tutor begleitet Sie durch alle Übungen. Er kennt das 4D-Framework, die Übungstexte und die Wissensbasis dieses Skripts.",
+    "section": "Intro-Slideshow",
+    "text": "Intro-Slideshow\nZum Einstieg in Workshop 1 verwende ich eine kurze Vorstellungs-Slideshow — sechs Folien zur Begrüßung, zur Vorstellungsrunde und zum inhaltlichen Bogen über die zwei Workshop-Tage.\nIntro-Slideshow öffnen →",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Willkommen</span>"
     ]
   },
   {
-    "objectID": "index.html#voraussetzungen",
-    "href": "index.html#voraussetzungen",
+    "objectID": "index.html#lizenz",
+    "href": "index.html#lizenz",
     "title": "KI in Tax, Audit & Advisory",
-    "section": "Voraussetzungen",
-    "text": "Voraussetzungen\nWas Sie brauchen: einen Browser, einen Account in der GWDG Academic Cloud (https://academiccloud.de/), einen kostenfreien Account auf arena.ai und mindestens einen Free-Account bei einem starken Modell (Claude, ChatGPT, Gemini oder Perplexity). Für Übung 3 zusätzlich NotebookLM. Für Workshop 2 darüber hinaus Zugriff auf eine BPMN-Modellierungsumgebung (Signavio oder Alternative) und einen UiPath-Account oder die zugehörigen Screencast-Materialien — Details im Quickstart-Guide.",
+    "section": "Lizenz",
+    "text": "Lizenz\nInhalte unter CC BY-NC-SA 4.0 (siehe LICENSE). Verwendete Quellen siehe Literatur.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Willkommen</span>"
     ]
@@ -516,7 +506,7 @@
     "href": "appendix/tutor-prompt.html#tutor-link-für-studierende",
     "title": "Tutor-Master-Prompt",
     "section": "Tutor-Link für Studierende",
-    "text": "Tutor-Link für Studierende\nTutor — KI in Tax, Audit & Advisory →\n[Platzhalter — finalen Tutor-Link nach Erstellung des Custom GPT / Project hier einsetzen.]",
+    "text": "Tutor-Link für Studierende\nTutor — KI in Tax, Audit & Advisory →",
     "crumbs": [
       "Anhang",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Tutor-Master-Prompt</span>"

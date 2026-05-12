@@ -168,7 +168,7 @@ Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kur
 ::: callout-tip
 ## Tutor öffnen
 
-[Tutor — KI in Tax, Audit & Advisory →](https://chatgpt.com/g/PLATZHALTER-TUTOR-URL){target="_blank"}
+[Tutor — KI in Tax, Audit & Advisory →](https://chatgpt.com/g/g-6a03076b4da88191b9e9ae9580a0c2ce-ki-tutor-fur-workshop-auditing-tax-advisory){target="_blank"}
 
 Vorschlag-Prompt für diesen Workshop:
 

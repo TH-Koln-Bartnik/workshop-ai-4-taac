@@ -139,7 +139,7 @@ BPMN-Modellierung (40 Min) und UiPath-Bot (40 Min) trainieren das technische Ver
 ::: callout-tip
 ## Tutor öffnen
 
-[Tutor — KI in Tax, Audit & Advisory →](https://chatgpt.com/g/PLATZHALTER-TUTOR-URL){target="_blank"}
+[Tutor — KI in Tax, Audit & Advisory →](https://chatgpt.com/g/g-6a03076b4da88191b9e9ae9580a0c2ce-ki-tutor-fur-workshop-auditing-tax-advisory){target="_blank"}
 
 Vorschlag-Prompt für diesen Workshop:
 

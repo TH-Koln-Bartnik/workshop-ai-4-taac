@@ -2,16 +2,23 @@ project:
   type: book
   output-dir: docs
 
+  # Render-Liste: Buch-Kapitel werden über book.chapters gerendert.
+  # Slides separat einbinden, damit sie nicht als Buch-Kapitel interpretiert werden.
+  render:
+    - "*.qmd"
+    - "parts/*.qmd"
+    - "appendix/*.qmd"
+    - "slides/*.qmd"
+
 # Installation der deutschen Silbentrennung für Latex, für die PDF-Generierung. Kann weggelassen werden, wenn das schon installiert ist.
 #  pre-render:
-#    - bash tools/setup-latex.sh 
+#    - bash tools/setup-latex.sh
 
   resources:
     - "interactions/**"
     - "images/**"
     - "data/**"
     - "handouts/**"
-    - "slides/**"
     - ".nojekyll"
 
 book:
@@ -46,10 +53,6 @@ book:
       chapters:
         - parts/05-hausaufgaben.qmd
         - parts/06-wissensbasis.qmd
-    - part: "Foliensätze"
-      chapters:
-        - href: slides/intro-vorstellung.html
-          text: "Intro — KI in TAAC"
     - part: "Anhang"
       chapters:
         - appendix/quickstart.qmd
