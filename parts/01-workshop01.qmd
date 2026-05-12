@@ -42,7 +42,7 @@ Begrüßung, Lernziele, Hinweis auf den Tutor, kurze Verständigung über Vorerf
 
 :::: week-card
 ::: card-header
-🟦 Block 1 — Process vs. Cognitive Automation · 10 Min
+🟦 Block 1 — Process vs. Cognitive Automation · 10 Min · [▶ Folien](../slides/01-process-vs-cognitive.html){.assignment-badge target="_blank"}
 :::
 
 **Process Automation** — regelbasiertes Abarbeiten strukturierter Workflows ohne Verstehen. **Cognitive Automation** — KI-gestütztes Schließen, Klassifizieren, Zusammenfassen unstrukturierter Inhalte. Das *Service-Automation-Continuum* nach @lacity2021becoming und @willcocks2024evolution ordnet beide Kategorien plus *Intelligent Automation* als orchestrierende Schicht in eine kohärente Sourcing-Strategie ein.
@@ -56,7 +56,7 @@ Drei Verankerungs-Beispiele aus Tax/Audit: Bank-zu-SAP-Abstimmung (Process); sem
 
 :::: week-card
 ::: card-header
-🟦 Block 2 — 4D-Framework Kurzdurchlauf · 7 Min
+🟦 Block 2 — 4D-Framework Kurzdurchlauf · 7 Min · [▶ Folien](../slides/02-4d-framework.html){.assignment-badge target="_blank"}
 :::
 
 Vier Kernkompetenzen, je drei Subkategorien nach @dakan2025framework. **Delegate** (Problem-, Platform-, Task-Awareness) · **Describe** (Product-, Process-, Performance-Description) · **Discern** (Product-, Process-, Performance-Discernment) · **Diligence** (Creation-, Transparency-, Deployment-Diligence). Zwei Loops: *Delegate–Diligence* (strategisch), *Describe–Discern* (operativ). Heute behandeln wir Delegate, Describe und Discern in dieser Reihenfolge; Diligence wird morgen vertieft.
@@ -64,7 +64,7 @@ Vier Kernkompetenzen, je drei Subkategorien nach @dakan2025framework. **Delegate
 
 :::: week-card
 ::: card-header
-🟦 Block 3 — Delegate: Modell, Harness, agentische Nutzung · 12 Min
+🟦 Block 3 — Delegate: Modell, Harness, agentische Nutzung · 12 Min · [▶ Folien](../slides/03-delegate.html){.assignment-badge target="_blank"}
 :::
 
 Drei Konfigurationen sauber trennen:
@@ -91,7 +91,7 @@ Die didaktische Pointe: Wer Aufgaben delegieren will, muss wissen, in welcher de
 
 :::: week-card
 ::: card-header
-🟦 Block 4 — Describe: RTF und CREATE · 12 Min
+🟦 Block 4 — Describe: RTF und CREATE · 12 Min · [▶ Folien](../slides/04-describe.html){.assignment-badge target="_blank"}
 :::
 
 Leitanalogie: Der Chatbot ist eher ein junger Nachhilfeschüler als ein Taschenrechner — er versteht Anweisungen, braucht Kontext, möchte gezeigt bekommen, was Sie wollen, und wird mit Beispielen besser. Inhaltlicher Anker: das Kapitel *How to speak* aus dem begleitenden Lehrbuch [@bartnik2026genai4teaching].
@@ -106,7 +106,7 @@ Zwei Schemata:
 
 :::: week-card
 ::: card-header
-🟦 Block 5 — Discern: Outputs systematisch prüfen · 12 Min
+🟦 Block 5 — Discern: Outputs systematisch prüfen · 12 Min · [▶ Folien](../slides/05-discern.html){.assignment-badge target="_blank"}
 :::
 
 Zwei Ideen, eine Übersetzung auf Tax/Audit:
@@ -144,6 +144,19 @@ Diagnose-Quiz erneut durchlaufen, Pre/Post-Vergleich als Spinnen- oder Balken-Di
 [Übung 1 — Diagnose-Quiz](02-uebungen-w1.qmd#sec-uebung-1){.assignment-badge} [Übung 2 — Karriereentwicklung](02-uebungen-w1.qmd#sec-uebung-2){.assignment-badge} [Übung 3 — Prompt-Umbau und Tutor-Bot](02-uebungen-w1.qmd#sec-uebung-3){.assignment-badge} [Übung 4 — Tutor-Bot systematisch prüfen](02-uebungen-w1.qmd#sec-uebung-4){.assignment-badge}
 
 Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine **Erweiterungsfrage für schnelle Studierende** — wer früh fertig ist, vertieft, statt zu warten.
+:::
+
+## Hausaufgabe zum Folgetag
+
+Für Workshop 2 brauchen Sie zwei kostenfreie Accounts. Bitte vor der Sitzung am Mittwoch einrichten — beides dauert jeweils etwa fünf Minuten.
+
+::: callout-note
+## Zwei Accounts vor Workshop 2
+
+- **Signavio Academic Edition** — Account anlegen unter <https://academic.signavio.com/p/explorer>. Wird in Workshop 2 für die BPMN-Modellierung des Rechnungseingangsprozesses genutzt. Hochschul-E-Mail-Adresse wird empfohlen, kostenfrei, kein Download nötig.
+- **UiPath Cloud** — Account anlegen unter <https://cloud.uipath.com/>. Wird für das Lesen und Anpassen des Excel-zu-PDF-Bots genutzt. Free-Tier reicht; *Studio Web* läuft direkt im Browser, kein lokales Studio nötig.
+
+**Bitte zu Workshop 2 mitbringen:** beide Logins (E-Mail und Passwort gespeichert oder im Browser eingeloggt). Wer keinen Account anlegen kann, schaut beim Sitznachbarn mit — verpasst aber das Hands-on.
 :::
 
 ## Hintergrund / Werkzeuge / Ressourcen
