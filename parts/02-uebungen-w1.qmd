@@ -57,7 +57,7 @@ Klassifikations-Score · Begründungstiefe für strittige Items · Bereitschaft 
 ### Was, wenn …
 
 ::: callout-warning
-- **Score deutlich unter 60 %?** → Lacity-Willcocks-Definition noch einmal nachschlagen in der [Wissensbasis · LLM-Grundlagen](06-wissensbasis.qmd#sec-llm-grundlagen). Re-Test am Workshop-Ende.
+- **Score deutlich unter 60 %?** → Lacity-Willcocks-Definition noch einmal nachschlagen in der [Wissensbasis · LLM-Grundlagen](06-wissensbasis.qmd#sec-llm-grundlagen). Die strittigen Items in der Plenum-Auflösung benennen, damit wir sie gemeinsam aufrollen.
 - **Mehrere Items als „Nicht anwendbar" markiert?** → Prüfen Sie, ob „Nicht anwendbar" wirklich bedeutet, dass die Tätigkeit nicht automatisierbar ist — oder nur, dass sie hybride Anteile enthält.
 :::
 

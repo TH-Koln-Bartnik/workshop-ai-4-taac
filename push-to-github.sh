@@ -5,16 +5,16 @@
 
 set -euo pipefail
 
-REPO_URL="https://github.com/TH-Koln-Bartnik/workshop-ki-4-taa.git"
+REPO_URL="https://github.com/TH-Koln-Bartnik/workshop-ai-4-taac.git"
 PROJ_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "==> Projektordner: $PROJ_DIR"
 cd "$PROJ_DIR"
 
 # 1) Verwaisten Sub-Klon entfernen, falls vorhanden
-if [ -d "workshop-ki-4-taa" ]; then
-  echo "==> Entferne verwaisten Sub-Klon workshop-ki-4-taa/ ..."
-  rm -rf "workshop-ki-4-taa"
+if [ -d "workshop-ai-4-taac" ]; then
+  echo "==> Entferne verwaisten Sub-Klon workshop-ai-4-taac/ ..."
+  rm -rf "workshop-ai-4-taac"
 fi
 
 # 2) Git-Repo initialisieren (idempotent)
@@ -61,5 +61,5 @@ Fertig. Auf GitHub unter Settings -> Pages pruefen:
   Branch: main, Folder: /docs
 
 Pages-URL nach 1 - 2 Minuten:
-  https://th-koln-bartnik.github.io/workshop-ki-4-taa/
+  https://th-koln-bartnik.github.io/workshop-ai-4-taac/
 EOF

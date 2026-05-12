@@ -22,7 +22,7 @@ book:
   date: "2026-05-12"
   date-format: "DD.MM.YYYY"
   search: true
-  repo-url: "https://github.com/TH-Koln-Bartnik/workshop-ki-4-taa"
+  repo-url: "https://github.com/TH-Koln-Bartnik/workshop-ai-4-taac"
   repo-actions: [edit, issue]
   downloads: [pdf]
   sharing: [linkedin]

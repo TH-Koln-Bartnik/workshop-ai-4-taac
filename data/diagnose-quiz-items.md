@@ -39,7 +39,7 @@ Drei Leitfragen für die drei Minuten Plenum-Auflösung:
 
 ## Anbindung an das Widget
 
-Das bestehende Widget unter `interactions/diagnose-quiz.html` wird auf zehn Items reduziert. Antwortoptionen pro Item: **Process Automation · Cognitive Automation · Nicht anwendbar**. Auswertung als Spinnen- oder Balken-Diagramm mit Pre- und Post-Vergleich am Workshop-Ende.
+Das Widget unter `interactions/diagnose-quiz.html` enthält genau diese zehn Items. Antwortoptionen pro Item: **Process Automation · Cognitive Automation · Nicht anwendbar**. Auswertung am Ende des Quiz als Balken-Diagramm und Item-für-Item-Tabelle. Das Quiz wird **einmal** in Übung 1 durchlaufen (kein Re-Test, kein Pre/Post-Vergleich). Markdown-Export der eigenen Antworten als Mitnahme.
 
 ## Quellen
 

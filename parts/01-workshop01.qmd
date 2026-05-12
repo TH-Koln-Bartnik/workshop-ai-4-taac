@@ -113,10 +113,10 @@ Zwei Ideen, eine Übersetzung auf Tax/Audit:
 
 :::: week-card
 ::: card-header
-🟧 Block 6 — Abschluss: Diagnose-Quiz Re-Test und Brücke zu Tag 2 · 9 Min
+🟧 Block 6 — Abschluss und Brücke zu Tag 2 · 9 Min
 :::
 
-Diagnose-Quiz erneut durchlaufen, Pre/Post-Vergleich als Spinnen- oder Balken-Diagramm. Brücke zu Workshop 2 (Mittwoch, 13.05.): **Diligence** als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.
+Kurzer Rückblick auf die vier Übungen: Welche der drei Konfigurationen (LLM allein, erweitertes LLM, Agent) ist Ihnen heute am vertrautesten geworden? Welche Test-Frage aus Übung 4 würde morgen im echten Berufsalltag bestehen? Brücke zu Workshop 2 (Mittwoch, 13.05.): **Diligence** als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.
 ::::
 
 ## Diskussionsfragen

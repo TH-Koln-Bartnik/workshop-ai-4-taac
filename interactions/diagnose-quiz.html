@@ -65,36 +65,6 @@
   }
   .lernziel-box ul { margin: 0.25rem 0 0 1.25rem; padding: 0; }
 
-  .mode-banner {
-    display: inline-block;
-    padding: 0.3rem 0.7rem;
-    margin-bottom: 1rem;
-    background: var(--th-magenta);
-    color: var(--paper);
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-  .mode-banner.post { background: var(--th-orange); }
-
-  .mode-toggle {
-    display: flex; gap: 0.5rem; margin: 1rem 0 1.5rem 0;
-    flex-wrap: wrap;
-  }
-  .mode-toggle button {
-    background: var(--paper);
-    color: var(--ink);
-    border: 1px solid var(--gray-200);
-    padding: 0.5rem 1rem;
-    font-family: inherit; font-size: 0.9rem;
-    cursor: pointer;
-    border-radius: 0;
-  }
-  .mode-toggle button.active {
-    background: var(--ink); color: var(--paper);
-    border-color: var(--ink);
-  }
-
   .progress {
     margin: 1rem 0; display: flex; gap: 1rem; align-items: center;
     font-size: 0.85rem; color: var(--gray-500);
@@ -147,9 +117,6 @@
     cursor: pointer; border-radius: 0;
   }
   .nav-row button:disabled { opacity: 0.4; cursor: not-allowed; }
-  .nav-row button.primary {
-    background: var(--ink); color: var(--paper); border-color: var(--ink);
-  }
 
   .stat-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
@@ -202,9 +169,6 @@
   .button-row button.primary {
     background: var(--ink); color: var(--paper); border-color: var(--ink);
   }
-  .button-row button.danger {
-    background: var(--paper); color: var(--th-red); border-color: var(--th-red);
-  }
 
   footer {
     border-top: 1px solid var(--gray-200);
@@ -226,7 +190,7 @@
 
 <header>
   <h1>Diagnose-Quiz — Process vs. Cognitive Automation</h1>
-  <div class="meta">Workshop „KI in Tax, Audit &amp; Advisory" · TH Köln · Stand 09.05.2026</div>
+  <div class="meta">Workshop „KI in Tax, Audit &amp; Advisory" · TH Köln · Übung 1, Workshop 1</div>
 </header>
 
 <main>
@@ -235,22 +199,14 @@
   <h4>Was Sie nach diesem Quiz haben</h4>
   <ul>
     <li>eine Selbsteinschätzung Ihrer Klassifikations-Fähigkeit für zehn typische Tätigkeiten,</li>
-    <li>eine Vergleichsbasis für den Re-Test am Workshop-Ende (Pre/Post),</li>
-    <li>ein Markdown-Export Ihrer Antworten plus Begründungen zur Mitnahme in den Workshop.</li>
+    <li>Item-für-Item-Abgleich mit der Lehr-Referenz und Begründungen zum Nachlesen,</li>
+    <li>einen Markdown-Export Ihrer Antworten zur Mitnahme ins Plenum und in die eigenen Notizen.</li>
   </ul>
 </div>
 
-<p>Klassifizieren Sie zehn Tätigkeiten aus dem Berufsalltag von <em>Accountants and Auditors</em> in eine der drei Kategorien: <strong>Process Automation</strong>, <strong>Cognitive Automation</strong> oder <strong>Nicht anwendbar</strong>. Pro Item wenige Sekunden — spontane Einschätzung, keine Recherche.</p>
+<p>Klassifizieren Sie zehn Tätigkeiten aus dem Berufsalltag von <em>Accountants and Auditors</em> in eine der drei Kategorien: <strong>Process Automation</strong>, <strong>Cognitive Automation</strong> oder <strong>Nicht anwendbar</strong>. Pro Item wenige Sekunden — spontane Einschätzung, keine Recherche. Das Quiz wird einmal durchlaufen.</p>
 
-<div id="mode-banner" class="mode-banner">Pre-Run · vor Workshop 1</div>
-
-<div class="mode-toggle">
-  <button id="btn-mode-pre" class="active" onclick="setMode('pre')">Pre-Run (vor dem Workshop)</button>
-  <button id="btn-mode-post" onclick="setMode('post')">Post-Run (nach dem Workshop)</button>
-  <button id="btn-reset" onclick="resetAll()" style="margin-left:auto;color:var(--th-red);border-color:var(--th-red);">Alles zurücksetzen</button>
-</div>
-
-<section id="quiz" hidden>
+<section id="quiz">
   <div class="progress">
     <span id="progress-text">Item 1 von 10</span>
     <div class="progress-bar"><div id="progress-fill" class="progress-fill" style="width:10%"></div></div>
@@ -280,7 +236,7 @@
   <h3>Verteilung Ihrer Antworten</h3>
   <canvas id="dist-chart" height="120"></canvas>
 
-  <h3 id="compare-heading">Item für Item</h3>
+  <h3>Item für Item</h3>
   <table>
     <thead>
       <tr>
@@ -298,13 +254,6 @@
     <button class="primary" onclick="exportMarkdown()">Markdown-Export</button>
     <button onclick="restart()">Quiz erneut starten</button>
   </div>
-
-  <div id="post-comparison" hidden>
-    <h2>Pre/Post-Vergleich</h2>
-    <p>Wo hat sich Ihre Einschätzung zwischen Pre-Run und Post-Run verändert? Welche Items haben Sie umgewertet?</p>
-    <canvas id="pre-post-chart" height="120"></canvas>
-    <div id="changes-list"></div>
-  </div>
 </section>
 
 </main>
@@ -315,104 +264,93 @@
 
 <script>
 // ============================================================
-//   Items
+//   Items — Strings als Template Literals (Backticks), damit
+//   typografische Anführungszeichen „…" und englische "…"
+//   problemlos enthalten sein dürfen.
 // ============================================================
 const ITEMS = [
-  { id: 1, text: "E-Mails eines Sammelpostfachs nach Lieferantenname in vordefinierte Ordner sortieren.",
-    ref: "Process",
-    rationale: "Strukturierter Eingangstrigger, eindeutige Regel, deterministische Ausführung. Klassisches RPA." },
-  { id: 2, text: "Aus einem 40-seitigen Vertrag die zahlungsrelevanten Klauseln identifizieren und extrahieren.",
-    ref: "Cognitive",
-    rationale: "Unstrukturierter Text, semantische Klassifikation, Kontextabhängigkeit. Erfordert ein Sprachmodell." },
-  { id: 3, text: "Aus 200 Lohnbuchungen die Lohnsteuerabzüge nach geltendem Steuerklassen-Algorithmus berechnen.",
-    ref: "Process",
-    rationale: "Klar definierte Regeln, deterministische Berechnung, strukturierte Eingangsdaten." },
-  { id: 4, text: "Bei einem Mandantenanruf das Anliegen erfassen und an die zuständige Abteilung weiterleiten.",
-    ref: "Cognitive",
-    rationale: "Natürliche Sprache, Mehrdeutigkeit, Intent-Klassifikation. RPA scheitert an unstrukturierter Eingabe." },
-  { id: 5, text: "Eine Stellungnahme zu einer ungewöhnlichen Strukturierung im internationalen Steuerrecht entwerfen, deren Lösung im Gesetzeswortlaut nicht eindeutig vorgezeichnet ist.",
-    ref: "NotApp",
-    rationale: "Berufsrechtlicher Urteilskern. Weder regelbasiert noch durch ein generatives System verantwortbar — höchstens unterstützend." },
-  { id: 6, text: "Aus 500 Eingangsrechnungen jene identifizieren, denen die USt-ID-Nr. fehlt oder die syntaktisch ungültig ist.",
-    ref: "Process",
-    rationale: "Regelbasierte Validierung gegen Schema. Eindeutige Ja/Nein-Prüfung." },
-  { id: 7, text: "In einer Mandantendatenbank Schreibvariante-Duplikate finden (etwa \"Müller GmbH\" vs. \"Mueller G.m.b.H.\" vs. \"Müller Gesellschaft mit beschränkter Haftung\").",
-    ref: "Cognitive",
-    rationale: "Fuzzy-Match, semantische Ähnlichkeit. Deterministische String-Vergleiche scheitern an Varianten." },
-  { id: 8, text: "Strategische Empfehlungen für die Mandantenakquise im Mittelstand für die nächsten drei Jahre formulieren.",
-    ref: "NotApp",
-    rationale: "Strategisches Urteil mit Verantwortungs- und Risikodimension. Kein automatisierbarer Workflow." },
-  { id: 9, text: "Aus gescannten PDF-Eingangsrechnungen die Rechnungspositionen per OCR erkennen und in ein ERP-System einspielen.",
-    ref: "Cognitive",
-    rationale: "Bilderkennung plus Klassifikation = Cognitive. Das anschließende Einspielen ist Process — bewusster Hybrid-Fall zur Diskussion." },
-  { id: 10, text: "Aus einem Excel-Auszug die Top-10-Kunden nach Umsatz herausfiltern und in eine PowerPoint-Tabellenfolie übertragen.",
-    ref: "Process",
-    rationale: "Strukturierte Eingangsdaten, klar definierte Aggregation, deterministischer Output." }
+  { id: 1,
+    text: `E-Mails eines Sammelpostfachs nach Lieferantenname in vordefinierte Ordner sortieren.`,
+    ref: `Process`,
+    rationale: `Strukturierter Eingangstrigger, eindeutige Regel, deterministische Ausführung. Klassisches RPA.` },
+  { id: 2,
+    text: `Aus einem 40-seitigen Vertrag die zahlungsrelevanten Klauseln identifizieren und extrahieren.`,
+    ref: `Cognitive`,
+    rationale: `Unstrukturierter Text, semantische Klassifikation, Kontextabhängigkeit. Erfordert ein Sprachmodell.` },
+  { id: 3,
+    text: `Aus 200 Lohnbuchungen die Lohnsteuerabzüge nach geltendem Steuerklassen-Algorithmus berechnen.`,
+    ref: `Process`,
+    rationale: `Klar definierte Regeln, deterministische Berechnung, strukturierte Eingangsdaten.` },
+  { id: 4,
+    text: `Bei einem Mandantenanruf das Anliegen erfassen und an die zuständige Abteilung weiterleiten.`,
+    ref: `Cognitive`,
+    rationale: `Natürliche Sprache, Mehrdeutigkeit, Intent-Klassifikation. RPA scheitert an unstrukturierter Eingabe.` },
+  { id: 5,
+    text: `Eine Stellungnahme zu einer ungewöhnlichen Strukturierung im internationalen Steuerrecht entwerfen, deren Lösung im Gesetzeswortlaut nicht eindeutig vorgezeichnet ist.`,
+    ref: `NotApp`,
+    rationale: `Berufsrechtlicher Urteilskern. Weder regelbasiert noch durch ein generatives System verantwortbar — höchstens unterstützend.` },
+  { id: 6,
+    text: `Aus 500 Eingangsrechnungen jene identifizieren, denen die USt-ID-Nr. fehlt oder die syntaktisch ungültig ist.`,
+    ref: `Process`,
+    rationale: `Regelbasierte Validierung gegen Schema. Eindeutige Ja/Nein-Prüfung.` },
+  { id: 7,
+    text: `In einer Mandantendatenbank Schreibvariante-Duplikate finden (etwa „Müller GmbH" vs. „Mueller G.m.b.H." vs. „Müller Gesellschaft mit beschränkter Haftung").`,
+    ref: `Cognitive`,
+    rationale: `Fuzzy-Match, semantische Ähnlichkeit. Deterministische String-Vergleiche scheitern an Varianten.` },
+  { id: 8,
+    text: `Strategische Empfehlungen für die Mandantenakquise im Mittelstand für die nächsten drei Jahre formulieren.`,
+    ref: `NotApp`,
+    rationale: `Strategisches Urteil mit Verantwortungs- und Risikodimension. Kein automatisierbarer Workflow.` },
+  { id: 9,
+    text: `Aus gescannten PDF-Eingangsrechnungen die Rechnungspositionen per OCR erkennen und in ein ERP-System einspielen.`,
+    ref: `Cognitive`,
+    rationale: `Bilderkennung plus Klassifikation = Cognitive. Das anschließende Einspielen ist Process — bewusster Hybrid-Fall zur Diskussion.` },
+  { id: 10,
+    text: `Aus einem Excel-Auszug die Top-10-Kunden nach Umsatz herausfiltern und in eine PowerPoint-Tabellenfolie übertragen.`,
+    ref: `Process`,
+    rationale: `Strukturierte Eingangsdaten, klar definierte Aggregation, deterministischer Output.` }
 ];
 
-const LABELS = { Process: "Process Automation", Cognitive: "Cognitive Automation", NotApp: "Nicht anwendbar" };
-const COLORS = { Process: "#c81e0f", Cognitive: "#b43092", NotApp: "#ea5a00" };
-const STORAGE_KEY = "diagnose-quiz-results-v1";
+const LABELS = {
+  Process:   `Process Automation`,
+  Cognitive: `Cognitive Automation`,
+  NotApp:    `Nicht anwendbar`
+};
+const COLORS = {
+  Process:   `#c81e0f`,
+  Cognitive: `#b43092`,
+  NotApp:    `#ea5a00`
+};
 
 // ============================================================
-//   State
+//   State — bewusst ohne localStorage. Pro Seitenaufruf
+//   ein Durchlauf, Reset durch Reload oder „Quiz erneut starten".
 // ============================================================
-let state = {
-  mode: "pre",
+const state = {
   currentIndex: 0,
   answers: {}
 };
-
-// Load previous runs from localStorage
-let runs = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-// runs = { pre: { answers: {...}, completedAt: "..." }, post: {...} }
 
 // ============================================================
 //   Init
 // ============================================================
 function init() {
-  updateModeBanner();
-  startQuiz();
-}
-
-function setMode(mode) {
-  state.mode = mode;
-  state.currentIndex = 0;
-  state.answers = {};
-  document.getElementById("btn-mode-pre").classList.toggle("active", mode === "pre");
-  document.getElementById("btn-mode-post").classList.toggle("active", mode === "post");
-  updateModeBanner();
-  startQuiz();
-}
-
-function updateModeBanner() {
-  const b = document.getElementById("mode-banner");
-  if (state.mode === "pre") {
-    b.textContent = "Pre-Run · vor Workshop 1";
-    b.classList.remove("post");
-  } else {
-    b.textContent = "Post-Run · nach Workshop 1";
-    b.classList.add("post");
-  }
-}
-
-function startQuiz() {
-  document.getElementById("quiz").hidden = false;
-  document.getElementById("results").hidden = true;
   showItem();
 }
 
 function showItem() {
+  document.getElementById(`quiz`).hidden = false;
+  document.getElementById(`results`).hidden = true;
   const i = state.currentIndex;
   const item = ITEMS[i];
-  document.getElementById("item-text").textContent = item.text;
+  document.getElementById(`item-text`).textContent = item.text;
   const pct = Math.round(((i + 1) / ITEMS.length) * 100);
-  document.getElementById("progress-text").textContent = "Item " + (i + 1) + " von " + ITEMS.length;
-  document.getElementById("progress-pct").textContent = pct + " %";
-  document.getElementById("progress-fill").style.width = pct + "%";
-  document.getElementById("btn-prev").disabled = (i === 0);
-  document.getElementById("btn-skip").textContent =
-    (i === ITEMS.length - 1) ? "Auswertung ›" : "Überspringen ›";
+  document.getElementById(`progress-text`).textContent = `Item ` + (i + 1) + ` von ` + ITEMS.length;
+  document.getElementById(`progress-pct`).textContent = pct + ` %`;
+  document.getElementById(`progress-fill`).style.width = pct + `%`;
+  document.getElementById(`btn-prev`).disabled = (i === 0);
+  document.getElementById(`btn-skip`).textContent =
+    (i === ITEMS.length - 1) ? `Auswertung ›` : `Überspringen ›`;
 }
 
 function chooseAnswer(choice) {
@@ -426,7 +364,7 @@ function next() {
     state.currentIndex++;
     showItem();
   } else {
-    finish();
+    showResults();
   }
 }
 
@@ -442,62 +380,31 @@ function skipItem() { next(); }
 function restart() {
   state.currentIndex = 0;
   state.answers = {};
-  startQuiz();
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-function resetAll() {
-  if (!confirm("Wirklich Pre- und Post-Run vollständig löschen?")) return;
-  localStorage.removeItem(STORAGE_KEY);
-  runs = {};
-  state.mode = "pre";
-  state.currentIndex = 0;
-  state.answers = {};
-  document.getElementById("btn-mode-pre").classList.add("active");
-  document.getElementById("btn-mode-post").classList.remove("active");
-  updateModeBanner();
-  startQuiz();
+  showItem();
+  window.scrollTo({ top: 0, behavior: `smooth` });
 }
 
 // ============================================================
-//   Finish: persist + show results
+//   Results
 // ============================================================
-function finish() {
-  runs[state.mode] = {
-    answers: { ...state.answers },
-    completedAt: new Date().toISOString()
-  };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(runs));
-  showResults();
-}
-
 function showResults() {
-  document.getElementById("quiz").hidden = true;
-  document.getElementById("results").hidden = false;
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.getElementById(`quiz`).hidden = true;
+  document.getElementById(`results`).hidden = false;
+  window.scrollTo({ top: 0, behavior: `smooth` });
 
   const totals = countAnswers(state.answers);
   const matchCount = ITEMS.filter(it => state.answers[it.id] === it.ref).length;
   const answered = Object.keys(state.answers).length;
   const matchPct = answered > 0 ? Math.round((matchCount / answered) * 100) : 0;
 
-  const grid = document.getElementById("stats");
-  grid.innerHTML = "";
-  grid.appendChild(statCard(answered + " / " + ITEMS.length, "beantwortet"));
-  grid.appendChild(statCard(matchCount, "Treffer gegenüber Referenz"));
-  grid.appendChild(statCard(matchPct + " %", "Match-Quote"));
+  const grid = document.getElementById(`stats`);
+  grid.innerHTML = ``;
+  grid.appendChild(statCard(answered + ` / ` + ITEMS.length, `beantwortet`));
+  grid.appendChild(statCard(String(matchCount), `Treffer gegenüber Referenz`));
+  grid.appendChild(statCard(matchPct + ` %`, `Match-Quote`));
 
   drawDistChart(totals);
   drawComparisonTable();
-
-  // Pre/Post Vergleich
-  if (runs.pre && runs.post) {
-    document.getElementById("post-comparison").hidden = false;
-    drawPrePostChart();
-    drawChangesList();
-  } else {
-    document.getElementById("post-comparison").hidden = true;
-  }
 }
 
 function countAnswers(answers) {
@@ -507,20 +414,27 @@ function countAnswers(answers) {
 }
 
 function statCard(num, label) {
-  const div = document.createElement("div");
-  div.className = "stat-card";
-  div.innerHTML = '<div class="stat-num">' + num + '</div><div class="stat-label">' + label + '</div>';
+  const div = document.createElement(`div`);
+  div.className = `stat-card`;
+  const n = document.createElement(`div`);
+  n.className = `stat-num`;
+  n.textContent = num;
+  const l = document.createElement(`div`);
+  l.className = `stat-label`;
+  l.textContent = label;
+  div.appendChild(n);
+  div.appendChild(l);
   return div;
 }
 
 function drawDistChart(totals) {
-  const ctx = document.getElementById("dist-chart").getContext("2d");
-  const labels = ["Process Automation", "Cognitive Automation", "Nicht anwendbar"];
+  const ctx = document.getElementById(`dist-chart`).getContext(`2d`);
+  const labels = [LABELS.Process, LABELS.Cognitive, LABELS.NotApp];
   const data = [totals.Process || 0, totals.Cognitive || 0, totals.NotApp || 0];
   const bg = [COLORS.Process, COLORS.Cognitive, COLORS.NotApp];
   if (window._distChart) window._distChart.destroy();
   window._distChart = new Chart(ctx, {
-    type: "bar",
+    type: `bar`,
     data: { labels: labels, datasets: [{ data: data, backgroundColor: bg, borderRadius: 0 }] },
     options: {
       responsive: true,
@@ -531,126 +445,110 @@ function drawDistChart(totals) {
 }
 
 function drawComparisonTable() {
-  const tbody = document.getElementById("comparison-body");
-  tbody.innerHTML = "";
+  const tbody = document.getElementById(`comparison-body`);
+  tbody.innerHTML = ``;
   ITEMS.forEach(it => {
     const ans = state.answers[it.id];
-    const tr = document.createElement("tr");
-    tr.innerHTML =
-      "<td>" + it.id + "</td>" +
-      "<td>" + escapeHTML(it.text) +
-        "<details><summary>Begründung Referenz</summary>" + escapeHTML(it.rationale) + "</details></td>" +
-      "<td>" + (ans ? pill(ans) : '<span class="match-na">—</span>') + "</td>" +
-      "<td>" + pill(it.ref) + "</td>" +
-      "<td>" + matchCell(ans, it.ref) + "</td>";
+    const tr = document.createElement(`tr`);
+
+    const tdId = document.createElement(`td`);
+    tdId.textContent = String(it.id);
+    tr.appendChild(tdId);
+
+    const tdText = document.createElement(`td`);
+    tdText.textContent = it.text;
+    const det = document.createElement(`details`);
+    const sum = document.createElement(`summary`);
+    sum.textContent = `Begründung Referenz`;
+    det.appendChild(sum);
+    det.appendChild(document.createTextNode(it.rationale));
+    tdText.appendChild(det);
+    tr.appendChild(tdText);
+
+    const tdAns = document.createElement(`td`);
+    if (ans) tdAns.appendChild(pillEl(ans));
+    else { const s = document.createElement(`span`); s.className = `match-na`; s.textContent = `—`; tdAns.appendChild(s); }
+    tr.appendChild(tdAns);
+
+    const tdRef = document.createElement(`td`);
+    tdRef.appendChild(pillEl(it.ref));
+    tr.appendChild(tdRef);
+
+    const tdMatch = document.createElement(`td`);
+    tdMatch.appendChild(matchEl(ans, it.ref));
+    tr.appendChild(tdMatch);
+
     tbody.appendChild(tr);
   });
 }
 
-function pill(c) {
-  const cls = "pill-" + c.toLowerCase();
-  return '<span class="pill ' + cls + '">' + LABELS[c] + "</span>";
+function pillEl(c) {
+  const span = document.createElement(`span`);
+  span.className = `pill pill-` + c.toLowerCase();
+  span.textContent = LABELS[c];
+  return span;
 }
 
-function matchCell(ans, ref) {
-  if (!ans) return '<span class="match-na">nicht beantwortet</span>';
-  if (ans === ref) return '<span class="match-yes">✓ Match</span>';
-  return '<span class="match-no">✗ abweichend</span>';
-}
-
-function drawPrePostChart() {
-  const pre = countAnswers(runs.pre.answers);
-  const post = countAnswers(runs.post.answers);
-  const ctx = document.getElementById("pre-post-chart").getContext("2d");
-  const labels = ["Process Automation", "Cognitive Automation", "Nicht anwendbar"];
-  if (window._prePostChart) window._prePostChart.destroy();
-  window._prePostChart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: labels,
-      datasets: [
-        { label: "Pre",  data: [pre.Process || 0, pre.Cognitive || 0, pre.NotApp || 0], backgroundColor: "#6b6b73", borderRadius: 0 },
-        { label: "Post", data: [post.Process || 0, post.Cognitive || 0, post.NotApp || 0], backgroundColor: COLORS.Process, borderRadius: 0 }
-      ]
-    },
-    options: {
-      responsive: true,
-      plugins: { legend: { position: "top" } },
-      scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } }
-    }
-  });
-}
-
-function drawChangesList() {
-  const ul = document.createElement("ul");
-  ITEMS.forEach(it => {
-    const pre  = runs.pre.answers[it.id];
-    const post = runs.post.answers[it.id];
-    if (pre && post && pre !== post) {
-      const li = document.createElement("li");
-      li.innerHTML = "Item " + it.id + " — " + escapeHTML(it.text.substring(0, 80)) + "… · " +
-                     pill(pre) + " → " + pill(post) + " · Referenz: " + pill(it.ref);
-      ul.appendChild(li);
-    }
-  });
-  if (!ul.children.length) {
-    const p = document.createElement("p");
-    p.textContent = "Keine Antwort wurde zwischen Pre und Post umgewertet.";
-    p.className = "match-na";
-    document.getElementById("changes-list").innerHTML = "";
-    document.getElementById("changes-list").appendChild(p);
-  } else {
-    document.getElementById("changes-list").innerHTML = "";
-    document.getElementById("changes-list").appendChild(ul);
-  }
-}
-
-function escapeHTML(s) {
-  return String(s).replace(/[&<>"']/g, c => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
-  })[c]);
+function matchEl(ans, ref) {
+  const span = document.createElement(`span`);
+  if (!ans) { span.className = `match-na`; span.textContent = `nicht beantwortet`; return span; }
+  if (ans === ref) { span.className = `match-yes`; span.textContent = `✓ Match`; return span; }
+  span.className = `match-no`; span.textContent = `✗ abweichend`; return span;
 }
 
 // ============================================================
-//   Markdown export
+//   Markdown export — Antworten als Mitnahme ins Plenum
 // ============================================================
 function exportMarkdown() {
   const totals = countAnswers(state.answers);
   const matchCount = ITEMS.filter(it => state.answers[it.id] === it.ref).length;
   const answered = Object.keys(state.answers).length;
   const matchPct = answered > 0 ? Math.round((matchCount / answered) * 100) : 0;
-  const modeLabel = state.mode === "pre" ? "Pre-Run (vor Workshop)" : "Post-Run (nach Workshop)";
 
-  let md = "# Diagnose-Quiz — Process vs. Cognitive Automation\n\n";
-  md += "*Workshop „KI in Tax, Audit & Advisory" · TH Köln · " + modeLabel + " · " + new Date().toLocaleDateString("de-DE") + "*\n\n";
-  md += "## Zusammenfassung\n\n";
-  md += "- Beantwortet: " + answered + " / " + ITEMS.length + "\n";
-  md += "- Treffer gegenüber Referenz: " + matchCount + "\n";
-  md += "- Match-Quote: " + matchPct + " %\n\n";
-  md += "## Verteilung\n\n";
-  md += "- Process Automation: " + (totals.Process || 0) + "\n";
-  md += "- Cognitive Automation: " + (totals.Cognitive || 0) + "\n";
-  md += "- Nicht anwendbar: " + (totals.NotApp || 0) + "\n\n";
-  md += "## Item für Item\n\n";
-  md += "| # | Tätigkeit | Eigene Wahl | Referenz | Match |\n";
-  md += "|---|-----------|-------------|----------|-------|\n";
+  const lines = [];
+  lines.push(`# Diagnose-Quiz — Process vs. Cognitive Automation`);
+  lines.push(``);
+  lines.push(`*Workshop „KI in Tax, Audit & Advisory" · TH Köln · ` + new Date().toLocaleDateString(`de-DE`) + `*`);
+  lines.push(``);
+  lines.push(`## Zusammenfassung`);
+  lines.push(``);
+  lines.push(`- Beantwortet: ` + answered + ` / ` + ITEMS.length);
+  lines.push(`- Treffer gegenüber Referenz: ` + matchCount);
+  lines.push(`- Match-Quote: ` + matchPct + ` %`);
+  lines.push(``);
+  lines.push(`## Verteilung`);
+  lines.push(``);
+  lines.push(`- Process Automation: ` + (totals.Process || 0));
+  lines.push(`- Cognitive Automation: ` + (totals.Cognitive || 0));
+  lines.push(`- Nicht anwendbar: ` + (totals.NotApp || 0));
+  lines.push(``);
+  lines.push(`## Item für Item`);
+  lines.push(``);
+  lines.push(`| # | Tätigkeit | Eigene Wahl | Referenz | Match |`);
+  lines.push(`|---|-----------|-------------|----------|-------|`);
   ITEMS.forEach(it => {
-    const ans = state.answers[it.id] || "—";
-    const match = !state.answers[it.id] ? "—" : (ans === it.ref ? "✓" : "✗");
-    md += "| " + it.id + " | " + it.text.replace(/\|/g, "\\|") + " | " + (ans !== "—" ? LABELS[ans] : "—") + " | " + LABELS[it.ref] + " | " + match + " |\n";
+    const ans = state.answers[it.id];
+    const ansLabel = ans ? LABELS[ans] : `—`;
+    const matchMark = !ans ? `—` : (ans === it.ref ? `✓` : `✗`);
+    const textCell = it.text.replace(/\|/g, `\\|`);
+    lines.push(`| ` + it.id + ` | ` + textCell + ` | ` + ansLabel + ` | ` + LABELS[it.ref] + ` | ` + matchMark + ` |`);
   });
-  md += "\n## Reflexions-Stichworte\n\n";
-  md += "_(eigene Notizen)_\n\n";
-  md += "1. Welches Item war für mich eindeutig, welches strittig?\n";
-  md += "2. Wo verläuft die Grenze, wenn Process und Cognitive in einem Workflow zusammenwirken?\n";
-  md += "3. Items 5 und 8 sind nicht anwendbar — wo verläuft diese Grenze in meiner eigenen Erfahrung?\n";
+  lines.push(``);
+  lines.push(`## Reflexions-Stichworte`);
+  lines.push(``);
+  lines.push(`_(eigene Notizen)_`);
+  lines.push(``);
+  lines.push(`1. Welches Item war für mich eindeutig, welches strittig?`);
+  lines.push(`2. Wo verläuft die Grenze, wenn Process und Cognitive in einem Workflow zusammenwirken?`);
+  lines.push(`3. Items 5 und 8 sind nicht anwendbar — wo verläuft diese Grenze in meiner eigenen Erfahrung?`);
 
-  const blob = new Blob([md], { type: "text/markdown;charset=utf-8" });
+  const md = lines.join(`\n`) + `\n`;
+  const blob = new Blob([md], { type: `text/markdown;charset=utf-8` });
   const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
+  const a = document.createElement(`a`);
   const ts = new Date().toISOString().slice(0, 10);
   a.href = url;
-  a.download = "diagnose-quiz-" + state.mode + "-" + ts + ".md";
+  a.download = `diagnose-quiz-` + ts + `.md`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);

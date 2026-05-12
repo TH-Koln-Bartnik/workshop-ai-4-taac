@@ -9,8 +9,8 @@ Schwerpunkt *KI in Tax, Audit & Advisory* an der TH Köln.
 
 Beide Termine: Campus Südstadt, Claudiusstraße 1.
 
-Repo: <https://github.com/TH-Koln-Bartnik/workshop-ki-4-taa>
-Pages: <https://th-koln-bartnik.github.io/workshop-ki-4-taa/>
+Repo: <https://github.com/TH-Koln-Bartnik/workshop-ai-4-taac>
+Pages: <https://th-koln-bartnik.github.io/workshop-ai-4-taac/>
 
 ## Bauen und veröffentlichen
 
