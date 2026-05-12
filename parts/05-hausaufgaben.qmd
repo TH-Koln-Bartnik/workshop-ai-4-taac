@@ -1,0 +1,103 @@
+---
+title: "Hausaufgaben nach Workshop 2"
+subtitle: "Übung 6 — Dilemma der Mitte · Übung 7 — Personal AI Policy"
+---
+
+::: th-color-bar
+:::
+
+::: lernziel-box
+#### Was Sie nach den Hausaufgaben können
+
+- ein **Diligence-Dilemma** der KI-Nutzung argumentativ einordnen und begründet Stellung beziehen,
+- eine **persönliche AI Policy** formulieren, die Delegation, Description, Discernment und Diligence in eigene Praxisregeln übersetzt.
+:::
+
+Beide Hausaufgaben sind die Capstone-Leistungen der Workshop-Reihe. Übung 6 ist ein **Positionspapier** zwischen 500 und 800 Wörtern. Übung 7 ist ein **Personal AI Policy**-Dokument als Capstone-Hausaufgabe.
+
+## Übung 6 — Das Dilemma der Mitte {#sec-uebung-6}
+
+**Modus:** Hausaufgabe nach Workshop 2 · **Format:** Positionspapier 500–800 Wörter · **4D-Bezug:** Diligence.
+
+### Ziel
+
+Ein konkretes **Dilemma der Mitte** beschreiben — also eine Situation, in der KI-Einsatz weder klar verboten noch klar geboten ist — und begründet Stellung beziehen.
+
+### Setup
+
+- Ein realistisches, aber **nicht-mandantenbezogenes** Dilemma aus Tax, Audit oder Advisory.
+- Material aus Workshop 1 (4D-Framework) und Workshop 2 (Discernment, Diligence).
+
+### Schritte
+
+1. *[Platzhalter — Detail-Schritte aus Handout-Übung 6 übernehmen.]*
+2. Dilemma in 3–5 Sätzen schildern.
+3. Argumente für KI-Einsatz auflisten (mind. drei).
+4. Argumente gegen KI-Einsatz auflisten (mind. drei).
+5. Begründete Position beziehen, mit Verweis auf mindestens **zwei** Quellen aus der Bibliographie.
+6. Eigene **Diligence-Regel** ableiten, die Sie aus diesem Fall übernehmen.
+
+### Deliverable
+
+Positionspapier 500–800 Wörter (PDF), formatiert nach APA, mit Quellenverzeichnis.
+
+### Bewertungskriterien
+
+Klarheit der Dilemma-Schilderung · Ausgewogenheit der Argumente · Begründungstiefe der Position · Übertragbarkeit der abgeleiteten Diligence-Regel · APA-konformes Zitieren.
+
+### Tutor-Prompt
+
+::: {.callout-tip}
+> Ich schreibe in Übung 6 ein Positionspapier zum Dilemma *[einfügen]*. Hier mein Argumentations-Skelett: [einfügen]. Bitte stellen Sie mir **drei kritische Rückfragen**, die meine Argumentation am stärksten herausfordern — ohne mir die Antworten vorzugeben. Schlagen Sie **eine** Quelle aus der Bibliographie vor, die meine Position vertieft, und **eine**, die ihr widerspricht.
+:::
+
+### Was, wenn …
+
+::: {.callout-warning}
+- **Mein Dilemma ist eigentlich klar entscheidbar?** → Dann ist es kein Dilemma der Mitte. Frage Sie, in welcher Variante des Falls sich die Antwort kippen würde — das ist Ihr Dilemma.
+- **Ich finde nur Argumente in eine Richtung?** → Tutor um eine **Steelman-Version** der Gegenposition bitten.
+:::
+
+## Übung 7 — Personal AI Policy {#sec-uebung-7}
+
+**Modus:** Capstone-Hausaufgabe · **Format:** Eigenes Policy-Dokument · **4D-Bezug:** integrativ über alle vier Kompetenzen.
+
+### Ziel
+
+Eine **persönliche AI Policy** formulieren, die festlegt, wann, wie und mit welchen Schutzmechanismen Sie KI in Ihrer Berufspraxis einsetzt. Adressat: Sie selbst plus eine fiktive Aufsichtsperson.
+
+### Setup
+
+- Erkenntnisse aus allen Workshop-1- und Workshop-2-Übungen.
+- Berufsrechtsmaterial: WPO § 43, StBerG § 57, DSGVO-Grundlagen — siehe [Wissensbasis · Recht und Berufsstand](06-wissensbasis.qmd#sec-recht).
+
+### Aufbau (Vorschlag)
+
+1. **Geltungsbereich** — Für welche Tätigkeiten gilt die Policy? Wo nicht?
+2. **Delegation-Regeln** — Welche Aufgabenklassen darf ich delegieren? Welche nie?
+3. **Description-Regeln** — Welche Mindeststandards an System-Prompts gelten?
+4. **Discernment-Regeln** — Welche Prüfschritte sind Pflicht? Welche Belege müssen bleiben?
+5. **Diligence-Regeln** — Wie dokumentiere ich KI-Einsatz revisionsfest? Wann offenlege?
+6. **Eskalationspfade** — Was tue ich, wenn eine Regel verletzt wurde?
+7. **Review-Rhythmus** — Wann überarbeite ich die Policy?
+
+### Deliverable
+
+Personal-AI-Policy-Dokument (1–3 Seiten), strukturiert nach den sieben Sektionen, mit Datum, Versionsnummer und Querverweisen zu mindestens drei Übungen aus der Workshop-Reihe.
+
+### Bewertungskriterien
+
+Vollständigkeit der sieben Sektionen · Konkretheit der Regeln (keine Allgemeinplätze) · Kohärenz mit Berufsrecht · sichtbare Spuren der eigenen Übungen aus Tag 1 und 2.
+
+### Tutor-Prompt
+
+::: {.callout-tip}
+> Ich schreibe meine Personal AI Policy. Hier ist mein Entwurf zu Sektion *[einfügen]*: [Text einfügen]. Bitte prüfen Sie sie gegen **drei Kriterien**: (a) Konkretheit (keine Allgemeinplätze), (b) Kohärenz mit Berufsrecht (WPO/StBerG/DSGVO), (c) Anschlussfähigkeit an meine Übungen aus Tag 1/2. Machen Sie **einen** zugespitzten Verbesserungsvorschlag pro Kriterium.
+:::
+
+### Was, wenn …
+
+::: {.callout-warning}
+- **Meine Policy klingt wie eine generische Compliance-Liste?** → Mindestens drei Regeln umschreiben, sodass sie eine konkrete Übung aus Tag 1 oder 2 referenzieren.
+- **Ich kann nicht entscheiden, ob etwas Pflicht oder Empfehlung ist?** → Tutor um eine *„Was-wenn-Verletzt"*-Analyse pro Regel bitten und daraus die Schwere ableiten.
+:::

@@ -1,0 +1,104 @@
+---
+title: "Willkommen"
+subtitle: "Skript zu den Workshops am 12. und 13.05.2026"
+---
+
+::: th-color-bar
+:::
+
+# Was du in zwei Nachmittagen mitnimmst
+
+Nach zwei Workshop-Nachmittagen verfügst du über ein gemeinsames Vokabular für den KI-Einsatz in Tax, Audit und Advisory — vom Modell-Vergleich über das Prompt-Design bis zur Frage, wo Prozessautomatisierung und kognitive Automatisierung sinnvoll zusammenfinden.
+
+::: lernziel-box
+#### Am Ende der zwei Workshops kannst du …
+
+1.  das **4D-Framework** (Delegation, Description, Discernment, Diligence) erklären und an einem Tax-/Audit-Beispiel anwenden,
+2.  **Process Automation** und **Cognitive Automation** in Tax-/Audit-Szenarien sauber unterscheiden,
+3.  drei KI-Systeme **systematisch vergleichen** und Tool-Effekte von Modell-Effekten trennen,
+4.  präzise **System-Prompts** entwerfen und gezielt durch Constraints schärfen,
+5.  KI-**Outputs** auf Halluzination, Bias und Eignung kritisch prüfen,
+6.  eine begründete **persönliche AI Policy** für deine Berufspraxis formulieren.
+:::
+
+## Drei Referenzen
+
+Bevor wir bauen, schauen wir, was möglich ist. Drei Skripte zeigen die Bandbreite.
+
+:::::: benchmark-grid
+::: benchmark-card
+### Békés — Doing Data Analysis with AI
+
+Maßstab für ein Workshop-Skript mit klarer Wochenstruktur, Aufgabenseiten und Wissensbasis.
+
+[Zum Skript →](https://gabors-data-analysis.com/ai-course/week01/){target="_blank"}
+:::
+
+::: benchmark-card
+### Békés — Which AI?
+
+Vorbild für die Modellvergleichsseite in der Wissensbasis.
+
+[Zum Skript →](https://gabors-data-analysis.com/ai-course/da-knowledge/which-ai.html){target="_blank"}
+:::
+
+::: benchmark-card
+### Dakan & Feller — AI Fluency Framework
+
+Originalmaterial zum 4D-Framework, auf dem Tag 1 vollständig aufbaut.
+
+[Zum Framework →](https://ringling.libguides.com/ai/framework){target="_blank"}
+:::
+::::::
+
+## Tagesablauf
+
+::: callout-note
+## Termine
+
+- **Workshop 1 — Dienstag, 12.05.2026, 16:00–19:00 Uhr**
+- **Workshop 2 — Mittwoch, 13.05.2026, 16:00–19:00 Uhr**
+- **Ort** — Campus Südstadt, Claudiusstraße 1 (Raumnummer wird per Mail bekanntgegeben).
+:::
+
+| Block | Workshop 1 (Di) — AI Fluency | Workshop 2 (Mi) — Automatisierung & 4D-Use-Case |
+|----|----|----|
+| 16:00–17:00 | Theorie & Demos (60 Min, 9 Blöcke) | Recap & Theorie (60 Min, BPMN, UiPath, Discernment) |
+| 17:00–19:00 | Übungen 1–3 (Tool-Vergleich, System-Prompt, Constraint Challenge) | BPMN-Modellierung, UiPath-Bot, integrierter 4D-Use-Case |
+| nach W2 | — | Hausaufgaben: Übung 6 (Dilemma der Mitte), Übung 7 (Personal AI Policy) |
+
+## Wie du dieses Skript benutzt
+
+Jedes Kapitel öffnet mit einer **Lernziel-Box**, gefolgt von Inhalt und einem **Mach-mit-Block** mit der eigentlichen Übung. Am Ende stehen ein **Was-wenn**-Kasten zum Trouble-Shooting und ein fertiger **Tutor-Prompt** zum Kopieren. Die Workshop-Seiten folgen acht festen H2-Sektionen (Lernziele · Vorbereitung · Inhalte · Diskussionsfragen · Aufgaben · Hintergrund · Weiterführend · Persönliche Anmerkungen).
+
+::: callout-tip
+## Tutor öffnen
+
+[**Tutor — KI in Tax, Audit & Advisory** →](https://chatgpt.com/g/PLATZHALTER-TUTOR-URL){target="_blank"}
+
+Der Tutor begleitet dich durch alle Übungen. Er kennt das 4D-Framework, die Übungstexte und die Wissensbasis dieses Skripts.
+:::
+
+## Voraussetzungen
+
+Was du brauchst: einen Browser, Zugang zu mindestens zwei verschiedenen KI-Tools auf Free-Tier-Niveau (Claude, ChatGPT, Gemini, Perplexity), ein Spreadsheet-Programm. Für Workshop 2 zusätzlich: Zugriff auf eine BPMN-Modellierungsumgebung (Signavio oder Alternative) und einen UiPath-Account oder Screencast-Materialien — Details siehe [Quickstart-Guide](appendix/quickstart.qmd).
+
+::: callout-warning
+## Datenschutz und Vertraulichkeit
+
+In keinem Fall reale Mandantendaten in KI-Tools eingeben. Free-Tier-Dienste sind für Mandantenarbeit grundsätzlich nicht geeignet. Hintergrund: WPO § 43, StBerG § 57, DSGVO. Mehr in der [Wissensbasis](parts/06-wissensbasis.qmd#sec-recht).
+:::
+
+## Ordnerstruktur des Skripts
+
+| Ordner          | Was kommt rein?                                           |
+|-----------------|-----------------------------------------------------------|
+| `parts/`        | Workshop-Seiten, Übungs-Sammlungen, Wissensbasis          |
+| `appendix/`     | Quickstart, Troubleshooting, Master-Tutor-Prompt          |
+| `interactions/` | Eigenständige HTML-Widgets (Drag-and-Drop, Quiz, Builder) |
+| `images/`       | Logos, Banner, Grafiken                                   |
+| `data/`         | CSV/JSON-Daten für interaktive Charts und Beispiele       |
+
+## Lizenz und Quellen
+
+Inhalte unter CC BY-NC-SA 4.0 (siehe `LICENSE`). Konzeptionell aufgebaut auf @dakan2025framework, @bekes2026ai, @mollick2024cointelligence, @dellacqua2023navigating und @biggs2003teaching. Die zitierten Quellen sind im Schluss-Kapitel [Literatur](references.qmd) gesammelt.

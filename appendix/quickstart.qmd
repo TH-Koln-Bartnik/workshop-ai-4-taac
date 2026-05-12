@@ -1,0 +1,46 @@
+---
+title: "Quickstart"
+subtitle: "Was Sie vor Workshop 1 einrichten"
+---
+
+::: th-color-bar
+:::
+
+::: lernziel-box
+#### Was Sie nach diesem Quickstart haben
+
+- mindestens zwei KI-Zugänge auf Free-Tier-Niveau,
+- ein eingerichtetes BPMN-Tool (Signavio oder bpmn.io) für Workshop 2,
+- Klarheit über Daten- und Vertraulichkeitsregeln im Workshop-Kontext,
+- den Tutor-Link in einem Browser-Tab geöffnet.
+:::
+
+## Reihenfolge
+
+1. **KI-Zugänge anlegen**
+   - Mindestens zwei aus: Claude (claude.ai), ChatGPT (chat.openai.com), Gemini (gemini.google.com), Perplexity (perplexity.ai).
+   - Free-Tier reicht für alle Workshop-Übungen.
+2. **BPMN-Werkzeug bereitstellen**
+   - Signavio über Hochschul-Account (falls verfügbar) oder
+   - [bpmn.io](https://bpmn.io){target="_blank"} als freie Web-Variante.
+3. **UiPath-Vorbereitung (für Workshop 2)**
+   - UiPath Cloud-Account (kostenlos) oder
+   - Screencast-Ersatzmaterialien aus dem Workshop-Repo.
+4. **Tutor öffnen** — Browser-Tab mit Custom-GPT/Project-Tutor (Link siehe [Tutor-Prompt-Anhang](tutor-prompt.qmd)).
+5. **Diagnose-Quiz** absolvieren → [Quiz starten](../interactions/diagnose-quiz.html){target="_blank"}.
+
+## Datenschutz und Vertraulichkeit
+
+::: {.callout-warning}
+- In keinem Fall **reale Mandantendaten** in KI-Tools eingeben.
+- Sachverhalte für Übungen entweder **fiktiv** konstruieren oder vollständig **anonymisieren**.
+- Free-Tier-Dienste sind nicht für Mandantenarbeit geeignet — siehe [Wissensbasis · Recht und Berufsstand](../parts/06-wissensbasis.qmd#sec-recht).
+:::
+
+## Was, wenn …
+
+::: {.callout-warning}
+- **Hochschul-SSO funktioniert nicht?** → IT-Hotline TH Köln, ersatzweise privater Account (kein Mandantenbezug!).
+- **Ich habe keinen UiPath-Zugang?** → Screencast und Vorlagen-Dateien aus dem Workshop-Repo nutzen.
+- **Mein Browser blockiert iFrames?** → Workshop-Widgets in einem alternativen Browser öffnen oder direkt aus `interactions/` per Doppelklick.
+:::

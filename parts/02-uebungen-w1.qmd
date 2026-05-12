@@ -1,0 +1,149 @@
+---
+title: "Übungen Workshop 1"
+subtitle: "Drei In-class-Übungen, zusammen 120 Minuten"
+---
+
+::: th-color-bar
+:::
+
+::: lernziel-box
+#### Was Sie nach diesen drei Übungen können
+
+- drei KI-Systeme an einer eigenen Aufgabe **systematisch vergleichen** und Tool- von Modell-Effekten trennen,
+- einen **System-Prompt** schreiben, der Rolle, Zielgruppe, Aufgabe und Format explizit macht,
+- einen Prompt durch **Constraints** so verschärfen, dass er auch unter widerspenstigen Bedingungen liefert.
+:::
+
+Jede Übung folgt dem gleichen Muster: *Ziel · Setup · Schritte · Deliverable · Bewertungskriterien · Tutor-Prompt · Was-wenn.*
+
+## Übung 1 — Tool-Vergleich {#sec-uebung-1}
+
+**Modus:** in-class · Dreierteam · **Dauer:** 45 Min · **4D-Bezug:** Delegation.
+
+### Ziel
+
+Drei KI-Systeme zur **selben Aufgabe** befragen, Output-Unterschiede sauber dokumentieren, Tool-Effekt von Modell-Effekt trennen, eine begründete Empfehlung formulieren.
+
+### Setup
+
+- Ein gemeinsamer Sachverhalt aus Tax/Audit/Advisory (Vorgabe oder Eigenwahl, **kein Mandantenbezug**).
+- Drei KI-Systeme, mindestens eines davon mit Web-Search-Tool aktiviert.
+- Vergleichsmatrix: Tool · Modell · Web-Search ja/nein · Antwortqualität (1–5) · belegt/unbelegt · Halluzinationsverdacht ja/nein.
+
+### Schritte
+
+1. *[Platzhalter — Detail-Schritte aus Handout-Übung 7 übernehmen.]*
+2. Sachverhalt formulieren (max. 80 Wörter), in allen drei Systemen identisch absenden.
+3. Antworten in die Vergleichsmatrix eintragen, Unterschiede markieren.
+4. Hypothesen bilden: Welche Unterschiede stammen vom **Modell**, welche vom **Tool** (Harness)?
+5. Eine begründete Empfehlung für die konkrete Aufgabenklasse schreiben (3–5 Sätze).
+
+### Deliverable
+
+Ausgefüllte Vergleichsmatrix plus Empfehlungstext (PDF oder geteiltes Doc).
+
+### Bewertungskriterien
+
+Vollständigkeit der Matrix · Trennschärfe Tool vs. Modell · Begründungstiefe der Empfehlung · Halluzinationsdetektion korrekt markiert.
+
+### Tutor-Prompt
+
+::: {.callout-tip}
+> Ich bin in Übung 1 (Tool-Vergleich, Delegation). Mein Sachverhalt: [hier einfügen]. Helfen Sie mir, eine **Hypothese zu formulieren**, ob ein beobachteter Unterschied vom Modell oder vom Tool kommt, und welche **Folge-Frage** ich an die drei Systeme stellen müsste, um meine Hypothese zu prüfen.
+:::
+
+### Was, wenn …
+
+::: {.callout-warning}
+- **Alle drei Systeme antworten ähnlich?** → Frage zu generisch. Verschärfen Sie um eine quellenpflichtige Detailfrage.
+- **Ein System verweigert?** → Notieren als Beobachtung. Verweigerung ist auch Information über Delegation.
+- **Web-Search-Tool nicht verfügbar?** → Free-Tier-Limit prüfen, alternativ Perplexity Free als Web-Search-Vergleich.
+:::
+
+## Übung 2 — System-Prompt entwerfen {#sec-uebung-2}
+
+**Modus:** in-class · Einzel · **Dauer:** 45 Min · **4D-Bezug:** Description.
+
+### Ziel
+
+Einen wiederverwendbaren **System-Prompt** für eine eigene Aufgabenklasse aus dem Berufsalltag schreiben, der Rolle, Zielgruppe, Aufgabe, Constraints und Format explizit macht.
+
+::: {.callout-note}
+## Was ist ein System-Prompt?
+
+Eine **vorab gesetzte Anweisung** an das KI-Modell, die für jede folgende Anfrage gilt — vergleichbar mit einer Stellenbeschreibung, die ein neuer Mitarbeiter beim Antritt lesen und dann immer im Kopf behält. *Technisch:* der Inhalt des `system`-Felds in der API; in Chatbots oft als „Custom Instructions", „Project Instructions" oder „Gem Instructions" bezeichnet.
+:::
+
+### Setup
+
+- Aufgabenklasse aus dem Berufsalltag wählen (z. B. *Aktenvermerke prüfen*, *Mandantenbriefe entwerfen*, *Gesetzesänderungen zusammenfassen*).
+- Tool nach Wahl mit System-Prompt-Funktion (Custom Instructions, Project, Gem).
+
+### Schritte
+
+1. *[Platzhalter — Detail-Schritte aus Handout-Übung 2 übernehmen.]*
+2. Bausteine in Reihenfolge entwerfen: **Rolle · Zielgruppe · Aufgabe · Tonalität · Constraints · Format · Iteration**.
+3. System-Prompt einsetzen, drei reale Anfragen testen.
+4. Iterationen dokumentieren: was wurde nach jedem Test geändert und warum?
+
+### Deliverable
+
+Final-Version des System-Prompts plus **Iterationslog** (mindestens drei Versionen mit kurzer Begründung der Änderung).
+
+### Bewertungskriterien
+
+Klarheit der Rolle · Spezifität der Constraints · Reproduzierbarkeit der Outputs · Lerngewinn aus dem Iterationslog.
+
+### Tutor-Prompt
+
+::: {.callout-tip}
+> Ich entwerfe in Übung 2 einen System-Prompt für die Aufgabenklasse [einfügen]. Hier ist meine aktuelle Version: [einfügen]. Bitte stellen Sie mir **drei Diagnose-Fragen**, an denen ich erkenne, ob mein System-Prompt zu vage, zu eng oder zu lang ist. Schlagen Sie **eine** konkrete Verschärfung vor.
+:::
+
+### Was, wenn …
+
+::: {.callout-warning}
+- **Outputs schwanken stark trotz System-Prompt?** → Fehlt eine Format-Definition oder ein Beispiel-Output (Few-Shot).
+- **Tool ignoriert Teile des Prompts?** → Reihenfolge ändern (kritische Constraints ans Ende), oder in Markdown-Listen statt Fließtext gliedern.
+:::
+
+## Übung 3 — Constraint Challenge {#sec-uebung-3}
+
+**Modus:** in-class · Paar · **Dauer:** 30 Min · **4D-Bezug:** Description.
+
+### Ziel
+
+Einen Prompt unter **erschwerten Bedingungen** liefern lassen — durch gezielte Constraints (Längenlimit, Verbotswort-Liste, Output-Format, Quellenpflicht).
+
+### Setup
+
+- Eine Aufgabenstellung aus Übung 1 oder 2 als Ausgangspunkt.
+- Eine Constraint-Karte (oder eine zufällig gezogene Bedingung): z. B. *„maximal 120 Wörter, keine Aufzählungen, mindestens zwei Quellen"* oder *„nur Deutsch, ohne die Wörter ‚wichtig', ‚relevant', ‚natürlich'"*.
+
+### Schritte
+
+1. Ausgangsprompt mit Constraint kombinieren.
+2. Output prüfen: Wurden alle Constraints eingehalten? Welche brach das Modell?
+3. Paar-Diskussion: An welcher Stelle schwächt eine Constraint die Antwort, an welcher Stelle schärft sie sie?
+4. Kurze Notiz: Welche Constraint übernehme ich in meinen System-Prompt aus Übung 2?
+
+### Deliverable
+
+Constraint-Tagebuch (1 Seite): Constraint · eingehalten ja/nein · Wirkung auf Qualität · Take-away.
+
+### Bewertungskriterien
+
+Diversität der Constraints · Reflexionstiefe · konkreter Transfer in den eigenen System-Prompt.
+
+### Tutor-Prompt
+
+::: {.callout-tip}
+> Ich teste in Übung 3 die Constraint *[einfügen]* gegen meinen Prompt aus Übung 2. Bitte schlagen Sie drei **Verschärfungen** dieser Constraint vor — von milde bis hart — und erklären Sie kurz, warum die jeweilige Härte zur Aufgabenklasse passen oder nicht passen würde.
+:::
+
+### Was, wenn …
+
+::: {.callout-warning}
+- **Modell ignoriert die Constraint?** → Constraint als negative Liste am Anfang **und** am Ende des Prompts setzen.
+- **Output wird formal richtig, aber inhaltlich dünner?** → Hinweis darauf, dass eine Constraint die falsche Stellschraube war — andere Variable testen.
+:::

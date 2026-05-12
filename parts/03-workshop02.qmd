@@ -1,0 +1,121 @@
+---
+title: "Workshop 2 — Prozessmodellierung, Automatisierung, 4D-Use-Case"
+subtitle: "Mittwoch, 13.05.2026 · 16:00–19:00 · Campus Südstadt"
+---
+
+::: th-color-bar
+:::
+
+## Lernziele
+
+::: lernziel-box
+#### Was Sie nach diesem Workshop können
+
+- einen einfachen Prozess in **BPMN** modellieren (Aktivität, Entscheidungspunkt, Swimlane),
+- einen einfachen **Bot in UiPath** lesen und in Grundzügen erklären (Excel einlesen, prüfen, PDF erzeugen),
+- KI-Output systematisch auf **Halluzinationen, Bias und Eignung** prüfen (Discernment vertieft),
+- alle vier 4D-Kompetenzen in einem **integrierten Tax-Use-Case** anwenden.
+:::
+
+## Vorbereitung
+
+- Workshop 1 absolviert; Übungen 1–3 durchgeführt; Take-aways notiert.
+- **Lesen**: [Wissensbasis · BPMN-Grundlagen](06-wissensbasis.qmd#sec-bpmn) und [Wissensbasis · RPA-Grundlagen](06-wissensbasis.qmd#sec-rpa).
+- **Zugang** zur BPMN-Modellierungsumgebung (Signavio oder Alternative) prüfen, alternativ Stift und Papier.
+- **UiPath**-Account oder Screencast-Ersatzmaterial bereitstellen — siehe [Quickstart](../appendix/quickstart.qmd).
+- **Mitbringen**: das Halluzinations-Beispiel aus Block F (Tag 1), eigene erste Notizen zur AI Policy.
+
+## Inhalte des Workshops
+
+Drei Stunden, davon 60 Minuten Theorie und Demos plus 120 Minuten Übungen. Übungen 4 und 5 sind in den 4D-Use-Case eingebettet.
+
+::: {.week-card}
+::: {.card-header}
+🟦 Block 0 — Recap und Brückenfrage · 5 Min
+:::
+
+Was ist hängen geblieben? Brücke von **Description** (Tag 1) zu **Discernment** (Tag 2). *Mini-Aktivierung (2 Min, eingebettet):* Padlet-Stichworte.
+:::
+
+::: {.week-card}
+::: {.card-header}
+🟦 Block I — BPMN-Grundlagen und Signavio · 22 Min
+:::
+
+**BPMN** (Business Process Model and Notation) — eine **bildliche Sprache** zur Beschreibung von Geschäftsprozessen, in der Aktivitäten als abgerundete Rechtecke, Entscheidungen als Rauten und Verantwortlichkeiten als Schwimmbahnen dargestellt werden [@omg2014bpmn]. **Signavio** ist eine Modellierungsumgebung, in der diese Diagramme browserbasiert erstellt, geteilt und versioniert werden können.
+
+*Mini-Aktivierung (4 Min):* Spesenabrechnung freigeben — Skizze auf Papier mit max. 5 Aktivitäten und genau einem Entscheidungspunkt.
+:::
+
+::: {.week-card}
+::: {.card-header}
+🟦 Block J — Process Automation mit UiPath · 15 Min
+:::
+
+**RPA** (Robotic Process Automation) — Software-Roboter, die genau das tun, was ein Mensch in einer Anwendung tun würde, nur reproduzierbar und ohne Ermüdung. **UiPath** ist eine der führenden RPA-Plattformen.
+
+*Mini-Aktivierung (3 Min):* LLM-Übung — *„Wie wäre ein Excel-zu-PDF-Bot aufgebaut?"* — KI-Antwort mit Live-Demo des Bots vergleichen, Lücken markieren.
+:::
+
+::: {.week-card}
+::: {.card-header}
+🟧 Block K — Discernment vertieft · 16 Min
+:::
+
+Drei Subkompetenzen: **Product Discernment** (Stimmt der Output?) · **Process Discernment** (Wie kam das Modell darauf?) · **Performance Discernment** (Funktioniert die Lösung im Einsatz?). Halluzinationsmuster: erfundene Paragraphen, falsche Aktenzeichen, plausible aber unzutreffende Zahlen.
+
+*Mini-Aktivierung (4 Min):* Halluzination in einer KI-Antwort zu *§ 8 KStG* identifizieren → [Hallucination-Spotter öffnen](../interactions/hallucination-spotter.html){target="_blank"}.
+:::
+
+::: {.week-card}
+::: {.card-header}
+🟦 Block L — Setup 4D-Use-Case · 2 Min
+:::
+
+Aufgabenstellung im 4D-Use-Case einführen: umsatzsteuerliche Behandlung einer **grenzüberschreitenden Dienstleistung**. Übergang in den Übungsteil.
+:::
+
+## Diskussionsfragen
+
+- An welcher Stelle Ihres BPMN-Modells wäre **Cognitive Automation** sinnvoller als **Process Automation**?
+- Welche Halluzinationsart ist im Tax-/Audit-Kontext am gefährlichsten — und warum?
+- Wie würdest Sie **Process Discernment** dokumentieren, wenn der Output später revisionsfest sein muss?
+
+## Aufgaben
+
+::: {.callout-note}
+## Drei Übungen plus eingebettete Übungen 4–5 (zusammen 120 Minuten)
+
+[BPMN-Modellierung](04-uebungen-w2.qmd#sec-bpmn){.assignment-badge}
+[UiPath-Bot](04-uebungen-w2.qmd#sec-uipath){.assignment-badge}
+[4D-Use-Case (mit Übungen 4 & 5)](04-uebungen-w2.qmd#sec-4d-usecase){.assignment-badge}
+
+Die BPMN-Modellierung (40 Min) und der UiPath-Bot (40 Min) trainieren **Process Automation** an einem konkreten Tax-/Audit-Beispiel. Der **integrierte 4D-Use-Case** (40 Min) verbindet alle vier Kompetenzen und enthält Übung 4 (RAG-Bewertung, Discernment) und Übung 5 (Output verbessern, Discernment).
+:::
+
+## Hintergrund / Werkzeuge / Ressourcen
+
+- **Wissensbasis** — [BPMN-Grundlagen](06-wissensbasis.qmd#sec-bpmn) · [RPA-Grundlagen](06-wissensbasis.qmd#sec-rpa) · [Recht und Berufsstand](06-wissensbasis.qmd#sec-recht).
+- **Originalmaterial** — Cheat Sheet und Practical Overview zu Discernment und Diligence aus @dakan2025framework.
+- **Standardreferenz BPMN** — @omg2014bpmn.
+
+## Weiterführend
+
+- @lacity2016new — Klassiker zur Service-Automatisierung jenseits klassischer Prozessoptimierung.
+- @coombs2020strategic — interdisziplinärer Review zu intelligenter Automation in Wissensarbeit.
+- @davenport2018artificial — pragmatische KI-Einsatzfelder im Unternehmenskontext.
+
+## Tutor
+
+::: {.callout-tip}
+## Tutor öffnen
+[Tutor — KI in Tax, Audit & Advisory →](https://chatgpt.com/g/PLATZHALTER-TUTOR-URL){target="_blank"}
+
+Vorschlag-Prompt für diesen Workshop:
+
+> Ich arbeite in Workshop 2 am 4D-Use-Case zur umsatzsteuerlichen Behandlung einer grenzüberschreitenden Dienstleistung. Helfen Sie mir, **Discernment** an meinem aktuellen KI-Output zu üben: Welche drei Aspekte würden Sie als Erstes prüfen, und welche **Diagnose-Frage** stelle ich dem Modell zurück, um meinen Verdacht zu erhärten?
+:::
+
+## Persönliche Anmerkungen
+
+*Platzhalter für eigene Notizen — z. B. Anpassung des Tax-Beispiels an die jeweilige Kohorte, Hinweise zu Signavio-/UiPath-Lizenzen, Materialien für den Screencast-Ersatz.*

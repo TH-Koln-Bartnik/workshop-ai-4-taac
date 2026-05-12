@@ -1,0 +1,53 @@
+---
+title: "Troubleshooting"
+subtitle: "Häufige Stolpersteine in den Workshops und ihre Auflösung"
+---
+
+::: th-color-bar
+:::
+
+## KI-Tool
+
+::: {.callout-warning}
+- **Free-Tier-Limit erreicht?** → Auf zweites Tool ausweichen, später am Tag erneut testen, ggf. Pro-Tier-Account einer/eines Kommilitonen mitnutzen (im Plenum).
+- **Antwort wird abgeschnitten?** → Folge-Prompt *„Bitte fortsetzen, beginne mit dem letzten vollständigen Satz erneut"*.
+- **Tool ignoriert Constraints?** → Constraints zu Beginn **und** am Ende des Prompts platzieren, in Listenform statt Fließtext.
+:::
+
+## System-Prompt
+
+::: {.callout-warning}
+- **Outputs schwanken stark trotz System-Prompt?** → Es fehlt ein Format-Beispiel (Few-Shot) oder eine harte Constraint zur Output-Form.
+- **Tool kennt System-Prompt-Funktion nicht?** → Free-Tier-Variante ohne Custom Instructions: Prompt vor jeder Anfrage manuell voranstellen.
+:::
+
+## BPMN / Signavio
+
+::: {.callout-warning}
+- **Modell rendert nicht?** → Browser-Cache leeren, alternativ in bpmn.io importieren.
+- **Sequenzfluss verbindet falsche Aktivitäten?** → Ankerpunkte erneut setzen, ggf. Aktivität löschen und neu zeichnen.
+- **Diagramm wird zu groß für eine Seite?** → Sub-Prozess als Collapsed-Aktivität auslagern.
+:::
+
+## UiPath
+
+::: {.callout-warning}
+- **Bot startet nicht?** → Selektor-Probleme, Pfad-Probleme, fehlende Activities prüfen — Logs lesen.
+- **Excel-Datei nicht gefunden?** → Variablen statt absoluter Pfade verwenden, Datei im Projekt-Ordner ablegen.
+- **Output-PDF leer?** → Print-Driver-Auswahl prüfen, ggf. UiPath Studio neu starten.
+:::
+
+## Quarto / Skript-Rendering (für Dozent:in)
+
+::: {.callout-warning}
+- **`quarto: command not found`?** → Quarto-Installation prüfen mit `quarto --version`. Falls leer: neu installieren von <https://quarto.org/docs/get-started/>.
+- **YAML-Fehler beim Rendern?** → Einrückungen prüfen (zwei Leerzeichen, keine Tabs), Doppelpunkte und Anführungszeichen.
+- **GitHub Pages zeigt 404?** → In `_quarto.yml` muss `output-dir: docs` stehen, der `docs/`-Ordner committet sein, in `.gitignore` darf `/docs/` nicht ausgeschlossen sein.
+:::
+
+## Tutor
+
+::: {.callout-warning}
+- **Tutor antwortet nicht zum Thema?** → Master-Prompt aus [Tutor-Prompt-Anhang](tutor-prompt.qmd) erneut setzen.
+- **Tutor halluziniert eine Quelle?** → Notieren, im Plenum als Discernment-Material verwenden.
+:::

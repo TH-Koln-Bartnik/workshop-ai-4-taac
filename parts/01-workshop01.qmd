@@ -1,0 +1,165 @@
+---
+title: "Workshop 1 — AI Fluency Framework"
+subtitle: "Dienstag, 12.05.2026 · 16:00–19:00 · Campus Südstadt"
+---
+
+::: th-color-bar
+:::
+
+## Lernziele
+
+::: lernziel-box
+#### Was Sie nach diesem Workshop können
+
+- die vier Kernkompetenzen des **4D-Frameworks** (Delegation, Description, Discernment, Diligence) in eigenen Worten erklären,
+- die Logik **Automation · Augmentation · Agency** als operative Heuristik für *Delegation* an konkreten Tax-/Audit-Tätigkeiten anwenden,
+- ein KI-Tool, ein KI-Modell und einen KI-Prompt **als drei getrennte Variablen** behandeln,
+- **Process Automation** und **Cognitive Automation** an konkreten Tax-/Audit-Tätigkeiten unterscheiden,
+- einen System-Prompt entwerfen, der Rolle, Zielgruppe, Format und mindestens drei Constraints festlegt,
+- ein Halluzinations-Risiko an einer KI-Antwort erkennen (Cliffhanger zu Tag 2).
+:::
+
+## Vorbereitung
+
+Was Sie vor dem Termin erledigst:
+
+- **Diagnose-Quiz** absolvieren (8 Fragen, ca. 10 Minuten) → [Quiz starten](../interactions/diagnose-quiz.html){target="_blank"}.
+- **AAA-Mapper** durchspielen (29 Tätigkeiten aus dem O\*Net-Berufsbild *Accountants and Auditors*, ca. 15–20 Minuten) → [AAA-Mapper starten](../interactions/onet-aaa-mapper.html){target="_blank"}. Jede Tätigkeit zu *Automation*, *Augmentation* oder *Agency* zuordnen. Ergebnis als Markdown speichern und in den Workshop mitbringen — die Auswertung ist Diskussionsmaterial für **Block D (Delegation)**.
+- **Zugänge** anlegen oder prüfen: Claude (Free), ChatGPT (Free), Gemini (Free) oder Perplexity (Free) — mindestens zwei davon.
+- **Lesen**: [Wissensbasis · LLM-Grundlagen](06-wissensbasis.qmd#sec-llm-grundlagen) und [Wissensbasis · Welches Modell?](06-wissensbasis.qmd#sec-welches-modell).
+- **Mitbringen**: Notebook mit Browser, Kopfhörer, eine offene Tax-/Audit-Frage aus Ihrer Praxis (kein Mandantenbezug).
+
+## Inhalte des Workshops
+
+Drei Stunden, davon 60 Minuten Theorie und Demos plus 120 Minuten Übungen. Alle Theorieblöcke enthalten eine **Mini-Aktivierung** (2–5 Minuten), die die Inhalte sofort anwendet.
+
+::: {.week-card}
+::: {.card-header}
+🟦 Block 0 — Begrüßung und Kalibrierung · 3 Min
+:::
+
+Vorstellung, Vorerfahrung der Teilnehmenden, Ziele des Tages, Hinweis auf den Tutor. *Mini-Aktivierung: keine.*
+:::
+
+::: {.week-card}
+::: {.card-header}
+🟦 Block A — Chat vs. erweitertes Sprachmodell, Modellauswahl, agentische Nutzung · 17 Min
+:::
+
+LLM als Textgenerator; **Harness** als Werkzeugring um das Modell (Web-Search, Code-Interpreter, Memory, Dateizugriff). Drei Lizenz-Tiers: **Free** (0 €), **Casual** (~20–30 €/Monat), **Professional** (~100–200 €/Monat). Unterschied **Chat** (Single-/Multi-Turn) versus **Agent** (Multi-Step mit Tools, Memory, Schleifen). Bezugsfolien: `gen-ai-allgemeine-empfehlungen-2026-05.pptx`, Stütze @grootendorst2025visual.
+
+*Mini-Aktivierung (5 Min):* dieselbe Faktenfrage aus der Praxis (z. B. *„Was ändert sich 2026 bei der E-Rechnungspflicht für B2B in Deutschland?"*) parallel im **Free-Tier ohne Web-Search** und im **Free-Tier mit Web-Search-Tool** stellen — Antworten kurz vergleichen.
+:::
+
+::: {.week-card}
+::: {.card-header}
+🟦 Block B — Was ist AI Fluency? 4D-Übersicht · 6 Min
+:::
+
+Vier Kernkompetenzen, je drei Subkategorien (@dakan2025framework). **Delegation** (Problem-, Platform-, Task-Awareness) · **Description** (Product-, Process-, Performance-Description) · **Discernment** (Product-, Process-, Performance-Discernment) · **Diligence** (Creation-, Transparency-, Deployment-Diligence). Zwei Loops: *Delegation–Diligence* (strategisch), *Description–Discernment* (operativ).
+
+*Mini-Aktivierung (2 Min) — Think-Pair-Share:* Welche der vier Kompetenzen hätte Ihnen bei Ihrer letzten Hausarbeit am meisten geholfen? Warum?
+:::
+
+::: {.week-card}
+::: {.card-header}
+🟦 Block C — Process vs. Cognitive Automation · 11 Min
+:::
+
+**Process Automation** — regelbasiertes Abarbeiten strukturierter Workflows ohne Verständnis (z. B. Daten von Excel in PDF überführen). **Cognitive Automation** — KI-gestütztes Schließen, Klassifizieren, Zusammenfassen unstrukturierter Inhalte (z. B. Vertragsklauseln einordnen). Quellen: @lacity2016new, @coombs2020strategic, @davenport2018artificial.
+
+*Mini-Aktivierung (4 Min):* Drag-and-Drop-Klassifikator — fünf Tätigkeiten in „Process", „Cognitive" oder „Hybrid" einsortieren → [Widget öffnen](../interactions/pc-classifier.html){target="_blank"}.
+:::
+
+::: {.week-card}
+::: {.card-header}
+🟦 Block D — Delegation · 13 Min
+:::
+
+*Was übergebe ich an die KI, was bleibt bei mir?* Drei Antwort-Stufen nach @davenport2018artificial machen die Frage operativ: **Automation** — vollständige Übergabe einer abgrenzbaren, regelhaften Tätigkeit; der Mensch prüft nur das Ergebnis. **Augmentation** — KI und Mensch arbeiten Schritt für Schritt zusammen; jeder Zwischenschritt wird gemeinsam validiert. **Agency** — die Entscheidungshoheit bleibt klar beim Menschen; die KI liefert Bausteine, prüft Hypothesen, formuliert Optionen. Aufgaben-Taxonomie nach Risiko (mechanisch · urteilsabhängig · regulatorisch heikel) und nach **Jagged Frontier** [@dellacqua2023navigating]. Praxisbezug Tax/Audit: Zusammenfassen vs. Auslegen vs. Empfehlen.
+
+**Auswertungsdiskussion (8 Min) — AAA-Mapper:** Wer den [AAA-Mapper](../interactions/onet-aaa-mapper.html){target="_blank"} in der Vorbereitung durchgespielt hat, bringt das eigene Auswertungsblatt mit. Vier Plenumsfragen: Welche der 29 Tätigkeiten landeten klar in *Automation*? Welche klar in *Agency*? Wo war die Zuordnung schwierig — und was sagt das über die Tätigkeit, die Aufgabenstruktur oder das Berufsrecht (WPO § 43, StBerG § 57) aus? Welche persönliche Heuristik nehmen Sie aus dieser Sortierung mit?
+
+*Mini-Aktivierung (3 Min):* Dem KI-Tool die Frage stellen *„Welche Werkzeuge stehen Ihnen aktuell zur Verfügung?"* — Antwort mit der offiziellen Anbieter-Doku abgleichen. Brücke zur AAA-Logik: Welche Werkzeugausstattung verschiebt eine Tätigkeit von *Agency* nach *Augmentation*, welche bis zu *Automation*?
+:::
+
+::: {.week-card}
+::: {.card-header}
+🟦 Block E — Description · 8 Min
+:::
+
+Prompt-Patterns: **Rolle**, **Zielgruppe**, **Aufgabe**, **Constraints**, **Format**. Anker zu @pmi2024talking. Standard-Bausteine für Tax-/Audit-Prompts: Sachverhalt zuerst, Rechtsquelle benannt, Output-Form klar definiert (Memo, Aktenvermerk, Mandantenbrief).
+
+*Mini-Aktivierung (3 Min):* 10-Wort-Prompt versus 50-Wort-Prompt mit Rolle, Zielgruppe und Format zur **selben** Aufgabe — Outputs vergleichen.
+:::
+
+::: {.week-card}
+::: {.card-header}
+🟧 Block F — Discernment (Anriss) · 3 Min
+:::
+
+Cliffhanger für Tag 2: ein konkretes Halluzinationsbeispiel — z. B. eine erfundene BFH-Entscheidung. *Mini-Aktivierung: keine, nur Demo.*
+:::
+
+::: {.week-card}
+::: {.card-header}
+🟧 Block G — Diligence (Anriss) · 2 Min
+:::
+
+Drei Säulen: **Creation Diligence** (sorgfältige Erzeugung), **Transparency Diligence** (offen legen, was die KI getan hat), **Deployment Diligence** (verantwortlicher Einsatz im Mandat). Vertiefung in Tag 2 und Übung 6.
+:::
+
+::: {.week-card}
+::: {.card-header}
+🟦 Block H — Loops und Übergang zu den Übungen · 2 Min
+:::
+
+Zwei Loops im 4D-Framework — **Delegation ↔ Diligence** (strategisch) und **Description ↔ Discernment** (operativ). Übergang in den 120-minütigen Übungsteil.
+:::
+
+## Diskussionsfragen
+
+- Welcher der drei Lizenz-Tiers passt zu welcher beruflichen Situation in Tax, Audit oder Advisory? Wo liegt die Grenze des Free-Tiers?
+- Wo beginnt für Sie Delegation an die KI — und wo endet sie aus berufsrechtlichen Gründen?
+- Welche Tätigkeit aus Ihrem Alltag ist *Process*, welche *Cognitive*? Gibt es eine, die zwischen beiden liegt?
+- Wann ist ein 50-Wort-Prompt schlechter als ein 10-Wort-Prompt?
+
+## Aufgaben
+
+::: {.callout-note}
+## Drei In-class-Übungen (zusammen 120 Minuten)
+
+[Übung 1 — Tool-Vergleich](02-uebungen-w1.qmd#sec-uebung-1){.assignment-badge}
+[Übung 2 — System-Prompt](02-uebungen-w1.qmd#sec-uebung-2){.assignment-badge}
+[Übung 3 — Constraint Challenge](02-uebungen-w1.qmd#sec-uebung-3){.assignment-badge}
+
+Übung 1 (45 Min, Dreierteam) trainiert **Delegation** durch systematischen Tool-Vergleich. Übung 2 (45 Min, Einzel) und Übung 3 (30 Min, Paar) trainieren **Description** durch System-Prompt-Design und Constraint-Verschärfung.
+:::
+
+## Hintergrund / Werkzeuge / Ressourcen
+
+- **Wissensbasis** — [LLM-Grundlagen](06-wissensbasis.qmd#sec-llm-grundlagen) · [Welches Modell?](06-wissensbasis.qmd#sec-welches-modell) · [Prompt-Muster](06-wissensbasis.qmd#sec-prompt-muster) · [Tools & Plattformen](06-wissensbasis.qmd#sec-tools).
+- **Foliensatz** — `gen-ai-allgemeine-empfehlungen-2026-05.pptx` (Chat vs. erweitertes Sprachmodell, drei Lizenz-Tiers, Harness, Jagged Frontier).
+- **Originalmaterial 4D-Framework** — Cheat Sheet und Practical Overview von @dakan2025framework.
+- **Widgets** — [AAA-Mapper](../interactions/onet-aaa-mapper.html){target="_blank"} (Vorbereitung), Diagnose-Quiz, Process-/Cognitive-Klassifikator, Prompt-Builder.
+
+## Weiterführend
+
+- @mollick2024cointelligence — *Co-intelligence: Living and working with AI* (Buchempfehlung als Begleitlektüre).
+- @dellacqua2023navigating — *Navigating the jagged technological frontier* (HBS Working Paper, empirisch zur Produktivitätswirkung).
+- @grootendorst2025visual — *A Visual Guide to LLM Agents* (visuelle Erklärung des Harness-Konzepts).
+
+## Tutor
+
+::: {.callout-tip}
+## Tutor öffnen
+[Tutor — KI in Tax, Audit & Advisory →](https://chatgpt.com/g/PLATZHALTER-TUTOR-URL){target="_blank"}
+
+Vorschlag-Prompt für diesen Workshop:
+
+> Ich bereite Workshop 1 (AI Fluency Framework) im Modul *KI in Tax, Audit & Advisory* vor. Bitte erklären Sie mir das 4D-Framework anhand eines konkreten Tax-Beispiels meiner Wahl: [Beispiel einfügen]. Fragen Sie mich nach meinem Vorwissen, geben Sie eine Lay-Erklärung VOR jedem Fachbegriff und stellen Sie am Ende drei Diagnose-Fragen, mit denen ich mein Verständnis selbst prüfen kann.
+:::
+
+## Persönliche Anmerkungen
+
+*Platzhalter für eigene Notizen — z. B. raumbezogene Hinweise, Beispielwahl pro Kohorte, Anpassung der Mini-Aktivierungen.*

@@ -1,0 +1,157 @@
+---
+title: "Wissensbasis"
+subtitle: "Nachschlagewerk zu LLMs, Modellen, Prompts, Tools, BPMN, RPA und Berufsrecht"
+---
+
+::: th-color-bar
+:::
+
+::: lernziel-box
+#### Was Sie in dieser Wissensbasis finden
+
+- Sieben kompakte Nachschlage-Sektionen zu allen Themen, die in den Workshops 1 und 2 verwendet werden,
+- Lay-Erklärung jedes Fachbegriffs **vor** dem technischen Detail,
+- Verweise auf die Originalliteratur und zu den passenden Workshop-Stellen.
+:::
+
+Diese Seite ist absichtlich als ein einziges, durchsuchbares Dokument angelegt. Versionsdatum am Anfang jeder Sektion. Stand: 09.05.2026.
+
+## LLM-Grundlagen {#sec-llm-grundlagen}
+
+::: {.callout-note}
+## Was ist ein LLM?
+
+Ein **Large Language Model** ist ein **statistischer Textgenerator**, der das jeweils nächstwahrscheinliche Wort vorhersagt — nicht mehr und nicht weniger. *Bild:* sehr gut geübter Autovervollständiger, der zu einem Anfang den passenden Folgetext rät. *Technisch:* tiefes neuronales Netz mit Transformer-Architektur, trainiert auf großen Textmengen.
+:::
+
+Drei Kernunterscheidungen, die durchgehend in beiden Workshops auftauchen.
+
+### Reasoning vs. Instant
+
+**Instant-Modelle** antworten direkt; **Reasoning-Modelle** denken zwischen Frage und Antwort sichtbar oder unsichtbar nach (Chain-of-Thought). Reasoning lohnt sich bei Mehrschritt-Aufgaben, ist langsamer und teurer.
+
+### Werkzeuge und Harness
+
+**Harness** — der **Werkzeugring** um das LLM herum: Web-Search, Code-Interpreter, Datei-Upload, Memory, Tool-Calling. Die Antwortqualität hängt fast immer mehr vom Harness ab als vom Modell allein [@grootendorst2025visual].
+
+### Drei Lizenz-Tiers
+
+**Free** (0 €): begrenzter Kontext, oft kein Web-Search, keine vertraulichen Daten. **Casual** (~20–30 €/Monat): Pro-Tier von Claude, ChatGPT, Gemini. **Professional** (~100–200 €/Monat): Team-/Enterprise-Tiers mit Datenschutzgarantien, längeren Kontexten, mehr Tools. *Faustregel:* Mandantenarbeit nicht im Free-Tier.
+
+*Querverweise:* [Workshop 1, Block A](01-workshop01.qmd) · [Übung 1](02-uebungen-w1.qmd#sec-uebung-1).
+
+## Welches Modell? {#sec-welches-modell}
+
+Schlanke Vergleichsseite analog zu @bekes2026ai, ergänzt um drei Lizenz-Tiers und einen Berufsrechts-Abschnitt.
+
+### Führende Modelle (Stand 05/2026)
+
+*[Platzhalter — Tabelle: Modellname · Anbieter · Stärken · Lizenz-Tier · Web-Search · Datei-Upload · Memory.]*
+
+### Vergleichstabelle Allgemeine Wissensarbeit
+
+*[Platzhalter — Vergleich: Claude Pro · ChatGPT Plus · Gemini Advanced · Perplexity Pro entlang Antwortqualität, Quellen-Tools, Kontextlänge, Datenschutz.]*
+
+### Vergleichstabelle Datenanalyse
+
+*[Platzhalter — Vergleich: Claude Analysis · ChatGPT Data Analysis · Gemini in Sheets · Copilot in Excel.]*
+
+### Vergleichstabelle Coding
+
+*[Platzhalter — Vergleich: Claude Code · GitHub Copilot · Cursor · Windsurf.]*
+
+### Empfehlung (opinionated)
+
+*[Platzhalter — eine begründete Default-Empfehlung pro Aufgabentyp im Tax-/Audit-/Advisory-Kontext.]*
+
+*Querverweise:* [Workshop 1, Block A](01-workshop01.qmd) · [Übung 1](02-uebungen-w1.qmd#sec-uebung-1).
+
+## Prompt-Muster {#sec-prompt-muster}
+
+Sieben Bausteine eines belastbaren Prompts: **Rolle · Zielgruppe · Aufgabe · Tonalität · Constraints · Format · Iteration**. Anker: @pmi2024talking.
+
+### Standard-Prompt-Skelett für Tax/Audit
+
+*[Platzhalter — Beispiel-Skelett mit Lay-Erklärung pro Baustein, drei Constraint-Beispielen und einem Format-Beispiel als Memo-Vorlage.]*
+
+### Iteration als Pflicht
+
+Ein Prompt ist nie fertig. Drei Iterationen sind Mindeststandard, dokumentiert mit *was geändert · warum · Effekt auf den Output*.
+
+*Querverweise:* [Übung 2](02-uebungen-w1.qmd#sec-uebung-2) · [Übung 3](02-uebungen-w1.qmd#sec-uebung-3).
+
+## Tools und Plattformen {#sec-tools}
+
+### Drei Tool-Klassen
+
+**Chat-Plattformen** (Claude, ChatGPT, Gemini, Perplexity), **eingebettete Assistenten** (Copilot in Microsoft 365, Gemini in Google Workspace), **agentische Plattformen** (Custom GPTs, Claude Projects, Gems, Agents-Framework).
+
+### Datenschutz-Hinweis
+
+*[Platzhalter — Übersicht der Datennutzungsregeln pro Anbieter, mit Verweis auf jeweilige Trust Center.]*
+
+*Querverweise:* [Workshop 1, Block A](01-workshop01.qmd) · [Übung 1](02-uebungen-w1.qmd#sec-uebung-1).
+
+## BPMN-Grundlagen {#sec-bpmn}
+
+::: {.callout-note}
+## Was ist BPMN?
+
+**Business Process Model and Notation** — eine **bildliche Sprache**, in der Geschäftsprozesse mit standardisierten Symbolen gezeichnet werden. *Bild:* eine Notensprache für Prozesse — dieselben Symbole bedeuten überall dasselbe. *Technisch:* OMG-Standard, derzeit Version 2.0.2 [@omg2014bpmn].
+:::
+
+### Kernsymbole
+
+**Aktivität** (abgerundetes Rechteck) · **Ereignis** (Kreis) · **Gateway/Entscheidung** (Raute) · **Sequenzfluss** (Pfeil) · **Pool/Lane** (Schwimmbahn).
+
+### Modellierung in Signavio
+
+*[Platzhalter — kurze Anleitung: Konto, neues Modell, erste Aktivität, erstes Gateway, Export.]*
+
+### Prozessdenken vor Werkzeugwahl
+
+Ein gutes BPMN-Modell zwingt zur Klärung *wer macht was wann mit welchem Input und welchem Output* — die Voraussetzung für jede sinnvolle Automatisierungsentscheidung.
+
+*Querverweise:* [Workshop 2, Block I](03-workshop02.qmd) · [Übung BPMN-Modellierung](04-uebungen-w2.qmd#sec-bpmn).
+
+## RPA-Grundlagen {#sec-rpa}
+
+::: {.callout-note}
+## Was ist RPA?
+
+**Robotic Process Automation** — Software, die genau die Klicks und Tastatureingaben eines Menschen reproduziert. *Bild:* ein extrem geduldiger Praktikant, der einmal genau zuschaut und dann denselben Ablauf zuverlässig wiederholt. *Technisch:* attended/unattended Bots, gesteuert durch Workflows, oft auf Basis von Selektoren und Schnittstellen [@lacity2016new].
+:::
+
+### Wann RPA, wann GenAI, wann RPA + GenAI?
+
+**RPA** für regelbasierte, strukturierte Abläufe. **GenAI** für Sprache, Bedeutung, Klassifikation. Kombination: GenAI als Cognitive-Layer, der einen RPA-Bot anleitet, was zu tun ist (Cognitive Automation).
+
+### UiPath im Überblick
+
+*[Platzhalter — Studio, Orchestrator, Marketplace, Activities, Selektor-Konzept, typische Fehlerquellen.]*
+
+*Querverweise:* [Workshop 2, Block J](03-workshop02.qmd) · [Übung UiPath-Bot](04-uebungen-w2.qmd#sec-uipath).
+
+## Recht und Berufsstand {#sec-recht}
+
+### DSGVO
+
+*[Platzhalter — Grundlagen Auftragsverarbeitung, Drittlandtransfer, Rechtsgrundlagen für KI-Verarbeitung personenbezogener Daten.]*
+
+### WPO § 43 — Berufspflichten Wirtschaftsprüfer
+
+*[Platzhalter — Verschwiegenheit, Eigenverantwortlichkeit, Sorgfaltspflicht, Folgerungen für KI-Nutzung.]*
+
+### StBerG § 57 — Berufspflichten Steuerberater
+
+*[Platzhalter — Verschwiegenheit, Unabhängigkeit, Folgerungen für KI-Nutzung.]*
+
+### Mandantengeheimnis
+
+Free-Tier-Tools sind grundsätzlich **nicht für Mandantenarbeit** geeignet, weil Eingaben für Trainingszwecke verwendet werden können und keine Auftragsverarbeitungsverträge bestehen.
+
+*Querverweise:* [Übung 6](05-hausaufgaben.qmd#sec-uebung-6) · [Übung 7](05-hausaufgaben.qmd#sec-uebung-7).
+
+## Was hat sich geändert?
+
+*Platzhalter — Versionsnotizen pro Wissensbasis-Sektion. Mindestens Datum und Stichwort der Änderung.*
