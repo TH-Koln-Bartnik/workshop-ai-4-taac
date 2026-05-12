@@ -14,7 +14,7 @@
     "href": "index.html#tagesablauf",
     "title": "KI in Tax, Audit & Advisory",
     "section": "Tagesablauf",
-    "text": "Tagesablauf\n\n\n\n\n\n\nTermine\n\n\n\n\nWorkshop 1 — Dienstag, 12.05.2026, 16:00–19:00 Uhr\nWorkshop 2 — Mittwoch, 13.05.2026, 16:00–19:00 Uhr\nOrt — Campus Südstadt, Claudiusstraße 1 (Raumnummer wird per Mail bekanntgegeben).\n\n\n\n\n\n\n\n\n\n\n\nZeitfenster\nWorkshop 1 (Di) — AI Fluency\nWorkshop 2 (Mi) — Automatisierung & 4D-Use-Case\n\n\n\n\n16:00–17:30\nInputs und Übungen 1 (Diagnose-Quiz) und 2 (Karriereentwicklung im Modellvergleich)\nRecap, BPMN-Grundlagen, UiPath-Demo, BPMN-Übung\n\n\n17:30–17:40\nPause\nPause\n\n\n17:40–19:00\nInputs und Übungen 3 (Prompt-Umbau und Tutor-Bot) und 4 (Tutor-Bot systematisch prüfen)\nUiPath-Bot-Übung, 4D-Use-Case integriert, Discern-Vertiefung\n\n\nnach W2\nDiligence-Anriss als Brücke zu Tag 2\nHausaufgaben: Dilemma der Mitte (Positionspapier), Personal AI Policy\n\n\n\n\n\n\n\n\n\nTutor öffnen\n\n\n\nTutor — KI in Tax, Audit & Advisory →\nDer Tutor begleitet Sie durch alle Übungen. Er kennt das 4D-Framework, die Übungstexte und die Wissensbasis dieses Skripts.\n\n\n\n\n\n\n\n\nDatenschutz und Vertraulichkeit\n\n\n\nIn keinem Fall reale Mandantendaten in KI-Tools eingeben. Free-Tier-Dienste sind für Mandantenarbeit grundsätzlich nicht geeignet. Hintergrund: WPO § 43, StBerG § 57, DSGVO. Mehr in der Wissensbasis.",
+    "text": "Tagesablauf\n\n\n\n\n\n\nTermine\n\n\n\n\nWorkshop 1 — Dienstag, 12.05.2026, 16:00–19:00 Uhr\nWorkshop 2 — Mittwoch, 13.05.2026, 16:00–19:00 Uhr\nOrt — Campus Südstadt, Claudiusstraße 1 (Raumnummer wird per Mail bekanntgegeben).\n\n\n\n\n\n\n\n\n\n\n\nZeitfenster\nWorkshop 1 (Di) — AI Fluency\nWorkshop 2 (Mi) — Automatisierung & 4D-Use-Case\n\n\n\n\n16:00–17:30\nInputs und Übungen 1 (Diagnose-Quiz) und 2 (Karriereentwicklung im Modellvergleich)\nRecap, BPMN-Grundlagen, UiPath-Demo, BPMN-Übung\n\n\n17:30–17:40\nPause\nPause\n\n\n17:40–19:00\nInputs und Übungen 3 (Prompt-Umbau und Tutor-Bot) und 4 (Tutor-Bot systematisch prüfen)\nUiPath-Bot-Übung, 4D-Use-Case integriert, Discern-Vertiefung\n\n\nnach W2\nDiligence-Anriss als Brücke zu Tag 2\nHausaufgaben: Dilemma der Mitte (Positionspapier), Personal AI Policy\n\n\n\n\n\n\n\n\n\nTutor öffnen\n\n\n\nTutor — KI in Tax, Audit & Advisory →\nDer Tutor begleitet Sie durch alle Übungen. Er kennt das 4D-Framework, die Übungstexte und die Wissensbasis dieses Skripts.\n\n\n\n\n\n\n\n\nDatenschutz und Vertraulichkeit\n\n\n\nIn keinem Fall reale Mandantendaten in KI-Tools eingeben. Free-Tier-Dienste sind für Mandantenarbeit grundsätzlich nicht geeignet. Hintergrund: WPO § 43, StBerG § 57, DSGVO. Die berufsrechtliche Vertiefung folgt in Workshop 2.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Willkommen</span>"
     ]
@@ -34,7 +34,7 @@
     "href": "index.html#lizenz",
     "title": "KI in Tax, Audit & Advisory",
     "section": "Lizenz",
-    "text": "Lizenz\nInhalte unter CC BY-NC-SA 4.0 (siehe LICENSE). Verwendete Quellen siehe Literatur.",
+    "text": "Lizenz\nInhalte unter CC BY-NC-SA 4.0 (siehe LICENSE). Verwendete Quellen werden inline zitiert und am Ende jedes Kapitels aufgelistet.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Willkommen</span>"
     ]
@@ -110,7 +110,7 @@
     "href": "parts/01-workshop01.html#hintergrund-werkzeuge-ressourcen",
     "title": "Workshop 1 — AI Fluency Framework",
     "section": "Hintergrund / Werkzeuge / Ressourcen",
-    "text": "Hintergrund / Werkzeuge / Ressourcen\n\nWissensbasis — LLM-Grundlagen · Welches Modell? · Prompt-Muster · Tools und Plattformen.\nFoliensatz — gen-ai-allgemeine-empfehlungen-2026-05.pptx (Chat versus erweitertes Sprachmodell, drei Lizenz-Tiers, Harness, Jagged Frontier).\nOriginalmaterial 4D-Framework — Cheat Sheet und Practical Overview von Dakan & Feller (2025).\nBegleitlehrbuch — Kapitel 2.4 How to speak und Kapitel 7 Tutor-Prompt-Sammlung.\nO*NET-Berufsbild — Accountants and Auditors (13-2011.00) als Faktenbasis für Übung 2.\nVergleichsplattform — arena.ai mit Side-by-Side-Modus für Übung 2.",
+    "text": "Hintergrund / Werkzeuge / Ressourcen\n\nFoliensatz — gen-ai-allgemeine-empfehlungen-2026-05.pptx (Chat versus erweitertes Sprachmodell, drei Lizenz-Tiers, Harness, Jagged Frontier).\nOriginalmaterial 4D-Framework — Cheat Sheet und Practical Overview von Dakan & Feller (2025).\nBegleitlehrbuch — Kapitel 2.4 How to speak und Kapitel 7 Tutor-Prompt-Sammlung.\nO*NET-Berufsbild — Accountants and Auditors (13-2011.00) als Faktenbasis für Übung 2.\nVergleichsplattform — arena.ai mit Side-by-Side-Modus für Übung 2.",
     "crumbs": [
       "Teil 1 — Workshop 1 (Di, 12.05.)",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Workshop 1 — AI Fluency Framework</span>"
@@ -154,7 +154,7 @@
     "href": "parts/02-uebungen-w1.html#sec-uebung-1",
     "title": "Übungen Workshop 1",
     "section": "Übung 1 — Diagnose-Quiz Process vs. Cognitive",
-    "text": "Übung 1 — Diagnose-Quiz Process vs. Cognitive\nModus: in-class · Einzelarbeit · Dauer: 18 Min (8 Min Solo + 4 Min TPS + 3 Min Plenum + 3 Min Puffer) · Anker: Block 1, Process vs. Cognitive Automation.\n\nZiel\nZehn Tätigkeiten aus dem Berufsalltag von Accountants and Auditors in drei Kategorien einordnen — Process Automation, Cognitive Automation, Nicht anwendbar — und in der Plenum-Auflösung die strittigen Fälle gemeinsam besprechen.\n\n\nSetup\n\nQuiz im Browser: Diagnose-Quiz starten.\nEigene Notizen für strittige Items (zwei bis drei Stichworte je Item).\n\n\n\nSchritte\n\nDie zehn Items einzeln klassifizieren (8 Min). Spontane Einschätzung, keine Recherche.\nThink-Pair-Share mit dem Sitznachbarn (4 Min): Welches Item war für Sie eindeutig, welches strittig? Wo verläuft die Grenze, wenn beide Kategorien in einem Workflow zusammenwirken?\nPlenum-Auflösung (3 Min) mit Spinnen-Diagramm: Anteil korrekt klassifizierter Items pro Kategorie. Strittiger Hybrid-Fall (Item 9 — OCR plus ERP-Einspielung) als Diskussions-Anker.\n\n\n\nErweiterung für schnelle Studierende\nSchlagen Sie für ein Item, das Sie als Hybrid einordnen würden, eine klare Trennlinie vor: An welcher Stelle des Workflows endet Process Automation und beginnt Cognitive Automation? Welches technische Element markiert den Übergang (OCR-Modul, Klassifikator, Regel-Engine)?\n\n\nDeliverable\nAusgefülltes Quiz mit Score (wird vom Widget ausgegeben), plus drei bis fünf Stichworte zu strittigen Items im eigenen Notizbuch.\n\n\nBewertungskriterien\nKlassifikations-Score · Begründungstiefe für strittige Items · Bereitschaft zur Diskussion im Plenum.\n\n\nTutor-Prompt\n\n\n\n\n\n\n\nIch habe das Diagnose-Quiz absolviert und bin bei Item [Nummer einfügen] unsicher zwischen Process und Cognitive. Mein Argument für [Antwort] ist [eigene Begründung]. Bitte fragen Sie mich zu meiner Argumentation nach und schlagen Sie eine Trennfrage vor — eine Frage, deren Antwort die Zuordnung eindeutig festlegt.\n\n\n\n\n\n\nWas, wenn …\n\n\n\n\n\n\n\nScore deutlich unter 60 %? → Lacity-Willcocks-Definition noch einmal nachschlagen in der Wissensbasis · LLM-Grundlagen. Die strittigen Items in der Plenum-Auflösung benennen, damit wir sie gemeinsam aufrollen.\nMehrere Items als „Nicht anwendbar” markiert? → Prüfen Sie, ob „Nicht anwendbar” wirklich bedeutet, dass die Tätigkeit nicht automatisierbar ist — oder nur, dass sie hybride Anteile enthält.",
+    "text": "Übung 1 — Diagnose-Quiz Process vs. Cognitive\nModus: in-class · Einzelarbeit · Dauer: 18 Min (8 Min Solo + 4 Min TPS + 3 Min Plenum + 3 Min Puffer) · Anker: Block 1, Process vs. Cognitive Automation.\n\nZiel\nZehn Tätigkeiten aus dem Berufsalltag von Accountants and Auditors in drei Kategorien einordnen — Process Automation, Cognitive Automation, Nicht anwendbar — und in der Plenum-Auflösung die strittigen Fälle gemeinsam besprechen.\n\n\nSetup\n\nQuiz im Browser: Diagnose-Quiz starten.\nEigene Notizen für strittige Items (zwei bis drei Stichworte je Item).\n\n\n\nSchritte\n\nDie zehn Items einzeln klassifizieren (8 Min). Spontane Einschätzung, keine Recherche.\nThink-Pair-Share mit dem Sitznachbarn (4 Min): Welches Item war für Sie eindeutig, welches strittig? Wo verläuft die Grenze, wenn beide Kategorien in einem Workflow zusammenwirken?\nPlenum-Auflösung (3 Min) mit Spinnen-Diagramm: Anteil korrekt klassifizierter Items pro Kategorie. Strittiger Hybrid-Fall (Item 9 — OCR plus ERP-Einspielung) als Diskussions-Anker.\n\n\n\nErweiterung für schnelle Studierende\nSchlagen Sie für ein Item, das Sie als Hybrid einordnen würden, eine klare Trennlinie vor: An welcher Stelle des Workflows endet Process Automation und beginnt Cognitive Automation? Welches technische Element markiert den Übergang (OCR-Modul, Klassifikator, Regel-Engine)?\n\n\nDeliverable\nAusgefülltes Quiz mit Score (wird vom Widget ausgegeben), plus drei bis fünf Stichworte zu strittigen Items im eigenen Notizbuch.\n\n\nBewertungskriterien\nKlassifikations-Score · Begründungstiefe für strittige Items · Bereitschaft zur Diskussion im Plenum.\n\n\nTutor-Prompt\n\n\n\n\n\n\n\nIch habe das Diagnose-Quiz absolviert und bin bei Item [Nummer einfügen] unsicher zwischen Process und Cognitive. Mein Argument für [Antwort] ist [eigene Begründung]. Bitte fragen Sie mich zu meiner Argumentation nach und schlagen Sie eine Trennfrage vor — eine Frage, deren Antwort die Zuordnung eindeutig festlegt.\n\n\n\n\n\n\nWas, wenn …\n\n\n\n\n\n\n\nScore deutlich unter 60 %? → Lacity-Willcocks-Definition aus Block 1 noch einmal in den Folien nachschlagen und die strittigen Items in der Plenum-Auflösung benennen, damit wir sie gemeinsam aufrollen.\nMehrere Items als „Nicht anwendbar” markiert? → Prüfen Sie, ob „Nicht anwendbar” wirklich bedeutet, dass die Tätigkeit nicht automatisierbar ist — oder nur, dass sie hybride Anteile enthält.",
     "crumbs": [
       "Teil 1 — Workshop 1 (Di, 12.05.)",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Übungen Workshop 1</span>"
@@ -202,302 +202,6 @@
     "crumbs": [
       "Teil 1 — Workshop 1 (Di, 12.05.)",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Übungen Workshop 1</span>"
-    ]
-  },
-  {
-    "objectID": "parts/05-hausaufgaben.html",
-    "href": "parts/05-hausaufgaben.html",
-    "title": "Hausaufgaben nach Workshop 2",
-    "section": "",
-    "text": "Was Sie nach den Hausaufgaben können\nBeide Hausaufgaben sind die Capstone-Leistungen der Workshop-Reihe. Übung 6 ist ein Positionspapier zwischen 500 und 800 Wörtern. Übung 7 ist ein Personal AI Policy-Dokument als Capstone-Hausaufgabe.",
-    "crumbs": [
-      "Teil 3 — Hausaufgaben & Wissensbasis",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Hausaufgaben nach Workshop 2</span>"
-    ]
-  },
-  {
-    "objectID": "parts/05-hausaufgaben.html#sec-uebung-6",
-    "href": "parts/05-hausaufgaben.html#sec-uebung-6",
-    "title": "Hausaufgaben nach Workshop 2",
-    "section": "Übung 6 — Das Dilemma der Mitte",
-    "text": "Übung 6 — Das Dilemma der Mitte\nModus: Hausaufgabe nach Workshop 2 · Format: Positionspapier 500–800 Wörter · 4D-Bezug: Diligence.\n\n\n\nSorgen vor GenAI im Berufsalltag — Datenschutz, Qualitätsverlust, Verantwortungsdiffusion.\n\n\n\nZiel\nEin konkretes Dilemma der Mitte beschreiben — also eine Situation, in der KI-Einsatz weder klar verboten noch klar geboten ist — und begründet Stellung beziehen.\n\n\nSetup\n\nEin realistisches, aber nicht-mandantenbezogenes Dilemma aus Tax, Audit oder Advisory.\nMaterial aus Workshop 1 (4D-Framework) und Workshop 2 (Discernment, Diligence).\n\n\n\nSchritte\n\nDilemma in 3–5 Sätzen schildern.\nArgumente für KI-Einsatz auflisten (mind. drei).\nArgumente gegen KI-Einsatz auflisten (mind. drei).\nBegründete Position beziehen, mit Verweis auf mindestens zwei Quellen aus der Bibliographie.\nEigene Diligence-Regel ableiten, die Sie aus diesem Fall übernehmen.\n\n\n\nDeliverable\nPositionspapier 500–800 Wörter (PDF), formatiert nach APA, mit Quellenverzeichnis.\n\n\nBewertungskriterien\nKlarheit der Dilemma-Schilderung · Ausgewogenheit der Argumente · Begründungstiefe der Position · Übertragbarkeit der abgeleiteten Diligence-Regel · APA-konformes Zitieren.\n\n\nTutor-Prompt\n\n\n\n\n\n\n\nIch schreibe in Übung 6 ein Positionspapier zum Dilemma [einfügen]. Hier mein Argumentations-Skelett: [einfügen]. Bitte stellen Sie mir drei kritische Rückfragen, die meine Argumentation am stärksten herausfordern — ohne mir die Antworten vorzugeben. Schlagen Sie eine Quelle aus der Bibliographie vor, die meine Position vertieft, und eine, die ihr widerspricht.\n\n\n\n\n\n\nWas, wenn …\n\n\n\n\n\n\n\nMein Dilemma ist eigentlich klar entscheidbar? → Dann ist es kein Dilemma der Mitte. Frage Sie, in welcher Variante des Falls sich die Antwort kippen würde — das ist Ihr Dilemma.\nIch finde nur Argumente in eine Richtung? → Tutor um eine Steelman-Version der Gegenposition bitten.",
-    "crumbs": [
-      "Teil 3 — Hausaufgaben & Wissensbasis",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Hausaufgaben nach Workshop 2</span>"
-    ]
-  },
-  {
-    "objectID": "parts/05-hausaufgaben.html#sec-uebung-7",
-    "href": "parts/05-hausaufgaben.html#sec-uebung-7",
-    "title": "Hausaufgaben nach Workshop 2",
-    "section": "Übung 7 — Personal AI Policy",
-    "text": "Übung 7 — Personal AI Policy\nModus: Capstone-Hausaufgabe · Format: Eigenes Policy-Dokument · 4D-Bezug: integrativ über alle vier Kompetenzen.\n\n\n\nBewusstes Lernen neuer KI-Prozesse — die eigene Praxis aktiv gestalten statt sie geschehen lassen.\n\n\n\nZiel\nEine persönliche AI Policy formulieren, die festlegt, wann, wie und mit welchen Schutzmechanismen Sie KI in Ihrer Berufspraxis einsetzt. Adressat: Sie selbst plus eine fiktive Aufsichtsperson.\n\n\nSetup\n\nErkenntnisse aus allen Workshop-1- und Workshop-2-Übungen.\nBerufsrechtsmaterial: WPO § 43, StBerG § 57, DSGVO-Grundlagen — siehe Wissensbasis · Recht und Berufsstand.\n\n\n\nAufbau (Vorschlag)\n\nGeltungsbereich — Für welche Tätigkeiten gilt die Policy? Wo nicht?\nDelegation-Regeln — Welche Aufgabenklassen darf ich delegieren? Welche nie?\nDescription-Regeln — Welche Mindeststandards an System-Prompts gelten?\nDiscernment-Regeln — Welche Prüfschritte sind Pflicht? Welche Belege müssen bleiben?\nDiligence-Regeln — Wie dokumentiere ich KI-Einsatz revisionsfest? Wann offenlege?\nEskalationspfade — Was tue ich, wenn eine Regel verletzt wurde?\nReview-Rhythmus — Wann überarbeite ich die Policy?\n\n\n\nDeliverable\nPersonal-AI-Policy-Dokument (1–3 Seiten), strukturiert nach den sieben Sektionen, mit Datum, Versionsnummer und Querverweisen zu mindestens drei Übungen aus der Workshop-Reihe.\n\n\nBewertungskriterien\nVollständigkeit der sieben Sektionen · Konkretheit der Regeln (keine Allgemeinplätze) · Kohärenz mit Berufsrecht · sichtbare Spuren der eigenen Übungen aus Tag 1 und 2.\n\n\nTutor-Prompt\n\n\n\n\n\n\n\nIch schreibe meine Personal AI Policy. Hier ist mein Entwurf zu Sektion [einfügen]: [Text einfügen]. Bitte prüfen Sie sie gegen drei Kriterien: (a) Konkretheit (keine Allgemeinplätze), (b) Kohärenz mit Berufsrecht (WPO/StBerG/DSGVO), (c) Anschlussfähigkeit an meine Übungen aus Tag 1/2. Machen Sie einen zugespitzten Verbesserungsvorschlag pro Kriterium.\n\n\n\n\n\n\nWas, wenn …\n\n\n\n\n\n\n\nMeine Policy klingt wie eine generische Compliance-Liste? → Mindestens drei Regeln umschreiben, sodass sie eine konkrete Übung aus Tag 1 oder 2 referenzieren.\nIch kann nicht entscheiden, ob etwas Pflicht oder Empfehlung ist? → Tutor um eine „Was-wenn-Verletzt”-Analyse pro Regel bitten und daraus die Schwere ableiten.",
-    "crumbs": [
-      "Teil 3 — Hausaufgaben & Wissensbasis",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Hausaufgaben nach Workshop 2</span>"
-    ]
-  },
-  {
-    "objectID": "parts/06-wissensbasis.html",
-    "href": "parts/06-wissensbasis.html",
-    "title": "Wissensbasis",
-    "section": "",
-    "text": "Was Sie in dieser Wissensbasis finden\nDiese Seite ist absichtlich als ein einziges, durchsuchbares Dokument angelegt. Stand: 12.05.2026.",
-    "crumbs": [
-      "Teil 3 — Hausaufgaben & Wissensbasis",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wissensbasis</span>"
-    ]
-  },
-  {
-    "objectID": "parts/06-wissensbasis.html#sec-llm-grundlagen",
-    "href": "parts/06-wissensbasis.html#sec-llm-grundlagen",
-    "title": "Wissensbasis",
-    "section": "LLM-Grundlagen",
-    "text": "LLM-Grundlagen\n\n\n\n\n\n\nWas ist ein LLM?\n\n\n\nEin Large Language Model ist ein statistischer Textgenerator, der das jeweils nächstwahrscheinliche Wort vorhersagt — nicht mehr und nicht weniger. Bild: sehr gut geübter Autovervollständiger, der zu einem Anfang den passenden Folgetext rät. Technisch: tiefes neuronales Netz mit Transformer-Architektur, trainiert auf großen Textmengen.\n\n\nDrei Kernunterscheidungen, die durchgehend in beiden Workshops auftauchen.\n\nReasoning vs. Instant\nInstant-Modelle antworten direkt; Reasoning-Modelle denken zwischen Frage und Antwort sichtbar oder unsichtbar nach (Chain-of-Thought). Reasoning lohnt sich bei Mehrschritt-Aufgaben, ist langsamer und teurer.\n\n\nWerkzeuge und Harness\nHarness — der Werkzeugring um das LLM herum: Web-Search, Code-Interpreter, Datei-Upload, Memory, Tool-Calling. Die Antwortqualität hängt fast immer mehr vom Harness ab als vom Modell allein (Grootendorst, 2025).\n\n\n\nTool-Metapher — ein LLM ohne Harness ist wie ein guter Handwerker ohne Werkzeugkasten; erst die Tools machen aus dem Modell ein System.\n\n\n\n\nDrei Lizenz-Tiers\nFree (0 €): begrenzter Kontext, oft kein Web-Search, keine vertraulichen Daten. Casual (~20–30 €/Monat): Pro-Tier von Claude, ChatGPT, Gemini. Professional (~100–200 €/Monat): Team-/Enterprise-Tiers mit Datenschutzgarantien, längeren Kontexten, mehr Tools. Faustregel: Mandantenarbeit nicht im Free-Tier.\nQuerverweise: Workshop 1, Block 3 · Übung 2.",
-    "crumbs": [
-      "Teil 3 — Hausaufgaben & Wissensbasis",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wissensbasis</span>"
-    ]
-  },
-  {
-    "objectID": "parts/06-wissensbasis.html#sec-welches-modell",
-    "href": "parts/06-wissensbasis.html#sec-welches-modell",
-    "title": "Wissensbasis",
-    "section": "Welches Modell?",
-    "text": "Welches Modell?\nSchlanke Vergleichsseite analog zu Békes (2026). Stand der Empfehlungen: Mai 2026.\n\n\n\nSkill-Profil im Finanzbereich — typische Tätigkeitsfelder, in denen sich Modell-Fähigkeiten ablesen und vergleichen lassen.\n\n\nQuerverweise: Workshop 1, Block 3 · Übung 2.",
-    "crumbs": [
-      "Teil 3 — Hausaufgaben & Wissensbasis",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wissensbasis</span>"
-    ]
-  },
-  {
-    "objectID": "parts/06-wissensbasis.html#sec-prompt-muster",
-    "href": "parts/06-wissensbasis.html#sec-prompt-muster",
-    "title": "Wissensbasis",
-    "section": "Prompt-Muster",
-    "text": "Prompt-Muster\nSieben Bausteine eines belastbaren Prompts: Rolle · Zielgruppe · Aufgabe · Tonalität · Constraints · Format · Iteration. Anker: Project Management Institute (2024).\n\nIteration als Pflicht\nEin Prompt ist nie fertig. Drei Iterationen sind Mindeststandard, dokumentiert mit was geändert · warum · Effekt auf den Output.\nQuerverweise: Übung 2 · Übung 3.",
-    "crumbs": [
-      "Teil 3 — Hausaufgaben & Wissensbasis",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wissensbasis</span>"
-    ]
-  },
-  {
-    "objectID": "parts/06-wissensbasis.html#sec-tools",
-    "href": "parts/06-wissensbasis.html#sec-tools",
-    "title": "Wissensbasis",
-    "section": "Tools und Plattformen",
-    "text": "Tools und Plattformen\n\nDrei Tool-Klassen\nChat-Plattformen (Claude, ChatGPT, Gemini, Perplexity), eingebettete Assistenten (Copilot in Microsoft 365, Gemini in Google Workspace), agentische Plattformen (Custom GPTs, Claude Projects, Gems, Agents-Framework).\nQuerverweise: Workshop 1, Block 3 · Übung 2.",
-    "crumbs": [
-      "Teil 3 — Hausaufgaben & Wissensbasis",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wissensbasis</span>"
-    ]
-  },
-  {
-    "objectID": "parts/06-wissensbasis.html#sec-bpmn",
-    "href": "parts/06-wissensbasis.html#sec-bpmn",
-    "title": "Wissensbasis",
-    "section": "BPMN-Grundlagen",
-    "text": "BPMN-Grundlagen\n\n\n\n\n\n\nWas ist BPMN?\n\n\n\nBusiness Process Model and Notation — eine bildliche Sprache, in der Geschäftsprozesse mit standardisierten Symbolen gezeichnet werden. Bild: eine Notensprache für Prozesse — dieselben Symbole bedeuten überall dasselbe. Technisch: OMG-Standard, derzeit Version 2.0.2 (Object Management Group, 2014).\n\n\n\nKernsymbole\nAktivität (abgerundetes Rechteck) · Ereignis (Kreis) · Gateway/Entscheidung (Raute) · Sequenzfluss (Pfeil) · Pool/Lane (Schwimmbahn).\n\n\nProzessdenken vor Werkzeugwahl\nEin gutes BPMN-Modell zwingt zur Klärung wer macht was wann mit welchem Input und welchem Output — die Voraussetzung für jede sinnvolle Automatisierungsentscheidung.\nQuerverweise: Workshop 2, Block I · Übung BPMN-Modellierung.",
-    "crumbs": [
-      "Teil 3 — Hausaufgaben & Wissensbasis",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wissensbasis</span>"
-    ]
-  },
-  {
-    "objectID": "parts/06-wissensbasis.html#sec-rpa",
-    "href": "parts/06-wissensbasis.html#sec-rpa",
-    "title": "Wissensbasis",
-    "section": "RPA-Grundlagen",
-    "text": "RPA-Grundlagen\n\n\n\n\n\n\nWas ist RPA?\n\n\n\nRobotic Process Automation — Software, die genau die Klicks und Tastatureingaben eines Menschen reproduziert. Bild: ein extrem geduldiger Praktikant, der einmal genau zuschaut und dann denselben Ablauf zuverlässig wiederholt. Technisch: attended/unattended Bots, gesteuert durch Workflows, oft auf Basis von Selektoren und Schnittstellen (Lacity & Willcocks, 2016).\n\n\n\nWann RPA, wann GenAI, wann RPA + GenAI?\nRPA für regelbasierte, strukturierte Abläufe. GenAI für Sprache, Bedeutung, Klassifikation. Kombination: GenAI als Cognitive-Layer, der einen RPA-Bot anleitet, was zu tun ist (Cognitive Automation).\nQuerverweise: Workshop 2, Block J · Übung UiPath-Bot.",
-    "crumbs": [
-      "Teil 3 — Hausaufgaben & Wissensbasis",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wissensbasis</span>"
-    ]
-  },
-  {
-    "objectID": "parts/06-wissensbasis.html#sec-recht",
-    "href": "parts/06-wissensbasis.html#sec-recht",
-    "title": "Wissensbasis",
-    "section": "Recht und Berufsstand",
-    "text": "Recht und Berufsstand\n\nMandantengeheimnis\nFree-Tier-Tools sind grundsätzlich nicht für Mandantenarbeit geeignet, weil Eingaben für Trainingszwecke verwendet werden können und keine Auftragsverarbeitungsverträge bestehen.\n\n\nBerufsrechtliche Rahmen im Überblick\nDSGVO — Zweckbindung und Datenminimierung gelten auch für KI-Verarbeitung personenbezogener Daten; Auftragsverarbeitung und Drittlandtransfer brauchen jeweils Rechtsgrundlage. WPO § 43 — Eigenverantwortlichkeit, Gewissenhaftigkeit, Verschwiegenheit und Unabhängigkeit für Wirtschaftsprüfer. StBerG § 57 — gleichgelagerte Pflichten für Steuerberater. Verletzung der Verschwiegenheit ist Straftat nach § 203 StGB.\nQuerverweise: Workshop 2, Block K · Übung 6 · Übung 7.\n\n\n\n\n\n\nBékes, G. (2026). Doing Data Analysis with AI – Week 1: LLM Review. https://gabors-data-analysis.com/ai-course/week01/\n\n\nGrootendorst, M. (2025). A Visual Guide to LLM Agents. https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents\n\n\nLacity, M. C., & Willcocks, L. P. (2016). A new approach to automating services. MIT Sloan Management Review, 58(1), 41–49.\n\n\nObject Management Group. (2014). Business Process Model and Notation (BPMN), Version 2.0.2. OMG. https://www.omg.org/spec/BPMN/2.0.2/\n\n\nProject Management Institute. (2024). Talking to AI: Prompt Engineering for Project Managers. PMI E-Learning. https://www.pmi.org/shop/p-/elearning/talking-to-ai-prompt-engineering-for-project-managers/el128",
-    "crumbs": [
-      "Teil 3 — Hausaufgaben & Wissensbasis",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wissensbasis</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/quickstart.html",
-    "href": "appendix/quickstart.html",
-    "title": "Quickstart",
-    "section": "",
-    "text": "Was Sie nach diesem Quickstart haben",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quickstart</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/quickstart.html#reihenfolge",
-    "href": "appendix/quickstart.html#reihenfolge",
-    "title": "Quickstart",
-    "section": "Reihenfolge",
-    "text": "Reihenfolge\n\nKI-Zugänge anlegen\n\nMindestens zwei aus: Claude (claude.ai), ChatGPT (chat.openai.com), Gemini (gemini.google.com), Perplexity (perplexity.ai).\nFree-Tier reicht für alle Workshop-Übungen.\n\nBPMN-Werkzeug bereitstellen\n\nSignavio über Hochschul-Account (falls verfügbar) oder\nbpmn.io als freie Web-Variante.\n\nUiPath-Vorbereitung (für Workshop 2)\n\nUiPath Cloud-Account (kostenlos) oder\nScreencast-Ersatzmaterialien aus dem Workshop-Repo.\n\nTutor öffnen — Browser-Tab mit Custom-GPT/Project-Tutor (Link siehe Tutor-Prompt-Anhang).\nDiagnose-Quiz absolvieren → Quiz starten.",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quickstart</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/quickstart.html#datenschutz-und-vertraulichkeit",
-    "href": "appendix/quickstart.html#datenschutz-und-vertraulichkeit",
-    "title": "Quickstart",
-    "section": "Datenschutz und Vertraulichkeit",
-    "text": "Datenschutz und Vertraulichkeit\n\n\n\n\n\n\n\nIn keinem Fall reale Mandantendaten in KI-Tools eingeben.\nSachverhalte für Übungen entweder fiktiv konstruieren oder vollständig anonymisieren.\nFree-Tier-Dienste sind nicht für Mandantenarbeit geeignet — siehe Wissensbasis · Recht und Berufsstand.",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quickstart</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/quickstart.html#was-wenn",
-    "href": "appendix/quickstart.html#was-wenn",
-    "title": "Quickstart",
-    "section": "Was, wenn …",
-    "text": "Was, wenn …\n\n\n\n\n\n\n\nHochschul-SSO funktioniert nicht? → IT-Hotline TH Köln, ersatzweise privater Account (kein Mandantenbezug!).\nIch habe keinen UiPath-Zugang? → Screencast und Vorlagen-Dateien aus dem Workshop-Repo nutzen.\nMein Browser blockiert iFrames? → Workshop-Widgets in einem alternativen Browser öffnen oder direkt aus interactions/ per Doppelklick.",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Quickstart</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/troubleshooting.html",
-    "href": "appendix/troubleshooting.html",
-    "title": "Troubleshooting",
-    "section": "",
-    "text": "KI-Tool",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Troubleshooting</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/troubleshooting.html#ki-tool",
-    "href": "appendix/troubleshooting.html#ki-tool",
-    "title": "Troubleshooting",
-    "section": "",
-    "text": "Free-Tier-Limit erreicht? → Auf zweites Tool ausweichen, später am Tag erneut testen, ggf. Pro-Tier-Account einer/eines Kommilitonen mitnutzen (im Plenum).\nAntwort wird abgeschnitten? → Folge-Prompt „Bitte fortsetzen, beginne mit dem letzten vollständigen Satz erneut”.\nTool ignoriert Constraints? → Constraints zu Beginn und am Ende des Prompts platzieren, in Listenform statt Fließtext.",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Troubleshooting</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/troubleshooting.html#system-prompt",
-    "href": "appendix/troubleshooting.html#system-prompt",
-    "title": "Troubleshooting",
-    "section": "System-Prompt",
-    "text": "System-Prompt\n\n\n\n\n\n\n\nOutputs schwanken stark trotz System-Prompt? → Es fehlt ein Format-Beispiel (Few-Shot) oder eine harte Constraint zur Output-Form.\nTool kennt System-Prompt-Funktion nicht? → Free-Tier-Variante ohne Custom Instructions: Prompt vor jeder Anfrage manuell voranstellen.",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Troubleshooting</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/troubleshooting.html#bpmn-signavio",
-    "href": "appendix/troubleshooting.html#bpmn-signavio",
-    "title": "Troubleshooting",
-    "section": "BPMN / Signavio",
-    "text": "BPMN / Signavio\n\n\n\n\n\n\n\nModell rendert nicht? → Browser-Cache leeren, alternativ in bpmn.io importieren.\nSequenzfluss verbindet falsche Aktivitäten? → Ankerpunkte erneut setzen, ggf. Aktivität löschen und neu zeichnen.\nDiagramm wird zu groß für eine Seite? → Sub-Prozess als Collapsed-Aktivität auslagern.",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Troubleshooting</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/troubleshooting.html#uipath",
-    "href": "appendix/troubleshooting.html#uipath",
-    "title": "Troubleshooting",
-    "section": "UiPath",
-    "text": "UiPath\n\n\n\n\n\n\n\nBot startet nicht? → Selektor-Probleme, Pfad-Probleme, fehlende Activities prüfen — Logs lesen.\nExcel-Datei nicht gefunden? → Variablen statt absoluter Pfade verwenden, Datei im Projekt-Ordner ablegen.\nOutput-PDF leer? → Print-Driver-Auswahl prüfen, ggf. UiPath Studio neu starten.",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Troubleshooting</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/troubleshooting.html#quarto-skript-rendering-für-dozentin",
-    "href": "appendix/troubleshooting.html#quarto-skript-rendering-für-dozentin",
-    "title": "Troubleshooting",
-    "section": "Quarto / Skript-Rendering (für Dozent:in)",
-    "text": "Quarto / Skript-Rendering (für Dozent:in)\n\n\n\n\n\n\n\nquarto: command not found? → Quarto-Installation prüfen mit quarto --version. Falls leer: neu installieren von https://quarto.org/docs/get-started/.\nYAML-Fehler beim Rendern? → Einrückungen prüfen (zwei Leerzeichen, keine Tabs), Doppelpunkte und Anführungszeichen.\nGitHub Pages zeigt 404? → In _quarto.yml muss output-dir: docs stehen, der docs/-Ordner committet sein, in .gitignore darf /docs/ nicht ausgeschlossen sein.",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Troubleshooting</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/troubleshooting.html#tutor",
-    "href": "appendix/troubleshooting.html#tutor",
-    "title": "Troubleshooting",
-    "section": "Tutor",
-    "text": "Tutor\n\n\n\n\n\n\n\nTutor antwortet nicht zum Thema? → Master-Prompt aus Tutor-Prompt-Anhang erneut setzen.\nTutor halluziniert eine Quelle? → Notieren, im Plenum als Discernment-Material verwenden.",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Troubleshooting</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/tutor-prompt.html",
-    "href": "appendix/tutor-prompt.html",
-    "title": "Tutor-Master-Prompt",
-    "section": "",
-    "text": "Wofür dieser Anhang gut ist",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Tutor-Master-Prompt</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/tutor-prompt.html#master-prompt-vorlage",
-    "href": "appendix/tutor-prompt.html#master-prompt-vorlage",
-    "title": "Tutor-Master-Prompt",
-    "section": "Master-Prompt (Vorlage)",
-    "text": "Master-Prompt (Vorlage)\n\n\n\n\n\n\nZum Kopieren in Custom Instructions / Project Instructions / Gem Instructions\n\n\n\n\nRolle. Sie sind Tutor für den Hochschul-Workshop „KI in Tax, Audit & Advisory” an der TH Köln (Prof. Dr. Roman Bartnik). Studierende sind angehende Steuer-, Audit- und Advisory-Profis ohne tiefe IT-Vorbildung.\nPädagogik. Lehren Sie nach dem AI Fluency Framework (Dakan & Feller, 2025): Delegation, Description, Discernment, Diligence. Stellen Sie in jedem Schritt klar, welche der vier Kompetenzen gerade trainiert wird.\nStil. Antworten Sie auf Deutsch. Vor jedem Fachbegriff steht eine Lay-Erklärung in einem Satz. Erst danach das technische Detail. Fassen Sie sich kurz; eine Antwort umfasst maximal sechs Sätze, außer der Studierende fordert mehr.\nMethode. Statt fertige Antworten zu liefern, stellen Sie Diagnose-Fragen und Folge-Prompts. Wenn der Studierende um eine Lösung bittet, geben Sie maximal eine zugespitzte Vorschlag-Lösung — und erklären Sie, was der Studierende dadurch verliert (welche Lerngelegenheit ausgelassen wird).\nQuellen. Bei Behauptungen mit Faktenanspruch: (a) nennen Sie die Quelle namentlich, (b) markieren Sie ehrlich, wenn Sie sich unsicher sind, (c) erfinden Sie keine Quellen. Wenn Sie etwas nicht wissen, sagen Sie es.\nVertraulichkeit. Erinnern Sie die Studierenden bei Mandantenbezug: „Bitte keinen Mandantenbezug. Anonymisieren oder fiktiven Sachverhalt verwenden.”\nBegleitete Übungen. Sie kennen die Übungen des Skripts und ihre 4D-Zuordnung:\nWorkshop 1 (Tag 1)\n\nDiagnose-Quiz — Klassifikation Process vs. Cognitive Automation als Vorlauf zu Delegate.\nKarriereentwicklung im Modellvergleich (Delegate) — schwaches vs. starkes Modell, Side-by-Side auf arena.ai mit Suchwerkzeugen, optional Deep Research.\nPrompt-Umbau und Tutor-Bot (Describe) — RTF- und CREATE-Schema, anschließend Aufbau eines Tutor-Bots für das eigene Lerngebiet, optional RAG-Tutor mit NotebookLM.\nTutor-Bot systematisch prüfen (Discern) — Test-Suite mit drei bis fünf Soll-Antworten, Red-Green-TDD nach Willison, Bewertung als rot/gelb/grün.\n\nWorkshop 2 (Tag 2)\n\nBPMN-Modellierung Rechnungseingang — Process-Automation-Verständnis.\nUiPath-Bot lesen und erklären — RPA als technisches Beispiel von Process Automation.\nIntegrierter 4D-Use-Case mit Diligence-Schwerpunkt — berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Transparenz, Verantwortung.\n\nHausaufgaben nach Workshop 2\n\nDas Dilemma der Mitte (Diligence) — Positionspapier 500–800 Wörter.\nPersonal AI Policy (integrativ) — Capstone-Hausaufgabe.\n\nEröffnung. Bei jedem neuen Gespräch: fragen Sie einmal kurz, (a) in welcher Übung der Studierende gerade ist, (b) welches Vorwissen er hat, (c) was sein Ziel im aktuellen Schritt ist. Erst danach inhaltlich antworten.",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Tutor-Master-Prompt</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/tutor-prompt.html#verwendung",
-    "href": "appendix/tutor-prompt.html#verwendung",
-    "title": "Tutor-Master-Prompt",
-    "section": "Verwendung",
-    "text": "Verwendung\n\nChatGPT Custom GPT — als „Instructions” einsetzen, optional zusätzlich Skript-PDFs als Knowledge hochladen.\nClaude Project — als Project Instructions einsetzen, das Skript als Project-Knowledge hochladen.\nGoogle Gem — als Gem-Instruktion einsetzen.\n\n\n\n\n\n\n\nHinweis zur Versionierung\n\n\n\nBei Anpassungen am Master-Prompt: Datum und Versionsnummer in den Prompt selbst aufnehmen („Stand: TT.MM.JJJJ — Version X”), damit Studierende erkennen, welche Tutor-Version sie verwenden.",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Tutor-Master-Prompt</span>"
-    ]
-  },
-  {
-    "objectID": "appendix/tutor-prompt.html#tutor-link-für-studierende",
-    "href": "appendix/tutor-prompt.html#tutor-link-für-studierende",
-    "title": "Tutor-Master-Prompt",
-    "section": "Tutor-Link für Studierende",
-    "text": "Tutor-Link für Studierende\nTutor — KI in Tax, Audit & Advisory →",
-    "crumbs": [
-      "Anhang",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Tutor-Master-Prompt</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "Literatur",
-    "section": "",
-    "text": "Bartnik, R. (2026). GenAI für lehre: Ein werkstattbuch.\nEigenverlag, TH Köln. https://th-koln-bartnik.github.io/genai4teaching/\n\n\nBékes, G. (2026). Doing data analysis with AI – week 1:\nLLM review. https://gabors-data-analysis.com/ai-course/week01/\n\n\nDakan, R., & Feller, J. (2025). Framework for AI\nfluency: Practical overview document (v 1.5). https://ringling.libguides.com/ai/framework\n\n\nDell’Acqua, F., McFowland, E., Mollick, E. R., Lifshitz-Assaf, H.,\nKellogg, K., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K.\nR. (2023). Navigating the jagged technological frontier: Field\nexperimental evidence of the effects of AI on knowledge\nworker productivity and quality. Harvard Business School Working\nPaper, (24-013). https://doi.org/10.2139/ssrn.4573321\n\n\nEs, S., James, J., Espinosa-Anke, L., & Schockaert, S. (2024).\nRAGAS: Automated evaluation of retrieval augmented\ngeneration. Proceedings of the 18th Conference of the European\nChapter of the Association for Computational Linguistics: System\nDemonstrations, 150–158. https://aclanthology.org/2024.eacl-demo.16/\n\n\nGrootendorst, M. (2025). A visual guide to LLM\nagents. https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents\n\n\nLacity, M. C., & Willcocks, L. P. (2016). A new approach to\nautomating services. MIT Sloan Management Review,\n58(1), 41–49.\n\n\nLacity, M., & Willcocks, L. (2021). Becoming strategic with\nintelligent automation. MIS Quarterly Executive,\n20(2), 1–14.\n\n\nMollick, E. (2024). Co-intelligence: Living and working with\nAI. Portfolio/Penguin.\n\n\nObject Management Group. (2014). Business process model and notation\n(BPMN), version 2.0.2. OMG. https://www.omg.org/spec/BPMN/2.0.2/\n\n\nProject Management Institute. (2024). Talking to AI:\nPrompt engineering for project managers. PMI\nE-Learning. https://www.pmi.org/shop/p-/elearning/talking-to-ai-prompt-engineering-for-project-managers/el128\n\n\nWillcocks, L., & Lacity, M. (2024). The evolution of intelligent\nautomation as a sourcing option. In L. Willcocks, I. Oshri, & J.\nKotlarsky (Eds.), Transformation in global outsourcing (pp.\n327–353). Springer International Publishing. https://doi.org/10.1007/978-3-031-61022-6_9\n\n\nWillison, S. (2025). Red-green test-driven development for agentic\nengineering. https://simonwillison.net/guides/agentic-engineering-patterns/red-green-tdd/",
-    "crumbs": [
-      "Literatur"
     ]
   }
 ]

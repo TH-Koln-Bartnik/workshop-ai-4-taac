@@ -51,7 +51,7 @@ Der Tutor begleitet Sie durch alle Übungen. Er kennt das 4D-Framework, die Übu
 ::: callout-warning
 ## Datenschutz und Vertraulichkeit
 
-In keinem Fall reale Mandantendaten in KI-Tools eingeben. Free-Tier-Dienste sind für Mandantenarbeit grundsätzlich nicht geeignet. Hintergrund: WPO § 43, StBerG § 57, DSGVO. Mehr in der [Wissensbasis](parts/06-wissensbasis.qmd#sec-recht).
+In keinem Fall reale Mandantendaten in KI-Tools eingeben. Free-Tier-Dienste sind für Mandantenarbeit grundsätzlich nicht geeignet. Hintergrund: WPO § 43, StBerG § 57, DSGVO. Die berufsrechtliche Vertiefung folgt in Workshop 2.
 :::
 
 ## Intro-Slideshow
@@ -62,4 +62,4 @@ Zum Einstieg in Workshop 1 verwende ich eine kurze Vorstellungs-Slideshow — se
 
 ## Lizenz
 
-Inhalte unter CC BY-NC-SA 4.0 (siehe `LICENSE`). Verwendete Quellen siehe [Literatur](references.qmd).
+Inhalte unter CC BY-NC-SA 4.0 (siehe `LICENSE`). Verwendete Quellen werden inline zitiert und am Ende jedes Kapitels aufgelistet.

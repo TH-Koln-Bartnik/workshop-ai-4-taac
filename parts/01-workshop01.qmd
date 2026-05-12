@@ -151,7 +151,6 @@ Für Workshop 2 brauchen Sie zwei kostenfreie Accounts. Bitte vor der Sitzung am
 
 ## Hintergrund / Werkzeuge / Ressourcen
 
-- **Wissensbasis** — [LLM-Grundlagen](06-wissensbasis.qmd#sec-llm-grundlagen) · [Welches Modell?](06-wissensbasis.qmd#sec-welches-modell) · [Prompt-Muster](06-wissensbasis.qmd#sec-prompt-muster) · [Tools und Plattformen](06-wissensbasis.qmd#sec-tools).
 - **Foliensatz** — `gen-ai-allgemeine-empfehlungen-2026-05.pptx` (Chat versus erweitertes Sprachmodell, drei Lizenz-Tiers, Harness, *Jagged Frontier*).
 - **Originalmaterial 4D-Framework** — Cheat Sheet und Practical Overview von @dakan2025framework.
 - **Begleitlehrbuch** — [Kapitel 2.4 *How to speak*](https://th-koln-bartnik.github.io/genai4teaching/kapitel02.html#sec-how-to-speak){target="_blank"} und [Kapitel 7 *Tutor-Prompt-Sammlung*](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html#sec-general-tutor){target="_blank"}.

@@ -39,20 +39,22 @@ book:
       chapters:
         - parts/01-workshop01.qmd
         - parts/02-uebungen-w1.qmd
+# --- Ab hier für den heutigen Online-Stand (Workshop 1) ausgeblendet.
+# --- Vor Workshop 2 wieder einkommentieren.
 #   - part: "Teil 2 — Workshop 2 (Mi, 13.05.)"
 #     chapters:
 #       - parts/03-workshop02.qmd
 #       - parts/04-uebungen-w2.qmd
-    - part: "Teil 3 — Hausaufgaben & Wissensbasis"
-      chapters:
-        - parts/05-hausaufgaben.qmd
-        - parts/06-wissensbasis.qmd
-    - part: "Anhang"
-      chapters:
-        - appendix/quickstart.qmd
-        - appendix/troubleshooting.qmd
-        - appendix/tutor-prompt.qmd
-    - references.qmd
+#   - part: "Teil 3 — Hausaufgaben & Wissensbasis"
+#     chapters:
+#       - parts/05-hausaufgaben.qmd
+#       - parts/06-wissensbasis.qmd
+#   - part: "Anhang"
+#     chapters:
+#       - appendix/quickstart.qmd
+#       - appendix/troubleshooting.qmd
+#       - appendix/tutor-prompt.qmd
+#   - references.qmd
   page-footer:
     left: "© 2026 Prof. Dr. Roman Bartnik · TH Köln · CC BY-NC-SA 4.0"
     right: "Erstellt mit [Quarto](https://quarto.org)"
