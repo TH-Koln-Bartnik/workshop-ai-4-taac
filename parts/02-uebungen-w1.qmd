@@ -149,7 +149,7 @@ Einen Beispiel-Prompt in die Schemata **RTF** und **CREATE** umbauen, danach ein
 
 > Du generierst klare, genaue Beispiele für Konzepte für Studierende. Ich möchte, dass du mir zwei Fragen stellst: Welches Konzept soll ich erklären, und wer ist die Zielgruppe für die Erklärung. Schlage dann das Konzept und Beispiele für das Konzept nach. Liefere eine klare, mehrteilige Erklärung des Konzepts unter Verwendung spezifischer Beispiele und gib mir fünf Analogien und Metaphern, die ich verwenden kann, um das Konzept auf unterschiedliche Weise zu verstehen.
 
-Strukturieren Sie diesen Prompt einmal nach **RTF** (Role, Task, Format) und einmal nach **CREATE** (Character, Request, Examples, Adjustments, Type of output, Extras). Notieren Sie eine Beobachtung pro Schema: Wo hilft das Schema, wo zwingt es Sie zu künstlicher Genauigkeit?
+Strukturieren Sie diesen Prompt einmal nach **RTF** (Role, Task, Format) und einmal nach **CREATE** (Character, Request, Examples, Adjustments, Type of output, Evaluation & Steps). Notieren Sie eine Beobachtung pro Schema: Wo hilft das Schema, wo zwingt es Sie zu künstlicher Genauigkeit?
 
 **Schritt b — Tutor-Bot anpassen (8 Min).** Vorlage: [General-Tutor-Prompt aus der Prompt-Sammlung](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html#sec-general-tutor){target="_blank"}. Kopieren Sie den Prompt in *Custom Instructions* (ChatGPT), *Project Instructions* (Claude) oder *Gem* (Gemini). Anpassung auf Ihr Lerngebiet — etwa Steuerberater-Examen, Wirtschaftsprüfer-Examen oder ein Modul des laufenden Semesters. Testen Sie den angepassten Tutor mit **zwei Beispielfragen** aus Ihrem Lerngebiet.
 
