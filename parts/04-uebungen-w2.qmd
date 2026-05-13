@@ -161,25 +161,28 @@ Vorgehen: Nach Login in Signavio einen neuen Diagrammtyp *BPMN 2.0* anlegen. Min
 
 **Think-Pair-Share (4 Min).** Welche Stelle aus dem Mermaid-Diagramm (Übung 4) hätte in Signavio anders ausgesehen? Wo wirkt BPMN überdimensioniert, wo zahlt sich die strikte Notation aus?
 
-## Übung 6 — UiPath Kennenlernen {#sec-uipath}
+## Übung 6 — UiPath Mandanten-Anschreiben {#sec-uipath}
 
-**Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min · **4D-Bezug:** Delegate / praktischer Erstkontakt mit Process Automation.
+**Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min · **4D-Bezug:** Delegate / praktischer Erstkontakt mit Process Automation an einem realistischen Tax-/Audit-Szenario.
 
-Lernen Sie die Grundstruktur von **UiPath Cloud Studio Web** kennen — der Browser-basierten Variante der RPA-Plattform. Anders als Studio Desktop läuft Studio Web ohne lokalen Download direkt im Browser. Setup: Account bei [UiPath Cloud](https://cloud.uipath.com){target="_blank"} (sollte aus der Hausaufgabe nach Workshop 1 vorhanden sein). Nach Login: oben links *Studio Web* öffnen.
+Lernen Sie die Grundstruktur von **UiPath Cloud Studio Web** an einer Aufgabe kennen, die in jeder Kanzlei vorkommt: einen **Serienbrief-Bot**, der die Adressdaten eines Mandanten aus einer Excel-Liste in ein Word-Anschreiben einsetzt und das fertige Dokument speichert. Setup: Account bei [UiPath Cloud](https://cloud.uipath.com){target="_blank"} (sollte aus der Hausaufgabe nach Workshop 1 vorhanden sein). Nach Login oben links *Studio Web* öffnen.
 
-Vorgehen — ein „Hello World"-Bot in fünf Schritten:
+**Material.** Im Daten-Ordner finden Sie zwei vorbereitete Dateien — eine Excel-Stammdatenliste `mandantenstammdaten.xlsx` mit den Spalten *Anrede · Vorname · Nachname · Firma · Straße · PLZ · Ort* und eine Word-Vorlage `anschreiben-vorlage.docx` mit den Platzhaltern `{{Anrede}}`, `{{Vorname}}`, `{{Nachname}}`, `{{Firma}}`, `{{Strasse}}`, `{{PLZ}}`, `{{Ort}}`. Beide Dateien sind in Ihren UiPath-Cloud-Workspace hochzuladen (oben rechts *Upload*).
 
-1. **Neues Projekt anlegen** — *Create new project*, Typ *Process*, Name „Hello TAAC".
-2. **Erste Activity einsetzen** — aus der Activity-Suche links den Block *Show Message Box* einfügen.
-3. **Nachricht definieren** — als Text eintragen: `Hallo, mein Name ist [Ihr Vorname]. Heute lerne ich UiPath kennen.`
-4. **Variable anlegen (optional)** — eine String-Variable `studierende` mit Ihrem Namen als Default-Wert. Nachrichten-Text auf `"Hallo, mein Name ist " + studierende` umstellen.
-5. **Bot ausführen** — *Test* oder *Run* klicken. Eine Message Box mit Ihrem Text sollte erscheinen.
+Vorgehen — der Bot in sechs Schritten:
 
-Anschließend: drei Stichworte ins Notizbuch — was an der UiPath-Oberfläche war anders als erwartet, was war ähnlich zu anderen Editoren (etwa Word, PowerPoint), welche Frage bleibt offen?
+1. **Neues Projekt anlegen** — *Create new project*, Typ *Process*, Name „Mandanten-Anschreiben".
+2. **Excel-Datei einbinden** — Activity *Use Excel File*, Pfad auf die hochgeladene `mandantenstammdaten.xlsx` setzen, Referenznamen `Stammdaten` vergeben.
+3. **Adressdaten lesen** — innerhalb des Excel-Scopes mit *Read Cell* die ersten sieben Felder der Zeile 2 lesen und je einer String-Variablen zuweisen (`Anrede`, `Vorname`, `Nachname`, `Firma`, `Strasse`, `PLZ`, `Ort`). Wer mag, verwendet stattdessen *Read Range* und greift später per Index zu.
+4. **Word-Vorlage öffnen** — Activity *Use Word File*, Pfad auf `anschreiben-vorlage.docx`, Option *Make a copy* aktivieren und Ausgabepfad auf `Anschreiben-{Nachname}.docx` setzen — so wird die Vorlage nicht überschrieben.
+5. **Platzhalter ersetzen** — sieben *Replace Text in Document*-Activities einfügen, je ein Platzhalter (`{{Anrede}}` etc.) durch die korrespondierende Variable austauschen.
+6. **Bot ausführen** — *Run* klicken, das erzeugte Anschreiben im Workspace öffnen und prüfen, ob alle Platzhalter sauber ersetzt sind.
 
-**Erweiterung für schnelle Studierende.** Fügen Sie eine zweite Activity ein, die nach einer Eingabe fragt (*Input Dialog*) und die eingegebene Antwort in einer zweiten Message Box wiedergibt. Beobachten Sie, wie sich Activities verknüpfen lassen.
+Anschließend: drei Stichworte ins Notizbuch — wo war die Oberfläche intuitiver als erwartet, wo zäher, welche Stelle wäre bei einer echten Mandantenliste mit 200 Zeilen die kritischste?
 
-**Think-Pair-Share (3 Min).** Welcher Schritt war am ungewohntesten? Wo würde Sie diese Oberfläche in eine reale Tax-/Audit-Aufgabe tragen? Welche der Tätigkeiten aus dem Diagnose-Quiz (Workshop 1) ließe sich mit einem UiPath-Bot dieser Sorte angreifen?
+**Erweiterung für schnelle Studierende.** Bauen Sie eine *For Each Row*-Schleife um die Schritte 3 bis 5, sodass der Bot alle Zeilen der Excel-Liste verarbeitet und für jeden Mandanten eine eigene Datei `Anschreiben-{Nachname}.docx` schreibt. Beobachten Sie, wie sich der Aufwand pro Mandant gegen Null bewegt — und wo trotzdem ein Mensch prüfen muss, bevor das Schreiben rausgeht.
+
+**Think-Pair-Share (3 Min).** An welcher Stelle dieses Bots würden Sie *Cognitive Automation* sinnvoll ergänzen — etwa für eine individuelle Anrede oder einen mandantenspezifischen Hinweis? Welche Diligence-Pflicht (Creation, Transparency, Deployment) trifft den Versand solcher Serienbriefe am stärksten?
 
 ## Vertiefung (optional in-class oder als Hausaufgabe)
 
