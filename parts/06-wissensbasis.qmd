@@ -16,6 +16,16 @@ subtitle: "Nachschlagewerk zu LLMs, Modellen, Prompts, Tools, BPMN, RPA und Beru
 
 Diese Seite ist absichtlich als ein einziges, durchsuchbares Dokument angelegt. Stand: 12.05.2026.
 
+::: callout-tip
+## Vertiefung — Grundlagen und Prompt-Beispiele
+
+Ein eigenes Grundlagenskript ergänzt diese Wissensbasis um eine ausführliche Einführung in die Funktionsweise von Sprachmodellen und eine umfangreiche Sammlung kommentierter Prompt-Beispiele zum Lernen und Adaptieren.
+
+- **Grundlagen Sprachmodelle und „How to speak"** — [Kapitel 2 von *GenAI in der Lehre*](https://th-koln-bartnik.github.io/genai4teaching/kapitel02.html){target="_blank"} (Bartnik, 2026)
+- **Prompt-Beispiele-Sammlung** — [Kapitel 7, Appendix 2](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html){target="_blank"} mit kommentierten Vorlagen für Tutor-Bots, Erklärbots, Constraints und mehr
+- **Komplettes Skript** — [genai4teaching.github.io](https://th-koln-bartnik.github.io/genai4teaching/){target="_blank"}
+:::
+
 ## AI Fluency Framework — die vier Kompetenzen im Überblick {#sec-4d-framework}
 
 Die folgenden Definitionen folgen dem *Framework for AI Fluency — Practical Overview Document, Version 1.1* von @dakan2025framework. Übersetzung aus dem englischen Original. Lizenz des Originals: CC BY-NC-ND 4.0.
@@ -183,6 +193,161 @@ Sieben Bausteine eines belastbaren Prompts: **Rolle · Zielgruppe · Aufgabe · 
 Ein Prompt ist nie fertig. Drei Iterationen sind Mindeststandard, dokumentiert mit *was geändert · warum · Effekt auf den Output*.
 
 *Querverweise:* [Übung 2](02-uebungen-w1.qmd#sec-uebung-2) · [Übung 3](02-uebungen-w1.qmd#sec-uebung-3).
+
+## Prompt-Pattern-Katalog nach White et al. (2023) {#sec-prompt-patterns}
+
+@white2023prompt katalogisieren sechzehn wiederverwendbare *Prompt-Patterns* — Bauformen, mit denen sich häufige Probleme im Umgang mit Sprachmodellen systematisch lösen lassen. Die Patterns sind keine konkreten Beispiele, sondern Schablonen, die sich auf jede Domäne übertragen lassen. Die Autoren gruppieren die Patterns in fünf Kategorien.
+
+| Kategorie | Patterns |
+|---|---|
+| Input Semantics | Meta Language Creation |
+| Output Customization | Output Automater · Persona · Visualization Generator · Recipe · Template |
+| Error Identification | Fact Check List · Reflection |
+| Prompt Improvement | Question Refinement · Alternative Approaches · Cognitive Verifier · Refusal Breaker |
+| Interaction | Flipped Interaction · Game Play · Infinite Generation |
+| Context Control | Context Manager |
+
+Pro Pattern folgt erst das allgemeine Prinzip nach White et al., dann zwei Anwendungsbeispiele aus Tax, Audit oder Advisory. Patterns sind kombinierbar — viele Workshop-Übungen nutzen mehrere gleichzeitig.
+
+### Meta Language Creation
+
+**Prinzip.** „Wenn ich X sage, meine ich Y." — Das Modell wird auf eine eigene Kurzschrift trainiert, mit der sich Sachverhalte kompakter beschreiben lassen, als es in Fließtext möglich wäre. Geeignet für wiederkehrende Strukturen mit komplexer Syntax. Vorsicht: pro Session nur eine Meta-Sprache, sonst entstehen Konflikte.
+
+*Tax-Beispiel.* „Wenn ich `§-Verweis(Norm, Absatz, Satz)` schreibe, beziehe ich mich auf die genannte Norm. Beispiel: `§-Verweis(KStG, 8, 3)` meint § 8 Abs. 3 KStG."
+
+*Audit-Beispiel.* „Wenn ich `Bef-(Aktivität, Risiko, Materialität)` schreibe, beschreibe ich einen Prüfungsbefund. Beispiel: `Bef-(Bestandsaufnahme, vollständig, niedrig)` meint einen Befund zur Bestandsaufnahme ohne Materialitäts-Auffälligkeit."
+
+### Output Automater
+
+**Prinzip.** „Wenn deine Antwort einen ausführbaren Ablauf nahelegt, liefere mir zusätzlich ein Skript oder eine Automatisierungs-Artefakt, das diese Schritte ausführt." Spart manuelles Übertragen mehrstufiger Anweisungen.
+
+*Tax-Beispiel.* „Wenn deine Antwort einen mehrschrittigen Prozess für die Erstellung der Umsatzsteuer-Voranmeldung enthält, gib mir zusätzlich eine Excel-Formel-Liste oder einen UiPath-Pseudocode, der diese Schritte automatisiert."
+
+*Audit-Beispiel.* „Wenn deine Antwort eine Sequenz von Prüfungshandlungen beschreibt, formatiere sie zusätzlich als ISA-konforme Checkliste mit ankreuzbaren Punkten und Verweis auf die jeweilige ISA-Norm."
+
+### Persona
+
+**Prinzip.** „Handle als X. Liefere die Outputs, die X produzieren würde." Lenkt Detailtiefe, Tonalität und Fachfokus, ohne dass der Nutzer alle Einzelheiten kennt.
+
+*Tax-Beispiel.* „Handle als erfahrene Steuerberaterin mit Schwerpunkt internationales Umsatzsteuerrecht. Liefere Stellungnahmen mit ausdrücklichem Bezug auf BMF-Schreiben und UStG-Paragraphen."
+
+*Audit-Beispiel.* „Handle als Senior Auditor:in einer Big-Four-Gesellschaft mit fünfzehn Jahren Erfahrung in der Prüfung mittelständischer Kapitalgesellschaften. Bewerte den vorgelegten Sachverhalt aus ISA-Perspektive."
+
+### Visualization Generator
+
+**Prinzip.** „Erzeuge mir den Text-Input, den ich in Tool Y einfügen kann, um daraus eine Visualisierung zu erstellen." Geeignet für Mermaid, Graphviz, PlantUML, DALL-E, Tabellen. Das Modell schreibt nicht das Bild, sondern den Bauplan dafür.
+
+*Tax-Beispiel.* „Erzeuge ein Mermaid-Flowchart für den Rechnungseingangsprozess in der Steuerkanzlei. Antworte ausschließlich mit dem Mermaid-Code, den ich in mermaid.live einfügen kann."
+
+*Audit-Beispiel.* „Erzeuge eine Mermaid-Sequence-Diagram für den Ablauf einer Going-Concern-Würdigung — Mandant, Prüfer, Mandanten-Aufsichtsrat, Bank — mit allen kritischen Übergabe-Punkten."
+
+### Recipe
+
+**Prinzip.** „Ich will Ziel X erreichen. Ich weiß bereits, dass die Schritte A, B, C dazu gehören. Liefere mir die vollständige Schrittfolge, ergänze fehlende Schritte und kennzeichne unnötige." Erzwingt eine Sequenz statt freier Beratung.
+
+*Tax-Beispiel.* „Ich will eine Verrechnungspreis-Dokumentation für eine mittelständische Gruppe erstellen. Ich weiß, dass ich Funktions- und Risikoanalyse, Methodenwahl und Benchmarking brauche. Liefere die vollständige Schrittfolge, ergänze Fehlendes, kennzeichne Unnötiges."
+
+*Audit-Beispiel.* „Ich will eine Materiality-Analyse für einen Jahresabschluss durchführen. Ich weiß, dass ich Overall Materiality, Performance Materiality und Clearly Trivial Threshold festlegen muss. Liefere die vollständige Schrittfolge nach ISA 320."
+
+### Template
+
+**Prinzip.** „Ich gebe dir eine Vorlage. Platzhalter in GROSSBUCHSTABEN. Fülle die Platzhalter, lasse die Struktur unverändert." Erzwingt ein präzises Ausgabeformat — geeignet für Memos, Stellungnahmen, URL-Strukturen.
+
+*Tax-Beispiel.* „Vorlage für eine Stellungnahme: `# Sachverhalt: SACHVERHALT // # Frage: FRAGE // # Rechtsgrundlage: NORM // # Würdigung: WÜRDIGUNG // # Ergebnis: ERGEBNIS`. Fülle die Platzhalter für den folgenden Sachverhalt: [...]"
+
+*Audit-Beispiel.* „Vorlage für eine Prüfungsfeststellung: `Feststellung: TITEL · Risiko: RISIKO · Empfehlung: EMPFEHLUNG · Verantwortlich: ROLLE · Frist: FRIST`. Fülle die Vorlage anhand des folgenden Sachverhalts: [...]"
+
+### Fact Check List
+
+**Prinzip.** „Generiere am Ende deiner Antwort eine Liste der Fakten, von denen die Antwort abhängt und die fact-checked werden sollten." Macht überprüfbare Aussagen sichtbar und gibt dem Leser eine forensische Spur.
+
+*Tax-Beispiel.* „Erstelle am Ende der Antwort eine Liste aller zitierten Normen, Paragraphen und BFH-Aktenzeichen mit Datum, die ich vor Veröffentlichung verifizieren sollte."
+
+*Audit-Beispiel.* „Generiere am Ende der Antwort eine Liste aller Behauptungen zu materiellen Risiken, Vermögenswerten und Zahlen, die mit Originalbelegen abgeglichen werden müssen."
+
+### Reflection
+
+**Prinzip.** „Wenn du eine Antwort gibst, erkläre die Annahmen und die Argumentation hinter deiner Antwort." Macht die internen Schritte des Modells transparent und gibt dem Nutzer eine Stelle, an der er Vorbehalte erkennen kann.
+
+*Tax-Beispiel.* „Wenn du eine umsatzsteuerliche Würdigung formulierst, erkläre nach der Antwort, welche Annahmen zu Leistungsort, Leistungsempfänger und Rechnungsstellung deiner Würdigung zugrunde liegen — auch jene, die ich nicht ausdrücklich genannt habe."
+
+*Audit-Beispiel.* „Wenn du eine Empfehlung zur Materiality-Bemessung gibst, erkläre, welche Benchmark (Eigenkapital, EBIT, Umsatz) du verwendet hast und warum, plus welche Annahmen über die Mandantenstabilität in deine Wahl eingeflossen sind."
+
+### Question Refinement
+
+**Prinzip.** „Wenn ich dir eine Frage stelle, schlage zuerst eine bessere Version der Frage vor und frage mich, ob ich diese stattdessen verwenden will." Bringt Domänenwissen des Modells in die Fragestellung — wichtig bei Bereichen, in denen der Nutzer nicht weiß, wonach er fragen müsste.
+
+*Tax-Beispiel.* „Wenn ich dir eine Frage zur umsatzsteuerlichen Behandlung stelle, schlage zuerst eine schärfere Version vor, die Leistungsort, Steuerschuldnerschaft und mögliche Sonderregelungen explizit ansprechen sollte. Frage mich, ob ich diese Version verwenden möchte."
+
+*Audit-Beispiel.* „Wenn ich dir eine Frage zur Prüfung eines Kontensaldos stelle, schlage zuerst eine bessere Version vor, die die einschlägigen Aussagen nach ISA 315 (Vollständigkeit, Bewertung, Existenz, Rechte und Pflichten) explizit benennt."
+
+### Alternative Approaches
+
+**Prinzip.** „Wenn es alternative Wege gibt, dasselbe zu erreichen, liste die besten Alternativen mit Pros und Cons und frage, welchen ich nutzen möchte." Bricht kognitive Verengung auf den ersten Lösungspfad.
+
+*Tax-Beispiel.* „Wenn es alternative steuerliche Strukturierungen für eine Unternehmensnachfolge gibt — Einzelübertragung, Anteilstausch, Schenkung mit Vorbehaltsnießbrauch — liste die drei besten mit Vor- und Nachteilen aus Sicht von Steuerlast, Liquiditätsbelastung und administrativem Aufwand."
+
+*Audit-Beispiel.* „Wenn es alternative Prüfungsansätze für die Werthaltigkeit von Vorräten gibt — Inventur-Beobachtung, Cut-Off-Tests, analytische Prüfung — liste die drei besten Alternativen mit Aufwand-zu-Sicherheits-Verhältnis."
+
+### Cognitive Verifier
+
+**Prinzip.** „Wenn ich eine Frage stelle, generiere zuerst drei zusätzliche Folgefragen, deren Antworten die ursprüngliche Frage besser beantwortbar machen. Kombiniere die Antworten zur Endantwort." Senkt die Fehlerquote bei komplexen Fragen, weil das Modell explizit zerlegen muss.
+
+*Tax-Beispiel.* „Wenn ich eine Frage zu einer grenzüberschreitenden Lieferung stelle, generiere zuerst drei Folgefragen zu Leistungsort, Leistungsempfänger-Status (Unternehmer oder nicht), und vorliegender Rechnungsstellung. Kombiniere meine Antworten zur Würdigung."
+
+*Audit-Beispiel.* „Wenn ich eine Frage zur Going-Concern-Würdigung stelle, generiere zuerst drei Folgefragen zu Liquiditätssituation, Kreditlinien und absehbaren Klagerisiken. Kombiniere meine Antworten zu einer fundierten Würdigung."
+
+### Refusal Breaker
+
+**Prinzip.** „Wenn du eine Frage nicht beantworten kannst, erkläre warum, und schlage eine oder mehrere alternative Formulierungen vor, die du beantworten kannst." Hilft beim Übersetzen unklarer Fragen in beantwortbare.
+
+*Tax-Beispiel.* „Wenn du eine konkrete Stellungnahme zu einem Mandantensachverhalt verweigerst (etwa wegen unklarer Rechtslage), erkläre die Verweigerung und schlage drei alternative Fragestellungen vor — etwa aufgeteilt nach Vor- und Nachfragen oder mit zusätzlichen Annahmen."
+
+*Audit-Beispiel.* „Wenn du eine ISA-konforme Empfehlung verweigerst (etwa weil dies nur ein lokaler Wirtschaftsprüfer geben kann), erkläre den Grund und schlage alternative Formulierungen vor, die als Vorbereitung der Berufsträger-Entscheidung dienen können."
+
+### Flipped Interaction
+
+**Prinzip.** „Stell mir Fragen, bis du genug Informationen hast, um Ziel X zu erreichen. Frage mich [eine Frage / mehrere Fragen] auf einmal." Dreht die Kontrolle um — das Modell führt die Befragung, der Nutzer antwortet.
+
+*Tax-Beispiel.* „Stell mir Fragen, bis du genug Informationen hast, um die korrekte umsatzsteuerliche Würdigung einer grenzüberschreitenden Beratungsleistung zu liefern. Frage mich eine Frage auf einmal, und gehe vom Allgemeinen zum Speziellen."
+
+*Audit-Beispiel.* „Stell mir Fragen, bis du genug Informationen für eine vorläufige Materiality-Empfehlung nach ISA 320 hast. Frage mich höchstens fünf Fragen, beginne mit der Geschäftsmodell-Frage."
+
+### Game Play
+
+**Prinzip.** „Erstelle ein Spiel rund um Thema X. Hier sind die Spielregeln: ..." Bringt komplexe Inhalte über simulierte Szenarien näher, geeignet für Übung und Selbstlernen.
+
+*Tax-Beispiel.* „Wir spielen ein Quiz zu Reverse-Charge-Konstellationen. Stelle mir je eine Frage mit einem konkreten Sachverhalt; ich antworte mit *Reverse-Charge* oder *Standard*; du gibst mir die richtige Antwort plus eine kurze Begründung. Zehn Runden, danach Auswertung."
+
+*Audit-Beispiel.* „Wir spielen ein Rollenspiel: Du bist Mandant, ich bin Wirtschaftsprüferin. Du gibst mir Informationen über deine Bilanz, ich entscheide, welche Prüfungshandlungen ich anfordere. Bewerte meine Wahl am Ende anhand der ISA-Anforderungen."
+
+### Infinite Generation
+
+**Prinzip.** „Generiere Output kontinuierlich, X Stück pro Iteration. Hier ist, wie du meine Zwischen-Inputs nutzen sollst. Stoppe, wenn ich es sage." Spart das wiederholte Eingeben derselben Vorlage bei vielen ähnlichen Aufgaben.
+
+*Tax-Beispiel.* „Generiere mir kontinuierlich Test-Sachverhalte zur Lohnsteuer für die Prüfung — drei Stück pro Iteration, mit unterschiedlichen Schwerpunkten (geldwerter Vorteil, Reisekosten, Sachbezug). Stoppe, wenn ich *Ende* schreibe."
+
+*Audit-Beispiel.* „Generiere kontinuierlich Beispiele für Going-Concern-Risiken, ein Beispiel pro Iteration, jeweils mit Branche, Auslöser, Indikator und Prüfungshandlung. Stoppe nach zwölf Beispielen oder wenn ich *Ende* schreibe."
+
+### Context Manager
+
+**Prinzip.** „Beschränke den Kontext für unsere Unterhaltung auf X. Berücksichtige Y. Ignoriere Z. (Optional: Beginne komplett neu.)" Steuert, woran das Modell denkt — wichtig, wenn frühere Gesprächsteile die Antwort verzerren würden.
+
+*Tax-Beispiel.* „Berücksichtige für die folgenden Fragen ausschließlich das deutsche Umsatzsteuerrecht (UStG, UStAE, BMF-Schreiben). Ignoriere österreichisches und schweizerisches Steuerrecht und ignoriere Diskussionen zu Ertragsteuern aus früheren Antworten."
+
+*Audit-Beispiel.* „Begrenze die folgenden Antworten auf ISA 315 und ISA 330. Ignoriere Bezüge zu IDW PS oder lokalen deutschen Prüfungsstandards. Wenn du dich an frühere Bezüge aus dieser Konversation erinnerst, ignoriere sie."
+
+### Patterns kombinieren
+
+Die Stärke des Katalogs liegt im Kombinieren. @white2023prompt empfehlen ausdrücklich, Patterns zu verschränken. Drei Beispiele aus den Workshop-Übungen:
+
+- **Persona + Template + Fact Check List** für eine Stellungnahme aus Übung 3 (Workshop 1).
+- **Cognitive Verifier + Question Refinement** für die Karriereentwicklungs-Frage in Übung 2 (Workshop 1).
+- **Context Manager + Persona + Refusal Breaker** für die RAG-Suchübung HGB in Workshop 2 — das Modell agiert als reine Suchhilfe, ignoriert Trainingswissen und schlägt bei Verweigerung Reformulierungen vor.
+
+*Querverweise:* [Übung 3 — Prompt-Umbau und Tutor-Bot](02-uebungen-w1.qmd#sec-uebung-3) · [Übung RAG-Suchhilfe HGB](04-uebungen-w2.qmd#sec-rag-hgb) · [Grundlagenskript *GenAI in der Lehre*, Prompt-Beispiele-Sammlung](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html){target="_blank"}.
+
+*Quelle:* @white2023prompt — *A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT*. <https://arxiv.org/abs/2302.11382>
 
 ## Tools und Plattformen {#sec-tools}
 
