@@ -281,14 +281,15 @@ div.csl-indent {
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#sec-test-suite" id="toc-sec-test-suite" class="nav-link active" data-scroll-target="#sec-test-suite">Übung 1 — Tutor-Bot systematisch prüfen</a></li>
-  <li><a href="#sec-rag-hgb" id="toc-sec-rag-hgb" class="nav-link" data-scroll-target="#sec-rag-hgb">Übung 2 — RAG-Suchübung HGB-Prüfungspflicht</a></li>
-  <li><a href="#sec-diligence-bestof-n" id="toc-sec-diligence-bestof-n" class="nav-link" data-scroll-target="#sec-diligence-bestof-n">Übung 3 — Diligence-Risiko-Recherche im Best-of-N</a></li>
-  <li><a href="#sec-mermaid" id="toc-sec-mermaid" class="nav-link" data-scroll-target="#sec-mermaid">Übung 4 — Prozessmodellierung mit Mermaid</a></li>
-  <li><a href="#sec-bpmn" id="toc-sec-bpmn" class="nav-link" data-scroll-target="#sec-bpmn">Übung 5 — BPMN-Modellierung in Signavio</a></li>
-  <li><a href="#sec-uipath" id="toc-sec-uipath" class="nav-link" data-scroll-target="#sec-uipath">Übung 6 — UiPath Mandanten-Anschreiben</a></li>
+  <li><a href="#sec-pruefungsordnung" id="toc-sec-pruefungsordnung" class="nav-link active" data-scroll-target="#sec-pruefungsordnung">Übung 1 — Prüfungsordnung mit zweistufigem Dialog-Prompt befragen</a></li>
+  <li><a href="#sec-test-suite" id="toc-sec-test-suite" class="nav-link" data-scroll-target="#sec-test-suite">Übung 2 — Tutor-Bot systematisch prüfen</a></li>
+  <li><a href="#sec-rag-hgb" id="toc-sec-rag-hgb" class="nav-link" data-scroll-target="#sec-rag-hgb">Übung 3 — RAG-Suchübung HGB-Prüfungspflicht</a></li>
+  <li><a href="#sec-diligence-bestof-n" id="toc-sec-diligence-bestof-n" class="nav-link" data-scroll-target="#sec-diligence-bestof-n">Übung 4 — Diligence-Risiko-Recherche im Best-of-N</a></li>
+  <li><a href="#sec-mermaid" id="toc-sec-mermaid" class="nav-link" data-scroll-target="#sec-mermaid">Übung 5 — Prozessmodellierung mit Mermaid</a></li>
+  <li><a href="#sec-bpmn" id="toc-sec-bpmn" class="nav-link" data-scroll-target="#sec-bpmn">Übung 6 — BPMN-Modellierung in Signavio</a></li>
+  <li><a href="#sec-uipath" id="toc-sec-uipath" class="nav-link" data-scroll-target="#sec-uipath">Übung 7 — UiPath Mandanten-Anschreiben</a></li>
   <li><a href="#vertiefung-optional-in-class-oder-als-hausaufgabe" id="toc-vertiefung-optional-in-class-oder-als-hausaufgabe" class="nav-link" data-scroll-target="#vertiefung-optional-in-class-oder-als-hausaufgabe">Vertiefung (optional in-class oder als Hausaufgabe)</a></li>
-  <li><a href="#sec-4d-usecase" id="toc-sec-4d-usecase" class="nav-link" data-scroll-target="#sec-4d-usecase">Übung 7 — Integrierter 4D-Use-Case (optional in-class)</a></li>
+  <li><a href="#sec-4d-usecase" id="toc-sec-4d-usecase" class="nav-link" data-scroll-target="#sec-4d-usecase">Übung 8 — Integrierter 4D-Use-Case (optional in-class)</a></li>
   <li><a href="#quellen" id="toc-quellen" class="nav-link" data-scroll-target="#quellen">Quellen</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/TH-Koln-Bartnik/workshop-ai-4-taac/edit/main/parts/04-uebungen-w2.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/TH-Koln-Bartnik/workshop-ai-4-taac/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
@@ -322,23 +323,115 @@ div.csl-indent {
 <section id="was-sie-nach-diesen-übungen-können" class="level4 lernziel-box">
 <h4 class="anchored" data-anchor-id="was-sie-nach-diesen-übungen-können">Was Sie nach diesen Übungen können</h4>
 <ul>
+<li>die eigene <strong>Prüfungsordnung</strong> mit einem zweistufigen Dialog-Prompt quellengebunden befragen und die Output-Qualität gegen ein Prüfprotokoll abklopfen,</li>
 <li>einen <strong>Tutor-Bot</strong> mit einer kleinen Test-Suite systematisch prüfen — Vertiefung aus Workshop 1,</li>
 <li>eine <strong>RAG-Suche im HGB</strong> so einhegen, dass die KI nur als quellengebundene Suchhilfe agiert,</li>
 <li>aus einer <strong>Diligence-Definition</strong> mehrere Risikofälle im Best-of-N-Schema generieren und einen aussagekräftigen auswählen,</li>
 <li>einen einfachen Prozess in <strong>Mermaid</strong> und anschließend in <strong>Signavio</strong> als BPMN-Diagramm modellieren,</li>
-<li>die <strong>Grundstruktur von UiPath</strong> kennenlernen und einen einfachen Workflow ausführen.</li>
+<li>die <strong>Grundstruktur von UiPath</strong> an einem Mandanten-Anschreiben-Bot kennenlernen.</li>
 </ul>
 </section>
-<p>Die Reihenfolge folgt einer didaktischen Logik: erst zwei Discern-Übungen, dann eine Diligence-Übung, dann der Übergang zur technischen Brücke aus Prozessmodellierung und Robotic Process Automation. Die Vertiefungen zu UiPath und zum integrierten 4D-Use-Case sind als Hausaufgabe oder optionale Übung am Ende dieser Sektion aufgeführt.</p>
+<p>Die Reihenfolge folgt einer didaktischen Logik: erst drei Discern-Übungen am eigenen Dokument, am Tutor-Bot und im HGB, dann eine Diligence-Übung, dann der Übergang zur technischen Brücke aus Prozessmodellierung und Robotic Process Automation. Die Vertiefungen zu UiPath und zum integrierten 4D-Use-Case sind als Hausaufgabe oder optionale Übung am Ende dieser Sektion aufgeführt.</p>
+<section id="sec-pruefungsordnung" class="level2">
+<h2 class="anchored" data-anchor-id="sec-pruefungsordnung">Übung 1 — Prüfungsordnung mit zweistufigem Dialog-Prompt befragen</h2>
+<p><strong>Modus:</strong> in-class · Einzelarbeit · <strong>Dauer:</strong> 30 Min · <strong>4D-Bezug:</strong> Describe und Discern — präziser Prompt plus quellengebundene Output-Prüfung am eigenen Dokument.</p>
+<p>Sie öffnen Workshop 2 an einem Dokument, das Sie kennen: Ihre eigene Prüfungsordnung. Die Aufgabe — ein quellengebundener Analyse-Assistent liefert Ihnen mehrere Lesarten zu einer konkreten Frage, mit wörtlichen Zitaten und Fundstellen, ohne abschließendes Urteil. Der Witz dabei: der Prompt zerlegt den Dialog in <em>zwei</em> Schritte. Erst nimmt das Modell das Dokument nur auf und benennt es, dann erst beantwortet es die Frage. So vermeiden Sie, dass das Modell zu früh interpretiert oder spekuliert. Übersetzt in den Berufsalltag: dasselbe Muster passt auf Mandanten-Mandate, Verträge und Bescheide.</p>
+<p><strong>Setup.</strong> Ein starkes Modell mit Dokument-Upload (ChatGPT mit Datei-Upload, Claude Projects, NotebookLM oder GWDG Academic Cloud RAG/Arcana). Ihre aktuelle Prüfungsordnung oder Modulordnung als PDF bereitlegen. <strong>Keine personenbezogenen Daten über sich oder Dritte</strong> in den Chat eingeben — die Übung läuft mit dem Dokument und einer fachlichen Frage.</p>
+<p><strong>Schritt 1 — Zweistufigen System-Prompt setzen (3 Min).</strong> Kopieren Sie den unten stehenden Prompt als System- oder Initial-Prompt in den Chat. Der Prompt erzwingt den Dialog in zwei Schritten.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+System-Prompt zum Kopieren
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>Du bist ein quellengebundener Analyse-Assistent für Prüfungsordnungen im Hochschulkontext. Deine Aufgabe ist, Studierenden zu helfen, ihre eigene Prüfungsordnung zu verstehen. Du gibst keine endgültige Rechtsauskunft und triffst keine verbindliche Entscheidung. Du arbeitest in zwei Schritten.</p>
+<p><strong>Schritt 1 — Dokument aufnehmen.</strong> Wenn ein Dokument hochgeladen wurde, tue nur Folgendes: (1) bestätige, dass das Dokument als Grundlage verwendet wird; (2) benenne — soweit erkennbar — Titel, Studiengang/Prüfungsordnung/Rahmenordnung, Datum/Fassung/Version und Struktur (Paragraphen, Abschnitte, Anlagen); (3) weise darauf hin, dass du ausschließlich mit dem hochgeladenen Dokument arbeitest; (4) fordere zu einer konkreten Frage auf. Beantworte in Schritt 1 noch keine inhaltliche Rechtsfrage, interpretiere noch nicht, suche noch keine Regelungen heraus, erfinde keine Angaben.</p>
+<p><strong>Schritt 2 — Frage analysieren.</strong> Wenn der User anschließend eine konkrete Frage stellt, analysiere sie ausschließlich anhand des hochgeladenen Dokuments. Du darfst keine endgültige Entscheidung treffen, keine verbindliche Rechtsauskunft geben, keine eindeutige Ja-/Nein-Antwort als abschließendes Ergebnis formulieren, kein eigenes Wissen, keine Rechtsprechung, keine Verwaltungspraxis und keine externen Quellen verwenden. Entwickle stattdessen mehrere mögliche Antwortoptionen und stütze jede Option mit wörtlichen Belegen aus dem hochgeladenen Dokument.</p>
+<p><strong>Arbeitsregeln.</strong> (1) Antworte nicht abschließend mit „Ja” oder „Nein”. (2) Formuliere mehrere Lesarten — Option A: Dafür spricht …; Option B: Dagegen spricht …; Option C: Unklar bleibt …; Option D: Eine alternative Lesart wäre … (3) Jede Option mit mindestens einem wörtlichen Zitat aus dem hochgeladenen Dokument. (4) Genaue Fundstelle pro Zitat — Dokumentname, Paragraph/Artikel, Absatz, Satz/Nummer/Buchstabe, Seitenzahl falls verfügbar. (5) Trenne streng wörtliches Zitat, vorsichtige Paraphrase, mögliche Interpretation, offene Unsicherheit. (6) Verwende vorsichtige Formulierungen („Dafür spricht der Wortlaut …“, „Dagegen könnte sprechen …”, „Eine mögliche Lesart wäre …“, „Unklar bleibt anhand des hochgeladenen Dokuments …”, „Für eine endgültige Klärung müsste die zuständige Prüfungsstelle einbezogen werden.”). (7) Wenn Informationen aus dem Sachverhalt fehlen, nenne sie ausdrücklich. (8) Wenn das Dokument die Frage nicht ausreichend beantwortet: „Im hochgeladenen Dokument nicht eindeutig belegbar.” (9) Wenn verschiedene Stellen in Spannung zueinander stehen, benenne diese Spannung, löse sie aber nicht endgültig auf. (10) Erfinde keine Regeln, Fristen, Zuständigkeiten, Ausnahmen oder Rechtsfolgen.</p>
+<p><strong>Antwortformat in Schritt 2.</strong> A. <em>Verständnis der Frage</em> — kurze neutrale Umformulierung. B. <em>Relevante Textstellen</em> — Tabelle mit Spalten Fundstelle · Wörtliches Zitat · Mögliche Bedeutung · Relevanz für die Frage. C. <em>Mögliche Antwortoptionen</em> — pro Option: wörtlicher Beleg, Fundstelle, mögliche Bedeutung, Stärke des Belegs (stark/mittel/schwach), warum nicht endgültig. D. <em>Vergleich der Optionen</em> — Tabelle mit Spalten Option · Was spricht dafür · Was spricht dagegen · Zentrale Textstelle · Unsicherheitsgrad. E. <em>Offene Punkte</em> — fehlende Sachverhaltsangaben, weitere Dokumente, zuständige Hochschulstelle. F. <em>Prüfprotokoll gegen Halluzinationen</em> — kurze Antworten zu: Zitat-Beleg pro Option? Unbelegte Aussagen vermieden? Endgültige Entscheidung vermieden? Nur Doku-Inhalt verwendet? Lücken sichtbar gemacht?</p>
+<p><strong>Abschluss.</strong> Schließe mit: „Diese Analyse zeigt mögliche Lesarten auf Grundlage des hochgeladenen Dokuments. Sie ersetzt keine verbindliche Auskunft der zuständigen Prüfungsstelle.”</p>
+</blockquote>
+</div>
+</div>
+<p><strong>Kurze Startformulierung für die Studierenden-Rolle.</strong></p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<blockquote class="blockquote">
+<p>Bitte lade zuerst deine Prüfungsordnung hoch. Ich werde sie zunächst nur als Arbeitsgrundlage erfassen. Danach stellst du eine konkrete Frage dazu. Ich gebe dann keine endgültige Antwort, sondern zeige mehrere mögliche Lesarten mit wörtlichen Belegen aus der Prüfungsordnung.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p><strong>Schritt 2 — Dokument hochladen und Schritt 1 prüfen (2 Min).</strong> Laden Sie Ihre Prüfungsordnung als PDF hoch. Kontrollieren Sie, ob das Modell sauber in Schritt 1 bleibt — nur Identifikation, keine inhaltliche Antwort, keine Spekulation. Falls das Modell vorprescht: Prompt nachschärfen oder Hinweis ergänzen („Bitte zuerst nur identifizieren, nicht antworten”).</p>
+<p><strong>Schritt 3 — Konkrete Frage stellen (15 Min).</strong> Wählen Sie eine reale Frage zu Ihrer Prüfungsordnung — Wiederholungsprüfungen, Fristen, Krankheit, Anerkennung von Leistungen, Abschlussarbeit, Bestehensregeln. Vier Beispielfragen zur Auswahl: <em>„Darf ich eine bestandene Prüfung freiwillig wiederholen, um die Note zu verbessern?“</em> · <em>„Welche Folgen hat ein Attest, das ich nach der Prüfung nachreiche?“</em> · <em>„Wie viele Versuche habe ich, wenn ich die Abschlussarbeit nicht bestehe?“</em> · <em>„Können Leistungen aus einem Auslandssemester anerkannt werden, wenn das Modul nicht 1:1 vergleichbar ist?“</em> Stellen Sie die Frage und werten Sie die Antwort aus.</p>
+<p><strong>Schritt 4 — Output gegen die Quellenbindung prüfen (8 Min).</strong> Gehen Sie das Prüfprotokoll Punkt für Punkt durch und markieren Sie jede Stelle, an der das Modell aus der Rolle fällt.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Prüffrage</th>
+<th>Beleg / Befund</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Wurde jede Option mit einem wörtlichen Zitat belegt?</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Sind alle Zitate mit exakter Fundstelle versehen (Paragraph, Absatz, Satz/Nummer)?</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Wurde auf eine abschließende „Ja”-/„Nein”-Antwort verzichtet?</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Verwendet das Modell vorsichtige Formulierungen statt subsumierender Sätze?</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Wurden Spannungen zwischen Stellen benannt statt aufgelöst?</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Gibt es Aussagen ohne Zitat-Beleg?</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Hat das Modell eigenes Wissen oder Rechtsprechung eingeschmuggelt?</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wurde die Schlussformel zum nicht-verbindlichen Charakter angefügt?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Erweiterung für schnelle Studierende.</strong> Stellen Sie dieselbe Frage einem zweiten Modell mit identischem Prompt und identischem Dokument. Vergleichen Sie die genannten Fundstellen — welche kommen in beiden Antworten vor (stabile Belege), welche nur in einer (instabile Belege)? Was sagt das über die Verlässlichkeit der KI-Recherche im Rechtskontext?</p>
+<p><strong>Think-Pair-Share (4 Min).</strong> An welcher Stelle hat das Modell trotz Prompt aus der Rolle gewollt? Welche Frage zur Prüfungsordnung würden Sie besser direkt im Prüfungsamt klären als beim Modell — und warum? Wo zahlt sich der zweistufige Aufbau aus, wo hätten Sie ihn lieber einstufig gehabt? Auf welches berufliche Dokument (Vertrag, Bescheid, Mandantenanfrage) ließe sich dieser zweistufige Prompt morgen direkt übertragen?</p>
+</section>
 <section id="sec-test-suite" class="level2">
-<h2 class="anchored" data-anchor-id="sec-test-suite">Übung 1 — Tutor-Bot systematisch prüfen</h2>
+<h2 class="anchored" data-anchor-id="sec-test-suite">Übung 2 — Tutor-Bot systematisch prüfen</h2>
 <p><strong>Modus:</strong> in-class · Einzelarbeit · <strong>Dauer:</strong> 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · <strong>4D-Bezug:</strong> Discern.</p>
 <p>Prüfen Sie den Tutor-Bot aus Übung 3 (Workshop 1) mit einer kleinen Test-Suite. Drei bis fünf Test-Fragen mit Soll-Antworten formulieren, den Bot durchlaufen lassen, Ergebnisse als <em>rot · gelb · grün</em> markieren, eine Hypothese ableiten. Notizvorlage mit drei Spalten: <em>Frage · Soll-Antwort · Ist-Antwort (rot/gelb/grün)</em>. Formulieren Sie in fünf Minuten drei bis fünf fachliche Test-Fragen mit Soll-Antwort in drei bis fünf Sätzen — Beispiele für Tax: Reverse-Charge-Verfahren, verdeckte Gewinnausschüttung, Organschaft. Audit: Going-Concern, Materiality-Schwellen, ISA 315. Advisory: Bewertungsanlässe, KPI-Definition, Business-Case. Stellen Sie jede Frage einzeln und markieren Sie als <em>rot</em> (fehlerhaft, halluziniert), <em>gelb</em> (teilweise, vage), <em>grün</em> (korrekt, vollständig). Schreiben Sie in drei Sätzen, wo der Bot reproduzierbar versagt und woran es vermutlich liegt: Modell, Prompt oder fehlender Kontext.</p>
 <p><strong>Erweiterung für schnelle Studierende.</strong> Schlagen Sie ein viertes Bewertungskriterium vor, das speziell für Tax-/Audit-Antworten zentral ist — etwa „nennt einschlägige Norm explizit”, „benennt Grenzfälle und Ausnahmen” oder „warnt vor berufsrechtlich riskanten Empfehlungen”. Begründen Sie, warum dieses Kriterium für Ihr Lerngebiet wichtig ist.</p>
 <p><strong>Think-Pair-Share (4 Min).</strong> Welche Ihrer Tests waren am aussagekräftigsten — und welche entpuppten sich als zu leicht oder zu schwer? Welcher Anteil Ihrer Tests wäre auch ohne LLM eine sinnvolle Lernkontrolle?</p>
 </section>
 <section id="sec-rag-hgb" class="level2">
-<h2 class="anchored" data-anchor-id="sec-rag-hgb">Übung 2 — RAG-Suchübung HGB-Prüfungspflicht</h2>
+<h2 class="anchored" data-anchor-id="sec-rag-hgb">Übung 3 — RAG-Suchübung HGB-Prüfungspflicht</h2>
 <p><strong>Modus:</strong> in-class oder Hausaufgabe · Einzel oder Paar · <strong>Dauer:</strong> 45 Min · <strong>4D-Bezug:</strong> Discern und Diligence (insbesondere Deployment Diligence).</p>
 <p>Trainieren Sie den kontrollierten Einsatz eines RAG-Systems bei einer juristisch geprägten Aufgabe. Das Modell soll nicht entscheiden, subsumieren oder interpretieren — es wird ausschließlich als <strong>quellengebundene Suchhilfe</strong> genutzt. Anders als beim Tutor-Bot wird die KI hier auf eine enge Hilfsrolle zugeschnitten: Textfinder statt Rechtsgutachter.</p>
 <p>Setup: RAG-System in der GWDG Academic Cloud (RAG/Arcana oder vergleichbar), HGB-Text aus offizieller Quelle hochladen (Einstieg: Auszug der §§ 264, 264a, 264d, 267, 267a, 316 HGB; Fortgeschrittene: gesamtes HGB), Temperature auf 0 oder maximal 0,1, ein instruktions-treues Modell wählen. <strong>Keine persönlichen oder vertraulichen Daten in den Fall einbauen.</strong></p>
@@ -503,7 +596,7 @@ div.csl-indent {
 <p><strong>Reflexionsfragen.</strong> Hat das Modell echte Sucharbeit geleistet oder doch interpretiert? Welche Normstellen wurden gefunden, welche möglicherweise übersehen? Wie stark hängt die Ausgabe vom hochgeladenen Dokumentausschnitt ab? Welche Risiken bleiben trotz RAG bestehen?</p>
 </section>
 <section id="sec-diligence-bestof-n" class="level2">
-<h2 class="anchored" data-anchor-id="sec-diligence-bestof-n">Übung 3 — Diligence-Risiko-Recherche im Best-of-N</h2>
+<h2 class="anchored" data-anchor-id="sec-diligence-bestof-n">Übung 4 — Diligence-Risiko-Recherche im Best-of-N</h2>
 <p><strong>Modus:</strong> in-class · Einzel oder Paar · <strong>Dauer:</strong> 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · <strong>4D-Bezug:</strong> Diligence, mindestens eine der drei Säulen.</p>
 <p>Aus der offiziellen Definition einer Diligence-Säule lässt sich ein starkes KI-Modell mehrere reale oder realistisch konstruierte Anwendungsfälle aus Tax, Audit oder Advisory generieren, in denen genau dieser Aspekt schief gegangen ist. Aus den generierten Fällen wählen Sie einen aus, der das Risiko besonders eindrücklich verdeutlicht — ein praktisches Beispiel für <strong>Best-of-N</strong>. Setup: ein starkes KI-Modell mit Web-Search-Tool (Claude Pro, ChatGPT Plus, Gemini Advanced oder Perplexity Pro), die drei Diligence-Definitionen aus Block K. Wählen Sie eine Säule — Creation, Transparency oder Deployment.</p>
 <p><strong>Schritt 1 — Definition als Input (2 Min).</strong> Kopieren Sie die vollständige Definition der gewählten Diligence-Säule (alle drei Bullet-Punkte plus Ziel-Satz) in einen neuen Chat. Hängen Sie die Aufgabenstellung an:</p>
@@ -516,7 +609,7 @@ div.csl-indent {
 <p><strong>Think-Pair-Share (4 Min).</strong> Welcher der fünf Fälle wäre fast Ihre Auswahl gewesen — und warum haben Sie sich für einen anderen entschieden? Wie verlässlich sind die generierten Fälle? Gibt es welche, die Sie bei Quellenrecherche entkräften müssten?</p>
 </section>
 <section id="sec-mermaid" class="level2">
-<h2 class="anchored" data-anchor-id="sec-mermaid">Übung 4 — Prozessmodellierung mit Mermaid</h2>
+<h2 class="anchored" data-anchor-id="sec-mermaid">Übung 5 — Prozessmodellierung mit Mermaid</h2>
 <p><strong>Modus:</strong> in-class · Einzelarbeit · <strong>Dauer:</strong> 18 Min · <strong>4D-Bezug:</strong> Vorbereitung für Delegate (Process-Aktivitäten klar identifizieren).</p>
 <p>Lernen Sie Prozessmodellierung am niedrigschwelligen Werkzeug <strong>Mermaid Live Editor</strong> kennen (<a href="https://mermaid.live" target="_blank">mermaid.live</a>). Mermaid ist eine textbasierte Notation für Diagramme — Sie schreiben den Prozess in einer einfachen Syntax, der Editor zeichnet ihn automatisch. Vorteil für den Einstieg: keine Maus-Klickerei, kein Tool-Setup, sofortige visuelle Rückmeldung.</p>
 <p>Sachverhalt: <strong>Eingang einer Mandantenanfrage in einer Steuerkanzlei</strong>. Anfrage trifft per E-Mail ein, wird auf Mandantenbezug geprüft, an einen Sachbearbeiter zugewiesen, dieser klärt offene Punkte, der Partner gibt frei oder verlangt Überarbeitung.</p>
@@ -536,16 +629,16 @@ div.csl-indent {
 <p><strong>Think-Pair-Share (3 Min).</strong> Welche Stelle Ihres Diagramms ließ sich in Mermaid leichter zeichnen als auf Papier? Wo stieß die Mermaid-Notation an Grenzen?</p>
 </section>
 <section id="sec-bpmn" class="level2">
-<h2 class="anchored" data-anchor-id="sec-bpmn">Übung 5 — BPMN-Modellierung in Signavio</h2>
+<h2 class="anchored" data-anchor-id="sec-bpmn">Übung 6 — BPMN-Modellierung in Signavio</h2>
 <p><strong>Modus:</strong> in-class · Einzel oder Paar · <strong>Dauer:</strong> 35 Min · <strong>4D-Bezug:</strong> Delegate / Brücke zu <em>Process vs.&nbsp;Cognitive Automation</em>.</p>
 <p>Vertiefen Sie die Prozessmodellierung mit einem professionellen BPMN-Werkzeug. Anders als bei Mermaid sind in Signavio die Symbole standardisiert (BPMN 2.0.2), Zuständigkeiten lassen sich über Swimlanes sichtbar machen, und das Modell ist auditierbar. Setup: <a href="https://academic.signavio.com/p/explorer" target="_blank">Signavio Academic Edition</a> (kostenfreier Account mit Hochschul-E-Mail; sollte bereits aus der Hausaufgabe nach Workshop 1 angelegt sein). Als Alternative: <a href="https://bpmn.io" target="_blank">bpmn.io</a>.</p>
-<p>Sachverhalt: <strong>Rechnungseingang in einer mittelgroßen Steuerkanzlei</strong> — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung. Reicher als die Mandantenanfrage in Übung 4.</p>
+<p>Sachverhalt: <strong>Rechnungseingang in einer mittelgroßen Steuerkanzlei</strong> — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung. Reicher als die Mandantenanfrage in Übung 5.</p>
 <p>Vorgehen: Nach Login in Signavio einen neuen Diagrammtyp <em>BPMN 2.0</em> anlegen. Mindestens zwei Rollen identifizieren und als Swimlanes setzen (z. B. <em>Sachbearbeiter</em> und <em>Partner</em>). Mindestens fünf Aktivitäten platzieren und mit Sequenzflüssen verbinden. Mindestens einen XOR-Entscheidungspunkt einsetzen. Jede Aktivität mit <em>P</em> (Process Automation), <em>C</em> (Cognitive Automation) oder <em>H</em> (Hybrid) markieren und in einem Satz pro Aktivität begründen. Diagramm als PNG oder PDF exportieren.</p>
 <p><strong>Erweiterung für schnelle Studierende.</strong> Eine Aktivität, die heute <em>H</em> (Hybrid) ist, in zwei aufeinanderfolgende Aktivitäten zerlegen — eine reine Process-Aktivität, eine reine Cognitive-Aktivität. Hinweis: Das ist der Hauptmechanismus, mit dem reale Workflows automatisierbar werden.</p>
-<p><strong>Think-Pair-Share (4 Min).</strong> Welche Stelle aus dem Mermaid-Diagramm (Übung 4) hätte in Signavio anders ausgesehen? Wo wirkt BPMN überdimensioniert, wo zahlt sich die strikte Notation aus?</p>
+<p><strong>Think-Pair-Share (4 Min).</strong> Welche Stelle aus dem Mermaid-Diagramm (Übung 5) hätte in Signavio anders ausgesehen? Wo wirkt BPMN überdimensioniert, wo zahlt sich die strikte Notation aus?</p>
 </section>
 <section id="sec-uipath" class="level2">
-<h2 class="anchored" data-anchor-id="sec-uipath">Übung 6 — UiPath Mandanten-Anschreiben</h2>
+<h2 class="anchored" data-anchor-id="sec-uipath">Übung 7 — UiPath Mandanten-Anschreiben</h2>
 <p><strong>Modus:</strong> in-class · Einzelarbeit · <strong>Dauer:</strong> 22 Min · <strong>4D-Bezug:</strong> Delegate / praktischer Erstkontakt mit Process Automation an einem realistischen Tax-/Audit-Szenario.</p>
 <p>Lernen Sie die Grundstruktur von <strong>UiPath Cloud Studio Web</strong> an einer Aufgabe kennen, die in jeder Kanzlei vorkommt: einen <strong>Serienbrief-Bot</strong>, der die Adressdaten eines Mandanten aus einer Excel-Liste in ein Word-Anschreiben einsetzt und das fertige Dokument speichert. Setup: Account bei <a href="https://cloud.uipath.com" target="_blank">UiPath Cloud</a> (sollte aus der Hausaufgabe nach Workshop 1 vorhanden sein). Nach Login oben links <em>Studio Web</em> öffnen.</p>
 <p><strong>Material.</strong> Im Daten-Ordner finden Sie zwei vorbereitete Dateien — eine Excel-Stammdatenliste <code>mandantenstammdaten.xlsx</code> mit den Spalten <em>Anrede · Vorname · Nachname · Firma · Straße · PLZ · Ort</em> und eine Word-Vorlage <code>anschreiben-vorlage.docx</code> mit den Platzhaltern <code>{Anrede}</code>, <code>{Vorname}</code>, <code>{Nachname}</code>, <code>{Firma}</code>, <code>{Strasse}</code>, <code>{PLZ}</code>, <code>{Ort}</code>. Beide Dateien sind in Ihren UiPath-Cloud-Workspace hochzuladen (oben rechts <em>Upload</em>).</p>
@@ -565,11 +658,11 @@ div.csl-indent {
 <section id="vertiefung-optional-in-class-oder-als-hausaufgabe" class="level2">
 <h2 class="anchored" data-anchor-id="vertiefung-optional-in-class-oder-als-hausaufgabe">Vertiefung (optional in-class oder als Hausaufgabe)</h2>
 <p>Wer die sechs Übungen früh durchhat oder eine zusätzliche Vertiefung sucht, hat zwei Optionen.</p>
-<p><strong>Integrierter 4D-Use-Case mit Diligence-Schwerpunkt</strong> — eine 40-Minuten-Übung am Tax-Beispiel „grenzüberschreitende Dienstleistung”, in der alle vier 4D-Kompetenzen mit Schwerpunkt Diligence durchlaufen werden, inklusive Audit-Trail und Mandantenkommunikation. Diese Übung ist gleichzeitig die Vorlage für die zwei Hausaufgaben <em>Dilemma der Mitte</em> und <em>Personal AI Policy</em>. Beschreibung folgt unter Übung 7.</p>
+<p><strong>Integrierter 4D-Use-Case mit Diligence-Schwerpunkt</strong> — eine 40-Minuten-Übung am Tax-Beispiel „grenzüberschreitende Dienstleistung”, in der alle vier 4D-Kompetenzen mit Schwerpunkt Diligence durchlaufen werden, inklusive Audit-Trail und Mandantenkommunikation. Diese Übung ist gleichzeitig die Vorlage für die zwei Hausaufgaben <em>Dilemma der Mitte</em> und <em>Personal AI Policy</em>. Beschreibung folgt unter Übung 8.</p>
 <p><strong>UiPath-Vertiefung — Excel-zu-PDF-Bot</strong> — eine komplexere UiPath-Aufgabe, in der Sie einen vorbereiteten Bot lesen, ausführen und anpassen. Diese Übung ist als Hausaufgabe nach Workshop 2 konzipiert; Details siehe <a href="../parts/05-hausaufgaben.html#sec-uipath-vertiefung">Hausaufgaben-Seite</a>.</p>
 </section>
 <section id="sec-4d-usecase" class="level2">
-<h2 class="anchored" data-anchor-id="sec-4d-usecase">Übung 7 — Integrierter 4D-Use-Case (optional in-class)</h2>
+<h2 class="anchored" data-anchor-id="sec-4d-usecase">Übung 8 — Integrierter 4D-Use-Case (optional in-class)</h2>
 <p><strong>Modus:</strong> in-class · Paar oder Dreierteam · <strong>Dauer:</strong> 40 Min · <strong>4D-Bezug:</strong> alle vier Kompetenzen, Schwerpunkt Diligence.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1099,206 +1192,260 @@ Willison, S. (2025). <em>Red-Green Test-Driven Development for Agentic Engineeri
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>::: lernziel-box</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Was Sie nach diesen Übungen können</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>einen **Tutor-Bot** mit einer kleinen Test-Suite systematisch prüfen — Vertiefung aus Workshop 1,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>eine **RAG-Suche im HGB** so einhegen, dass die KI nur als quellengebundene Suchhilfe agiert,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>aus einer **Diligence-Definition** mehrere Risikofälle im Best-of-N-Schema generieren und einen aussagekräftigen auswählen,</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>einen einfachen Prozess in **Mermaid** und anschließend in **Signavio** als BPMN-Diagramm modellieren,</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>die **Grundstruktur von UiPath** kennenlernen und einen einfachen Workflow ausführen.</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>Die Reihenfolge folgt einer didaktischen Logik: erst zwei Discern-Übungen, dann eine Diligence-Übung, dann der Übergang zur technischen Brücke aus Prozessmodellierung und Robotic Process Automation. Die Vertiefungen zu UiPath und zum integrierten 4D-Use-Case sind als Hausaufgabe oder optionale Übung am Ende dieser Sektion aufgeführt.</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 1 — Tutor-Bot systematisch prüfen {#sec-test-suite}</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Discern.</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>Prüfen Sie den Tutor-Bot aus Übung 3 (Workshop 1) mit einer kleinen Test-Suite. Drei bis fünf Test-Fragen mit Soll-Antworten formulieren, den Bot durchlaufen lassen, Ergebnisse als *rot · gelb · grün* markieren, eine Hypothese ableiten. Notizvorlage mit drei Spalten: *Frage · Soll-Antwort · Ist-Antwort (rot/gelb/grün)*. Formulieren Sie in fünf Minuten drei bis fünf fachliche Test-Fragen mit Soll-Antwort in drei bis fünf Sätzen — Beispiele für Tax: Reverse-Charge-Verfahren, verdeckte Gewinnausschüttung, Organschaft. Audit: Going-Concern, Materiality-Schwellen, ISA 315. Advisory: Bewertungsanlässe, KPI-Definition, Business-Case. Stellen Sie jede Frage einzeln und markieren Sie als *rot* (fehlerhaft, halluziniert), *gelb* (teilweise, vage), *grün* (korrekt, vollständig). Schreiben Sie in drei Sätzen, wo der Bot reproduzierbar versagt und woran es vermutlich liegt: Modell, Prompt oder fehlender Kontext.</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Schlagen Sie ein viertes Bewertungskriterium vor, das speziell für Tax-/Audit-Antworten zentral ist — etwa „nennt einschlägige Norm explizit", „benennt Grenzfälle und Ausnahmen" oder „warnt vor berufsrechtlich riskanten Empfehlungen". Begründen Sie, warum dieses Kriterium für Ihr Lerngebiet wichtig ist.</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>**Think-Pair-Share (4 Min).** Welche Ihrer Tests waren am aussagekräftigsten — und welche entpuppten sich als zu leicht oder zu schwer? Welcher Anteil Ihrer Tests wäre auch ohne LLM eine sinnvolle Lernkontrolle?</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 2 — RAG-Suchübung HGB-Prüfungspflicht {#sec-rag-hgb}</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class oder Hausaufgabe · Einzel oder Paar · **Dauer:** 45 Min · **4D-Bezug:** Discern und Diligence (insbesondere Deployment Diligence).</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>die eigene **Prüfungsordnung** mit einem zweistufigen Dialog-Prompt quellengebunden befragen und die Output-Qualität gegen ein Prüfprotokoll abklopfen,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>einen **Tutor-Bot** mit einer kleinen Test-Suite systematisch prüfen — Vertiefung aus Workshop 1,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>eine **RAG-Suche im HGB** so einhegen, dass die KI nur als quellengebundene Suchhilfe agiert,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>aus einer **Diligence-Definition** mehrere Risikofälle im Best-of-N-Schema generieren und einen aussagekräftigen auswählen,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>einen einfachen Prozess in **Mermaid** und anschließend in **Signavio** als BPMN-Diagramm modellieren,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>die **Grundstruktur von UiPath** an einem Mandanten-Anschreiben-Bot kennenlernen.</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>Die Reihenfolge folgt einer didaktischen Logik: erst drei Discern-Übungen am eigenen Dokument, am Tutor-Bot und im HGB, dann eine Diligence-Übung, dann der Übergang zur technischen Brücke aus Prozessmodellierung und Robotic Process Automation. Die Vertiefungen zu UiPath und zum integrierten 4D-Use-Case sind als Hausaufgabe oder optionale Übung am Ende dieser Sektion aufgeführt.</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 1 — Prüfungsordnung mit zweistufigem Dialog-Prompt befragen {#sec-pruefungsordnung}</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Einzelarbeit · **Dauer:** 30 Min · **4D-Bezug:** Describe und Discern — präziser Prompt plus quellengebundene Output-Prüfung am eigenen Dokument.</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>Sie öffnen Workshop 2 an einem Dokument, das Sie kennen: Ihre eigene Prüfungsordnung. Die Aufgabe — ein quellengebundener Analyse-Assistent liefert Ihnen mehrere Lesarten zu einer konkreten Frage, mit wörtlichen Zitaten und Fundstellen, ohne abschließendes Urteil. Der Witz dabei: der Prompt zerlegt den Dialog in *zwei* Schritte. Erst nimmt das Modell das Dokument nur auf und benennt es, dann erst beantwortet es die Frage. So vermeiden Sie, dass das Modell zu früh interpretiert oder spekuliert. Übersetzt in den Berufsalltag: dasselbe Muster passt auf Mandanten-Mandate, Verträge und Bescheide.</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>**Setup.** Ein starkes Modell mit Dokument-Upload (ChatGPT mit Datei-Upload, Claude Projects, NotebookLM oder GWDG Academic Cloud RAG/Arcana). Ihre aktuelle Prüfungsordnung oder Modulordnung als PDF bereitlegen. **Keine personenbezogenen Daten über sich oder Dritte** in den Chat eingeben — die Übung läuft mit dem Dokument und einer fachlichen Frage.</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>**Schritt 1 — Zweistufigen System-Prompt setzen (3 Min).** Kopieren Sie den unten stehenden Prompt als System- oder Initial-Prompt in den Chat. Der Prompt erzwingt den Dialog in zwei Schritten.</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## System-Prompt zum Kopieren</span></span>
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>Trainieren Sie den kontrollierten Einsatz eines RAG-Systems bei einer juristisch geprägten Aufgabe. Das Modell soll nicht entscheiden, subsumieren oder interpretieren — es wird ausschließlich als **quellengebundene Suchhilfe** genutzt. Anders als beim Tutor-Bot wird die KI hier auf eine enge Hilfsrolle zugeschnitten: Textfinder statt Rechtsgutachter.</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>Setup: RAG-System in der GWDG Academic Cloud (RAG/Arcana oder vergleichbar), HGB-Text aus offizieller Quelle hochladen (Einstieg: Auszug der §§ 264, 264a, 264d, 267, 267a, 316 HGB; Fortgeschrittene: gesamtes HGB), Temperature auf 0 oder maximal 0,1, ein instruktions-treues Modell wählen. **Keine persönlichen oder vertraulichen Daten in den Fall einbauen.**</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>**Fall: Rheinland Components GmbH.** Kapitalgesellschaft mit Sitz in Köln. Geschäftsjahr 2024: Bilanzsumme 7,8 Mio. €, Umsatzerlöse 14,9 Mio. €, Arbeitnehmer im Jahresdurchschnitt 51. Geschäftsjahr 2025: Bilanzsumme 7,6 Mio. €, Umsatzerlöse 15,2 Mio. €, Arbeitnehmer im Jahresdurchschnitt 49. Die Geschäftsführung fragt, welche HGB-Textstellen relevant sein könnten, um zu prüfen, ob der Jahresabschluss und der Lagebericht für das Geschäftsjahr 2025 durch einen Abschlussprüfer geprüft werden müssen.</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>**Studentische Suchfrage (keine Entscheidungsfrage).**</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Welche Textstellen im bereitgestellten HGB-Text könnten relevant sein, um zu prüfen, ob der Jahresabschluss und der Lagebericht der Rheinland Components GmbH für das Geschäftsjahr 2025 prüfungspflichtig sind? Bitte gib nur wörtliche Textstellen mit Fundstellen zurück. Keine Interpretation, keine Subsumtion, keine rechtliche Bewertung.</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="at">:::</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>**System-Prompt zum Kopieren.**</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Rolle.** Du bist eine quellengebundene Suchhilfe für Gesetzestexte im Bereich Wirtschaftsprüfung und Rechnungslegung. Deine Aufgabe ist ausschließlich, passende Textstellen aus dem bereitgestellten Gesetzestext zu finden und wörtlich wiederzugeben.</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Verbote.** Du darfst keine rechtliche Bewertung vornehmen, keine Subsumtion durchführen, nicht interpretieren, keine abschließende Antwort geben, kein eigenes Wissen verwenden. Du darfst nur mit dem bereitgestellten Material arbeiten. Wenn eine passende Textstelle nicht im bereitgestellten Material enthalten ist, schreibe: „Im bereitgestellten Material wurde keine passende Textstelle gefunden."</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Aufgabe.** Suche im bereitgestellten Gesetzestext nach Textstellen, die für die folgende Frage relevant sein könnten: </span><span class="co">[</span><span class="ot">HIER FRAGE EINFÜGEN</span><span class="co">]</span><span class="at">.</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Arbeitsregeln.** (1) Gib ausschließlich Textstellen zurück, die im bereitgestellten Material enthalten sind. (2) Zitiere die Textstellen wörtlich. (3) Gib zu jeder Textstelle eine genaue Fundstelle an: Gesetz · Paragraph · Absatz · Satz / Nummer / Buchstabe · Seitenzahl oder Chunk-ID, falls verfügbar. (4) Erkläre nicht, was die Textstelle rechtlich bedeutet. (5) Verwende keine Formulierungen wie „Das bedeutet …", „Daraus folgt …", „Die Gesellschaft ist prüfungspflichtig …". (6) Eine sehr kurze neutrale Suchbegründung ist erlaubt: „Diese Stelle enthält Begriffe zur Prüfungspflicht", „Diese Stelle enthält Größenmerkmale". (7) Wenn mehrere Textstellen relevant sein könnten, ordne sie thematisch.</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Antwortformat.** A. Gefundene Textstellen. B. Möglicherweise zusätzlich relevante Stellen. C. Nicht gefundene Punkte. D. Prüfhinweis: „Diese Ausgabe ist nur eine Such- und Zitierhilfe. Sie enthält keine rechtliche Bewertung und keine verbindliche Antwort."</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="at">:::</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>**Kurzprompt-Variante.**</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Finde im bereitgestellten HGB-Text ausschließlich wörtliche Textstellen zu: (1) Prüfungspflicht von Kapitalgesellschaften, (2) kleine Kapitalgesellschaften, (3) mittelgroße Kapitalgesellschaften, (4) Größenmerkmale: Bilanzsumme, Umsatzerlöse, Arbeitnehmer, (5) Bedeutung mehrerer Abschlussstichtage oder Geschäftsjahre. Tabelle: Thema · Fundstelle · Wörtliches Zitat. Keine Interpretation. Keine rechtliche Bewertung. Keine Antwort auf den Fall.</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="at">:::</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>**Vorgehen.** HGB-Auszug oder gesamtes HGB in das RAG-System hochladen. Suchprompt oder Kurzprompt verwenden. Antwort speichern. Prüfen, ob die Ausgabe wirklich nur Textstellen enthält und keine Interpretation vornimmt. Markieren: mindestens eine starke Fundstelle, eine möglicherweise zusätzliche Fundstelle, eine vermutlich übersehene Stelle.</span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>**Selbstprüfung der Modellantwort.**</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Du bist ein quellengebundener Analyse-Assistent für Prüfungsordnungen im Hochschulkontext. Deine Aufgabe ist, Studierenden zu helfen, ihre eigene Prüfungsordnung zu verstehen. Du gibst keine endgültige Rechtsauskunft und triffst keine verbindliche Entscheidung. Du arbeitest in zwei Schritten.</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Schritt 1 — Dokument aufnehmen.** Wenn ein Dokument hochgeladen wurde, tue nur Folgendes: (1) bestätige, dass das Dokument als Grundlage verwendet wird; (2) benenne — soweit erkennbar — Titel, Studiengang/Prüfungsordnung/Rahmenordnung, Datum/Fassung/Version und Struktur (Paragraphen, Abschnitte, Anlagen); (3) weise darauf hin, dass du ausschließlich mit dem hochgeladenen Dokument arbeitest; (4) fordere zu einer konkreten Frage auf. Beantworte in Schritt 1 noch keine inhaltliche Rechtsfrage, interpretiere noch nicht, suche noch keine Regelungen heraus, erfinde keine Angaben.</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Schritt 2 — Frage analysieren.** Wenn der User anschließend eine konkrete Frage stellt, analysiere sie ausschließlich anhand des hochgeladenen Dokuments. Du darfst keine endgültige Entscheidung treffen, keine verbindliche Rechtsauskunft geben, keine eindeutige Ja-/Nein-Antwort als abschließendes Ergebnis formulieren, kein eigenes Wissen, keine Rechtsprechung, keine Verwaltungspraxis und keine externen Quellen verwenden. Entwickle stattdessen mehrere mögliche Antwortoptionen und stütze jede Option mit wörtlichen Belegen aus dem hochgeladenen Dokument.</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Arbeitsregeln.** (1) Antworte nicht abschließend mit „Ja" oder „Nein". (2) Formuliere mehrere Lesarten — Option A: Dafür spricht …; Option B: Dagegen spricht …; Option C: Unklar bleibt …; Option D: Eine alternative Lesart wäre … (3) Jede Option mit mindestens einem wörtlichen Zitat aus dem hochgeladenen Dokument. (4) Genaue Fundstelle pro Zitat — Dokumentname, Paragraph/Artikel, Absatz, Satz/Nummer/Buchstabe, Seitenzahl falls verfügbar. (5) Trenne streng wörtliches Zitat, vorsichtige Paraphrase, mögliche Interpretation, offene Unsicherheit. (6) Verwende vorsichtige Formulierungen („Dafür spricht der Wortlaut …", „Dagegen könnte sprechen …", „Eine mögliche Lesart wäre …", „Unklar bleibt anhand des hochgeladenen Dokuments …", „Für eine endgültige Klärung müsste die zuständige Prüfungsstelle einbezogen werden."). (7) Wenn Informationen aus dem Sachverhalt fehlen, nenne sie ausdrücklich. (8) Wenn das Dokument die Frage nicht ausreichend beantwortet: „Im hochgeladenen Dokument nicht eindeutig belegbar." (9) Wenn verschiedene Stellen in Spannung zueinander stehen, benenne diese Spannung, löse sie aber nicht endgültig auf. (10) Erfinde keine Regeln, Fristen, Zuständigkeiten, Ausnahmen oder Rechtsfolgen.</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Antwortformat in Schritt 2.** A. *Verständnis der Frage* — kurze neutrale Umformulierung. B. *Relevante Textstellen* — Tabelle mit Spalten Fundstelle · Wörtliches Zitat · Mögliche Bedeutung · Relevanz für die Frage. C. *Mögliche Antwortoptionen* — pro Option: wörtlicher Beleg, Fundstelle, mögliche Bedeutung, Stärke des Belegs (stark/mittel/schwach), warum nicht endgültig. D. *Vergleich der Optionen* — Tabelle mit Spalten Option · Was spricht dafür · Was spricht dagegen · Zentrale Textstelle · Unsicherheitsgrad. E. *Offene Punkte* — fehlende Sachverhaltsangaben, weitere Dokumente, zuständige Hochschulstelle. F. *Prüfprotokoll gegen Halluzinationen* — kurze Antworten zu: Zitat-Beleg pro Option? Unbelegte Aussagen vermieden? Endgültige Entscheidung vermieden? Nur Doku-Inhalt verwendet? Lücken sichtbar gemacht?</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Abschluss.** Schließe mit: „Diese Analyse zeigt mögliche Lesarten auf Grundlage des hochgeladenen Dokuments. Sie ersetzt keine verbindliche Auskunft der zuständigen Prüfungsstelle."</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="at">:::</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>**Kurze Startformulierung für die Studierenden-Rolle.**</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Bitte lade zuerst deine Prüfungsordnung hoch. Ich werde sie zunächst nur als Arbeitsgrundlage erfassen. Danach stellst du eine konkrete Frage dazu. Ich gebe dann keine endgültige Antwort, sondern zeige mehrere mögliche Lesarten mit wörtlichen Belegen aus der Prüfungsordnung.</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="at">:::</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>**Schritt 2 — Dokument hochladen und Schritt 1 prüfen (2 Min).** Laden Sie Ihre Prüfungsordnung als PDF hoch. Kontrollieren Sie, ob das Modell sauber in Schritt 1 bleibt — nur Identifikation, keine inhaltliche Antwort, keine Spekulation. Falls das Modell vorprescht: Prompt nachschärfen oder Hinweis ergänzen („Bitte zuerst nur identifizieren, nicht antworten").</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>**Schritt 3 — Konkrete Frage stellen (15 Min).** Wählen Sie eine reale Frage zu Ihrer Prüfungsordnung — Wiederholungsprüfungen, Fristen, Krankheit, Anerkennung von Leistungen, Abschlussarbeit, Bestehensregeln. Vier Beispielfragen zur Auswahl: *„Darf ich eine bestandene Prüfung freiwillig wiederholen, um die Note zu verbessern?"* · *„Welche Folgen hat ein Attest, das ich nach der Prüfung nachreiche?"* · *„Wie viele Versuche habe ich, wenn ich die Abschlussarbeit nicht bestehe?"* · *„Können Leistungen aus einem Auslandssemester anerkannt werden, wenn das Modul nicht 1:1 vergleichbar ist?"* Stellen Sie die Frage und werten Sie die Antwort aus.</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>**Schritt 4 — Output gegen die Quellenbindung prüfen (8 Min).** Gehen Sie das Prüfprotokoll Punkt für Punkt durch und markieren Sie jede Stelle, an der das Modell aus der Rolle fällt.</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Prüffrage <span class="pp">|</span> Beleg / Befund <span class="pp">|</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Wurde jede Option mit einem wörtlichen Zitat belegt? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sind alle Zitate mit exakter Fundstelle versehen (Paragraph, Absatz, Satz/Nummer)? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Wurde auf eine abschließende „Ja"-/„Nein"-Antwort verzichtet? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Verwendet das Modell vorsichtige Formulierungen statt subsumierender Sätze? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Wurden Spannungen zwischen Stellen benannt statt aufgelöst? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Gibt es Aussagen ohne Zitat-Beleg? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Hat das Modell eigenes Wissen oder Rechtsprechung eingeschmuggelt? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Wurde die Schlussformel zum nicht-verbindlichen Charakter angefügt? <span class="pp">|</span> <span class="pp">|</span></span>
 <span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Prüffrage <span class="pp">|</span> Ja / Nein <span class="pp">|</span></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Enthält die Antwort ausschließlich wörtliche Textstellen? <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sind alle Zitate mit genauer Fundstelle versehen? <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Wurden § 267 HGB und § 316 HGB gefunden? <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Wurde eine Stelle zur Betrachtung mehrerer Abschlussstichtage gefunden? <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Verzichtet die Antwort auf Formulierungen wie „daraus folgt" oder „ist prüfungspflichtig"? <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sind die Suchbegründungen neutral und kurz? <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Gibt es offensichtlich fehlende Normbereiche? <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Gibt es Zitate, die nicht aus dem bereitgestellten Material stammen können? <span class="pp">|</span> <span class="pp">|</span></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>**Verbotene und erlaubte Formulierungen.**</span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Nicht verwenden <span class="pp">|</span> Stattdessen verwenden <span class="pp">|</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> „Daraus folgt, dass die GmbH prüfungspflichtig ist." <span class="pp">|</span> „Diese Stelle enthält Begriffe zur Prüfungspflicht." <span class="pp">|</span></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> „Die Schwellenwerte sind überschritten." <span class="pp">|</span> „Diese Stelle enthält Größenmerkmale und Schwellenwerte." <span class="pp">|</span></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> „Die Gesellschaft ist nicht klein." <span class="pp">|</span> „Diese Stelle enthält die Umschreibung kleiner Kapitalgesellschaften." <span class="pp">|</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> „§ 316 HGB ist hier anwendbar." <span class="pp">|</span> „Diese Stelle nennt die Pflicht zur Prüfung." <span class="pp">|</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> „Nach dem HGB gilt …" <span class="pp">|</span> „Im bereitgestellten Text steht wörtlich …" <span class="pp">|</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.**</span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Variante <span class="pp">|</span> Durchführung <span class="pp">|</span></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Promptvergleich <span class="pp">|</span> Eine Gruppe nutzt den langen Suchprompt, eine den Kurzprompt. <span class="pp">|</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dokumentvergleich <span class="pp">|</span> Ein Lauf mit Auszug, ein Lauf mit gesamtem HGB. <span class="pp">|</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Modellvergleich <span class="pp">|</span> Zwei Modelle mit gleichem RAG-Kontext und Prompt. <span class="pp">|</span></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Fehlerjagd <span class="pp">|</span> Eine Antwort mit eingebauten Interpretationen, Studierende markieren unerlaubte Formulierungen. <span class="pp">|</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Stellen Sie dieselbe Frage einem zweiten Modell mit identischem Prompt und identischem Dokument. Vergleichen Sie die genannten Fundstellen — welche kommen in beiden Antworten vor (stabile Belege), welche nur in einer (instabile Belege)? Was sagt das über die Verlässlichkeit der KI-Recherche im Rechtskontext?</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>**Think-Pair-Share (4 Min).** An welcher Stelle hat das Modell trotz Prompt aus der Rolle gewollt? Welche Frage zur Prüfungsordnung würden Sie besser direkt im Prüfungsamt klären als beim Modell — und warum? Wo zahlt sich der zweistufige Aufbau aus, wo hätten Sie ihn lieber einstufig gehabt? Auf welches berufliche Dokument (Vertrag, Bescheid, Mandantenanfrage) ließe sich dieser zweistufige Prompt morgen direkt übertragen?</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 2 — Tutor-Bot systematisch prüfen {#sec-test-suite}</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Discern.</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>Prüfen Sie den Tutor-Bot aus Übung 3 (Workshop 1) mit einer kleinen Test-Suite. Drei bis fünf Test-Fragen mit Soll-Antworten formulieren, den Bot durchlaufen lassen, Ergebnisse als *rot · gelb · grün* markieren, eine Hypothese ableiten. Notizvorlage mit drei Spalten: *Frage · Soll-Antwort · Ist-Antwort (rot/gelb/grün)*. Formulieren Sie in fünf Minuten drei bis fünf fachliche Test-Fragen mit Soll-Antwort in drei bis fünf Sätzen — Beispiele für Tax: Reverse-Charge-Verfahren, verdeckte Gewinnausschüttung, Organschaft. Audit: Going-Concern, Materiality-Schwellen, ISA 315. Advisory: Bewertungsanlässe, KPI-Definition, Business-Case. Stellen Sie jede Frage einzeln und markieren Sie als *rot* (fehlerhaft, halluziniert), *gelb* (teilweise, vage), *grün* (korrekt, vollständig). Schreiben Sie in drei Sätzen, wo der Bot reproduzierbar versagt und woran es vermutlich liegt: Modell, Prompt oder fehlender Kontext.</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Schlagen Sie ein viertes Bewertungskriterium vor, das speziell für Tax-/Audit-Antworten zentral ist — etwa „nennt einschlägige Norm explizit", „benennt Grenzfälle und Ausnahmen" oder „warnt vor berufsrechtlich riskanten Empfehlungen". Begründen Sie, warum dieses Kriterium für Ihr Lerngebiet wichtig ist.</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>**Think-Pair-Share (4 Min).** Welche Ihrer Tests waren am aussagekräftigsten — und welche entpuppten sich als zu leicht oder zu schwer? Welcher Anteil Ihrer Tests wäre auch ohne LLM eine sinnvolle Lernkontrolle?</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 3 — RAG-Suchübung HGB-Prüfungspflicht {#sec-rag-hgb}</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class oder Hausaufgabe · Einzel oder Paar · **Dauer:** 45 Min · **4D-Bezug:** Discern und Diligence (insbesondere Deployment Diligence).</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>Trainieren Sie den kontrollierten Einsatz eines RAG-Systems bei einer juristisch geprägten Aufgabe. Das Modell soll nicht entscheiden, subsumieren oder interpretieren — es wird ausschließlich als **quellengebundene Suchhilfe** genutzt. Anders als beim Tutor-Bot wird die KI hier auf eine enge Hilfsrolle zugeschnitten: Textfinder statt Rechtsgutachter.</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>Setup: RAG-System in der GWDG Academic Cloud (RAG/Arcana oder vergleichbar), HGB-Text aus offizieller Quelle hochladen (Einstieg: Auszug der §§ 264, 264a, 264d, 267, 267a, 316 HGB; Fortgeschrittene: gesamtes HGB), Temperature auf 0 oder maximal 0,1, ein instruktions-treues Modell wählen. **Keine persönlichen oder vertraulichen Daten in den Fall einbauen.**</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>**Fall: Rheinland Components GmbH.** Kapitalgesellschaft mit Sitz in Köln. Geschäftsjahr 2024: Bilanzsumme 7,8 Mio. €, Umsatzerlöse 14,9 Mio. €, Arbeitnehmer im Jahresdurchschnitt 51. Geschäftsjahr 2025: Bilanzsumme 7,6 Mio. €, Umsatzerlöse 15,2 Mio. €, Arbeitnehmer im Jahresdurchschnitt 49. Die Geschäftsführung fragt, welche HGB-Textstellen relevant sein könnten, um zu prüfen, ob der Jahresabschluss und der Lagebericht für das Geschäftsjahr 2025 durch einen Abschlussprüfer geprüft werden müssen.</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>**Studentische Suchfrage (keine Entscheidungsfrage).**</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Welche Textstellen im bereitgestellten HGB-Text könnten relevant sein, um zu prüfen, ob der Jahresabschluss und der Lagebericht der Rheinland Components GmbH für das Geschäftsjahr 2025 prüfungspflichtig sind? Bitte gib nur wörtliche Textstellen mit Fundstellen zurück. Keine Interpretation, keine Subsumtion, keine rechtliche Bewertung.</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="at">:::</span></span>
 <span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>**Reflexionsfragen.** Hat das Modell echte Sucharbeit geleistet oder doch interpretiert? Welche Normstellen wurden gefunden, welche möglicherweise übersehen? Wie stark hängt die Ausgabe vom hochgeladenen Dokumentausschnitt ab? Welche Risiken bleiben trotz RAG bestehen?</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>**System-Prompt zum Kopieren.**</span>
 <span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 3 — Diligence-Risiko-Recherche im Best-of-N {#sec-diligence-bestof-n}</span></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Einzel oder Paar · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Diligence, mindestens eine der drei Säulen.</span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>Aus der offiziellen Definition einer Diligence-Säule lässt sich ein starkes KI-Modell mehrere reale oder realistisch konstruierte Anwendungsfälle aus Tax, Audit oder Advisory generieren, in denen genau dieser Aspekt schief gegangen ist. Aus den generierten Fällen wählen Sie einen aus, der das Risiko besonders eindrücklich verdeutlicht — ein praktisches Beispiel für **Best-of-N**. Setup: ein starkes KI-Modell mit Web-Search-Tool (Claude Pro, ChatGPT Plus, Gemini Advanced oder Perplexity Pro), die drei Diligence-Definitionen aus Block K. Wählen Sie eine Säule — Creation, Transparency oder Deployment.</span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>**Schritt 1 — Definition als Input (2 Min).** Kopieren Sie die vollständige Definition der gewählten Diligence-Säule (alle drei Bullet-Punkte plus Ziel-Satz) in einen neuen Chat. Hängen Sie die Aufgabenstellung an:</span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Generieren Sie mir fünf reale oder realistisch konstruierte Anwendungsfälle aus dem Bereich Tax, Audit oder Advisory, in denen mindestens einer der oben genannten Aspekte schief gegangen ist. Pro Fall: ein Satz Sachverhalt, ein Satz Schaden, ein Satz konkret verletzter Aspekt aus der Definition. Verwenden Sie keine erfundenen Namen realer Personen oder Firmen.</span></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>**Schritt 2 — Auswahl im Best-of-N (8 Min).** Lesen Sie die fünf Fälle. Wählen Sie einen aus, der das Risiko besonders eindrücklich verdeutlicht. Auswahlkriterien: Plausibilität, Schwere, Übertragbarkeit.</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Rolle.** Du bist eine quellengebundene Suchhilfe für Gesetzestexte im Bereich Wirtschaftsprüfung und Rechnungslegung. Deine Aufgabe ist ausschließlich, passende Textstellen aus dem bereitgestellten Gesetzestext zu finden und wörtlich wiederzugeben.</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Verbote.** Du darfst keine rechtliche Bewertung vornehmen, keine Subsumtion durchführen, nicht interpretieren, keine abschließende Antwort geben, kein eigenes Wissen verwenden. Du darfst nur mit dem bereitgestellten Material arbeiten. Wenn eine passende Textstelle nicht im bereitgestellten Material enthalten ist, schreibe: „Im bereitgestellten Material wurde keine passende Textstelle gefunden."</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Aufgabe.** Suche im bereitgestellten Gesetzestext nach Textstellen, die für die folgende Frage relevant sein könnten: </span><span class="co">[</span><span class="ot">HIER FRAGE EINFÜGEN</span><span class="co">]</span><span class="at">.</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Arbeitsregeln.** (1) Gib ausschließlich Textstellen zurück, die im bereitgestellten Material enthalten sind. (2) Zitiere die Textstellen wörtlich. (3) Gib zu jeder Textstelle eine genaue Fundstelle an: Gesetz · Paragraph · Absatz · Satz / Nummer / Buchstabe · Seitenzahl oder Chunk-ID, falls verfügbar. (4) Erkläre nicht, was die Textstelle rechtlich bedeutet. (5) Verwende keine Formulierungen wie „Das bedeutet …", „Daraus folgt …", „Die Gesellschaft ist prüfungspflichtig …". (6) Eine sehr kurze neutrale Suchbegründung ist erlaubt: „Diese Stelle enthält Begriffe zur Prüfungspflicht", „Diese Stelle enthält Größenmerkmale". (7) Wenn mehrere Textstellen relevant sein könnten, ordne sie thematisch.</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Antwortformat.** A. Gefundene Textstellen. B. Möglicherweise zusätzlich relevante Stellen. C. Nicht gefundene Punkte. D. Prüfhinweis: „Diese Ausgabe ist nur eine Such- und Zitierhilfe. Sie enthält keine rechtliche Bewertung und keine verbindliche Antwort."</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="at">:::</span></span>
 <span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>**Schritt 3 — Schutzmaßnahme ableiten (5 Min).** Schreiben Sie für den ausgewählten Fall in drei Sätzen: Was ist konkret schief gegangen? Welcher Punkt aus der Diligence-Definition wurde verletzt? Welche konkrete Wenn-Dann-Schutzmaßnahme hätte den Fall verhindert? Diese Regel ist Saatkorn für die Personal AI Policy in Hausaufgabe 7.</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>**Kurzprompt-Variante.**</span>
 <span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Lassen Sie sich mit demselben Setup fünf weitere Fälle generieren — diesmal mit der zusätzlichen Anweisung „wählen Sie Fälle, die ich aus dem ersten Lauf nicht erwartet hätte". Welche Risiken kommen erst im zweiten Lauf zur Sprache? Was sagt das über die Robustheit des Best-of-N-Vorgehens aus?</span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>**Think-Pair-Share (4 Min).** Welcher der fünf Fälle wäre fast Ihre Auswahl gewesen — und warum haben Sie sich für einen anderen entschieden? Wie verlässlich sind die generierten Fälle? Gibt es welche, die Sie bei Quellenrecherche entkräften müssten?</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Finde im bereitgestellten HGB-Text ausschließlich wörtliche Textstellen zu: (1) Prüfungspflicht von Kapitalgesellschaften, (2) kleine Kapitalgesellschaften, (3) mittelgroße Kapitalgesellschaften, (4) Größenmerkmale: Bilanzsumme, Umsatzerlöse, Arbeitnehmer, (5) Bedeutung mehrerer Abschlussstichtage oder Geschäftsjahre. Tabelle: Thema · Fundstelle · Wörtliches Zitat. Keine Interpretation. Keine rechtliche Bewertung. Keine Antwort auf den Fall.</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="at">:::</span></span>
 <span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 4 — Prozessmodellierung mit Mermaid {#sec-mermaid}</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>**Vorgehen.** HGB-Auszug oder gesamtes HGB in das RAG-System hochladen. Suchprompt oder Kurzprompt verwenden. Antwort speichern. Prüfen, ob die Ausgabe wirklich nur Textstellen enthält und keine Interpretation vornimmt. Markieren: mindestens eine starke Fundstelle, eine möglicherweise zusätzliche Fundstelle, eine vermutlich übersehene Stelle.</span>
 <span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Einzelarbeit · **Dauer:** 18 Min · **4D-Bezug:** Vorbereitung für Delegate (Process-Aktivitäten klar identifizieren).</span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>**Selbstprüfung der Modellantwort.**</span>
 <span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>Lernen Sie Prozessmodellierung am niedrigschwelligen Werkzeug **Mermaid Live Editor** kennen (<span class="co">[</span><span class="ot">mermaid.live</span><span class="co">](https://mermaid.live)</span>{target="_blank"}). Mermaid ist eine textbasierte Notation für Diagramme — Sie schreiben den Prozess in einer einfachen Syntax, der Editor zeichnet ihn automatisch. Vorteil für den Einstieg: keine Maus-Klickerei, kein Tool-Setup, sofortige visuelle Rückmeldung.</span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>Sachverhalt: **Eingang einer Mandantenanfrage in einer Steuerkanzlei**. Anfrage trifft per E-Mail ein, wird auf Mandantenbezug geprüft, an einen Sachbearbeiter zugewiesen, dieser klärt offene Punkte, der Partner gibt frei oder verlangt Überarbeitung.</span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>Vorgehen: Öffnen Sie <span class="co">[</span><span class="ot">mermaid.live</span><span class="co">](https://mermaid.live)</span>{target="_blank"}. Löschen Sie den Beispielcode. Kopieren Sie folgendes Grundgerüst hinein und passen Sie es an Ihren Sachverhalt an:</span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="in">graph TD</span></span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="in">    A[Anfrage trifft ein] --&gt; B{Mandant bekannt?}</span></span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="in">    B -- Ja --&gt; C[Sachbearbeiter zuweisen]</span></span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="in">    B -- Nein --&gt; D[Mandant anlegen]</span></span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a><span class="in">    D --&gt; C</span></span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a><span class="in">    C --&gt; E[Offene Punkte klären]</span></span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="in">    E --&gt; F{Freigabe durch Partner?}</span></span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a><span class="in">    F -- Ja --&gt; G[Antwort an Mandant]</span></span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="in">    F -- Nein --&gt; E</span></span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a><span class="in">    G --&gt; H[Vorgang archivieren]</span></span>
-<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>Schritte: (1) Knoten umbenennen, sodass mindestens fünf Aktivitäten und ein zweites Gateway entstehen. (2) Eine Aktivität als *P* (Process Automation), eine als *C* (Cognitive Automation) markieren — etwa durch zusätzliche Knoten oder Notiz im Begleittext. (3) Das gerenderte Diagramm als PNG exportieren (rechte Seite, Download-Knopf).</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Prüffrage <span class="pp">|</span> Ja / Nein <span class="pp">|</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Enthält die Antwort ausschließlich wörtliche Textstellen? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sind alle Zitate mit genauer Fundstelle versehen? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Wurden § 267 HGB und § 316 HGB gefunden? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Wurde eine Stelle zur Betrachtung mehrerer Abschlussstichtage gefunden? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Verzichtet die Antwort auf Formulierungen wie „daraus folgt" oder „ist prüfungspflichtig"? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sind die Suchbegründungen neutral und kurz? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Gibt es offensichtlich fehlende Normbereiche? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Gibt es Zitate, die nicht aus dem bereitgestellten Material stammen können? <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>**Verbotene und erlaubte Formulierungen.**</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Nicht verwenden <span class="pp">|</span> Stattdessen verwenden <span class="pp">|</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> „Daraus folgt, dass die GmbH prüfungspflichtig ist." <span class="pp">|</span> „Diese Stelle enthält Begriffe zur Prüfungspflicht." <span class="pp">|</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> „Die Schwellenwerte sind überschritten." <span class="pp">|</span> „Diese Stelle enthält Größenmerkmale und Schwellenwerte." <span class="pp">|</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> „Die Gesellschaft ist nicht klein." <span class="pp">|</span> „Diese Stelle enthält die Umschreibung kleiner Kapitalgesellschaften." <span class="pp">|</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> „§ 316 HGB ist hier anwendbar." <span class="pp">|</span> „Diese Stelle nennt die Pflicht zur Prüfung." <span class="pp">|</span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> „Nach dem HGB gilt …" <span class="pp">|</span> „Im bereitgestellten Text steht wörtlich …" <span class="pp">|</span></span>
 <span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Modellieren Sie eine zweite Variante des Prozesses, in der die initiale Mandantenprüfung an einen KI-Tutor delegiert wird. Welche Aktivitäten kommen hinzu, welche werden überflüssig?</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.**</span>
 <span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>**Think-Pair-Share (3 Min).** Welche Stelle Ihres Diagramms ließ sich in Mermaid leichter zeichnen als auf Papier? Wo stieß die Mermaid-Notation an Grenzen?</span>
-<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 5 — BPMN-Modellierung in Signavio {#sec-bpmn}</span></span>
-<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Einzel oder Paar · **Dauer:** 35 Min · **4D-Bezug:** Delegate / Brücke zu *Process vs. Cognitive Automation*.</span>
-<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>Vertiefen Sie die Prozessmodellierung mit einem professionellen BPMN-Werkzeug. Anders als bei Mermaid sind in Signavio die Symbole standardisiert (BPMN 2.0.2), Zuständigkeiten lassen sich über Swimlanes sichtbar machen, und das Modell ist auditierbar. Setup: <span class="co">[</span><span class="ot">Signavio Academic Edition</span><span class="co">](https://academic.signavio.com/p/explorer)</span>{target="_blank"} (kostenfreier Account mit Hochschul-E-Mail; sollte bereits aus der Hausaufgabe nach Workshop 1 angelegt sein). Als Alternative: <span class="co">[</span><span class="ot">bpmn.io</span><span class="co">](https://bpmn.io)</span>{target="_blank"}.</span>
-<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>Sachverhalt: **Rechnungseingang in einer mittelgroßen Steuerkanzlei** — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung. Reicher als die Mandantenanfrage in Übung 4.</span>
-<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>Vorgehen: Nach Login in Signavio einen neuen Diagrammtyp *BPMN 2.0* anlegen. Mindestens zwei Rollen identifizieren und als Swimlanes setzen (z. B. *Sachbearbeiter* und *Partner*). Mindestens fünf Aktivitäten platzieren und mit Sequenzflüssen verbinden. Mindestens einen XOR-Entscheidungspunkt einsetzen. Jede Aktivität mit *P* (Process Automation), *C* (Cognitive Automation) oder *H* (Hybrid) markieren und in einem Satz pro Aktivität begründen. Diagramm als PNG oder PDF exportieren.</span>
-<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Eine Aktivität, die heute *H* (Hybrid) ist, in zwei aufeinanderfolgende Aktivitäten zerlegen — eine reine Process-Aktivität, eine reine Cognitive-Aktivität. Hinweis: Das ist der Hauptmechanismus, mit dem reale Workflows automatisierbar werden.</span>
-<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>**Think-Pair-Share (4 Min).** Welche Stelle aus dem Mermaid-Diagramm (Übung 4) hätte in Signavio anders ausgesehen? Wo wirkt BPMN überdimensioniert, wo zahlt sich die strikte Notation aus?</span>
-<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 6 — UiPath Mandanten-Anschreiben {#sec-uipath}</span></span>
-<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min · **4D-Bezug:** Delegate / praktischer Erstkontakt mit Process Automation an einem realistischen Tax-/Audit-Szenario.</span>
-<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>Lernen Sie die Grundstruktur von **UiPath Cloud Studio Web** an einer Aufgabe kennen, die in jeder Kanzlei vorkommt: einen **Serienbrief-Bot**, der die Adressdaten eines Mandanten aus einer Excel-Liste in ein Word-Anschreiben einsetzt und das fertige Dokument speichert. Setup: Account bei <span class="co">[</span><span class="ot">UiPath Cloud</span><span class="co">](https://cloud.uipath.com)</span>{target="_blank"} (sollte aus der Hausaufgabe nach Workshop 1 vorhanden sein). Nach Login oben links *Studio Web* öffnen.</span>
-<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>**Material.** Im Daten-Ordner finden Sie zwei vorbereitete Dateien — eine Excel-Stammdatenliste <span class="in">`mandantenstammdaten.xlsx`</span> mit den Spalten *Anrede · Vorname · Nachname · Firma · Straße · PLZ · Ort* und eine Word-Vorlage `anschreiben-vorlage.docx` mit den Platzhaltern `{Anrede}`, `{Vorname}`, `{Nachname}`, `{Firma}`, `{Strasse}`, `{PLZ}`, `{Ort}`. Beide Dateien sind in Ihren UiPath-Cloud-Workspace hochzuladen (oben rechts *Upload*).</span>
-<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>Vorgehen — der Bot in sechs Schritten:</span>
-<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Neues Projekt anlegen** — *Create new project*, Typ *Process*, Name „Mandanten-Anschreiben".</span>
-<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Excel-Datei einbinden** — Activity *Use Excel File*, Pfad auf die hochgeladene <span class="in">`mandantenstammdaten.xlsx`</span> setzen, Referenznamen <span class="in">`Stammdaten`</span> vergeben.</span>
-<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Adressdaten lesen** — innerhalb des Excel-Scopes mit *Read Cell* die ersten sieben Felder der Zeile 2 lesen und je einer String-Variablen zuweisen (`Anrede`, `Vorname`, `Nachname`, `Firma`, `Strasse`, `PLZ`, `Ort`). Wer mag, verwendet stattdessen *Read Range* und greift später per Index zu.</span>
-<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Word-Vorlage öffnen** — Activity *Use Word File*, Pfad auf `anschreiben-vorlage.docx`, Option *Make a copy* aktivieren und Ausgabepfad auf <span class="in">`Anschreiben-{Nachname}.docx`</span> setzen — so wird die Vorlage nicht überschrieben.</span>
-<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Platzhalter ersetzen** — sieben *Replace Text in Document*-Activities einfügen, je ein Platzhalter (<span class="in">`{Anrede}`</span> etc.) durch die korrespondierende Variable austauschen.</span>
-<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Bot ausführen** — *Run* klicken, das erzeugte Anschreiben im Workspace öffnen und prüfen, ob alle Platzhalter sauber ersetzt sind.</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Variante <span class="pp">|</span> Durchführung <span class="pp">|</span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Promptvergleich <span class="pp">|</span> Eine Gruppe nutzt den langen Suchprompt, eine den Kurzprompt. <span class="pp">|</span></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dokumentvergleich <span class="pp">|</span> Ein Lauf mit Auszug, ein Lauf mit gesamtem HGB. <span class="pp">|</span></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Modellvergleich <span class="pp">|</span> Zwei Modelle mit gleichem RAG-Kontext und Prompt. <span class="pp">|</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Fehlerjagd <span class="pp">|</span> Eine Antwort mit eingebauten Interpretationen, Studierende markieren unerlaubte Formulierungen. <span class="pp">|</span></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>**Reflexionsfragen.** Hat das Modell echte Sucharbeit geleistet oder doch interpretiert? Welche Normstellen wurden gefunden, welche möglicherweise übersehen? Wie stark hängt die Ausgabe vom hochgeladenen Dokumentausschnitt ab? Welche Risiken bleiben trotz RAG bestehen?</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 4 — Diligence-Risiko-Recherche im Best-of-N {#sec-diligence-bestof-n}</span></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Einzel oder Paar · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Diligence, mindestens eine der drei Säulen.</span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>Aus der offiziellen Definition einer Diligence-Säule lässt sich ein starkes KI-Modell mehrere reale oder realistisch konstruierte Anwendungsfälle aus Tax, Audit oder Advisory generieren, in denen genau dieser Aspekt schief gegangen ist. Aus den generierten Fällen wählen Sie einen aus, der das Risiko besonders eindrücklich verdeutlicht — ein praktisches Beispiel für **Best-of-N**. Setup: ein starkes KI-Modell mit Web-Search-Tool (Claude Pro, ChatGPT Plus, Gemini Advanced oder Perplexity Pro), die drei Diligence-Definitionen aus Block K. Wählen Sie eine Säule — Creation, Transparency oder Deployment.</span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>**Schritt 1 — Definition als Input (2 Min).** Kopieren Sie die vollständige Definition der gewählten Diligence-Säule (alle drei Bullet-Punkte plus Ziel-Satz) in einen neuen Chat. Hängen Sie die Aufgabenstellung an:</span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Generieren Sie mir fünf reale oder realistisch konstruierte Anwendungsfälle aus dem Bereich Tax, Audit oder Advisory, in denen mindestens einer der oben genannten Aspekte schief gegangen ist. Pro Fall: ein Satz Sachverhalt, ein Satz Schaden, ein Satz konkret verletzter Aspekt aus der Definition. Verwenden Sie keine erfundenen Namen realer Personen oder Firmen.</span></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>**Schritt 2 — Auswahl im Best-of-N (8 Min).** Lesen Sie die fünf Fälle. Wählen Sie einen aus, der das Risiko besonders eindrücklich verdeutlicht. Auswahlkriterien: Plausibilität, Schwere, Übertragbarkeit.</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>**Schritt 3 — Schutzmaßnahme ableiten (5 Min).** Schreiben Sie für den ausgewählten Fall in drei Sätzen: Was ist konkret schief gegangen? Welcher Punkt aus der Diligence-Definition wurde verletzt? Welche konkrete Wenn-Dann-Schutzmaßnahme hätte den Fall verhindert? Diese Regel ist Saatkorn für die Personal AI Policy in Hausaufgabe 7.</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Lassen Sie sich mit demselben Setup fünf weitere Fälle generieren — diesmal mit der zusätzlichen Anweisung „wählen Sie Fälle, die ich aus dem ersten Lauf nicht erwartet hätte". Welche Risiken kommen erst im zweiten Lauf zur Sprache? Was sagt das über die Robustheit des Best-of-N-Vorgehens aus?</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>**Think-Pair-Share (4 Min).** Welcher der fünf Fälle wäre fast Ihre Auswahl gewesen — und warum haben Sie sich für einen anderen entschieden? Wie verlässlich sind die generierten Fälle? Gibt es welche, die Sie bei Quellenrecherche entkräften müssten?</span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 5 — Prozessmodellierung mit Mermaid {#sec-mermaid}</span></span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Einzelarbeit · **Dauer:** 18 Min · **4D-Bezug:** Vorbereitung für Delegate (Process-Aktivitäten klar identifizieren).</span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>Lernen Sie Prozessmodellierung am niedrigschwelligen Werkzeug **Mermaid Live Editor** kennen (<span class="co">[</span><span class="ot">mermaid.live</span><span class="co">](https://mermaid.live)</span>{target="_blank"}). Mermaid ist eine textbasierte Notation für Diagramme — Sie schreiben den Prozess in einer einfachen Syntax, der Editor zeichnet ihn automatisch. Vorteil für den Einstieg: keine Maus-Klickerei, kein Tool-Setup, sofortige visuelle Rückmeldung.</span>
 <span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>Anschließend: drei Stichworte ins Notizbuch — wo war die Oberfläche intuitiver als erwartet, wo zäher, welche Stelle wäre bei einer echten Mandantenliste mit 200 Zeilen die kritischste?</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>Sachverhalt: **Eingang einer Mandantenanfrage in einer Steuerkanzlei**. Anfrage trifft per E-Mail ein, wird auf Mandantenbezug geprüft, an einen Sachbearbeiter zugewiesen, dieser klärt offene Punkte, der Partner gibt frei oder verlangt Überarbeitung.</span>
 <span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Bauen Sie eine *For Each Row*-Schleife um die Schritte 3 bis 5, sodass der Bot alle Zeilen der Excel-Liste verarbeitet und für jeden Mandanten eine eigene Datei <span class="in">`Anschreiben-{Nachname}.docx`</span> schreibt. Beobachten Sie, wie sich der Aufwand pro Mandant gegen Null bewegt — und wo trotzdem ein Mensch prüfen muss, bevor das Schreiben rausgeht.</span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>Vorgehen: Öffnen Sie <span class="co">[</span><span class="ot">mermaid.live</span><span class="co">](https://mermaid.live)</span>{target="_blank"}. Löschen Sie den Beispielcode. Kopieren Sie folgendes Grundgerüst hinein und passen Sie es an Ihren Sachverhalt an:</span>
 <span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a>**Think-Pair-Share (3 Min).** An welcher Stelle dieses Bots würden Sie *Cognitive Automation* sinnvoll ergänzen — etwa für eine individuelle Anrede oder einen mandantenspezifischen Hinweis? Welche Diligence-Pflicht (Creation, Transparency, Deployment) trifft den Versand solcher Serienbriefe am stärksten?</span>
-<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vertiefung (optional in-class oder als Hausaufgabe)</span></span>
-<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a>Wer die sechs Übungen früh durchhat oder eine zusätzliche Vertiefung sucht, hat zwei Optionen.</span>
-<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a>**Integrierter 4D-Use-Case mit Diligence-Schwerpunkt** — eine 40-Minuten-Übung am Tax-Beispiel „grenzüberschreitende Dienstleistung", in der alle vier 4D-Kompetenzen mit Schwerpunkt Diligence durchlaufen werden, inklusive Audit-Trail und Mandantenkommunikation. Diese Übung ist gleichzeitig die Vorlage für die zwei Hausaufgaben *Dilemma der Mitte* und *Personal AI Policy*. Beschreibung folgt unter Übung 7.</span>
-<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a>**UiPath-Vertiefung — Excel-zu-PDF-Bot** — eine komplexere UiPath-Aufgabe, in der Sie einen vorbereiteten Bot lesen, ausführen und anpassen. Diese Übung ist als Hausaufgabe nach Workshop 2 konzipiert; Details siehe <span class="co">[</span><span class="ot">Hausaufgaben-Seite</span><span class="co">](05-hausaufgaben.qmd#sec-uipath-vertiefung)</span>.</span>
-<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 7 — Integrierter 4D-Use-Case (optional in-class) {#sec-4d-usecase}</span></span>
-<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Paar oder Dreierteam · **Dauer:** 40 Min · **4D-Bezug:** alle vier Kompetenzen, Schwerpunkt Diligence.</span>
-<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a><span class="al">![Centaur-Modell — Mensch und KI als verbundenes, aber unterscheidbares Gespann; die Verantwortung bleibt sichtbar beim Reiter. Adaptiert nach Mollick (2024).](../images/centaur-genai.png)</span>{fig-align="center" width="60%" fig-alt="Symbolbild eines Centaur als Metapher für die Mensch-KI-Kooperation"}</span>
-<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a>Führen Sie einen realistischen Sachverhalt in einem Durchgang durch alle vier 4D-Kompetenzen — mit besonderem Gewicht auf der Diligence-Dokumentation. Diese Übung ist die direkte Vorlage für die beiden Hausaufgaben *Dilemma der Mitte* und *Personal AI Policy*.</span>
-<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a>**Sachverhalt (fiktiv, kein Mandantenbezug):** Eine deutsche IT-Beratung erbringt eine Cloud-Migrations-Beratung im Wert von 80.000 € für einen Kunden mit Sitz in Boston, USA. Frage des Mandanten: Ist die Leistung in Deutschland umsatzsteuerbar — und wenn ja, mit welcher Steuerklasse?</span>
-<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a>**Ablauf in vier Stationen.** *Delegate (5 Min)*: Welches Modell mit welcher Harness? Welche Teilaufgaben behalten Sie als Berufsträger:in selbst? *Describe (5 Min)*: Prompt nach RTF oder CREATE strukturieren, absenden. *Discern (10 Min)*: Faithfulness prüfen, zitierte Quellen verifizieren, Honey-Pot setzen, Output als rot/gelb/grün bewerten. *Diligence (20 Min)*: Audit-Trail ausfüllen, Mandantenkommunikation in fünf Sätzen formulieren (EU AI Act Art. 50), Verantwortungs-Schluss-Satz schreiben, Faustregel für die Personal AI Policy notieren.</span>
-<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Übersetzen Sie den vollständigen Audit-Trail in eine Personal-AI-Policy-Regel als Wenn-Dann-Aussage. Beispiel: „*Wenn* der Sachverhalt einen US-Mandanten betrifft, *dann* verifiziere ich mindestens zwei Quellen aus deutschen Quellen und keine reine LLM-Antwort." Diese Regel ist Saatkorn für die Hausaufgabe *Personal AI Policy*.</span>
-<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quellen</span></span>
-<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a>@dakan2025framework · @omg2014bpmn · @lacity2021becoming · @willcocks2024evolution · @lacity2016new · @coombs2020strategic · @davenport2018artificial · @es2024ragas · @willison2025redgreen</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a><span class="in">graph TD</span></span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a><span class="in">    A[Anfrage trifft ein] --&gt; B{Mandant bekannt?}</span></span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a><span class="in">    B -- Ja --&gt; C[Sachbearbeiter zuweisen]</span></span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a><span class="in">    B -- Nein --&gt; D[Mandant anlegen]</span></span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a><span class="in">    D --&gt; C</span></span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a><span class="in">    C --&gt; E[Offene Punkte klären]</span></span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a><span class="in">    E --&gt; F{Freigabe durch Partner?}</span></span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a><span class="in">    F -- Ja --&gt; G[Antwort an Mandant]</span></span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a><span class="in">    F -- Nein --&gt; E</span></span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a><span class="in">    G --&gt; H[Vorgang archivieren]</span></span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a>Schritte: (1) Knoten umbenennen, sodass mindestens fünf Aktivitäten und ein zweites Gateway entstehen. (2) Eine Aktivität als *P* (Process Automation), eine als *C* (Cognitive Automation) markieren — etwa durch zusätzliche Knoten oder Notiz im Begleittext. (3) Das gerenderte Diagramm als PNG exportieren (rechte Seite, Download-Knopf).</span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Modellieren Sie eine zweite Variante des Prozesses, in der die initiale Mandantenprüfung an einen KI-Tutor delegiert wird. Welche Aktivitäten kommen hinzu, welche werden überflüssig?</span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a>**Think-Pair-Share (3 Min).** Welche Stelle Ihres Diagramms ließ sich in Mermaid leichter zeichnen als auf Papier? Wo stieß die Mermaid-Notation an Grenzen?</span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 6 — BPMN-Modellierung in Signavio {#sec-bpmn}</span></span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Einzel oder Paar · **Dauer:** 35 Min · **4D-Bezug:** Delegate / Brücke zu *Process vs. Cognitive Automation*.</span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a>Vertiefen Sie die Prozessmodellierung mit einem professionellen BPMN-Werkzeug. Anders als bei Mermaid sind in Signavio die Symbole standardisiert (BPMN 2.0.2), Zuständigkeiten lassen sich über Swimlanes sichtbar machen, und das Modell ist auditierbar. Setup: <span class="co">[</span><span class="ot">Signavio Academic Edition</span><span class="co">](https://academic.signavio.com/p/explorer)</span>{target="_blank"} (kostenfreier Account mit Hochschul-E-Mail; sollte bereits aus der Hausaufgabe nach Workshop 1 angelegt sein). Als Alternative: <span class="co">[</span><span class="ot">bpmn.io</span><span class="co">](https://bpmn.io)</span>{target="_blank"}.</span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a>Sachverhalt: **Rechnungseingang in einer mittelgroßen Steuerkanzlei** — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung. Reicher als die Mandantenanfrage in Übung 5.</span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a>Vorgehen: Nach Login in Signavio einen neuen Diagrammtyp *BPMN 2.0* anlegen. Mindestens zwei Rollen identifizieren und als Swimlanes setzen (z. B. *Sachbearbeiter* und *Partner*). Mindestens fünf Aktivitäten platzieren und mit Sequenzflüssen verbinden. Mindestens einen XOR-Entscheidungspunkt einsetzen. Jede Aktivität mit *P* (Process Automation), *C* (Cognitive Automation) oder *H* (Hybrid) markieren und in einem Satz pro Aktivität begründen. Diagramm als PNG oder PDF exportieren.</span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Eine Aktivität, die heute *H* (Hybrid) ist, in zwei aufeinanderfolgende Aktivitäten zerlegen — eine reine Process-Aktivität, eine reine Cognitive-Aktivität. Hinweis: Das ist der Hauptmechanismus, mit dem reale Workflows automatisierbar werden.</span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a>**Think-Pair-Share (4 Min).** Welche Stelle aus dem Mermaid-Diagramm (Übung 5) hätte in Signavio anders ausgesehen? Wo wirkt BPMN überdimensioniert, wo zahlt sich die strikte Notation aus?</span>
+<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 7 — UiPath Mandanten-Anschreiben {#sec-uipath}</span></span>
+<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min · **4D-Bezug:** Delegate / praktischer Erstkontakt mit Process Automation an einem realistischen Tax-/Audit-Szenario.</span>
+<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a>Lernen Sie die Grundstruktur von **UiPath Cloud Studio Web** an einer Aufgabe kennen, die in jeder Kanzlei vorkommt: einen **Serienbrief-Bot**, der die Adressdaten eines Mandanten aus einer Excel-Liste in ein Word-Anschreiben einsetzt und das fertige Dokument speichert. Setup: Account bei <span class="co">[</span><span class="ot">UiPath Cloud</span><span class="co">](https://cloud.uipath.com)</span>{target="_blank"} (sollte aus der Hausaufgabe nach Workshop 1 vorhanden sein). Nach Login oben links *Studio Web* öffnen.</span>
+<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-224"><a href="#cb2-224" aria-hidden="true" tabindex="-1"></a>**Material.** Im Daten-Ordner finden Sie zwei vorbereitete Dateien — eine Excel-Stammdatenliste <span class="in">`mandantenstammdaten.xlsx`</span> mit den Spalten *Anrede · Vorname · Nachname · Firma · Straße · PLZ · Ort* und eine Word-Vorlage `anschreiben-vorlage.docx` mit den Platzhaltern `{Anrede}`, `{Vorname}`, `{Nachname}`, `{Firma}`, `{Strasse}`, `{PLZ}`, `{Ort}`. Beide Dateien sind in Ihren UiPath-Cloud-Workspace hochzuladen (oben rechts *Upload*).</span>
+<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a>Vorgehen — der Bot in sechs Schritten:</span>
+<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Neues Projekt anlegen** — *Create new project*, Typ *Process*, Name „Mandanten-Anschreiben".</span>
+<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Excel-Datei einbinden** — Activity *Use Excel File*, Pfad auf die hochgeladene <span class="in">`mandantenstammdaten.xlsx`</span> setzen, Referenznamen <span class="in">`Stammdaten`</span> vergeben.</span>
+<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Adressdaten lesen** — innerhalb des Excel-Scopes mit *Read Cell* die ersten sieben Felder der Zeile 2 lesen und je einer String-Variablen zuweisen (`Anrede`, `Vorname`, `Nachname`, `Firma`, `Strasse`, `PLZ`, `Ort`). Wer mag, verwendet stattdessen *Read Range* und greift später per Index zu.</span>
+<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Word-Vorlage öffnen** — Activity *Use Word File*, Pfad auf `anschreiben-vorlage.docx`, Option *Make a copy* aktivieren und Ausgabepfad auf <span class="in">`Anschreiben-{Nachname}.docx`</span> setzen — so wird die Vorlage nicht überschrieben.</span>
+<span id="cb2-232"><a href="#cb2-232" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Platzhalter ersetzen** — sieben *Replace Text in Document*-Activities einfügen, je ein Platzhalter (<span class="in">`{Anrede}`</span> etc.) durch die korrespondierende Variable austauschen.</span>
+<span id="cb2-233"><a href="#cb2-233" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Bot ausführen** — *Run* klicken, das erzeugte Anschreiben im Workspace öffnen und prüfen, ob alle Platzhalter sauber ersetzt sind.</span>
+<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a>Anschließend: drei Stichworte ins Notizbuch — wo war die Oberfläche intuitiver als erwartet, wo zäher, welche Stelle wäre bei einer echten Mandantenliste mit 200 Zeilen die kritischste?</span>
+<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Bauen Sie eine *For Each Row*-Schleife um die Schritte 3 bis 5, sodass der Bot alle Zeilen der Excel-Liste verarbeitet und für jeden Mandanten eine eigene Datei <span class="in">`Anschreiben-{Nachname}.docx`</span> schreibt. Beobachten Sie, wie sich der Aufwand pro Mandant gegen Null bewegt — und wo trotzdem ein Mensch prüfen muss, bevor das Schreiben rausgeht.</span>
+<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-239"><a href="#cb2-239" aria-hidden="true" tabindex="-1"></a>**Think-Pair-Share (3 Min).** An welcher Stelle dieses Bots würden Sie *Cognitive Automation* sinnvoll ergänzen — etwa für eine individuelle Anrede oder einen mandantenspezifischen Hinweis? Welche Diligence-Pflicht (Creation, Transparency, Deployment) trifft den Versand solcher Serienbriefe am stärksten?</span>
+<span id="cb2-240"><a href="#cb2-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-241"><a href="#cb2-241" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vertiefung (optional in-class oder als Hausaufgabe)</span></span>
+<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a>Wer die sechs Übungen früh durchhat oder eine zusätzliche Vertiefung sucht, hat zwei Optionen.</span>
+<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a>**Integrierter 4D-Use-Case mit Diligence-Schwerpunkt** — eine 40-Minuten-Übung am Tax-Beispiel „grenzüberschreitende Dienstleistung", in der alle vier 4D-Kompetenzen mit Schwerpunkt Diligence durchlaufen werden, inklusive Audit-Trail und Mandantenkommunikation. Diese Übung ist gleichzeitig die Vorlage für die zwei Hausaufgaben *Dilemma der Mitte* und *Personal AI Policy*. Beschreibung folgt unter Übung 8.</span>
+<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a>**UiPath-Vertiefung — Excel-zu-PDF-Bot** — eine komplexere UiPath-Aufgabe, in der Sie einen vorbereiteten Bot lesen, ausführen und anpassen. Diese Übung ist als Hausaufgabe nach Workshop 2 konzipiert; Details siehe <span class="co">[</span><span class="ot">Hausaufgaben-Seite</span><span class="co">](05-hausaufgaben.qmd#sec-uipath-vertiefung)</span>.</span>
+<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a><span class="fu">## Übung 8 — Integrierter 4D-Use-Case (optional in-class) {#sec-4d-usecase}</span></span>
+<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a>**Modus:** in-class · Paar oder Dreierteam · **Dauer:** 40 Min · **4D-Bezug:** alle vier Kompetenzen, Schwerpunkt Diligence.</span>
+<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a><span class="al">![Centaur-Modell — Mensch und KI als verbundenes, aber unterscheidbares Gespann; die Verantwortung bleibt sichtbar beim Reiter. Adaptiert nach Mollick (2024).](../images/centaur-genai.png)</span>{fig-align="center" width="60%" fig-alt="Symbolbild eines Centaur als Metapher für die Mensch-KI-Kooperation"}</span>
+<span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a>Führen Sie einen realistischen Sachverhalt in einem Durchgang durch alle vier 4D-Kompetenzen — mit besonderem Gewicht auf der Diligence-Dokumentation. Diese Übung ist die direkte Vorlage für die beiden Hausaufgaben *Dilemma der Mitte* und *Personal AI Policy*.</span>
+<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a>**Sachverhalt (fiktiv, kein Mandantenbezug):** Eine deutsche IT-Beratung erbringt eine Cloud-Migrations-Beratung im Wert von 80.000 € für einen Kunden mit Sitz in Boston, USA. Frage des Mandanten: Ist die Leistung in Deutschland umsatzsteuerbar — und wenn ja, mit welcher Steuerklasse?</span>
+<span id="cb2-258"><a href="#cb2-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a>**Ablauf in vier Stationen.** *Delegate (5 Min)*: Welches Modell mit welcher Harness? Welche Teilaufgaben behalten Sie als Berufsträger:in selbst? *Describe (5 Min)*: Prompt nach RTF oder CREATE strukturieren, absenden. *Discern (10 Min)*: Faithfulness prüfen, zitierte Quellen verifizieren, Honey-Pot setzen, Output als rot/gelb/grün bewerten. *Diligence (20 Min)*: Audit-Trail ausfüllen, Mandantenkommunikation in fünf Sätzen formulieren (EU AI Act Art. 50), Verantwortungs-Schluss-Satz schreiben, Faustregel für die Personal AI Policy notieren.</span>
+<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-261"><a href="#cb2-261" aria-hidden="true" tabindex="-1"></a>**Erweiterung für schnelle Studierende.** Übersetzen Sie den vollständigen Audit-Trail in eine Personal-AI-Policy-Regel als Wenn-Dann-Aussage. Beispiel: „*Wenn* der Sachverhalt einen US-Mandanten betrifft, *dann* verifiziere ich mindestens zwei Quellen aus deutschen Quellen und keine reine LLM-Antwort." Diese Regel ist Saatkorn für die Hausaufgabe *Personal AI Policy*.</span>
+<span id="cb2-262"><a href="#cb2-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-263"><a href="#cb2-263" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quellen</span></span>
+<span id="cb2-264"><a href="#cb2-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-265"><a href="#cb2-265" aria-hidden="true" tabindex="-1"></a>@dakan2025framework · @omg2014bpmn · @lacity2021becoming · @willcocks2024evolution · @lacity2016new · @coombs2020strategic · @davenport2018artificial · @es2024ragas · @willison2025redgreen</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

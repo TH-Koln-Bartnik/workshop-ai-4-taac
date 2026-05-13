@@ -9,16 +9,95 @@ subtitle: "Discern und Diligence zuerst, dann Modellierung und Automatisierung"
 ::: lernziel-box
 #### Was Sie nach diesen Übungen können
 
+- die eigene **Prüfungsordnung** mit einem zweistufigen Dialog-Prompt quellengebunden befragen und die Output-Qualität gegen ein Prüfprotokoll abklopfen,
+- die vier **RAGAS-Metriken** mit Hilfe eines Tutor-Bots in eigenen Worten und Analogien erklären,
 - einen **Tutor-Bot** mit einer kleinen Test-Suite systematisch prüfen — Vertiefung aus Workshop 1,
 - eine **RAG-Suche im HGB** so einhegen, dass die KI nur als quellengebundene Suchhilfe agiert,
 - aus einer **Diligence-Definition** mehrere Risikofälle im Best-of-N-Schema generieren und einen aussagekräftigen auswählen,
 - einen einfachen Prozess in **Mermaid** und anschließend in **Signavio** als BPMN-Diagramm modellieren,
-- die **Grundstruktur von UiPath** kennenlernen und einen einfachen Workflow ausführen.
+- die **Grundstruktur von UiPath** an einem Mandanten-Anschreiben-Bot kennenlernen.
 :::
 
-Die Reihenfolge folgt einer didaktischen Logik: erst zwei Discern-Übungen, dann eine Diligence-Übung, dann der Übergang zur technischen Brücke aus Prozessmodellierung und Robotic Process Automation. Die Vertiefungen zu UiPath und zum integrierten 4D-Use-Case sind als Hausaufgabe oder optionale Übung am Ende dieser Sektion aufgeführt.
+Die Reihenfolge folgt einer didaktischen Logik: erst zwei Verstehens-Übungen zu Quellenbindung und RAG-Evaluation, dann zwei weitere Discern-Übungen am Tutor-Bot und im HGB, dann eine Diligence-Übung, dann der Übergang zur technischen Brücke aus Prozessmodellierung und Robotic Process Automation. Die Vertiefungen zu UiPath und zum integrierten 4D-Use-Case sind als Hausaufgabe oder optionale Übung am Ende dieser Sektion aufgeführt.
 
-## Übung 1 — Tutor-Bot systematisch prüfen {#sec-test-suite}
+## Übung 1 — Prüfungsordnung mit zweistufigem Dialog-Prompt befragen {#sec-pruefungsordnung}
+
+**Modus:** in-class · Einzelarbeit · **Dauer:** 30 Min · **4D-Bezug:** Describe und Discern — präziser Prompt plus quellengebundene Output-Prüfung am eigenen Dokument.
+
+Sie öffnen Workshop 2 an einem Dokument, das Sie kennen: Ihre eigene Prüfungsordnung. Die Aufgabe — ein quellengebundener Analyse-Assistent liefert Ihnen mehrere Lesarten zu einer konkreten Frage, mit wörtlichen Zitaten und Fundstellen, ohne abschließendes Urteil. Der Witz dabei: der Prompt zerlegt den Dialog in *zwei* Schritte. Erst nimmt das Modell das Dokument nur auf und benennt es, dann erst beantwortet es die Frage. So vermeiden Sie, dass das Modell zu früh interpretiert oder spekuliert. Übersetzt in den Berufsalltag: dasselbe Muster passt auf Mandanten-Mandate, Verträge und Bescheide.
+
+**Setup.** Ein starkes Modell mit Dokument-Upload (ChatGPT mit Datei-Upload, Claude Projects, NotebookLM oder GWDG Academic Cloud RAG/Arcana). Ihre aktuelle Prüfungsordnung oder Modulordnung als PDF bereitlegen. **Keine personenbezogenen Daten über sich oder Dritte** in den Chat eingeben — die Übung läuft mit dem Dokument und einer fachlichen Frage.
+
+**Schritt 1 — Zweistufigen System-Prompt setzen (3 Min).** Kopieren Sie den unten stehenden Prompt als System- oder Initial-Prompt in den Chat. Der Prompt erzwingt den Dialog in zwei Schritten.
+
+::: callout-tip
+## System-Prompt zum Kopieren
+
+> Du bist ein quellengebundener Analyse-Assistent für Prüfungsordnungen im Hochschulkontext. Deine Aufgabe ist, Studierenden zu helfen, ihre eigene Prüfungsordnung zu verstehen. Du gibst keine endgültige Rechtsauskunft und triffst keine verbindliche Entscheidung. Du arbeitest in zwei Schritten.
+>
+> **Schritt 1 — Dokument aufnehmen.** Wenn ein Dokument hochgeladen wurde, tue nur Folgendes: (1) bestätige, dass das Dokument als Grundlage verwendet wird; (2) benenne — soweit erkennbar — Titel, Studiengang/Prüfungsordnung/Rahmenordnung, Datum/Fassung/Version und Struktur (Paragraphen, Abschnitte, Anlagen); (3) weise darauf hin, dass du ausschließlich mit dem hochgeladenen Dokument arbeitest; (4) fordere zu einer konkreten Frage auf. Beantworte in Schritt 1 noch keine inhaltliche Rechtsfrage, interpretiere noch nicht, suche noch keine Regelungen heraus, erfinde keine Angaben.
+>
+> **Schritt 2 — Frage analysieren.** Wenn der User anschließend eine konkrete Frage stellt, analysiere sie ausschließlich anhand des hochgeladenen Dokuments. Du darfst keine endgültige Entscheidung treffen, keine verbindliche Rechtsauskunft geben, keine eindeutige Ja-/Nein-Antwort als abschließendes Ergebnis formulieren, kein eigenes Wissen, keine Rechtsprechung, keine Verwaltungspraxis und keine externen Quellen verwenden. Entwickle stattdessen mehrere mögliche Antwortoptionen und stütze jede Option mit wörtlichen Belegen aus dem hochgeladenen Dokument.
+>
+> **Arbeitsregeln.** (1) Antworte nicht abschließend mit „Ja" oder „Nein". (2) Formuliere mehrere Lesarten — Option A: Dafür spricht …; Option B: Dagegen spricht …; Option C: Unklar bleibt …; Option D: Eine alternative Lesart wäre … (3) Jede Option mit mindestens einem wörtlichen Zitat aus dem hochgeladenen Dokument. (4) Genaue Fundstelle pro Zitat — Dokumentname, Paragraph/Artikel, Absatz, Satz/Nummer/Buchstabe, Seitenzahl falls verfügbar. (5) Trenne streng wörtliches Zitat, vorsichtige Paraphrase, mögliche Interpretation, offene Unsicherheit. (6) Verwende vorsichtige Formulierungen („Dafür spricht der Wortlaut …", „Dagegen könnte sprechen …", „Eine mögliche Lesart wäre …", „Unklar bleibt anhand des hochgeladenen Dokuments …", „Für eine endgültige Klärung müsste die zuständige Prüfungsstelle einbezogen werden."). (7) Wenn Informationen aus dem Sachverhalt fehlen, nenne sie ausdrücklich. (8) Wenn das Dokument die Frage nicht ausreichend beantwortet: „Im hochgeladenen Dokument nicht eindeutig belegbar." (9) Wenn verschiedene Stellen in Spannung zueinander stehen, benenne diese Spannung, löse sie aber nicht endgültig auf. (10) Erfinde keine Regeln, Fristen, Zuständigkeiten, Ausnahmen oder Rechtsfolgen.
+>
+> **Antwortformat in Schritt 2.** A. *Verständnis der Frage* — kurze neutrale Umformulierung. B. *Relevante Textstellen* — Tabelle mit Spalten Fundstelle · Wörtliches Zitat · Mögliche Bedeutung · Relevanz für die Frage. C. *Mögliche Antwortoptionen* — pro Option: wörtlicher Beleg, Fundstelle, mögliche Bedeutung, Stärke des Belegs (stark/mittel/schwach), warum nicht endgültig. D. *Vergleich der Optionen* — Tabelle mit Spalten Option · Was spricht dafür · Was spricht dagegen · Zentrale Textstelle · Unsicherheitsgrad. E. *Offene Punkte* — fehlende Sachverhaltsangaben, weitere Dokumente, zuständige Hochschulstelle. F. *Prüfprotokoll gegen Halluzinationen* — kurze Antworten zu: Zitat-Beleg pro Option? Unbelegte Aussagen vermieden? Endgültige Entscheidung vermieden? Nur Doku-Inhalt verwendet? Lücken sichtbar gemacht?
+>
+> **Abschluss.** Schließe mit: „Diese Analyse zeigt mögliche Lesarten auf Grundlage des hochgeladenen Dokuments. Sie ersetzt keine verbindliche Auskunft der zuständigen Prüfungsstelle."
+:::
+
+**Kurze Startformulierung für die Studierenden-Rolle.**
+
+::: callout-tip
+> Bitte lade zuerst deine Prüfungsordnung hoch. Ich werde sie zunächst nur als Arbeitsgrundlage erfassen. Danach stellst du eine konkrete Frage dazu. Ich gebe dann keine endgültige Antwort, sondern zeige mehrere mögliche Lesarten mit wörtlichen Belegen aus der Prüfungsordnung.
+:::
+
+**Schritt 2 — Dokument hochladen und Schritt 1 prüfen (2 Min).** Laden Sie Ihre Prüfungsordnung als PDF hoch. Kontrollieren Sie, ob das Modell sauber in Schritt 1 bleibt — nur Identifikation, keine inhaltliche Antwort, keine Spekulation. Falls das Modell vorprescht: Prompt nachschärfen oder Hinweis ergänzen („Bitte zuerst nur identifizieren, nicht antworten").
+
+**Schritt 3 — Konkrete Frage stellen (15 Min).** Wählen Sie eine reale Frage zu Ihrer Prüfungsordnung — Wiederholungsprüfungen, Fristen, Krankheit, Anerkennung von Leistungen, Abschlussarbeit, Bestehensregeln. Vier Beispielfragen zur Auswahl: *„Darf ich eine bestandene Prüfung freiwillig wiederholen, um die Note zu verbessern?"* · *„Welche Folgen hat ein Attest, das ich nach der Prüfung nachreiche?"* · *„Wie viele Versuche habe ich, wenn ich die Abschlussarbeit nicht bestehe?"* · *„Können Leistungen aus einem Auslandssemester anerkannt werden, wenn das Modul nicht 1:1 vergleichbar ist?"* Stellen Sie die Frage und werten Sie die Antwort aus.
+
+**Schritt 4 — Output gegen die Quellenbindung prüfen (8 Min).** Gehen Sie das Prüfprotokoll Punkt für Punkt durch und markieren Sie jede Stelle, an der das Modell aus der Rolle fällt.
+
+| Prüffrage | Beleg / Befund |
+|---|---|
+| Wurde jede Option mit einem wörtlichen Zitat belegt? | |
+| Sind alle Zitate mit exakter Fundstelle versehen (Paragraph, Absatz, Satz/Nummer)? | |
+| Wurde auf eine abschließende „Ja"-/„Nein"-Antwort verzichtet? | |
+| Verwendet das Modell vorsichtige Formulierungen statt subsumierender Sätze? | |
+| Wurden Spannungen zwischen Stellen benannt statt aufgelöst? | |
+| Gibt es Aussagen ohne Zitat-Beleg? | |
+| Hat das Modell eigenes Wissen oder Rechtsprechung eingeschmuggelt? | |
+| Wurde die Schlussformel zum nicht-verbindlichen Charakter angefügt? | |
+
+**Erweiterung für schnelle Studierende.** Stellen Sie dieselbe Frage einem zweiten Modell mit identischem Prompt und identischem Dokument. Vergleichen Sie die genannten Fundstellen — welche kommen in beiden Antworten vor (stabile Belege), welche nur in einer (instabile Belege)? Was sagt das über die Verlässlichkeit der KI-Recherche im Rechtskontext?
+
+**Think-Pair-Share (4 Min).** An welcher Stelle hat das Modell trotz Prompt aus der Rolle gewollt? Welche Frage zur Prüfungsordnung würden Sie besser direkt im Prüfungsamt klären als beim Modell — und warum? Wo zahlt sich der zweistufige Aufbau aus, wo hätten Sie ihn lieber einstufig gehabt? Auf welches berufliche Dokument (Vertrag, Bescheid, Mandantenanfrage) ließe sich dieser zweistufige Prompt morgen direkt übertragen?
+
+## Übung 2 — RAG-Evaluation mit Tutor-Bot und Analogien verstehen {#sec-ragas-tutor}
+
+**Modus:** in-class · Einzelarbeit · **Dauer:** 15 Min · **4D-Bezug:** Describe und Discern — Konzepte verstehen, um die eigene Output-Prüfung zu schärfen.
+
+Direkt im Anschluss an den zweistufigen Quellenbindungs-Prompt verstehen Sie das andere Werkzeug zur RAG-Qualitätssicherung: die vier **RAGAS-Metriken** *Faithfulness, Answer Relevance, Context Precision, Context Recall* [@es2024ragas]. Die Übung nutzt einen Tutor-Bot, der aus dem [Grundlagen-Skript *GenAI für Lehre*](https://th-koln-bartnik.github.io/genai4teaching/){target="_blank"} stammt und auf RAG-Evaluation angepasst ist [@bartnik2026genai4teaching]. Der Bot erklärt sokratisch, mit Analogien und Beispielen — und prüft am Schluss, ob Sie die Idee in eigenen Worten wiedergeben können.
+
+**Setup.** Ein starkes Modell mit Chat-Oberfläche (Claude, ChatGPT, Gemini). Keine Datei nötig. Den Prompt unten als ersten Chat-Beitrag einsetzen.
+
+::: callout-tip
+## Tutor-Bot-Prompt zum Kopieren
+
+> Du bist ein geduldiger Tutor für Studierende der Wirtschaftswissenschaften ohne IT-Hintergrund. Dein Thema: das Bewertungs-Framework **RAGAS** [@es2024ragas] für *Retrieval-Augmented Generation*. Erkläre nicht durch Vorlesung, sondern durch **Analogien aus dem Alltag**, **kurze Beispiele** und **sokratische Rückfragen**. Pro Schritt höchstens 120 Wörter Erklärung, dann eine Verständnisfrage an mich. Verwende keine Formeln.
+>
+> **Lernpfad.** (1) Erkläre kurz, was RAG ist und welches Problem RAGAS löst — eine Alltagsanalogie ("Bibliothekar plus Texter") ist Pflicht. (2) Führe nacheinander durch die vier Kernmetriken: *Faithfulness* (passt die Antwort zu den Quellen?), *Answer Relevance* (beantwortet sie die Frage?), *Context Precision* (sind die relevanten Textstellen weit oben in den gefundenen Chunks?), *Context Recall* (wurden alle wichtigen Stellen überhaupt gefunden?). Pro Metrik: eine Alltagsanalogie, ein Mini-Beispiel aus Tax/Audit/Advisory, eine sokratische Rückfrage an mich. (3) Erkläre die zentrale Warnung: die Faithfulness-Prüfung selbst macht ein Sprachmodell und unterschätzt Halluzinationen systematisch [@magesh2025hallucination]. (4) Frage mich am Schluss, welche der vier Metriken ich in meiner Berufspraxis am ehesten brauche und warum — bewerte meine Antwort wohlwollend, aber präzise.
+>
+> **Regeln.** Keine Vorlesung am Stück. Keine Formeln. Antworten in eigenen Worten, nie Copy-Paste aus mir bekanntem Lehrbuchtext. Wenn ich eine Frage falsch beantworte, korrigiere mit einer neuen Analogie statt mit Wiederholung derselben Erklärung. Beginne mit Schritt 1 und warte auf meine Antwort.
+:::
+
+**Vorgehen (12 Min).** Den Prompt absenden und sich Schritt für Schritt durch die vier Metriken führen lassen. Jede Frage des Bots in einem Satz beantworten — die Eigen-Formulierung ist der Lerneffekt. Notieren Sie pro Metrik die Analogie, die für Sie am ehesten klickt, und ein Anwendungsbeispiel aus Ihrem Fach.
+
+**Erweiterung für schnelle Studierende.** Schlagen Sie dem Bot eine eigene Analogie für *Context Recall* vor und lassen Sie sie auf Schwachstellen prüfen. Wo trägt die Analogie weit, wo bricht sie? Eine gute Analogie überlebt drei kritische Rückfragen.
+
+**Think-Pair-Share (3 Min).** Welche der vier Metriken ist in der Steuer-, Audit- oder Advisory-Praxis am wichtigsten? Wo überschätzt RAGAS Ihrer Einschätzung nach die Sicherheit eines Systems — und wo zeigt es echte Schwächen?
+
+## Übung 3 — Tutor-Bot systematisch prüfen {#sec-test-suite}
 
 **Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Discern.
 
@@ -28,7 +107,7 @@ Prüfen Sie den Tutor-Bot aus Übung 3 (Workshop 1) mit einer kleinen Test-Suite
 
 **Think-Pair-Share (4 Min).** Welche Ihrer Tests waren am aussagekräftigsten — und welche entpuppten sich als zu leicht oder zu schwer? Welcher Anteil Ihrer Tests wäre auch ohne LLM eine sinnvolle Lernkontrolle?
 
-## Übung 2 — RAG-Suchübung HGB-Prüfungspflicht {#sec-rag-hgb}
+## Übung 4 — RAG-Suchübung HGB-Prüfungspflicht {#sec-rag-hgb}
 
 **Modus:** in-class oder Hausaufgabe · Einzel oder Paar · **Dauer:** 45 Min · **4D-Bezug:** Discern und Diligence (insbesondere Deployment Diligence).
 
@@ -100,7 +179,7 @@ Setup: RAG-System in der GWDG Academic Cloud (RAG/Arcana oder vergleichbar), HGB
 
 **Reflexionsfragen.** Hat das Modell echte Sucharbeit geleistet oder doch interpretiert? Welche Normstellen wurden gefunden, welche möglicherweise übersehen? Wie stark hängt die Ausgabe vom hochgeladenen Dokumentausschnitt ab? Welche Risiken bleiben trotz RAG bestehen?
 
-## Übung 3 — Diligence-Risiko-Recherche im Best-of-N {#sec-diligence-bestof-n}
+## Übung 5 — Diligence-Risiko-Recherche im Best-of-N {#sec-diligence-bestof-n}
 
 **Modus:** in-class · Einzel oder Paar · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Diligence, mindestens eine der drei Säulen.
 
@@ -118,7 +197,7 @@ Aus der offiziellen Definition einer Diligence-Säule lässt sich ein starkes KI
 
 **Think-Pair-Share (4 Min).** Welcher der fünf Fälle wäre fast Ihre Auswahl gewesen — und warum haben Sie sich für einen anderen entschieden? Wie verlässlich sind die generierten Fälle? Gibt es welche, die Sie bei Quellenrecherche entkräften müssten?
 
-## Übung 4 — Prozessmodellierung mit Mermaid {#sec-mermaid}
+## Übung 6 — Prozessmodellierung mit Mermaid {#sec-mermaid}
 
 **Modus:** in-class · Einzelarbeit · **Dauer:** 18 Min · **4D-Bezug:** Vorbereitung für Delegate (Process-Aktivitäten klar identifizieren).
 
@@ -147,21 +226,21 @@ Schritte: (1) Knoten umbenennen, sodass mindestens fünf Aktivitäten und ein zw
 
 **Think-Pair-Share (3 Min).** Welche Stelle Ihres Diagramms ließ sich in Mermaid leichter zeichnen als auf Papier? Wo stieß die Mermaid-Notation an Grenzen?
 
-## Übung 5 — BPMN-Modellierung in Signavio {#sec-bpmn}
+## Übung 7 — BPMN-Modellierung in Signavio {#sec-bpmn}
 
 **Modus:** in-class · Einzel oder Paar · **Dauer:** 35 Min · **4D-Bezug:** Delegate / Brücke zu *Process vs. Cognitive Automation*.
 
 Vertiefen Sie die Prozessmodellierung mit einem professionellen BPMN-Werkzeug. Anders als bei Mermaid sind in Signavio die Symbole standardisiert (BPMN 2.0.2), Zuständigkeiten lassen sich über Swimlanes sichtbar machen, und das Modell ist auditierbar. Setup: [Signavio Academic Edition](https://academic.signavio.com/p/explorer){target="_blank"} (kostenfreier Account mit Hochschul-E-Mail; sollte bereits aus der Hausaufgabe nach Workshop 1 angelegt sein). Als Alternative: [bpmn.io](https://bpmn.io){target="_blank"}.
 
-Sachverhalt: **Rechnungseingang in einer mittelgroßen Steuerkanzlei** — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung. Reicher als die Mandantenanfrage in Übung 4.
+Sachverhalt: **Rechnungseingang in einer mittelgroßen Steuerkanzlei** — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung. Reicher als die Mandantenanfrage in Übung 6.
 
 Vorgehen: Nach Login in Signavio einen neuen Diagrammtyp *BPMN 2.0* anlegen. Mindestens zwei Rollen identifizieren und als Swimlanes setzen (z. B. *Sachbearbeiter* und *Partner*). Mindestens fünf Aktivitäten platzieren und mit Sequenzflüssen verbinden. Mindestens einen XOR-Entscheidungspunkt einsetzen. Jede Aktivität mit *P* (Process Automation), *C* (Cognitive Automation) oder *H* (Hybrid) markieren und in einem Satz pro Aktivität begründen. Diagramm als PNG oder PDF exportieren.
 
 **Erweiterung für schnelle Studierende.** Eine Aktivität, die heute *H* (Hybrid) ist, in zwei aufeinanderfolgende Aktivitäten zerlegen — eine reine Process-Aktivität, eine reine Cognitive-Aktivität. Hinweis: Das ist der Hauptmechanismus, mit dem reale Workflows automatisierbar werden.
 
-**Think-Pair-Share (4 Min).** Welche Stelle aus dem Mermaid-Diagramm (Übung 4) hätte in Signavio anders ausgesehen? Wo wirkt BPMN überdimensioniert, wo zahlt sich die strikte Notation aus?
+**Think-Pair-Share (4 Min).** Welche Stelle aus dem Mermaid-Diagramm (Übung 6) hätte in Signavio anders ausgesehen? Wo wirkt BPMN überdimensioniert, wo zahlt sich die strikte Notation aus?
 
-## Übung 6 — UiPath Mandanten-Anschreiben {#sec-uipath}
+## Übung 8 — UiPath Mandanten-Anschreiben {#sec-uipath}
 
 **Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min · **4D-Bezug:** Delegate / praktischer Erstkontakt mit Process Automation an einem realistischen Tax-/Audit-Szenario.
 
@@ -188,11 +267,11 @@ Anschließend: drei Stichworte ins Notizbuch — wo war die Oberfläche intuitiv
 
 Wer die sechs Übungen früh durchhat oder eine zusätzliche Vertiefung sucht, hat zwei Optionen.
 
-**Integrierter 4D-Use-Case mit Diligence-Schwerpunkt** — eine 40-Minuten-Übung am Tax-Beispiel „grenzüberschreitende Dienstleistung", in der alle vier 4D-Kompetenzen mit Schwerpunkt Diligence durchlaufen werden, inklusive Audit-Trail und Mandantenkommunikation. Diese Übung ist gleichzeitig die Vorlage für die zwei Hausaufgaben *Dilemma der Mitte* und *Personal AI Policy*. Beschreibung folgt unter Übung 7.
+**Integrierter 4D-Use-Case mit Diligence-Schwerpunkt** — eine 40-Minuten-Übung am Tax-Beispiel „grenzüberschreitende Dienstleistung", in der alle vier 4D-Kompetenzen mit Schwerpunkt Diligence durchlaufen werden, inklusive Audit-Trail und Mandantenkommunikation. Diese Übung ist gleichzeitig die Vorlage für die zwei Hausaufgaben *Dilemma der Mitte* und *Personal AI Policy*. Beschreibung folgt unter Übung 9.
 
 **UiPath-Vertiefung — Excel-zu-PDF-Bot** — eine komplexere UiPath-Aufgabe, in der Sie einen vorbereiteten Bot lesen, ausführen und anpassen. Diese Übung ist als Hausaufgabe nach Workshop 2 konzipiert; Details siehe [Hausaufgaben-Seite](05-hausaufgaben.qmd#sec-uipath-vertiefung).
 
-## Übung 7 — Integrierter 4D-Use-Case (optional in-class) {#sec-4d-usecase}
+## Übung 9 — Integrierter 4D-Use-Case (optional in-class) {#sec-4d-usecase}
 
 **Modus:** in-class · Paar oder Dreierteam · **Dauer:** 40 Min · **4D-Bezug:** alle vier Kompetenzen, Schwerpunkt Diligence.
 

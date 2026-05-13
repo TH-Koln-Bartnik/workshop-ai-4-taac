@@ -133,7 +133,7 @@ Kurzer Rückblick auf die vier Übungen: Welche der drei Konfigurationen (LLM al
 
 [Übung 1 — Diagnose-Quiz](02-uebungen-w1.qmd#sec-uebung-1){.assignment-badge} [Übung 2 — Karriereentwicklung](02-uebungen-w1.qmd#sec-uebung-2){.assignment-badge} [Übung 3 — Prompt-Umbau und Tutor-Bot](02-uebungen-w1.qmd#sec-uebung-3){.assignment-badge}
 
-Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine **Erweiterungsfrage für schnelle Studierende** — wer früh fertig ist, vertieft, statt zu warten. Die Discern-Übung *Tutor-Bot systematisch prüfen* eröffnet Workshop 2 als [Übung 1 — Tutor-Bot Test-Suite](04-uebungen-w2.qmd#sec-test-suite).
+Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine **Erweiterungsfrage für schnelle Studierende** — wer früh fertig ist, vertieft, statt zu warten. Die Discern-Übung *Tutor-Bot systematisch prüfen* eröffnet Workshop 2 als [Übung 3 — Tutor-Bot Test-Suite](04-uebungen-w2.qmd#sec-test-suite); davor stehen als Einstieg in den zweiten Tag der zweistufige [Quellenbindungs-Prompt an der eigenen Prüfungsordnung](04-uebungen-w2.qmd#sec-pruefungsordnung) und das [Tutor-geführte Verstehen der RAGAS-Metriken](04-uebungen-w2.qmd#sec-ragas-tutor).
 :::
 
 ## Hausaufgabe zum Folgetag

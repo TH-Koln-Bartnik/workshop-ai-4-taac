@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PromptMaster – Lernspiel zum Prompt Engineering</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #4a5568;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #718096;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+    .game-area {
+      margin: 20px 0;
+      background: #f7fafc;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+    }
+    .prompt {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #2d3748;
+      margin-bottom: 15px;
+      background: #e2e8f0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .option {
+      background: #4299e1;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+    .option:hover {
+      background: #3182ce;
+    }
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.1em;
+      padding: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+    .correct {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .incorrect {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    .score {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #4a5568;
+      margin-top: 20px;
+    }
+    .hint {
+      font-style: italic;
+      color: #718096;
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+    .next-btn {
+      background: #48bb78;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 15px;
+      display: none;
+    }
+    .next-btn:hover {
+      background: #38a169;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎮 PromptMaster</h1>
+    <p class="subtitle">Lerne Prompt Engineering – mit Spaß und Wissen!</p>
+
+    <div class="game-area">
+      <p class="prompt" id="promptText">Wie könnte man diesen Prompt verbessern?</p>
+      <div class="hint" id="hintText">Tipp: Denke an Klarheit, Kontext und Ziel.</div>
+      <div class="options" id="optionsContainer"></div>
+      <div class="feedback" id="feedback"></div>
+      <button class="next-btn" id="nextBtn">Weiter zum nächsten Prompt</button>
+    </div>
+
+    <div class="score">Punkte: <span id="score">0</span></div>
+  </div>
+
+  <script>
+    // Spiel-Daten: Prompts und richtige Antworten
+    const levels = [
+      {
+        prompt: "Schreib einen Text über Tiere.",
+        hint: "Was für ein Text? Für wen? Welche Tiere? Welche Stilrichtung?",
+        options: [
+          "Schreibe einen kurzen, humorvollen Text über exotische Tiere für Kinder im Alter von 8 bis 10 Jahren.",
+          "Schreibe einen Text über Tiere.",
+          "Schreib was über Tiere.",
+          "Erzähl etwas über Tiere."
+        ],
+        correct: 0
+      },
+      {
+        prompt: "Erkläre KI.",
+        hint: "Für wen? Wie einfach? Welche Aspekte sollen behandelt werden?",
+        options: [
+          "Erkläre Künstliche Intelligenz einfach und verständlich für einen 12-jährigen Schüler.",
+          "Erkläre KI.",
+          "Was ist KI?",
+          "Erkläre KI mit Beispielen."
+        ],
+        correct: 0
+      },
+      {
+        prompt: "Schreibe ein Gedicht.",
+        hint: "Welche Art von Gedicht? Thema? Stil? Länge?",
+        options: [
+          "Schreibe ein 12-Zeilen-Gedicht über den Herbst mit Metaphern und einer melancholischen Stimmung.",
+          "Schreibe ein Gedicht.",
+          "Schreibe ein Gedicht über Bäume.",
+          "Schreibe ein Gedicht über die Natur."
+        ],
+        correct: 0
+      },
+      {
+        prompt: "Was ist der Unterschied zwischen KI und Maschinellem Lernen?",
+        hint: "Wie soll die Erklärung strukturiert sein? Für wen?",
+        options: [
+          "Erkläre den Unterschied zwischen Künstlicher Intelligenz und maschinellem Lernen in 3 einfachen Sätzen für jemanden ohne technisches Hintergrundwissen.",
+          "Was ist der Unterschied zwischen KI und ML?",
+          "Erkläre KI und ML.",
+          "Erkläre den Unterschied zwischen KI und ML mit einem Beispiel."
+        ],
+        correct: 0
+      }
+    ];
+
+    let currentLevel = 0;
+    let score = 0;
+
+    const promptText = document.getElementById("promptText");
+    const optionsContainer = document.getElementById("optionsContainer");
+    const feedback = document.getElementById("feedback");
+    const nextBtn = document.getElementById("nextBtn");
+    const scoreDisplay = document.getElementById("score");
+    const hintText = document.getElementById("hintText");
+
+    // Spiel starten
+    function startGame() {
+      loadLevel();
+    }
+
+    // Level laden
+    function loadLevel() {
+      const level = levels[currentLevel];
+      promptText.textContent = `Verbessere diesen Prompt: "${level.prompt}"`;
+      hintText.textContent = level.hint;
+      feedback.style.display = "none";
+      nextBtn.style.display = "none";
+
+      // Optionen generieren
+      optionsContainer.innerHTML = "";
+      level.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.classList.add("option");
+        button.textContent = option;
+        button.addEventListener("click", () => checkAnswer(index, level.correct));
+        optionsContainer.appendChild(button);
+      });
+    }
+
+    // Antwort prüfen
+    function checkAnswer(selectedIndex, correctIndex) {
+      if (selectedIndex === correctIndex) {
+        feedback.textContent = "✅ Richtig! Das ist ein guter, spezifischer Prompt.";
+        feedback.className = "feedback correct";
+        score++;
+        scoreDisplay.textContent = score;
+      } else {
+        feedback.textContent = `❌ Falsch. Die beste Antwort wäre: "${levels[currentLevel].options[correctIndex]}"`;
+        feedback.className = "feedback incorrect";
+      }
+      feedback.style.display = "block";
+      nextBtn.style.display = "block";
+    }
+
+    // Nächstes Level
+    nextBtn.addEventListener("click", () => {
+      currentLevel++;
+      if (currentLevel < levels.length) {
+        loadLevel();
+      } else {
+        // Spielende
+        promptText.textContent = "🎉 Herzlichen Glückwunsch! Du hast alle Level abgeschlossen!";
+        optionsContainer.innerHTML = "";
+        feedback.textContent = `Du hast ${score} von ${levels.length} Punkten erreicht!`;
+        feedback.className = "feedback correct";
+        feedback.style.display = "block";
+        nextBtn.style.display = "none";
+      }
+    });
+
+    // Spiel starten
+    startGame();
+  </script>
+</body>
+</html>

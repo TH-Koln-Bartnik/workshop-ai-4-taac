@@ -14,7 +14,7 @@ subtitle: "Drei in den Workshop eingebettete Übungen, je 15 Minuten plus Auswer
 - einen Prompt in die Schemata **RTF** und **CREATE** umbauen und einen **Tutor-Bot** für das eigene Lerngebiet aufsetzen.
 :::
 
-Jede Übung dauert maximal 15 Minuten Bearbeitung plus kurzes Think-Pair-Share. Innerhalb der 15 Minuten steht eine **Erweiterung für schnelle Studierende** — wer früh fertig ist, vertieft. Die ursprünglich für Workshop 1 vorgesehene Discern-Übung *Tutor-Bot systematisch prüfen* eröffnet jetzt Workshop 2 und steht dort als Übung 1 — [Tutor-Bot Test-Suite](04-uebungen-w2.qmd#sec-test-suite).
+Jede Übung dauert maximal 15 Minuten Bearbeitung plus kurzes Think-Pair-Share. Innerhalb der 15 Minuten steht eine **Erweiterung für schnelle Studierende** — wer früh fertig ist, vertieft. Die ursprünglich für Workshop 1 vorgesehene Discern-Übung *Tutor-Bot systematisch prüfen* eröffnet jetzt Workshop 2 als [Übung 3 — Tutor-Bot Test-Suite](04-uebungen-w2.qmd#sec-test-suite); davor stehen als Einstieg die [Übung am zweistufigen Quellenbindungs-Prompt](04-uebungen-w2.qmd#sec-pruefungsordnung) an der eigenen Prüfungsordnung und das [Tutor-geführte Verstehen der RAGAS-Metriken](04-uebungen-w2.qmd#sec-ragas-tutor).
 
 ## Übung 1 — Diagnose-Quiz Process vs. Cognitive {#sec-uebung-1}
 

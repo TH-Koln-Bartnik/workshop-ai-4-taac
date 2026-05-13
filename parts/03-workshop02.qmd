@@ -112,17 +112,17 @@ Für die heutige Übung beginnen Sie niederschwellig mit **Mermaid** ([mermaid.l
 ## Aufgaben
 
 ::: callout-note
-## Sechs Übungen plus Vertiefung und Hausaufgaben
+## Acht Übungen plus Vertiefung und Hausaufgaben
 
 **In-class — Discern und Diligence zuerst, dann Modellierung und Automatisierung:**
 
-[Übung 1 — Tutor-Bot systematisch prüfen (Discern)](04-uebungen-w2.qmd#sec-test-suite){.assignment-badge} [Übung 2 — RAG-Suchübung HGB-Prüfungspflicht (Discern)](04-uebungen-w2.qmd#sec-rag-hgb){.assignment-badge} [Übung 3 — Diligence-Risiko-Recherche im Best-of-N (Diligence)](04-uebungen-w2.qmd#sec-diligence-bestof-n){.assignment-badge} [Übung 4 — Prozessmodellierung mit Mermaid](04-uebungen-w2.qmd#sec-mermaid){.assignment-badge} [Übung 5 — BPMN-Modellierung in Signavio](04-uebungen-w2.qmd#sec-bpmn){.assignment-badge} [Übung 6 — UiPath Mandanten-Anschreiben](04-uebungen-w2.qmd#sec-uipath){.assignment-badge}
+[Übung 1 — Prüfungsordnung mit zweistufigem Dialog-Prompt (Describe + Discern)](04-uebungen-w2.qmd#sec-pruefungsordnung){.assignment-badge} [Übung 2 — RAG-Evaluation mit Tutor-Bot verstehen (Describe + Discern)](04-uebungen-w2.qmd#sec-ragas-tutor){.assignment-badge} [Übung 3 — Tutor-Bot systematisch prüfen (Discern)](04-uebungen-w2.qmd#sec-test-suite){.assignment-badge} [Übung 4 — RAG-Suchübung HGB-Prüfungspflicht (Discern)](04-uebungen-w2.qmd#sec-rag-hgb){.assignment-badge} [Übung 5 — Diligence-Risiko-Recherche im Best-of-N (Diligence)](04-uebungen-w2.qmd#sec-diligence-bestof-n){.assignment-badge} [Übung 6 — Prozessmodellierung mit Mermaid](04-uebungen-w2.qmd#sec-mermaid){.assignment-badge} [Übung 7 — BPMN-Modellierung in Signavio](04-uebungen-w2.qmd#sec-bpmn){.assignment-badge} [Übung 8 — UiPath Mandanten-Anschreiben](04-uebungen-w2.qmd#sec-uipath){.assignment-badge}
 
 **Vertiefung (optional in-class oder als Hausaufgabe):**
 
-[Übung 7 — Integrierter 4D-Use-Case](04-uebungen-w2.qmd#sec-4d-usecase){.assignment-badge} [UiPath-Vertiefung Excel-zu-PDF (Hausaufgabe)](05-hausaufgaben.qmd#sec-uipath-vertiefung){.assignment-badge}
+[Übung 9 — Integrierter 4D-Use-Case](04-uebungen-w2.qmd#sec-4d-usecase){.assignment-badge} [UiPath-Vertiefung Excel-zu-PDF (Hausaufgabe)](05-hausaufgaben.qmd#sec-uipath-vertiefung){.assignment-badge}
 
-Die ersten drei Übungen vertiefen **Discern** (Test-Suite am Tutor-Bot aus W1, RAG-Suchhilfe im HGB) und **Diligence** (Best-of-N-Risikorecherche). Anschließend gewöhnen Sie sich an Prozessmodellierung — erst niedrigschwellig mit **Mermaid**, dann fachgerecht in **Signavio**. Den Abschluss bildet das Kennenlernen von **UiPath Studio Web**.
+Die ersten fünf Übungen vertiefen **Discern** (zweistufiger Quellenbindungs-Prompt an der Prüfungsordnung, Tutor-geführtes Verstehen von RAGAS, Test-Suite am Tutor-Bot aus W1, RAG-Suchhilfe im HGB) und **Diligence** (Best-of-N-Risikorecherche). Anschließend gewöhnen Sie sich an Prozessmodellierung — erst niedrigschwellig mit **Mermaid**, dann fachgerecht in **Signavio**. Den Abschluss bildet das Kennenlernen von **UiPath Studio Web** an einem Mandanten-Anschreiben-Bot.
 :::
 
 ## Hintergrund / Werkzeuge / Ressourcen
