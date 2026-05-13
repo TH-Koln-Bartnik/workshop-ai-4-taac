@@ -1,170 +1,208 @@
 ---
 title: "Übungen Workshop 2"
-subtitle: "BPMN · UiPath · integrierter 4D-Use-Case mit Diligence-Schwerpunkt"
+subtitle: "Discern und Diligence zuerst, dann Modellierung und Automatisierung"
 ---
 
 ::: th-color-bar
 :::
 
 ::: lernziel-box
-#### Was Sie nach diesen drei Übungsblöcken können
+#### Was Sie nach diesen Übungen können
 
-- einen einfachen Rechnungseingangsprozess in **BPMN** modellieren und einzelne Aktivitäten den Kategorien *Process* oder *Cognitive Automation* zuordnen,
-- einen vorbereiteten **UiPath-Bot** lesen, ausführen und in einem Punkt anpassen,
-- einen vollständigen **4D-Durchlauf** an einem realistischen Tax-Sachverhalt führen — mit Schwerpunkt auf **Diligence** und einem mandantentauglichen Audit-Trail.
+- einen **Tutor-Bot** mit einer kleinen Test-Suite systematisch prüfen — Vertiefung aus Workshop 1,
+- eine **RAG-Suche im HGB** so einhegen, dass die KI nur als quellengebundene Suchhilfe agiert,
+- aus einer **Diligence-Definition** mehrere Risikofälle im Best-of-N-Schema generieren und einen aussagekräftigen auswählen,
+- einen einfachen Prozess in **Mermaid** und anschließend in **Signavio** als BPMN-Diagramm modellieren,
+- die **Grundstruktur von UiPath** kennenlernen und einen einfachen Workflow ausführen.
 :::
 
-Jede Übung folgt dem Muster: *Ziel · Setup · Schritte · Deliverable · Bewertung · Tutor-Prompt · Was-wenn*. Diskussion am Tisch und im Plenum nach jeder Übung.
+Die Reihenfolge folgt einer didaktischen Logik: erst zwei Discern-Übungen, dann eine Diligence-Übung, dann der Übergang zur technischen Brücke aus Prozessmodellierung und Robotic Process Automation. Die Vertiefungen zu UiPath und zum integrierten 4D-Use-Case sind als Hausaufgabe oder optionale Übung am Ende dieser Sektion aufgeführt.
 
-## BPMN-Modellierung — Rechnungseingang {#sec-bpmn}
+## Übung 1 — Tutor-Bot systematisch prüfen {#sec-test-suite}
 
-**Modus:** in-class · Einzel oder Paar · **Dauer:** 40 Min · **4D-Bezug:** Delegate / Operative Brücke zu *Process vs. Cognitive Automation*.
+**Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Discern.
 
-### Ziel
+Prüfen Sie den Tutor-Bot aus Übung 3 (Workshop 1) mit einer kleinen Test-Suite. Drei bis fünf Test-Fragen mit Soll-Antworten formulieren, den Bot durchlaufen lassen, Ergebnisse als *rot · gelb · grün* markieren, eine Hypothese ableiten. Notizvorlage mit drei Spalten: *Frage · Soll-Antwort · Ist-Antwort (rot/gelb/grün)*. Formulieren Sie in fünf Minuten drei bis fünf fachliche Test-Fragen mit Soll-Antwort in drei bis fünf Sätzen — Beispiele für Tax: Reverse-Charge-Verfahren, verdeckte Gewinnausschüttung, Organschaft. Audit: Going-Concern, Materiality-Schwellen, ISA 315. Advisory: Bewertungsanlässe, KPI-Definition, Business-Case. Stellen Sie jede Frage einzeln und markieren Sie als *rot* (fehlerhaft, halluziniert), *gelb* (teilweise, vage), *grün* (korrekt, vollständig). Schreiben Sie in drei Sätzen, wo der Bot reproduzierbar versagt und woran es vermutlich liegt: Modell, Prompt oder fehlender Kontext.
 
-Einen einfachen Rechnungseingangsprozess in Signavio (oder Alternative) als BPMN-Diagramm modellieren — und im zweiten Schritt einzelne Aktivitäten den Kategorien *Process Automation* oder *Cognitive Automation* zuordnen. Damit übersetzen Sie Ihre Diagnose-Quiz-Klassifikation aus Workshop 1 in einen konkreten Workflow.
+**Erweiterung für schnelle Studierende.** Schlagen Sie ein viertes Bewertungskriterium vor, das speziell für Tax-/Audit-Antworten zentral ist — etwa „nennt einschlägige Norm explizit", „benennt Grenzfälle und Ausnahmen" oder „warnt vor berufsrechtlich riskanten Empfehlungen". Begründen Sie, warum dieses Kriterium für Ihr Lerngebiet wichtig ist.
 
-### Setup
+**Think-Pair-Share (4 Min).** Welche Ihrer Tests waren am aussagekräftigsten — und welche entpuppten sich als zu leicht oder zu schwer? Welcher Anteil Ihrer Tests wäre auch ohne LLM eine sinnvolle Lernkontrolle?
 
-- Browser mit Zugang zu Signavio (oder [bpmn.io](https://bpmn.io){target="_blank"} als freie Alternative).
-- Sachverhalt: *Rechnungseingang in einer mittelgroßen Steuerkanzlei* — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung.
+## Übung 2 — RAG-Suchübung HGB-Prüfungspflicht {#sec-rag-hgb}
 
-### Schritte
+**Modus:** in-class oder Hausaufgabe · Einzel oder Paar · **Dauer:** 45 Min · **4D-Bezug:** Discern und Diligence (insbesondere Deployment Diligence).
 
-1. Sachverhalt durchlesen, mindestens zwei Rollen identifizieren (z. B. *Sachbearbeiter*, *Partner*).
-2. Swimlanes setzen (mindestens zwei Rollen).
-3. Mindestens fünf Aktivitäten platzieren, Reihenfolge mit Sequenzflüssen verbinden.
-4. Mindestens einen Entscheidungspunkt (XOR-Gateway) einsetzen.
-5. Jede Aktivität mit einer Markierung versehen: *P* (Process Automation), *C* (Cognitive Automation) oder *H* (Hybrid). Begründung in einem Satz pro Aktivität.
+Trainieren Sie den kontrollierten Einsatz eines RAG-Systems bei einer juristisch geprägten Aufgabe. Das Modell soll nicht entscheiden, subsumieren oder interpretieren — es wird ausschließlich als **quellengebundene Suchhilfe** genutzt. Anders als beim Tutor-Bot wird die KI hier auf eine enge Hilfsrolle zugeschnitten: Textfinder statt Rechtsgutachter.
 
-### Erweiterung für schnelle Studierende
+Setup: RAG-System in der GWDG Academic Cloud (RAG/Arcana oder vergleichbar), HGB-Text aus offizieller Quelle hochladen (Einstieg: Auszug der §§ 264, 264a, 264d, 267, 267a, 316 HGB; Fortgeschrittene: gesamtes HGB), Temperature auf 0 oder maximal 0,1, ein instruktions-treues Modell wählen. **Keine persönlichen oder vertraulichen Daten in den Fall einbauen.**
 
-Eine Aktivität auswählen, die heute *H* (Hybrid) ist, und in zwei aufeinanderfolgende Aktivitäten zerlegen — eine reine Process-Aktivität, eine reine Cognitive-Aktivität. Hinweis: Das ist der Hauptmechanismus, mit dem reale Workflows automatisierbar werden.
+**Fall: Rheinland Components GmbH.** Kapitalgesellschaft mit Sitz in Köln. Geschäftsjahr 2024: Bilanzsumme 7,8 Mio. €, Umsatzerlöse 14,9 Mio. €, Arbeitnehmer im Jahresdurchschnitt 51. Geschäftsjahr 2025: Bilanzsumme 7,6 Mio. €, Umsatzerlöse 15,2 Mio. €, Arbeitnehmer im Jahresdurchschnitt 49. Die Geschäftsführung fragt, welche HGB-Textstellen relevant sein könnten, um zu prüfen, ob der Jahresabschluss und der Lagebericht für das Geschäftsjahr 2025 durch einen Abschlussprüfer geprüft werden müssen.
 
-### Deliverable
-
-BPMN-Diagramm (Export als PNG oder PDF) plus Begründungstabelle mit fünf Zeilen — Aktivität · Markierung · Begründung.
-
-### Bewertungskriterien
-
-Korrekte BPMN-Notation · Sinnhaftigkeit der Swimlane-Aufteilung · Plausibilität der P/C/H-Markierung · Qualität der Aktivitätenzerlegung in der Erweiterung.
-
-### Tutor-Prompt
+**Studentische Suchfrage (keine Entscheidungsfrage).**
 
 ::: callout-tip
-> Ich modelliere in der Übung *BPMN-Rechnungseingang* einen Prozess in Signavio. Hier mein aktueller Modell-Stand: [kurze Beschreibung]. Stellen Sie mir **drei BPMN-spezifische Diagnose-Fragen**, an denen ich erkenne, ob meine Notation sauber ist — und schlagen Sie **eine** Aktivität vor, die ich präziser benennen sollte.
+> Welche Textstellen im bereitgestellten HGB-Text könnten relevant sein, um zu prüfen, ob der Jahresabschluss und der Lagebericht der Rheinland Components GmbH für das Geschäftsjahr 2025 prüfungspflichtig sind? Bitte gib nur wörtliche Textstellen mit Fundstellen zurück. Keine Interpretation, keine Subsumtion, keine rechtliche Bewertung.
 :::
 
-### Was, wenn …
-
-::: callout-warning
-- **Signavio-Zugang fehlt?** → [bpmn.io](https://bpmn.io){target="_blank"} als freie Web-Variante nutzen, Diagramm später ins Signavio importieren.
-- **Diagramm wird zu groß für eine Seite?** → Sub-Prozess als Collapsed-Aktivität auslagern.
-- **Aktivität lässt sich nicht eindeutig markieren?** → Genau das ist ein Hybrid-Kandidat — markieren als *H* und in der Erweiterungs-Aufgabe zerlegen.
-:::
-
-## UiPath-Bot lesen und anpassen {#sec-uipath}
-
-**Modus:** in-class · Einzel · **Dauer:** 40 Min · **4D-Bezug:** Delegate / praktische Anschauung von Process Automation.
-
-### Ziel
-
-Einen vorbereiteten UiPath-Bot **lesen, ausführen und in einem Punkt anpassen**. Der Bot liest eine Excel-Datei mit Eingangsrechnungen, prüft eine Bedingung (USt-ID-Validität, Schwellwert) und erzeugt eine zusammenfassende PDF.
-
-### Setup
-
-- UiPath Studio oder UiPath Cloud-Account; alternativ Screencast plus Vorlage-Dateien aus dem Workshop-Repo.
-- Beispiel-Excel `data/eingangsrechnungen-beispiel.xlsx` (mindestens fünfzehn Zeilen, davon einige mit fehlender oder ungültiger USt-ID).
-- Vorlage-Bot `code/uipath-excel-zu-pdf-template.xaml`.
-
-### Schritte
-
-1. Bot öffnen, Workflow-Struktur lesen: welche Activities, in welcher Reihenfolge?
-2. Bot mit Beispiel-Excel starten, Output-PDF prüfen.
-3. Eine Aktivität anpassen — Vorschlag: Schwellwert für die sachliche Prüfung ändern oder ein zusätzliches Prüfkriterium ergänzen (etwa „nur Rechnungen über 1.000 Euro in den Report").
-4. Ergebnis vorher/nachher dokumentieren — zwei Screenshots plus Drei-Sätze-Beschreibung.
-
-### Erweiterung für schnelle Studierende
-
-Schlagen Sie eine Stelle im Bot vor, an der Cognitive Automation den Bot **ergänzen** könnte — etwa ein LLM-Aufruf zur Klassifikation des Rechnungsbetreffs oder eine OCR-Schicht für unstrukturierte PDF-Eingaben. Welche Activity würde dazu hinzukommen? Welche neue Fehlerquelle entsteht?
-
-### Deliverable
-
-Screenshot des angepassten Workflows plus Drei-Sätze-Beschreibung der Änderung und der Vorher/Nachher-Wirkung.
-
-### Bewertungskriterien
-
-Lesbarkeit der Anpassung · korrekt veränderter Output · saubere Beschreibung · Plausibilität des Cognitive-Erweiterungsvorschlags (bei der Erweiterung).
-
-### Tutor-Prompt
+**System-Prompt zum Kopieren.**
 
 ::: callout-tip
-> Ich arbeite in der Übung *UiPath-Bot Excel → PDF* an einem vorhandenen Bot. Hier ist die Aktivität, die ich anpassen will: [einfügen]. Erklären Sie mir die **drei häufigsten Fehlerquellen**, wenn ich genau diese Stelle ändere — und schlagen Sie **eine** kleine Sicherheitsprüfung vor, die ich vor der Anpassung einbauen kann.
+> **Rolle.** Du bist eine quellengebundene Suchhilfe für Gesetzestexte im Bereich Wirtschaftsprüfung und Rechnungslegung. Deine Aufgabe ist ausschließlich, passende Textstellen aus dem bereitgestellten Gesetzestext zu finden und wörtlich wiederzugeben.
+>
+> **Verbote.** Du darfst keine rechtliche Bewertung vornehmen, keine Subsumtion durchführen, nicht interpretieren, keine abschließende Antwort geben, kein eigenes Wissen verwenden. Du darfst nur mit dem bereitgestellten Material arbeiten. Wenn eine passende Textstelle nicht im bereitgestellten Material enthalten ist, schreibe: „Im bereitgestellten Material wurde keine passende Textstelle gefunden."
+>
+> **Aufgabe.** Suche im bereitgestellten Gesetzestext nach Textstellen, die für die folgende Frage relevant sein könnten: [HIER FRAGE EINFÜGEN].
+>
+> **Arbeitsregeln.** (1) Gib ausschließlich Textstellen zurück, die im bereitgestellten Material enthalten sind. (2) Zitiere die Textstellen wörtlich. (3) Gib zu jeder Textstelle eine genaue Fundstelle an: Gesetz · Paragraph · Absatz · Satz / Nummer / Buchstabe · Seitenzahl oder Chunk-ID, falls verfügbar. (4) Erkläre nicht, was die Textstelle rechtlich bedeutet. (5) Verwende keine Formulierungen wie „Das bedeutet …", „Daraus folgt …", „Die Gesellschaft ist prüfungspflichtig …". (6) Eine sehr kurze neutrale Suchbegründung ist erlaubt: „Diese Stelle enthält Begriffe zur Prüfungspflicht", „Diese Stelle enthält Größenmerkmale". (7) Wenn mehrere Textstellen relevant sein könnten, ordne sie thematisch.
+>
+> **Antwortformat.** A. Gefundene Textstellen. B. Möglicherweise zusätzlich relevante Stellen. C. Nicht gefundene Punkte. D. Prüfhinweis: „Diese Ausgabe ist nur eine Such- und Zitierhilfe. Sie enthält keine rechtliche Bewertung und keine verbindliche Antwort."
 :::
 
-### Was, wenn …
+**Kurzprompt-Variante.**
 
-::: callout-warning
-- **Bot startet nicht?** → Selektor- und Pfad-Probleme prüfen, Logs lesen.
-- **Excel-Datei nicht gefunden?** → Absolute Pfade vermeiden, Variablen statt Hardcode.
-- **Kein UiPath-Zugang?** → Screencast plus Vorlage-Dateien aus dem Workshop-Repo nutzen, die Anpassung schriftlich beschreiben.
+::: callout-tip
+> Finde im bereitgestellten HGB-Text ausschließlich wörtliche Textstellen zu: (1) Prüfungspflicht von Kapitalgesellschaften, (2) kleine Kapitalgesellschaften, (3) mittelgroße Kapitalgesellschaften, (4) Größenmerkmale: Bilanzsumme, Umsatzerlöse, Arbeitnehmer, (5) Bedeutung mehrerer Abschlussstichtage oder Geschäftsjahre. Tabelle: Thema · Fundstelle · Wörtliches Zitat. Keine Interpretation. Keine rechtliche Bewertung. Keine Antwort auf den Fall.
 :::
 
-![Warum technische Implementierungen scheitern — Datenqualität, Tool-Integration und das Spannungsfeld Standard vs. Custom dominieren. Adaptiert nach Flyvbjerg & Gardner (2023) und Finney & Corbett (2007).](../images/why-do-tech-implementations-fail-data-qual-tool-integration-standards-vs-custom-TAM-flyvbjerg_gardner-2023_finney-corbett-2007.png){fig-alt="Visualisierung typischer Scheitergründe technischer Implementierungen mit den Treibern Datenqualität, Tool-Integration und Standard-versus-Custom-Konfiguration"}
+**Vorgehen.** HGB-Auszug oder gesamtes HGB in das RAG-System hochladen. Suchprompt oder Kurzprompt verwenden. Antwort speichern. Prüfen, ob die Ausgabe wirklich nur Textstellen enthält und keine Interpretation vornimmt. Markieren: mindestens eine starke Fundstelle, eine möglicherweise zusätzliche Fundstelle, eine vermutlich übersehene Stelle.
 
-## Integrierter 4D-Use-Case mit Diligence-Schwerpunkt {#sec-4d-usecase}
+**Selbstprüfung der Modellantwort.**
+
+| Prüffrage | Ja / Nein |
+|---|---|
+| Enthält die Antwort ausschließlich wörtliche Textstellen? | |
+| Sind alle Zitate mit genauer Fundstelle versehen? | |
+| Wurden § 267 HGB und § 316 HGB gefunden? | |
+| Wurde eine Stelle zur Betrachtung mehrerer Abschlussstichtage gefunden? | |
+| Verzichtet die Antwort auf Formulierungen wie „daraus folgt" oder „ist prüfungspflichtig"? | |
+| Sind die Suchbegründungen neutral und kurz? | |
+| Gibt es offensichtlich fehlende Normbereiche? | |
+| Gibt es Zitate, die nicht aus dem bereitgestellten Material stammen können? | |
+
+**Verbotene und erlaubte Formulierungen.**
+
+| Nicht verwenden | Stattdessen verwenden |
+|---|---|
+| „Daraus folgt, dass die GmbH prüfungspflichtig ist." | „Diese Stelle enthält Begriffe zur Prüfungspflicht." |
+| „Die Schwellenwerte sind überschritten." | „Diese Stelle enthält Größenmerkmale und Schwellenwerte." |
+| „Die Gesellschaft ist nicht klein." | „Diese Stelle enthält die Umschreibung kleiner Kapitalgesellschaften." |
+| „§ 316 HGB ist hier anwendbar." | „Diese Stelle nennt die Pflicht zur Prüfung." |
+| „Nach dem HGB gilt …" | „Im bereitgestellten Text steht wörtlich …" |
+
+**Erweiterung für schnelle Studierende.**
+
+| Variante | Durchführung |
+|---|---|
+| Promptvergleich | Eine Gruppe nutzt den langen Suchprompt, eine den Kurzprompt. |
+| Dokumentvergleich | Ein Lauf mit Auszug, ein Lauf mit gesamtem HGB. |
+| Modellvergleich | Zwei Modelle mit gleichem RAG-Kontext und Prompt. |
+| Fehlerjagd | Eine Antwort mit eingebauten Interpretationen, Studierende markieren unerlaubte Formulierungen. |
+
+**Reflexionsfragen.** Hat das Modell echte Sucharbeit geleistet oder doch interpretiert? Welche Normstellen wurden gefunden, welche möglicherweise übersehen? Wie stark hängt die Ausgabe vom hochgeladenen Dokumentausschnitt ab? Welche Risiken bleiben trotz RAG bestehen?
+
+## Übung 3 — Diligence-Risiko-Recherche im Best-of-N {#sec-diligence-bestof-n}
+
+**Modus:** in-class · Einzel oder Paar · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Diligence, mindestens eine der drei Säulen.
+
+Aus der offiziellen Definition einer Diligence-Säule lässt sich ein starkes KI-Modell mehrere reale oder realistisch konstruierte Anwendungsfälle aus Tax, Audit oder Advisory generieren, in denen genau dieser Aspekt schief gegangen ist. Aus den generierten Fällen wählen Sie einen aus, der das Risiko besonders eindrücklich verdeutlicht — ein praktisches Beispiel für **Best-of-N**. Setup: ein starkes KI-Modell mit Web-Search-Tool (Claude Pro, ChatGPT Plus, Gemini Advanced oder Perplexity Pro), die drei Diligence-Definitionen aus Block K. Wählen Sie eine Säule — Creation, Transparency oder Deployment.
+
+**Schritt 1 — Definition als Input (2 Min).** Kopieren Sie die vollständige Definition der gewählten Diligence-Säule (alle drei Bullet-Punkte plus Ziel-Satz) in einen neuen Chat. Hängen Sie die Aufgabenstellung an:
+
+> Generieren Sie mir fünf reale oder realistisch konstruierte Anwendungsfälle aus dem Bereich Tax, Audit oder Advisory, in denen mindestens einer der oben genannten Aspekte schief gegangen ist. Pro Fall: ein Satz Sachverhalt, ein Satz Schaden, ein Satz konkret verletzter Aspekt aus der Definition. Verwenden Sie keine erfundenen Namen realer Personen oder Firmen.
+
+**Schritt 2 — Auswahl im Best-of-N (8 Min).** Lesen Sie die fünf Fälle. Wählen Sie einen aus, der das Risiko besonders eindrücklich verdeutlicht. Auswahlkriterien: Plausibilität, Schwere, Übertragbarkeit.
+
+**Schritt 3 — Schutzmaßnahme ableiten (5 Min).** Schreiben Sie für den ausgewählten Fall in drei Sätzen: Was ist konkret schief gegangen? Welcher Punkt aus der Diligence-Definition wurde verletzt? Welche konkrete Wenn-Dann-Schutzmaßnahme hätte den Fall verhindert? Diese Regel ist Saatkorn für die Personal AI Policy in Hausaufgabe 7.
+
+**Erweiterung für schnelle Studierende.** Lassen Sie sich mit demselben Setup fünf weitere Fälle generieren — diesmal mit der zusätzlichen Anweisung „wählen Sie Fälle, die ich aus dem ersten Lauf nicht erwartet hätte". Welche Risiken kommen erst im zweiten Lauf zur Sprache? Was sagt das über die Robustheit des Best-of-N-Vorgehens aus?
+
+**Think-Pair-Share (4 Min).** Welcher der fünf Fälle wäre fast Ihre Auswahl gewesen — und warum haben Sie sich für einen anderen entschieden? Wie verlässlich sind die generierten Fälle? Gibt es welche, die Sie bei Quellenrecherche entkräften müssten?
+
+## Übung 4 — Prozessmodellierung mit Mermaid {#sec-mermaid}
+
+**Modus:** in-class · Einzelarbeit · **Dauer:** 18 Min · **4D-Bezug:** Vorbereitung für Delegate (Process-Aktivitäten klar identifizieren).
+
+Lernen Sie Prozessmodellierung am niedrigschwelligen Werkzeug **Mermaid Live Editor** kennen ([mermaid.live](https://mermaid.live){target="_blank"}). Mermaid ist eine textbasierte Notation für Diagramme — Sie schreiben den Prozess in einer einfachen Syntax, der Editor zeichnet ihn automatisch. Vorteil für den Einstieg: keine Maus-Klickerei, kein Tool-Setup, sofortige visuelle Rückmeldung.
+
+Sachverhalt: **Eingang einer Mandantenanfrage in einer Steuerkanzlei**. Anfrage trifft per E-Mail ein, wird auf Mandantenbezug geprüft, an einen Sachbearbeiter zugewiesen, dieser klärt offene Punkte, der Partner gibt frei oder verlangt Überarbeitung.
+
+Vorgehen: Öffnen Sie [mermaid.live](https://mermaid.live){target="_blank"}. Löschen Sie den Beispielcode. Kopieren Sie folgendes Grundgerüst hinein und passen Sie es an Ihren Sachverhalt an:
+
+```
+graph TD
+    A[Anfrage trifft ein] --> B{Mandant bekannt?}
+    B -- Ja --> C[Sachbearbeiter zuweisen]
+    B -- Nein --> D[Mandant anlegen]
+    D --> C
+    C --> E[Offene Punkte klären]
+    E --> F{Freigabe durch Partner?}
+    F -- Ja --> G[Antwort an Mandant]
+    F -- Nein --> E
+    G --> H[Vorgang archivieren]
+```
+
+Schritte: (1) Knoten umbenennen, sodass mindestens fünf Aktivitäten und ein zweites Gateway entstehen. (2) Eine Aktivität als *P* (Process Automation), eine als *C* (Cognitive Automation) markieren — etwa durch zusätzliche Knoten oder Notiz im Begleittext. (3) Das gerenderte Diagramm als PNG exportieren (rechte Seite, Download-Knopf).
+
+**Erweiterung für schnelle Studierende.** Modellieren Sie eine zweite Variante des Prozesses, in der die initiale Mandantenprüfung an einen KI-Tutor delegiert wird. Welche Aktivitäten kommen hinzu, welche werden überflüssig?
+
+**Think-Pair-Share (3 Min).** Welche Stelle Ihres Diagramms ließ sich in Mermaid leichter zeichnen als auf Papier? Wo stieß die Mermaid-Notation an Grenzen?
+
+## Übung 5 — BPMN-Modellierung in Signavio {#sec-bpmn}
+
+**Modus:** in-class · Einzel oder Paar · **Dauer:** 35 Min · **4D-Bezug:** Delegate / Brücke zu *Process vs. Cognitive Automation*.
+
+Vertiefen Sie die Prozessmodellierung mit einem professionellen BPMN-Werkzeug. Anders als bei Mermaid sind in Signavio die Symbole standardisiert (BPMN 2.0.2), Zuständigkeiten lassen sich über Swimlanes sichtbar machen, und das Modell ist auditierbar. Setup: [Signavio Academic Edition](https://academic.signavio.com/p/explorer){target="_blank"} (kostenfreier Account mit Hochschul-E-Mail; sollte bereits aus der Hausaufgabe nach Workshop 1 angelegt sein). Als Alternative: [bpmn.io](https://bpmn.io){target="_blank"}.
+
+Sachverhalt: **Rechnungseingang in einer mittelgroßen Steuerkanzlei** — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung. Reicher als die Mandantenanfrage in Übung 4.
+
+Vorgehen: Nach Login in Signavio einen neuen Diagrammtyp *BPMN 2.0* anlegen. Mindestens zwei Rollen identifizieren und als Swimlanes setzen (z. B. *Sachbearbeiter* und *Partner*). Mindestens fünf Aktivitäten platzieren und mit Sequenzflüssen verbinden. Mindestens einen XOR-Entscheidungspunkt einsetzen. Jede Aktivität mit *P* (Process Automation), *C* (Cognitive Automation) oder *H* (Hybrid) markieren und in einem Satz pro Aktivität begründen. Diagramm als PNG oder PDF exportieren.
+
+**Erweiterung für schnelle Studierende.** Eine Aktivität, die heute *H* (Hybrid) ist, in zwei aufeinanderfolgende Aktivitäten zerlegen — eine reine Process-Aktivität, eine reine Cognitive-Aktivität. Hinweis: Das ist der Hauptmechanismus, mit dem reale Workflows automatisierbar werden.
+
+**Think-Pair-Share (4 Min).** Welche Stelle aus dem Mermaid-Diagramm (Übung 4) hätte in Signavio anders ausgesehen? Wo wirkt BPMN überdimensioniert, wo zahlt sich die strikte Notation aus?
+
+## Übung 6 — UiPath Kennenlernen {#sec-uipath}
+
+**Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min · **4D-Bezug:** Delegate / praktischer Erstkontakt mit Process Automation.
+
+Lernen Sie die Grundstruktur von **UiPath Cloud Studio Web** kennen — der Browser-basierten Variante der RPA-Plattform. Anders als Studio Desktop läuft Studio Web ohne lokalen Download direkt im Browser. Setup: Account bei [UiPath Cloud](https://cloud.uipath.com){target="_blank"} (sollte aus der Hausaufgabe nach Workshop 1 vorhanden sein). Nach Login: oben links *Studio Web* öffnen.
+
+Vorgehen — ein „Hello World"-Bot in fünf Schritten:
+
+1. **Neues Projekt anlegen** — *Create new project*, Typ *Process*, Name „Hello TAAC".
+2. **Erste Activity einsetzen** — aus der Activity-Suche links den Block *Show Message Box* einfügen.
+3. **Nachricht definieren** — als Text eintragen: `Hallo, mein Name ist [Ihr Vorname]. Heute lerne ich UiPath kennen.`
+4. **Variable anlegen (optional)** — eine String-Variable `studierende` mit Ihrem Namen als Default-Wert. Nachrichten-Text auf `"Hallo, mein Name ist " + studierende` umstellen.
+5. **Bot ausführen** — *Test* oder *Run* klicken. Eine Message Box mit Ihrem Text sollte erscheinen.
+
+Anschließend: drei Stichworte ins Notizbuch — was an der UiPath-Oberfläche war anders als erwartet, was war ähnlich zu anderen Editoren (etwa Word, PowerPoint), welche Frage bleibt offen?
+
+**Erweiterung für schnelle Studierende.** Fügen Sie eine zweite Activity ein, die nach einer Eingabe fragt (*Input Dialog*) und die eingegebene Antwort in einer zweiten Message Box wiedergibt. Beobachten Sie, wie sich Activities verknüpfen lassen.
+
+**Think-Pair-Share (3 Min).** Welcher Schritt war am ungewohntesten? Wo würde Sie diese Oberfläche in eine reale Tax-/Audit-Aufgabe tragen? Welche der Tätigkeiten aus dem Diagnose-Quiz (Workshop 1) ließe sich mit einem UiPath-Bot dieser Sorte angreifen?
+
+## Vertiefung (optional in-class oder als Hausaufgabe)
+
+Wer die sechs Übungen früh durchhat oder eine zusätzliche Vertiefung sucht, hat zwei Optionen.
+
+**Integrierter 4D-Use-Case mit Diligence-Schwerpunkt** — eine 40-Minuten-Übung am Tax-Beispiel „grenzüberschreitende Dienstleistung", in der alle vier 4D-Kompetenzen mit Schwerpunkt Diligence durchlaufen werden, inklusive Audit-Trail und Mandantenkommunikation. Diese Übung ist gleichzeitig die Vorlage für die zwei Hausaufgaben *Dilemma der Mitte* und *Personal AI Policy*. Beschreibung folgt unter Übung 7.
+
+**UiPath-Vertiefung — Excel-zu-PDF-Bot** — eine komplexere UiPath-Aufgabe, in der Sie einen vorbereiteten Bot lesen, ausführen und anpassen. Diese Übung ist als Hausaufgabe nach Workshop 2 konzipiert; Details siehe [Hausaufgaben-Seite](05-hausaufgaben.qmd#sec-uipath-vertiefung).
+
+## Übung 7 — Integrierter 4D-Use-Case (optional in-class) {#sec-4d-usecase}
 
 **Modus:** in-class · Paar oder Dreierteam · **Dauer:** 40 Min · **4D-Bezug:** alle vier Kompetenzen, Schwerpunkt Diligence.
 
-### Ziel
+![Centaur-Modell — Mensch und KI als verbundenes, aber unterscheidbares Gespann; die Verantwortung bleibt sichtbar beim Reiter. Adaptiert nach Mollick (2024).](../images/centaur-genai.png){fig-align="center" width="60%" fig-alt="Symbolbild eines Centaur als Metapher für die Mensch-KI-Kooperation"}
 
-Einen realistischen Sachverhalt in einem Durchgang durch alle vier 4D-Kompetenzen führen — mit besonderem Gewicht auf der Diligence-Dokumentation. Diese Übung ist die direkte Vorlage für die beiden Hausaufgaben *Dilemma der Mitte* und *Personal AI Policy*.
+Führen Sie einen realistischen Sachverhalt in einem Durchgang durch alle vier 4D-Kompetenzen — mit besonderem Gewicht auf der Diligence-Dokumentation. Diese Übung ist die direkte Vorlage für die beiden Hausaufgaben *Dilemma der Mitte* und *Personal AI Policy*.
 
-![Centaur-Modell — Mensch und KI als verbundenes, aber unterscheidbares Gespann; die Verantwortung bleibt sichtbar beim Reiter. Adaptiert nach Mollick (2024).](../images/centaur-genai.png){fig-alt="Symbolbild eines Centaur als Metapher für die Mensch-KI-Kooperation, in der Mensch und KI ein zusammenwirkendes, aber klar unterscheidbares Gespann bilden"}
+**Sachverhalt (fiktiv, kein Mandantenbezug):** Eine deutsche IT-Beratung erbringt eine Cloud-Migrations-Beratung im Wert von 80.000 € für einen Kunden mit Sitz in Boston, USA. Frage des Mandanten: Ist die Leistung in Deutschland umsatzsteuerbar — und wenn ja, mit welcher Steuerklasse?
 
-### Setup
+**Ablauf in vier Stationen.** *Delegate (5 Min)*: Welches Modell mit welcher Harness? Welche Teilaufgaben behalten Sie als Berufsträger:in selbst? *Describe (5 Min)*: Prompt nach RTF oder CREATE strukturieren, absenden. *Discern (10 Min)*: Faithfulness prüfen, zitierte Quellen verifizieren, Honey-Pot setzen, Output als rot/gelb/grün bewerten. *Diligence (20 Min)*: Audit-Trail ausfüllen, Mandantenkommunikation in fünf Sätzen formulieren (EU AI Act Art. 50), Verantwortungs-Schluss-Satz schreiben, Faustregel für die Personal AI Policy notieren.
 
-- Sachverhalt (fiktiv, kein Mandantenbezug): **Eine deutsche IT-Beratung erbringt eine Cloud-Migrations-Beratung im Wert von 80.000 € für einen Kunden mit Sitz in Boston, USA. Die Frage des Mandanten lautet: Ist die Leistung in Deutschland umsatzsteuerbar — und wenn ja, mit welcher Steuerklasse?**
-- Mindestens ein KI-System mit Web-Search und einem starken Modell aus Workshop 1.
-- Audit-Trail-Vorlage `data/audit-trail-vorlage.md` (vier Spalten: *Schritt · Tool · Eingabe · Output*).
-
-### Ablauf — vier Stationen
-
-1. **Delegate (5 Min).** Entscheiden: Welches Modell mit welcher Harness? Begründung in einem Satz. Welche Teilaufgaben behalten Sie als Berufsträger:in selbst (Endbewertung, Mandantenkommunikation, Rechtsprüfung)?
-2. **Describe (5 Min).** Prompt nach RTF oder CREATE strukturieren — Rolle (z. B. „Sie sind Steuerberaterin mit Schwerpunkt internationales Umsatzsteuerrecht"), Sachverhalt, Frage, gewünschtes Format (Memo mit Quellen). Den Prompt absenden.
-3. **Discern (10 Min).** Output prüfen mit den drei Werkzeugen aus Workshop 1: *(a)* Faithfulness — passt die Antwort zu den genannten Quellen? *(b)* Existieren die zitierten Quellen wirklich? Stichprobe von zwei Quellen verifizieren. *(c)* Test-Suite — eine Stelle finden, die Sie auch ohne KI als wahr oder falsch erkennen können (Honey-Pot). Bewerten Sie den Output als rot, gelb oder grün.
-4. **Diligence (20 Min — der Schwerpunkt).** Drei Teil-Schritte:
-   - **Creation Diligence** — Audit-Trail-Vorlage ausfüllen: Welche Tools, welche Eingaben, welche Outputs? Wäre die Eingabe DSGVO-konform, falls dieser Sachverhalt einen realen Mandanten beträfe? Hier konkretisieren Sie WPO § 43 und StBerG § 57.
-   - **Transparency Diligence** — Eine Mandantenkommunikation formulieren (max. fünf Sätze), die offen legt, wo KI beteiligt war und welche Punkte Sie als Berufsträger:in selbst verantworten. Maßgabe EU AI Act Art. 50: KI-Beteiligung ist transparent zu machen.
-   - **Deployment Diligence** — Ein Schluss-Satz, mit dem Sie persönlich für das Memo gerade stehen: „Ich übernehme die Verantwortung für diese Stellungnahme, gestützt auf [konkrete Quellen]. Die KI-Beteiligung beschränkt sich auf [konkrete Schritte]." Notieren Sie eine Faustregel für Ihre Personal AI Policy.
-
-### Erweiterung für schnelle Studierende
-
-Übersetzen Sie den vollständigen Audit-Trail in eine *Personal-AI-Policy-Regel* — eine Wenn-Dann-Aussage, die Sie sich für ähnliche Fälle vornehmen. Beispiel: „*Wenn* der Sachverhalt einen US-Mandanten betrifft, *dann* verifiziere ich mindestens zwei Quellen aus deutschen Quellen (BMF-Schreiben, DStR-Artikel) und keine reine LLM-Antwort." Diese Regel ist Saatkorn für die Hausaufgabe *Personal AI Policy*.
-
-### Deliverable
-
-Ein vierteiliges Dossier: ausgefüllter Audit-Trail (Creation Diligence), Mandantenkommunikation (Transparency Diligence), Verantwortungs-Schluss-Satz (Deployment Diligence), Saatkorn-Regel für die Personal AI Policy (Erweiterung).
-
-### Bewertungskriterien
-
-Vollständigkeit des Audit-Trails · DSGVO-Bewertung des Eingabe-Materials · Mandantentauglichkeit der Transparenz-Kommunikation · Konkretheit des Verantwortungs-Schluss-Satzes · Übertragbarkeit der Policy-Regel.
-
-### Tutor-Prompt
-
-::: callout-tip
-> Ich arbeite im 4D-Use-Case (grenzüberschreitende Dienstleistung) an **Diligence**. Hier ist mein bisheriger Output und mein Audit-Trail-Entwurf: [einfügen]. Stellen Sie mir **drei berufsrechtliche Diagnose-Fragen** aus WPO § 43, StBerG § 57 oder DSGVO Art. 5, die ich an meinen Audit-Trail anlegen sollte — ohne meinen Schluss-Satz vorwegzunehmen.
-:::
-
-### Was, wenn …
-
-::: callout-warning
-- **Output sieht plausibel aus, ich finde keinen Fehler?** → Eine bekannte Stelle mit klarer Antwort dazwischenmischen (Honey-Pot) und prüfen, ob das Modell sie korrekt behandelt.
-- **KI-Tool zitiert eine Quelle, die nicht existiert?** → Notieren als Beobachtung. Das ist Diligence-Material und gehört in den Audit-Trail.
-- **Audit-Trail wird zu lang?** → Auf vier Spalten reduzieren: *Schritt · Tool · Eingabe · Output.* Detaillierte Begründung in der Spalte *Output*.
-- **Transparenzformulierung wirkt zu technisch?** → Mandantenperspektive einnehmen, in zwei Sätzen erklären, *was* die KI getan hat und *was* Sie persönlich verantworten.
-:::
+**Erweiterung für schnelle Studierende.** Übersetzen Sie den vollständigen Audit-Trail in eine Personal-AI-Policy-Regel als Wenn-Dann-Aussage. Beispiel: „*Wenn* der Sachverhalt einen US-Mandanten betrifft, *dann* verifiziere ich mindestens zwei Quellen aus deutschen Quellen und keine reine LLM-Antwort." Diese Regel ist Saatkorn für die Hausaufgabe *Personal AI Policy*.
 
 ## Quellen
 
-@dakan2025framework · @omg2014bpmn · @lacity2021becoming · @willcocks2024evolution · @lacity2016new · @coombs2020strategic · @davenport2018artificial
+@dakan2025framework · @omg2014bpmn · @lacity2021becoming · @willcocks2024evolution · @lacity2016new · @coombs2020strategic · @davenport2018artificial · @es2024ragas · @willison2025redgreen

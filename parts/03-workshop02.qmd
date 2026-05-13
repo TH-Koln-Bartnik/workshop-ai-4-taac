@@ -74,9 +74,29 @@ Bezug zu Workshop 1: BPMN ist die *Sprache*, in der wir später entscheiden, wel
 
 Drei Säulen [@dakan2025framework]:
 
-- **Creation Diligence** — sorgfältige Erzeugung. Was lasse ich überhaupt entstehen? Welche Daten gebe ich rein? Bin ich befugt, diese Daten an dieses System zu schicken?
-- **Transparency Diligence** — offen legen, was die KI getan hat. Gegenüber Mandanten, Vorgesetzten, Aufsichtsbehörden. EU AI Act Art. 50 setzt seit 2025 explizite Transparenzpflichten für generative Outputs.
-- **Deployment Diligence** — verantwortlicher Einsatz im Mandat. Wer haftet, wenn der KI-Output Schaden anrichtet? Antwort: immer Sie als Berufsträger, nie der Anbieter.
+**Creation Diligence — verantwortlicher Umgang während der Erzeugung.**
+
+- Verantwortungsvoller Umgang mit KI-Tools unter Einhaltung ethischer und rechtlicher Best Practices sowie Bewusstsein für Verzerrungen, Mängel, Auswirkungen auf Interessengruppen und andere externe Effekte.
+- Verständnis und Anwendung ethischer Grundsätze während des gesamten KI-gestützten kreativen Prozesses.
+- Fähigkeit, potenzielle Verzerrungen und ethische Risiken in KI-generierten Inhalten zu erkennen und zu mindern.
+
+*Ziel:* Gewährleistung eines verantwortungsvollen und sozialbewussten Einsatzes von KI.
+
+**Transparency Diligence — Offenlegung gegenüber Stakeholdern.**
+
+- Transparenz und Verantwortlichkeit bei der Verbreitung des Endprodukts.
+- Verständnis für die Erwartungen und Normen des Publikums, der Branche und der Rechtsordnung in Bezug auf KI-generierte Inhalte.
+- Die Fähigkeit, die Art der KI-Beteiligung am Prozess klar zu kommunizieren.
+
+*Ziel:* Wahrung von Vertrauen und Integrität bei der Verbreitung KI-gestützter Arbeiten. EU AI Act Art. 50 setzt seit 2025 explizite Transparenzpflichten für generative Outputs.
+
+**Deployment Diligence — Verantwortung für Verifikation und Veröffentlichung.**
+
+- Verantwortung für die Verifikation von und das Einstehen für KI-gestützte Outputs übernehmen, einschließlich gründlicher Faktenprüfung, Test auf Korrektheit und Validierung von Aussagen.
+- Angemessene Sicherheitsprüfungen und Testverfahren vor der Freigabe KI-gestützter Arbeit umsetzen.
+- Verstehen, managen und Verantwortung übernehmen für potenzielle Risiken und Auswirkungen veröffentlichter KI-gestützter Inhalte oder Agenten.
+
+*Ziel:* Sicherstellung von Qualität, Sicherheit und Verlässlichkeit von Inhalten und Agenten, die durch Mensch-KI-Interaktion entstanden sind. Im Berufsstand übersetzt heißt das: Wer haftet, wenn der KI-Output Schaden anrichtet? Antwort: immer Sie als Berufsträger:in, nie der Anbieter.
 
 Berufsrechtlicher Rahmen für Tax/Audit/Advisory:
 
@@ -107,18 +127,26 @@ Der integrierte Use-Case: **umsatzsteuerliche Behandlung einer grenzüberschreit
 ::: callout-note
 ## Drei Übungen plus zwei Hausaufgaben
 
-**In-class (zusammen 120 Min):**
+**In-class — Discern und Diligence zuerst, dann Modellierung und Automatisierung:**
 
-[BPMN-Modellierung](04-uebungen-w2.qmd#sec-bpmn){.assignment-badge}
-[UiPath-Bot lesen](04-uebungen-w2.qmd#sec-uipath){.assignment-badge}
-[Integrierter 4D-Use-Case](04-uebungen-w2.qmd#sec-4d-usecase){.assignment-badge}
+[Übung 1 — Tutor-Bot systematisch prüfen (Discern)](04-uebungen-w2.qmd#sec-test-suite){.assignment-badge}
+[Übung 2 — RAG-Suchübung HGB-Prüfungspflicht (Discern)](04-uebungen-w2.qmd#sec-rag-hgb){.assignment-badge}
+[Übung 3 — Diligence-Risiko-Recherche im Best-of-N (Diligence)](04-uebungen-w2.qmd#sec-diligence-bestof-n){.assignment-badge}
+[Übung 4 — Prozessmodellierung mit Mermaid](04-uebungen-w2.qmd#sec-mermaid){.assignment-badge}
+[Übung 5 — BPMN-Modellierung in Signavio](04-uebungen-w2.qmd#sec-bpmn){.assignment-badge}
+[Übung 6 — UiPath Kennenlernen](04-uebungen-w2.qmd#sec-uipath){.assignment-badge}
+
+**Vertiefung (optional in-class oder als Hausaufgabe):**
+
+[Übung 7 — Integrierter 4D-Use-Case](04-uebungen-w2.qmd#sec-4d-usecase){.assignment-badge}
+[UiPath-Vertiefung Excel-zu-PDF (Hausaufgabe)](05-hausaufgaben.qmd#sec-uipath-vertiefung){.assignment-badge}
 
 **Hausaufgaben (nach Workshop 2):**
 
 [Dilemma der Mitte](05-hausaufgaben.qmd#sec-uebung-6){.assignment-badge}
 [Personal AI Policy](05-hausaufgaben.qmd#sec-uebung-7){.assignment-badge}
 
-BPMN-Modellierung (40 Min) und UiPath-Bot (40 Min) trainieren das technische Verständnis von Process Automation an einem Tax-Beispiel. Der **integrierte 4D-Use-Case** (40 Min) verbindet alle vier Kompetenzen mit Schwerpunkt auf **Diligence** und ist die direkte Vorlage für die beiden Hausaufgaben.
+Die ersten drei Übungen vertiefen **Discern** (Test-Suite am Tutor-Bot aus W1, RAG-Suchhilfe im HGB) und **Diligence** (Best-of-N-Risikorecherche). Anschließend gewöhnen Sie sich an Prozessmodellierung — erst niedrigschwellig mit **Mermaid**, dann fachgerecht in **Signavio**. Den Abschluss bildet das Kennenlernen von **UiPath Studio Web**. Der 4D-Use-Case und die UiPath-Vertiefung sind die Bausteine, an denen Sie die Hausaufgaben *Dilemma der Mitte* und *Personal AI Policy* andocken.
 :::
 
 ## Hintergrund / Werkzeuge / Ressourcen

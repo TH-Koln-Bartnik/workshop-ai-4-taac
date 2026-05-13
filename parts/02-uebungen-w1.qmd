@@ -1,244 +1,74 @@
 ---
 title: "Übungen Workshop 1"
-subtitle: "Vier in den Workshop eingebettete Übungen, je 15 Minuten plus Auswertung"
+subtitle: "Drei in den Workshop eingebettete Übungen, je 15 Minuten plus Auswertung"
 ---
 
 ::: th-color-bar
 :::
 
 ::: lernziel-box
-#### Was Sie nach diesen vier Übungen können
+#### Was Sie nach diesen drei Übungen können
 
 - Tätigkeiten als *Process*, *Cognitive* oder *Nicht anwendbar* klassifizieren — auch in Grenzfällen begründen,
 - zwei KI-Modelle und zwei Modell-plus-Tool-Konfigurationen an einer eigenen Frage **systematisch vergleichen** und Modell- von Harness-Effekten trennen,
-- einen Prompt in die Schemata **RTF** und **CREATE** umbauen und einen **Tutor-Bot** für das eigene Lerngebiet aufsetzen,
-- eine kleine **Test-Suite** für den eigenen Tutor-Bot bauen und die Ergebnisse als *rot · gelb · grün* bewerten.
+- einen Prompt in die Schemata **RTF** und **CREATE** umbauen und einen **Tutor-Bot** für das eigene Lerngebiet aufsetzen.
 :::
 
-Jede Übung folgt dem gleichen Muster: *Ziel · Setup · Schritte · Deliverable · Bewertungskriterien · Tutor-Prompt · Was-wenn*. Innerhalb der 15 Minuten steht jeweils eine **Erweiterung für schnelle Studierende** — wer früh fertig ist, vertieft.
+Jede Übung dauert maximal 15 Minuten Bearbeitung plus kurzes Think-Pair-Share. Innerhalb der 15 Minuten steht eine **Erweiterung für schnelle Studierende** — wer früh fertig ist, vertieft. Die ursprünglich für Workshop 1 vorgesehene Discern-Übung *Tutor-Bot systematisch prüfen* eröffnet jetzt Workshop 2 und steht dort als Übung 1 — [Tutor-Bot Test-Suite](04-uebungen-w2.qmd#sec-test-suite).
 
 ## Übung 1 — Diagnose-Quiz Process vs. Cognitive {#sec-uebung-1}
 
-**Modus:** in-class · Einzelarbeit · **Dauer:** 18 Min (8 Min Solo + 4 Min TPS + 3 Min Plenum + 3 Min Puffer) · **Anker:** Block 1, Process vs. Cognitive Automation.
+**Modus:** in-class · Einzelarbeit · **Dauer:** 18 Min (8 Min Solo + 4 Min TPS + 3 Min Plenum + 3 Min Puffer) · **Anker:** Block 1.
 
-### Ziel
+Klassifizieren Sie die zehn Items des Diagnose-Quiz spontan in acht Minuten. Spontane Einschätzung, keine Recherche. Quiz im Browser starten: [Diagnose-Quiz](../interactions/diagnose-quiz.html){target="_blank"}. Notieren Sie für strittige Items zwei bis drei Stichworte. Anschließend Think-Pair-Share mit dem Sitznachbarn, danach Plenum-Auflösung mit Balken-Diagramm. Der strittige Hybrid-Fall (Item 9 — OCR plus ERP-Einspielung) ist der Diskussions-Anker.
 
-Zehn Tätigkeiten aus dem Berufsalltag von *Accountants and Auditors* in drei Kategorien einordnen — *Process Automation*, *Cognitive Automation*, *Nicht anwendbar* — und in der Plenum-Auflösung die strittigen Fälle gemeinsam besprechen.
+**Erweiterung für schnelle Studierende.** Schlagen Sie für ein Item, das Sie als Hybrid einordnen würden, eine klare Trennlinie vor: An welcher Stelle des Workflows endet *Process Automation* und beginnt *Cognitive Automation*? Welches technische Element markiert den Übergang (OCR-Modul, Klassifikator, Regel-Engine)?
 
-### Setup
-
-- Quiz im Browser: [Diagnose-Quiz starten](../interactions/diagnose-quiz.html){target="_blank"}.
-- Eigene Notizen für strittige Items (zwei bis drei Stichworte je Item).
-
-### Schritte
-
-1. Die zehn Items einzeln klassifizieren (8 Min). Spontane Einschätzung, keine Recherche.
-2. Think-Pair-Share mit dem Sitznachbarn (4 Min): Welches Item war für Sie eindeutig, welches strittig? Wo verläuft die Grenze, wenn beide Kategorien in einem Workflow zusammenwirken?
-3. Plenum-Auflösung (3 Min) mit Spinnen-Diagramm: Anteil korrekt klassifizierter Items pro Kategorie. Strittiger Hybrid-Fall (Item 9 — OCR plus ERP-Einspielung) als Diskussions-Anker.
-
-### Erweiterung für schnelle Studierende
-
-Schlagen Sie für ein Item, das Sie als Hybrid einordnen würden, eine klare Trennlinie vor: An welcher Stelle des Workflows endet *Process Automation* und beginnt *Cognitive Automation*? Welches technische Element markiert den Übergang (OCR-Modul, Klassifikator, Regel-Engine)?
-
-### Deliverable
-
-Ausgefülltes Quiz mit Score (wird vom Widget ausgegeben), plus drei bis fünf Stichworte zu strittigen Items im eigenen Notizbuch.
-
-### Bewertungskriterien
-
-Klassifikations-Score · Begründungstiefe für strittige Items · Bereitschaft zur Diskussion im Plenum.
-
-### Tutor-Prompt
-
-::: callout-tip
-> Ich habe das Diagnose-Quiz absolviert und bin bei Item [Nummer einfügen] unsicher zwischen *Process* und *Cognitive*. Mein Argument für *[Antwort]* ist [eigene Begründung]. Bitte fragen Sie mich zu meiner Argumentation nach und schlagen Sie eine **Trennfrage** vor — eine Frage, deren Antwort die Zuordnung eindeutig festlegt.
-:::
-
-### Was, wenn …
-
-::: callout-warning
-- **Score deutlich unter 60 %?** → Lacity-Willcocks-Definition aus Block 1 kurz im Plenum aufrollen und die strittigen Items benennen, damit wir sie gemeinsam einordnen.
-- **Mehrere Items als „Nicht anwendbar" markiert?** → Prüfen Sie, ob „Nicht anwendbar" wirklich bedeutet, dass die Tätigkeit nicht automatisierbar ist — oder nur, dass sie hybride Anteile enthält.
-:::
+**Think-Pair-Share (4 Min).** Welches Item war für Sie eindeutig, welches strittig? Wo verläuft die Grenze, wenn beide Kategorien in einem Workflow zusammenwirken?
 
 ## Übung 2 — Karriereentwicklung im Modellvergleich {#sec-uebung-2}
 
 **Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Delegate.
 
-### Ziel
+Stellen Sie dieselbe Frage an ein schwächeres und ein stärkeres Modell und vergleichen Sie anschließend zwei Modelle mit Suchwerkzeug im Side-by-Side. Schwächeres Modell: Meta Llama 3.1 8B Instruct in der [GWDG Academic Cloud](https://academiccloud.de){target="_blank"}. Stärkeres Modell: ein Free-Account bei Claude, ChatGPT, Gemini oder Perplexity — Ihre Wahl. Side-by-Side-Vergleich auf [arena.ai](https://arena.ai){target="_blank"}. Faktenbasis: O\*NET-Profil [13-2011.00 Accountants and Auditors](https://www.onetonline.org/link/summary/13-2011.00){target="_blank"}.
 
-Dieselbe Frage an ein schwächeres und ein stärkeres Modell stellen — und in einem zweiten Schritt zwei Modelle mit Suchwerkzeug im Side-by-Side vergleichen. Modell-Effekte sauber von Harness-Effekten trennen.
-
-### Setup
-
-- **Schwächeres Modell**: Meta Llama 3.1 8B Instruct in der GWDG Academic Cloud ([academiccloud.de](https://academiccloud.de){target="_blank"}).
-- **Stärkeres Modell**: ein Free-Account bei Claude, ChatGPT, Gemini oder Perplexity — Ihre Wahl.
-- **Side-by-Side-Vergleich**: [arena.ai](https://arena.ai){target="_blank"}, oben links *Side by Side* aktivieren.
-- **Faktenbasis**: O\*NET-Profil [13-2011.00 Accountants and Auditors](https://www.onetonline.org/link/summary/13-2011.00){target="_blank"} — kurz öffnen, damit Sie wissen, woran die Modellantworten zu spiegeln sind.
-
-### Schritte
-
-**Schritt a — Karriereberatung im Direktvergleich (5 Min).** Dieselbe Frage einmal an Llama 3.1 8B (Academic Cloud) und einmal an Ihr starkes Modell der Wahl stellen:
+**Schritt a — Karriereberatung im Direktvergleich (5 Min).** Dieselbe Frage an Llama 3.1 8B und an Ihr starkes Modell stellen:
 
 > Berate mich: Ich studiere Tax, Audit und Advisory. Wie sollte ich mich auf die Auswirkungen generativer KI auf den Arbeitsmarkt für Accountants und Auditors vorbereiten? Bezug: O\*NET-Profil 13-2011.00.
 
-Antworten kurz vergleichen — drei Stichworte pro Modell zur Qualität (Tiefe, Konkretheit, Belege).
+Drei Stichworte pro Modell zur Qualität notieren (Tiefe, Konkretheit, Belege).
 
-**Schritt b — KPMG-Überblick mit Suchwerkzeugen (7 Min).** Auf [arena.ai](https://arena.ai){target="_blank"} *Side by Side* öffnen. Linke Seite: Llama 3.1 8B. Rechte Seite: zwei Search-fähige Modelle auswählen — über die Globus-Schaltfläche `grok-4.20-multi-agent` und `gpt-5.2-search`. Dieselbe Frage an alle drei Konfigurationen:
+**Schritt b — KPMG-Überblick mit Suchwerkzeugen (7 Min).** Auf arena.ai *Side by Side* öffnen. Linke Seite: Llama 3.1 8B. Rechte Seite: zwei Search-fähige Modelle über die Globus-Schaltfläche auswählen — `grok-4.20-multi-agent` und `gpt-5.2-search`. Dieselbe Frage an alle drei Konfigurationen:
 
 > Geben Sie mir einen Überblick zu aktuellen Entwicklungen im Geschäft von KPMG Deutschland, mit besonderem Fokus auf die Nutzung generativer KI und die wirtschaftliche Lage.
 
 In drei Stichworten notieren: Welche Output-Unterschiede gehen auf das **Modell** zurück, welche auf die **Harness** (Web-Search)? Wo halluziniert Llama erkennbar?
 
-**Schritt c — Erweiterung für schnelle Studierende oder Hausaufgabe.** Einen Deep-Research-Lauf vorbereiten und starten. Tools nach Wahl (GPT Plus mit *Deep Research*, Gemini Advanced, Perplexity Pro im Trial). Zuerst lassen Sie sich vom starken Modell den Deep-Research-Prompt **erzeugen** — Meta-Prompt:
+**Erweiterung für schnelle Studierende.** Einen Deep-Research-Lauf vorbereiten und starten. Tools nach Wahl (GPT Plus mit *Deep Research*, Gemini Advanced, Perplexity Pro im Trial). Zuerst lassen Sie sich vom starken Modell den Deep-Research-Prompt erzeugen — Meta-Prompt:
 
 > Erstellen Sie mir einen detaillierten Prompt nach dem RTF-Schema für eine Deep-Research-Analyse von Praxisbeispielen aus hochwertiger grauer Literatur (vor allem Think Tanks, Reports der großen Unternehmensberatungen und Big Four, Case Studies von Anbietern wie Salesforce oder IBM) zur Aufgabenstellung: „Process Automation und Cognitive Automation im Berufsfeld Accountants and Auditors — Erfolgsfaktoren, Barrieren, Best Practices." Fragen Sie mich anfangs nach weiteren Details, wenn nötig. Bauen Sie Prüfschritte gegen Halluzinationen ein.
 
-Dann den erzeugten Prompt in den Deep-Research-Modus geben und den Bericht abwarten. Ergebnis als PDF speichern.
+Dann den erzeugten Prompt in den Deep-Research-Modus geben und den Bericht abwarten.
 
-### Erweiterung für schnelle Studierende
-
-Wenn Schritte a und b früh durch sind: Schritt c bereits im Workshop starten. Andernfalls als Hausaufgabe abschließen — der Bericht ist Input für die Diskussion in Workshop 2.
-
-### Think-Pair-Share (4 Min)
-
-Zwei Leitfragen mit dem Sitznachbarn besprechen:
-
-- Welche Unterschiede zwischen schwachem und starkem Modell ließen sich klar auf die Modellqualität zurückführen, welche auf die Harness?
-- Wo lohnt sich der Aufpreis für ein stärkeres Modell konkret in Ihrer Studien- und Berufspraxis?
-
-### Deliverable
-
-Drei Stichworte pro Schritt im eigenen Notizbuch oder geteilten Doc — Modell · Harness · auffällige Halluzination. Bei Schritt c zusätzlich der gespeicherte Deep-Research-Bericht.
-
-### Bewertungskriterien
-
-Trennschärfe Modell vs. Harness · Konkretheit der Halluzinations-Beispiele · Qualität der Schritt-c-Prompt-Iteration (bei der Erweiterung).
-
-### Tutor-Prompt
-
-::: callout-tip
-> Ich vergleiche in Übung 2 ein Free-Tier-Modell ohne Tools mit einem Search-Modell. Hier mein Befund [einfügen]. Bitte stellen Sie mir **drei Diagnose-Fragen**, mit denen ich systematisch herausfinde, ob ein beobachteter Unterschied vom Modell oder vom Tool kommt. Welche **Folge-Anfrage** sollte ich an beide Konfigurationen stellen, um meine Hypothese zu prüfen?
-:::
-
-### Was, wenn …
-
-::: callout-warning
-- **Beide Modelle antworten ähnlich?** → Frage zu generisch. Verschärfen Sie um eine quellenpflichtige Detailfrage (z. B. „mit Verweis auf den KPMG-Geschäftsbericht 2025").
-- **Llama 3.1 8B antwortet plausibel auf die KPMG-Frage?** → Prüfen, ob die Antwort tatsächlich aktuelle Daten enthält oder nur generische Aussagen. Trainings-Cutoff von Llama 3.1 prüfen.
-- **arena.ai nicht erreichbar?** → Alternative Plattform: [chatarena.ai](https://chat.lmsys.org){target="_blank"} oder zwei Browser-Tabs nebeneinander.
-:::
+**Think-Pair-Share (4 Min).** Welche Unterschiede zwischen schwachem und starkem Modell ließen sich klar auf die Modellqualität zurückführen, welche auf die Harness? Wo lohnt sich der Aufpreis für ein stärkeres Modell konkret in Ihrer Studien- und Berufspraxis?
 
 ## Übung 3 — Prompt-Umbau und Tutor-Bot {#sec-uebung-3}
 
 **Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Describe.
 
-### Ziel
-
-Einen Beispiel-Prompt in die Schemata **RTF** und **CREATE** umbauen, danach einen **Tutor-Bot** für das eigene Lerngebiet aufsetzen — beides als Hands-on-Übung. Der Tutor-Bot dient in Übung 4 als Testobjekt.
-
-### Setup
-
-- Ein Free-Account bei Claude, ChatGPT, Gemini oder Perplexity (gleicher wie in Übung 2).
-- Zugang zu einem System mit *Custom Instructions*, *Projects* oder *Gems* — also einer System-Prompt-Funktion.
-- Optional für Schritt c: NotebookLM ([notebooklm.google.com](https://notebooklm.google.com){target="_blank"}) und ein bis drei fachliche Quellen zum Hochladen (PDF, Webseite).
-
-### Schritte
+Bauen Sie einen Beispiel-Prompt in die Schemata RTF und CREATE um und setzen Sie anschließend einen Tutor-Bot für das eigene Lerngebiet auf. Der Tutor-Bot wird in Übung 4 mit einer Test-Suite geprüft — geben Sie ihm einen Namen, den Sie wiederfinden. Setup: ein Free-Account bei Claude, ChatGPT, Gemini oder Perplexity mit *Custom Instructions*, *Projects* oder *Gems*. Optional für die Erweiterung: NotebookLM ([notebooklm.google.com](https://notebooklm.google.com){target="_blank"}) und ein bis drei fachliche Quellen zum Hochladen.
 
 **Schritt a — Prompt in RTF und CREATE umbauen (7 Min).** Ausgangs-Prompt:
 
 > Du generierst klare, genaue Beispiele für Konzepte für Studierende. Ich möchte, dass du mir zwei Fragen stellst: Welches Konzept soll ich erklären, und wer ist die Zielgruppe für die Erklärung. Schlage dann das Konzept und Beispiele für das Konzept nach. Liefere eine klare, mehrteilige Erklärung des Konzepts unter Verwendung spezifischer Beispiele und gib mir fünf Analogien und Metaphern, die ich verwenden kann, um das Konzept auf unterschiedliche Weise zu verstehen.
 
-Strukturieren Sie diesen Prompt einmal nach **RTF** (Role, Task, Format) und einmal nach **CREATE** (Character, Request, Examples, Adjustments, Type of output, Evaluation & Steps). Notieren Sie eine Beobachtung pro Schema: Wo hilft das Schema, wo zwingt es Sie zu künstlicher Genauigkeit?
+Strukturieren Sie diesen Prompt einmal nach **RTF** (Role, Task, Format) und einmal nach **CREATE** (Character, Request, Examples, Adjustments, Type of output, Extras). Notieren Sie eine Beobachtung pro Schema.
 
-**Schritt b — Tutor-Bot anpassen (8 Min).** Vorlage: [General-Tutor-Prompt aus der Prompt-Sammlung](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html#sec-general-tutor){target="_blank"}. Kopieren Sie den Prompt in *Custom Instructions* (ChatGPT), *Project Instructions* (Claude) oder *Gem* (Gemini). Anpassung auf Ihr Lerngebiet — etwa Steuerberater-Examen, Wirtschaftsprüfer-Examen oder ein Modul des laufenden Semesters. Testen Sie den angepassten Tutor mit **zwei Beispielfragen** aus Ihrem Lerngebiet.
+**Schritt b — Tutor-Bot anpassen (8 Min).** Vorlage: [General-Tutor-Prompt aus der Prompt-Sammlung](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html#sec-general-tutor){target="_blank"}. Kopieren Sie den Prompt in *Custom Instructions*, *Project Instructions* oder *Gem*. Anpassung auf Ihr Lerngebiet — Steuerberater-Examen, Wirtschaftsprüfer-Examen oder ein Modul des laufenden Semesters. Testen Sie den Tutor mit zwei Beispielfragen.
 
-**Schritt c — Erweiterung für schnelle Studierende: RAG-Tutor mit NotebookLM (15 Min).** In NotebookLM ein neues Notebook anlegen, ein bis drei fachliche Quellen hochladen (Studienunterlage, Übersichtsartikel, Gesetzestext). Denselben Tutor-Prompt verwenden. Vergleich: Wie ändert sich die Antwortqualität durch die externe Wissensquelle? Was kann NotebookLM, was Custom Instructions nicht können?
+**Erweiterung für schnelle Studierende.** RAG-Tutor mit NotebookLM. In NotebookLM ein neues Notebook anlegen, ein bis drei fachliche Quellen hochladen, denselben Tutor-Prompt verwenden. Wie ändert sich die Antwortqualität durch die externe Wissensquelle?
 
-### Erweiterung für schnelle Studierende
-
-Schritt c — der RAG-Tutor mit NotebookLM. Der Vergleich zwischen reinem System-Prompt und RAG-Tutor ist die schönste Vertiefung dieser Übung und führt direkt zu Übung 4, in der die Test-Suite den Bot prüft.
-
-### Think-Pair-Share (4 Min)
-
-Zwei Leitfragen mit dem Sitznachbarn besprechen:
-
-- Welches Schema (RTF oder CREATE) passt zu welchem Aufgabentyp? Wann ist die Sparsamkeit von RTF besser, wann der Reichtum von CREATE?
-- Wo merken Sie, dass Ihr Tutor-Bot an Grenzen stößt, und was würde **RAG** (also der Schritt zu NotebookLM) daran ändern?
-
-### Deliverable
-
-Final-Version des Tutor-Bot-Prompts (RTF oder CREATE strukturiert), plus die beiden umgebauten Prompts aus Schritt a, plus zwei Test-Outputs Ihres Tutors. **Den Tutor-Bot brauchen Sie für Übung 4** — geben Sie ihm einen Namen, den Sie wiederfinden.
-
-### Bewertungskriterien
-
-Sauberkeit der RTF- und CREATE-Strukturierung · Spezifität der Tutor-Anpassung aufs eigene Lerngebiet · Reproduzierbarkeit der Test-Outputs · Reflexionstiefe in Schritt a.
-
-### Tutor-Prompt
-
-::: callout-tip
-> Ich entwerfe in Übung 3 einen Tutor-Bot für [Lerngebiet einfügen]. Hier meine aktuelle Version des System-Prompts: [einfügen]. Bitte stellen Sie mir **drei Diagnose-Fragen**, an denen ich erkenne, ob der Tutor zu vage, zu eng oder zu lang ist. Schlagen Sie **eine** konkrete Verschärfung vor, die direkt zu den Test-Fragen für Übung 4 führt.
-:::
-
-### Was, wenn …
-
-::: callout-warning
-- **Tutor-Outputs schwanken stark trotz System-Prompt?** → Fehlt eine Format-Definition oder ein Beispiel-Output (Few-Shot).
-- **Tool ignoriert Teile des Prompts?** → Reihenfolge ändern (kritische Constraints ans Ende), oder in Markdown-Listen statt Fließtext gliedern.
-- **NotebookLM nimmt keine PDF-Quelle an?** → Auf Webseiten-Quellen ausweichen oder PDFs in `.txt` umwandeln.
-:::
-
-## Übung 4 — Tutor-Bot systematisch prüfen {#sec-uebung-4}
-
-**Modus:** in-class · Einzelarbeit · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Discern.
-
-### Ziel
-
-Den eigenen Tutor-Bot aus Übung 3 mit einer kleinen **Test-Suite** prüfen. Drei bis fünf Test-Fragen mit Soll-Antworten formulieren, den Bot durchlaufen lassen, Ergebnisse als *rot · gelb · grün* markieren, eine Hypothese ableiten.
-
-### Setup
-
-- Tutor-Bot aus Übung 3 (Custom Instructions oder NotebookLM).
-- Notizvorlage mit drei Spalten: *Frage · Soll-Antwort · Ist-Antwort (rot/gelb/grün)*.
-
-### Schritte
-
-1. **Test-Suite formulieren (5 Min).** Drei bis fünf fachliche Test-Fragen formulieren — Schwierigkeitsgrad gemischt, Soll-Antwort in drei bis fünf Sätzen. Beispiele für Tax: Anwendung des Reverse-Charge-Verfahrens, Bemessungsgrundlage einer verdeckten Gewinnausschüttung, Voraussetzungen einer Organschaft. Beispiele für Audit: Going-Concern-Prüfung, Materiality-Schwellen, Anforderungen an ISA 315. Beispiele für Advisory: Bewertungsanlässe, KPI-Definition, Business-Case-Bewertung.
-2. **Bot durchlaufen lassen (5 Min).** Jede Frage einzeln stellen. Ist-Antwort mit Soll-Antwort vergleichen. Markieren als *rot* (fehlerhaft, missverständlich, halluziniert), *gelb* (teilweise korrekt, unvollständig, vage), *grün* (korrekt, klar, vollständig).
-3. **Befund ableiten (5 Min).** An welcher Stelle versagt der Bot reproduzierbar? Eine Hypothese aufstellen, woran es liegt: Modell, Prompt, fehlender Kontext (Quellen), berufsrechtliche Sensibilität. Eine konkrete Verbesserungs-Idee notieren.
-
-### Erweiterung für schnelle Studierende
-
-Schlagen Sie ein **viertes Bewertungskriterium** vor, das speziell für Tax-/Audit-Antworten zentral ist — über *Faithfulness* und *Answer Relevance* hinaus. Beispiele: „nennt einschlägige Norm explizit", „benennt Grenzfälle und Ausnahmen", „warnt vor berufsrechtlich riskanten Empfehlungen". Begründen Sie, warum dieses Kriterium für Ihr Lerngebiet wichtig ist.
-
-### Think-Pair-Share (4 Min)
-
-Zwei Leitfragen mit dem Sitznachbarn besprechen:
-
-- Welche Ihrer Tests waren am aussagekräftigsten — und welche entpuppten sich als zu leicht oder zu schwer?
-- Welcher Anteil Ihrer Tests wäre auch ohne LLM eine sinnvolle Lernkontrolle? Was sagt das über das Verhältnis von Diagnostik-Aufgabe und Test-Suite aus?
-
-### Deliverable
-
-Notizvorlage mit drei bis fünf Test-Fragen, Soll-Antworten, Ist-Antworten und Rot-Gelb-Grün-Bewertung, plus eine Hypothese (zwei Sätze) zur reproduzierbaren Schwachstelle des Bots.
-
-### Bewertungskriterien
-
-Repräsentativität der Test-Fragen · Klarheit der Soll-Antworten · Begründungstiefe der Bewertung · Konkretheit der abgeleiteten Verbesserungs-Idee.
-
-### Tutor-Prompt
-
-::: callout-tip
-> Ich habe meinen Tutor-Bot mit fünf Test-Fragen geprüft. Hier die Test-Suite und die Bewertungen: [einfügen]. Bitte helfen Sie mir, aus den **roten** und **gelben** Ergebnissen eine Hypothese zu bilden, woran es liegt — Modell, Prompt, fehlender Kontext. Schlagen Sie **eine** konkrete Iteration vor, die ich als nächstes testen würde.
-:::
-
-### Was, wenn …
-
-::: callout-warning
-- **Alle Tests grün?** → Test-Suite zu einfach. Verschärfen mit Grenzfall-Fragen, Mehrdeutigkeits-Fragen oder berufsrechtlich heiklen Fragen.
-- **Alle Tests rot?** → Tutor-Prompt zu vage oder Aufgabe falsch eingegrenzt. Zurück zu Übung 3, Schritt b.
-- **Soll-Antworten lassen sich schwer formulieren?** → Hinweis darauf, dass die Frage selbst noch nicht klar ist. RTF- oder CREATE-Schema auf die Test-Frage anwenden.
-:::
+**Think-Pair-Share (4 Min).** Welches Schema (RTF oder CREATE) passt zu welchem Aufgabentyp? Wo merken Sie, dass Ihr Tutor-Bot an Grenzen stößt, und was würde **RAG** daran ändern?
 
 ## Quellen
 

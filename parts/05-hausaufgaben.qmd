@@ -1,6 +1,6 @@
 ---
 title: "Hausaufgaben nach Workshop 2"
-subtitle: "Übung 6 — Dilemma der Mitte · Übung 7 — Personal AI Policy"
+subtitle: "UiPath-Vertiefung · Dilemma der Mitte · Personal AI Policy"
 ---
 
 ::: th-color-bar
@@ -9,98 +9,53 @@ subtitle: "Übung 6 — Dilemma der Mitte · Übung 7 — Personal AI Policy"
 ::: lernziel-box
 #### Was Sie nach den Hausaufgaben können
 
+- einen vorbereiteten **UiPath-Bot** lesen, ausführen und an einer Stelle eigenständig anpassen,
 - ein **Diligence-Dilemma** der KI-Nutzung argumentativ einordnen und begründet Stellung beziehen,
 - eine **persönliche AI Policy** formulieren, die Delegation, Description, Discernment und Diligence in eigene Praxisregeln übersetzt.
 :::
 
-Beide Hausaufgaben sind die Capstone-Leistungen der Workshop-Reihe. Übung 6 ist ein **Positionspapier** zwischen 500 und 800 Wörtern. Übung 7 ist ein **Personal AI Policy**-Dokument als Capstone-Hausaufgabe.
+Drei Hausaufgaben — die UiPath-Vertiefung baut auf der Kennenlern-Übung aus Workshop 2 auf, die zwei letzten sind die Capstone-Leistungen der Workshop-Reihe.
+
+## UiPath-Vertiefung — Excel-zu-PDF-Bot {#sec-uipath-vertiefung}
+
+**Modus:** Hausaufgabe nach Workshop 2 · **Format:** Screenshot-Dokumentation und kurzer Beschreibungstext · **4D-Bezug:** Delegate / Vertiefung Process Automation.
+
+Bauen Sie auf der Kennenlern-Übung aus Workshop 2 auf und arbeiten Sie mit einem vorbereiteten UiPath-Bot, der eine Excel-Datei mit Eingangsrechnungen einliest, eine Bedingung prüft (USt-ID-Validität oder Schwellwert) und eine zusammenfassende PDF erzeugt. Setup: UiPath Cloud Studio Web (aus Workshop 2 bereits eingerichtet), Beispiel-Excel `data/eingangsrechnungen-beispiel.xlsx` und Vorlage-Bot `code/uipath-excel-zu-pdf-template.xaml` aus dem Workshop-Repo.
+
+Vorgehen: Bot in Studio Web öffnen, Workflow-Struktur lesen — welche Activities laufen in welcher Reihenfolge ab? Bot mit der Beispiel-Excel starten, Output-PDF prüfen. Dann eine Aktivität anpassen — etwa den Schwellwert für die sachliche Prüfung ändern, ein zusätzliches Prüfkriterium ergänzen („nur Rechnungen über 1.000 Euro in den Report") oder eine zweite Output-Datei (Markdown statt PDF) hinzufügen. Ergebnis vorher/nachher mit zwei Screenshots dokumentieren und in fünf Sätzen erklären, was geändert wurde und welche Wirkung das auf den Output hat.
+
+**Erweiterung für sehr motivierte Studierende.** Schlagen Sie eine Stelle im Bot vor, an der **Cognitive Automation** den Bot ergänzen könnte — etwa ein LLM-Aufruf zur Klassifikation des Rechnungsbetreffs oder eine OCR-Schicht für unstrukturierte PDF-Eingaben. Welche Activity würde dazu hinzukommen? Welche neue Fehlerquelle entsteht? Diese Überlegung knüpft direkt an die Hybrid-Items aus dem Diagnose-Quiz in Workshop 1 an und liefert ein konkretes Beispiel für ein Cognitive-Automation-Ergänzungs-Szenario, das Sie in der Personal AI Policy als Anwendungsfall benennen können.
+
+![Warum technische Implementierungen scheitern — Datenqualität, Tool-Integration und das Spannungsfeld Standard vs. Custom dominieren. Adaptiert nach Flyvbjerg & Gardner (2023) und Finney & Corbett (2007).](../images/why-do-tech-implementations-fail-data-qual-tool-integration-standards-vs-custom-TAM-flyvbjerg_gardner-2023_finney-corbett-2007.png){fig-alt="Visualisierung typischer Scheitergründe technischer Implementierungen mit den Treibern Datenqualität, Tool-Integration und Standard-versus-Custom-Konfiguration"}
 
 ## Übung 6 — Das Dilemma der Mitte {#sec-uebung-6}
 
-**Modus:** Hausaufgabe nach Workshop 2 · **Format:** Positionspapier 500–800 Wörter · **4D-Bezug:** Diligence.
+**Modus:** Hausaufgabe nach Workshop 2 · **Format:** Positionspapier 500–800 Wörter (PDF, APA, mit Quellenverzeichnis) · **4D-Bezug:** Diligence.
 
 ![Sorgen vor GenAI im Berufsalltag — Datenschutz, Qualitätsverlust, Verantwortungsdiffusion.](../images/fear-genai-effects.png){fig-alt="Visualisierung typischer Sorgen vor KI-Einsatz im Berufsalltag, darunter Datenschutz, Qualitätsverlust und Verantwortungsdiffusion"}
 
-### Ziel
+Beschreiben Sie ein konkretes **Dilemma der Mitte** — eine Situation aus Tax, Audit oder Advisory, in der KI-Einsatz weder klar verboten noch klar geboten ist — und beziehen Sie begründet Stellung. Wählen Sie einen realistischen, aber nicht-mandantenbezogenen Sachverhalt. Material aus Workshop 1 (4D-Framework) und Workshop 2 (Discernment, Diligence) als Anker.
 
-Ein konkretes **Dilemma der Mitte** beschreiben — also eine Situation, in der KI-Einsatz weder klar verboten noch klar geboten ist — und begründet Stellung beziehen.
+Vorgehen: Schildern Sie das Dilemma in drei bis fünf Sätzen. Listen Sie mindestens drei Argumente für KI-Einsatz und mindestens drei dagegen. Beziehen Sie eine begründete Position mit Verweis auf mindestens zwei Quellen aus der Bibliographie. Leiten Sie eine eigene **Diligence-Regel** ab, die Sie aus diesem Fall übernehmen.
 
-### Setup
-
-- Ein realistisches, aber **nicht-mandantenbezogenes** Dilemma aus Tax, Audit oder Advisory.
-- Material aus Workshop 1 (4D-Framework) und Workshop 2 (Discernment, Diligence).
-
-### Schritte
-
-1. Dilemma in 3–5 Sätzen schildern.
-2. Argumente für KI-Einsatz auflisten (mind. drei).
-3. Argumente gegen KI-Einsatz auflisten (mind. drei).
-4. Begründete Position beziehen, mit Verweis auf mindestens **zwei** Quellen aus der Bibliographie.
-5. Eigene **Diligence-Regel** ableiten, die Sie aus diesem Fall übernehmen.
-
-### Deliverable
-
-Positionspapier 500–800 Wörter (PDF), formatiert nach APA, mit Quellenverzeichnis.
-
-### Bewertungskriterien
-
-Klarheit der Dilemma-Schilderung · Ausgewogenheit der Argumente · Begründungstiefe der Position · Übertragbarkeit der abgeleiteten Diligence-Regel · APA-konformes Zitieren.
-
-### Tutor-Prompt
-
-::: {.callout-tip}
-> Ich schreibe in Übung 6 ein Positionspapier zum Dilemma *[einfügen]*. Hier mein Argumentations-Skelett: [einfügen]. Bitte stellen Sie mir **drei kritische Rückfragen**, die meine Argumentation am stärksten herausfordern — ohne mir die Antworten vorzugeben. Schlagen Sie **eine** Quelle aus der Bibliographie vor, die meine Position vertieft, und **eine**, die ihr widerspricht.
-:::
-
-### Was, wenn …
-
-::: {.callout-warning}
-- **Mein Dilemma ist eigentlich klar entscheidbar?** → Dann ist es kein Dilemma der Mitte. Frage Sie, in welcher Variante des Falls sich die Antwort kippen würde — das ist Ihr Dilemma.
-- **Ich finde nur Argumente in eine Richtung?** → Tutor um eine **Steelman-Version** der Gegenposition bitten.
-:::
+**Wer früh fertig ist.** Eine Steelman-Version der Gegenposition formulieren — die stärkste Variante der Position, gegen die Sie argumentieren. Wenn Ihre Begründung gegen die Steelman noch standhält, ist sie tragfähig.
 
 ## Übung 7 — Personal AI Policy {#sec-uebung-7}
 
-**Modus:** Capstone-Hausaufgabe · **Format:** Eigenes Policy-Dokument · **4D-Bezug:** integrativ über alle vier Kompetenzen.
+**Modus:** Capstone-Hausaufgabe · **Format:** Eigenes Policy-Dokument, 1–3 Seiten, mit Datum, Versionsnummer und Querverweisen zu mindestens drei Übungen · **4D-Bezug:** integrativ über alle vier Kompetenzen.
 
 ![Bewusstes Lernen neuer KI-Prozesse — die eigene Praxis aktiv gestalten statt sie geschehen lassen.](../images/teaching-new-genai-processes.png){fig-alt="Symbolbild zum bewussten Erlernen und Gestalten neuer KI-gestützter Arbeitsprozesse"}
 
-### Ziel
+Formulieren Sie eine **persönliche AI Policy**, die festlegt, wann, wie und mit welchen Schutzmechanismen Sie KI in Ihrer Berufspraxis einsetzen. Adressat: Sie selbst plus eine fiktive Aufsichtsperson. Material aus allen Workshop-Übungen plus Berufsrechtsmaterial — WPO § 43, StBerG § 57, DSGVO-Grundlagen, siehe [Wissensbasis · Recht und Berufsstand](06-wissensbasis.qmd#sec-recht).
 
-Eine **persönliche AI Policy** formulieren, die festlegt, wann, wie und mit welchen Schutzmechanismen Sie KI in Ihrer Berufspraxis einsetzt. Adressat: Sie selbst plus eine fiktive Aufsichtsperson.
-
-### Setup
-
-- Erkenntnisse aus allen Workshop-1- und Workshop-2-Übungen.
-- Berufsrechtsmaterial: WPO § 43, StBerG § 57, DSGVO-Grundlagen — siehe [Wissensbasis · Recht und Berufsstand](06-wissensbasis.qmd#sec-recht).
-
-### Aufbau (Vorschlag)
+Aufbau in sieben Sektionen:
 
 1. **Geltungsbereich** — Für welche Tätigkeiten gilt die Policy? Wo nicht?
 2. **Delegation-Regeln** — Welche Aufgabenklassen darf ich delegieren? Welche nie?
 3. **Description-Regeln** — Welche Mindeststandards an System-Prompts gelten?
 4. **Discernment-Regeln** — Welche Prüfschritte sind Pflicht? Welche Belege müssen bleiben?
-5. **Diligence-Regeln** — Wie dokumentiere ich KI-Einsatz revisionsfest? Wann offenlege?
+5. **Diligence-Regeln** — Wie dokumentiere ich KI-Einsatz revisionsfest? Wann offenlegen?
 6. **Eskalationspfade** — Was tue ich, wenn eine Regel verletzt wurde?
 7. **Review-Rhythmus** — Wann überarbeite ich die Policy?
 
-### Deliverable
-
-Personal-AI-Policy-Dokument (1–3 Seiten), strukturiert nach den sieben Sektionen, mit Datum, Versionsnummer und Querverweisen zu mindestens drei Übungen aus der Workshop-Reihe.
-
-### Bewertungskriterien
-
-Vollständigkeit der sieben Sektionen · Konkretheit der Regeln (keine Allgemeinplätze) · Kohärenz mit Berufsrecht · sichtbare Spuren der eigenen Übungen aus Tag 1 und 2.
-
-### Tutor-Prompt
-
-::: {.callout-tip}
-> Ich schreibe meine Personal AI Policy. Hier ist mein Entwurf zu Sektion *[einfügen]*: [Text einfügen]. Bitte prüfen Sie sie gegen **drei Kriterien**: (a) Konkretheit (keine Allgemeinplätze), (b) Kohärenz mit Berufsrecht (WPO/StBerG/DSGVO), (c) Anschlussfähigkeit an meine Übungen aus Tag 1/2. Machen Sie **einen** zugespitzten Verbesserungsvorschlag pro Kriterium.
-:::
-
-### Was, wenn …
-
-::: {.callout-warning}
-- **Meine Policy klingt wie eine generische Compliance-Liste?** → Mindestens drei Regeln umschreiben, sodass sie eine konkrete Übung aus Tag 1 oder 2 referenzieren.
-- **Ich kann nicht entscheiden, ob etwas Pflicht oder Empfehlung ist?** → Tutor um eine *„Was-wenn-Verletzt"*-Analyse pro Regel bitten und daraus die Schwere ableiten.
-:::
+**Wer früh fertig ist.** Mindestens drei Regeln so umformulieren, dass sie konkret eine Übung aus Tag 1 oder 2 referenzieren. Dadurch wird aus der generischen Compliance-Liste ein persönliches, übertragbares Dokument.
