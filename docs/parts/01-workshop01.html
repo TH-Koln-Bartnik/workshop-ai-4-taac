@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Workshop 1 — AI Fluency Framework – KI in Tax, Audit &amp; Advisory</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../parts/02-uebungen-w1.html" rel="next">
+<link href="../index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b01bd6d4efae90f46a656a454a0cd977.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../parts/01-workshop01.html">Teil 1 — Workshop 1 (Di, 12.05.)</a></li><li class="breadcrumb-item"><a href="../parts/01-workshop01.html"><span class="chapter-title">Workshop 1 — AI Fluency Framework</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/th-koeln-logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">KI in Tax, Audit &amp; Advisory</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/TH-Koln-Bartnik/workshop-ai-4-taac" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
+    <a href="../KI-in-Tax,-Audit---Advisory.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=|url|" title="LinkedIn" class="quarto-navigation-tool px-1" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Suchen"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Willkommen</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teil 1 — Workshop 1 (Di, 12.05.)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../parts/01-workshop01.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Workshop 1 — AI Fluency Framework</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../parts/02-uebungen-w1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übungen Workshop 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teil 2 — Workshop 2 (Mi, 13.05.)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../parts/03-workshop02.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Workshop 2 — Prozessmodellierung, Automatisierung, 4D-Use-Case</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../parts/04-uebungen-w2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übungen Workshop 2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teil 3 — Hausaufgaben &amp; Wissensbasis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../parts/05-hausaufgaben.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hausaufgaben nach Workshop 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../parts/06-wissensbasis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Wissensbasis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Anhang</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/quickstart.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Quickstart</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/troubleshooting.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Troubleshooting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/tutor-prompt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Tutor-Master-Prompt</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Literatur</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhalt</h2>
+   
+  <ul>
+  <li><a href="#lernziele" id="toc-lernziele" class="nav-link active" data-scroll-target="#lernziele">Lernziele</a></li>
+  <li><a href="#inhalte-des-workshops" id="toc-inhalte-des-workshops" class="nav-link" data-scroll-target="#inhalte-des-workshops">Inhalte des Workshops</a></li>
+  <li><a href="#diskussionsfragen" id="toc-diskussionsfragen" class="nav-link" data-scroll-target="#diskussionsfragen">Diskussionsfragen</a></li>
+  <li><a href="#aufgaben" id="toc-aufgaben" class="nav-link" data-scroll-target="#aufgaben">Aufgaben</a></li>
+  <li><a href="#hausaufgabe-zum-folgetag" id="toc-hausaufgabe-zum-folgetag" class="nav-link" data-scroll-target="#hausaufgabe-zum-folgetag">Hausaufgabe zum Folgetag</a></li>
+  <li><a href="#hintergrund-werkzeuge-ressourcen" id="toc-hintergrund-werkzeuge-ressourcen" class="nav-link" data-scroll-target="#hintergrund-werkzeuge-ressourcen">Hintergrund / Werkzeuge / Ressourcen</a></li>
+  <li><a href="#weiterführend" id="toc-weiterführend" class="nav-link" data-scroll-target="#weiterführend">Weiterführend</a></li>
+  <li><a href="#tutor" id="toc-tutor" class="nav-link" data-scroll-target="#tutor">Tutor</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/TH-Koln-Bartnik/workshop-ai-4-taac/edit/main/parts/01-workshop01.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/TH-Koln-Bartnik/workshop-ai-4-taac/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../parts/01-workshop01.html">Teil 1 — Workshop 1 (Di, 12.05.)</a></li><li class="breadcrumb-item"><a href="../parts/01-workshop01.html"><span class="chapter-title">Workshop 1 — AI Fluency Framework</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Workshop 1 — AI Fluency Framework</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Dienstag, 12.05.2026 · 16:00–19:00 · Campus Südstadt</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="th-color-bar">
+
+</div>
+<section id="lernziele" class="level2">
+<h2 class="anchored" data-anchor-id="lernziele">Lernziele</h2>
+<section id="was-sie-nach-diesem-workshop-können" class="level4 lernziel-box">
+<h4 class="anchored" data-anchor-id="was-sie-nach-diesem-workshop-können">Was Sie nach diesem Workshop können</h4>
+<ul>
+<li><em>Process Automation</em> und <em>Cognitive Automation</em> an konkreten Tätigkeiten aus Tax, Audit und Advisory unterscheiden — und Grenzfälle als Hybrid benennen,</li>
+<li>das <strong>4D-Framework</strong> (Delegate, Describe, Discern, Diligence) in eigenen Worten erklären und die beiden Loops im Kopf nachzeichnen,</li>
+<li>die drei Konfigurationen <strong>LLM allein</strong>, <strong>erweitertes LLM</strong> und <strong>Agent</strong> unterscheiden und für eine eigene Frage die passende auswählen,</li>
+<li>einen einfachen Prompt nach <strong>RTF</strong> und <strong>CREATE</strong> strukturieren und an einer Aufgabe aus dem eigenen Lerngebiet anwenden,</li>
+<li>einen Tutor-Bot für das eigene Fachgebiet bauen und mit einer kleinen <strong>Test-Suite</strong> systematisch prüfen.</li>
+</ul>
+</section>
+</section>
+<section id="inhalte-des-workshops" class="level2">
+<h2 class="anchored" data-anchor-id="inhalte-des-workshops">Inhalte des Workshops</h2>
+<p>Drei Stunden, eng verzahnt aus fünf kurzen Inputs (zusammen 53 Minuten), vier Übungen mit je 15 Minuten Bearbeitung plus Think-Pair-Share und Plenum-Auflösung (zusammen 88 Minuten), einer Pause (10 Minuten) und Begrüßung/Abschluss (9 Minuten). Alle Übungen sind im Block eingebettet, in dem ihr inhaltlicher Anker liegt — nicht in einen separaten Übungsteil verschoben.</p>
+<div class="week-card">
+<div class="card-header">
+<p>🟦 Block 0 — Begrüßung und Kalibrierung · 5 Min</p>
+</div>
+<p>Begrüßung, Lernziele, Hinweis auf den Tutor, kurze Verständigung über Vorerfahrungen mit generativer KI.</p>
+</div>
+<div class="week-card">
+<div class="card-header">
+<p>🟦 Block 1 — Process vs.&nbsp;Cognitive Automation · 10 Min</p>
+</div>
+<p><strong>Process Automation</strong> — regelbasiertes Abarbeiten strukturierter Workflows ohne Verstehen. <strong>Cognitive Automation</strong> — KI-gestütztes Schließen, Klassifizieren, Zusammenfassen unstrukturierter Inhalte. Das <em>Service-Automation-Continuum</em> nach <span class="citation" data-cites="lacity2021becoming">Lacity &amp; Willcocks (<a href="../references.html#ref-lacity2021becoming" role="doc-biblioref">2021</a>)</span> und <span class="citation" data-cites="willcocks2024evolution">Willcocks &amp; Lacity (<a href="../references.html#ref-willcocks2024evolution" role="doc-biblioref">2024</a>)</span> ordnet beide Kategorien plus <em>Intelligent Automation</em> als orchestrierende Schicht in eine kohärente Sourcing-Strategie ein.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/automation-continuum-process-automation-cognitive-automation-lacity-willcocks-2021.png" class="img-fluid figure-img" alt="Visualisierung des Service-Automation-Continuum mit den Stufen RPA, Cognitive Computing, Cognitive Automation und Intelligent Automation, jeweils mit zunehmender Komplexität und Autonomie"></p>
+<figcaption>Service-Automation-Continuum von Process Automation über Cognitive Automation bis Intelligent Automation. Adaptiert nach Lacity &amp; Willcocks (2021).</figcaption>
+</figure>
+</div>
+<p>Drei Verankerungs-Beispiele aus Tax/Audit: Bank-zu-SAP-Abstimmung (Process); semantische Klassifikation eingehender Belege (Cognitive); Ende-zu-Ende-Bot, der klassifiziert, einbucht und Differenzen meldet (Intelligent Automation).</p>
+<p>➡️ <a href="../parts/02-uebungen-w1.html#sec-uebung-1" class="assignment-badge">Übung 1 — Diagnose-Quiz Process vs.&nbsp;Cognitive</a> · 18 Min (8 Min Solo + 4 Min TPS + 3 Min Plenum + 3 Min Puffer)</p>
+</div>
+<div class="week-card">
+<div class="card-header">
+<p>🟦 Block 2 — 4D-Framework Kurzdurchlauf · 7 Min</p>
+</div>
+<p>Vier Kernkompetenzen, je drei Subkategorien nach <span class="citation" data-cites="dakan2025framework">Dakan &amp; Feller (<a href="../references.html#ref-dakan2025framework" role="doc-biblioref">2025</a>)</span>. <strong>Delegate</strong> (Problem-, Platform-, Task-Awareness) · <strong>Describe</strong> (Product-, Process-, Performance-Description) · <strong>Discern</strong> (Product-, Process-, Performance-Discernment) · <strong>Diligence</strong> (Creation-, Transparency-, Deployment-Diligence). Zwei Loops: <em>Delegate–Diligence</em> (strategisch), <em>Describe–Discern</em> (operativ). Heute behandeln wir Delegate, Describe und Discern in dieser Reihenfolge; Diligence wird morgen vertieft.</p>
+</div>
+<div class="week-card">
+<div class="card-header">
+<p>🟦 Block 3 — Delegate: Modell, Harness, agentische Nutzung · 12 Min</p>
+</div>
+<p>Drei Konfigurationen sauber trennen:</p>
+<ul>
+<li><strong>LLM allein</strong> — ein Textgenerator. Stellen Sie sich einen sehr belesenen Bibliothekar vor, der nur reden kann, nichts nachschlagen und nichts ausführen.</li>
+<li><strong>Erweitertes LLM</strong> — dasselbe Modell, eingebettet in eine <em>Harness</em> mit Tools wie Web-Search, File-Upload, Code-Execution. Der Bibliothekar bekommt eine Werkbank.</li>
+<li><strong>Agent</strong> — ein erweitertes LLM, das in einer Schleife arbeitet: Ziel, Plan, Werkzeug, Bewertung, neuer Plan. Der Bibliothekar erledigt eigenständig mehrschrittige Aufgaben und meldet sich erst zurück, wenn er fertig ist.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/llm-augmented-visualization.png" class="img-fluid figure-img" alt="Visualisierung eines LLM-Kerns, umgeben von einem Werkzeugring aus Web-Search, Memory, Tools und User Interface"></p>
+<figcaption>LLM-Kern und Harness als Werkzeugring — was ein Modell tatsächlich kann, hängt mindestens so stark von der Harness ab wie vom Modell selbst.</figcaption>
+</figure>
+</div>
+<p>Die didaktische Pointe: Wer Aufgaben delegieren will, muss wissen, in welcher der drei Konfigurationen das eigene System läuft, weil Fähigkeiten und Risikoprofil substanziell verschieden sind <span class="citation" data-cites="grootendorst2025visual mollick2024cointelligence">(<a href="../references.html#ref-grootendorst2025visual" role="doc-biblioref">Grootendorst, 2025</a>; <a href="../references.html#ref-mollick2024cointelligence" role="doc-biblioref">Mollick, 2024</a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/jagged-frontier-genai.png" class="img-fluid figure-img" alt="Visualisierung der Jagged Frontier als zerklüftete Linie, die starke und schwache Fähigkeitsbereiche von KI-Systemen unregelmäßig trennt"></p>
+<figcaption>Die Jagged Frontier — KI-Fähigkeiten sind unregelmäßig verteilt, mit unerwartet starken und unerwartet schwachen Bereichen. Adaptiert nach Dell’Acqua et al.&nbsp;(2023) und Mollick (2024).</figcaption>
+</figure>
+</div>
+<p>➡️ <a href="../parts/02-uebungen-w1.html#sec-uebung-2" class="assignment-badge">Übung 2 — Karriereentwicklung im Modellvergleich</a> · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)</p>
+</div>
+<div class="week-card">
+<div class="card-header">
+<p>☕ Pause · 10 Min</p>
+</div>
+</div>
+<div class="week-card">
+<div class="card-header">
+<p>🟦 Block 4 — Describe: RTF und CREATE · 12 Min</p>
+</div>
+<p>Leitanalogie: Der Chatbot ist eher ein junger Nachhilfeschüler als ein Taschenrechner — er versteht Anweisungen, braucht Kontext, möchte gezeigt bekommen, was Sie wollen, und wird mit Beispielen besser. Inhaltlicher Anker: das Kapitel <em>How to speak</em> aus dem begleitenden Lehrbuch <span class="citation" data-cites="bartnik2026genai4teaching">(<a href="../references.html#ref-bartnik2026genai4teaching" role="doc-biblioref">Bartnik, 2026</a>)</span>.</p>
+<p>Zwei Schemata:</p>
+<ul>
+<li><strong>RTF</strong> — <em>Role, Task, Format</em>. Sparsam und schnell. Beispiel: „Sie sind Wirtschaftsprüferin. Erläutern Sie das Going-Concern-Prinzip. Antworten Sie in drei kurzen Absätzen für Erstsemester.”</li>
+<li><strong>CREATE</strong> — <em>Character, Request, Examples, Adjustments, Type of output, Extras</em>. Reicher und für komplexe Aufgaben besser geeignet. Beide Schemata mit identischer Beispielaufgabe vorführen, damit der Unterschied direkt sichtbar wird.</li>
+</ul>
+<p>➡️ <a href="../parts/02-uebungen-w1.html#sec-uebung-3" class="assignment-badge">Übung 3 — Prompt-Umbau und Tutor-Bot</a> · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)</p>
+</div>
+<div class="week-card">
+<div class="card-header">
+<p>🟦 Block 5 — Discern: Outputs systematisch prüfen · 12 Min</p>
+</div>
+<p>Zwei Ideen, eine Übersetzung auf Tax/Audit:</p>
+<ul>
+<li><strong>RAGAS-Idee</strong> — eine Bewertung von Antworten aus Retrieval-Augmented-Systemen entlang weniger Kerngrößen: <em>Faithfulness</em> (passt die Antwort zu den abgerufenen Quellen?), <em>Answer Relevance</em> (beantwortet sie die Frage?), <em>Context Precision</em> und <em>Context Recall</em> (wurden die richtigen Quellen abgerufen?) <span class="citation" data-cites="es2024ragas">(<a href="../references.html#ref-es2024ragas" role="doc-biblioref">Es et al., 2024</a>)</span>. Im Kern: ein Test-Set aus Fragen mit erwarteten Antworten, das Sie immer wieder durchlaufen lassen.</li>
+<li><strong>Red-Green-TDD nach Willison</strong> — Testfälle zuerst. Sie schreiben fünf bis zehn Beispielfragen mit gewünschten Antworten, lassen den Agenten durchlaufen, markieren <em>rot</em> (fehlerhaft), <em>gelb</em> (teilweise) oder <em>grün</em> (korrekt). Dann iterieren Sie Prompt, Modell und Harness, bis möglichst viele Tests grün werden <span class="citation" data-cites="willison2025redgreen">(<a href="../references.html#ref-willison2025redgreen" role="doc-biblioref">Willison, 2025</a>)</span>. Die Methode kommt aus dem Test-Driven Development der Software-Entwicklung — Kent Becks „Red first” auf Prompt-Ebene übertragen.</li>
+</ul>
+<p>Übersetzung auf Tax/Audit: Eine kleine Sammlung typischer Berufsfragen (Anwendung des Reverse-Charge-Verfahrens, Going-Concern-Prüfung, Behandlung von Rückstellungen) wird zur Test-Suite. Genau das bauen Sie in der nächsten Übung — zum Tutor-Bot aus Übung 3.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/rag-hope-genai-bookshelf.png" class="img-fluid figure-img" alt="Bildhafte Darstellung von Retrieval-Augmented Generation als Bücherregal, aus dem ein KI-Assistent vor der Antwort nachschlägt"></p>
+<figcaption>RAG als Bücherregal-Metapher — statt aus dem Gedächtnis zu antworten, schlägt das Modell zuerst in einer externen Quelle nach.</figcaption>
+</figure>
+</div>
+<p>➡️ <a href="../parts/02-uebungen-w1.html#sec-uebung-4" class="assignment-badge">Übung 4 — Tutor-Bot systematisch prüfen</a> · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)</p>
+</div>
+<div class="week-card">
+<div class="card-header">
+<p>🟧 Block 6 — Abschluss und Brücke zu Tag 2 · 9 Min</p>
+</div>
+<p>Kurzer Rückblick auf die vier Übungen: Welche der drei Konfigurationen (LLM allein, erweitertes LLM, Agent) ist Ihnen heute am vertrautesten geworden? Welche Test-Frage aus Übung 4 würde morgen im echten Berufsalltag bestehen? Brücke zu Workshop 2 (Mittwoch, 13.05.): <strong>Diligence</strong> als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.</p>
+</div>
+</section>
+<section id="diskussionsfragen" class="level2">
+<h2 class="anchored" data-anchor-id="diskussionsfragen">Diskussionsfragen</h2>
+<ul>
+<li>An welcher Stelle in Ihrem Studium würde ein Tutor-Bot Sie heute schon ersetzen — und an welcher nicht?</li>
+<li>Item 9 des Diagnose-Quiz (OCR plus ERP-Einspielung) ist ein Hybrid aus <em>Cognitive</em> und <em>Process</em>. Wo verläuft die Grenze in einem realen Workflow Ihrer Wahl?</li>
+<li>Welche Konfiguration aus <em>LLM allein · erweitertes LLM · Agent</em> passt zu welcher Aufgabenklasse Ihres Studienalltags? Wo lohnt sich der Aufpreis für ein stärkeres Modell oder eine reichere Harness konkret?</li>
+<li>Wann ist eine Test-Suite mit fünf Fragen aussagekräftiger als eine spontane Qualitätsprüfung? Wann nicht?</li>
+</ul>
+</section>
+<section id="aufgaben" class="level2">
+<h2 class="anchored" data-anchor-id="aufgaben">Aufgaben</h2>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Vier Übungen im Workshop, eingebettet in die Inputs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="../parts/02-uebungen-w1.html#sec-uebung-1" class="assignment-badge">Übung 1 — Diagnose-Quiz</a> <a href="../parts/02-uebungen-w1.html#sec-uebung-2" class="assignment-badge">Übung 2 — Karriereentwicklung</a> <a href="../parts/02-uebungen-w1.html#sec-uebung-3" class="assignment-badge">Übung 3 — Prompt-Umbau und Tutor-Bot</a></p>
+<p>Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine <strong>Erweiterungsfrage für schnelle Studierende</strong> — wer früh fertig ist, vertieft, statt zu warten. Die Discern-Übung <em>Tutor-Bot systematisch prüfen</em> eröffnet Workshop 2 als <a href="../parts/04-uebungen-w2.html#sec-test-suite">Übung 1 — Tutor-Bot Test-Suite</a>.</p>
+</div>
+</div>
+</section>
+<section id="hausaufgabe-zum-folgetag" class="level2">
+<h2 class="anchored" data-anchor-id="hausaufgabe-zum-folgetag">Hausaufgabe zum Folgetag</h2>
+<p>Für Workshop 2 brauchen Sie zwei kostenfreie Accounts. Bitte vor der Sitzung am Mittwoch einrichten — beides dauert jeweils etwa fünf Minuten.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Zwei Accounts vor Workshop 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Signavio Academic Edition</strong> — Account anlegen unter <a href="https://academic.signavio.com/p/explorer" class="uri">https://academic.signavio.com/p/explorer</a>. Wird in Workshop 2 für die BPMN-Modellierung des Rechnungseingangsprozesses genutzt. Hochschul-E-Mail-Adresse wird empfohlen, kostenfrei, kein Download nötig.</li>
+<li><strong>UiPath Cloud</strong> — Account anlegen unter <a href="https://cloud.uipath.com/" class="uri">https://cloud.uipath.com/</a>. Wird für das Lesen und Anpassen des Excel-zu-PDF-Bots genutzt. Free-Tier reicht; <em>Studio Web</em> läuft direkt im Browser, kein lokales Studio nötig.</li>
+</ul>
+<p><strong>Bitte zu Workshop 2 mitbringen:</strong> beide Logins (E-Mail und Passwort gespeichert oder im Browser eingeloggt). Wer keinen Account anlegen kann, schaut beim Sitznachbarn mit — verpasst aber das Hands-on.</p>
+</div>
+</div>
+</section>
+<section id="hintergrund-werkzeuge-ressourcen" class="level2">
+<h2 class="anchored" data-anchor-id="hintergrund-werkzeuge-ressourcen">Hintergrund / Werkzeuge / Ressourcen</h2>
+<ul>
+<li><strong>Originalmaterial 4D-Framework</strong> — Cheat Sheet und Practical Overview von <span class="citation" data-cites="dakan2025framework">Dakan &amp; Feller (<a href="../references.html#ref-dakan2025framework" role="doc-biblioref">2025</a>)</span>.</li>
+<li><strong>Begleitlehrbuch</strong> — <a href="https://th-koln-bartnik.github.io/genai4teaching/kapitel02.html#sec-how-to-speak" target="_blank">Kapitel 2.4 <em>How to speak</em></a> und <a href="https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html#sec-general-tutor" target="_blank">Kapitel 7 <em>Tutor-Prompt-Sammlung</em></a>.</li>
+<li><strong>O*NET-Berufsbild</strong> — <a href="https://www.onetonline.org/link/summary/13-2011.00" target="_blank">Accountants and Auditors (13-2011.00)</a> als Faktenbasis für Übung 2.</li>
+<li><strong>Vergleichsplattform</strong> — <a href="https://arena.ai" target="_blank">arena.ai</a> mit Side-by-Side-Modus für Übung 2.</li>
+</ul>
+</section>
+<section id="weiterführend" class="level2">
+<h2 class="anchored" data-anchor-id="weiterführend">Weiterführend</h2>
+<ul>
+<li><span class="citation" data-cites="mollick2024cointelligence">Mollick (<a href="../references.html#ref-mollick2024cointelligence" role="doc-biblioref">2024</a>)</span> — <em>Co-intelligence: Living and working with AI</em> (Begleitlektüre zum Studium).</li>
+<li><span class="citation" data-cites="dellacqua2023navigating">Dell’Acqua et al. (<a href="../references.html#ref-dellacqua2023navigating" role="doc-biblioref">2023</a>)</span> — <em>Navigating the jagged technological frontier</em> (HBS Working Paper, empirisch zur Produktivitätswirkung).</li>
+<li><span class="citation" data-cites="grootendorst2025visual">Grootendorst (<a href="../references.html#ref-grootendorst2025visual" role="doc-biblioref">2025</a>)</span> — <em>A visual guide to LLM agents</em> (visuelle Erklärung des Harness-Konzepts und der drei Konfigurationen).</li>
+<li><span class="citation" data-cites="willison2025redgreen">Willison (<a href="../references.html#ref-willison2025redgreen" role="doc-biblioref">2025</a>)</span> — <em>Red-green test-driven development for agentic engineering</em> (didaktisch klare Einführung in TDD für KI-Systeme).</li>
+<li><span class="citation" data-cites="es2024ragas">Es et al. (<a href="../references.html#ref-es2024ragas" role="doc-biblioref">2024</a>)</span> — <em>RAGAS: Automated evaluation of retrieval augmented generation</em> (Originalpaper zur Bewertung von RAG-Systemen).</li>
+</ul>
+</section>
+<section id="tutor" class="level2">
+<h2 class="anchored" data-anchor-id="tutor">Tutor</h2>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tutor öffnen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://chatgpt.com/g/g-6a03076b4da88191b9e9ae9580a0c2ce-ki-tutor-fur-workshop-auditing-tax-advisory" target="_blank">Tutor — KI in Tax, Audit &amp; Advisory →</a></p>
+<p>Vorschlag-Prompt für diesen Workshop:</p>
+<blockquote class="blockquote">
+<p>Ich bereite Workshop 1 (AI Fluency Framework) im Modul <em>KI in Tax, Audit &amp; Advisory</em> vor. Bitte erklären Sie mir die Unterscheidung <em>Process Automation</em> versus <em>Cognitive Automation</em> an einem konkreten Beispiel meiner Wahl: [Beispiel einfügen]. Fragen Sie mich nach meinem Vorwissen, geben Sie eine kurze Lay-Erklärung vor jedem Fachbegriff und stellen Sie am Ende drei Diagnose-Fragen, mit denen ich mein Verständnis selbst prüfen kann.</p>
+</blockquote>
+</div>
+</div>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-bartnik2026genai4teaching" class="csl-entry" role="listitem">
+Bartnik, R. (2026). <em>GenAI für Lehre: Ein Werkstattbuch</em>. Eigenverlag, TH Köln. <a href="https://th-koln-bartnik.github.io/genai4teaching/">https://th-koln-bartnik.github.io/genai4teaching/</a>
+</div>
+<div id="ref-dakan2025framework" class="csl-entry" role="listitem">
+Dakan, R., &amp; Feller, J. (2025). <em>Framework for <span>AI</span> Fluency: Practical Overview Document (V 1.5)</em>. <a href="https://ringling.libguides.com/ai/framework">https://ringling.libguides.com/ai/framework</a>
+</div>
+<div id="ref-dellacqua2023navigating" class="csl-entry" role="listitem">
+Dell’Acqua, F., McFowland, E., Mollick, E. R., Lifshitz-Assaf, H., Kellogg, K., Rajendran, S., Krayer, L., Candelon, F., &amp; Lakhani, K. R. (2023). Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of <span>AI</span> on Knowledge Worker Productivity and Quality. <em>Harvard Business School Working Paper</em>, (24-013). <a href="https://doi.org/10.2139/ssrn.4573321">https://doi.org/10.2139/ssrn.4573321</a>
+</div>
+<div id="ref-es2024ragas" class="csl-entry" role="listitem">
+Es, S., James, J., Espinosa-Anke, L., &amp; Schockaert, S. (2024). <span>RAGAS</span>: Automated Evaluation of Retrieval Augmented Generation. <em>Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations</em>, 150–158. <a href="https://aclanthology.org/2024.eacl-demo.16/">https://aclanthology.org/2024.eacl-demo.16/</a>
+</div>
+<div id="ref-grootendorst2025visual" class="csl-entry" role="listitem">
+Grootendorst, M. (2025). <em>A Visual Guide to <span>LLM</span> Agents</em>. <a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents">https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-llm-agents</a>
+</div>
+<div id="ref-lacity2021becoming" class="csl-entry" role="listitem">
+Lacity, M., &amp; Willcocks, L. (2021). Becoming Strategic with Intelligent Automation. <em>MIS Quarterly Executive</em>, <em>20</em>(2), 1–14.
+</div>
+<div id="ref-mollick2024cointelligence" class="csl-entry" role="listitem">
+Mollick, E. (2024). <em>Co-intelligence: Living and Working with <span>AI</span></em>. Portfolio/Penguin.
+</div>
+<div id="ref-willcocks2024evolution" class="csl-entry" role="listitem">
+Willcocks, L., &amp; Lacity, M. (2024). The Evolution of Intelligent Automation as a Sourcing Option. In L. Willcocks, I. Oshri, &amp; J. Kotlarsky (Hrsg.), <em>Transformation in Global Outsourcing</em> (S. 327–353). Springer International Publishing. <a href="https://doi.org/10.1007/978-3-031-61022-6_9">https://doi.org/10.1007/978-3-031-61022-6_9</a>
+</div>
+<div id="ref-willison2025redgreen" class="csl-entry" role="listitem">
+Willison, S. (2025). <em>Red-Green Test-Driven Development for Agentic Engineering</em>. <a href="https://simonwillison.net/guides/agentic-engineering-patterns/red-green-tdd/">https://simonwillison.net/guides/agentic-engineering-patterns/red-green-tdd/</a>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link" aria-label="Willkommen">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Willkommen</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../parts/02-uebungen-w1.html" class="pagination-link" aria-label="Übungen Workshop 1">
+        <span class="nav-page-text"><span class="chapter-title">Übungen Workshop 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Quellcode</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Workshop 1 — AI Fluency Framework"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Dienstag, 12.05.2026 · 16:00–19:00 · Campus Südstadt"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>::: th-color-bar</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lernziele</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>::: lernziel-box</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Was Sie nach diesem Workshop können</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>*Process Automation* und *Cognitive Automation* an konkreten Tätigkeiten aus Tax, Audit und Advisory unterscheiden — und Grenzfälle als Hybrid benennen,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>das **4D-Framework** (Delegate, Describe, Discern, Diligence) in eigenen Worten erklären und die beiden Loops im Kopf nachzeichnen,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>die drei Konfigurationen **LLM allein**, **erweitertes LLM** und **Agent** unterscheiden und für eine eigene Frage die passende auswählen,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>einen einfachen Prompt nach **RTF** und **CREATE** strukturieren und an einer Aufgabe aus dem eigenen Lerngebiet anwenden,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>einen Tutor-Bot für das eigene Fachgebiet bauen und mit einer kleinen **Test-Suite** systematisch prüfen.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inhalte des Workshops</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Drei Stunden, eng verzahnt aus fünf kurzen Inputs (zusammen 53 Minuten), vier Übungen mit je 15 Minuten Bearbeitung plus Think-Pair-Share und Plenum-Auflösung (zusammen 88 Minuten), einer Pause (10 Minuten) und Begrüßung/Abschluss (9 Minuten). Alle Übungen sind im Block eingebettet, in dem ihr inhaltlicher Anker liegt — nicht in einen separaten Übungsteil verschoben.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>:::: week-card</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>::: card-header</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>🟦 Block 0 — Begrüßung und Kalibrierung · 5 Min</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Begrüßung, Lernziele, Hinweis auf den Tutor, kurze Verständigung über Vorerfahrungen mit generativer KI.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>:::: week-card</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>::: card-header</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>🟦 Block 1 — Process vs. Cognitive Automation · 10 Min</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>**Process Automation** — regelbasiertes Abarbeiten strukturierter Workflows ohne Verstehen. **Cognitive Automation** — KI-gestütztes Schließen, Klassifizieren, Zusammenfassen unstrukturierter Inhalte. Das *Service-Automation-Continuum* nach @lacity2021becoming und @willcocks2024evolution ordnet beide Kategorien plus *Intelligent Automation* als orchestrierende Schicht in eine kohärente Sourcing-Strategie ein.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="al">![Service-Automation-Continuum von Process Automation über Cognitive Automation bis Intelligent Automation. Adaptiert nach Lacity &amp; Willcocks (2021).](../images/automation-continuum-process-automation-cognitive-automation-lacity-willcocks-2021.png)</span>{fig-alt="Visualisierung des Service-Automation-Continuum mit den Stufen RPA, Cognitive Computing, Cognitive Automation und Intelligent Automation, jeweils mit zunehmender Komplexität und Autonomie"}</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Drei Verankerungs-Beispiele aus Tax/Audit: Bank-zu-SAP-Abstimmung (Process); semantische Klassifikation eingehender Belege (Cognitive); Ende-zu-Ende-Bot, der klassifiziert, einbucht und Differenzen meldet (Intelligent Automation).</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>➡️ <span class="co">[</span><span class="ot">Übung 1 — Diagnose-Quiz Process vs. Cognitive</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-1)</span>{.assignment-badge} · 18 Min (8 Min Solo + 4 Min TPS + 3 Min Plenum + 3 Min Puffer)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>:::: week-card</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>::: card-header</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>🟦 Block 2 — 4D-Framework Kurzdurchlauf · 7 Min</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Vier Kernkompetenzen, je drei Subkategorien nach @dakan2025framework. **Delegate** (Problem-, Platform-, Task-Awareness) · **Describe** (Product-, Process-, Performance-Description) · **Discern** (Product-, Process-, Performance-Discernment) · **Diligence** (Creation-, Transparency-, Deployment-Diligence). Zwei Loops: *Delegate–Diligence* (strategisch), *Describe–Discern* (operativ). Heute behandeln wir Delegate, Describe und Discern in dieser Reihenfolge; Diligence wird morgen vertieft.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>:::: week-card</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>::: card-header</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>🟦 Block 3 — Delegate: Modell, Harness, agentische Nutzung · 12 Min</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Drei Konfigurationen sauber trennen:</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**LLM allein** — ein Textgenerator. Stellen Sie sich einen sehr belesenen Bibliothekar vor, der nur reden kann, nichts nachschlagen und nichts ausführen.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Erweitertes LLM** — dasselbe Modell, eingebettet in eine *Harness* mit Tools wie Web-Search, File-Upload, Code-Execution. Der Bibliothekar bekommt eine Werkbank.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Agent** — ein erweitertes LLM, das in einer Schleife arbeitet: Ziel, Plan, Werkzeug, Bewertung, neuer Plan. Der Bibliothekar erledigt eigenständig mehrschrittige Aufgaben und meldet sich erst zurück, wenn er fertig ist.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="al">![LLM-Kern und Harness als Werkzeugring — was ein Modell tatsächlich kann, hängt mindestens so stark von der Harness ab wie vom Modell selbst.](../images/llm-augmented-visualization.png)</span>{fig-alt="Visualisierung eines LLM-Kerns, umgeben von einem Werkzeugring aus Web-Search, Memory, Tools und User Interface"}</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Die didaktische Pointe: Wer Aufgaben delegieren will, muss wissen, in welcher der drei Konfigurationen das eigene System läuft, weil Fähigkeiten und Risikoprofil substanziell verschieden sind <span class="co">[</span><span class="ot">@grootendorst2025visual; @mollick2024cointelligence</span><span class="co">]</span>.</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="al">![Die Jagged Frontier — KI-Fähigkeiten sind unregelmäßig verteilt, mit unerwartet starken und unerwartet schwachen Bereichen. Adaptiert nach Dell'Acqua et al. (2023) und Mollick (2024).](../images/jagged-frontier-genai.png)</span>{fig-alt="Visualisierung der Jagged Frontier als zerklüftete Linie, die starke und schwache Fähigkeitsbereiche von KI-Systemen unregelmäßig trennt"}</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>➡️ <span class="co">[</span><span class="ot">Übung 2 — Karriereentwicklung im Modellvergleich</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-2)</span>{.assignment-badge} · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>:::: week-card</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>::: card-header</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>☕ Pause · 10 Min</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>:::: week-card</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>::: card-header</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>🟦 Block 4 — Describe: RTF und CREATE · 12 Min</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>Leitanalogie: Der Chatbot ist eher ein junger Nachhilfeschüler als ein Taschenrechner — er versteht Anweisungen, braucht Kontext, möchte gezeigt bekommen, was Sie wollen, und wird mit Beispielen besser. Inhaltlicher Anker: das Kapitel *How to speak* aus dem begleitenden Lehrbuch <span class="co">[</span><span class="ot">@bartnik2026genai4teaching</span><span class="co">]</span>.</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>Zwei Schemata:</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**RTF** — *Role, Task, Format*. Sparsam und schnell. Beispiel: „Sie sind Wirtschaftsprüferin. Erläutern Sie das Going-Concern-Prinzip. Antworten Sie in drei kurzen Absätzen für Erstsemester."</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**CREATE** — *Character, Request, Examples, Adjustments, Type of output, Extras*. Reicher und für komplexe Aufgaben besser geeignet. Beide Schemata mit identischer Beispielaufgabe vorführen, damit der Unterschied direkt sichtbar wird.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>➡️ <span class="co">[</span><span class="ot">Übung 3 — Prompt-Umbau und Tutor-Bot</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-3)</span>{.assignment-badge} · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>:::: week-card</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>::: card-header</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>🟦 Block 5 — Discern: Outputs systematisch prüfen · 12 Min</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Zwei Ideen, eine Übersetzung auf Tax/Audit:</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**RAGAS-Idee** — eine Bewertung von Antworten aus Retrieval-Augmented-Systemen entlang weniger Kerngrößen: *Faithfulness* (passt die Antwort zu den abgerufenen Quellen?), *Answer Relevance* (beantwortet sie die Frage?), *Context Precision* und *Context Recall* (wurden die richtigen Quellen abgerufen?) <span class="co">[</span><span class="ot">@es2024ragas</span><span class="co">]</span>. Im Kern: ein Test-Set aus Fragen mit erwarteten Antworten, das Sie immer wieder durchlaufen lassen.</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Red-Green-TDD nach Willison** — Testfälle zuerst. Sie schreiben fünf bis zehn Beispielfragen mit gewünschten Antworten, lassen den Agenten durchlaufen, markieren *rot* (fehlerhaft), *gelb* (teilweise) oder *grün* (korrekt). Dann iterieren Sie Prompt, Modell und Harness, bis möglichst viele Tests grün werden <span class="co">[</span><span class="ot">@willison2025redgreen</span><span class="co">]</span>. Die Methode kommt aus dem Test-Driven Development der Software-Entwicklung — Kent Becks „Red first" auf Prompt-Ebene übertragen.</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>Übersetzung auf Tax/Audit: Eine kleine Sammlung typischer Berufsfragen (Anwendung des Reverse-Charge-Verfahrens, Going-Concern-Prüfung, Behandlung von Rückstellungen) wird zur Test-Suite. Genau das bauen Sie in der nächsten Übung — zum Tutor-Bot aus Übung 3.</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="al">![RAG als Bücherregal-Metapher — statt aus dem Gedächtnis zu antworten, schlägt das Modell zuerst in einer externen Quelle nach.](../images/rag-hope-genai-bookshelf.png)</span>{fig-alt="Bildhafte Darstellung von Retrieval-Augmented Generation als Bücherregal, aus dem ein KI-Assistent vor der Antwort nachschlägt"}</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>➡️ <span class="co">[</span><span class="ot">Übung 4 — Tutor-Bot systematisch prüfen</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-4)</span>{.assignment-badge} · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>:::: week-card</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>::: card-header</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>🟧 Block 6 — Abschluss und Brücke zu Tag 2 · 9 Min</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>Kurzer Rückblick auf die vier Übungen: Welche der drei Konfigurationen (LLM allein, erweitertes LLM, Agent) ist Ihnen heute am vertrautesten geworden? Welche Test-Frage aus Übung 4 würde morgen im echten Berufsalltag bestehen? Brücke zu Workshop 2 (Mittwoch, 13.05.): **Diligence** als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## Diskussionsfragen</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>An welcher Stelle in Ihrem Studium würde ein Tutor-Bot Sie heute schon ersetzen — und an welcher nicht?</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 9 des Diagnose-Quiz (OCR plus ERP-Einspielung) ist ein Hybrid aus *Cognitive* und *Process*. Wo verläuft die Grenze in einem realen Workflow Ihrer Wahl?</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Welche Konfiguration aus *LLM allein · erweitertes LLM · Agent* passt zu welcher Aufgabenklasse Ihres Studienalltags? Wo lohnt sich der Aufpreis für ein stärkeres Modell oder eine reichere Harness konkret?</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wann ist eine Test-Suite mit fünf Fragen aussagekräftiger als eine spontane Qualitätsprüfung? Wann nicht?</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aufgaben</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vier Übungen im Workshop, eingebettet in die Inputs</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Übung 1 — Diagnose-Quiz</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-1)</span>{.assignment-badge} <span class="co">[</span><span class="ot">Übung 2 — Karriereentwicklung</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-2)</span>{.assignment-badge} <span class="co">[</span><span class="ot">Übung 3 — Prompt-Umbau und Tutor-Bot</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-3)</span>{.assignment-badge}</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine **Erweiterungsfrage für schnelle Studierende** — wer früh fertig ist, vertieft, statt zu warten. Die Discern-Übung *Tutor-Bot systematisch prüfen* eröffnet Workshop 2 als <span class="co">[</span><span class="ot">Übung 1 — Tutor-Bot Test-Suite</span><span class="co">](04-uebungen-w2.qmd#sec-test-suite)</span>.</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hausaufgabe zum Folgetag</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>Für Workshop 2 brauchen Sie zwei kostenfreie Accounts. Bitte vor der Sitzung am Mittwoch einrichten — beides dauert jeweils etwa fünf Minuten.</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="fu">## Zwei Accounts vor Workshop 2</span></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Signavio Academic Edition** — Account anlegen unter <span class="ot">&lt;https://academic.signavio.com/p/explorer&gt;</span>. Wird in Workshop 2 für die BPMN-Modellierung des Rechnungseingangsprozesses genutzt. Hochschul-E-Mail-Adresse wird empfohlen, kostenfrei, kein Download nötig.</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**UiPath Cloud** — Account anlegen unter <span class="ot">&lt;https://cloud.uipath.com/&gt;</span>. Wird für das Lesen und Anpassen des Excel-zu-PDF-Bots genutzt. Free-Tier reicht; *Studio Web* läuft direkt im Browser, kein lokales Studio nötig.</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>**Bitte zu Workshop 2 mitbringen:** beide Logins (E-Mail und Passwort gespeichert oder im Browser eingeloggt). Wer keinen Account anlegen kann, schaut beim Sitznachbarn mit — verpasst aber das Hands-on.</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hintergrund / Werkzeuge / Ressourcen</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Originalmaterial 4D-Framework** — Cheat Sheet und Practical Overview von @dakan2025framework.</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Begleitlehrbuch** — <span class="co">[</span><span class="ot">Kapitel 2.4 *How to speak*</span><span class="co">](https://th-koln-bartnik.github.io/genai4teaching/kapitel02.html#sec-how-to-speak)</span>{target="_blank"} und <span class="co">[</span><span class="ot">Kapitel 7 *Tutor-Prompt-Sammlung*</span><span class="co">](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html#sec-general-tutor)</span>{target="_blank"}.</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**O\*NET-Berufsbild** — <span class="co">[</span><span class="ot">Accountants and Auditors (13-2011.00)</span><span class="co">](https://www.onetonline.org/link/summary/13-2011.00)</span>{target="_blank"} als Faktenbasis für Übung 2.</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Vergleichsplattform** — <span class="co">[</span><span class="ot">arena.ai</span><span class="co">](https://arena.ai)</span>{target="_blank"} mit Side-by-Side-Modus für Übung 2.</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="fu">## Weiterführend</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@mollick2024cointelligence — *Co-intelligence: Living and working with AI* (Begleitlektüre zum Studium).</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@dellacqua2023navigating — *Navigating the jagged technological frontier* (HBS Working Paper, empirisch zur Produktivitätswirkung).</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@grootendorst2025visual — *A visual guide to LLM agents* (visuelle Erklärung des Harness-Konzepts und der drei Konfigurationen).</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@willison2025redgreen — *Red-green test-driven development for agentic engineering* (didaktisch klare Einführung in TDD für KI-Systeme).</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@es2024ragas — *RAGAS: Automated evaluation of retrieval augmented generation* (Originalpaper zur Bewertung von RAG-Systemen).</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutor</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutor öffnen</span></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Tutor — KI in Tax, Audit &amp; Advisory →</span><span class="co">](https://chatgpt.com/g/g-6a03076b4da88191b9e9ae9580a0c2ce-ki-tutor-fur-workshop-auditing-tax-advisory)</span>{target="_blank"}</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>Vorschlag-Prompt für diesen Workshop:</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Ich bereite Workshop 1 (AI Fluency Framework) im Modul *KI in Tax, Audit &amp; Advisory* vor. Bitte erklären Sie mir die Unterscheidung *Process Automation* versus *Cognitive Automation* an einem konkreten Beispiel meiner Wahl: </span><span class="co">[</span><span class="ot">Beispiel einfügen</span><span class="co">]</span><span class="at">. Fragen Sie mich nach meinem Vorwissen, geben Sie eine kurze Lay-Erklärung vor jedem Fachbegriff und stellen Sie am Ende drei Diagnose-Fragen, mit denen ich mein Verständnis selbst prüfen kann.</span></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="at">:::</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Prof.&nbsp;Dr.&nbsp;Roman Bartnik · TH Köln · CC BY-NC-SA 4.0</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/TH-Koln-Bartnik/workshop-ai-4-taac/edit/main/parts/01-workshop01.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li><li><a href="https://github.com/TH-Koln-Bartnik/workshop-ai-4-taac/issues/new" class="toc-action"><i class="bi empty"></i>Problem melden</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Erstellt mit <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
