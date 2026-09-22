@@ -11,8 +11,8 @@ subtitle: "Donnerstag, 24.09.2026 · 09:00–13:00 · Campus Südstadt"
 ::: lernziel-box
 #### Was Sie nach diesem Workshop können
 
-- *Process Automation* und *Cognitive Automation* an konkreten Tätigkeiten aus Tax, Audit und Advisory unterscheiden — und Grenzfälle als Hybrid benennen,
-- das **4D-Framework** (Delegate, Describe, Discern, Diligence) in eigenen Worten erklären und die beiden Loops im Kopf nachzeichnen,
+- *Process Automation* und *Cognitive Automation* an konkreten Tätigkeiten aus Tax, Audit und Advisory unterscheiden,
+- das **4D-Framework** (Delegate, Describe, Discern, Diligence) in eigenen Worten erklären,
 - die drei Konfigurationen **LLM allein**, **erweitertes LLM** und **Agent** unterscheiden und für eine eigene Frage die passende auswählen,
 - einen einfachen Prompt nach **RTF** und **CREATE** strukturieren und an einer Aufgabe aus dem eigenen Lerngebiet anwenden,
 - einen Tutor-Bot für das eigene Fachgebiet bauen und mit einer kleinen **Test-Suite** systematisch prüfen.
