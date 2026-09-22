@@ -196,5 +196,35 @@
       "Teil 1 — Workshop 1 (Di, 12.05.)",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Workshop 1 — AI Fluency Framework</span>"
     ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "KI in Tax, Audit & Advisory",
+    "section": "",
+    "text": "Was Sie aus den zwei Workshops mitnehmen\nSie haben eine Übersicht über Grundbegriffe, typische Probleme und praktische Einsatzempfehlungen von generativer KI in wissensintensiven Berufen wie Tax, Audit und Advisory.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Willkommen</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#transparenz-zur-ki-nutzung",
+    "href": "index.html#transparenz-zur-ki-nutzung",
+    "title": "KI in Tax, Audit & Advisory",
+    "section": "Transparenz zur KI-Nutzung",
+    "text": "Transparenz zur KI-Nutzung\nBei der Erstellung dieses Skriptes wurde Claude 4.7 / Cowork zur Aufwertung der Inhalte (speziell für Beispiele und Interaktionen), als Reviewer (speziell Sprach- und Konsistenzchecks) und zur Gestaltung des Layouts genutzt. Die verwendeten Bilder wurden mit Gemini 3.1 generiert. Alle Inhalte wurden von Roman Bartnik geprüft, überarbeitet und verantwortet.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Willkommen</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#lizenz",
+    "href": "index.html#lizenz",
+    "title": "KI in Tax, Audit & Advisory",
+    "section": "Lizenz",
+    "text": "Lizenz\nInhalte unter CC BY-NC-SA 4.0 (siehe LICENSE). Verwendete Quellen werden inline zitiert und am Ende jedes Kapitels aufgelistet.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Willkommen</span>"
+    ]
   }
 ]

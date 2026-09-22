@@ -1,44 +1,27 @@
 ---
 title: "Willkommen"
-subtitle: "Skript zu den Workshops am 12. und 13.05.2026"
+subtitle: "Skript zu den Workshops am 24. und 25.09.2026"
 ---
 
 ::: th-color-bar
 :::
 
-# Was Sie in zwei Nachmittagen mitnehmen
+# Was Sie aus den zwei Workshops mitnehmen
 
-Nach zwei Workshop-Nachmittagen verfügen Sie über ein gemeinsames Vokabular für den KI-Einsatz in Tax, Audit und Advisory — vom Modellvergleich über das Prompt-Design bis zur Frage, wo *Process Automation* und *Cognitive Automation* sinnvoll zusammenfinden.
+Sie haben eine Übersicht über  Grundbegriffe, typische Probleme und praktische Einsatzempfehlungen von generativer KI in wissensintensiven Berufen wie Tax, Audit und Advisory.
 
 ::: lernziel-box
 #### Am Ende der zwei Workshops können Sie …
 
 1.  das **4D-Framework** (Delegate, Describe, Discern, Diligence) erklären und an einem Tax-/Audit-Beispiel anwenden,
-2.  **Process Automation** und **Cognitive Automation** in Tax-/Audit-Szenarien sauber unterscheiden — auch in Hybrid-Fällen,
-3.  zwei KI-Modelle und zwei Modell-plus-Tool-Konfigurationen **systematisch vergleichen** und Modell-Effekte von Harness-Effekten trennen,
+2.  **Process Automation** und **Cognitive Automation** in Tax-/Audit-Szenarien sauber unterscheiden,
+3.  KI ist nicht gleich KI - Sie können Unterschiede KI-Modellen und  Modell-plus-Tool-Konfigurationen **systematisch vergleichen** und Modell-Effekte von Harness-Effekten trennen,
 4.  einen Prompt nach **RTF** und **CREATE** strukturieren und einen Tutor-Bot für das eigene Lerngebiet aufsetzen,
-5.  KI-**Outputs** mit einer kleinen **Test-Suite** systematisch prüfen (Red-Green-TDD nach Willison),
-6.  eine begründete **persönliche AI Policy** für die spätere Berufspraxis formulieren.
+5.  KI-**Outputs** mit einer kleinen **Test-Suite** systematisch prüfen
 :::
 
 ![Workshop-Rhythmus über zwei Nachmittage — Inputs, eingebettete Übungen, Diskussion.](images/intro-slides-03-workshop-flow.png){fig-alt="Visualisierung des Workshop-Ablaufs als Rhythmus aus Inputs, Übungen und Diskussion über zwei Nachmittage"}
 
-## Tagesablauf
-
-::: callout-note
-## Termine
-
-- **Workshop 1 — Dienstag, 12.05.2026, 16:00–19:00 Uhr**
-- **Workshop 2 — Mittwoch, 13.05.2026, 16:00–19:00 Uhr**
-- **Ort** — Campus Südstadt, Claudiusstraße 1 (Raumnummer wird per Mail bekanntgegeben).
-:::
-
-| Zeitfenster | Workshop 1 (Di) — AI Fluency | Workshop 2 (Mi) — Automatisierung & 4D-Use-Case |
-|---|---|---|
-| 16:00–17:30 | Inputs und Übungen 1 (Diagnose-Quiz) und 2 (Karriereentwicklung im Modellvergleich) | Recap, BPMN-Grundlagen, UiPath-Demo, BPMN-Übung |
-| 17:30–17:40 | Pause | Pause |
-| 17:40–19:00 | Inputs und Übungen 3 (Prompt-Umbau und Tutor-Bot) und 4 (Tutor-Bot systematisch prüfen) | UiPath-Bot-Übung, 4D-Use-Case integriert, Discern-Vertiefung |
-| nach W2 | Diligence-Anriss als Brücke zu Tag 2 | Hausaufgaben: Dilemma der Mitte (Positionspapier), Personal AI Policy |
 
 ::: callout-tip
 ## Tutor öffnen
