@@ -17,6 +17,20 @@ format:
       data-background-color: "#ffffff"
 ---
 
+# Einstieg — eine Rechnung, drei Automatisierungsstufen {background-color="#c81e0f"}
+
+::: {style="text-align: center; margin-top: 1.5em; color: #ffffff;"}
+
+**Animation starten**
+
+[https://th-koln-bartnik.github.io/workshop-ai-4-taac/interactions/eingangsrechnung-automatisierung.html](https://th-koln-bartnik.github.io/workshop-ai-4-taac/interactions/eingangsrechnung-automatisierung.html){style="color: #ffffff; font-size: 1.0em;"}
+
+:::
+
+::: notes
+Zehn Eingangsrechnungen laufen denselben Sechs-Schritt-Prozess einmal manuell, einmal mit Prozessautomation, einmal mit kognitiver Automation. Tasten 1 bis 3 wechseln die Stufe, Leertaste startet und pausiert. Laufen lassen, ohne die Begriffe vorher zu nennen. Frage an die Gruppe: Was ändert sich zwischen den drei Stufen, was bleibt gleich? Die Antworten münden direkt in die nächste Folie.
+:::
+
 # Zwei Arten Automatisierung {background-color="#ffffff"}
 
 ::: {.columns}

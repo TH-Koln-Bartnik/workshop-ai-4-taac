@@ -1,20 +1,25 @@
 ---
 title: "Übungen Workshop 1"
-subtitle: "Drei in den Workshop eingebettete Übungen, je 15 Minuten plus Auswertung"
+subtitle: "Do-it-yourself!"
 ---
 
 ::: th-color-bar
 :::
 
 ::: lernziel-box
-#### Was Sie nach diesen drei Übungen können
+#### Was Sie nach diesen Übungen können
 
 - Tätigkeiten als *Process*, *Cognitive* oder *Nicht anwendbar* klassifizieren — auch in Grenzfällen begründen,
-- zwei KI-Modelle und zwei Modell-plus-Tool-Konfigurationen an einer eigenen Frage **systematisch vergleichen** und Modell- von Harness-Effekten trennen,
+- KI-Modelle und Modell-plus-Tool-Konfigurationen an einer eigenen Frage **systematisch vergleichen** und Modell- von Harness-Effekten trennen,
 - einen Prompt in die Schemata **RTF** und **CREATE** umbauen und einen **Tutor-Bot** für das eigene Lerngebiet aufsetzen.
 :::
 
-Jede Übung dauert maximal 15 Minuten Bearbeitung plus kurzes Think-Pair-Share. Innerhalb der 15 Minuten steht eine **Erweiterung für schnelle Studierende** — wer früh fertig ist, vertieft. Die ursprünglich für Workshop 1 vorgesehene Discern-Übung *Tutor-Bot systematisch prüfen* eröffnet jetzt Workshop 2 als [Übung 3 — Tutor-Bot Test-Suite](04-uebungen-w2.qmd#sec-test-suite); davor stehen als Einstieg die [Übung am zweistufigen Quellenbindungs-Prompt](04-uebungen-w2.qmd#sec-pruefungsordnung) an der eigenen Prüfungsordnung und das [Tutor-geführte Verstehen der RAGAS-Metriken](04-uebungen-w2.qmd#sec-ragas-tutor).
+Jede Übung dauert maximal 15 Minuten Bearbeitung plus kurzes Think-Pair-Share. Innerhalb der 15 Minuten steht eine **Erweiterung für schnelle Studierende** — wer früh fertig ist, vertieft.
+
+## Visualisierung: Verschiedene Arten der Automatisierung eines Rechnungsprozesses
+
+[Stufen der Automatisierung](../interactions/eingangsrechnung-automatisierung.html){target="_blank"}.
+c:\Users\roman\My Tresors\0_Roman Arbeit\0_GenAI\2-Teach\32-Workshop-KI-Tax-Audit-2026-05-12\interactions\eingangsrechnung-automatisierung.html
 
 ## Übung 1 — Diagnose-Quiz Process vs. Cognitive {#sec-uebung-1}
 
@@ -38,9 +43,9 @@ Stellen Sie dieselbe Frage an ein schwächeres und ein stärkeres Modell und ver
 
 Drei Stichworte pro Modell zur Qualität notieren (Tiefe, Konkretheit, Belege).
 
-**Schritt b — KPMG-Überblick mit Suchwerkzeugen (7 Min).** Auf arena.ai *Side by Side* öffnen. Linke Seite: Llama 3.1 8B. Rechte Seite: zwei Search-fähige Modelle über die Globus-Schaltfläche auswählen — `grok-4.20-multi-agent` und `gpt-5.2-search`. Dieselbe Frage an alle drei Konfigurationen:
+**Schritt b — Big4-Überblick mit Suchwerkzeugen (7 Min).** Auf arena.ai *Side by Side* öffnen. Linke Seite: Llama 3.1 8B. Rechte Seite: zwei Search-fähige Modelle über die Globus-Schaltfläche auswählen — `grok-4.20-multi-agent` und `gpt-5.2-search`. Dieselbe Frage an alle drei Konfigurationen:
 
-> Geben Sie mir einen Überblick zu aktuellen Entwicklungen im Geschäft von KPMG Deutschland, mit besonderem Fokus auf die Nutzung generativer KI und die wirtschaftliche Lage.
+> Geben Sie mir einen Überblick zu aktuellen Entwicklungen im Geschäft von PWC (oder KPMG oder Deloitte oder EY) Deutschland, mit besonderem Fokus auf die Nutzung generativer KI und die wirtschaftliche Lage.
 
 In drei Stichworten notieren: Welche Output-Unterschiede gehen auf das **Modell** zurück, welche auf die **Harness** (Web-Search)? Wo halluziniert Llama erkennbar?
 
