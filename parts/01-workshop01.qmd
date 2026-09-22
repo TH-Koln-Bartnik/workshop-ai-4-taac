@@ -1,6 +1,6 @@
 ---
 title: "Workshop 1 — AI Fluency Framework"
-subtitle: "Dienstag, 12.05.2026 · 16:00–19:00 · Campus Südstadt"
+subtitle: "Donnerstag, 24.09.2026 · 09:00–13:00 · Campus Südstadt"
 ---
 
 ::: th-color-bar
@@ -18,13 +18,10 @@ subtitle: "Dienstag, 12.05.2026 · 16:00–19:00 · Campus Südstadt"
 - einen Tutor-Bot für das eigene Fachgebiet bauen und mit einer kleinen **Test-Suite** systematisch prüfen.
 :::
 
-## Inhalte des Workshops
-
-Drei Stunden, eng verzahnt aus fünf kurzen Inputs (zusammen 53 Minuten), vier Übungen mit je 15 Minuten Bearbeitung plus Think-Pair-Share und Plenum-Auflösung (zusammen 88 Minuten), einer Pause (10 Minuten) und Begrüßung/Abschluss (9 Minuten). Alle Übungen sind im Block eingebettet, in dem ihr inhaltlicher Anker liegt — nicht in einen separaten Übungsteil verschoben.
 
 :::: week-card
 ::: card-header
-🟦 Block 0 — Begrüßung und Kalibrierung · 5 Min
+🟦 Block 0 — Begrüßung und Kalibrierung · 10 Min
 :::
 
 Begrüßung, Lernziele, Hinweis auf den Tutor, kurze Verständigung über Vorerfahrungen mit generativer KI.
@@ -39,7 +36,6 @@ Begrüßung, Lernziele, Hinweis auf den Tutor, kurze Verständigung über Vorerf
 
 ![Service-Automation-Continuum von Process Automation über Cognitive Automation bis Intelligent Automation. Adaptiert nach Lacity & Willcocks (2021).](../images/automation-continuum-process-automation-cognitive-automation-lacity-willcocks-2021.png){fig-alt="Visualisierung des Service-Automation-Continuum mit den Stufen RPA, Cognitive Computing, Cognitive Automation und Intelligent Automation, jeweils mit zunehmender Komplexität und Autonomie"}
 
-Drei Verankerungs-Beispiele aus Tax/Audit: Bank-zu-SAP-Abstimmung (Process); semantische Klassifikation eingehender Belege (Cognitive); Ende-zu-Ende-Bot, der klassifiziert, einbucht und Differenzen meldet (Intelligent Automation).
 
 ➡️ [Übung 1 — Diagnose-Quiz Process vs. Cognitive](02-uebungen-w1.qmd#sec-uebung-1){.assignment-badge} · 18 Min (8 Min Solo + 4 Min TPS + 3 Min Plenum + 3 Min Puffer)
 ::::
@@ -56,16 +52,21 @@ Vier Kernkompetenzen, je drei Subkategorien nach @dakan2025framework. **Delegate
 ::: card-header
 🟦 Block 3 — Delegate: Modell, Harness, agentische Nutzung · 12 Min
 :::
+# KI ist nicht KI
+KI-Äpfel und KI-Birnen: "KI" vor und nach November 2022 meint oft ganz verschiedene Dinge. Früher ging es aus Anwendersicht grob gesagt meist um bessere statistische Prognosemodelle zur Nutzung durch Expertinnen und Experten (etwa für optimale Routen oder Container-Ablage) (Russell & Norvig, 2021). Seit ChatGPT sprechen wir von viel breiteren Formen der Nutzung, Milliarden von Usern und extremer KI-Hype. 
 
-Drei Konfigurationen sauber trennen:
+Seit spätestens 2026 hat sich die Bedeutung wieder etwas geändert. Jetzt sind fortgeschrittene Modelle bereits sehr selbstständig und können teils über Stunden nachdenken, recherchieren und Text oder Software zusammenstellen. Das hat wenig mit den einfachen Chatbots ohne Internetanbindung zu tun, die 2022-23 auch noch häufig halluzinierten. Halluzinationen treten immer noch häufig auf, aber vor allem bei den einfacheren Modellen und wenig professioneller Nutzung (z.B. wenn man nur eine Frage ohne Kontext und Qualitätskriterien stellt).
+
+Drei Konfigurationen muss man heute unterscheiden:
 
 - **LLM allein** — ein Textgenerator. Stellen Sie sich einen sehr belesenen Bibliothekar vor, der nur reden kann, nichts nachschlagen und nichts ausführen.
-- **Erweitertes LLM** — dasselbe Modell, eingebettet in eine *Harness* mit Tools wie Web-Search, File-Upload, Code-Execution. Der Bibliothekar bekommt eine Werkbank.
-- **Agent** — ein erweitertes LLM, das in einer Schleife arbeitet: Ziel, Plan, Werkzeug, Bewertung, neuer Plan. Der Bibliothekar erledigt eigenständig mehrschrittige Aufgaben und meldet sich erst zurück, wenn er fertig ist.
+- **Erweitertes LLM** — dasselbe Modell, ausgestattet mit einem Werkzeuggürtel mit Tools wie Web-Search, File-Upload, Code-Execution (auf Englisch spricht man von einem Geschirr / *Harness*). 
+Der Bibliothekar bekommt eine Werkbank.
+- **Agent** — ein erweitertes großes Sprachmodell (LLM), das in einer Schleife arbeitet: Ziel, Plan, Werkzeug, Bewertung, neuer Plan. Der Bibliothekar erledigt eigenständig mehrschrittige Aufgaben und meldet sich erst zurück, wenn er fertig ist.
 
-![LLM-Kern und Harness als Werkzeugring — was ein Modell tatsächlich kann, hängt mindestens so stark von der Harness ab wie vom Modell selbst.](../images/llm-augmented-visualization.png){fig-alt="Visualisierung eines LLM-Kerns, umgeben von einem Werkzeugring aus Web-Search, Memory, Tools und User Interface"}
+![Tools und mehrstufiges Überlegen machen einen großen Unterschied - was ein Modell tatsächlich kann, hängt mindestens so stark von der Harness ab wie vom Modell selbst.](../images/llm-augmented-visualization.png){fig-alt="Visualisierung eines LLM-Kerns, umgeben von einem Werkzeugring aus Web-Search, Memory, Tools und User Interface"}
 
-Die didaktische Pointe: Wer Aufgaben delegieren will, muss wissen, in welcher der drei Konfigurationen das eigene System läuft, weil Fähigkeiten und Risikoprofil substanziell verschieden sind [@grootendorst2025visual; @mollick2024cointelligence].
+Wichtig: Wer Aufgaben an eine KI delegieren will, muss wissen, in welcher der drei Konfigurationen das eigene System läuft, weil Fähigkeiten und Risikoprofil substanziell verschieden sind [@grootendorst2025visual; @mollick2024cointelligence].
 
 ![Die Jagged Frontier — KI-Fähigkeiten sind unregelmäßig verteilt, mit unerwartet starken und unerwartet schwachen Bereichen. Adaptiert nach Dell'Acqua et al. (2023) und Mollick (2024).](../images/jagged-frontier-genai.png){fig-alt="Visualisierung der Jagged Frontier als zerklüftete Linie, die starke und schwache Fähigkeitsbereiche von KI-Systemen unregelmäßig trennt"}
 
@@ -84,29 +85,65 @@ Die didaktische Pointe: Wer Aufgaben delegieren will, muss wissen, in welcher de
 🟦 Block 4 — Describe: RTF und CREATE · 12 Min
 :::
 
-Leitanalogie: Der Chatbot ist eher ein junger Nachhilfeschüler als ein Taschenrechner — er versteht Anweisungen, braucht Kontext, möchte gezeigt bekommen, was Sie wollen, und wird mit Beispielen besser. Inhaltlicher Anker: das Kapitel *How to speak* aus dem begleitenden Lehrbuch [@bartnik2026genai4teaching].
+Leitanalogie: Das Sprachmodell ist eher wie ein sehr schlauer jüngerer Kollege als wie ein Taschenrechner — es versteht Anweisungen, braucht Kontext, möchte gezeigt bekommen, was Sie wollen, und wird mit Beispielen besser. Weiterführend dazu: das Kapitel *How to speak* aus dem begleitenden Lehrbuch [@bartnik2026genai4teaching].
 
 Zwei Schemata:
 
-- **RTF** — *Role, Task, Format*. Sparsam und schnell. Beispiel: „Sie sind Wirtschaftsprüferin. Erläutern Sie das Going-Concern-Prinzip. Antworten Sie in drei kurzen Absätzen für Erstsemester."
+- **RTF** — *Role, Task, Format*. Sparsam und schnell. Beispiel: „Sie sind Wirtschaftsprüferin (Role). Erläutern Sie das Going-Concern-Prinzip (Task). Antworten Sie in drei kurzen Absätzen für Erstsemester (Format)."
 - **CREATE** — *Character, Request, Examples, Adjustments, Type of output, Extras*. Reicher und für komplexe Aufgaben besser geeignet. Beide Schemata mit identischer Beispielaufgabe vorführen, damit der Unterschied direkt sichtbar wird.
+
+Beispiel: Allgemeiner Tutor
+
+**Quelle:** Angepasst & übersetzt basierend auf @MoreUsefulThingsStudentExercises, Online: https://www.moreusefulthings.com/student-exercises .
+
+::: {.callout-note collapse="true" title="Tutor: Allgemeiner Tutor"}
+``` markdown
+[C] Character
+Du bist ein fröhlicher, geduldiger und ermutigender KI-Tutor. Dein Ziel ist es, echtes Verständnis zu fördern. Du arbeitest lernendenzentriert, wertschätzend und siehst Fehler als Lernchancen.
+
+[R] Request
+Führe ein dialogisches Lerncoaching durch. Frage nacheinander nach Thema, Lernniveau und Vorwissen. Erkläre Konzepte angepasst, stelle Leitfragen, gib keine direkten Lösungen und überprüfe Verständnis durch Anwendung und Erklärung.
+
+[E] Examples
+Halte strikt die Reihenfolge ein: Vorstellung → Thema → Lernniveau → Vorwissen → Erklärung.
+Nutze offene Fragen wie „Warum…?“, „Wie…?“, „Was wäre, wenn…?“
+Vermeide Fragen wie „Hast du das verstanden?“
+
+[A] Adjustments & Constraints
+Immer nur eine Frage.
+Nicht fortfahren ohne Antwort.
+Sprache, Tiefe und Beispiele anpassen.
+Keine fertigen Lösungen.
+Antworten möglichst mit einer Frage beenden.
+
+[T] Type of Output
+Freundlicher, dialogischer Tutor-Chat in klarer Sprache.
+
+[E] Evaluation & Steps
+Arbeite in kleinen Schritten vom Vorwissen zur Anwendung.
+Erfolg liegt vor, wenn Lernende erklären, vergleichen und anwenden können.
+```
+:::
 
 ➡️ [Übung 3 — Prompt-Umbau und Tutor-Bot](02-uebungen-w1.qmd#sec-uebung-3){.assignment-badge} · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)
 ::::
 
 :::: week-card
 ::: card-header
-🟦 Block 5 — Discern: Outputs systematisch prüfen · 12 Min
+🟦 Block 5 — Discern: Outputs systematisch prüfen · 20 Min
 :::
+
+Eine Möglichkeit, die Antworten von Sprachmodellen für uns besser nutzbar zu machen ist, ihnen Dateien mit Fachkontext zur Verfügung zu stellen. Aber wie gut ist der Output dann wirklich? Das hängt von verschiedenen Faktoren ab - z.B. davon, wie groß das Modell ist, auf welche Werkzeuge es Zugriff hat und wieviel Daten es "im Gedächtnis" behalten kann usw. Letztlich müssen wir das sorgfältig testen, bevor wir die Ergebnisse professionell einsetzen können.
+
+![RAG als Bücherregal-Metapher — statt aus dem Gedächtnis zu antworten, schlägt das Modell zuerst in einer externen Quelle nach.](../images/rag-hope-genai-bookshelf.png){fig-alt="Bildhafte Darstellung von Retrieval-Augmented Generation als Bücherregal, aus dem ein KI-Assistent vor der Antwort nachschlägt"}
+
 
 Zwei Ideen, eine Übersetzung auf Tax/Audit:
 
-- **RAGAS-Idee** — eine Bewertung von Antworten aus Retrieval-Augmented-Systemen entlang weniger Kerngrößen: *Faithfulness* (passt die Antwort zu den abgerufenen Quellen?), *Answer Relevance* (beantwortet sie die Frage?), *Context Precision* und *Context Recall* (wurden die richtigen Quellen abgerufen?) [@es2024ragas]. Im Kern: ein Test-Set aus Fragen mit erwarteten Antworten, das Sie immer wieder durchlaufen lassen.
-- **Red-Green-TDD nach Willison** — Testfälle zuerst. Sie schreiben fünf bis zehn Beispielfragen mit gewünschten Antworten, lassen den Agenten durchlaufen, markieren *rot* (fehlerhaft), *gelb* (teilweise) oder *grün* (korrekt). Dann iterieren Sie Prompt, Modell und Harness, bis möglichst viele Tests grün werden [@willison2025redgreen]. Die Methode kommt aus dem Test-Driven Development der Software-Entwicklung — Kent Becks „Red first" auf Prompt-Ebene übertragen.
+- **RAGAS-Idee** — eine Bewertung von Antworten aus Sprachmodell + Speicher (RAG, Retrieval-Augmented-Generation Systemen) entlang weniger Kerngrößen: *Faithfulness* (passt die Antwort zu den abgerufenen Quellen?), *Answer Relevance* (beantwortet sie die Frage?), *Context Precision* und *Context Recall* (wurden die richtigen Quellen abgerufen?) [@es2024ragas]. Im Kern: ein Test-Set aus Fragen mit erwarteten Antworten, das Sie immer wieder durchlaufen lassen.
+- **Red-Green-TDD nach Willison** — Testfälle zuerst. Sie schreiben fünf bis zehn Beispielfragen mit gewünschten Antworten, lassen den Agenten durchlaufen, markieren *rot* (fehlerhaft), *gelb* (teilweise) oder *grün* (korrekt). Dann iterieren Sie Prompt, Modell und Harness, bis möglichst viele Tests grün werden [@willison2025redgreen]. Die Methode kommt aus dem Test-Driven Development der Software-Entwicklung.
 
 Übersetzung auf Tax/Audit: Eine kleine Sammlung typischer Berufsfragen (Anwendung des Reverse-Charge-Verfahrens, Going-Concern-Prüfung, Behandlung von Rückstellungen) wird zur Test-Suite. Genau das bauen Sie in der nächsten Übung — zum Tutor-Bot aus Übung 3.
-
-![RAG als Bücherregal-Metapher — statt aus dem Gedächtnis zu antworten, schlägt das Modell zuerst in einer externen Quelle nach.](../images/rag-hope-genai-bookshelf.png){fig-alt="Bildhafte Darstellung von Retrieval-Augmented Generation als Bücherregal, aus dem ein KI-Assistent vor der Antwort nachschlägt"}
 
 ➡️ [Übung 4 — Tutor-Bot systematisch prüfen](02-uebungen-w1.qmd#sec-uebung-4){.assignment-badge} · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)
 ::::
@@ -116,14 +153,14 @@ Zwei Ideen, eine Übersetzung auf Tax/Audit:
 🟧 Block 6 — Abschluss und Brücke zu Tag 2 · 9 Min
 :::
 
-Kurzer Rückblick auf die vier Übungen: Welche der drei Konfigurationen (LLM allein, erweitertes LLM, Agent) ist Ihnen heute am vertrautesten geworden? Welche Test-Frage aus Übung 4 würde morgen im echten Berufsalltag bestehen? Brücke zu Workshop 2 (Mittwoch, 13.05.): **Diligence** als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.
+Kurzer Rückblick auf die vier Übungen: Welche der drei Konfigurationen (LLM allein, erweitertes LLM, Agent) ist Ihnen heute am vertrautesten geworden? Welche Test-Frage aus Übung 4 würde morgen im echten Berufsalltag bestehen? Brücke zu Workshop 2: **Diligence** als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.
 ::::
 
 ## Diskussionsfragen
 
 - An welcher Stelle in Ihrem Studium würde ein Tutor-Bot Sie heute schon ersetzen — und an welcher nicht?
 - Item 9 des Diagnose-Quiz (OCR plus ERP-Einspielung) ist ein Hybrid aus *Cognitive* und *Process*. Wo verläuft die Grenze in einem realen Workflow Ihrer Wahl?
-- Welche Konfiguration aus *LLM allein · erweitertes LLM · Agent* passt zu welcher Aufgabenklasse Ihres Studienalltags? Wo lohnt sich der Aufpreis für ein stärkeres Modell oder eine reichere Harness konkret?
+- Welche Konfiguration aus *LLM allein · erweitertes LLM · Agent* passt zu welcher Aufgabenklasse Ihres Studienalltags? Wo lohnt sich der Aufpreis für ein stärkeres Modell?
 - Wann ist eine Test-Suite mit fünf Fragen aussagekräftiger als eine spontane Qualitätsprüfung? Wann nicht?
 
 ## Aufgaben
@@ -146,7 +183,7 @@ Für Workshop 2 brauchen Sie zwei kostenfreie Accounts. Bitte vor der Sitzung am
 - **Signavio Academic Edition** — Account anlegen unter <https://academic.signavio.com/p/explorer>. Wird in Workshop 2 für die BPMN-Modellierung des Rechnungseingangsprozesses genutzt. Hochschul-E-Mail-Adresse wird empfohlen, kostenfrei, kein Download nötig.
 - **UiPath Cloud** — Account anlegen unter <https://cloud.uipath.com/>. Wird für das Lesen und Anpassen des Excel-zu-PDF-Bots genutzt. Free-Tier reicht; *Studio Web* läuft direkt im Browser, kein lokales Studio nötig.
 
-**Bitte zu Workshop 2 mitbringen:** beide Logins (E-Mail und Passwort gespeichert oder im Browser eingeloggt). Wer keinen Account anlegen kann, schaut beim Sitznachbarn mit — verpasst aber das Hands-on.
+**Bitte zu Workshop 2 mitbringen:** beide Logins (E-Mail und Passwort gespeichert oder im Browser eingeloggt). Wer keinen Account anlegen kann, schaut beim Sitznachbarn mit — verpasst aber die Anwendungsübung.
 :::
 
 ## Hintergrund / Werkzeuge / Ressourcen
@@ -173,6 +210,6 @@ Für Workshop 2 brauchen Sie zwei kostenfreie Accounts. Bitte vor der Sitzung am
 
 Vorschlag-Prompt für diesen Workshop:
 
-> Ich bereite Workshop 1 (AI Fluency Framework) im Modul *KI in Tax, Audit & Advisory* vor. Bitte erklären Sie mir die Unterscheidung *Process Automation* versus *Cognitive Automation* an einem konkreten Beispiel meiner Wahl: [Beispiel einfügen]. Fragen Sie mich nach meinem Vorwissen, geben Sie eine kurze Lay-Erklärung vor jedem Fachbegriff und stellen Sie am Ende drei Diagnose-Fragen, mit denen ich mein Verständnis selbst prüfen kann.
+> Ich bereite Workshop 1 (AI Fluency Framework) im Modul *KI in Tax, Audit & Advisory* vor. Bitte erklären Sie mir die Unterscheidung *Process Automation* versus *Cognitive Automation* an einem konkreten Beispiel meiner Wahl: [Beispiel einfügen]. Fragen Sie mich nach meinem Vorwissen, geben Sie eine kurze Laien-Erklärung vor jedem Fachbegriff und stellen Sie am Ende drei Diagnose-Fragen, mit denen ich mein Verständnis selbst prüfen kann.
 :::
 
