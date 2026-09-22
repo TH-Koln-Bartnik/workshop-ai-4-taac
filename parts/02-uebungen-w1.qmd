@@ -18,8 +18,7 @@ Jede Übung dauert maximal 15 Minuten Bearbeitung plus kurzes Think-Pair-Share. 
 
 ## Visualisierung: Verschiedene Arten der Automatisierung eines Rechnungsprozesses
 
-[Stufen der Automatisierung](../interactions/eingangsrechnung-automatisierung.html){target="_blank"}.
-c:\Users\roman\My Tresors\0_Roman Arbeit\0_GenAI\2-Teach\32-Workshop-KI-Tax-Audit-2026-05-12\interactions\eingangsrechnung-automatisierung.html
+[Stufen der Automatisierung](../interactions/eingangsrechnung-automatisierung.html){target="_blank"} — dieselbe Animation wie im Einstieg zu Block 1, hier zum eigenen Nachvollziehen in Ruhe.
 
 ## Übung 1 — Diagnose-Quiz Process vs. Cognitive {#sec-uebung-1}
 

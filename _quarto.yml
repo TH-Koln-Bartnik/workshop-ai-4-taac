@@ -16,9 +16,9 @@ project:
 
 book:
   title: "KI in Tax, Audit & Advisory"
-  subtitle: "Workshop-Skript zum 12. und 13.05.2026, TH Köln"
+  subtitle: "Workshop-Skript zum 24. und 25.09.2026, TH Köln"
   author: "Prof. Dr. Roman Bartnik"
-  date: "2026-05-12"
+  date: "2026-09-24"
   date-format: "DD.MM.YYYY"
   search: true
   repo-url: "https://github.com/TH-Koln-Bartnik/workshop-ai-4-taac"
@@ -34,11 +34,11 @@ book:
     logo: images/th-koeln-logo.png
   chapters:
     - index.qmd
-    - part: "Teil 1 — Workshop 1 (Di, 12.05.)"
+    - part: "Teil 1 — Workshop 1 (Do, 24.09.)"
       chapters:
         - parts/01-workshop01.qmd
         - parts/02-uebungen-w1.qmd
-    - part: "Teil 2 — Workshop 2 (Mi, 13.05.)"
+    - part: "Teil 2 — Workshop 2 (Fr, 25.09.)"
       chapters:
         - parts/03-workshop02.qmd
         - parts/04-uebungen-w2.qmd

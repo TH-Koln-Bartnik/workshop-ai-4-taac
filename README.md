@@ -3,8 +3,8 @@
 Online-Skript zu zwei Einführungsworkshops à drei Stunden für den
 Schwerpunkt *KI in Tax, Audit & Advisory* an der TH Köln.
 
-- **Workshop 1** — Dienstag, 12.05.2026, 16:00–19:00 Uhr · AI Fluency Framework
-- **Workshop 2** — Mittwoch, 13.05.2026, 16:00–19:00 Uhr · Prozessmodellierung,
+- **Workshop 1** — Donnerstag, 24.09.2026, 09:00–13:00 Uhr · AI Fluency Framework
+- **Workshop 2** — Freitag, 25.09.2026, 09:00–13:00 Uhr · Prozessmodellierung,
   Automatisierung, integrierter 4D-Use-Case
 
 Beide Termine: Campus Südstadt, Claudiusstraße 1.

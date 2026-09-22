@@ -20,8 +20,6 @@ Sie haben eine Übersicht über  Grundbegriffe, typische Probleme und praktische
 5.  KI-**Outputs** mit einer kleinen **Test-Suite** systematisch prüfen
 :::
 
-![Workshop-Rhythmus über zwei Nachmittage — Inputs, eingebettete Übungen, Diskussion.](images/intro-slides-03-workshop-flow.png){fig-alt="Visualisierung des Workshop-Ablaufs als Rhythmus aus Inputs, Übungen und Diskussion über zwei Nachmittage"}
-
 
 ::: callout-tip
 ## Tutor öffnen

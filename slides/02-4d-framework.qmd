@@ -39,7 +39,7 @@ format:
 ::::
 
 ::: notes
-Jede der vier Kompetenzen hat drei Subkategorien — nach Dakan und Feller (2025). Delegate: Problem-, Platform-, Task-Awareness. Describe: Product-, Process-, Performance-Description. Discern: Product-, Process-, Performance-Discernment. Diligence: Creation-, Transparency-, Deployment-Diligence. Heute sind die ersten drei Ds dran; Diligence am Mittwoch in voller Tiefe.
+Jede der vier Kompetenzen hat drei Subkategorien — nach Dakan und Feller (2025). Delegate: Problem-, Platform-, Task-Awareness. Describe: Product-, Process-, Performance-Description. Discern: Product-, Process-, Performance-Discernment. Diligence: Creation-, Transparency-, Deployment-Diligence. Heute sind die ersten drei Ds dran; Diligence am Freitag in voller Tiefe.
 :::
 
 # Zwei Loops, die das Framework lebendig machen {background-color="#ffffff"}

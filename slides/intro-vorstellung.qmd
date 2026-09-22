@@ -1,6 +1,6 @@
 ---
 title: "KI in Tax, Audit & Advisory"
-subtitle: "Workshop-Reihe · TH Köln · 12. und 13.05.2026"
+subtitle: "Workshop-Reihe · TH Köln · 24. und 25.09.2026"
 author: "Prof. Dr. Roman Bartnik"
 format:
   revealjs:
@@ -64,7 +64,7 @@ Zwei Minuten Spannungsaufbau: erst die Behauptung, dass AI Fluency ein Berufsski
 ::::
 
 ::: notes
-Reihenfolge im Uhrzeigersinn, ich beginne. Bei jeder Person die dritte Antwort kurz spiegeln: „Aha, Umsatzsteuer im Drittlandgeschäft — darauf kommen wir morgen im 4D-Use-Case zurück." So entsteht eine Mini-Karte der Anwendungsfälle, die ich am Mittwoch beim Use-Case wieder aufgreife. Wenn jemand sagt „nutze KI gar nicht", ist das willkommen — wir holen Sie genau dort ab.
+Reihenfolge im Uhrzeigersinn, ich beginne. Bei jeder Person die dritte Antwort kurz spiegeln: „Aha, Umsatzsteuer im Drittlandgeschäft — darauf kommen wir morgen im 4D-Use-Case zurück." So entsteht eine Mini-Karte der Anwendungsfälle, die ich am Freitag beim Use-Case wieder aufgreife. Wenn jemand sagt „nutze KI gar nicht", ist das willkommen — wir holen Sie genau dort ab.
 :::
 
 # Tag 1 — Vier Kompetenzen, die KI-Kompetenz ausmachen {background-color="#ffffff"}

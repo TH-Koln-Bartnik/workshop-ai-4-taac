@@ -1,6 +1,6 @@
 ---
 title: "Process vs. Cognitive Automation"
-subtitle: "Workshop 1 · Block 1 · 10 Minuten"
+subtitle: "Workshop 1 · Block 1 · 15 Minuten"
 author: "Prof. Dr. Roman Bartnik"
 format:
   revealjs:

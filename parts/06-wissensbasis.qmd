@@ -14,7 +14,7 @@ subtitle: "Nachschlagewerk zu LLMs, Modellen, Prompts, Tools, BPMN, RPA und Beru
 - Verweise auf die Originalliteratur und zu den passenden Workshop-Stellen.
 :::
 
-Diese Seite ist absichtlich als ein einziges, durchsuchbares Dokument angelegt. Stand: 12.05.2026.
+Diese Seite ist absichtlich als ein einziges, durchsuchbares Dokument angelegt. Stand: 22.09.2026.
 
 ::: callout-tip
 ## Vertiefung — Grundlagen und Prompt-Beispiele

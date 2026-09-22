@@ -29,7 +29,7 @@ Begrüßung, Lernziele, Hinweis auf den Tutor, kurze Verständigung über Vorerf
 
 :::: week-card
 ::: card-header
-🟦 Block 1 — Process vs. Cognitive Automation · 10 Min
+🟦 Block 1 — Process vs. Cognitive Automation · 15 Min
 :::
 
 **Einstieg — Live-Animation:** Eine Eingangsrechnung durchläuft denselben Sechs-Schritt-Prozess (Erfassen, Auslesen, Abgleich, ggf. Klärung, Kontierung, Freigabe) auf drei Automatisierungsstufen — manuell, mit Prozessautomation, mit kognitiver Automation. Animation starten: [Eingangsrechnung — drei Automatisierungsstufen](../interactions/eingangsrechnung-automatisierung.html){target="_blank"}. Vor der Begriffsklärung: Welche Schritte verändern sich zwischen den drei Stufen, welche bleiben gleich?
@@ -177,7 +177,7 @@ Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kur
 
 ## Hausaufgabe zum Folgetag
 
-Für Workshop 2 brauchen Sie zwei kostenfreie Accounts. Bitte vor der Sitzung am Mittwoch einrichten — beides dauert jeweils etwa fünf Minuten.
+Für Workshop 2 brauchen Sie zwei kostenfreie Accounts. Bitte vor der Sitzung am Freitag einrichten — beides dauert jeweils etwa fünf Minuten.
 
 ::: callout-note
 ## Zwei Accounts vor Workshop 2
