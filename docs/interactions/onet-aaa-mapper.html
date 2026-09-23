@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automation · Augmentation · Agency — Mapper für Accountants & Auditors</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --th-red: #c81e0f;
+    --th-magenta: #b43092;
+    --th-orange: #ea5a00;
+    --ink: #111111;
+    --paper: #ffffff;
+    --gray-100: #f5f5f7;
+    --gray-200: #e6e6ea;
+    --gray-500: #6b6b73;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+  }
+  .color-bar {
+    height: 6px;
+    background: linear-gradient(to right,
+      var(--th-red) 0%, var(--th-red) 45%,
+      var(--th-magenta) 45%, var(--th-magenta) 80%,
+      var(--th-orange) 80%, var(--th-orange) 100%);
+  }
+  header {
+    padding: 1.25rem 1.5rem 1rem 1.5rem;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  header h1 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  header .meta { font-size: 0.85rem; color: var(--gray-500); }
+  main { max-width: 880px; margin: 0 auto; padding: 1.5rem; }
+  h2 {
+    font-size: 1.15rem; font-weight: 600;
+    border-bottom: 2px solid rgba(180, 48, 146, 0.35);
+    padding-bottom: 0.3rem;
+    margin: 2rem 0 1rem 0;
+  }
+  h3 { font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.5rem 0; }
+  p { margin: 0.5rem 0; }
+  a, a:visited { color: var(--th-red); text-decoration: underline; }
+  a:hover { color: var(--th-magenta); }
+
+  .lernziel-box {
+    background: var(--gray-100);
+    border-left: 4px solid var(--th-magenta);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0 1.5rem 0;
+  }
+  .lernziel-box h4 { margin: 0 0 0.5rem 0; font-size: 1rem; }
+
+  button { font-family: inherit; cursor: pointer; border: 0; border-radius: 0; font-size: 0.95rem; }
+  .btn-primary {
+    background: var(--th-red); color: var(--paper);
+    padding: 0.6rem 1.2rem; font-weight: 600; margin-top: 0.5rem;
+  }
+  .btn-primary:hover { background: var(--th-magenta); }
+  .btn-secondary {
+    background: var(--paper); color: var(--ink);
+    border: 1px solid var(--gray-200); padding: 0.5rem 1rem;
+  }
+  .btn-secondary:hover { border-color: var(--th-magenta); color: var(--th-magenta); }
+
+  .progress { background: var(--gray-100); height: 8px; margin: 0.75rem 0 1.5rem 0; }
+  .progress-fill { background: var(--th-red); height: 100%; width: 0%; transition: width 0.3s ease; }
+  .progress-label {
+    font-size: 0.85rem; color: var(--gray-500);
+    display: flex; justify-content: space-between;
+  }
+
+  .task-card {
+    border: 1px solid var(--gray-200);
+    border-top: 4px solid var(--th-red);
+    padding: 1.25rem; margin-bottom: 1rem;
+  }
+  .task-card .task-en { font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .task-card .task-de { font-size: 0.85rem; color: var(--gray-500); font-style: italic; }
+  .question { margin: 1.5rem 0 0.75rem 0; font-weight: 600; }
+
+  .choice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.5rem; margin-bottom: 1rem;
+  }
+  .choice {
+    background: var(--paper);
+    border: 1px solid var(--gray-200);
+    padding: 0.85rem 1rem; text-align: left; transition: all 0.15s ease;
+  }
+  .choice:hover { border-color: var(--th-magenta); background: var(--gray-100); }
+  .choice.automation:hover   { border-color: var(--th-red); }
+  .choice.augmentation:hover { border-color: var(--th-magenta); }
+  .choice.agency:hover       { border-color: var(--th-orange); }
+  .choice strong { display: block; font-size: 0.95rem; margin-bottom: 0.2rem; }
+  .choice .gloss { display: block; font-size: 0.8rem; color: var(--gray-500); line-height: 1.3; }
+
+  .nav-row {
+    display: flex; justify-content: space-between;
+    margin-top: 1rem; padding-top: 1rem;
+    border-top: 1px solid var(--gray-200);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem; margin: 1rem 0;
+  }
+  .stat-card {
+    background: var(--gray-100);
+    border-left: 4px solid var(--th-red);
+    padding: 0.75rem 1rem;
+  }
+  .stat-card .stat-num { font-size: 1.6rem; font-weight: 600; }
+  .stat-card .stat-label { font-size: 0.85rem; color: var(--gray-500); }
+
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.85rem; }
+  thead { background: var(--gray-100); }
+  th, td {
+    border: 1px solid var(--gray-200);
+    padding: 0.4rem 0.6rem; vertical-align: top; text-align: left;
+  }
+  .pill {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.75rem; font-weight: 600;
+  }
+  .pill-automation   { background: var(--th-red);     color: var(--paper); }
+  .pill-augmentation { background: var(--th-magenta); color: var(--paper); }
+  .pill-agency       { background: var(--th-orange);  color: var(--paper); }
+  .pill-mehrere      { background: var(--gray-500);   color: var(--paper); }
+  .pill-keine        { background: var(--gray-200);   color: var(--ink); }
+  .match-yes { color: green; font-weight: 600; }
+  .match-no  { color: var(--th-red); font-weight: 600; }
+  .match-na  { color: var(--gray-500); }
+
+  details { margin: 0.5rem 0; border-left: 3px solid var(--gray-200); padding-left: 0.75rem; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 0.85rem; color: var(--gray-500); }
+
+  .reflection-box {
+    background: var(--gray-100);
+    border-left: 4px solid var(--th-orange);
+    padding: 1rem 1.25rem; margin: 1.5rem 0;
+  }
+  .reflection-box ol { margin: 0.5rem 0; padding-left: 1.2rem; }
+
+  footer {
+    border-top: 1px solid var(--gray-200);
+    padding: 1rem 1.5rem; margin-top: 3rem;
+    color: var(--gray-500); font-size: 0.85rem; text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .choice-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="color-bar"></div>
+<header>
+  <h1>Automation · Augmentation · Agency</h1>
+  <div class="meta">Mapper für <em>Accountants and Auditors</em> · Workshop „KI in Tax, Audit & Advisory" · TH Köln · Tätigkeiten: <a href="https://www.onetonline.org/link/summary/13-2011.00" target="_blank" rel="noopener">O*Net 13-2011.00</a></div>
+</header>
+
+<main>
+
+<!-- ============== INTRO ============== -->
+<section id="intro">
+  <h2>Worum es geht</h2>
+  <p>Sie ordnen 29 reale Tätigkeiten aus dem Berufsbild <em>Accountants and Auditors</em> jeweils einem von drei <strong>Wirkungsmodi</strong> der KI-Nutzung zu — der Modus, der heute (Stand Mai 2026) am besten passt. Drei Modi, drei sehr unterschiedliche Rollen für die KI im Workflow.</p>
+
+  <div class="lernziel-box">
+    <h4>Was Sie nach der Übung können</h4>
+    <ul>
+      <li>die drei Modi <strong>Automation</strong>, <strong>Augmentation</strong> und <strong>Agency</strong> am eigenen Berufsbild greifbar einordnen,</li>
+      <li>Tätigkeiten erkennen, die heute klassisch automatisiert werden (regelbasiert, ohne Mensch in der Schleife),</li>
+      <li>Tätigkeiten erkennen, in denen KI als Co-Pilot wirkt (Augmentation, Mensch entscheidet),</li>
+      <li>Tätigkeiten erkennen, die zunehmend agentisch erledigt werden (KI plant und handelt mehrstufig),</li>
+      <li>die eigene Zuordnung mit einer Referenz vergleichen und Abweichungen begründen.</li>
+    </ul>
+  </div>
+
+  <h3>Die drei Modi in einem Satz</h3>
+  <table>
+    <thead><tr><th>Modus</th><th>Lay-Erklärung</th><th>Bild</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="pill pill-automation">Automation</span></td>
+        <td>KI führt die Aufgabe regelbasiert und reproduzierbar aus, der Mensch genehmigt das Ergebnis.</td>
+        <td>Der Roboter macht, der Mensch unterschreibt.</td>
+      </tr>
+      <tr>
+        <td><span class="pill pill-augmentation">Augmentation</span></td>
+        <td>KI unterstützt, der Mensch bleibt in der Schleife — als Co-Pilot, der beschleunigt und schärft.</td>
+        <td>Sie schreiben, die KI hilft beim Schärfen.</td>
+      </tr>
+      <tr>
+        <td><span class="pill pill-agency">Agency</span></td>
+        <td>KI handelt als eigenständiger Agent: plant mehrstufig, ruft Werkzeuge auf, liefert ein fertiges Ergebnis.</td>
+        <td>Sie geben einen Auftrag, die KI macht alles bis zum Endprodukt.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:1rem;font-size:0.85rem;color:var(--gray-500);">Konzeptionell aufbauend auf Mollick (2024, 2026). Der Sprung von <em>Augmentation</em> zu <em>Agency</em> ist die zentrale Veränderung der Jahre 2025/2026 — von „KI sagt etwas" zu „KI tut etwas".</p>
+
+  <p style="margin-top:1.5rem;"><strong>Dauer:</strong> ca. 15–20 Minuten. Es gibt keine eindeutig „richtigen" Antworten — die Referenz ist eine begründete Setzung, kein Goldstandard. Abweichungen sind das Lernmaterial.</p>
+
+  <button class="btn-primary" onclick="start()">Übung starten</button>
+</section>
+
+<!-- ============== TASK ============== -->
+<section id="task" hidden>
+  <div class="progress-label">
+    <span id="progress-text">Tätigkeit 1 von 29</span>
+    <span id="progress-pct">3 %</span>
+  </div>
+  <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
+
+  <div class="task-card">
+    <div class="task-en" id="task-en"></div>
+    <div class="task-de" id="task-de"></div>
+  </div>
+
+  <p class="question">In welchem Modus würden Sie diese Tätigkeit heute am sinnvollsten mit KI bearbeiten?</p>
+
+  <div class="choice-grid">
+    <button class="choice automation"  onclick="chooseAnswer('Automation')">
+      <strong>Automation</strong><span class="gloss">Regelbasiert. KI macht, Mensch genehmigt.</span>
+    </button>
+    <button class="choice augmentation" onclick="chooseAnswer('Augmentation')">
+      <strong>Augmentation</strong><span class="gloss">Co-Pilot. KI hilft, Mensch entscheidet.</span>
+    </button>
+    <button class="choice agency"       onclick="chooseAnswer('Agency')">
+      <strong>Agency</strong><span class="gloss">Agent. KI plant und handelt mehrstufig.</span>
+    </button>
+    <button class="choice"               onclick="chooseAnswer('Mehrere')">
+      <strong>Mehrere relevant</strong><span class="gloss">Mehrere Modi treffen je nach Teilaspekt zu.</span>
+    </button>
+    <button class="choice"               onclick="chooseAnswer('Keine')">
+      <strong>KI hier nicht sinnvoll</strong><span class="gloss">Tätigkeit eignet sich nicht für KI-Einsatz.</span>
+    </button>
+  </div>
+
+  <div class="nav-row">
+    <button class="btn-secondary" onclick="prevTask()" id="btn-prev">‹ Zurück</button>
+    <button class="btn-secondary" onclick="skipTask()" id="btn-skip">Überspringen ›</button>
+  </div>
+</section>
+
+<!-- ============== RESULTS ============== -->
+<section id="results" hidden>
+  <h2>Auswertung</h2>
+
+  <div class="stats-grid" id="stats-grid"></div>
+
+  <h3>Verteilung Ihrer Zuordnungen</h3>
+  <canvas id="dist-chart" height="160"></canvas>
+
+  <h3>Eigene Wahl vs. Referenz</h3>
+  <p style="font-size:0.85rem;color:var(--gray-500);">Die Referenz-Klassifikation ist eine begründete Setzung — keine objektive Wahrheit. Stand der Referenz: Mai 2026. Abweichungen verdienen Diskussion.</p>
+  <table id="comparison-table">
+    <thead>
+      <tr>
+        <th style="width:5%">#</th>
+        <th style="width:45%">Tätigkeit</th>
+        <th style="width:15%">Ihre Wahl</th>
+        <th style="width:15%">Referenz</th>
+        <th style="width:20%">Match</th>
+      </tr>
+    </thead>
+    <tbody id="comparison-body"></tbody>
+  </table>
+
+  <div class="reflection-box">
+    <h3 style="margin-top:0;">Reflexionsfragen</h3>
+    <ol>
+      <li>Welche Tätigkeit war für Sie heute klar <strong>Agency</strong> — und stand vor zwei Jahren noch auf Augmentation oder gar weiter rechts? Was hat sich geändert: Modell, Harness, App?</li>
+      <li>Welche Tätigkeit haben Sie als <strong>Automation</strong> eingestuft, obwohl der KI-Einsatz dort regelmäßig schiefgeht? Wo liegt der typische Bruchpunkt?</li>
+      <li>Wo haben Sie „mehrere Modi relevant" gewählt? Lässt sich die Tätigkeit so zerschneiden, dass jedes Stück klar einem Modus zufällt — und was lernen Sie über die Tätigkeit, wenn das nicht geht?</li>
+    </ol>
+  </div>
+
+  <div class="nav-row">
+    <button class="btn-secondary" onclick="restart()">Neu starten</button>
+    <button class="btn-primary" onclick="exportMarkdown()">Als Markdown exportieren</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Prof. Dr. Roman Bartnik · TH Köln · Lizenz CC BY-NC-SA 4.0 · Tätigkeiten: <a href="https://www.onetonline.org/link/summary/13-2011.00" target="_blank" rel="noopener">O*Net OnLine 13-2011.00</a> · Framework-Idee: Mollick (2024, 2026)
+</footer>
+
+<script>
+// ============================================================
+//   Daten: 29 O*Net-Tätigkeiten + Referenz-Klassifikation
+// ============================================================
+const TASKS = [
+  { id:1,  en:"Prepare detailed reports on audit findings.",
+           de:"Detaillierte Prüfberichte erstellen",
+           ref:"Augmentation",
+           rationale:"Berichte sind Beratungs-/Entscheidungsmaterial; die KI entwirft, der Prüfer schärft und steht für jeden Satz ein." },
+  { id:2,  en:"Report to management about asset utilization and audit results, and recommend changes in operations and financial activities.",
+           de:"Management-Reporting zu Asset-Nutzung mit Empfehlungen",
+           ref:"Augmentation",
+           rationale:"Empfehlungen verlangen Urteil — KI liefert Vorlagen, die Verantwortung bleibt menschlich." },
+  { id:3,  en:"Collect and analyze data to detect deficient controls, duplicated effort, extravagance, fraud, or non-compliance with laws, regulations, and management policies.",
+           de:"Datenanalyse zur Aufdeckung von Mängeln und Betrug",
+           ref:"Automation",
+           rationale:"Anomalie-Detection in großen Datenmengen ist Standard-Automation; menschliche Prüfung der Treffer bleibt Pflicht." },
+  { id:4,  en:"Inspect account books and accounting systems for efficiency, effectiveness, and use of accepted accounting procedures to record transactions.",
+           de:"Buchhaltung auf Effizienz und korrekte Verfahren prüfen",
+           ref:"Augmentation",
+           rationale:"Mustererkennung gut delegierbar; Effektivitätsbewertung verlangt menschliches Urteil." },
+  { id:5,  en:"Supervise auditing of establishments, and determine scope of investigation required.",
+           de:"Auditing leiten und Prüfungsumfang festlegen",
+           ref:"Augmentation",
+           rationale:"Scope-Festlegung ist Leitungsaufgabe; KI unterstützt mit Risiko-Heuristiken." },
+  { id:6,  en:"Confer with company officials about financial and regulatory matters.",
+           de:"Mit Unternehmensvertretern beraten",
+           ref:"Augmentation",
+           rationale:"Vorbereitung KI-fähig (Themenliste, Sachverhaltszusammenfassung); das Gespräch bleibt menschlich." },
+  { id:7,  en:"Examine and evaluate financial and information systems, recommending controls to ensure system reliability and data integrity.",
+           de:"Finanz-/IT-Systeme prüfen, Kontrollen empfehlen",
+           ref:"Agency",
+           rationale:"Moderne Audit-Tools können IT-Systeme in mehrstufigen Sequenzen durchprüfen, Befunde aufbereiten und konsolidieren." },
+  { id:8,  en:"Inspect cash on hand, notes receivable and payable, negotiable securities, and canceled checks to confirm records are accurate.",
+           de:"Kassenprüfung, Wertpapiere, Schecks physisch prüfen",
+           ref:"Keine",
+           rationale:"Physische Inspektion. Klare Grenze des KI-Einsatzes." },
+  { id:9,  en:"Examine records and interview workers to ensure recording of transactions and compliance with laws and regulations.",
+           de:"Belegprüfung und Mitarbeiterinterviews",
+           ref:"Augmentation",
+           rationale:"Belegsichtung mit KI-Hilfe; Interviews bleiben Mensch-zu-Mensch." },
+  { id:10, en:"Prepare, examine, or analyze accounting records, financial statements, or other financial reports to assess accuracy, completeness, and conformance to reporting and procedural standards.",
+           de:"Abschluss-/Reporting-Analyse auf Korrektheit",
+           ref:"Augmentation",
+           rationale:"KI als Co-Pilot bei Standards-Konformitätsprüfung; finale Verantwortung beim Prüfer." },
+  { id:11, en:"Prepare adjusting journal entries.",
+           de:"Anpassungsbuchungen vorbereiten",
+           ref:"Automation",
+           rationale:"Hochgradig regelbasiert; sauber automatisierbar mit Plausibilitätsprüfung." },
+  { id:12, en:"Review accounts for discrepancies and reconcile differences.",
+           de:"Konten auf Abweichungen prüfen und abstimmen",
+           ref:"Automation",
+           rationale:"Klassisches Automation-Feld; Rule-Engines sind hier seit Jahren etabliert." },
+  { id:13, en:"Establish tables of accounts and assign entries to proper accounts.",
+           de:"Kontenrahmen aufstellen und Einträge zuordnen",
+           ref:"Automation",
+           rationale:"Kontenrahmen folgen Mustern; Zuordnung ist regelbasiert." },
+  { id:14, en:"Examine inventory to verify journal and ledger entries.",
+           de:"Inventur zur Verifikation der Buchungen",
+           ref:"Keine",
+           rationale:"Physische Inventur. Klare Grenze des KI-Einsatzes." },
+  { id:15, en:"Analyze business operations, trends, costs, revenues, financial commitments, and obligations to project future revenues and expenses or to provide advice.",
+           de:"Betriebsanalysen und Prognosen für Beratung",
+           ref:"Augmentation",
+           rationale:"KI unterstützt Datenanalyse und Prognose; Interpretation und Beratung bleiben menschlich." },
+  { id:16, en:"Report to management regarding the finances of establishment.",
+           de:"Finanz-Reporting an Management",
+           ref:"Augmentation",
+           rationale:"KI als Drafting-Assistent; finaler Adressaten-Fit beim Berater." },
+  { id:17, en:"Develop, implement, modify, and document recordkeeping and accounting systems, making use of current computer technology.",
+           de:"Buchhaltungssysteme entwickeln und dokumentieren",
+           ref:"Agency",
+           rationale:"Mehrstufige Entwicklung — Implementieren, Testen, Dokumentieren — heute mit Coding-Agents (Claude Code, Codex) machbar." },
+  { id:18, en:"Evaluate taxpayer finances to determine tax liability, using knowledge of interest and discount rates, annuities, valuation of stocks and bonds, and amortization valuation of depletable assets.",
+           de:"Steuerlast ermitteln, inkl. Bewertung komplexer Assets",
+           ref:"Augmentation",
+           rationale:"Berechnung delegierbar; Rechtsanwendung muss vom Berater kontrolliert werden." },
+  { id:19, en:"Examine whether the organization's objectives are reflected in its management activities, and whether employees understand the objectives.",
+           de:"Prüfen, ob Unternehmensziele in Aktivitäten reflektiert werden",
+           ref:"Augmentation",
+           rationale:"Strategische Audit-Fragen; KI hilft bei Analyse, finale Bewertung menschlich." },
+  { id:20, en:"Audit payroll and personnel records to determine unemployment insurance premiums, workers' compensation coverage, liabilities, and compliance with tax laws.",
+           de:"Lohn/Gehalt und Personalakten auf Compliance prüfen",
+           ref:"Automation",
+           rationale:"Compliance-Prüfung ist regelbasiert; Standardfall mit menschlicher Stichprobenkontrolle." },
+  { id:21, en:"Review taxpayer accounts, and conduct audits on-site, by correspondence, or by summoning taxpayer to office.",
+           de:"Steuerakten prüfen, Außenprüfung oder Schriftverfahren",
+           ref:"Mehrere",
+           rationale:"Review automatisierbar; Außenprüfung menschlich; Schriftverfahren teil-augmentiert. Drei Modi je nach Kanal." },
+  { id:22, en:"Compute taxes owed and prepare tax returns, ensuring compliance with payment, reporting, or other tax requirements.",
+           de:"Steuern berechnen und Steuererklärungen erstellen",
+           ref:"Automation",
+           rationale:"Steuerberechnung ist regelbasiert mit zwingender finaler Verifikation." },
+  { id:23, en:"Advise clients in areas such as compensation, employee health care benefits, the design of accounting or data processing systems, or long-range tax or estate plans.",
+           de:"Mandanten beraten zu Vergütung, Systemen, Langfristplanung",
+           ref:"Augmentation",
+           rationale:"Beratung muss menschlich; KI als Recherche- und Drafting-Co-Pilot." },
+  { id:24, en:"Direct activities of personnel engaged in filing, recording, compiling, and transmitting financial records.",
+           de:"Mitarbeitende bei Aufzeichnungstätigkeiten anleiten",
+           ref:"Augmentation",
+           rationale:"Führungsaufgabe; KI-Unterstützung beim Reporting und Briefing." },
+  { id:25, en:"Conduct pre-implementation audits to determine if systems and programs under development will work as planned.",
+           de:"Pre-Implementation-Audits für Systeme und Programme",
+           ref:"Agency",
+           rationale:"Multi-Step-Testing mit Coding-Agents zunehmend Standard; Auditor beurteilt Vollständigkeit am Ende." },
+  { id:26, en:"Develop, maintain, or analyze budgets, preparing periodic reports that compare budgeted costs to actual costs.",
+           de:"Budgets entwickeln, Ist-/Soll-Vergleichsberichte",
+           ref:"Augmentation",
+           rationale:"Excel-Augmentation (z. B. Claude for Excel) macht das zur klassischen Co-Pilot-Aufgabe." },
+  { id:27, en:"Prepare, analyze, or verify annual reports, financial statements, and other records, using accepted accounting and statistical procedures to assess financial condition and facilitate financial planning.",
+           de:"Jahresabschlüsse erstellen, analysieren, verifizieren",
+           ref:"Agency",
+           rationale:"Komplette Jahresabschluss-Prozesse in mehrstufigen Sequenzen sind mit modernen Agents zunehmend machbar." },
+  { id:28, en:"Process invoices for payment.",
+           de:"Rechnungen zur Zahlung freigeben",
+           ref:"Automation",
+           rationale:"Klassische RPA-Aufgabe; hochautomatisierbar mit menschlicher Genehmigung am Ende." },
+  { id:29, en:"Review data about material assets, net worth, liabilities, capital stock, surplus, income, or expenditures.",
+           de:"Bilanz- und GuV-Daten überprüfen",
+           ref:"Automation",
+           rationale:"Strukturdaten-Review folgt klaren Regeln; Plausibilität und Konsistenz lassen sich sauber automatisieren." }
+];
+
+const MODE_COLORS = {
+  Automation:   '#c81e0f',
+  Augmentation: '#b43092',
+  Agency:       '#ea5a00',
+  Mehrere:      '#6b6b73',
+  Keine:        '#e6e6ea'
+};
+
+// ============================================================
+//   State
+// ============================================================
+let state = {
+  currentIndex: 0,
+  answers: {} // taskId -> 'Automation' | 'Augmentation' | 'Agency' | 'Mehrere' | 'Keine'
+};
+
+// ============================================================
+//   Navigation
+// ============================================================
+function start() {
+  document.getElementById('intro').hidden = true;
+  document.getElementById('task').hidden = false;
+  document.getElementById('results').hidden = true;
+  state.currentIndex = 0;
+  showTask();
+}
+
+function showTask() {
+  const i = state.currentIndex;
+  const t = TASKS[i];
+  document.getElementById('task-en').textContent = t.en;
+  document.getElementById('task-de').textContent = t.de;
+  const pct = Math.round(((i + 1) / TASKS.length) * 100);
+  document.getElementById('progress-text').textContent =
+    'Tätigkeit ' + (i + 1) + ' von ' + TASKS.length;
+  document.getElementById('progress-pct').textContent = pct + ' %';
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('btn-prev').disabled = (i === 0);
+  document.getElementById('btn-skip').textContent =
+    (i === TASKS.length - 1) ? 'Auswertung ›' : 'Überspringen ›';
+}
+
+function chooseAnswer(c) {
+  const t = TASKS[state.currentIndex];
+  state.answers[t.id] = c;
+  next();
+}
+
+function next() {
+  if (state.currentIndex < TASKS.length - 1) {
+    state.currentIndex++;
+    showTask();
+  } else {
+    showResults();
+  }
+}
+
+function prevTask() {
+  if (state.currentIndex > 0) {
+    state.currentIndex--;
+    showTask();
+  }
+}
+
+function skipTask() { next(); }
+
+function restart() {
+  state = { currentIndex: 0, answers: {} };
+  document.getElementById('intro').hidden = false;
+  document.getElementById('task').hidden = true;
+  document.getElementById('results').hidden = true;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ============================================================
+//   Results
+// ============================================================
+function showResults() {
+  document.getElementById('task').hidden = true;
+  document.getElementById('results').hidden = false;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const totals = countAnswers();
+  const matchCount = TASKS.filter(t => state.answers[t.id] === t.ref).length;
+  const answeredCount = Object.keys(state.answers).length;
+  const matchPct = answeredCount > 0
+    ? Math.round((matchCount / answeredCount) * 100)
+    : 0;
+
+  const grid = document.getElementById('stats-grid');
+  grid.innerHTML = '';
+  grid.appendChild(makeStatCard(answeredCount + ' / ' + TASKS.length, 'beantwortet'));
+  grid.appendChild(makeStatCard(matchCount, 'Übereinstimmungen mit der Referenz'));
+  grid.appendChild(makeStatCard(matchPct + ' %', 'Match-Quote'));
+
+  drawDistChart(totals);
+  drawComparisonTable();
+}
+
+function countAnswers() {
+  const totals = { Automation:0, Augmentation:0, Agency:0, Mehrere:0, Keine:0 };
+  Object.values(state.answers).forEach(v => { totals[v] = (totals[v]||0) + 1; });
+  return totals;
+}
+
+function makeStatCard(num, label) {
+  const div = document.createElement('div');
+  div.className = 'stat-card';
+  div.innerHTML = '<div class="stat-num">' + num + '</div><div class="stat-label">' + label + '</div>';
+  return div;
+}
+
+function drawDistChart(totals) {
+  const ctx = document.getElementById('dist-chart').getContext('2d');
+  const labels = ['Automation','Augmentation','Agency','Mehrere','Keine'];
+  const data   = labels.map(l => totals[l] || 0);
+  const colors = labels.map(l => MODE_COLORS[l]);
+  if (window._distChart) window._distChart.destroy();
+  window._distChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{ label: 'Anzahl Tätigkeiten', data: data, backgroundColor: colors, borderRadius: 0 }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } }
+    }
+  });
+}
+
+function drawComparisonTable() {
+  const tbody = document.getElementById('comparison-body');
+  tbody.innerHTML = '';
+  TASKS.forEach(t => {
+    const ans = state.answers[t.id];
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      '<td>' + t.id + '</td>' +
+      '<td>' + escapeHTML(t.de) +
+        '<details><summary>O*Net-Original</summary>' + escapeHTML(t.en) + '</details>' +
+        '<details><summary>Begründung Referenz</summary>' + escapeHTML(t.rationale) + '</details>' +
+      '</td>' +
+      '<td>' + (ans ? pill(ans) : '<span class="match-na">—</span>') + '</td>' +
+      '<td>' + pill(t.ref) + '</td>' +
+      '<td>' + matchCell(ans, t.ref) + '</td>';
+    tbody.appendChild(tr);
+  });
+}
+
+function pill(c) {
+  const cls = 'pill-' + c.toLowerCase();
+  return '<span class="pill ' + cls + '">' + c + '</span>';
+}
+
+function matchCell(ans, ref) {
+  if (!ans) return '<span class="match-na">nicht beantwortet</span>';
+  if (ans === ref) return '<span class="match-yes">✓ Match</span>';
+  if (ans === 'Mehrere') return '<span class="match-na">≈ teilweise</span>';
+  if (ans === 'Keine') return '<span class="match-no">≠ KI-skeptisch</span>';
+  return '<span class="match-no">✗ abweichend</span>';
+}
+
+function escapeHTML(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  })[c]);
+}
+
+// ============================================================
+//   Markdown export
+// ============================================================
+function exportMarkdown() {
+  const totals = countAnswers();
+  const matchCount = TASKS.filter(t => state.answers[t.id] === t.ref).length;
+  const answeredCount = Object.keys(state.answers).length;
+  const matchPct = answeredCount > 0
+    ? Math.round((matchCount / answeredCount) * 100)
+    : 0;
+
+  let md = '# Automation · Augmentation · Agency — Eigene Zuordnung\n\n';
+  md += '*Workshop „KI in Tax, Audit & Advisory" · TH Köln · Tätigkeiten: O*Net 13-2011.00*\n\n';
+  md += '## Zusammenfassung\n\n';
+  md += '- Beantwortet: ' + answeredCount + ' / ' + TASKS.length + '\n';
+  md += '- Übereinstimmungen mit Referenz: ' + matchCount + '\n';
+  md += '- Match-Quote: ' + matchPct + ' %\n\n';
+  md += '## Verteilung\n\n';
+  ['Automation','Augmentation','Agency','Mehrere','Keine'].forEach(k => {
+    md += '- ' + k + ': ' + (totals[k] || 0) + '\n';
+  });
+  md += '\n## Tätigkeit für Tätigkeit\n\n';
+  md += '| # | Tätigkeit | Eigene Wahl | Referenz | Match |\n';
+  md += '|---|-----------|-------------|----------|-------|\n';
+  TASKS.forEach(t => {
+    const ans = state.answers[t.id] || '—';
+    const match = !state.answers[t.id]
+      ? 'nicht beantwortet'
+      : (ans === t.ref ? '✓' : '✗');
+    md += '| ' + t.id + ' | ' + t.de.replace(/\|/g,'\\|') + ' | ' + ans + ' | ' + t.ref + ' | ' + match + ' |\n';
+  });
+  md += '\n## Reflexionsnotizen\n\n';
+  md += '_(eigene Notizen ergänzen)_\n\n';
+  md += '1. Tätigkeit, die heute klar Agency ist — vor zwei Jahren noch nicht. Was hat sich geändert?\n';
+  md += '2. Tätigkeit als Automation eingestuft, obwohl der KI-Einsatz häufig schiefgeht. Bruchpunkt:\n';
+  md += '3. Tätigkeit mit „mehreren Modi". Lässt sich der Workflow zerschneiden?\n';
+
+  const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const ts = new Date().toISOString().slice(0,10);
+  a.href = url;
+  a.download = 'aaa-mapper-' + ts + '.md';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
