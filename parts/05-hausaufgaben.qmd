@@ -34,6 +34,6 @@ Beschreiben Sie ein konkretes *Dilemma der Mitte* — eine Situation aus Tax, Au
 
 **Capstone-Hausaufgabe · 1–3 Seiten, mit Datum, Versionsnummer, Querverweisen zu mindestens drei Übungen · 4D-Bezug:** integrativ.
 
-Formulieren Sie eine persönliche AI Policy, die festlegt, wann, wie und mit welchen Schutzmechanismen Sie KI in Ihrer Berufspraxis einsetzen. Adressat: Sie selbst plus eine fiktive Aufsichtsperson. Material aus allen Workshop-Übungen plus Berufsrecht (siehe [Wissensbasis · Recht und Berufsstand](06-wissensbasis.qmd#sec-recht)). Sieben Sektionen: *Geltungsbereich · Delegation-Regeln · Description-Regeln · Discernment-Regeln · Diligence-Regeln · Eskalationspfade · Review-Rhythmus*.
+Formulieren Sie eine persönliche AI Policy, die festlegt, wann, wie und mit welchen Schutzmechanismen Sie KI in Ihrer Berufspraxis einsetzen. Adressat: Sie selbst plus eine fiktive Aufsichtsperson. Material aus allen Workshop-Übungen plus Berufsrecht (siehe [Wissensbasis · Recht und Berufsstand](../appendix/wissensbasis.qmd#sec-recht)). Sieben Sektionen: *Geltungsbereich · Delegation-Regeln · Description-Regeln · Discernment-Regeln · Diligence-Regeln · Eskalationspfade · Review-Rhythmus*.
 
 **Wer mehr will:** Mindestens drei Regeln so umformulieren, dass sie konkret eine Übung aus Tag 1 oder 2 referenzieren — dadurch wird aus der generischen Compliance-Liste ein persönliches Dokument.

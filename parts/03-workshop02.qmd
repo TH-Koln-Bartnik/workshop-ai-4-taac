@@ -22,7 +22,7 @@ subtitle: "Freitag, 25.09.2026 · 09:00–13:00 · Campus Südstadt"
 
 - **Zugang** zur BPMN-Modellierungsumgebung (Signavio Academic Edition oder Alternative wie bpmn.io) prüfen, alternativ Stift und Papier.
 - **UiPath-Account** in der Cloud anlegen oder Screencast-Ersatzmaterial bereitstellen — siehe [Quickstart](../appendix/quickstart.qmd).
-- Optional: die [Wissensbasis](06-wissensbasis.qmd) zu RAG, RAGAS und Prompt-Patterns überfliegen.
+- Optional: die [Wissensbasis](../appendix/wissensbasis.qmd) zu RAG, RAGAS und Prompt-Patterns überfliegen.
 
 ## Inhalte des Workshops
 
@@ -53,7 +53,7 @@ Qualitätssicherung von GenAI-Outputs folgt dem Prinzip *Defense in Depth* — k
 
 ![RAGAS-Metriken und Goldstandard im Zusammenspiel — automatisierte Grobeinschätzung trifft auf expertengeprüften Referenzkanon.](../images/discernment-ragas-standard.png){fig-alt="Schematische Darstellung der vier RAGAS-Kernmetriken Faithfulness, Answer Relevance, Context Precision und Context Recall im Kontext eines Goldstandard-Testsets"}
 
-Vertiefung in der [Wissensbasis · Primer Qualitätsprüfung](06-wissensbasis.qmd#sec-primer-qualitaetspruefung) und [Primer Goldstandard](06-wissensbasis.qmd#sec-primer-goldstandard). Pattern-Details unter [Prompt-Pattern-Katalog](06-wissensbasis.qmd#sec-prompt-patterns).
+Vertiefung in der [Wissensbasis · Primer Qualitätsprüfung](../appendix/wissensbasis.qmd#sec-primer-qualitaetspruefung) und [Primer Goldstandard](../appendix/wissensbasis.qmd#sec-primer-goldstandard). Pattern-Details unter [Prompt-Pattern-Katalog](../appendix/wissensbasis.qmd#sec-prompt-patterns).
 ::::
 
 :::: week-card
@@ -127,7 +127,7 @@ Die ersten fünf Übungen vertiefen **Discern** (zweistufiger Quellenbindungs-Pr
 
 ## Hintergrund / Werkzeuge / Ressourcen
 
-- **Wissensbasis** — [Prompt-Pattern-Katalog nach White](06-wissensbasis.qmd#sec-prompt-patterns) · [RAG-Grundlagen](06-wissensbasis.qmd#sec-rag) · [Primer Qualitätsprüfung](06-wissensbasis.qmd#sec-primer-qualitaetspruefung) · [Primer Goldstandard](06-wissensbasis.qmd#sec-primer-goldstandard) · [BPMN-Grundlagen](06-wissensbasis.qmd#sec-bpmn) · [RPA-Grundlagen](06-wissensbasis.qmd#sec-rpa) · [Recht und Berufsstand](06-wissensbasis.qmd#sec-recht).
+- **Wissensbasis** — [Prompt-Pattern-Katalog nach White](../appendix/wissensbasis.qmd#sec-prompt-patterns) · [RAG-Grundlagen](../appendix/wissensbasis.qmd#sec-rag) · [Primer Qualitätsprüfung](../appendix/wissensbasis.qmd#sec-primer-qualitaetspruefung) · [Primer Goldstandard](../appendix/wissensbasis.qmd#sec-primer-goldstandard) · [BPMN-Grundlagen](../appendix/wissensbasis.qmd#sec-bpmn) · [RPA-Grundlagen](../appendix/wissensbasis.qmd#sec-rpa) · [Recht und Berufsstand](../appendix/wissensbasis.qmd#sec-recht).
 - **Originalmaterial** — Cheat Sheet und Practical Overview zu Diligence aus @dakan2025framework.
 - **Standardreferenz BPMN** — @omg2014bpmn.
 - **Service-Automation-Continuum** — @lacity2021becoming und @willcocks2024evolution als Vertiefung zur strategischen Einordnung.

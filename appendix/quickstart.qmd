@@ -34,7 +34,7 @@ subtitle: "Was Sie vor Workshop 1 einrichten"
 ::: {.callout-warning}
 - In keinem Fall **reale Mandantendaten** in KI-Tools eingeben.
 - Sachverhalte für Übungen entweder **fiktiv** konstruieren oder vollständig **anonymisieren**.
-- Free-Tier-Dienste sind nicht für Mandantenarbeit geeignet — siehe [Wissensbasis · Recht und Berufsstand](../parts/06-wissensbasis.qmd#sec-recht).
+- Free-Tier-Dienste sind nicht für Mandantenarbeit geeignet — siehe [Wissensbasis · Recht und Berufsstand](wissensbasis.qmd#sec-recht).
 :::
 
 ## Was, wenn …

@@ -38,19 +38,18 @@ book:
       chapters:
         - parts/01-workshop01.qmd
         - parts/02-uebungen-w1.qmd
-    - part: "Teil 2 — Workshop 2 (Fr, 25.09.)"
-      chapters:
-        - parts/03-workshop02.qmd
-        - parts/04-uebungen-w2.qmd
-    - part: "Teil 3 — Hausaufgaben & Wissensbasis"
-      chapters:
-        - parts/05-hausaufgaben.qmd
-        - parts/06-wissensbasis.qmd
+    # Für den 24.09. ausgeblendet (nur Workshop-Tag 1 zeigen) — vor dem 25.09. wieder einkommentieren:
+    # - part: "Teil 2 — Workshop 2 (Fr, 25.09.)"
+    #   chapters:
+    #     - parts/03-workshop02.qmd
+    #     - parts/04-uebungen-w2.qmd
+    # Hausaufgaben aus dem Online-Skript entfernt; Quelle bleibt erhalten unter parts/05-hausaufgaben.qmd
     - part: "Anhang"
       chapters:
         - appendix/quickstart.qmd
         - appendix/troubleshooting.qmd
         - appendix/tutor-prompt.qmd
+        - appendix/wissensbasis.qmd
     - references.qmd
   page-footer:
     left: "© 2026 Prof. Dr. Roman Bartnik · TH Köln · CC BY-NC-SA 4.0"
