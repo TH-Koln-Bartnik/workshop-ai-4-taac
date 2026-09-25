@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#77736A"/></marker><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C77659"/></marker></defs><rect width="1600" height="900" fill="#F5F2EB"/>
+<text x="72" y="66" text-anchor="start" font-family="sans-serif" font-size="19" font-weight="600" fill="#C77659">LLM-NUTZUNGSFORMEN   /   03</text>
+<text x="72" y="137" text-anchor="start" font-family="serif" font-size="44" font-weight="400" fill="#292824">Eine Prüfschleife verbessert den Entwurf.</text>
+<text x="72" y="184" text-anchor="start" font-family="sans-serif" font-size="24" font-weight="400" fill="#77746D">Evaluator–Optimizer: Erstellung und Bewertung als getrennte Aufgaben.</text>
+<path d="M72 818 H1528" stroke="#D8D3C8"/>
+<text x="72" y="854" text-anchor="start" font-family="sans-serif" font-size="18" font-weight="400" fill="#77746D">Eigene Darstellung nach Anthropic (2024)</text>
+<text x="1528" y="854" text-anchor="end" font-family="sans-serif" font-size="18" font-weight="400" fill="#77746D">Beispiel: Lieferantenbewertung</text>
+<rect x="100" y="370" width="280" height="125" rx="13" fill="#EAD7C9" stroke="#77736A" stroke-width="1.7"/>
+<text x="240" y="424.5" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="400" fill="#292824">Erstellen</text>
+<text x="240" y="458.5" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="400" fill="#292824">Empfehlung entwerfen</text>
+<rect x="540" y="370" width="240" height="125" rx="13" fill="#FFFDFA" stroke="#77736A" stroke-width="1.7"/>
+<text x="660" y="441.5" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="400" fill="#292824">Entwurf</text>
+<rect x="940" y="370" width="290" height="125" rx="13" fill="#EAD7C9" stroke="#77736A" stroke-width="1.7"/>
+<text x="1085" y="424.5" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="400" fill="#292824">Bewerten</text>
+<text x="1085" y="458.5" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="400" fill="#292824">Kriterien prüfen</text>
+<rect x="1310" y="370" width="210" height="125" rx="13" fill="#DCE4D7" stroke="#77736A" stroke-width="1.7"/>
+<text x="1415" y="424.5" text-anchor="middle" font-family="sans-serif" font-size="23" font-weight="400" fill="#292824">Ergebnis</text>
+<text x="1415" y="458.5" text-anchor="middle" font-family="sans-serif" font-size="23" font-weight="400" fill="#292824">Kriterien erfüllt</text>
+<path d="M380 432 H535" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<path d="M780 432 H935" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<path d="M1230 432 H1305" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<text x="1085" y="288" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="600" fill="#77746D">PRÜFKRITERIEN</text>
+<text x="1085" y="325" text-anchor="middle" font-family="sans-serif" font-size="23" font-weight="400" fill="#292824">Belege · Vollständigkeit</text>
+<path d="M1085 500 V645 H240 V500" fill="none" stroke="#C77659" stroke-width="2.5"  marker-end="url(#a)"/>
+<text x="675" y="626" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="400" fill="#C77659">Rückmeldung und Überarbeitung</text>
+<text x="1375" y="345" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="400" fill="#77746D">Ja</text>
+<text x="1135" y="566" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="400" fill="#C77659">Nein</text>
+<text x="800" y="772" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="400" fill="#292824">Klare Kriterien und eine festgelegte Höchstzahl an Prüfrunden.</text>
+</svg>

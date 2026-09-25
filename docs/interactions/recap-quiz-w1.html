@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recap-Quiz — Was ist aus Workshop 1 hängen geblieben?</title>
+<style>
+  :root {
+    --th-red: #c81e0f;
+    --th-magenta: #b43092;
+    --th-orange: #ea5a00;
+    --ink: #111111;
+    --paper: #ffffff;
+    --gray-100: #f5f5f7;
+    --gray-200: #e6e6ea;
+    --gray-500: #6b6b73;
+    --green: #2e7d32;
+    --green-bg: #e8f3e9;
+    --red-bg: #fbe9e7;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+  }
+  .color-bar {
+    height: 6px;
+    background: linear-gradient(to right,
+      var(--th-red) 0%, var(--th-red) 45%,
+      var(--th-magenta) 45%, var(--th-magenta) 80%,
+      var(--th-orange) 80%, var(--th-orange) 100%);
+  }
+  header { padding: 1.25rem 1.5rem 1rem 1.5rem; border-bottom: 1px solid var(--gray-200); }
+  header h1 { margin: 0 0 0.25rem 0; font-size: 1.4rem; font-weight: 600; }
+  header .meta { font-size: 0.85rem; color: var(--gray-500); }
+  main { max-width: 880px; margin: 0 auto; padding: 1.5rem; }
+  h2 {
+    font-size: 1.15rem; font-weight: 600;
+    border-bottom: 2px solid rgba(180, 48, 146, 0.35);
+    padding-bottom: 0.3rem; margin: 2rem 0 1rem 0;
+  }
+  h3 { font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.5rem 0; }
+  p { margin: 0.5rem 0; }
+  a, a:visited { color: var(--th-red); }
+
+  .lernziel-box {
+    background: var(--gray-100); border-left: 4px solid var(--th-magenta);
+    padding: 1rem 1.25rem; margin: 1rem 0 1.5rem 0;
+  }
+  .lernziel-box h4 { margin: 0 0 0.5rem 0; font-size: 0.95rem; font-weight: 600; }
+  .lernziel-box ul { margin: 0.25rem 0 0 1.25rem; padding: 0; }
+
+  .progress { margin: 1rem 0; display: flex; gap: 1rem; align-items: center; font-size: 0.85rem; color: var(--gray-500); }
+  .progress-bar { flex: 1; height: 6px; background: var(--gray-200); position: relative; }
+  .progress-fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--th-magenta); transition: width 0.25s ease; }
+
+  .topic { font-size: 0.8rem; font-weight: 600; color: var(--th-magenta); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 0.4rem; }
+  .item-card { border: 1px solid var(--gray-200); padding: 1.25rem 1.5rem; margin: 1rem 0; }
+  .item-card .item-text { font-size: 1.08rem; margin: 0 0 1rem 0; font-weight: 600; }
+  .answers { display: flex; flex-direction: column; gap: 0.5rem; }
+  .answers button {
+    background: var(--paper); color: var(--ink);
+    border: 1px solid var(--gray-200); border-left: 4px solid var(--gray-200);
+    padding: 0.7rem 0.9rem; font-family: inherit; font-size: 0.95rem;
+    cursor: pointer; border-radius: 0; text-align: left; line-height: 1.4;
+    display: flex; gap: 0.7rem; align-items: flex-start;
+  }
+  .answers button .letter { font-weight: 700; color: var(--th-red); min-width: 1.2rem; }
+  .answers button:hover:not(:disabled) { border-color: var(--th-magenta); background: var(--gray-100); }
+  .answers button:disabled { cursor: default; }
+  .answers button.correct { background: var(--green-bg); border-color: var(--green); border-left-color: var(--green); }
+  .answers button.wrong   { background: var(--red-bg); border-color: var(--th-red); border-left-color: var(--th-red); }
+  .answers button.dim     { opacity: 0.55; }
+
+  .rationale {
+    margin-top: 1rem; padding: 0.85rem 1rem; background: var(--gray-100);
+    border-left: 4px solid var(--gray-500); font-size: 0.92rem; display: none;
+  }
+  .rationale.show { display: block; }
+  .rationale .verdict { font-weight: 700; margin-bottom: 0.3rem; }
+  .rationale .verdict.ok  { color: var(--green); }
+  .rationale .verdict.bad { color: var(--th-red); }
+  .rationale .ref { color: var(--gray-500); font-size: 0.82rem; margin-top: 0.4rem; }
+
+  .nav-row { display: flex; justify-content: space-between; margin-top: 1rem; }
+  .nav-row button, .button-row button {
+    background: var(--paper); color: var(--ink);
+    border: 1px solid var(--gray-200); padding: 0.55rem 1rem;
+    font-family: inherit; font-size: 0.9rem; cursor: pointer; border-radius: 0;
+  }
+  .nav-row button.primary, .button-row button.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .nav-row button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .button-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1rem 0 1.5rem 0; }
+  .stat-card { border: 1px solid var(--gray-200); padding: 1rem; text-align: center; }
+  .stat-num { font-size: 1.8rem; font-weight: 600; color: var(--th-red); line-height: 1.1; }
+  .stat-label { font-size: 0.85rem; color: var(--gray-500); margin-top: 0.3rem; }
+
+  table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+  thead th { background: var(--gray-100); text-align: left; padding: 0.5rem; font-weight: 600; }
+  tbody td { padding: 0.5rem; border-top: 1px solid var(--gray-200); vertical-align: top; }
+  .match-yes { color: var(--green); font-weight: 600; }
+  .match-no  { color: var(--th-red); font-weight: 600; }
+  .match-na  { color: var(--gray-500); font-style: italic; }
+
+  footer {
+    border-top: 1px solid var(--gray-200); padding: 1rem 1.5rem; margin-top: 2rem;
+    font-size: 0.8rem; color: var(--gray-500); text-align: center;
+  }
+  @media (max-width: 640px) { .stat-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="color-bar"></div>
+
+<header>
+  <h1>Recap-Quiz — Was ist aus Workshop 1 hängen geblieben?</h1>
+  <div class="meta">Workshop „KI in Tax, Audit &amp; Advisory" · TH Köln · Block 0, Workshop 2 · 12 Fragen · etwa 6 Minuten</div>
+</header>
+
+<main>
+
+<div class="lernziel-box">
+  <h4>Wozu dieses Quiz</h4>
+  <ul>
+    <li>zwölf Kernpunkte aus Workshop 1 in Erinnerung rufen, bevor Workshop 2 darauf aufbaut,</li>
+    <li>zu jeder Frage sofort die Auflösung mit Begründung und Fundstelle im Skript,</li>
+    <li>am Ende eine Übersicht, welche Themen Sie noch einmal nachlesen sollten.</li>
+  </ul>
+</div>
+
+<p>Pro Frage genau eine richtige Antwort. Spontan entscheiden, dann die Auflösung lesen. Das Quiz eignet sich auch für das Plenum: Frage am Beamer zeigen, per Handzeichen abstimmen, dann auflösen.</p>
+
+<section id="quiz">
+  <div class="progress">
+    <span id="progress-text">Frage 1 von 12</span>
+    <div class="progress-bar"><div id="progress-fill" class="progress-fill" style="width:8%"></div></div>
+    <span id="progress-score">0 richtig</span>
+  </div>
+
+  <div class="item-card">
+    <div class="topic" id="item-topic">…</div>
+    <p class="item-text" id="item-text">…</p>
+    <div class="answers" id="answers"></div>
+    <div class="rationale" id="rationale">
+      <div class="verdict" id="verdict"></div>
+      <div id="rationale-text"></div>
+      <div class="ref" id="rationale-ref"></div>
+    </div>
+    <div class="nav-row">
+      <button id="btn-prev" onclick="prevItem()">‹ Zurück</button>
+      <button id="btn-next" class="primary" onclick="nextItem()" disabled>Weiter ›</button>
+    </div>
+  </div>
+</section>
+
+<section id="results" hidden>
+  <h2>Ihre Auswertung</h2>
+  <div class="stat-grid" id="stats"></div>
+  <p id="results-hint"></p>
+
+  <h3>Frage für Frage</h3>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Thema</th><th>Ihre Wahl</th><th>Richtig</th><th>Ergebnis</th></tr>
+    </thead>
+    <tbody id="comparison-body"></tbody>
+  </table>
+
+  <div class="button-row">
+    <button class="primary" onclick="restart()">Quiz erneut starten</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Prof. Dr. Roman Bartnik · TH Köln · CC BY-NC-SA 4.0 · Inhalte nach Workshop 1 dieses Skripts; Grundlagen:
+  Dakan &amp; Feller (2025), <em>Framework for AI Fluency</em> (<a href="https://ringling.libguides.com/ai/framework" target="_blank">ringling.libguides.com/ai/framework</a>) ·
+  Lacity &amp; Willcocks (2021), <em>Becoming strategic with intelligent automation</em> ·
+  Dell'Acqua et al. (2023), <em>Navigating the jagged technological frontier</em> (<a href="https://doi.org/10.2139/ssrn.4573321" target="_blank">doi:10.2139/ssrn.4573321</a>) ·
+  Es et al. (2024), <em>RAGAS</em> (<a href="https://aclanthology.org/2024.eacl-demo.16/" target="_blank">aclanthology.org/2024.eacl-demo.16</a>) ·
+  Willison (2025), <em>Red-green TDD for agentic engineering</em> (<a href="https://simonwillison.net/guides/agentic-engineering-patterns/red-green-tdd/" target="_blank">simonwillison.net</a>).
+</footer>
+
+<script>
+// ============================================================
+//   Fragen — Template Literals, damit „…" und "…" erlaubt sind.
+//   answer = Index der richtigen Option (0-basiert).
+// ============================================================
+const ITEMS = [
+  { id: 1, topic: `Block 1 · Process vs. Cognitive Automation`,
+    text: `Welche dieser Tätigkeiten ist ein Fall von Cognitive Automation?`,
+    options: [
+      `E-Mails eines Sammelpostfachs nach Lieferantenname in vordefinierte Ordner sortieren.`,
+      `Aus einem 40-seitigen Vertrag die zahlungsrelevanten Klauseln identifizieren und extrahieren.`,
+      `Aus 200 Lohnbuchungen die Lohnsteuerabzüge nach Steuerklassen-Algorithmus berechnen.`,
+      `Aus einem Excel-Auszug die Top-10-Kunden nach Umsatz filtern und in eine Folie übertragen.`
+    ],
+    answer: 1,
+    rationale: `Unstrukturierter Text, semantische Klassifikation, Kontextabhängigkeit — das verlangt ein Sprachmodell. Die drei anderen Tätigkeiten folgen eindeutigen Regeln auf strukturierten Daten und sind klassische Process Automation (RPA).`,
+    ref: `Skript Workshop 1, Block 1 und Übung 1 (Diagnose-Quiz); Lacity & Willcocks (2021).` },
+
+  { id: 2, topic: `Block 2 · 4D-Framework`,
+    text: `Wie heißen die vier Kernkompetenzen des 4D-Frameworks für AI Fluency?`,
+    options: [
+      `Define, Design, Deploy, Debug`,
+      `Delegate, Describe, Decide, Deliver`,
+      `Delegate, Describe, Discern, Diligence`,
+      `Data, Discover, Develop, Deliver`
+    ],
+    answer: 2,
+    rationale: `Delegate (Was gebe ich ab?), Describe (Wie beschreibe ich es?), Discern (Wie prüfe ich den Output?), Diligence (Wer trägt die Verantwortung?). Delegate–Diligence bilden den strategischen, Describe–Discern den operativen Kreislauf.`,
+    ref: `Skript Workshop 1, Block 2; Dakan & Feller (2025).` },
+
+  { id: 3, topic: `Block 3 · Delegate — drei Konfigurationen`,
+    text: `Welche Konfiguration arbeitet in einer Schleife aus Ziel, Plan, Werkzeug, Bewertung und neuem Plan — und meldet sich erst zurück, wenn die Aufgabe erledigt ist?`,
+    options: [
+      `LLM allein`,
+      `Erweitertes LLM`,
+      `Agent`,
+      `Fine-getuntes LLM`
+    ],
+    answer: 2,
+    rationale: `Das ist die Definition des Agenten aus Block 3. Das LLM allein ist der belesene Bibliothekar, der nur reden kann; das erweiterte LLM hat eine Werkbank mit Werkzeugen, arbeitet aber pro Anfrage; erst der Agent verkettet Schritte eigenständig.`,
+    ref: `Skript Workshop 1, Block 3 „KI ist nicht KI".` },
+
+  { id: 4, topic: `Block 3 · Delegate — Harness`,
+    text: `Was ist mit der „Harness" eines Sprachmodells gemeint?`,
+    options: [
+      `Die Trainingsdaten, mit denen das Modell gebaut wurde.`,
+      `Der Werkzeuggürtel um das Modell: Web-Suche, Datei-Upload, Code-Ausführung und Ähnliches.`,
+      `Die Anzahl der Parameter des Modells.`,
+      `Der Temperature-Wert, der die Zufälligkeit der Antworten steuert.`
+    ],
+    answer: 1,
+    rationale: `Harness (englisch für Geschirr) bezeichnet die Ausstattung um das Modell herum. Was ein System tatsächlich kann, hängt mindestens so stark von dieser Ausstattung ab wie vom Modell selbst — deshalb ließen sich in Übung 2 Modell- und Harness-Effekte trennen.`,
+    ref: `Skript Workshop 1, Block 3 und Übung 2 (Modellvergleich).` },
+
+  { id: 5, topic: `Block 3 · Jagged Frontier`,
+    text: `Was besagt die „Jagged Frontier"?`,
+    options: [
+      `KI-Fähigkeiten steigen gleichmäßig mit der Modellgröße.`,
+      `KI-Fähigkeiten sind unregelmäßig verteilt — unerwartet stark in manchen Aufgaben, unerwartet schwach in ähnlich wirkenden.`,
+      `Große Modelle halluzinieren grundsätzlich nicht mehr.`,
+      `KI eignet sich nur für strukturierte, regelbasierte Aufgaben.`
+    ],
+    answer: 1,
+    rationale: `Die Grenze zwischen dem, was ein Modell gut kann, und dem, was es nicht kann, verläuft zerklüftet. Deshalb muss man für jede Aufgabe einzeln prüfen, auf welcher Seite der Grenze sie liegt — das ist der Kern von Delegate.`,
+    ref: `Skript Workshop 1, Block 3; Dell'Acqua et al. (2023); Mollick (2024).` },
+
+  { id: 6, topic: `Block 3 · Halluzinationen`,
+    text: `Unter welcher Bedingung sind Halluzinationen nach dem Skript heute am wahrscheinlichsten?`,
+    options: [
+      `Bei einfacheren Modellen und wenig professioneller Nutzung, etwa einer Frage ohne Kontext und ohne Qualitätskriterien.`,
+      `Bei Modellen mit Web-Suche, weil sie zu viele Quellen mischen.`,
+      `Bei jedem Prompt, der länger als drei Sätze ist.`,
+      `Nur bei Modellen, die vor 2022 trainiert wurden.`
+    ],
+    answer: 0,
+    rationale: `Halluzinationen treten weiterhin auf, vor allem bei schwächeren Modellen und bei Nutzung ohne Kontext, Quellen und Prüfkriterien. In Übung 2 hat Llama 3.1 8B ohne Suchwerkzeug das erkennbar gezeigt.`,
+    ref: `Skript Workshop 1, Block 3 und Übung 2.` },
+
+  { id: 7, topic: `Block 4 · Describe — RTF`,
+    text: `Wofür stehen die drei Buchstaben im Prompt-Schema RTF?`,
+    options: [
+      `Rule, Test, Feedback`,
+      `Role, Task, Format`,
+      `Request, Tone, Focus`,
+      `Reason, Think, Finish`
+    ],
+    answer: 1,
+    rationale: `Role (Wer ist das Modell?), Task (Was soll es tun?), Format (Wie soll die Antwort aussehen?). Sparsam und schnell — das Schema für den Alltag.`,
+    ref: `Skript Workshop 1, Block 4.` },
+
+  { id: 8, topic: `Block 4 · Describe — CREATE`,
+    text: `Welcher Baustein gehört zum Schema CREATE, fehlt aber im Schema RTF?`,
+    options: [
+      `Role`,
+      `Task`,
+      `Examples`,
+      `Format`
+    ],
+    answer: 2,
+    rationale: `CREATE = Character, Request, Examples, Adjustments, Type of output, Extras. Beispiele sind der große Unterschied: Das Modell ist eher ein schlauer jüngerer Kollege als ein Taschenrechner — es wird mit gezeigten Beispielen besser.`,
+    ref: `Skript Workshop 1, Block 4 und Übung 3 (Tutor-Bot).` },
+
+  { id: 9, topic: `Block 5 · Discern — RAG`,
+    text: `Was tut ein Sprachmodell bei Retrieval-Augmented Generation (RAG) vor dem Antworten?`,
+    options: [
+      `Es trainiert sich mit den hochgeladenen Dateien neu.`,
+      `Es erhöht die Temperature, um kreativere Antworten zu geben.`,
+      `Es zerlegt den Prompt in Token und zählt sie.`,
+      `Es schlägt in einer externen Quelle nach und nutzt die gefundenen Textstellen als Grundlage der Antwort.`
+    ],
+    answer: 3,
+    rationale: `Das Bücherregal-Bild: Statt aus dem Gedächtnis zu antworten, holt das Modell zuerst passende Textstellen aus der bereitgestellten Quelle. Das Modell selbst bleibt unverändert — anders als beim Fine-Tuning.`,
+    ref: `Skript Workshop 1, Block 5.` },
+
+  { id: 10, topic: `Block 5 · Discern — RAGAS`,
+    text: `Was misst die RAGAS-Metrik Faithfulness?`,
+    options: [
+      `Ob die Antwort zu den abgerufenen Quellen passt.`,
+      `Ob die Antwort die gestellte Frage beantwortet.`,
+      `Ob die richtigen Quellen abgerufen wurden.`,
+      `Wie schnell das System geantwortet hat.`
+    ],
+    answer: 0,
+    rationale: `Faithfulness prüft die Treue zur Quelle. Answer Relevance prüft den Bezug zur Frage, Context Precision und Context Recall prüfen den Abruf. Morgen sehen Sie die Grenze: Die Faithfulness-Bewertung nimmt selbst ein Sprachmodell vor.`,
+    ref: `Skript Workshop 1, Block 5; Es et al. (2024).` },
+
+  { id: 11, topic: `Block 5 · Discern — Red-Green-TDD`,
+    text: `Was ist beim Red-Green-Vorgehen nach Willison der erste Schritt?`,
+    options: [
+      `Den Prompt so lange umschreiben, bis die Antwort gut klingt.`,
+      `Fünf bis zehn Testfragen mit gewünschten Antworten aufschreiben — bevor man am System dreht.`,
+      `Das stärkste verfügbare Modell auswählen.`,
+      `Die Temperature auf 0 setzen.`
+    ],
+    answer: 1,
+    rationale: `Testfälle zuerst. Dann den Bot laufen lassen, jede Antwort rot, gelb oder grün markieren und Prompt, Modell und Harness iterieren, bis möglichst viele Tests grün sind. Genau das war Übung 4 mit dem Tutor-Bot.`,
+    ref: `Skript Workshop 1, Block 5 und Übung 4; Willison (2025).` },
+
+  { id: 12, topic: `Block 6 · Brücke zu Diligence`,
+    text: `Ein KI-Output mit einem durchgerutschten Fehler geht an einen Mandanten. Wer trägt nach dem 4D-Framework die Verantwortung?`,
+    options: [
+      `Der Anbieter des Sprachmodells.`,
+      `Niemand — KI-Fehler gelten als höhere Gewalt.`,
+      `Die Berufsträgerin oder der Berufsträger, die den Output freigegeben haben.`,
+      `Die IT-Abteilung, die das Werkzeug eingeführt hat.`
+    ],
+    answer: 2,
+    rationale: `Diligence heißt: Verantwortung für Erzeugung, Offenlegung und Freigabe bleibt beim Menschen, der den Output verwendet. Das ist die vierte Kompetenz und das Thema von heute — Discern in vier Ebenen liefert das Handwerkszeug dafür.`,
+    ref: `Skript Workshop 1, Block 6; Workshop 2, Block 2; Dakan & Feller (2025).` }
+];
+
+const LETTERS = [`A`, `B`, `C`, `D`];
+
+// ============================================================
+//   State — bewusst ohne localStorage.
+// ============================================================
+const state = { currentIndex: 0, answers: {} };
+
+function init() { showItem(); }
+
+function showItem() {
+  document.getElementById(`quiz`).hidden = false;
+  document.getElementById(`results`).hidden = true;
+  const i = state.currentIndex;
+  const item = ITEMS[i];
+  const given = state.answers[item.id];
+
+  document.getElementById(`item-topic`).textContent = item.topic;
+  document.getElementById(`item-text`).textContent = item.text;
+
+  const box = document.getElementById(`answers`);
+  box.innerHTML = ``;
+  item.options.forEach((opt, idx) => {
+    const btn = document.createElement(`button`);
+    btn.type = `button`;
+    const letter = document.createElement(`span`);
+    letter.className = `letter`;
+    letter.textContent = LETTERS[idx];
+    const txt = document.createElement(`span`);
+    txt.textContent = opt;
+    btn.appendChild(letter);
+    btn.appendChild(txt);
+    btn.addEventListener(`click`, () => chooseAnswer(idx));
+    if (given !== undefined) {
+      btn.disabled = true;
+      if (idx === item.answer) btn.classList.add(`correct`);
+      else if (idx === given) btn.classList.add(`wrong`);
+      else btn.classList.add(`dim`);
+    }
+    box.appendChild(btn);
+  });
+
+  const rat = document.getElementById(`rationale`);
+  if (given !== undefined) {
+    const ok = given === item.answer;
+    const v = document.getElementById(`verdict`);
+    v.className = `verdict ` + (ok ? `ok` : `bad`);
+    v.textContent = ok ? `Richtig.` : `Nicht ganz — richtig ist ` + LETTERS[item.answer] + `.`;
+    document.getElementById(`rationale-text`).textContent = item.rationale;
+    document.getElementById(`rationale-ref`).textContent = `Nachlesen: ` + item.ref;
+    rat.classList.add(`show`);
+  } else {
+    rat.classList.remove(`show`);
+  }
+
+  const pct = Math.round(((i + 1) / ITEMS.length) * 100);
+  document.getElementById(`progress-text`).textContent = `Frage ` + (i + 1) + ` von ` + ITEMS.length;
+  document.getElementById(`progress-fill`).style.width = pct + `%`;
+  document.getElementById(`progress-score`).textContent = countCorrect() + ` richtig`;
+  document.getElementById(`btn-prev`).disabled = (i === 0);
+  const next = document.getElementById(`btn-next`);
+  next.disabled = (given === undefined);
+  next.textContent = (i === ITEMS.length - 1) ? `Auswertung ›` : `Weiter ›`;
+}
+
+function chooseAnswer(idx) {
+  const item = ITEMS[state.currentIndex];
+  if (state.answers[item.id] !== undefined) return;
+  state.answers[item.id] = idx;
+  showItem();
+}
+
+function nextItem() {
+  if (state.currentIndex < ITEMS.length - 1) {
+    state.currentIndex++;
+    showItem();
+    window.scrollTo({ top: 0, behavior: `smooth` });
+  } else {
+    showResults();
+  }
+}
+
+function prevItem() {
+  if (state.currentIndex > 0) { state.currentIndex--; showItem(); }
+}
+
+function countCorrect() {
+  return ITEMS.filter(it => state.answers[it.id] === it.answer).length;
+}
+
+function restart() {
+  state.currentIndex = 0;
+  state.answers = {};
+  showItem();
+  window.scrollTo({ top: 0, behavior: `smooth` });
+}
+
+// ============================================================
+//   Auswertung
+// ============================================================
+function showResults() {
+  document.getElementById(`quiz`).hidden = true;
+  document.getElementById(`results`).hidden = false;
+  window.scrollTo({ top: 0, behavior: `smooth` });
+
+  const correct = countCorrect();
+  const answered = Object.keys(state.answers).length;
+  const pct = answered ? Math.round((correct / answered) * 100) : 0;
+
+  document.getElementById(`stats`).innerHTML =
+    statCard(correct + ` / ` + ITEMS.length, `richtig beantwortet`) +
+    statCard(pct + ` %`, `Trefferquote`) +
+    statCard(answered, `Fragen beantwortet`);
+
+  const wrongTopics = ITEMS.filter(it => state.answers[it.id] !== it.answer).map(it => it.topic);
+  document.getElementById(`results-hint`).textContent = wrongTopics.length
+    ? `Zum Nachlesen vor Block 1: ` + wrongTopics.join(` · `)
+    : `Alle Fragen richtig — Workshop 1 sitzt.`;
+
+  const body = document.getElementById(`comparison-body`);
+  body.innerHTML = ``;
+  ITEMS.forEach(it => {
+    const given = state.answers[it.id];
+    const tr = document.createElement(`tr`);
+    let cls, txt;
+    if (given === undefined) { cls = `match-na`; txt = `offen`; }
+    else if (given === it.answer) { cls = `match-yes`; txt = `richtig`; }
+    else { cls = `match-no`; txt = `falsch`; }
+    tr.innerHTML =
+      `<td>` + it.id + `</td>` +
+      `<td>` + escapeHtml(it.topic) + `</td>` +
+      `<td>` + (given === undefined ? `—` : LETTERS[given]) + `</td>` +
+      `<td>` + LETTERS[it.answer] + `</td>` +
+      `<td class="` + cls + `">` + txt + `</td>`;
+    body.appendChild(tr);
+  });
+}
+
+function statCard(num, label) {
+  return `<div class="stat-card"><div class="stat-num">` + num + `</div><div class="stat-label">` + label + `</div></div>`;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/&/g, `&amp;`).replace(/</g, `&lt;`).replace(/>/g, `&gt;`);
+}
+
+document.addEventListener(`DOMContentLoaded`, init);
+</script>
+
+</body>
+</html>

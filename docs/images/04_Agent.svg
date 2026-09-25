@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#77736A"/></marker><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C77659"/></marker></defs><rect width="1600" height="900" fill="#F5F2EB"/>
+<text x="72" y="66" text-anchor="start" font-family="sans-serif" font-size="19" font-weight="600" fill="#C77659">LLM-NUTZUNGSFORMEN   /   04</text>
+<text x="72" y="137" text-anchor="start" font-family="serif" font-size="44" font-weight="400" fill="#292824">Ein Agent passt seine nächsten Schritte an.</text>
+<text x="72" y="184" text-anchor="start" font-family="sans-serif" font-size="24" font-weight="400" fill="#77746D">Das Modell entscheidet anhand der bisherigen Ergebnisse, wie es weitergeht.</text>
+<path d="M72 818 H1528" stroke="#D8D3C8"/>
+<text x="72" y="854" text-anchor="start" font-family="sans-serif" font-size="18" font-weight="400" fill="#77746D">Eigene Darstellung nach Anthropic (2024)</text>
+<text x="1528" y="854" text-anchor="end" font-family="sans-serif" font-size="18" font-weight="400" fill="#77746D">Beispiel: Lieferantenbewertung</text>
+<rect x="90" y="315" width="260" height="105" rx="13" fill="#FFFDFA" stroke="#77736A" stroke-width="1.7"/>
+<text x="220" y="359.5" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="400" fill="#292824">Ziel</text>
+<text x="220" y="393.5" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="400" fill="#292824">Lieferant bewerten</text>
+<rect x="485" y="315" width="350" height="105" rx="13" fill="#EAD7C9" stroke="#77736A" stroke-width="1.7"/>
+<text x="660" y="359.5" text-anchor="middle" font-family="sans-serif" font-size="27" font-weight="400" fill="#292824">Nächsten Schritt</text>
+<text x="660" y="393.5" text-anchor="middle" font-family="sans-serif" font-size="27" font-weight="400" fill="#292824">bestimmen</text>
+<rect x="1015" y="315" width="420" height="105" rx="13" fill="#FFFDFA" stroke="#77736A" stroke-width="1.7"/>
+<text x="1225" y="359.5" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="400" fill="#292824">Werkzeug nutzen</text>
+<text x="1225" y="393.5" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="400" fill="#292824">Nachweise recherchieren</text>
+<rect x="1015" y="555" width="420" height="105" rx="13" fill="#FFFDFA" stroke="#77736A" stroke-width="1.7"/>
+<text x="1225" y="599.5" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="400" fill="#292824">Rückmeldung auswerten</text>
+<text x="1225" y="633.5" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="400" fill="#292824">Belege und Lücken prüfen</text>
+<rect x="485" y="555" width="350" height="105" rx="13" fill="#DCE4D7" stroke="#77736A" stroke-width="1.7"/>
+<text x="660" y="599.5" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="400" fill="#292824">Ergebnis oder</text>
+<text x="660" y="633.5" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="400" fill="#292824">Rückfrage an Menschen</text>
+<path d="M350 367 H480" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<path d="M835 367 H1010" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<path d="M1225 420 V550" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<path d="M1015 607 H840" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<text x="925" y="580" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="400" fill="#77746D">Fertig / blockiert</text>
+<path d="M1090 665 V710 H405 V470 H660 V425" fill="none" stroke="#C77659" stroke-width="2.5"  marker-end="url(#a)"/>
+<text x="707" y="700" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="400" fill="#C77659">Weitere Schritte nötig</text>
+<rect x="1020" y="225" width="415" height="52" rx="13" fill="#F5F2EB" stroke="#77736A" stroke-width="1.7"/>
+<text x="1227.5" y="260" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="400" fill="#292824">Kontrollpunkte · Aufwand begrenzen</text>
+<text x="800" y="772" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="400" fill="#292824">Die konkrete Folge der Werkzeugaufrufe entsteht während der Bearbeitung.</text>
+</svg>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Begriffs-Memory — LLM-Grundbegriffe</title>
+<style>
+  :root {
+    --th-red: #c81e0f;
+    --th-magenta: #b43092;
+    --th-orange: #ea5a00;
+    --ink: #111111;
+    --paper: #ffffff;
+    --gray-100: #f5f5f7;
+    --gray-200: #e6e6ea;
+    --gray-500: #6b6b73;
+    --green: #2e7d32;
+    --green-bg: #e8f3e9;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.5;
+  }
+  .color-bar {
+    height: 6px;
+    background: linear-gradient(to right,
+      var(--th-red) 0%, var(--th-red) 45%,
+      var(--th-magenta) 45%, var(--th-magenta) 80%,
+      var(--th-orange) 80%, var(--th-orange) 100%);
+  }
+  header {
+    padding: 1rem 1.5rem 0.85rem 1.5rem;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  header h1 { margin: 0 0 0.2rem 0; font-size: 1.35rem; font-weight: 600; }
+  header .meta { font-size: 0.85rem; color: var(--gray-500); }
+  main { max-width: 1040px; margin: 0 auto; padding: 1rem 1.5rem 1.5rem 1.5rem; }
+  p { margin: 0.5rem 0; }
+  a, a:visited { color: var(--th-red); }
+
+  .intro { font-size: 0.95rem; margin-bottom: 0.75rem; }
+
+  .progress {
+    margin: 0.75rem 0; display: flex; gap: 1rem; align-items: center;
+    font-size: 0.85rem; color: var(--gray-500);
+  }
+  .progress-bar { flex: 1; height: 6px; background: var(--gray-200); position: relative; }
+  .progress-fill {
+    position: absolute; left: 0; top: 0; height: 100%;
+    background: var(--th-magenta); transition: width 0.3s ease;
+  }
+
+  .feedback {
+    min-height: 1.6rem; text-align: center; font-weight: 600; font-size: 0.95rem;
+    margin: 0.25rem 0 0.5rem 0;
+  }
+  .feedback.ok  { color: var(--green); }
+  .feedback.bad { color: var(--th-red); }
+
+  .board { display: grid; grid-template-columns: 1fr 1.6fr; gap: 1.25rem; }
+  .col h2 {
+    font-size: 0.95rem; font-weight: 600; margin: 0 0 0.5rem 0;
+    padding-bottom: 0.3rem; border-bottom: 2px solid rgba(180, 48, 146, 0.35);
+  }
+  .col h2 .hint { font-weight: 400; color: var(--gray-500); font-size: 0.8rem; }
+  .list { display: flex; flex-direction: column; gap: 0.45rem; }
+
+  .card {
+    width: 100%; text-align: left; cursor: pointer;
+    background: var(--paper); color: var(--ink);
+    border: 1px solid var(--gray-200); border-left: 4px solid var(--gray-200);
+    padding: 0.6rem 0.75rem; font-family: inherit; line-height: 1.35;
+    border-radius: 0; transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .card.concept { font-weight: 600; font-size: 0.98rem; border-left-color: var(--th-red); }
+  .card.definition { font-size: 0.86rem; border-left-color: var(--th-magenta); }
+  .card:hover:not(:disabled) { border-color: var(--th-magenta); background: var(--gray-100); }
+  .card.selected.concept { background: var(--th-red); color: var(--paper); border-color: var(--th-red); }
+  .card.selected.definition { background: var(--th-magenta); color: var(--paper); border-color: var(--th-magenta); }
+  .card.matched { background: var(--green-bg); color: var(--green); border-color: var(--green-bg); border-left-color: var(--green); cursor: default; }
+  .card:disabled:not(.matched):not(.selected) { color: var(--gray-500); background: var(--gray-100); cursor: not-allowed; }
+  .card .tick { float: right; font-weight: 700; }
+
+  .stats {
+    margin-top: 1rem; border-top: 1px solid var(--gray-200); padding-top: 0.6rem;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 1.1rem;
+    font-size: 0.85rem; color: var(--gray-500);
+  }
+  .stats strong { color: var(--ink); }
+  .stats strong.time { color: var(--th-red); }
+  .rule { text-align: center; font-size: 0.8rem; color: var(--gray-500); margin-top: 0.4rem; }
+
+  /* Dialoge */
+  .overlay {
+    position: fixed; inset: 0; background: rgba(17, 17, 17, 0.55);
+    display: none; align-items: center; justify-content: center; z-index: 50; padding: 1rem;
+  }
+  .overlay.open { display: flex; }
+  .dialog {
+    background: var(--paper); max-width: 440px; width: 100%;
+    padding: 1.5rem; border-top: 6px solid var(--th-red);
+  }
+  .dialog h2 { margin: 0 0 0.75rem 0; font-size: 1.15rem; font-weight: 600; }
+  .dialog .box { background: var(--gray-100); padding: 0.75rem 1rem; margin: 0.75rem 0; font-size: 0.92rem; }
+  .dialog .box div { margin: 0.15rem 0; }
+  .dialog .big { font-size: 1.6rem; font-weight: 600; color: var(--th-red); }
+  .btn-row { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1rem; }
+  button.btn {
+    background: var(--paper); color: var(--ink);
+    border: 1px solid var(--gray-200); padding: 0.55rem 1rem;
+    font-family: inherit; font-size: 0.9rem; cursor: pointer; border-radius: 0;
+  }
+  button.btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  button.btn:hover { border-color: var(--th-magenta); }
+
+  footer {
+    border-top: 1px solid var(--gray-200); padding: 0.85rem 1.5rem; margin-top: 1.25rem;
+    font-size: 0.78rem; color: var(--gray-500); text-align: center;
+  }
+
+  @media (max-width: 720px) {
+    .board { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="color-bar"></div>
+
+<header>
+  <h1>Begriffs-Memory — Welche Definition ist korrekt?</h1>
+  <div class="meta">Workshop „KI in Tax, Audit &amp; Advisory" · TH Köln · Einstieg Workshop 2 · Grundbegriffe aus Workshop 1</div>
+</header>
+
+<main>
+
+<p class="intro">Wählen Sie links einen <strong>Begriff</strong>, dann rechts die passende <strong>Definition</strong>. Fünf Paare pro Runde, zwei Minuten Zeit. Richtige Zuordnung: 10 Punkte, ab der dritten in Serie 15. Fehlversuch: minus 5. Runde 1 enthält die fünf Grundbegriffe, danach wird aus den übrigen gemischt.</p>
+
+<div class="progress">
+  <span id="progress-text">Runde 1 · 0/5 Paare</span>
+  <div class="progress-bar"><div id="progress-fill" class="progress-fill" style="width:0%"></div></div>
+  <span id="timer">2:00</span>
+</div>
+
+<div id="feedback" class="feedback">&nbsp;</div>
+
+<div class="board">
+  <div class="col">
+    <h2>Begriffe <span class="hint">· zuerst wählen</span></h2>
+    <div id="concepts" class="list"></div>
+  </div>
+  <div class="col">
+    <h2>Definitionen <span class="hint">· dann zuordnen</span></h2>
+    <div id="definitions" class="list"></div>
+  </div>
+</div>
+
+<div class="stats">
+  <span>Runde <strong id="s-round">1</strong></span>
+  <span>Punkte <strong id="s-score">0</strong></span>
+  <span>Gesamt <strong id="s-total">0</strong></span>
+  <span>Serie <strong id="s-streak">0</strong></span>
+  <span>Fehler <strong id="s-mistakes">0</strong></span>
+  <span>Zeit <strong id="s-time" class="time">2:00</strong></span>
+</div>
+<div class="rule">Kein Speichern, kein Konto — jeder Seitenaufruf ist ein neues Spiel.</div>
+
+</main>
+
+<!-- Runde abgeschlossen -->
+<div id="dlg-round" class="overlay" role="dialog" aria-modal="true">
+  <div class="dialog">
+    <h2 id="dlg-round-title">Runde 1 abgeschlossen</h2>
+    <div class="box">
+      <div>Punkte diese Runde: <strong id="r-score">0</strong></div>
+      <div>Fehlversuche: <strong id="r-mistakes">0</strong></div>
+      <div>Beste Serie bisher: <strong id="r-best">0</strong></div>
+      <div>Zeit übrig: <strong id="r-time">0:00</strong></div>
+      <div id="r-open" style="margin-top:0.4rem; color: var(--gray-500);"></div>
+    </div>
+    <p id="dlg-round-text">Nächste Runde mit fünf neuen Begriffen?</p>
+    <div class="btn-row">
+      <button class="btn" onclick="endGame()">Beenden</button>
+      <button class="btn primary" id="btn-next" onclick="nextRound()">Nächste Runde</button>
+    </div>
+  </div>
+</div>
+
+<!-- Spiel beendet -->
+<div id="dlg-over" class="overlay" role="dialog" aria-modal="true">
+  <div class="dialog">
+    <h2>Spiel beendet</h2>
+    <div class="box">
+      <div>Gesamtpunktzahl: <span class="big" id="o-total">0</span></div>
+      <div>Runden gespielt: <strong id="o-rounds">0</strong></div>
+      <div>Begriffe zugeordnet: <strong id="o-matched">0</strong> von <strong id="o-all">0</strong></div>
+      <div>Beste Serie: <strong id="o-best">0</strong></div>
+    </div>
+    <p>Begriffe, die Ihnen unklar geblieben sind, finden Sie im Skript zu Workshop 1 und in der Wissensbasis.</p>
+    <div class="btn-row">
+      <button class="btn primary" onclick="restart()">Neues Spiel</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Prof. Dr. Roman Bartnik · TH Köln · CC BY-NC-SA 4.0 · Spielidee und Grundstock der Definitionen nach dem Begriffs-Memory in
+  <a href="https://th-koln-bartnik.github.io/genai4teaching/kapitel02.html" target="_blank">Bartnik (2026), <em>GenAI for Teaching</em>, Kapitel 2</a>;
+  Begriffe zu 4D-Framework, Harness, Jagged Frontier, RTF/CREATE und RAGAS aus Workshop 1 dieses Skripts.
+</footer>
+
+<script>
+// ============================================================
+//   Begriffe — Template Literals, damit „…" und "…" erlaubt sind.
+//   Die Definition nennt den Begriff nicht selbst, damit die
+//   Zuordnung Verständnis verlangt und nicht Wortsuche.
+// ============================================================
+const ALL_CONCEPTS = [
+  // --- Runde 1: Grundbegriffe ---
+  { concept: `LLM`,
+    definition: `Ein auf sehr großen Textmengen trainiertes KI-System, das menschliche Sprache verarbeitet und Wort für Wort neuen Text erzeugt (Large Language Model).` },
+  { concept: `Prompt`,
+    definition: `Die Eingabe an ein Sprachmodell — Anweisung, Frage, Kontext und Beispiele —, mit der die Erzeugung der Antwort ausgelöst und gelenkt wird.` },
+  { concept: `Token`,
+    definition: `Die kleinste Einheit, in der ein Sprachmodell Text verarbeitet: meist ein Wort, ein Wortteil oder ein Satzzeichen.` },
+  { concept: `Halluzination`,
+    definition: `Eine flüssig formulierte, aber falsche oder erfundene Aussage eines Sprachmodells — etwa ein Paragraph oder eine Quelle, die es nicht gibt.` },
+  { concept: `Context Window`,
+    definition: `Die maximale Textmenge, die ein Modell in einem Durchgang gleichzeitig „im Blick" behalten kann — Eingabe und bisherige Antwort zusammen.` },
+
+  // --- Weitere Runden ---
+  { concept: `Temperature`,
+    definition: `Ein Parameter, der die Zufälligkeit der Wortwahl steuert: nahe 0 gleichförmig und vorhersagbar, höher kreativer und weniger stabil.` },
+  { concept: `RAG`,
+    definition: `Ein Verfahren, bei dem das Modell vor dem Antworten in einer externen Quelle nachschlägt und die gefundenen Textstellen als Grundlage der Antwort nutzt — das Bücherregal-Prinzip.` },
+  { concept: `Embedding`,
+    definition: `Die Darstellung eines Textes als Zahlenvektor, in dem ähnliche Bedeutungen nahe beieinander liegen — die Basis der Suche in einer Wissensbasis.` },
+  { concept: `Chain-of-Thought`,
+    definition: `Eine Technik, bei der das Modell seinen Lösungsweg Schritt für Schritt aufschreibt, bevor es das Ergebnis nennt, was das Schlussfolgern verbessert.` },
+  { concept: `Few-shot Prompting`,
+    definition: `Dem Modell werden in der Eingabe einige gelöste Beispiele gezeigt, damit es Muster und Format der gewünschten Antwort übernimmt.` },
+  { concept: `Zero-shot Prompting`,
+    definition: `Das Modell bekommt eine Aufgabe ohne ein einziges Beispiel und muss sie allein aus der Anweisung heraus lösen.` },
+  { concept: `Fine-Tuning`,
+    definition: `Ein bereits vortrainiertes Modell wird mit einem spezifischen Datensatz weitertrainiert, um es dauerhaft auf eine Aufgabe oder eine Fachsprache einzustellen.` },
+  { concept: `System-Prompt`,
+    definition: `Eine dauerhafte, für Nutzende meist unsichtbare Vorab-Anweisung, die Rolle, Regeln und Ton eines Chatbots für das ganze Gespräch festlegt — etwa in einem Tutor-Bot.` },
+  { concept: `Harness`,
+    definition: `Der Werkzeuggürtel um ein Sprachmodell herum: Web-Suche, Datei-Upload, Code-Ausführung und Speicher, die bestimmen, was das System tatsächlich kann.` },
+  { concept: `Erweitertes LLM`,
+    definition: `Dasselbe Modell, aber mit Zugriff auf Werkzeuge wie Suche und Dateien — der belesene Bibliothekar bekommt eine Werkbank.` },
+  { concept: `Agent`,
+    definition: `Ein Sprachmodell mit Werkzeugen, das in einer Schleife arbeitet — Ziel, Plan, Werkzeug, Bewertung, neuer Plan — und mehrschrittige Aufgaben eigenständig zu Ende bringt.` },
+  { concept: `Process Automation`,
+    definition: `Regelbasiertes Abarbeiten strukturierter Abläufe ohne Verstehen, etwa das Sortieren von E-Mails nach Lieferantennamen — klassisches RPA.` },
+  { concept: `Cognitive Automation`,
+    definition: `KI-gestütztes Klassifizieren, Zusammenfassen und Schließen über unstrukturierte Inhalte, etwa das Herausfiltern zahlungsrelevanter Klauseln aus einem Vertrag.` },
+  { concept: `Jagged Frontier`,
+    definition: `Die Beobachtung, dass KI-Fähigkeiten unregelmäßig verteilt sind: unerwartet stark in manchen Aufgaben, unerwartet schwach in scheinbar ähnlichen.` },
+  { concept: `RTF`,
+    definition: `Ein sparsames Prompt-Schema aus drei Bausteinen: Rolle des Modells, Aufgabe und gewünschtes Ausgabeformat.` },
+  { concept: `CREATE`,
+    definition: `Ein reiches Prompt-Schema aus sechs Bausteinen — Charakter, Anfrage, Beispiele, Anpassungen, Ausgabetyp und Extras — für komplexe Aufgaben.` },
+  { concept: `4D-Framework`,
+    definition: `Das AI-Fluency-Modell mit vier Kernkompetenzen — Delegieren, Beschreiben, Beurteilen, Sorgfalt —, verbunden zu einem strategischen und einem operativen Kreislauf.` },
+  { concept: `Delegate`,
+    definition: `Die Kompetenz zu entscheiden, welche Aufgabe an welche KI-Konfiguration geht — und welche beim Menschen bleibt.` },
+  { concept: `Describe`,
+    definition: `Die Kompetenz, Produkt, Prozess und Leistungsanspruch einer Aufgabe so zu formulieren, dass das Modell sie richtig versteht.` },
+  { concept: `Discern`,
+    definition: `Die Kompetenz, Ergebnis, Arbeitsweise und Qualität eines KI-Outputs kritisch zu prüfen, bevor man ihn verwendet.` },
+  { concept: `Diligence`,
+    definition: `Die Kompetenz, Verantwortung für Erzeugung, Offenlegung und Freigabe von KI-Inhalten zu übernehmen — im Berufsstand haftet die Berufsträgerin, nicht der Anbieter.` },
+  { concept: `Faithfulness`,
+    definition: `Eine RAGAS-Metrik: Stimmt die Antwort mit den abgerufenen Quellen überein, oder hat das Modell etwas hinzuerfunden?` },
+  { concept: `Answer Relevance`,
+    definition: `Eine RAGAS-Metrik: Beantwortet die Ausgabe tatsächlich die gestellte Frage — unabhängig davon, ob sie zu den Quellen passt?` },
+  { concept: `Test-Suite`,
+    definition: `Eine feste Sammlung von Beispielfragen mit erwarteten Antworten, die nach jeder Änderung an Prompt, Modell oder Werkzeugen erneut durchlaufen wird.` },
+  { concept: `Red-Green-TDD`,
+    definition: `Vorgehen aus der Software-Entwicklung: Erst die Testfälle schreiben, dann so lange an Prompt und Aufbau drehen, bis möglichst viele von rot auf grün springen.` }
+];
+
+const BASIC_CONCEPTS = [`LLM`, `Prompt`, `Token`, `Halluzination`, `Context Window`];
+const ROUND_SIZE = 5;
+const ROUND_SECONDS = 120;
+
+// ============================================================
+//   State — bewusst ohne localStorage.
+// ============================================================
+const state = {
+  round: 1,
+  items: [],
+  used: [],
+  score: 0,
+  total: 0,
+  streak: 0,
+  bestStreak: 0,
+  mistakes: 0,
+  matched: 0,
+  matchedAll: 0,
+  timeLeft: ROUND_SECONDS,
+  timer: null,
+  selectedConcept: null,
+  locked: false,
+  playing: false
+};
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function formatTime(s) {
+  const m = Math.floor(s / 60);
+  const r = s % 60;
+  return m + `:` + String(r).padStart(2, `0`);
+}
+
+// ============================================================
+//   Runde starten
+// ============================================================
+function startRound(round) {
+  let selected;
+  if (round === 1) {
+    selected = ALL_CONCEPTS.filter(c => BASIC_CONCEPTS.includes(c.concept));
+    state.used = [];
+    state.total = 0;
+    state.bestStreak = 0;
+    state.matchedAll = 0;
+  } else {
+    const available = ALL_CONCEPTS.filter(c => !state.used.includes(c.concept));
+    if (available.length < ROUND_SIZE) { endGame(); return; }
+    selected = shuffle(available).slice(0, ROUND_SIZE);
+  }
+  state.used = [...state.used, ...selected.map(c => c.concept)];
+
+  const items = selected.flatMap(c => [
+    { type: `concept`, text: c.concept, key: c.concept, matched: false, id: `c-` + c.concept },
+    { type: `definition`, text: c.definition, key: c.concept, matched: false, id: `d-` + c.concept }
+  ]);
+  state.items = shuffle(items);
+  state.round = round;
+  state.score = 0;
+  state.streak = 0;
+  state.mistakes = 0;
+  state.matched = 0;
+  state.selectedConcept = null;
+  state.locked = false;
+  state.playing = true;
+  state.timeLeft = ROUND_SECONDS;
+
+  closeDialogs();
+  setFeedback(``, ``);
+  render();
+  startTimer();
+}
+
+function startTimer() {
+  stopTimer();
+  state.timer = setInterval(() => {
+    state.timeLeft -= 1;
+    updateStats();
+    if (state.timeLeft <= 0) {
+      stopTimer();
+      state.playing = false;
+      render();
+      showRoundDialog(true);
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  if (state.timer) { clearInterval(state.timer); state.timer = null; }
+}
+
+// ============================================================
+//   Rendern
+// ============================================================
+function render() {
+  const cBox = document.getElementById(`concepts`);
+  const dBox = document.getElementById(`definitions`);
+  cBox.innerHTML = ``;
+  dBox.innerHTML = ``;
+
+  state.items.forEach(item => {
+    const btn = document.createElement(`button`);
+    btn.type = `button`;
+    btn.className = `card ` + item.type;
+    if (item.matched) btn.classList.add(`matched`);
+    if (state.selectedConcept && state.selectedConcept.id === item.id) btn.classList.add(`selected`);
+    btn.textContent = item.text;
+    if (item.matched) {
+      const tick = document.createElement(`span`);
+      tick.className = `tick`;
+      tick.textContent = `✓`;
+      btn.appendChild(tick);
+    }
+    const disabled = item.matched || !state.playing || state.locked ||
+      (item.type === `definition` && !state.selectedConcept);
+    btn.disabled = disabled;
+    btn.addEventListener(`click`, () => handleClick(item));
+    (item.type === `concept` ? cBox : dBox).appendChild(btn);
+  });
+
+  updateStats();
+}
+
+function updateStats() {
+  document.getElementById(`s-round`).textContent = state.round;
+  document.getElementById(`s-score`).textContent = state.score;
+  document.getElementById(`s-total`).textContent = state.total;
+  document.getElementById(`s-streak`).textContent = state.streak;
+  document.getElementById(`s-mistakes`).textContent = state.mistakes;
+  document.getElementById(`s-time`).textContent = formatTime(state.timeLeft);
+  document.getElementById(`timer`).textContent = formatTime(state.timeLeft);
+  document.getElementById(`progress-text`).textContent =
+    `Runde ` + state.round + ` · ` + state.matched + `/` + ROUND_SIZE + ` Paare`;
+  document.getElementById(`progress-fill`).style.width =
+    Math.round((state.matched / ROUND_SIZE) * 100) + `%`;
+}
+
+function setFeedback(text, cls) {
+  const el = document.getElementById(`feedback`);
+  el.className = `feedback ` + cls;
+  el.innerHTML = text || `&nbsp;`;
+}
+
+// ============================================================
+//   Spielzug
+// ============================================================
+function handleClick(item) {
+  if (item.matched || !state.playing || state.locked) return;
+
+  if (item.type === `concept`) {
+    if (state.selectedConcept && state.selectedConcept.id === item.id) {
+      state.selectedConcept = null;      // abwählen
+    } else {
+      state.selectedConcept = item;
+    }
+    render();
+    return;
+  }
+
+  if (!state.selectedConcept) return;
+  checkMatch(state.selectedConcept, item);
+}
+
+function checkMatch(concept, definition) {
+  const correct = concept.key === definition.key;
+  state.locked = true;
+
+  if (correct) {
+    state.streak += 1;
+    if (state.streak > state.bestStreak) state.bestStreak = state.streak;
+    const points = 10 + (state.streak > 2 ? 5 : 0);
+    state.score += points;
+    state.total += points;
+    state.matched += 1;
+    state.matchedAll += 1;
+    state.items = state.items.map(it =>
+      (it.id === concept.id || it.id === definition.id) ? { ...it, matched: true } : it);
+    setFeedback(`Richtig — ` + concept.text + ` (+` + points + `)` + (state.streak > 2 ? ` · Serie!` : ``), `ok`);
+  } else {
+    state.streak = 0;
+    state.mistakes += 1;
+    state.score = Math.max(0, state.score - 5);
+    state.total = Math.max(0, state.total - 5);
+    setFeedback(`Leider falsch — das ist nicht die Definition von ` + concept.text + `. Noch einmal.`, `bad`);
+  }
+
+  render();
+
+  setTimeout(() => {
+    state.selectedConcept = null;
+    state.locked = false;
+    if (correct && state.matched === ROUND_SIZE) {
+      stopTimer();
+      state.playing = false;
+      render();
+      showRoundDialog(false);
+    } else {
+      setFeedback(``, ``);
+      render();
+    }
+  }, correct ? 700 : 1100);
+}
+
+// ============================================================
+//   Dialoge
+// ============================================================
+function showRoundDialog(timeUp) {
+  const remaining = ALL_CONCEPTS.filter(c => !state.used.includes(c.concept)).length;
+  document.getElementById(`dlg-round-title`).textContent =
+    timeUp ? `Zeit abgelaufen — Runde ` + state.round : `Runde ` + state.round + ` abgeschlossen`;
+  document.getElementById(`r-score`).textContent = state.score;
+  document.getElementById(`r-mistakes`).textContent = state.mistakes;
+  document.getElementById(`r-best`).textContent = state.bestStreak;
+  document.getElementById(`r-time`).textContent = formatTime(state.timeLeft);
+  const open = state.items.filter(it => it.type === `concept` && !it.matched).map(it => it.text);
+  document.getElementById(`r-open`).textContent =
+    open.length ? `Offen geblieben: ` + open.join(`, `) : ``;
+  const next = document.getElementById(`btn-next`);
+  if (remaining >= ROUND_SIZE) {
+    next.style.display = ``;
+    document.getElementById(`dlg-round-text`).textContent =
+      `Nächste Runde mit fünf neuen Begriffen? (` + remaining + ` Begriffe übrig)`;
+  } else {
+    next.style.display = `none`;
+    document.getElementById(`dlg-round-text`).textContent = `Alle Begriffe sind durchgespielt.`;
+  }
+  document.getElementById(`dlg-round`).classList.add(`open`);
+}
+
+function closeDialogs() {
+  document.getElementById(`dlg-round`).classList.remove(`open`);
+  document.getElementById(`dlg-over`).classList.remove(`open`);
+}
+
+function nextRound() { startRound(state.round + 1); }
+
+function endGame() {
+  stopTimer();
+  state.playing = false;
+  closeDialogs();
+  document.getElementById(`o-total`).textContent = state.total;
+  document.getElementById(`o-rounds`).textContent = state.round;
+  document.getElementById(`o-matched`).textContent = state.matchedAll;
+  document.getElementById(`o-all`).textContent = ALL_CONCEPTS.length;
+  document.getElementById(`o-best`).textContent = state.bestStreak;
+  document.getElementById(`dlg-over`).classList.add(`open`);
+  render();
+}
+
+function restart() {
+  closeDialogs();
+  startRound(1);
+  window.scrollTo({ top: 0, behavior: `smooth` });
+}
+
+// ============================================================
+//   Init
+// ============================================================
+document.addEventListener(`DOMContentLoaded`, () => startRound(1));
+</script>
+
+</body>
+</html>

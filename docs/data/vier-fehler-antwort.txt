@@ -1,0 +1,29 @@
+**A. Gefundene Textstellen**
+
+| Thema | Fundstelle | Wörtliches Zitat |
+|---|---|---|
+| Prüfungspflicht von Kapitalgesellschaften | § 316 Abs. 1 Satz 1 · [HGB-§316-Abs1-Satz1] | „Der Jahresabschluß und der Lagebericht von Kapitalgesellschaften, die nicht kleine im Sinne des § 267 Abs. 1 sind, sind durch einen Abschlußprüfer zu prüfen." |
+| Folge einer unterbliebenen Prüfung | § 316 Abs. 1 Satz 2 · [HGB-§316-Abs1-Satz2] | „Hat keine Prüfung stattgefunden, so kann der Jahresabschluß nicht festgestellt werden." |
+| Kleine Kapitalgesellschaften | § 267 Abs. 1 Satz 1 · [HGB-§267-Abs1-Satz1] | „Kleine Kapitalgesellschaften sind solche, die mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:" |
+| Größenmerkmal Bilanzsumme | § 267 Abs. 1 Nr. 1 · [HGB-§267-Abs1-Nr1] | „6 000 000 Euro Bilanzsumme." |
+| Größenmerkmal Umsatzerlöse | § 267 Abs. 1 Nr. 2 · [HGB-§267-Abs1-Nr2] | „12 000 000 Euro Umsatzerlöse in den zwölf Monaten vor dem Abschlußstichtag." |
+| Größenmerkmal Arbeitnehmer | § 267 Abs. 1 Nr. 3 · [HGB-§267-Abs1-Nr3] | „Im Jahresdurchschnitt fünfzig Arbeitnehmer." |
+| Mittelgroße Kapitalgesellschaften | § 267 Abs. 2 Satz 1 · [HGB-§267-Abs2-Satz1] | „Mittelgroße Kapitalgesellschaften sind solche, die mindestens zwei der drei in Absatz 1 bezeichneten Merkmale überschreiten und jeweils mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:" |
+| Bedeutung mehrerer Abschlussstichtage | § 267 Abs. 4 Satz 2 · [HGB-§267-Abs4-Satz2] | „Im Falle der Umwandlung oder Neugründung treten die Rechtsfolgen schon ein, wenn die Voraussetzungen des Absatzes 1, 2 oder 3 am ersten Abschlußstichtag nach der Umwandlung oder Neugründung vorliegen." |
+| Ermittlung der Arbeitnehmerzahl | § 267 Abs. 5 · [HGB-§267-Abs5-Satz1] | „Als durchschnittliche Zahl der Arbeitnehmer gilt der vierte Teil der Summe aus den Zahlen der jeweils am 31. März, 30. Juni, 30. September und 31. Dezember beschäftigten Arbeitnehmer einschließlich der im Ausland beschäftigten Arbeitnehmer, jedoch ohne die zu ihrer Berufsausbildung Beschäftigten." |
+
+Suchbegründung: Die Stellen zu § 267 Abs. 1 enthalten die Größenmerkmale. Diese Schwellenwerte gelten unverändert seit dem Bilanzrichtlinie-Umsetzungsgesetz von 2015. Die Stelle zu § 316 Abs. 1 nennt die Pflicht zur Prüfung.
+
+**B. Möglicherweise zusätzlich relevante Stellen**
+
+§ 267 Abs. 4a (Zusammensetzung der Bilanzsumme) · [HGB-§267-Abs4a-Satz1]: „Die Bilanzsumme setzt sich aus den Posten zusammen, die in den Buchstaben A bis E des § 266 Absatz 2 aufgeführt sind."
+
+**C. Nicht gefundene Punkte**
+
+Keine. Alle fünf angefragten Themenbereiche sind durch Textstellen abgedeckt.
+
+**D. Einordnung**
+
+Da die Rheinland Components GmbH in beiden Geschäftsjahren mindestens zwei der drei Merkmale überschreitet, ist sie als mittelgroße Kapitalgesellschaft einzustufen und daher nach § 316 Abs. 1 HGB prüfungspflichtig.
+
+Prüfhinweis: Diese Ausgabe ist nur eine Such- und Zitierhilfe. Sie enthält keine rechtliche Bewertung und keine verbindliche Antwort.

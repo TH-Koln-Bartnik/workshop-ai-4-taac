@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eingangsrechnung — drei Automatisierungsstufen</title>
+<style>
+  :root { --ink:#1f2937; --muted:#6b7280; --line:#9ca3af; --slot:#e5e7eb; --bg:#ffffff; --accent:#b45309; }
+  body { margin:0; padding:24px; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--ink); background:var(--bg); }
+  .pa { max-width:1000px; margin:0 auto; }
+  .pa-header { display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:8px 16px; margin-bottom:10px; }
+  .pa-title { font-size:clamp(15px, 1.8vw, 20px); font-weight:600; margin:0; line-height:1.3; max-width:640px; }
+  .pa-controls { display:flex; gap:6px; flex-wrap:wrap; margin-left:auto; }
+  .pa-levels { display:flex; gap:6px; flex-wrap:wrap; margin:0 0 10px; }
+  button, select { font:500 13px system-ui, sans-serif; color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:4px; padding:6px 10px; min-height:34px; cursor:pointer; }
+  button:hover { border-color:var(--ink); }
+  button:focus-visible, select:focus-visible { outline:2px solid var(--accent); outline-offset:1px; }
+  button[aria-pressed="true"] { border-color:var(--ink); border-width:2px; padding:5px 9px; font-weight:600; }
+  svg { display:block; width:100%; height:auto; }
+  .box { fill:var(--bg); stroke:var(--ink); stroke-width:1.5; }
+  .box.running { stroke-width:2.75; }
+  .name { font-size:12px; font-weight:600; fill:var(--ink); text-anchor:middle; }
+  .sub { font-size:10px; fill:var(--muted); text-anchor:middle; }
+  .slot { fill:var(--slot); }
+  .line { stroke:var(--line); stroke-width:1.25; fill:none; stroke-dasharray:5 4; }
+  .arrow { fill:var(--line); }
+  .zone { font-size:10px; fill:var(--muted); letter-spacing:.06em; text-transform:uppercase; }
+  .kpi-label { font-size:10px; fill:var(--muted); letter-spacing:.06em; text-transform:uppercase; }
+  .kpi-value { font-size:16px; font-weight:600; fill:var(--ink); font-variant-numeric:tabular-nums; }
+  .clock { font-size:14px; font-weight:600; fill:var(--ink); font-variant-numeric:tabular-nums; }
+  .note-box { fill:var(--bg); stroke:var(--accent); stroke-width:1; }
+  .note-text { font-size:12px; fill:var(--ink); }
+  .note-line { stroke:var(--accent); stroke-width:1; fill:none; }
+  .card { fill:var(--ink); stroke:var(--ink); stroke-width:1; }
+  .card-mark { fill:var(--bg); stroke:var(--ink); stroke-width:1; }
+  .mark-glyph { stroke:var(--ink); stroke-width:1.2; fill:none; }
+  .actor { fill:var(--bg); stroke:var(--ink); stroke-width:1; }
+  .actor-glyph { stroke:var(--ink); stroke-width:1.1; fill:none; }
+  .actor-glyph.solid { fill:var(--ink); stroke:none; }
+  .head { font-size:11px; font-weight:600; fill:var(--ink); }
+  .rowlab { font-size:11px; fill:var(--ink); text-anchor:end; }
+  .rowlab.dim { fill:var(--muted); }
+  .seg { stroke:var(--ink); stroke-width:1; }
+  .seg.dim { stroke:var(--line); opacity:.5; }
+  .segtext { font-size:9px; fill:var(--ink); text-anchor:middle; font-variant-numeric:tabular-nums; }
+  .segtext.dim { fill:var(--muted); }
+  .total { font-size:11px; font-weight:600; fill:var(--ink); font-variant-numeric:tabular-nums; }
+  .total.dim { font-weight:400; fill:var(--muted); }
+  .tick { font-size:9px; fill:var(--muted); text-anchor:middle; }
+  .cap { font-size:10px; fill:var(--muted); }
+  .src { font-size:9px; fill:var(--muted); }
+  .foot { font-size:11px; color:var(--muted); margin-top:8px; line-height:1.5; }
+</style>
+</head>
+<body>
+
+<script>
+// ============================================================================
+//  1. DER PROZESS — nur dieser Block wird geändert.
+//     Eingangsrechnung bis Zahlungsfreigabe (O*NET 13-2011.00, Accountants and
+//     Auditors: "Process invoices for payment" / "Review accounts for
+//     discrepancies and reconcile differences").
+//     Drei Stufen unterscheiden sich in genau einer Klausel: automation.level.
+//     Stationen, Belege und Reihenfolge bleiben in allen drei Läufen gleich;
+//     nur die Dauern und der Ausführende ändern sich.
+//     Minutenwerte: didaktische Annahme, kalibriert auf belegte Größenordnungen
+//     (siehe Quellenkasten) — keine gemessenen Werte.
+// ============================================================================
+const PROZESS = {
+  lang: "de",
+  unit: "min",
+  title: "Prozessautomation verkürzt den Normalfall — danach liegt die Zeit im Ausnahmefall",
+  items: 10,               // zehn Eingangsrechnungen
+  arrivalGap: 6,           // alle 6 min trifft eine Rechnung ein
+  exceptionEvery: 5,       // jede fünfte Rechnung hat eine Abweichung im Drei-Wege-Abgleich
+  secondsPerUnit: 0.35,    // eine Minute Prozesszeit dauert bei 1x 0,35 Sekunden
+  steps: [
+    { name: "Erfassen",   detour: false },
+    { name: "Auslesen",   detour: false },
+    { name: "Abgleich",   detour: false },
+    { name: "Klärung",    detour: true  },   // nur Rechnungen mit Abweichung
+    { name: "Kontierung", detour: false },
+    { name: "Freigabe",   detour: false },
+  ],
+  levels: [
+    { key: "manuell",  label: "manuell",
+      times:  [4, 6, 8, 35, 5, 4],
+      actors: ["mensch", "mensch", "mensch", "mensch", "mensch", "mensch"] },
+    { key: "prozess",  label: "+ Prozessautomation",
+      times:  [0.5, 2, 0.5, 35, 1, 3],
+      actors: ["bot", "bot", "bot", "mensch", "bot", "mensch"] },
+    { key: "kognitiv", label: "+ kognitive Automation",
+      times:  [0.5, 0.5, 0.5, 12, 1.5, 3],
+      actors: ["bot", "ki", "bot", "ki", "ki", "mensch"] },
+  ],
+  labels: {
+    play: "Start", pause: "Pause", step: "Schritt", reset: "Zurück", speed: "Tempo",
+    arrivals: "Eingang", finished: "Bezahlt",
+    kDone: "Bezahlt", kWait: "Wartend", kLead: "Ø Durchlauf", kWork: "Arbeitszeit",
+    queueForms: "Vor „{step}“ stauen sich die Rechnungen",
+    allDone: "{n} Rechnungen nach {t} min — Ø Durchlauf {lead} min, Ø Arbeit {work} min je Rechnung",
+    stripHead: "Arbeitszeit je Rechnung (Minuten, gleicher Maßstab)",
+    groupA: "Rechnung ohne Abweichung — 8 von 10",
+    groupB: "Rechnung mit Abweichung — 2 von 10",
+    caption: "Ø Arbeitszeit je Rechnung bei 20 % Abweichungen: 34,0 → 14,0 → 8,4 min. Anteil der Klärung daran: 21 % → 50 % → 29 %.",
+    caption2: "Gesamtdauer für 10 Rechnungen: {mk} min · Ø Durchlaufzeit: {lead} min — die Arbeitszeit sinkt auf ein Viertel, die Gesamtdauer nur auf gut die Hälfte.",
+    legend: "Ausführender:", mensch: "Mensch", bot: "Bot (RPA)", ki: "KI",
+    hint: "Leertaste = Start/Pause · → = nächstes Ereignis · R = zurück · 1–3 = Automatisierungsstufe. Abgleich = Bestellung, Wareneingang und Rechnung; die Freigabe im Vier-Augen-Prinzip bleibt in allen drei Stufen beim Menschen.",
+    sourceShort: "Minutenwerte: eigene Annahme, R. Bartnik 2026 · Ablauf nach O*NET 13-2011.00 (Accountants and Auditors) · Quellen der Größenordnungen: siehe Zeile unter der Grafik.",
+    source: "Minutenwerte: eigene Annahme, R. Bartnik 2026. Ablauf nach O*NET 13-2011.00 (Accountants and Auditors). Größenordnungen nach Cooper et al. (2019, Accounting Horizons, https://doi.org/10.2308/acch-52466), Eulerich et al. (2022, Contemporary Accounting Research, https://doi.org/10.1111/1911-3846.12723) und Noy & Zhang (2023, Science, https://doi.org/10.1126/science.adh2586).",
+  },
+};
+</script>
+
+<div class="pa">
+  <div class="pa-header">
+    <h1 class="pa-title" id="pa-title"></h1>
+    <div class="pa-controls">
+      <button id="pa-play"></button>
+      <button id="pa-step"></button>
+      <button id="pa-reset"></button>
+      <select id="pa-speed" aria-label="Tempo">
+        <option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option>
+      </select>
+    </div>
+  </div>
+  <div class="pa-levels" id="pa-levels" role="group" aria-label="Automatisierungsstufe"></div>
+  <div id="pa-canvas"></div>
+  <div class="foot" id="pa-hint"></div>
+</div>
+
+<script>
+// ============================================================================
+//  2. DIE ENGINE — zwei Hälften.
+//     (a) FAHRPLAN: für jede der drei Stufen einmal berechnet. Er sagt für jede
+//         Rechnung, wann sie an jeder Station ankommt, startet und fertig ist.
+//         Reihenfolge: wer zuerst kommt, wird zuerst bedient. Rechnungen mit
+//         Abweichung laufen über eine längere Route (mit Klärung), alle anderen
+//         lassen die Klärung aus.
+//     (b) ZEICHNUNG: für jeden Zeitpunkt t wird nachgeschlagen, wo jede Rechnung
+//         ist, und genau das gezeichnet. Kein Zufall, keine Live-Simulation —
+//         derselbe Film bei jedem Durchlauf, und der Stufenwechsel ist ein
+//         Nachschlagen in einem anderen Fahrplan bei gleicher Uhr.
+// ============================================================================
+(function () {
+  const P = PROZESS, L = P.labels;
+  const TRAVEL = 0.5;
+  const NSTEP = P.steps.length, KLAER = P.steps.findIndex(s => s.detour);
+  const fmt = x => (Math.abs(x - Math.round(x)) < 1e-9 ? String(Math.round(x)) : x.toFixed(1).replace(".", ","));
+
+  const routeOf = i => (((i + 1) % P.exceptionEvery === 0)
+    ? P.steps.map((_, k) => k)
+    : P.steps.map((_, k) => k).filter(k => k !== KLAER));
+  const isException = i => ((i + 1) % P.exceptionEvery === 0);
+
+  // ---- (a) Fahrplan, je Stufe ----------------------------------------------
+  function schedule(times) {
+    const items = Array.from({ length: P.items }, (_, i) => ({
+      id: i, t0: i * P.arrivalGap, exc: isException(i), route: routeOf(i),
+      arr: {}, st: {}, en: {}, rank: {},
+    }));
+    const free = Array(NSTEP).fill(0);
+    const maxLen = Math.max(...items.map(it => it.route.length));
+    for (let pos = 0; pos < maxLen; pos++) {
+      const pend = [];
+      items.forEach(it => {
+        if (pos < it.route.length) {
+          const k = it.route[pos];
+          const prev = pos === 0 ? it.t0 : it.en[it.route[pos - 1]];
+          it.arr[k] = prev + TRAVEL;
+          pend.push(it);
+        }
+      });
+      pend.sort((a, b) => a.arr[a.route[pos]] - b.arr[b.route[pos]] || a.id - b.id);
+      pend.forEach(it => {
+        const k = it.route[pos];
+        it.st[k] = Math.max(it.arr[k], free[k]); it.en[k] = it.st[k] + times[k]; free[k] = it.en[k];
+      });
+    }
+    items.forEach(it => {
+      it.done = it.en[it.route[it.route.length - 1]] + TRAVEL;
+      it.route.forEach(k => {
+        it.rank[k] = items.filter(o => o !== it && o.arr[k] !== undefined && o.st[k] > it.arr[k] &&
+          (o.arr[k] < it.arr[k] || (o.arr[k] === it.arr[k] && o.id < it.id))).length;
+      });
+    });
+    items.slice().sort((a, b) => a.done - b.done || a.id - b.id).forEach((it, i) => { it.sinkIndex = i; });
+
+    const tEnd = Math.max(...items.map(it => it.done));
+    const events = [...new Set(items.flatMap(it => [it.t0, it.done, ...it.route.flatMap(k => [it.arr[k], it.st[k], it.en[k]])]))].sort((a, b) => a - b);
+    const lead = items.reduce((a, it) => a + (it.done - it.t0), 0) / items.length;
+    const work = items.reduce((a, it) => a + it.route.reduce((b, k) => b + times[k], 0), 0) / items.length;
+
+    const notes = [];
+    for (let k = 0; k < NSTEP; k++) {
+      const visitors = items.filter(it => it.arr[k] !== undefined);
+      const taus = visitors.map(it => it.arr[k]).sort((a, b) => a - b);
+      for (const tau of taus) {
+        const q = visitors.filter(it => it.arr[k] <= tau && it.st[k] > tau).length;
+        if (q >= 2) { notes.push({ t: tau, until: tau + 12, step: k, text: L.queueForms.replace("{step}", P.steps[k].name) }); break; }
+      }
+    }
+    notes.push({
+      t: tEnd, until: Infinity, step: "sink",
+      text: L.allDone.replace("{n}", P.items).replace("{t}", fmt(tEnd)).replace("{lead}", fmt(lead)).replace("{work}", fmt(work)),
+    });
+    notes.sort((a, b) => a.t - b.t);
+    return { items, tEnd, events, lead, work, times, notes };
+  }
+  const MODELS = P.levels.map(lv => schedule(lv.times));
+  const T_MAX = Math.max(...MODELS.map(m => m.tEnd));
+  let lvl = 0;
+  const M = () => MODELS[lvl];
+
+  // ---- (b) Zeichnung: Geometrie --------------------------------------------
+  const W = 960, H = 662, LINE_Y = 175, BOX_W = 96, BOX_H = 48, SLOT = 15;
+  const SOURCE_X = 70, SINK_X = 858, PER_ROW = 3;
+  const XS = [175, 305, 435, 527, 620, 750];              // Klärung (Index 3) liegt tiefer
+  const YS = [LINE_Y, LINE_Y, LINE_Y, 262, LINE_Y, LINE_Y];
+  const src = { x: SOURCE_X, y: LINE_Y };
+  const slotPos = k => ({ x: XS[k], y: YS[k] + 12 });
+  const queuePos = (k, r) => ({ x: XS[k] - BOX_W / 2 - 13 - (r % PER_ROW) * 14, y: YS[k] - Math.floor(r / PER_ROW) * 15 });
+  const sinkPos = i => ({ x: SINK_X + (i % 3) * 15, y: LINE_Y - 25 + Math.floor(i / 3) * 15 });
+  const ease = u => (u <= 0 ? 0 : u >= 1 ? 1 : u * u * (3 - 2 * u));
+  const lerp = (a, b, u) => ({ x: a.x + (b.x - a.x) * ease(u), y: a.y + (b.y - a.y) * ease(u) });
+
+  function posOf(it, t) {
+    if (t < it.t0) return null;
+    const R = it.route;
+    for (let p = 0; p < R.length; p++) {
+      const k = R[p];
+      if (t < it.arr[k]) {
+        const from = p === 0 ? src : slotPos(R[p - 1]);
+        const to = it.st[k] > it.arr[k] ? queuePos(k, it.rank[k]) : slotPos(k);
+        const tFrom = p === 0 ? it.t0 : it.en[R[p - 1]];
+        return lerp(from, to, (t - tFrom) / TRAVEL);
+      }
+      if (t < it.st[k]) {
+        const r = M().items.filter(o => o !== it && o.arr[k] !== undefined && o.arr[k] <= t && o.st[k] > t &&
+          (o.arr[k] < it.arr[k] || (o.arr[k] === it.arr[k] && o.id < it.id))).length;
+        return queuePos(k, r);
+      }
+      if (t < it.en[k]) return slotPos(k);
+    }
+    const last = R[R.length - 1];
+    if (t < it.done) return lerp(slotPos(last), sinkPos(it.sinkIndex), (t - it.en[last]) / TRAVEL);
+    return sinkPos(it.sinkIndex);
+  }
+
+  // ---- (b) Zeichnung: Grundbild --------------------------------------------
+  const NS = "http://www.w3.org/2000/svg";
+  const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); parent.appendChild(e); return e; };
+  const txt = (parent, x, y, s, cls, attrs = {}) => { const e = el("text", { x, y, class: cls, ...attrs }, parent); e.textContent = s; return e; };
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": P.title }, document.getElementById("pa-canvas"));
+  const defs = el("defs", {}, svg);
+  const mk = el("marker", { id: "pa-arrow", viewBox: "0 0 10 10", refX: 9, refY: 5, markerWidth: 8, markerHeight: 8, orient: "auto" }, defs);
+  el("path", { d: "M0,0 L10,5 L0,10 z", class: "arrow" }, mk);
+
+  // Prozesslinie (gestrichelt: der Beleg ist Information, kein Material)
+  el("line", { x1: SOURCE_X - 22, y1: LINE_Y, x2: SINK_X - 12, y2: LINE_Y, class: "line", "marker-end": "url(#pa-arrow)" }, svg);
+  // Umweg zur Klärung
+  el("path", { d: `M${XS[2] + 34},${LINE_Y + BOX_H / 2} L${XS[3] - BOX_W / 2 + 6},${YS[3] - BOX_H / 2 - 4}`, class: "line", "marker-end": "url(#pa-arrow)" }, svg);
+  el("path", { d: `M${XS[3] + BOX_W / 2 - 6},${YS[3] - BOX_H / 2 - 4} L${XS[4] - 30},${LINE_Y + BOX_H / 2}`, class: "line", "marker-end": "url(#pa-arrow)" }, svg);
+
+  txt(svg, SOURCE_X, LINE_Y - 36, L.arrivals, "zone", { "text-anchor": "middle" });
+  txt(svg, SINK_X + 24, LINE_Y - 42, L.finished, "zone", { "text-anchor": "middle" });
+  for (let i = 0; i < P.items; i++) { const p = sinkPos(i); el("rect", { x: p.x - 7, y: p.y - 5, width: 14, height: 10, rx: 1, class: "slot" }, svg); }
+
+  function actorGlyph(parent, cx, cy, kind) {
+    const g = el("g", {}, parent);
+    el("rect", { x: cx - 8, y: cy - 8, width: 16, height: 16, rx: 2, class: "actor" }, g);
+    if (kind === "mensch") {
+      el("circle", { cx, cy: cy - 2.6, r: 2.1, class: "actor-glyph solid" }, g);
+      el("path", { d: `M${cx - 4},${cy + 4.2} a4,4 0 0 1 8,0`, class: "actor-glyph" }, g);
+    } else if (kind === "bot") {
+      el("rect", { x: cx - 4.5, y: cy - 4, width: 9, height: 8, rx: 1, class: "actor-glyph" }, g);
+      el("circle", { cx: cx - 2, cy, r: 1, class: "actor-glyph solid" }, g);
+      el("circle", { cx: cx + 2, cy, r: 1, class: "actor-glyph solid" }, g);
+    } else {
+      el("path", { d: `M${cx},${cy - 5.2} L${cx + 5.2},${cy} L${cx},${cy + 5.2} L${cx - 5.2},${cy} z`, class: "actor-glyph" }, g);
+      el("circle", { cx, cy, r: 1.3, class: "actor-glyph solid" }, g);
+    }
+    return g;
+  }
+
+  const boxes = P.steps.map((s, k) => {
+    const g = el("g", {}, svg);
+    const box = el("rect", { x: XS[k] - BOX_W / 2, y: YS[k] - BOX_H / 2, width: BOX_W, height: BOX_H, rx: 3, class: "box" }, g);
+    txt(g, XS[k], YS[k] - 6, s.name, "name");
+    const p = slotPos(k);
+    el("rect", { x: p.x - SLOT / 2, y: p.y - SLOT / 2, width: SLOT, height: SLOT, class: "slot" }, g);
+    const time = txt(g, XS[k], YS[k] + BOX_H / 2 + 14, "", "sub");
+    const holder = el("g", {}, g);
+    return { box, time, holder, k };
+  });
+  txt(svg, XS[3], YS[3] + BOX_H / 2 + 26, "nur bei Abweichung", "sub");
+
+  // Belege als Kärtchen; Rechnungen mit Abweichung tragen ein Prüfzeichen
+  const cards = Array.from({ length: P.items }, (_, i) => {
+    const g = el("g", { visibility: "hidden" }, svg);
+    el("rect", { x: -7, y: -5, width: 14, height: 10, rx: 1, class: "card" }, g);
+    if (isException(i)) {
+      el("circle", { cx: 8, cy: -6, r: 4.2, class: "card-mark" }, g);
+      el("path", { d: "M6,-8 L10,-4 M10,-8 L6,-4", class: "mark-glyph" }, g);
+    }
+    return g;
+  });
+
+  const clock = txt(svg, 24, 32, "", "clock");
+  const KPI = [[L.kDone, 250], [L.kWait, 400], [L.kLead, 550], [L.kWork, 720]].map(([lab, x]) => {
+    txt(svg, x, 22, lab, "kpi-label"); return txt(svg, x, 42, "", "kpi-value");
+  });
+
+  const noteG = el("g", { visibility: "hidden" }, svg);
+  const noteBox = el("rect", { height: 22, rx: 2, class: "note-box" }, noteG);
+  const noteTxt = txt(noteG, 0, 0, "", "note-text");
+  const noteLine = el("path", { class: "note-line" }, noteG);
+
+  // ---- Arbeitsschrittleiste: Länge = Minuten, Füllung = Ausführender --------
+  const S_X0 = 150, S_MAX = 62, S_SCALE = (894 - S_X0) / S_MAX, ROW_H = 20;
+  const FILL = { mensch: "#ffffff", bot: "#e5e7eb", ki: "#9ca3af" };
+  txt(svg, 24, 352, L.stripHead, "head");
+  txt(svg, 24, 380, L.groupA, "cap");
+  txt(svg, 24, 492, L.groupB, "cap");
+  const stripRows = [];
+  [["A", 396, false], ["B", 508, true]].forEach(([grp, y0, exc]) => {
+    P.levels.forEach((lv, li) => {
+      const y = y0 + li * (ROW_H + 8);
+      const g = el("g", {}, svg);
+      const lab = txt(g, S_X0 - 10, y + 14, lv.label, "rowlab");
+      const route = exc ? P.steps.map((_, k) => k) : P.steps.map((_, k) => k).filter(k => k !== KLAER);
+      let x = S_X0; const segs = [];
+      route.forEach(k => {
+        const w = lv.times[k] * S_SCALE;
+        const r = el("rect", { x, y, width: Math.max(w, 0.6), height: ROW_H, class: "seg", fill: FILL[lv.actors[k]] }, g);
+        let t = null;
+        if (w >= 26) t = txt(g, x + w / 2, y + 13.5, fmt(lv.times[k]), "segtext");
+        if (grp === "A" && li === 0) txt(svg, x + w / 2, y - 6, P.steps[k].name, "tick");
+        if (grp === "B" && li === 0 && k === KLAER) txt(svg, x + w / 2, y - 6, P.steps[k].name, "tick");
+        else if (grp === "B" && li === 0) txt(svg, x + w / 2, y - 6, P.steps[k].name, "tick");
+        segs.push({ r, t }); x += w;
+      });
+      const sum = route.reduce((a, k) => a + lv.times[k], 0);
+      const tot = txt(g, x + 8, y + 14, `${fmt(sum)} min`, "total");
+      stripRows.push({ li, lab, segs, tot });
+    });
+  });
+  txt(svg, 24, 600, L.caption, "cap");
+  txt(svg, 24, 614, L.caption2
+    .replace("{mk}", MODELS.map(m => fmt(m.tEnd)).join(" → "))
+    .replace("{lead}", MODELS.map(m => fmt(m.lead)).join(" → ")), "cap");
+  // Legende
+  let lx = 24;
+  txt(svg, lx, 636, L.legend, "cap"); lx += 78;
+  [["mensch", L.mensch], ["bot", L.bot], ["ki", L.ki]].forEach(([kind, name]) => {
+    el("rect", { x: lx, y: 627, width: 16, height: 11, class: "seg", fill: FILL[kind] }, svg);
+    actorGlyph(svg, lx + 30, 632.5, kind);
+    txt(svg, lx + 42, 636, name, "cap"); lx += 42 + name.length * 5.6 + 22;
+  });
+  txt(svg, 24, 656, L.sourceShort, "src");
+
+  // ---- Aktualisieren --------------------------------------------------------
+  function paintLevel() {
+    const lv = P.levels[lvl];
+    boxes.forEach(b => {
+      b.time.textContent = `${fmt(lv.times[b.k])} min`;
+      while (b.holder.firstChild) b.holder.removeChild(b.holder.firstChild);
+      actorGlyph(b.holder, XS[b.k] + BOX_W / 2, YS[b.k] - BOX_H / 2, lv.actors[b.k]);
+    });
+    stripRows.forEach(r => {
+      const on = r.li === lvl;
+      r.lab.setAttribute("class", "rowlab" + (on ? "" : " dim"));
+      r.tot.setAttribute("class", "total" + (on ? "" : " dim"));
+      r.segs.forEach(s => {
+        s.r.setAttribute("class", "seg" + (on ? "" : " dim"));
+        if (s.t) s.t.setAttribute("class", "segtext" + (on ? "" : " dim"));
+      });
+    });
+    document.querySelectorAll("#pa-levels button").forEach((b, i) => b.setAttribute("aria-pressed", String(i === lvl)));
+  }
+
+  function render(t) {
+    const m = M();
+    m.items.forEach((it, i) => {
+      const p = posOf(it, t);
+      if (!p) cards[i].setAttribute("visibility", "hidden");
+      else { cards[i].setAttribute("visibility", "visible"); cards[i].setAttribute("transform", `translate(${p.x},${p.y})`); }
+    });
+    boxes.forEach((b, k) => {
+      const busy = m.items.some(it => it.arr[k] !== undefined && it.st[k] <= t && t < it.en[k]);
+      b.box.setAttribute("class", "box" + (busy ? " running" : ""));
+    });
+    clock.textContent = `t = ${fmt(t)} min`;
+    const done = m.items.filter(it => it.done <= t).length;
+    const waiting = m.items.reduce((a, it) => a + it.route.reduce((b, k) => b + (it.arr[k] <= t && t < it.st[k] ? 1 : 0), 0), 0);
+    const fin = m.items.filter(it => it.done <= t);
+    const lead = fin.length ? fin.reduce((a, it) => a + (it.done - it.t0), 0) / fin.length : 0;
+    const work = m.items.reduce((a, it) => a + it.route.reduce((b, k) =>
+      b + Math.max(0, Math.min(t, it.en[k]) - it.st[k]), 0), 0);
+    KPI[0].textContent = `${done} / ${P.items}`;
+    KPI[1].textContent = String(waiting);
+    KPI[2].textContent = fin.length ? `${fmt(lead)} min` : "—";
+    KPI[3].textContent = `${fmt(Math.round(work * 2) / 2)} min`;
+
+    const note = m.notes.filter(nn => nn.t <= t && t < nn.until).pop();
+    if (!note) noteG.setAttribute("visibility", "hidden");
+    else {
+      noteG.setAttribute("visibility", "visible");
+      noteTxt.textContent = note.text;
+      const tw = noteTxt.getComputedTextLength() + 16;
+      const tx = note.step === "sink" ? SINK_X + 20 : XS[note.step];
+      const ty = note.step === "sink" ? LINE_Y - 50 : YS[note.step] - BOX_H / 2 - 12;
+      const bx = Math.max(12, Math.min(W - tw - 12, tx - tw / 2));
+      noteBox.setAttribute("x", bx); noteBox.setAttribute("y", 72); noteBox.setAttribute("width", tw);
+      noteTxt.setAttribute("x", bx + 8); noteTxt.setAttribute("y", 87);
+      noteLine.setAttribute("d", `M${tx},94 L${tx},${ty}`);
+    }
+  }
+
+  // ---- Bedienung ------------------------------------------------------------
+  let t = 0, playing = false, speed = 1, last = null;
+  const btnPlay = document.getElementById("pa-play"), btnStep = document.getElementById("pa-step"),
+        btnReset = document.getElementById("pa-reset"), selSpeed = document.getElementById("pa-speed");
+  document.getElementById("pa-title").textContent = P.title; document.title = P.title;
+  document.documentElement.lang = P.lang;
+  document.getElementById("pa-hint").textContent = L.hint + " — " + L.source;
+  btnPlay.textContent = L.play; btnStep.textContent = L.step; btnReset.textContent = L.reset;
+
+  const levelBar = document.getElementById("pa-levels");
+  P.levels.forEach((lv, i) => {
+    const b = document.createElement("button");
+    b.textContent = `${i + 1}. ${lv.label}`; b.setAttribute("aria-pressed", String(i === 0));
+    b.onclick = () => { lvl = i; paintLevel(); seek(Math.min(t, M().tEnd)); };
+    levelBar.appendChild(b);
+  });
+
+  const setPlaying = p => { playing = p; last = null; btnPlay.textContent = playing ? L.pause : L.play; };
+  const seek = x => { t = Math.max(0, Math.min(M().tEnd, x)); render(t); };
+  btnPlay.onclick = () => { if (t >= M().tEnd) seek(0); setPlaying(!playing); };
+  btnStep.onclick = () => { setPlaying(false); seek(M().events.find(e => e > t + 1e-6) ?? M().tEnd); };
+  btnReset.onclick = () => { setPlaying(false); seek(0); };
+  selSpeed.onchange = () => { speed = +selSpeed.value; };
+  document.addEventListener("keydown", e => {
+    if (e.target.tagName === "SELECT" || e.target.tagName === "INPUT") return;
+    if (e.key === " ") { e.preventDefault(); btnPlay.onclick(); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); btnStep.onclick(); }
+    else if (e.key === "r" || e.key === "R") btnReset.onclick();
+    else if (e.key >= "1" && e.key <= String(P.levels.length)) { lvl = +e.key - 1; paintLevel(); seek(Math.min(t, M().tEnd)); }
+  });
+  (function frame(now) {
+    if (playing) {
+      if (last !== null) t = Math.min(M().tEnd, t + ((now - last) / 1000) * speed / P.secondsPerUnit);
+      last = now; render(t);
+      if (t >= M().tEnd) setPlaying(false);
+    }
+    requestAnimationFrame(frame);
+  })(performance.now());
+
+  paintLevel(); render(0);
+  window.PA = { seek, get t() { return t; }, get level() { return lvl; }, MODELS, T_MAX, P };
+})();
+</script>
+</body>
+</html>
