@@ -1,9 +1,9 @@
 ---
 title: "Übungen Workshop 2 — 2026-WS"
-subtitle: "Zwei Recaps (Delegate, Describe), dann Discern an eigenen Dokumenten und am HGB, zum Schluss Diligence"
+subtitle: "Zwei Recherche-Übungen, zwei Recaps (Delegate, Describe), dann Discern an eigenen Dokumenten und am HGB, zum Schluss Diligence"
 ---
 
-<!-- Fassung 2026-WS vom 24.09.2026 (einfache Variante). Aufbau: Recap A Mermaid/Signavio (Delegate), Recap B Prompt-Patterns nach White (Describe), danach die bewährten Übungen 1–5 der Vorfassung ohne UiPath, Übung 6 (4D-Use-Case) optional. Die ausführliche fachliche Fassung (Vier-Fehler-Antwort, Prüfskript, Juror-Prompt, Goldstandard) liegt als unverlinkte Testseite unter drafts/untested-draft-ws2-uebungen-fachlich-vertieft.qmd (Render nur mit --profile single, siehe README) und wartet auf die fachliche Prüfung; die ungekürzte Vorfassung mit UiPath unter parts/04-uebungen-w2-alt.qmd (wird nicht gerendert). -->
+<!-- Fassung 2026-WS vom 24.09.2026 (einfache Variante). Aufbau (Stand 25.09.2026, durchnummeriert): Übung 1 Deep-Research-Benchmarking und Übung 2 Suchstrategie Business Source Premier (Recherche, 15 Min), Übung 3 Mermaid/Signavio (Recap Delegate), Übung 4 Prompt-Patterns nach White (Recap Describe), danach die bewährten Übungen der Vorfassung ohne UiPath als Übung 5–8; Tutor-Bot-Test-Suite (vormals Übung 7), Regelwand-Abschluss und optionaler 4D-Use-Case (vormals Übung 10) am 25.09. auf Wunsch von Roman komplett gestrichen (siehe CHANGELOG). Anker unverändert. Die ausführliche fachliche Fassung (Vier-Fehler-Antwort, Prüfskript, Juror-Prompt, Goldstandard) liegt als unverlinkte Testseite unter drafts/untested-draft-ws2-uebungen-fachlich-vertieft.qmd (Render nur mit --profile single, siehe README) und wartet auf die fachliche Prüfung; die ungekürzte Vorfassung mit UiPath unter parts/04-uebungen-w2-alt.qmd (wird nicht gerendert). -->
 
 ::: th-color-bar
 :::
@@ -11,30 +11,197 @@ subtitle: "Zwei Recaps (Delegate, Describe), dann Discern an eigenen Dokumenten 
 ::: lernziel-box
 #### Was Sie nach diesen Übungen können
 
-- **Recap Delegate** — einen einfachen Prozess in **Mermaid** modellieren, jede Aktivität als Process-, Cognitive- oder Hybrid-Automation einordnen und sagen, welche Konfiguration (LLM allein, erweitertes LLM, Agent) sie übernehmen könnte — und als Hausaufgabe bis zur In-Company-Session dasselbe Modell als BPMN in **Signavio**,
-- **Recap Describe** — einen Alltagsprompt mit drei bis sechs **Prompt-Patterns** nach White et al. (2023) so umbauen, dass die Antwort belegt, strukturiert und prüfbar wird,
+- **Recherche (Übung 1 und 2)** — einen Deep-Research-Auftrag so lesen, dass klar ist, welche Quellengruppen und welche Prüfregel er dem Modell vorgibt, und dieselbe Frage als dokumentierte **Suchstrategie in Business Source Premier** mit Peer-Review-Limiter und VHB-Journalfilter anlegen,
+- **Übung 3 (Recap Delegate)** — einen einfachen Prozess in **Mermaid** modellieren, jede Aktivität als Process-, Cognitive- oder Hybrid-Automation einordnen und sagen, welche Konfiguration (LLM allein, erweitertes LLM, Agent) sie übernehmen könnte — und als Hausaufgabe bis zur In-Company-Session dasselbe Modell als BPMN in **Signavio**,
+- **Übung 4 (Recap Describe)** — einen Alltagsprompt mit drei bis sechs **Prompt-Patterns** nach White et al. (2023) so umbauen, dass die Antwort belegt, strukturiert und prüfbar wird,
 - die eigene **Prüfungsordnung** mit einem zweistufigen Dialog-Prompt quellengebunden befragen und die Output-Qualität gegen ein Prüfprotokoll abklopfen,
 - die vier **RAGAS-Metriken** mit Hilfe eines Tutor-Bots in eigenen Worten und Analogien erklären,
-- einen **Tutor-Bot** mit einer kleinen Test-Suite systematisch prüfen — Vertiefung aus Workshop 1,
 - eine **RAG-Suche im HGB** so einhegen, dass die KI nur als quellengebundene Suchhilfe agiert,
 - aus einer **Diligence-Definition** mehrere Risikofälle im Best-of-N-Schema generieren und einen aussagekräftigen auswählen.
 :::
 
-Die Seite beginnt mit zwei kurzen Recaps zu den Kompetenzen von gestern: **Delegate** am Prozessdiagramm — erst wer die Aktivitäten eines Prozesses benennen kann, kann sagen, welche davon eine KI übernehmen soll — und **Describe** an einem Prompt aus dem Studienalltag, umgebaut mit den Patterns aus dem Katalog von @white2023prompt. Dann folgen fünf Übungen zu **Discern** und **Diligence**: zwei Verstehens-Übungen zu Quellenbindung und RAG-Evaluation, die Test-Suite am eigenen Tutor-Bot, die RAG-Suche im HGB und die Diligence-Übung im Best-of-N. Die Übungen greifen ineinander: Übung 1 sucht die Patterns aus Recap B im großen System-Prompt wieder, Übung 4 setzt an der Aktivität an, die Sie in Recap A markiert haben, Übung 3 läuft in Paaren mit getrennten Rollen. Den Schluss bildet eine Regelwand, in der jedes Paar seine Wenn-Dann-Regel einträgt und über die besten abgestimmt wird. Der integrierte 4D-Use-Case ist optional für schnelle Teams.
+Die Seite beginnt mit zwei kurzen Recherche-Übungen (15 Min) zur Frage des Tages — wie Arbeitsprozesse in Tax, Audit & Advisory automatisiert und mit generativer KI unterstützt werden und was die Forschung dazu belegt: ein Deep-Research-Lauf für das Praxis-Benchmarking und eine dokumentierte Suchstrategie in Business Source Premier für die begutachtete Evidenz. Dann folgen zwei Recaps zu den Kompetenzen von gestern: **Delegate** am Prozessdiagramm — erst wer die Aktivitäten eines Prozesses benennen kann, kann sagen, welche davon eine KI übernehmen soll — und **Describe** an einem Prompt aus dem Studienalltag, umgebaut mit den Patterns aus dem Katalog von @white2023prompt. Dann folgen vier Übungen zu **Discern** und **Diligence**: zwei Verstehens-Übungen zu Quellenbindung und RAG-Evaluation, die RAG-Suche im HGB und die Diligence-Übung im Best-of-N. Die Übungen greifen ineinander: Übung 5 sucht die Patterns aus Übung 4 im großen System-Prompt wieder, Übung 7 setzt an der Aktivität an, die Sie in Übung 3 markiert haben. Den Schluss bildet Übung 8, die aus einer Diligence-Definition Risikofälle im Best-of-N ableitet und eine Wenn-Dann-Schutzregel formuliert.
 
 | Abschnitt | 4D | Dauer |
 |------------------------|------------------------|------------------------|
-| Recap A — Prozessmodellierung mit Mermaid (Hausaufgabe: BPMN in Signavio) | Delegate | 18 Min |
-| Recap B — Prompt-Patterns am Studienalltag | Describe | 12 Min |
-| Übung 1 — Prüfungsordnung mit zweistufigem Dialog-Prompt | Describe · Discern | 30 Min |
-| Übung 2 — RAGAS-Metriken mit Tutor-Bot verstehen | Discern | 15 Min |
-| Übung 3 — Tutor-Bot systematisch prüfen | Discern | 22 Min |
-| Übung 4 — RAG-Suchübung HGB-Prüfungspflicht | Discern · Diligence | 45 Min (kurz: 30 Min) |
-| Übung 5 — Diligence-Risiko-Recherche im Best-of-N | Diligence | 22 Min |
-| Abschluss — Regelwand (Socrative) | Diligence | 5 Min |
-| Übung 6 — Integrierter 4D-Use-Case (optional) | alle vier | 40 Min |
+| Übung 1 — Benchmarking per Deep Research (Hausaufgabe: Bericht prüfen) | Delegate · Discern | 6 Min |
+| Übung 2 — Suchstrategie-1-Pager für Business Source Premier (inkl. Think-Pair-Share zu 1 und 2) | Describe · Discern | 9 Min |
+| Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate; Hausaufgabe: BPMN in Signavio) | Delegate | 18 Min |
+| Übung 4 — Prompt-Patterns am Studienalltag (Recap Describe) | Describe | 12 Min |
+| Übung 5 — Prüfungsordnung mit zweistufigem Dialog-Prompt | Describe · Discern | 30 Min |
+| Übung 6 — RAGAS-Metriken mit Tutor-Bot verstehen | Discern | 15 Min |
+| Übung 7 — RAG-Suchübung HGB-Prüfungspflicht | Discern · Diligence | 30 Min (Kurzvariante; lang: 45 Min) |
+| Übung 8 — Diligence-Risiko-Recherche im Best-of-N | Diligence | 22 Min |
 
-## Recap A — Prozessmodellierung mit Mermaid {#sec-mermaid}
+## Übung 1 — Benchmarking per Deep Research {#sec-deep-research-benchmark}
+
+**Modus:** in-class · Einzelarbeit · **Dauer:** 6 Min (der Lauf selbst arbeitet danach 5–20 Min im Hintergrund) · **4D-Bezug:** Delegate und Discern — einen langen Rechercheauftrag abgeben und vorher festlegen, woran seine Belastbarkeit gemessen wird.
+
+Informationen sammeln und Evidenz prüfen sind zwei Tätigkeiten. Ein Deep-Research-Lauf sammelt schnell und breit; ob das Gesammelte trägt, entscheidet ein zweiter, langsamerer Schritt: der Zugriff auf Quellen, die vor der Veröffentlichung geprüft wurden, und ein Qualitätsmaßstab, den nicht das Modell setzt, sondern die Fachgemeinschaft — Peer Review und das Zeitschriften-Rating des VHB ([Teilratings 2024](https://www.vhbonline.org/services/vhb-rating-2024/teilratings){target="_blank"}). Die beiden Übungen zum Einstieg spielen diese Trennung am Thema des Tages durch: Wie werden Arbeitsprozesse in Tax, Audit & Advisory automatisiert und mit generativer KI unterstützt — und was weiß die Forschung darüber? Übung 1 startet das Benchmarking der Praxis, Übung 2 baut die Suchstrategie für die wissenschaftliche Evidenz. Die Analogie zur Prüfungspraxis trägt beides: Der Suchstring ist das Arbeitspapier, das Suchprotokoll der Audit Trail — wer ihn nicht dokumentiert, kann seine Evidenz nicht verteidigen.
+
+**Setup.** Ein Werkzeug mit Deep-Research-Modus — ChatGPT *Deep Research*, Gemini *Deep Research* oder Perplexity *Research*, dieselbe Auswahl wie in der Erweiterung zu [Übung 3 aus Workshop 1](02-uebungen-w1.qmd#sec-uebung-3).
+
+**Schritt 1 — Auftrag starten (3 Min).** Prompt aus dem Kasten unten kopieren, in den Deep-Research-Modus einfügen, die Rückfrage zum Branchenfokus (Schritt 0 des Prompts) beantworten und den Lauf starten. Er läuft während Übung 2 und der beiden Recaps weiter — was lange dauert und keine Aufsicht braucht, gibt man zuerst ab.
+
+**Schritt 2 — Prüfmaßstab notieren (3 Min).** Bevor der Bericht da ist, schreiben Sie drei Sätze auf: Welche Quellengruppen erlaubt der Prompt dem Modell? Welche Prüfregel legt er ihm auf (Schritt 2 des Prompts)? Woran erkenne ich nachher, ob das Modell sie eingehalten hat? Ein Punkt fehlt in diesem Prompt absichtlich: Er verlangt Praxisquellen — Big 4, Verbände, Vendor-Cases — und keine begutachtete Forschung. Genau diese Lücke schließt Übung 2.
+
+::: {.callout-note collapse="true" title="Deep-Research-Prompt zum Kopieren — Praxisbeispiele Automation im Berufsfeld Accountants & Auditors"}
+``` markdown
+# ROLLE
+
+Du bist ein Research Analyst mit Fokus auf Automation, Generative AI und Wirtschaftsprüfung/Accounting. Du arbeitest sauber, transparent und ohne Quellenphantasie.
+
+# AUFGABE
+
+Erstelle eine strukturierte Praxis-Recherche zum Thema:
+**„Prozess- und kognitive Automation im Berufsfeld Accountants and Auditors: Stand der Praxis, Anwendungsfälle und Best Practices"**
+
+Definitorische Grundlage:
+- **Prozessautomation** = regelbasierte Automatisierung von Workflows (RPA, BPMS, iPaaS, Excel-Makros im professionellen Einsatz).
+- **Kognitive Automation** = Automatisierung sprach- und urteilsbezogener Aufgaben durch Generative AI / Large Language Models, ergänzt um klassisches ML (z.B. Anomaly Detection, NLP-basierte Beleg- und Vertragsanalyse).
+
+Aufgabenanker: O*Net 13-2011.00 *Accountants and Auditors* — https://www.onetonline.org/link/summary/13-2011.00. Beziehe die typischen Aufgabencluster ein: Belegprüfung und Buchung, Abschlusserstellung, Steuererklärung, Wirtschaftsprüfung (Substantive Testing, Stichprobenauswahl, Risikoanalyse), interne Revision, Fraud Detection, Reporting.
+
+---
+
+## SCHRITT 0 — USER-AUSWAHL (ZUERST ABFRAGEN)
+
+Frage den User, bevor Du recherchierst:
+
+**Branchenfokus (eine Option):**
+- (a) Branchenagnostisch — alle Industrien.
+- (b) Wirtschaftsprüfungsgesellschaften (Big 4 und Mid-Tier).
+- (c) Industrieunternehmen mit interner Finanz- und Revisionsfunktion.
+- (d) Öffentlicher Sektor und Non-Profit.
+- (e) Finanzdienstleister (Banken, Versicherungen, Asset Manager).
+
+Warte die Antwort ab, dann starte die Recherche.
+
+---
+
+## SCHRITT 1 — RECHERCHE
+
+Suche graue Literatur aus den letzten drei Jahren (2023–2026) in folgenden Quellengruppen:
+
+- **Big 4**: deloitte.com, pwc.com, ey.com, kpmg.com — sowohl Branchenstudien als auch Cases zu eigenen Tools (Omnia, Clara, Aura, Helix).
+- **Tier-1-Beratungen**: McKinsey, BCG, Bain.
+- **Berufsverbände und Standardsetter**: IFAC, AICPA, IDW (Deutschland), ACCA, ICAEW, IIA (interne Revision).
+- **Think Tanks und Forschungseinrichtungen**: MIT Sloan Management Review, Harvard Business Review (Praktikerbeiträge), Fraunhofer, Bertelsmann Stiftung, ZEW.
+- **Vendor-Cases**: SAP, Oracle, Workday, BlackLine, MindBridge, Trullion, AppZen, UiPath, Celonis.
+- **Aufsicht und Regulierung**: PCAOB, SEC, BaFin, ESMA — Veröffentlichungen zu KI-Einsatz in Audit und Accounting.
+
+Suchbegriffe (kombiniere und passe an den gewählten Branchenfokus an):
+`(audit OR auditing OR accounting OR "financial reporting" OR "internal audit") AND (automation OR RPA OR "generative AI" OR GenAI OR LLM OR "large language model") AND (case study OR implementation OR "best practice" OR adoption)`
+
+Auf Deutsch zusätzlich:
+`(Wirtschaftsprüfung OR Buchhaltung OR Rechnungswesen OR Revision) UND (Automatisierung OR RPA OR "Generative KI") UND (Fallstudie OR Praxisbeispiel)`
+
+---
+
+## SCHRITT 2 — QUELLENPRÜFUNG (HALLUZINATIONSSCHUTZ)
+
+Für jede Quelle, die Du in den Bericht aufnimmst:
+1. URL aufrufen und prüfen, dass die Studie tatsächlich erreichbar ist. Bei Login-Wall: URL der Landing Page nennen und als „eingeschränkt zugänglich" markieren.
+2. Autor, Jahr, Titel und Herausgeber durch mindestens zwei unabhängige Treffer bestätigen.
+3. Bei nicht verifizierbaren Quellen: ausschließen und im Bericht kurz vermerken.
+
+Wenn Du eine Aussage nicht belegen kannst, schreibe explizit „Belastbare Quelle nicht gefunden" — erfinde nichts.
+
+---
+
+## SCHRITT 3 — EINORDNUNG UND ÜBERSICHT
+
+Strukturiere die Befunde in einer **Übersichtstabelle** mit den Spalten:
+- Anwendungsfall (z.B. „Automatisierte Belegprüfung", „LLM-gestützte Vertragsanalyse im Audit", „Anomaly Detection in Journal Entries")
+- Automationstyp (Prozess / Kognitiv / Hybrid)
+- Verwendete Technologie (RPA-Tool, LLM, ML-Verfahren)
+- Zugehöriges O*Net-Aufgabencluster
+- Reifegrad in der Praxis (Pilot / Skaliert / Marktstandard)
+- Belegende Quelle(n)
+
+Markiere Vendor-Cases, in denen ein Anbieter über die eigene Lösung berichtet, mit dem Kürzel **(VC)**. Markiere Quellen, die zugleich Studie *und* Vendor-Case sind (typisch Big 4), mit **(BC/VC)**.
+
+---
+
+# FORMAT DES BERICHTS
+
+Verfasse den Bericht in **deutscher Sprache**. Englische Fachbegriffe (LLM, RPA, Audit Trail, Fraud Detection) bleiben unübersetzt und werden bei Erstnennung kurz erläutert.
+
+Struktur:
+
+1. **Executive Summary** (max. 200 Wörter): Gesamteindruck, drei wichtigste Anwendungsfälle, drei wichtigste offene Fragen.
+2. **Kontext und Definitionen**: Abgrenzung Prozess- vs. kognitive Automation, Verankerung an O*Net 13-2011.00.
+3. **Übersichtstabelle der Anwendungsfälle** (siehe Schritt 3).
+4. **Erfolgsfaktoren in der Praxis** (in Prosa): Was berichten die Quellen konvergent als Voraussetzung für gelungene Einführung? (z.B. Datenqualität, Audit Trail, Governance, Skill-Aufbau).
+5. **Barrieren und Risiken** (in Prosa): Regulatorische Vorgaben (z.B. PCAOB-Anforderungen an KI-Einsatz im Audit, EU AI Act), Halluzinationen bei LLMs, Beweiskraft maschinell erzeugter Audit Evidence.
+6. **Drei vertieft beschriebene Best-Practice-Beispiele**: je etwa 150 Wörter, mit Anbieter, Anwendungsbereich, Implementierungsschritten und — falls verfügbar — quantifizierten Ergebnissen.
+7. **Quellenliste** als Tabelle: Autor(en), Jahr, Titel, Herausgeber, URL (geprüft), Quellentyp, Vendor-Case-Markierung.
+8. **BibTeX-Block** mit allen Einträgen für Zotero-Import.
+
+Zitiere im Text APA 7.
+
+# VERHALTENSREGELN
+
+- Keine erfundenen Quellen, keine wörtlichen Übernahmen über 15 Wörter.
+- Vendor-Cases und Big-4-Doppelrollen explizit markieren.
+- Bei widersprüchlicher Evidenz beide Positionen nennen statt eine zu glätten.
+- Ziel ist eine **strukturierte Praxisübersicht**, kein systematisches Review — Geschwindigkeit und Verständlichkeit haben Vorrang vor Methodentiefe.
+```
+:::
+
+### Hausaufgabe bis zur In-Company-Session — den Bericht gegen die Evidenz halten {#sec-deep-research-check}
+
+**Modus:** Hausaufgabe · Einzelarbeit · **Dauer:** ca. 20 Min · **4D-Bezug:** Discern.
+
+Wenn der Bericht vorliegt: Drei Quellen aus seiner Quellenliste aufrufen und als *verifiziert* oder *nicht verifiziert* markieren (URL erreichbar, Autor und Jahr stimmen). Dann Ihren Prüfmaßstab aus Schritt 2 anlegen: Hat das Modell die Prüfregel eingehalten, sind Vendor-Cases markiert? Zuletzt die Brücke zu Übung 2: Erscheint eine der zitierten Quellen in einer Zeitschrift der VHB-Listen oder in Ihrer Trefferliste aus Business Source Premier — oder stützt sich der ganze Bericht auf Praxisberichte ohne begutachtete Evidenz? Das Ergebnis in fünf Sätzen mitbringen; es ist neben dem BPMN-Modell das zweite Mitbringsel für die Wirtschaftsprüfer.
+
+## Übung 2 — Suchstrategie-1-Pager für Business Source Premier {#sec-suchstrategie-bsp}
+
+**Modus:** in-class · Einzelarbeit · **Dauer:** 9 Min (7 Min Übung + 2 Min Think-Pair-Share zu Übung 1 und 2) · **4D-Bezug:** Describe und Discern — einen Prompt schreiben, der eine dokumentierte Suchstrategie erzeugt, und den Qualitätsfilter selbst setzen.
+
+**Business Source Premier** (EBSCOhost) ist die Fachdatenbank, über die die TH Köln Zeitschriftenaufsätze der Wirtschaftswissenschaften erschließt — Zugang über die [DigiBib, Fachgebiet Wirtschaft](https://thb-koeln.digibib.net/eres/subject-area/Wirtschaft?defaults=on){target="_blank"} mit der TH-Kennung. Zwei Filter machen aus einer Trefferliste geprüfte Evidenz: *Peer Reviewed* sortiert nach dem Verfahren (die Arbeit wurde vor der Veröffentlichung von Fachkolleg:innen begutachtet), das [VHB-Rating 2024](https://www.vhbonline.org/services/vhb-rating-2024/teilratings){target="_blank"} nach dem Rang der Zeitschrift in der Fachgemeinschaft — A+ und A sind die führenden Zeitschriften eines Teilgebiets. Für die Frage des Tages zählen drei Teilratings: *Betriebswirtschaftliche Steuerlehre* (STEU), *Rechnungswesen* (RECH — dort stehen die Audit-Zeitschriften, etwa *Auditing: A Journal of Practice & Theory*) und *Wirtschaftsinformatik* (WI). Systematische Suche als Methode der Managementforschung geht auf @tranfield2003systematic zurück; die Übung übernimmt davon den Kern — Konzeptblöcke, dokumentierter Suchstring, explizite Ein- und Ausschlusskriterien.
+
+**Schritt 1 — 1-Pager erzeugen (3 Min).** Prompt aus dem Kasten in einen frischen Chat geben (starkes Modell, kein Deep-Research-Modus). Ergebnis: drei Konzeptblöcke, drei Suchstrings in EBSCO-Syntax, ein Journalfilter, die Limiter und ein leeres Suchprotokoll.
+
+**Schritt 2 — String testen (3 Min).** In der DigiBib Business Source Premier öffnen, *Erweiterte Suche* wählen, String (b) „präzise" einfügen, Limiter *Peer Reviewed* und Zeitraum 2020–2026 setzen. Trefferzahl und die ersten drei Titel ins Suchprotokoll eintragen. Unter 10 oder über 500 Treffer: den vom Modell vorgeschlagenen Anpassungsschritt einmal anwenden und die zweite Zeile im Protokoll ausfüllen.
+
+**Schritt 3 — Stichprobe (1 Min).** Zwei Zeitschriften aus dem Journalfilter des Modells in den verlinkten VHB-Listen nachschlagen. Steht ein Titel dort nicht oder mit anderem Rating, streichen Sie ihn — der Filter ist Ihre Entscheidung, nicht die des Modells.
+
+::: {.callout-note collapse="true" title="Prompt zum Kopieren — Suchstrategie-1-Pager für Business Source Premier"}
+``` markdown
+# ROLLE
+
+Sie sind Fachreferent:in für Wirtschaftswissenschaften an einer Hochschulbibliothek mit Erfahrung in systematischer Literaturrecherche in EBSCOhost Business Source Premier.
+
+# AUFGABE
+
+Erstellen Sie einen 1-Pager (max. 350 Wörter plus Suchstrings) mit einer Suchstrategie für Business Source Premier zur Forschungsfrage:
+„Wie werden Arbeitsprozesse in Tax, Audit & Advisory automatisiert und mit generativer KI unterstützt — und welche wissenschaftliche Evidenz gibt es dazu?"
+
+# VORGABEN
+
+1. Konzeptblöcke: Zerlegen Sie die Frage in drei Blöcke — Berufsfeld · Technologie · Arbeitsprozess/Wirkung. Je Block 5–8 englische Suchbegriffe mit Trunkierung (*) und Phrasen in Anführungszeichen.
+2. Suchstrings in EBSCO-Syntax (Feldcodes TI, AB, SU; Operatoren AND / OR / NOT; Nähe-Operator N5, wo sinnvoll): (a) breit, (b) präzise, (c) präzise mit Journalfilter.
+3. Journalfilter für (c): über das Feld SO auf Zeitschriften mit VHB-Rating 2024 A+ oder A in den Teilratings STEU, RECH und WI beschränken. Listen:
+   - STEU: https://www.vhbonline.org/fileadmin/vhb/Services/vhb-rating/STEU/VHB_Rating_2024_Area_rating_STEU_e_f.pdf
+   - RECH: https://www.vhbonline.org/fileadmin/vhb/Services/vhb-rating/RECH/VHB_Rating_2024_Area_rating_RECH.pdf
+   - WI: https://www.vhbonline.org/fileadmin/vhb/Services/vhb-rating/WI/VHB_Rating_2024_Area_rating_WI.pdf
+   Nennen Sie die aufgenommenen Zeitschriften und begründen Sie in einem Satz, ob Sie B-Journals (z. B. Journal of Information Systems, International Journal of Accounting Information Systems) ein- oder ausschließen.
+4. Limiter: Peer Reviewed · 2020–2026 · Sprache Englisch oder Deutsch · Dokumenttyp Article.
+5. Suchprotokoll: leere Tabelle mit den Spalten Datum · Datenbank · String · Limiter · Treffer · Bemerkung.
+6. Prüfregel: drei Kriterien, an denen ich in der Trefferliste erkenne, dass die Strategie zu eng oder zu weit ist, mit je einem Anpassungsschritt.
+
+# REGELN
+
+- Nur Zeitschriftentitel aus den verlinkten Listen. Wenn unsicher, ob ein Titel in Business Source Premier indexiert ist: mit (?) markieren, nicht weglassen.
+- Keine Treffer erfinden — der 1-Pager enthält Strategie und Protokoll, keine Ergebnisse.
+- Englische Fachbegriffe (Boolean, Truncation, Limiter) bleiben stehen und werden bei Erstnennung in einem Halbsatz erklärt.
+```
+:::
+
+**Think-Pair-Share zu Übung 1 und 2 (2 Min).** Welche Quelle würden Sie in einem Prüfungsbericht zitieren — eine aus dem Deep-Research-Lauf oder eine aus der Trefferliste in Business Source Premier — und woran machen Sie den Unterschied fest? Was wäre passiert, wenn Sie dem Deep-Research-Modell einen Journalfilter mitgegeben hätten — und was, wenn Sie den Suchstring nicht protokolliert hätten?
+
+## Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate) {#sec-mermaid}
 
 **Modus:** in-class · Einzelarbeit · **Dauer:** 18 Min · **4D-Bezug:** Delegate — Aktivitäten eines Prozesses benennen, bevor entschieden wird, welche davon an eine KI gehen.
 
@@ -75,19 +242,19 @@ Anders als bei Mermaid sind in Signavio die Symbole standardisiert (BPMN 2.0.2, 
 
 **Schritt 1 — Account anlegen (5 Min).** [Signavio Academic Edition](https://academic.signavio.com/p/explorer){target="_blank"} — kostenfrei mit Hochschul-E-Mail, kein Download nötig. Wer keinen Account anlegen kann oder möchte, nutzt [bpmn.io](https://bpmn.io){target="_blank"} ohne Anmeldung.
 
-**Schritt 2 — Modellieren (20 Min).** Sachverhalt: **Rechnungseingang in einer mittelgroßen Steuerkanzlei** — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung. Reicher als die Mandantenanfrage oben; wer mag, übernimmt stattdessen den eigenen Mermaid-Prozess aus Recap A. In Signavio einen neuen Diagrammtyp *BPMN 2.0* anlegen. Mindestens zwei Rollen identifizieren und als Swimlanes setzen (z. B. *Sachbearbeiter* und *Partner*). Mindestens fünf Aktivitäten platzieren und mit Sequenzflüssen verbinden. Mindestens einen XOR-Entscheidungspunkt einsetzen. Jede Aktivität mit *P*, *C*, *H* oder *M* markieren und in einem Satz pro Aktivität begründen.
+**Schritt 2 — Modellieren (20 Min).** Sachverhalt: **Rechnungseingang in einer mittelgroßen Steuerkanzlei** — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung. Reicher als die Mandantenanfrage oben; wer mag, übernimmt stattdessen den eigenen Mermaid-Prozess aus Übung 3. In Signavio einen neuen Diagrammtyp *BPMN 2.0* anlegen. Mindestens zwei Rollen identifizieren und als Swimlanes setzen (z. B. *Sachbearbeiter* und *Partner*). Mindestens fünf Aktivitäten platzieren und mit Sequenzflüssen verbinden. Mindestens einen XOR-Entscheidungspunkt einsetzen. Jede Aktivität mit *P*, *C*, *H* oder *M* markieren und in einem Satz pro Aktivität begründen.
 
 **Schritt 3 — Export und Mitbringen (5 Min).** Diagramm als PNG oder PDF exportieren und zur In-Company-Session mitbringen. Dort ist es der Ausgangspunkt: Welche der markierten Aktivitäten laufen in der Praxis der Wirtschaftsprüfer heute bereits automatisiert, welche nicht — und warum?
 
 **Wer noch Zeit hat:** Eine Aktivität, die heute *H* (Hybrid) ist, in zwei aufeinanderfolgende Aktivitäten zerlegen — eine reine Process-Aktivität, eine reine Cognitive-Aktivität. Das ist der Hauptmechanismus, mit dem reale Workflows automatisierbar werden. Welche Stelle aus dem Mermaid-Diagramm sieht in Signavio anders aus? Wo wirkt BPMN überdimensioniert, wo zahlt sich die strikte Notation aus?
 
-## Recap B — Prompt-Patterns am Studienalltag {#sec-prompt-patterns-recap}
+## Übung 4 — Prompt-Patterns am Studienalltag (Recap Describe) {#sec-prompt-patterns-recap}
 
 **Modus:** in-class · Einzelarbeit · **Dauer:** 12 Min · **4D-Bezug:** Describe — vom Schema (RTF, CREATE) zum Baukasten aus Patterns; zugleich die Vorbereitung auf Ebene 1 in Block 1.
 
 Gestern haben Sie mit **RTF** und **CREATE** zwei Schemata kennengelernt, die einen ganzen Prompt ordnen. @white2023prompt liefern etwas Kleinteiligeres: einen Katalog aus 16 **Prompt-Patterns**, wiederverwendbaren Bausteinen, von denen jeder ein bestimmtes Problem löst — das Modell erfindet Belege, es antwortet unstrukturiert, es entscheidet, wo es nur Optionen aufzeigen sollte. Sechs davon braucht der heutige Workshop in Block 1. Sie üben sie an einem Thema, das Sie besser kennen als jeden Mandantenfall: Ihrem eigenen Studium. Der vollständige Katalog mit Tax- und Audit-Beispielen steht in der [Wissensbasis · Prompt-Pattern-Katalog](../appendix/wissensbasis.qmd#sec-prompt-patterns).
 
-**Setup.** Ein Chat-Modell, nach Möglichkeit mit Datei-Upload (ChatGPT, Claude, Gemini, NotebookLM). Ein Dokument aus dem Studienalltag, das Sie als PDF haben oder aus dem Sie einen Abschnitt kopieren können. Vorschlag: das **Modulhandbuch** Ihres Studiengangs. Alternativen, falls Sie das gerade nicht zur Hand haben: die **Prüfungsordnung** (dann haben Sie in Übung 1 direkt den Anschluss und dieselbe Datei), die **Praxisphasen- oder Praktikumsordnung**, der **Leitfaden für Hausarbeiten** oder die Zitierrichtlinie Ihres Fachbereichs, die **Benutzungsordnung der Bibliothek** oder die **FAQ zum Deutschlandsemesterticket**. Ohne Upload funktioniert die Übung auch — dann kopieren Sie den relevanten Abschnitt in den Chat, und das Pattern *Context Manager* wird umso wichtiger. **Keine personenbezogenen Daten** eingeben; die Frage bleibt hypothetisch.
+**Setup.** Ein Chat-Modell, nach Möglichkeit mit Datei-Upload (ChatGPT, Claude, Gemini, NotebookLM). Ein Dokument aus dem Studienalltag, das Sie als PDF haben oder aus dem Sie einen Abschnitt kopieren können. Vorschlag: das **Modulhandbuch** Ihres Studiengangs. Alternativen, falls Sie das gerade nicht zur Hand haben: die **Prüfungsordnung** (dann haben Sie in Übung 5 direkt den Anschluss und dieselbe Datei), die **Praxisphasen- oder Praktikumsordnung**, der **Leitfaden für Hausarbeiten** oder die Zitierrichtlinie Ihres Fachbereichs, die **Benutzungsordnung der Bibliothek** oder die **FAQ zum Deutschlandsemesterticket**. Ohne Upload funktioniert die Übung auch — dann kopieren Sie den relevanten Abschnitt in den Chat, und das Pattern *Context Manager* wird umso wichtiger. **Keine personenbezogenen Daten** eingeben; die Frage bleibt hypothetisch.
 
 **Schritt 1 — Naiv-Prompt (2 Min).** Stellen Sie Ihre Frage so, wie Sie sie einem Kommilitonen stellen würden, und senden Sie sie ab. Drei Beispiele: *„Welche Wahlpflichtmodule bereiten am besten auf eine Tätigkeit in der Steuerberatung vor?"* · *„Kann ich die Praxisphase im Ausland machen, und was muss vorher genehmigt werden?"* · *„Wie lang darf meine Hausarbeit sein, und was zählt zur Seitenzahl?"* Antwort kopieren und beiseitelegen.
 
@@ -108,7 +275,7 @@ Gestern haben Sie mit **RTF** und **CREATE** zwei Schemata kennengelernt, die ei
 
 **Think-Pair-Share (2 Min).** Welches Pattern hat Ihre Antwort am stärksten verändert? Welches hätten Sie gestern in Ihrem Tutor-Bot gebraucht? Und welche Frage aus Ihrem Studienalltag würden Sie trotz allem lieber direkt im Studienbüro stellen — und warum?
 
-## Übung 1 — Prüfungsordnung mit zweistufigem Dialog-Prompt befragen {#sec-pruefungsordnung}
+## Übung 5 — Prüfungsordnung mit zweistufigem Dialog-Prompt befragen {#sec-pruefungsordnung}
 
 **Modus:** in-class · Einzelarbeit · **Dauer:** 30 Min · **4D-Bezug:** Describe und Discern — präziser Prompt plus quellengebundene Output-Prüfung am eigenen Dokument.
 
@@ -116,7 +283,7 @@ Sie öffnen Workshop 2 an einem Dokument, das Sie kennen: Ihre eigene Prüfungso
 
 **Setup.** Ein starkes Modell mit Dokument-Upload (ChatGPT mit Datei-Upload, Claude Projects, NotebookLM oder GWDG Academic Cloud RAG/Arcana). Ihre aktuelle Prüfungsordnung oder Modulordnung als PDF bereitlegen. **Keine personenbezogenen Daten über sich oder Dritte** in den Chat eingeben — die Übung läuft mit dem Dokument und einer fachlichen Frage.
 
-**Schritt 1 — Prompt lesen, Patterns finden, dann setzen (3 Min).** Bevor Sie kopieren, lesen Sie: Welche der sechs Patterns aus Recap B stecken in diesem Prompt? Markieren Sie mindestens vier Stellen — *Persona*, *Context Manager*, *Template*, *Alternative Approaches*, *Fact Check List*, *Reflection* — und notieren Sie, welches Pattern der Prompt zusätzlich einsetzt, das in Recap B nicht vorkam (Hinweis: Er zerlegt den Dialog in zwei Schritte). Dann kopieren Sie den Prompt als System- oder Initial-Prompt in den Chat.
+**Schritt 1 — Prompt lesen, Patterns finden, dann setzen (3 Min).** Bevor Sie kopieren, lesen Sie: Welche der sechs Patterns aus Übung 4 stecken in diesem Prompt? Markieren Sie mindestens vier Stellen — *Persona*, *Context Manager*, *Template*, *Alternative Approaches*, *Fact Check List*, *Reflection* — und notieren Sie, welches Pattern der Prompt zusätzlich einsetzt, das in Übung 4 nicht vorkam (Hinweis: Er zerlegt den Dialog in zwei Schritte). Dann kopieren Sie den Prompt als System- oder Initial-Prompt in den Chat.
 
 ::: callout-tip
 ## System-Prompt zum Kopieren
@@ -159,9 +326,9 @@ Sie öffnen Workshop 2 an einem Dokument, das Sie kennen: Ihre eigene Prüfungso
 
 **Erweiterung für schnelle Studierende.** Stellen Sie dieselbe Frage einem zweiten Modell mit identischem Prompt und identischem Dokument. Vergleichen Sie die genannten Fundstellen — welche kommen in beiden Antworten vor (stabile Belege), welche nur in einer (instabile Belege)? Was sagt das über die Verlässlichkeit der KI-Recherche im Rechtskontext?
 
-**Think-Pair-Share (4 Min).** Welches Pattern aus Recap B hat in diesem Prompt am meisten Arbeit geleistet — und welches fehlt, das Sie am Modulhandbuch nützlich fanden? An welcher Stelle hat das Modell trotz Prompt aus der Rolle gewollt? Welche Frage zur Prüfungsordnung würden Sie besser direkt im Prüfungsamt klären als beim Modell — und warum? Wo zahlt sich der zweistufige Aufbau aus, wo hätten Sie ihn lieber einstufig gehabt? Auf welches berufliche Dokument (Vertrag, Bescheid, Mandantenanfrage) ließe sich dieser zweistufige Prompt morgen direkt übertragen?
+**Think-Pair-Share (4 Min).** Welches Pattern aus Übung 4 hat in diesem Prompt am meisten Arbeit geleistet — und welches fehlt, das Sie am Modulhandbuch nützlich fanden? An welcher Stelle hat das Modell trotz Prompt aus der Rolle gewollt? Welche Frage zur Prüfungsordnung würden Sie besser direkt im Prüfungsamt klären als beim Modell — und warum? Wo zahlt sich der zweistufige Aufbau aus, wo hätten Sie ihn lieber einstufig gehabt? Auf welches berufliche Dokument (Vertrag, Bescheid, Mandantenanfrage) ließe sich dieser zweistufige Prompt morgen direkt übertragen?
 
-## Übung 2 — RAG-Evaluation mit Tutor-Bot und Analogien verstehen {#sec-ragas-tutor}
+## Übung 6 — RAG-Evaluation mit Tutor-Bot und Analogien verstehen {#sec-ragas-tutor}
 
 **Modus:** in-class · Einzelarbeit · **Dauer:** 15 Min · **4D-Bezug:** Describe und Discern — Konzepte verstehen, um die eigene Output-Prüfung zu schärfen.
 
@@ -185,21 +352,11 @@ Direkt im Anschluss an den zweistufigen Quellenbindungs-Prompt verstehen Sie das
 
 **Think-Pair-Share (3 Min).** Welche der vier Metriken ist in der Steuer-, Audit- oder Advisory-Praxis am wichtigsten? Wo überschätzt RAGAS Ihrer Einschätzung nach die Sicherheit eines Systems — und wo zeigt es echte Schwächen?
 
-## Übung 3 — Tutor-Bot systematisch prüfen {#sec-test-suite}
+## Übung 7 — RAG-Suchübung HGB-Prüfungspflicht {#sec-rag-hgb}
 
-**Modus:** in-class · Paare mit Rollenwechsel · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Discern.
+**Modus:** in-class oder Hausaufgabe · Einzel oder Paar · **Dauer:** 30 Min in der Kurzvariante (vollständig: 45 Min) · **4D-Bezug:** Discern und Diligence (insbesondere Deployment Diligence).
 
-Diese Übung läuft zu zweit, mit verteilten Rollen: Die **Prüferin** stellt die Test-Fragen und bewertet die Antworten, der **Protokollant** führt die Tabelle und hält den Wortlaut jedes Fehlers fest — genau die Trennung, die später ein Goldstandard verlangt (wer prüft, dokumentiert nicht gleichzeitig). Nach der Hälfte der Fragen wechseln Sie die Rollen und den Bot: erst der Tutor-Bot der einen, dann der der anderen Person. Prüfen Sie den Tutor-Bot aus [Übung 3 (Workshop 1)](02-uebungen-w1.qmd#sec-uebung-3) mit einer kleinen Test-Suite. Drei bis fünf Test-Fragen mit Soll-Antworten formulieren, den Bot durchlaufen lassen, Ergebnisse als *rot · gelb · grün* markieren, eine Hypothese ableiten. Notizvorlage mit drei Spalten: *Frage · Soll-Antwort · Ist-Antwort (rot/gelb/grün)*. Formulieren Sie in fünf Minuten drei bis fünf fachliche Test-Fragen mit Soll-Antwort in drei bis fünf Sätzen — Beispiele für Tax: Reverse-Charge-Verfahren, verdeckte Gewinnausschüttung, Organschaft. Audit: Going-Concern, Materiality-Schwellen, ISA 315. Advisory: Bewertungsanlässe, KPI-Definition, Business-Case. Stellen Sie jede Frage einzeln und markieren Sie als *rot* (fehlerhaft, halluziniert), *gelb* (teilweise, vage), *grün* (korrekt, vollständig). Schreiben Sie gemeinsam in drei Sätzen, wo der Bot reproduzierbar versagt und woran es vermutlich liegt: Modell, Prompt oder fehlender Kontext.
-
-**Erweiterung für schnelle Studierende.** Schlagen Sie ein viertes Bewertungskriterium vor, das speziell für Tax-/Audit-Antworten zentral ist — etwa „nennt einschlägige Norm explizit", „benennt Grenzfälle und Ausnahmen" oder „warnt vor berufsrechtlich riskanten Empfehlungen". Begründen Sie, warum dieses Kriterium für Ihr Lerngebiet wichtig ist.
-
-**Think-Pair-Share (4 Min).** Haben Prüferin und Protokollant dieselben Fehler gesehen — oder hat das Protokoll etwas festgehalten, das der Prüferin im Gespräch durchgerutscht ist? Welche Ihrer Tests waren am aussagekräftigsten — und welche entpuppten sich als zu leicht oder zu schwer? Welcher Anteil Ihrer Tests wäre auch ohne LLM eine sinnvolle Lernkontrolle?
-
-## Übung 4 — RAG-Suchübung HGB-Prüfungspflicht {#sec-rag-hgb}
-
-**Modus:** in-class oder Hausaufgabe · Einzel oder Paar · **Dauer:** 45 Min · **4D-Bezug:** Discern und Diligence (insbesondere Deployment Diligence).
-
-Trainieren Sie den kontrollierten Einsatz eines RAG-Systems bei einer juristisch geprägten Aufgabe. Das Modell soll nicht entscheiden, subsumieren oder interpretieren — es wird ausschließlich als **quellengebundene Suchhilfe** genutzt. Anders als beim Tutor-Bot wird die KI hier auf eine enge Hilfsrolle zugeschnitten: Textfinder statt Rechtsgutachter. Im Prozessdiagramm aus Recap A ist das die Aktivität *Offene Punkte klären* — die Stelle, die die meisten als *C* oder *H* markiert haben. Genau dort sitzt diese Suchhilfe: Sie übernimmt das Finden der Textstellen, das Klären bleibt beim Sachbearbeiter. Wer die Aktivität als *P* markiert hatte, sieht in dieser Übung, warum ein regelbasiertes Skript dafür nicht reicht.
+Trainieren Sie den kontrollierten Einsatz eines RAG-Systems bei einer juristisch geprägten Aufgabe. Das Modell soll nicht entscheiden, subsumieren oder interpretieren — es wird ausschließlich als **quellengebundene Suchhilfe** genutzt. Anders als beim Tutor-Bot wird die KI hier auf eine enge Hilfsrolle zugeschnitten: Textfinder statt Rechtsgutachter. Im Prozessdiagramm aus Übung 3 ist das die Aktivität *Offene Punkte klären* — die Stelle, die die meisten als *C* oder *H* markiert haben. Genau dort sitzt diese Suchhilfe: Sie übernimmt das Finden der Textstellen, das Klären bleibt beim Sachbearbeiter. Wer die Aktivität als *P* markiert hatte, sieht in dieser Übung, warum ein regelbasiertes Skript dafür nicht reicht.
 
 Setup: RAG-System in der GWDG Academic Cloud (RAG/Arcana oder vergleichbar), HGB-Text aus offizieller Quelle hochladen (Einstieg: Auszug der §§ 264, 264a, 264d, 267, 267a, 316 HGB; Fortgeschrittene: gesamtes HGB), Temperature auf 0 oder maximal 0,1, ein instruktions-treues Modell wählen. **Keine persönlichen oder vertraulichen Daten in den Fall einbauen.**
 
@@ -267,7 +424,7 @@ Setup: RAG-System in der GWDG Academic Cloud (RAG/Arcana oder vergleichbar), HGB
 
 **Reflexionsfragen.** Hat das Modell echte Sucharbeit geleistet oder doch interpretiert? Welche Normstellen wurden gefunden, welche möglicherweise übersehen? Wie stark hängt die Ausgabe vom hochgeladenen Dokumentausschnitt ab? Welche Risiken bleiben trotz RAG bestehen?
 
-## Übung 5 — Diligence-Risiko-Recherche im Best-of-N {#sec-diligence-bestof-n}
+## Übung 8 — Diligence-Risiko-Recherche im Best-of-N {#sec-diligence-bestof-n}
 
 **Modus:** in-class · Paare · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Diligence, mindestens eine der drei Säulen.
 
@@ -279,34 +436,12 @@ Aus der offiziellen Definition einer Diligence-Säule lässt sich ein starkes KI
 
 **Schritt 2 — Auswahl im Best-of-N (8 Min).** Lesen Sie die fünf Fälle. Wählen Sie einen aus, der das Risiko besonders eindrücklich verdeutlicht. Auswahlkriterien: Plausibilität, Schwere, Übertragbarkeit.
 
-**Schritt 3 — Schutzmaßnahme ableiten (5 Min).** Schreiben Sie für den ausgewählten Fall in drei Sätzen: Was ist konkret schief gegangen? Welcher Punkt aus der Diligence-Definition wurde verletzt? Welche konkrete Wenn-Dann-Schutzmaßnahme hätte den Fall verhindert? Diese Regel tragen Sie im [Abschluss](#sec-regelwand) in die gemeinsame Regelwand ein; sie ist zugleich Saatkorn für Ihre eigene *Personal AI Policy* — eine Handvoll solcher Wenn-Dann-Sätze, die Sie nach dem Workshop weiterpflegen.
+**Schritt 3 — Schutzmaßnahme ableiten (5 Min).** Schreiben Sie für den ausgewählten Fall in drei Sätzen: Was ist konkret schief gegangen? Welcher Punkt aus der Diligence-Definition wurde verletzt? Welche konkrete Wenn-Dann-Schutzmaßnahme hätte den Fall verhindert? Diese Regel ist das Saatkorn für Ihre eigene *Personal AI Policy* — eine Handvoll solcher Wenn-Dann-Sätze, die Sie nach dem Workshop weiterpflegen.
 
 **Erweiterung für schnelle Studierende.** Lassen Sie sich mit demselben Setup fünf weitere Fälle generieren — diesmal mit der zusätzlichen Anweisung „wählen Sie Fälle, die ich aus dem ersten Lauf nicht erwartet hätte". Welche Risiken kommen erst im zweiten Lauf zur Sprache? Was sagt das über die Robustheit des Best-of-N-Vorgehens aus?
 
 **Think-Pair-Share (4 Min).** Welcher der fünf Fälle wäre fast Ihre Auswahl gewesen — und warum haben Sie sich für einen anderen entschieden? Wie verlässlich sind die generierten Fälle? Gibt es welche, die Sie bei Quellenrecherche entkräften müssten?
 
-## Abschluss — Regelwand {#sec-regelwand}
-
-**Modus:** Plenum · **Dauer:** 5 Min · **4D-Bezug:** Diligence — die Schutzregeln des Tages werden sichtbar und wandern in die In-Company-Session.
-
-Jedes Paar trägt seine Wenn-Dann-Regel aus Übung 5, Schritt 3 in das Abstimmungstool ein, das der Dozent am Beamer öffnet — Socrative (*Quick Question → Short Answer*, Raumcode wird angesagt) oder ein vergleichbares Tool. Eine Regel pro Paar, ein Satz, Muster: „*Wenn* … , *dann* … ." Sobald alle Regeln auf dem Beamer stehen, startet die Abstimmung (*Start Vote*): Jede Person wählt die eine Regel, die sie ab morgen in ihrer eigenen KI-Nutzung einhalten würde — nicht die eigene. Die drei meistgewählten Regeln liest der Dozent vor und ordnet sie den Diligence-Säulen zu: Creation, Transparency oder Deployment — welche Säule fehlt in der Sammlung?
-
-Die vollständige Sammlung wird exportiert und ist der Einstieg in die In-Company-Session mit den Wirtschaftsprüfern: Welche dieser Regeln gelten in der Praxis bereits, welche wären neu — und welche würden die Berufsträger streichen?
-
-## Übung 6 — Integrierter 4D-Use-Case (optional) {#sec-4d-usecase}
-
-**Modus:** in-class · Paar oder Dreierteam · **Dauer:** 40 Min · **4D-Bezug:** alle vier Kompetenzen, Schwerpunkt Diligence.
-
-![Centaur-Modell — Mensch und KI als verbundenes, aber unterscheidbares Gespann; die Verantwortung bleibt sichtbar beim Reiter. Adaptiert nach Mollick (2024).](../images/centaur-genai.png){fig-align="center" width="60%" fig-alt="Symbolbild eines Centaur als Metapher für die Mensch-KI-Kooperation"}
-
-Führen Sie einen realistischen Sachverhalt in einem Durchgang durch alle vier 4D-Kompetenzen — mit besonderem Gewicht auf der Diligence-Dokumentation. Diese Übung ist für Teams gedacht, die die Übungen 1–5 früh abgeschlossen haben oder eine zusätzliche Vertiefung suchen; sie ist zugleich die Vorlage für eine eigene *Personal AI Policy*.
-
-**Sachverhalt (fiktiv, kein Mandantenbezug):** Eine deutsche IT-Beratung erbringt eine Cloud-Migrations-Beratung im Wert von 80.000 € für einen Kunden mit Sitz in Boston, USA. Frage des Mandanten: Ist die Leistung in Deutschland umsatzsteuerbar — und wenn ja, mit welcher Steuerklasse?
-
-**Ablauf in vier Stationen.** *Delegate (5 Min)*: Welches Modell mit welcher Harness? Welche Teilaufgaben behalten Sie als Berufsträger:in selbst? *Describe (5 Min)*: Prompt nach RTF oder CREATE strukturieren, absenden. *Discern (10 Min)*: Faithfulness prüfen, zitierte Quellen verifizieren, Honey-Pot setzen, Output als rot/gelb/grün bewerten. *Diligence (20 Min)*: Audit-Trail ausfüllen, Mandantenkommunikation in fünf Sätzen formulieren (EU AI Act Art. 50), Verantwortungs-Schluss-Satz schreiben, Faustregel für die Personal AI Policy notieren.
-
-**Erweiterung für schnelle Studierende.** Übersetzen Sie den vollständigen Audit-Trail in eine Personal-AI-Policy-Regel als Wenn-Dann-Aussage. Beispiel: „*Wenn* der Sachverhalt einen US-Mandanten betrifft, *dann* verifiziere ich mindestens zwei Quellen aus deutschen Quellen und keine reine LLM-Antwort." Sammeln Sie solche Regeln — daraus wird Ihre *Personal AI Policy*.
-
 ## Quellen
 
-@dakan2025framework · @white2023prompt · @omg2014bpmn · @lacity2021becoming · @willcocks2024evolution · @es2024ragas · @kamoi2024realmistake · @willison2025redgreen · @bartnik2026genai4teaching
+@dakan2025framework · @white2023prompt · @tranfield2003systematic · @vhb2024teilratings · @omg2014bpmn · @lacity2021becoming · @willcocks2024evolution · @es2024ragas · @kamoi2024realmistake · @willison2025redgreen · @bartnik2026genai4teaching

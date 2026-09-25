@@ -353,7 +353,7 @@ Die Stärke des Katalogs liegt im Kombinieren. @white2023prompt empfehlen ausdr�
 - **Cognitive Verifier + Question Refinement** für die Karriereentwicklungs-Frage in Übung 2 (Workshop 1).
 - **Context Manager + Persona + Refusal Breaker** für die RAG-Suchübung HGB in Workshop 2 — das Modell agiert als reine Suchhilfe, ignoriert Trainingswissen und schlägt bei Verweigerung Reformulierungen vor.
 
-*Querverweise:* [Übung 3 — Prompt-Umbau und Tutor-Bot](../parts/02-uebungen-w1.qmd#sec-uebung-3) · [Recap B — Prompt-Patterns am Studienalltag](../parts/04-uebungen-w2-2026-ws.qmd#sec-prompt-patterns-recap) · [Grundlagenskript *GenAI in der Lehre*, Prompt-Beispiele-Sammlung](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html){target="_blank"}.
+*Querverweise:* [Übung 3 — Prompt-Umbau und Tutor-Bot](../parts/02-uebungen-w1.qmd#sec-uebung-3) · [Übung 4 — Prompt-Patterns am Studienalltag (Recap Describe)](../parts/04-uebungen-w2-2026-ws.qmd#sec-prompt-patterns-recap) · [Grundlagenskript *GenAI in der Lehre*, Prompt-Beispiele-Sammlung](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html){target="_blank"}.
 
 *Quelle:* @white2023prompt — *A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT*. <https://arxiv.org/abs/2302.11382>
 
@@ -476,7 +476,7 @@ Sprachmodelle sind beim Mermaid-Erzeugen erstaunlich verlässlich, weil die Synt
 
 KI-erzeugte Mermaid-Diagramme sind dort sinnvoll, wo die kognitive Hauptarbeit *vor* dem Diagramm liegt — also in der Klärung, was eigentlich passiert. Das Modell übernimmt die Notations-Last und liefert den Erst-Entwurf, der Mensch übernimmt die Korrektur. Wo die kognitive Hauptarbeit *im* Diagramm liegt — etwa bei kontrovers verhandelten Prozessen oder Audit-relevanten Modellen mit hoher Rechtsverbindlichkeit — schadet die KI-Erzeugung mehr, als sie nützt: Studierende übernehmen den Erst-Entwurf zu früh und überspringen den eigenen Modellierungsschritt.
 
-*Querverweise:* [Recap A — Prozessmodellierung mit Mermaid](../parts/04-uebungen-w2-2026-ws.qmd#sec-mermaid) · [Hausaufgabe — BPMN in Signavio](../parts/04-uebungen-w2-2026-ws.qmd#sec-bpmn) · [BPMN-Grundlagen](#sec-bpmn).
+*Querverweise:* [Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate)](../parts/04-uebungen-w2-2026-ws.qmd#sec-mermaid) · [Hausaufgabe — BPMN in Signavio](../parts/04-uebungen-w2-2026-ws.qmd#sec-bpmn) · [BPMN-Grundlagen](#sec-bpmn).
 
 ## Primer — Optionen der Qualitätsprüfung im juristischen RAG {#sec-primer-qualitaetspruefung}
 

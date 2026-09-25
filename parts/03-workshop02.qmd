@@ -23,8 +23,9 @@ editor:
 ## Vorbereitung
 
 - **Zugang** zu einem RAG-System mit Datei-Upload prüfen (GWDG Academic Cloud RAG/Arcana, NotebookLM, ChatGPT oder Claude mit Upload) — siehe [Quickstart](../appendix/quickstart.qmd).
-- Den [HGB-Auszug](../data/hgb-auszug-pruefungspflicht.txt){target="_blank"} (§§ 264, 264d, 267, 267a, 316) herunterladen; er wird in Übung 4 in das RAG-System hochgeladen.
-- Zwei eigene Dokumente als PDF bereitlegen: die **Prüfungsordnung** (Übung 1) und das **Modulhandbuch** oder ein anderes Dokument aus dem Studienalltag (Recap B).
+- Den [HGB-Auszug](../data/hgb-auszug-pruefungspflicht.txt){target="_blank"} (§§ 264, 264d, 267, 267a, 316) herunterladen; er wird in Übung 8 in das RAG-System hochgeladen.
+- Zwei eigene Dokumente als PDF bereitlegen: die **Prüfungsordnung** (Übung 5) und das **Modulhandbuch** oder ein anderes Dokument aus dem Studienalltag (Übung 4, Recap Describe).
+- **Zugang zur DigiBib** mit der TH-Kennung testen ([Fachgebiet Wirtschaft](https://thb-koeln.digibib.net/eres/subject-area/Wirtschaft?defaults=on){target="_blank"} → Business Source Premier) und ein Werkzeug mit Deep-Research-Modus bereithalten (ChatGPT, Gemini oder Perplexity) — beides für Übung 1 und 2.
 - Optional: die [Wissensbasis](../appendix/wissensbasis.qmd) zu RAG, RAGAS, Goldstandard und Prompt-Patterns überfliegen.
 
 ## Inhalte des Workshops
@@ -59,8 +60,10 @@ Zum Selbstdurchlauf: [Recap-Quiz — Workshop 1](../interactions/recap-quiz-w1.h
 
 Einstieg in die Qualitätsprüfung von "Discern": Welche Themen bei Ihrem gestrigen Tutor-Bot müssten auf jeden Fall geprüft werden?
 
-➡️ [Recap A — Prozessmodellierung mit Mermaid](04-uebungen-w2-2026-ws.qmd#sec-mermaid){.assignment-badge} · 18 Min · Delegate
-➡️ [Recap B — Prompt-Patterns am Studienalltag](04-uebungen-w2-2026-ws.qmd#sec-prompt-patterns-recap){.assignment-badge} · 12 Min · Describe
+➡️ [Übung 1 — Benchmarking per Deep Research](04-uebungen-w2-2026-ws.qmd#sec-deep-research-benchmark){.assignment-badge} · 6 Min · Delegate · Discern
+➡️ [Übung 2 — Suchstrategie-1-Pager für Business Source Premier](04-uebungen-w2-2026-ws.qmd#sec-suchstrategie-bsp){.assignment-badge} · 9 Min · Describe · Discern
+➡️ [Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate)](04-uebungen-w2-2026-ws.qmd#sec-mermaid){.assignment-badge} · 18 Min · Delegate
+➡️ [Übung 4 — Prompt-Patterns am Studienalltag (Recap Describe)](04-uebungen-w2-2026-ws.qmd#sec-prompt-patterns-recap){.assignment-badge} · 12 Min · Describe
 ::::
 
 :::: week-card
@@ -108,13 +111,24 @@ Nur er findet den Fehler „richtiges Zitat, falsche Norm" — ein Zitat, das w�
 
 ![RAGAS-Metriken und Goldstandard im Zusammenspiel — automatisierte Grobeinschätzung trifft auf expertengeprüften Referenzkanon.](../images/discernment-ragas-standard.png){fig-alt="Schematische Darstellung der vier RAGAS-Kernmetriken Faithfulness, Answer Relevance, Context Precision und Context Recall im Kontext eines Goldstandard-Testsets"}
 
+**Exkurs — Skills: Ebene 2 als wiederverwendbares Paket.**
+Ein *Skill* ist ein Ordner mit einer Anleitung (`SKILL.md`) und, wo nötig, Skripten und Referenzmaterial, den ein Modell bei Bedarf lädt — wie eine Arbeitsanweisung im Kanzlei-Handbuch, die eine Mitarbeiterin erst aufschlägt, wenn der passende Fall auf dem Tisch liegt [@zhang2025skills].
+Das Modell sieht zunächst nur Name und Kurzbeschreibung aller verfügbaren Skills; die vollständige Anleitung und die Skripte kommen erst in den Kontext, wenn die Aufgabe dazu passt (*progressive disclosure*).
+Ein Beispiel aus dem Finanzbereich: der Skill [*Analyzing Financial Statements*](https://github.com/danedane/anthropic_skills/blob/main/skills/analyzing-financial-statements/SKILL.md){target="_blank"} berechnet aus Bilanz- und GuV-Daten Kennzahlen zu Rentabilität, Liquidität, Verschuldung, Effizienz und Bewertung.
+Entscheidend ist die Arbeitsteilung darin: Das Modell liest die Daten ein, wählt die passenden Kennzahlen aus und ordnet die Ergebnisse ein — die Zahlen selbst rechnet ein Python-Skript (`calculate_ratios.py`), nicht das Modell.
+Das ist Ebene 2 in Reinform: Wo ein deterministisches Skript rechnet, gibt es keine „plausible, aber falsche" Kennzahl aus dem Sprachmodell mehr; was bleibt, ist prüfbar — stimmen die Eingabedaten, und steht im Skript die richtige Formel?
+Was *Deterministic Quoting* für den Wortlaut leistet, leistet der Skill für die Arithmetik.
+Für die Interpretation der Kennzahlen (`interpret_ratios.py` liefert Lesehilfen und Branchenvergleiche) gelten dagegen wieder Ebene 1 und Ebene 4: Das Urteil bleibt beim Menschen.
+Verzeichnisse, in denen Sie fertige Skills finden und im Klartext lesen können: das offizielle Repository [anthropics/skills](https://github.com/anthropics/skills){target="_blank"} mit Spezifikation und Vorlage, das Verzeichnis [skills.sh](https://www.skills.sh/){target="_blank"} und die kuratierte Sammlung [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills){target="_blank"}.
+Lesen Sie die nächste `SKILL.md` mit einer Frage: Welche Schritte erledigt ein Skript, welche das Modell — und wer prüft die Grenze dazwischen?
+
 Vertiefung in der [Wissensbasis · Primer Qualitätsprüfung](../appendix/wissensbasis.qmd#sec-primer-qualitaetspruefung) und [Primer Goldstandard](../appendix/wissensbasis.qmd#sec-primer-goldstandard).
 Pattern-Details unter [Prompt-Pattern-Katalog](../appendix/wissensbasis.qmd#sec-prompt-patterns).
 
-➡️ [Übung 1 — Prüfungsordnung mit zweistufigem Dialog-Prompt](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung){.assignment-badge} · 30 Min
-➡️ [Übung 2 — RAGAS-Metriken mit Tutor-Bot verstehen](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor){.assignment-badge} · 15 Min
-➡️ [Übung 3 — Tutor-Bot systematisch prüfen](04-uebungen-w2-2026-ws.qmd#sec-test-suite){.assignment-badge} · 22 Min
-➡️ [Übung 4 — RAG-Suchübung HGB-Prüfungspflicht](04-uebungen-w2-2026-ws.qmd#sec-rag-hgb){.assignment-badge} · 45 Min (kurz: 30 Min)
+➡️ [Übung 5 — Prüfungsordnung mit zweistufigem Dialog-Prompt](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung){.assignment-badge} · 30 Min
+➡️ [Übung 6 — RAGAS-Metriken mit Tutor-Bot verstehen](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor){.assignment-badge} · 15 Min
+➡️ [Übung 7 — Tutor-Bot systematisch prüfen](04-uebungen-w2-2026-ws.qmd#sec-test-suite){.assignment-badge} · 22 Min
+➡️ [Übung 8 — RAG-Suchübung HGB-Prüfungspflicht](04-uebungen-w2-2026-ws.qmd#sec-rag-hgb){.assignment-badge} · 30 Min (Kurzvariante; lang: 45 Min)
 ::::
 
 :::: week-card
@@ -148,7 +162,7 @@ Berufsrechtlicher Rahmen für Tax/Audit/Advisory:
 - **StBerG § 57** — gleichgelagerte Pflichten für Steuerberater. Verschwiegenheit ist eine Berufspflicht, kein Vertragsthema; ihre Verletzung ist Straftat nach § 203 StGB.
 - **DSGVO Art. 5** — Datenschutz-Grundsätze, insbesondere *Zweckbindung* und *Datenminimierung*. Free-Tier-Anbieter trainieren in der Regel auf Eingaben — damit ist Mandantenbezug ausgeschlossen.
 
-➡️ [Übung 5 — Diligence-Risiko-Recherche im Best-of-N](04-uebungen-w2-2026-ws.qmd#sec-diligence-bestof-n){.assignment-badge}
+➡️ [Übung 9 — Diligence-Risiko-Recherche im Best-of-N](04-uebungen-w2-2026-ws.qmd#sec-diligence-bestof-n){.assignment-badge}
 · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)
 ➡️ [Abschluss — Regelwand](04-uebungen-w2-2026-ws.qmd#sec-regelwand){.assignment-badge} · 5 Min Plenum, Socrative
 ::::
@@ -163,25 +177,29 @@ Berufsrechtlicher Rahmen für Tax/Audit/Advisory:
 ## Aufgaben
 
 ::: callout-note
-## Zwei Recaps, vier Discern-Übungen, eine Diligence-Übung
+## Zwei Recherche-Übungen, zwei Recaps, vier Discern-Übungen, eine Diligence-Übung
 
-**Recaps zu Tag 1 (in Block 0):** [Recap A — Prozessmodellierung mit Mermaid](04-uebungen-w2-2026-ws.qmd#sec-mermaid){.assignment-badge} [Recap B — Prompt-Patterns am Studienalltag](04-uebungen-w2-2026-ws.qmd#sec-prompt-patterns-recap){.assignment-badge}
+**Recherche zum Einstieg (Block 0, 15 Min):** [Übung 1 — Benchmarking per Deep Research](04-uebungen-w2-2026-ws.qmd#sec-deep-research-benchmark){.assignment-badge} [Übung 2 — Suchstrategie-1-Pager für Business Source Premier](04-uebungen-w2-2026-ws.qmd#sec-suchstrategie-bsp){.assignment-badge}
 
-**Discern (nach Block 1):** [Übung 1 — Prüfungsordnung mit zweistufigem Dialog-Prompt](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung){.assignment-badge} [Übung 2 — RAGAS-Metriken mit Tutor-Bot verstehen](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor){.assignment-badge} [Übung 3 — Tutor-Bot systematisch prüfen](04-uebungen-w2-2026-ws.qmd#sec-test-suite){.assignment-badge} [Übung 4 — RAG-Suchübung HGB-Prüfungspflicht](04-uebungen-w2-2026-ws.qmd#sec-rag-hgb){.assignment-badge}
+**Recaps zu Tag 1 (in Block 0):** [Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate)](04-uebungen-w2-2026-ws.qmd#sec-mermaid){.assignment-badge} [Übung 4 — Prompt-Patterns am Studienalltag (Recap Describe)](04-uebungen-w2-2026-ws.qmd#sec-prompt-patterns-recap){.assignment-badge}
 
-**Diligence (nach Block 2):** [Übung 5 — Diligence-Risiko-Recherche im Best-of-N](04-uebungen-w2-2026-ws.qmd#sec-diligence-bestof-n){.assignment-badge} [Abschluss — Regelwand](04-uebungen-w2-2026-ws.qmd#sec-regelwand){.assignment-badge} · optional für schnelle Teams: [Übung 6 — Integrierter 4D-Use-Case](04-uebungen-w2-2026-ws.qmd#sec-4d-usecase){.assignment-badge}
+**Discern (nach Block 1):** [Übung 5 — Prüfungsordnung mit zweistufigem Dialog-Prompt](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung){.assignment-badge} [Übung 6 — RAGAS-Metriken mit Tutor-Bot verstehen](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor){.assignment-badge} [Übung 7 — Tutor-Bot systematisch prüfen](04-uebungen-w2-2026-ws.qmd#sec-test-suite){.assignment-badge} [Übung 8 — RAG-Suchübung HGB-Prüfungspflicht](04-uebungen-w2-2026-ws.qmd#sec-rag-hgb){.assignment-badge}
 
-**Hausaufgabe bis zur In-Company-Session:** [BPMN-Modellierung in Signavio](04-uebungen-w2-2026-ws.qmd#sec-bpmn){.assignment-badge}
+**Diligence (nach Block 2):** [Übung 9 — Diligence-Risiko-Recherche im Best-of-N](04-uebungen-w2-2026-ws.qmd#sec-diligence-bestof-n){.assignment-badge} [Abschluss — Regelwand](04-uebungen-w2-2026-ws.qmd#sec-regelwand){.assignment-badge} · optional für schnelle Teams: [Übung 10 — Integrierter 4D-Use-Case](04-uebungen-w2-2026-ws.qmd#sec-4d-usecase){.assignment-badge}
 
+**Hausaufgabe bis zur In-Company-Session:** [BPMN-Modellierung in Signavio](04-uebungen-w2-2026-ws.qmd#sec-bpmn){.assignment-badge} [Deep-Research-Bericht gegen die Evidenz halten](04-uebungen-w2-2026-ws.qmd#sec-deep-research-check){.assignment-badge}
+
+Zwei Recherche-Übungen eröffnen den Tag an seiner Leitfrage — wie Arbeitsprozesse in Tax, Audit & Advisory automatisiert und mit generativer KI unterstützt werden und was die Forschung dazu belegt: Übung 1 delegiert das Praxis-Benchmarking an einen Deep-Research-Lauf und legt vorab den Prüfmaßstab fest, Übung 2 baut dieselbe Frage als dokumentierte Suchstrategie in Business Source Premier mit Peer-Review-Limiter und VHB-Journalfilter.
 Die Recaps holen Delegate und Describe von gestern in zwei kurzen Übungen zurück: ein Prozessdiagramm mit *P/C/H/M*-Markierung und ein Alltagsprompt, umgebaut mit den Patterns nach White et al. (2023) — denselben sechs, die Block 1 als Ebene 1 der Qualitätsprüfung einführt.
-Übung 1 wendet die Patterns an der eigenen Prüfungsordnung an und prüft den Output gegen ein Protokoll; Übung 2 erklärt die RAGAS-Metriken sokratisch; Übung 3 zieht die Test-Suite von gestern am eigenen Tutor-Bot durch; Übung 4 hegt ein RAG-System im HGB auf die Rolle der reinen Suchhilfe ein.
-Übung 5 generiert aus einer Diligence-Definition Risikofälle im Best-of-N und leitet eine Wenn-Dann-Schutzregel ab — der Übergang von Discern zu **Diligence**; die Regeln aller Paare landen zum Abschluss in einer Socrative-Regelwand und werden in die In-Company-Session mitgenommen.
+Übung 5 wendet die Patterns an der eigenen Prüfungsordnung an und prüft den Output gegen ein Protokoll; Übung 6 erklärt die RAGAS-Metriken sokratisch; Übung 7 zieht die Test-Suite von gestern am eigenen Tutor-Bot durch; Übung 8 hegt ein RAG-System im HGB auf die Rolle der reinen Suchhilfe ein.
+Übung 9 generiert aus einer Diligence-Definition Risikofälle im Best-of-N und leitet eine Wenn-Dann-Schutzregel ab — der Übergang von Discern zu **Diligence**; die Regeln aller Paare landen zum Abschluss in einer Socrative-Regelwand und werden in die In-Company-Session mitgenommen.
 :::
 
 ## Hintergrund / Werkzeuge / Ressourcen
 
 - **Wissensbasis** — [Prompt-Pattern-Katalog nach White](../appendix/wissensbasis.qmd#sec-prompt-patterns) · [RAG-Grundlagen](../appendix/wissensbasis.qmd#sec-rag) · [Primer Qualitätsprüfung](../appendix/wissensbasis.qmd#sec-primer-qualitaetspruefung) · [Primer Goldstandard](../appendix/wissensbasis.qmd#sec-primer-goldstandard) · [Recht und Berufsstand](../appendix/wissensbasis.qmd#sec-recht).
 - **Material und Werkzeuge der Übungen** — [HGB-Auszug](../data/hgb-auszug-pruefungspflicht.txt){target="_blank"} (§§ 264, 264d, 267, 267a, 316) · [Mermaid Live Editor](https://mermaid.live){target="_blank"} · [Signavio Academic Edition](https://academic.signavio.com/p/explorer){target="_blank"} / [bpmn.io](https://bpmn.io){target="_blank"} · [Mermaid-Prozessdiagramme mit KI](../appendix/wissensbasis.qmd#sec-mermaid-ki) · [BPMN-Grundlagen](../appendix/wissensbasis.qmd#sec-bpmn).
+- **Skills** — [Agent-Skills-Spezifikation und Beispiele (anthropics/skills)](https://github.com/anthropics/skills){target="_blank"} · [skills.sh — Verzeichnis](https://www.skills.sh/){target="_blank"} · [awesome-agent-skills — kuratierte Sammlung](https://github.com/VoltAgent/awesome-agent-skills){target="_blank"} · Beispiel [Analyzing Financial Statements](https://github.com/danedane/anthropic_skills/blob/main/skills/analyzing-financial-statements/SKILL.md){target="_blank"} (Kennzahlen per Python-Skript — Ebene 2) · Hintergrund: @zhang2025skills.
 - **Originalmaterial** — Cheat Sheet und Practical Overview zu Diligence aus @dakan2025framework.
 
 ```{=html}
