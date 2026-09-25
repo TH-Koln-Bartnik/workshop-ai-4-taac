@@ -145,9 +145,8 @@ Zwei Ideen, eine Übersetzung auf Tax/Audit:
 - **RAGAS-Idee** — eine Bewertung von Antworten aus Sprachmodell + Speicher (RAG, Retrieval-Augmented-Generation Systemen) entlang weniger Kerngrößen: *Faithfulness* (passt die Antwort zu den abgerufenen Quellen?), *Answer Relevance* (beantwortet sie die Frage?), *Context Precision* und *Context Recall* (wurden die richtigen Quellen abgerufen?) [@es2024ragas]. Im Kern: ein Test-Set aus Fragen mit erwarteten Antworten, das Sie immer wieder durchlaufen lassen.
 - **Red-Green-TDD nach Willison** — Testfälle zuerst. Sie schreiben fünf bis zehn Beispielfragen mit gewünschten Antworten, lassen den Agenten durchlaufen, markieren *rot* (fehlerhaft), *gelb* (teilweise) oder *grün* (korrekt). Dann iterieren Sie Prompt, Modell und Harness, bis möglichst viele Tests grün werden [@willison2025redgreen]. Die Methode kommt aus dem Test-Driven Development der Software-Entwicklung.
 
-Übersetzung auf Tax/Audit: Eine kleine Sammlung typischer Berufsfragen (Anwendung des Reverse-Charge-Verfahrens, Going-Concern-Prüfung, Behandlung von Rückstellungen) wird zur Test-Suite. Genau das bauen Sie in der nächsten Übung — zum Tutor-Bot aus Übung 3.
+Übersetzung auf Tax/Audit: Eine kleine Sammlung typischer Berufsfragen (Anwendung des Reverse-Charge-Verfahrens, Going-Concern-Prüfung, Behandlung von Rückstellungen) wird zur Test-Suite — probieren Sie das gleich an Ihrem eigenen Tutor-Bot aus Übung 3 aus.
 
-➡️ [Übung 4 — Tutor-Bot systematisch prüfen (Vertiefung: Übung 3 in Workshop 2)](04-uebungen-w2-2026-ws.qmd#sec-test-suite){.assignment-badge} · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)
 ::::
 
 :::: week-card
@@ -155,7 +154,7 @@ Zwei Ideen, eine Übersetzung auf Tax/Audit:
 🟧 Block 6 — Abschluss und Brücke zu Tag 2 · 9 Min
 :::
 
-Kurzer Rückblick auf die vier Übungen: Welche der drei Konfigurationen (LLM allein, erweitertes LLM, Agent) ist Ihnen heute am vertrautesten geworden? Welche Test-Frage aus Übung 4 würde morgen im echten Berufsalltag bestehen? Brücke zu Workshop 2: **Diligence** als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.
+Kurzer Rückblick auf die drei Übungen: Welche der drei Konfigurationen (LLM allein, erweitertes LLM, Agent) ist Ihnen heute am vertrautesten geworden? Welche Ihrer Testfragen an den Tutor-Bot würde morgen im echten Berufsalltag bestehen? Brücke zu Workshop 2: **Diligence** als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.
 ::::
 
 ## Diskussionsfragen
@@ -168,11 +167,11 @@ Kurzer Rückblick auf die vier Übungen: Welche der drei Konfigurationen (LLM al
 ## Aufgaben
 
 ::: callout-note
-## Vier Übungen im Workshop, eingebettet in die Inputs
+## Drei Übungen im Workshop, eingebettet in die Inputs
 
 [Übung 1 — Diagnose-Quiz](02-uebungen-w1.qmd#sec-uebung-1){.assignment-badge} [Übung 2 — Karriereentwicklung](02-uebungen-w1.qmd#sec-uebung-2){.assignment-badge} [Übung 3 — Prompt-Umbau und Tutor-Bot](02-uebungen-w1.qmd#sec-uebung-3){.assignment-badge}
 
-Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine **Erweiterungsfrage für schnelle Studierende** — wer früh fertig ist, vertieft, statt zu warten. Die Discern-Übung *Tutor-Bot systematisch prüfen* wird in Workshop 2 als [Übung 7 — Tutor-Bot Test-Suite](04-uebungen-w2-2026-ws.qmd#sec-test-suite) vertieft; davor stehen zwei kurze Recaps zu Delegate und Describe, der zweistufige [Quellenbindungs-Prompt an der eigenen Prüfungsordnung](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung) und das [Tutor-geführte Verstehen der RAGAS-Metriken](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor).
+Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine **Erweiterungsfrage für schnelle Studierende** — wer früh fertig ist, vertieft, statt zu warten. In Workshop 2 folgen zunächst zwei kurze Recaps zu Delegate und Describe, dann der zweistufige [Quellenbindungs-Prompt an der eigenen Prüfungsordnung](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung) und das [Tutor-geführte Verstehen der RAGAS-Metriken](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor).
 :::
 
 ## Hausaufgabe bis zur In-Company-Session
