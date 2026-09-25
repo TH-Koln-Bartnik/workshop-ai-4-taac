@@ -199,6 +199,14 @@ Erstellen Sie einen 1-Pager (max. 350 Wörter plus Suchstrings) mit einer Suchst
 ```
 :::
 
+Wer Schritt 2 direkt mit einem fertigen String beginnen will, statt erst den 1-Pager generieren zu lassen, findet hier eine einfache, bereits kombinierte Version aller drei Konzeptblöcke — mit der Sprachrestriktion auf Englisch ergänzt (EBSCO-Feldcode `LA`):
+
+::: {.callout-tip collapse="true" title="Suchstring zum Ausprobieren — einfache Version für Business Source Premier"}
+``` text
+("tax services" OR "audit services" OR "advisory services" OR "accounting profession" OR "public accounting" OR "financial advisory" OR "tax compliance" OR "audit process") AND ("automated workflow" OR "process automation" OR "artificial intelligence" OR "generative AI" OR "large language model*" OR "AI-driven system*" OR "machine learning" OR "natural language processing") AND ("work process transformation" OR "task automation" OR "efficiency improvement" OR "decision support system*" OR "quality assurance" OR "error reduction" OR "professional judgment" OR "human-AI collaboration") AND LA English
+```
+:::
+
 **Think-Pair-Share zu Übung 1 und 2 (2 Min).** Welche Quelle würden Sie in einem Prüfungsbericht zitieren — eine aus dem Deep-Research-Lauf oder eine aus der Trefferliste in Business Source Premier — und woran machen Sie den Unterschied fest? Was wäre passiert, wenn Sie dem Deep-Research-Modell einen Journalfilter mitgegeben hätten — und was, wenn Sie den Suchstring nicht protokolliert hätten?
 
 ## Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate) {#sec-mermaid}
