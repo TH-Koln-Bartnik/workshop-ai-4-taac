@@ -1,0 +1,109 @@
+# HGB-Auszug zur Prüfungspflicht — mit kanonischen Zitat-IDs
+
+Quelle: Handelsgesetzbuch (HGB), amtlicher Text nach gesetze-im-internet.de (Bundesministerium der Justiz), Stand 24.09.2026. Auszug: § 264 (nur Absatz 1), § 264d, § 267, § 267a, § 316. Die alte Rechtschreibung („Abschlußstichtag", „Jahresabschluß") ist Teil des amtlichen Wortlauts und wurde bewusst nicht angepasst.
+
+Jeder Satz und jede Nummer trägt eine eindeutige ID in eckigen Klammern nach dem Muster HGB-§267-Abs1-Nr1 (Gesetz – Paragraph – Absatz – Satz oder Nummer). Beim Zitieren ist die ID mitzuführen. Existiert eine zitierte ID in dieser Liste nicht, ist das Zitat nicht aus diesem Text.
+
+
+## § 264 Pflicht zur Aufstellung; Befreiung
+
+[HGB-§264-Abs1-Satz1] Die gesetzlichen Vertreter einer Kapitalgesellschaft haben den Jahresabschluß (§ 242) um einen Anhang zu erweitern, der mit der Bilanz und der Gewinn- und Verlustrechnung eine Einheit bildet, sowie einen Lagebericht aufzustellen.
+
+[HGB-§264-Abs1-Satz2] Die gesetzlichen Vertreter einer kapitalmarktorientierten Kapitalgesellschaft, die nicht zur Aufstellung eines Konzernabschlusses verpflichtet ist, haben den Jahresabschluss um eine Kapitalflussrechnung und einen Eigenkapitalspiegel zu erweitern, die mit der Bilanz, Gewinn- und Verlustrechnung und dem Anhang eine Einheit bilden; sie können den Jahresabschluss um eine Segmentberichterstattung erweitern.
+
+[HGB-§264-Abs1-Satz3] Der Jahresabschluß und der Lagebericht sind von den gesetzlichen Vertretern in den ersten drei Monaten des Geschäftsjahrs für das vergangene Geschäftsjahr aufzustellen.
+
+[HGB-§264-Abs1-Satz4] Kleine Kapitalgesellschaften (§ 267 Abs. 1) brauchen den Lagebericht nicht aufzustellen; sie dürfen den Jahresabschluß auch später aufstellen, wenn dies einem ordnungsgemäßen Geschäftsgang entspricht, jedoch innerhalb der ersten sechs Monate des Geschäftsjahres.
+
+[HGB-§264-Abs1-Satz5] Kleinstkapitalgesellschaften (§ 267a) brauchen den Jahresabschluss nicht um einen Anhang zu erweitern, wenn sie
+
+[HGB-§264-Abs1-Satz5-Nr1] die in § 268 Absatz 7 genannten Angaben,
+
+[HGB-§264-Abs1-Satz5-Nr2] die in § 285 Nummer 9 Buchstabe c genannten Angaben und
+
+[HGB-§264-Abs1-Satz5-Nr3] im Falle einer Aktiengesellschaft die in § 160 Absatz 3 Satz 2 des Aktiengesetzes genannten Angaben
+
+[HGB-§264-Abs1-Satz5-Schluss] unter der Bilanz angeben.
+
+
+## § 264d Kapitalmarktorientierte Kapitalgesellschaft
+
+[HGB-§264d-Satz1] Eine Kapitalgesellschaft ist kapitalmarktorientiert, wenn sie einen organisierten Markt im Sinn des § 2 Absatz 11 des Wertpapierhandelsgesetzes durch von ihr ausgegebene Wertpapiere im Sinn des § 2 Absatz 1 des Wertpapierhandelsgesetzes in Anspruch nimmt oder die Zulassung solcher Wertpapiere zum Handel an einem organisierten Markt beantragt hat.
+
+
+## § 267 Umschreibung der Größenklassen
+
+[HGB-§267-Abs1-Satz1] Kleine Kapitalgesellschaften sind solche, die mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:
+
+[HGB-§267-Abs1-Nr1] 7 500 000 Euro Bilanzsumme.
+
+[HGB-§267-Abs1-Nr2] 15 000 000 Euro Umsatzerlöse in den zwölf Monaten vor dem Abschlußstichtag.
+
+[HGB-§267-Abs1-Nr3] Im Jahresdurchschnitt fünfzig Arbeitnehmer.
+
+[HGB-§267-Abs2-Satz1] Mittelgroße Kapitalgesellschaften sind solche, die mindestens zwei der drei in Absatz 1 bezeichneten Merkmale überschreiten und jeweils mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:
+
+[HGB-§267-Abs2-Nr1] 25 000 000 Euro Bilanzsumme.
+
+[HGB-§267-Abs2-Nr2] 50 000 000 Euro Umsatzerlöse in den zwölf Monaten vor dem Abschlußstichtag.
+
+[HGB-§267-Abs2-Nr3] Im Jahresdurchschnitt zweihundertfünfzig Arbeitnehmer.
+
+[HGB-§267-Abs3-Satz1] Große Kapitalgesellschaften sind solche, die mindestens zwei der drei in Absatz 2 bezeichneten Merkmale überschreiten.
+
+[HGB-§267-Abs3-Satz2] Eine Kapitalgesellschaft im Sinn des § 264d gilt stets als große.
+
+[HGB-§267-Abs4-Satz1] Die Rechtsfolgen der Merkmale nach den Absätzen 1 bis 3 Satz 1 treten nur ein, wenn sie an den Abschlußstichtagen von zwei aufeinanderfolgenden Geschäftsjahren über- oder unterschritten werden.
+
+[HGB-§267-Abs4-Satz2] Im Falle der Umwandlung oder Neugründung treten die Rechtsfolgen schon ein, wenn die Voraussetzungen des Absatzes 1, 2 oder 3 am ersten Abschlußstichtag nach der Umwandlung oder Neugründung vorliegen.
+
+[HGB-§267-Abs4-Satz3] Satz 2 findet im Falle des Formwechsels keine Anwendung, sofern der formwechselnde Rechtsträger eine Kapitalgesellschaft oder eine Personenhandelsgesellschaft im Sinne des § 264a Absatz 1 ist.
+
+[HGB-§267-Abs4a-Satz1] Die Bilanzsumme setzt sich aus den Posten zusammen, die in den Buchstaben A bis E des § 266 Absatz 2 aufgeführt sind.
+
+[HGB-§267-Abs4a-Satz2] Ein auf der Aktivseite ausgewiesener Fehlbetrag (§ 268 Absatz 3) wird nicht in die Bilanzsumme einbezogen.
+
+[HGB-§267-Abs5-Satz1] Als durchschnittliche Zahl der Arbeitnehmer gilt der vierte Teil der Summe aus den Zahlen der jeweils am 31. März, 30. Juni, 30. September und 31. Dezember beschäftigten Arbeitnehmer einschließlich der im Ausland beschäftigten Arbeitnehmer, jedoch ohne die zu ihrer Berufsausbildung Beschäftigten.
+
+[HGB-§267-Abs6-Satz1] Informations- und Auskunftsrechte der Arbeitnehmervertretungen nach anderen Gesetzen bleiben unberührt.
+
+
+## § 267a Kleinstkapitalgesellschaften
+
+[HGB-§267a-Abs1-Satz1] Kleinstkapitalgesellschaften sind kleine Kapitalgesellschaften, die mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:
+
+[HGB-§267a-Abs1-Nr1] 450 000 Euro Bilanzsumme;
+
+[HGB-§267a-Abs1-Nr2] 900 000 Euro Umsatzerlöse in den zwölf Monaten vor dem Abschlussstichtag;
+
+[HGB-§267a-Abs1-Nr3] im Jahresdurchschnitt zehn Arbeitnehmer.
+
+[HGB-§267a-Abs1-Satz2] § 267 Absatz 4 bis 6 gilt entsprechend.
+
+[HGB-§267a-Abs2-Satz1] Die in diesem Gesetz für kleine Kapitalgesellschaften (§ 267 Absatz 1) vorgesehenen besonderen Regelungen gelten für Kleinstkapitalgesellschaften entsprechend, soweit nichts anderes geregelt ist.
+
+[HGB-§267a-Abs3-Satz1] Keine Kleinstkapitalgesellschaften sind:
+
+[HGB-§267a-Abs3-Nr1] Investmentgesellschaften im Sinne des § 1 Absatz 11 des Kapitalanlagegesetzbuchs,
+
+[HGB-§267a-Abs3-Nr2] Unternehmensbeteiligungsgesellschaften im Sinne des § 1a Absatz 1 des Gesetzes über Unternehmensbeteiligungsgesellschaften oder
+
+[HGB-§267a-Abs3-Nr3] Unternehmen, deren einziger Zweck darin besteht, Beteiligungen an anderen Unternehmen zu erwerben sowie die Verwaltung und Verwertung dieser Beteiligungen wahrzunehmen, ohne dass sie unmittelbar oder mittelbar in die Verwaltung dieser Unternehmen eingreifen, wobei die Ausübung der ihnen als Aktionär oder Gesellschafter zustehenden Rechte außer Betracht bleibt.
+
+
+## § 316 Pflicht zur Prüfung
+
+[HGB-§316-Abs1-Satz1] Der Jahresabschluß und der Lagebericht von Kapitalgesellschaften, die nicht kleine im Sinne des § 267 Abs. 1 sind, sind durch einen Abschlußprüfer zu prüfen.
+
+[HGB-§316-Abs1-Satz2] Hat keine Prüfung stattgefunden, so kann der Jahresabschluß nicht festgestellt werden.
+
+[HGB-§316-Abs2-Satz1] Der Konzernabschluß und der Konzernlagebericht von Kapitalgesellschaften sind durch einen Abschlußprüfer zu prüfen.
+
+[HGB-§316-Abs2-Satz2] Hat keine Prüfung stattgefunden, so kann der Konzernabschluss nicht gebilligt werden.
+
+[HGB-§316-Abs3-Satz1] Werden der Jahresabschluß, der Konzernabschluß, der Lagebericht oder der Konzernlagebericht nach Vorlage des Prüfungsberichts geändert, so hat der Abschlußprüfer diese Unterlagen erneut zu prüfen, soweit es die Änderung erfordert.
+
+[HGB-§316-Abs3-Satz2] Über das Ergebnis der Prüfung ist zu berichten; der Bestätigungsvermerk ist entsprechend zu ergänzen.
+
+[HGB-§316-Abs3-Satz3] Die Sätze 1 und 2 gelten entsprechend für diejenige Wiedergabe des Jahresabschlusses, des Lageberichts, des Konzernabschlusses und des Konzernlageberichts, welche eine Kapitalgesellschaft, die als Inlandsemittent (§ 2 Absatz 14 des Wertpapierhandelsgesetzes) Wertpapiere (§ 2 Absatz 1 des Wertpapierhandelsgesetzes) begibt und keine Kapitalgesellschaft im Sinne des § 327a ist, für Zwecke der Offenlegung erstellt hat.
+

@@ -147,7 +147,7 @@ Zwei Ideen, eine Übersetzung auf Tax/Audit:
 
 Übersetzung auf Tax/Audit: Eine kleine Sammlung typischer Berufsfragen (Anwendung des Reverse-Charge-Verfahrens, Going-Concern-Prüfung, Behandlung von Rückstellungen) wird zur Test-Suite. Genau das bauen Sie in der nächsten Übung — zum Tutor-Bot aus Übung 3.
 
-➡️ [Übung 4 — Tutor-Bot systematisch prüfen](02-uebungen-w1.qmd#sec-uebung-4){.assignment-badge} · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)
+➡️ [Übung 4 — Tutor-Bot systematisch prüfen (Vertiefung: Übung 3 in Workshop 2)](04-uebungen-w2-2026-ws.qmd#sec-test-suite){.assignment-badge} · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)
 ::::
 
 :::: week-card
@@ -172,20 +172,19 @@ Kurzer Rückblick auf die vier Übungen: Welche der drei Konfigurationen (LLM al
 
 [Übung 1 — Diagnose-Quiz](02-uebungen-w1.qmd#sec-uebung-1){.assignment-badge} [Übung 2 — Karriereentwicklung](02-uebungen-w1.qmd#sec-uebung-2){.assignment-badge} [Übung 3 — Prompt-Umbau und Tutor-Bot](02-uebungen-w1.qmd#sec-uebung-3){.assignment-badge}
 
-Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine **Erweiterungsfrage für schnelle Studierende** — wer früh fertig ist, vertieft, statt zu warten. Die Discern-Übung *Tutor-Bot systematisch prüfen* eröffnet Workshop 2 als [Übung 3 — Tutor-Bot Test-Suite](04-uebungen-w2.qmd#sec-test-suite); davor stehen als Einstieg in den zweiten Tag der zweistufige [Quellenbindungs-Prompt an der eigenen Prüfungsordnung](04-uebungen-w2.qmd#sec-pruefungsordnung) und das [Tutor-geführte Verstehen der RAGAS-Metriken](04-uebungen-w2.qmd#sec-ragas-tutor).
+Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine **Erweiterungsfrage für schnelle Studierende** — wer früh fertig ist, vertieft, statt zu warten. Die Discern-Übung *Tutor-Bot systematisch prüfen* wird in Workshop 2 als [Übung 3 — Tutor-Bot Test-Suite](04-uebungen-w2-2026-ws.qmd#sec-test-suite) vertieft; davor stehen zwei kurze Recaps zu Delegate und Describe, der zweistufige [Quellenbindungs-Prompt an der eigenen Prüfungsordnung](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung) und das [Tutor-geführte Verstehen der RAGAS-Metriken](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor).
 :::
 
-## Hausaufgabe zum Folgetag
+## Hausaufgabe bis zur In-Company-Session
 
-Für Workshop 2 brauchen Sie zwei kostenfreie Accounts. Bitte vor der Sitzung am Freitag einrichten — beides dauert jeweils etwa fünf Minuten.
+Für Workshop 2 am Freitag brauchen Sie keine neuen Accounts. Bis zur In-Company-Session mit den Wirtschaftsprüfern in der kommenden Woche steht eine Modellierungsaufgabe an:
 
 ::: callout-note
-## Zwei Accounts vor Workshop 2
+## BPMN-Modell in Signavio (bis nächste Woche)
 
-- **Signavio Academic Edition** — Account anlegen unter <https://academic.signavio.com/p/explorer>. Wird in Workshop 2 für die BPMN-Modellierung des Rechnungseingangsprozesses genutzt. Hochschul-E-Mail-Adresse wird empfohlen, kostenfrei, kein Download nötig.
-- **UiPath Cloud** — Account anlegen unter <https://cloud.uipath.com/>. Wird für das Lesen und Anpassen des Excel-zu-PDF-Bots genutzt. Free-Tier reicht; *Studio Web* läuft direkt im Browser, kein lokales Studio nötig.
-
-**Bitte zu Workshop 2 mitbringen:** beide Logins (E-Mail und Passwort gespeichert oder im Browser eingeloggt). Wer keinen Account anlegen kann, schaut beim Sitznachbarn mit — verpasst aber die Anwendungsübung.
+- **Signavio Academic Edition** — Account anlegen unter <https://academic.signavio.com/p/explorer> (kostenfrei mit Hochschul-E-Mail, kein Download nötig; Alternative ohne Account: <https://bpmn.io>).
+- Den Rechnungseingangsprozess einer Steuerkanzlei als BPMN-Diagramm modellieren und die Aktivitäten als Process-, Cognitive-, Hybrid- oder Mensch-Aktivität markieren — Aufgabenstellung unter [Hausaufgabe — BPMN-Modellierung in Signavio](04-uebungen-w2-2026-ws.qmd#sec-bpmn).
+- Diagramm als PNG oder PDF exportieren und zur In-Company-Session mitbringen.
 :::
 
 ## Hintergrund / Werkzeuge / Ressourcen

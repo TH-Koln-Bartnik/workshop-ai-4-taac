@@ -146,7 +146,7 @@ Diligence bezeichnet den verantwortlichen Umgang mit KI, einschließlich ethisch
 - Verstehen, managen und Verantwortung übernehmen für potenzielle Risiken und Auswirkungen veröffentlichter KI-gestützter Inhalte oder Agenten.
 - Ziel: Sicherstellung von Qualität, Sicherheit und Verlässlichkeit von Inhalten und Agenten, die durch Mensch-KI-Interaktion entstanden sind.
 
-*Querverweise:* [Workshop 1, Block 2](01-workshop01.qmd) (Kurzdurchlauf der vier Kompetenzen) · [Workshop 2, Block K](03-workshop02.qmd) (Diligence vertieft) · [Übungen Workshop 1](02-uebungen-w1.qmd) (Anwendung von Delegation, Description, Discernment).
+*Querverweise:* [Workshop 1, Block 2](../parts/01-workshop01.qmd) (Kurzdurchlauf der vier Kompetenzen) · [Workshop 2, Block K](../parts/03-workshop02.qmd) (Diligence vertieft) · [Übungen Workshop 1](../parts/02-uebungen-w1.qmd) (Anwendung von Delegation, Description, Discernment).
 
 *Quelle:* Dakan, R. & Feller, J. (2025). *Framework for AI Fluency: Practical Overview Document* (V 1.1). CC BY-NC-ND 4.0. <https://ringling.libguides.com/ai/framework>
 
@@ -174,7 +174,7 @@ Drei Kernunterscheidungen, die durchgehend in beiden Workshops auftauchen.
 
 **Free** (0 €): begrenzter Kontext, oft kein Web-Search, keine vertraulichen Daten. **Casual** (~20–30 €/Monat): Pro-Tier von Claude, ChatGPT, Gemini. **Professional** (~100–200 €/Monat): Team-/Enterprise-Tiers mit Datenschutzgarantien, längeren Kontexten, mehr Tools. *Faustregel:* Mandantenarbeit nicht im Free-Tier.
 
-*Querverweise:* [Workshop 1, Block 3](01-workshop01.qmd) · [Übung 2](02-uebungen-w1.qmd#sec-uebung-2).
+*Querverweise:* [Workshop 1, Block 3](../parts/01-workshop01.qmd) · [Übung 2](../parts/02-uebungen-w1.qmd#sec-uebung-2).
 
 ## Welches Modell? {#sec-welches-modell}
 
@@ -182,7 +182,7 @@ Schlanke Vergleichsseite analog zu @bekes2026ai. Stand der Empfehlungen: Mai 202
 
 ![Skill-Profil im Finanzbereich — typische Tätigkeitsfelder, in denen sich Modell-Fähigkeiten ablesen und vergleichen lassen.](../images/skills-example-financial.png){fig-alt="Visualisierung eines Skill-Profils im Finanzbereich mit typischen Tätigkeitsfeldern als Vergleichsraster für KI-Modelle"}
 
-*Querverweise:* [Workshop 1, Block 3](01-workshop01.qmd) · [Übung 2](02-uebungen-w1.qmd#sec-uebung-2).
+*Querverweise:* [Workshop 1, Block 3](../parts/01-workshop01.qmd) · [Übung 2](../parts/02-uebungen-w1.qmd#sec-uebung-2).
 
 ## Prompt-Muster {#sec-prompt-muster}
 
@@ -192,7 +192,7 @@ Sieben Bausteine eines belastbaren Prompts: **Rolle · Zielgruppe · Aufgabe · 
 
 Ein Prompt ist nie fertig. Drei Iterationen sind Mindeststandard, dokumentiert mit *was geändert · warum · Effekt auf den Output*.
 
-*Querverweise:* [Übung 2](02-uebungen-w1.qmd#sec-uebung-2) · [Übung 3](02-uebungen-w1.qmd#sec-uebung-3).
+*Querverweise:* [Übung 2](../parts/02-uebungen-w1.qmd#sec-uebung-2) · [Übung 3](../parts/02-uebungen-w1.qmd#sec-uebung-3).
 
 ## Prompt-Pattern-Katalog nach White et al. (2023) {#sec-prompt-patterns}
 
@@ -353,7 +353,7 @@ Die Stärke des Katalogs liegt im Kombinieren. @white2023prompt empfehlen ausdr�
 - **Cognitive Verifier + Question Refinement** für die Karriereentwicklungs-Frage in Übung 2 (Workshop 1).
 - **Context Manager + Persona + Refusal Breaker** für die RAG-Suchübung HGB in Workshop 2 — das Modell agiert als reine Suchhilfe, ignoriert Trainingswissen und schlägt bei Verweigerung Reformulierungen vor.
 
-*Querverweise:* [Übung 3 — Prompt-Umbau und Tutor-Bot](02-uebungen-w1.qmd#sec-uebung-3) · [Übung RAG-Suchhilfe HGB](04-uebungen-w2.qmd#sec-rag-hgb) · [Grundlagenskript *GenAI in der Lehre*, Prompt-Beispiele-Sammlung](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html){target="_blank"}.
+*Querverweise:* [Übung 3 — Prompt-Umbau und Tutor-Bot](../parts/02-uebungen-w1.qmd#sec-uebung-3) · [Recap B — Prompt-Patterns am Studienalltag](../parts/04-uebungen-w2-2026-ws.qmd#sec-prompt-patterns-recap) · [Grundlagenskript *GenAI in der Lehre*, Prompt-Beispiele-Sammlung](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html){target="_blank"}.
 
 *Quelle:* @white2023prompt — *A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT*. <https://arxiv.org/abs/2302.11382>
 
@@ -363,7 +363,7 @@ Die Stärke des Katalogs liegt im Kombinieren. @white2023prompt empfehlen ausdr�
 
 **Chat-Plattformen** (Claude, ChatGPT, Gemini, Perplexity), **eingebettete Assistenten** (Copilot in Microsoft 365, Gemini in Google Workspace), **agentische Plattformen** (Custom GPTs, Claude Projects, Gems, Agents-Framework).
 
-*Querverweise:* [Workshop 1, Block 3](01-workshop01.qmd) · [Übung 2](02-uebungen-w1.qmd#sec-uebung-2).
+*Querverweise:* [Workshop 1, Block 3](../parts/01-workshop01.qmd) · [Übung 2](../parts/02-uebungen-w1.qmd#sec-uebung-2).
 
 ## BPMN-Grundlagen {#sec-bpmn}
 
@@ -393,7 +393,7 @@ Studierende der TH Köln nutzen [Signavio Academic Edition](https://academic.sig
 
 Ein gutes BPMN-Modell zwingt zur Klärung *wer macht was wann mit welchem Input und welchem Output* — die Voraussetzung für jede sinnvolle Automatisierungsentscheidung. Erst nach dem Modell entscheidet sich, welche Aktivität sich für Process Automation (regelbasiertes RPA) und welche für Cognitive Automation (KI-gestützt) eignet.
 
-*Querverweise:* [Workshop 2, Block I](03-workshop02.qmd) · [Übung BPMN-Modellierung](04-uebungen-w2.qmd#sec-bpmn).
+*Querverweise:* [Workshop 2, Block I](../parts/03-workshop02.qmd) · [Hausaufgabe — BPMN-Modellierung in Signavio](../parts/04-uebungen-w2-2026-ws.qmd#sec-bpmn).
 
 ## Retrieval-Augmented Generation (RAG) {#sec-rag}
 
@@ -425,7 +425,7 @@ Kreative Aufgaben ohne Quellenbedarf — RAG bringt nichts, wenn die Aufgabe ein
 
 **NotebookLM** ([notebooklm.google.com](https://notebooklm.google.com){target="_blank"}) — eigene PDFs hochladen, Modell antwortet quellenbasiert. **GWDG Academic Cloud RAG/Arcana** — Hochschul-Lösung mit Dokumentenupload und Modellauswahl. **Custom GPTs / Claude Projects** — Persistenter Bot mit eigener Knowledge Base. In Übung 3 (Workshop 1) und in der HGB-Suchübung (Workshop 2) probieren Sie das aus.
 
-*Querverweise:* [Übung 3 Schritt c](02-uebungen-w1.qmd#sec-uebung-3) (RAG-Tutor mit NotebookLM) · [RAG-Suchübung HGB-Prüfungspflicht](04-uebungen-w2.qmd#sec-rag-hgb) · [Workshop 1, Block 5](01-workshop01.qmd) (Discern, RAGAS-Metriken).
+*Querverweise:* [Übung 3 Schritt c](../parts/02-uebungen-w1.qmd#sec-uebung-3) (RAG-Tutor mit NotebookLM) · [Übungen Workshop 2 — 2026-WS](../parts/04-uebungen-w2-2026-ws.qmd) · [Workshop 1, Block 5](../parts/01-workshop01.qmd) (Discern, RAGAS-Metriken).
 
 ## Mermaid-Prozessdiagramme mit KI erstellen {#sec-mermaid-ki}
 
@@ -476,7 +476,7 @@ Sprachmodelle sind beim Mermaid-Erzeugen erstaunlich verlässlich, weil die Synt
 
 KI-erzeugte Mermaid-Diagramme sind dort sinnvoll, wo die kognitive Hauptarbeit *vor* dem Diagramm liegt — also in der Klärung, was eigentlich passiert. Das Modell übernimmt die Notations-Last und liefert den Erst-Entwurf, der Mensch übernimmt die Korrektur. Wo die kognitive Hauptarbeit *im* Diagramm liegt — etwa bei kontrovers verhandelten Prozessen oder Audit-relevanten Modellen mit hoher Rechtsverbindlichkeit — schadet die KI-Erzeugung mehr, als sie nützt: Studierende übernehmen den Erst-Entwurf zu früh und überspringen den eigenen Modellierungsschritt.
 
-*Querverweise:* [Übung 6 — Prozessmodellierung mit Mermaid](04-uebungen-w2.qmd#sec-mermaid) · [Übung 7 — BPMN-Modellierung in Signavio](04-uebungen-w2.qmd#sec-bpmn) · [BPMN-Grundlagen](#sec-bpmn).
+*Querverweise:* [Recap A — Prozessmodellierung mit Mermaid](../parts/04-uebungen-w2-2026-ws.qmd#sec-mermaid) · [Hausaufgabe — BPMN in Signavio](../parts/04-uebungen-w2-2026-ws.qmd#sec-bpmn) · [BPMN-Grundlagen](#sec-bpmn).
 
 ## Primer — Optionen der Qualitätsprüfung im juristischen RAG {#sec-primer-qualitaetspruefung}
 
@@ -504,7 +504,7 @@ Die vier Kernmetriken bilden zwei Familien. **Faithfulness** (Treue) und **Answe
 
 Über diese vier hinaus stellt RAGAS weitere Metriken bereit — Context Entities Recall, Noise Sensitivity, Answer Semantic Similarity, Answer Correctness (die letzten beiden brauchen eine Referenzantwort). Für eine erste Diagnose genügen die vier Kernmetriken.
 
-Was RAGAS nicht leistet — und das verdient eine Warnung: die Faithfulness-Bewertung selbst wird von einem Sprachmodell vorgenommen, das wiederum halluziniert. @magesh2025hallucination zeigen in einer Studie an juristischen RAG-Systemen, dass die Anbietermetriken die tatsächliche Halluzinationsrate systematisch unterschätzen. Praktisch bedeutet das: RAGAS taugt für Regression (Wird mein System schlechter, wenn ich den Chunker ändere?), nicht für absolute Zertifizierung (Ist mein System sicher genug für den Produktivbetrieb?). Den absoluten Befund liefert nur ein von Hand kuratierter Goldstandard — eine Sammlung typischer juristischer Fragen mit expertengeprüften Antworten, gegen die das System regelmäßig laufen muss. Diese Goldsammlung ist die einzige nicht reduzierbare Stelle, an der menschliche juristische Expertise in den Prüfkreislauf eingespeist wird.
+Was RAGAS nicht leistet — und das verdient eine Warnung: die Faithfulness-Bewertung selbst wird von einem Sprachmodell vorgenommen, das wiederum halluziniert. @kamoi2024realmistake zeigen, dass selbst die stärksten Modelle Fehler in Modellantworten nur mit niedrigem Recall erkennen und deutlich hinter menschlichen Prüfern zurückbleiben; @magesh2025hallucination zeigen an juristischen Recherchewerkzeugen, dass die Anbieterversprechen („hallucination-free") weit hinter den gemessenen Halluzinationsraten von 17 bis 33 Prozent zurückbleiben. Praktisch bedeutet das: RAGAS taugt für Regression (Wird mein System schlechter, wenn ich den Chunker ändere?), nicht für absolute Zertifizierung (Ist mein System sicher genug für den Produktivbetrieb?). Den absoluten Befund liefert nur ein von Hand kuratierter Goldstandard — eine Sammlung typischer juristischer Fragen mit expertengeprüften Antworten, gegen die das System regelmäßig laufen muss. Diese Goldsammlung ist die einzige nicht reduzierbare Stelle, an der menschliche juristische Expertise in den Prüfkreislauf eingespeist wird.
 
 Die Indexvorbereitung gehört konzeptionell zu dieser dritten Schicht, weil ihre Qualität sich nur in Goldstandard-Tests sauber sichtbar machen lässt. @yeung2024deterministic nennt die Datenaufbereitung die zeitintensivste Phase eines RAG-Projekts. Für Gesetzestexte stellt sich die Frage konkret: Wurde nach Norm-Atom richtig gechunkt? Sind Querverweise (§§-Verweise, Verweise auf andere Gesetze) als Metadaten mitindexiert? Sind Versionsstände (gültig ab/gültig bis) eingepflegt? Jede dieser Schwachstellen produziert systematisch falsche Antworten, die in Einzeltests zufällig aussehen.
 
@@ -576,7 +576,7 @@ Für die Annotation arbeiten Sie mit Doppel-Annotation plus Adjudikation: zwei j
 
 **RPA** für regelbasierte, strukturierte Abläufe. **GenAI** für Sprache, Bedeutung, Klassifikation. Kombination: GenAI als Cognitive-Layer, der einen RPA-Bot anleitet, was zu tun ist (Cognitive Automation).
 
-*Querverweise:* [Workshop 2, Block J](03-workshop02.qmd) · [Übung UiPath-Bot](04-uebungen-w2.qmd#sec-uipath).
+*Querverweise:* [Workshop 2, Block J](../parts/03-workshop02.qmd) · Übung UiPath-Bot (derzeit nicht im Programm, siehe parts/04-uebungen-w2-alt.qmd).
 
 ## Recht und Berufsstand {#sec-recht}
 

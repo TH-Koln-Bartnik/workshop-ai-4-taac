@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deterministic Quoting — Prüfskript für HGB-Zitate</title>
+<style>
+  :root { --ink:#111111; --paper:#ffffff; --gray100:#f5f5f7; --gray200:#e6e6ea; --gray500:#6b6b73; --red:#c81e0f; --magenta:#b43092; --orange:#ea5a00; --ok:#1f6f3f; --okbg:#e6f3ea; --warnbg:#fff1e8; --badbg:#fbe9e7; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:24px; font-family: Arial, Helvetica, sans-serif; color:var(--ink); background:var(--paper); line-height:1.5; }
+  .wrap { max-width:1100px; margin:0 auto; }
+  h1 { font-size:clamp(18px,2.2vw,24px); margin:0 0 4px; border-left:6px solid var(--red); padding-left:12px; }
+  .sub { color:var(--gray500); margin:0 0 18px; font-size:14px; }
+  .explain { background:var(--gray100); border-left:4px solid var(--gray200); padding:10px 14px; font-size:14px; margin:0 0 16px; }
+  .explain b { color:var(--ink); }
+  .grid { display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
+  @media (max-width: 860px) { .grid { grid-template-columns:1fr; } }
+  textarea { width:100%; min-height:340px; font:13px/1.45 "Consolas","Courier New",monospace; padding:10px; border:1px solid var(--gray500); border-radius:0; resize:vertical; }
+  .controls { display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 0; }
+  button { font:600 13px Arial, Helvetica, sans-serif; color:var(--ink); background:var(--paper); border:1px solid var(--ink); border-radius:0; padding:8px 12px; cursor:pointer; }
+  button.primary { background:var(--red); color:#fff; border-color:var(--red); }
+  button:hover { border-color:var(--magenta); }
+  button.primary:hover { background:var(--magenta); border-color:var(--magenta); }
+  .summary { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 12px; }
+  .kpi { border:1px solid var(--gray200); padding:8px 12px; min-width:120px; }
+  .kpi .n { font-size:22px; font-weight:700; font-variant-numeric:tabular-nums; }
+  .kpi .l { font-size:11px; color:var(--gray500); letter-spacing:.05em; text-transform:uppercase; }
+  .kpi.ok .n { color:var(--ok); } .kpi.warn .n { color:var(--orange); } .kpi.bad .n { color:var(--red); }
+  .res { border:1px solid var(--gray200); border-left-width:6px; padding:10px 12px; margin:0 0 10px; font-size:13.5px; }
+  .res.ok { border-left-color:var(--ok); background:var(--okbg); }
+  .res.warn { border-left-color:var(--orange); background:var(--warnbg); }
+  .res.bad { border-left-color:var(--red); background:var(--badbg); }
+  .res.none { border-left-color:var(--gray500); background:var(--gray100); }
+  .res .id { font-family:"Consolas","Courier New",monospace; font-weight:700; }
+  .badge { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:2px 7px; margin-left:8px; color:#fff; }
+  .ok .badge { background:var(--ok); } .warn .badge { background:var(--orange); } .bad .badge { background:var(--red); } .none .badge { background:var(--gray500); }
+  .lab { font-size:11px; color:var(--gray500); text-transform:uppercase; letter-spacing:.05em; margin-top:8px; }
+  .q { margin:2px 0 0; }
+  del { background:#f8c9c4; text-decoration:line-through; color:#7a0f06; }
+  ins { background:#cfe9d6; text-decoration:none; color:#134d2b; }
+  details { margin-top:18px; border-top:1px solid var(--gray200); padding-top:10px; }
+  summary { cursor:pointer; font-weight:600; }
+  table.idx { width:100%; border-collapse:collapse; font-size:12.5px; margin-top:8px; }
+  table.idx td { border-bottom:1px solid var(--gray200); padding:4px 6px; vertical-align:top; }
+  table.idx td:first-child { font-family:"Consolas","Courier New",monospace; white-space:nowrap; width:220px; }
+  .foot { color:var(--gray500); font-size:12px; margin-top:22px; border-top:1px solid var(--gray200); padding-top:8px; }
+  .empty { color:var(--gray500); font-style:italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Deterministic Quoting — Prüfskript für HGB-Zitate</h1>
+  <p class="sub">Ebene 2 der Qualitätsprüfung: Das Skript versteht keinen Satz. Es schlägt IDs nach und vergleicht Buchstaben.</p>
+  <div class="explain">
+    <b>Was hier passiert.</b> Die Modellantwort wird nach Zitat-IDs der Form <code>HGB-§267-Abs1-Nr1</code> durchsucht. Für jede ID holt das Skript den echten Wortlaut aus dem eingebetteten Index (amtlicher Text, gesetze-im-internet.de, Stand 24.09.2026) und vergleicht ihn Wort für Wort mit dem, was das Modell als Zitat geliefert hat. Drei Befunde sind möglich: <b>verifiziert</b> (ID existiert, Wortlaut identisch), <b>Wortlaut weicht ab</b> (ID existiert, Text unterscheidet sich — Abweichungen werden markiert), <b>ID unbekannt</b> (im Index nicht vorhanden, also nicht aus diesem Text). Was das Skript <b>nicht</b> prüft: ob die richtige Stelle für die Frage gewählt wurde, und ob der Kommentartext zwischen den Zitaten stimmt.
+  </div>
+  <div class="grid">
+    <div>
+      <label for="inp" class="lab">Modellantwort einfügen</label>
+      <textarea id="inp" placeholder="Antwort des RAG-Systems hier einfügen. Zitate müssen eine ID wie HGB-§267-Abs1-Nr1 tragen und in Anführungszeichen stehen."></textarea>
+      <div class="controls">
+        <button class="primary" id="run">Prüfen</button>
+        <button id="ex1">Beispiel laden: Vier-Fehler-Antwort</button>
+        <button id="ex2">Beispiel laden: unbekannte ID</button>
+        <button id="clr">Leeren</button>
+      </div>
+    </div>
+    <div>
+      <div class="lab">Befund</div>
+      <div class="summary" id="sum"></div>
+      <div id="out"><p class="empty">Noch nichts geprüft.</p></div>
+    </div>
+  </div>
+  <details>
+    <summary>Index anzeigen — alle 44 IDs mit amtlichem Wortlaut</summary>
+    <table class="idx" id="idx"></table>
+  </details>
+  <p class="foot">Verfahren nach Yeung, M. (2024). <i>Deterministic Quoting: Making LLMs Safer for Healthcare.</i> https://mattyyeung.github.io/deterministic-quoting — Index: HGB §§ 264 Abs. 1, 264d, 267, 267a, 316, amtlicher Text nach gesetze-im-internet.de (BMJ), abgerufen 24.09.2026. Workshop „KI in Tax, Audit &amp; Advisory", TH Köln, Prof. Dr. Roman Bartnik, CC BY-NC-SA 4.0.</p>
+</div>
+<script>
+const INDEX = {
+ "HGB-§264-Abs1-Satz1": "Die gesetzlichen Vertreter einer Kapitalgesellschaft haben den Jahresabschluß (§ 242) um einen Anhang zu erweitern, der mit der Bilanz und der Gewinn- und Verlustrechnung eine Einheit bildet, sowie einen Lagebericht aufzustellen.",
+ "HGB-§264-Abs1-Satz2": "Die gesetzlichen Vertreter einer kapitalmarktorientierten Kapitalgesellschaft, die nicht zur Aufstellung eines Konzernabschlusses verpflichtet ist, haben den Jahresabschluss um eine Kapitalflussrechnung und einen Eigenkapitalspiegel zu erweitern, die mit der Bilanz, Gewinn- und Verlustrechnung und dem Anhang eine Einheit bilden; sie können den Jahresabschluss um eine Segmentberichterstattung erweitern.",
+ "HGB-§264-Abs1-Satz3": "Der Jahresabschluß und der Lagebericht sind von den gesetzlichen Vertretern in den ersten drei Monaten des Geschäftsjahrs für das vergangene Geschäftsjahr aufzustellen.",
+ "HGB-§264-Abs1-Satz4": "Kleine Kapitalgesellschaften (§ 267 Abs. 1) brauchen den Lagebericht nicht aufzustellen; sie dürfen den Jahresabschluß auch später aufstellen, wenn dies einem ordnungsgemäßen Geschäftsgang entspricht, jedoch innerhalb der ersten sechs Monate des Geschäftsjahres.",
+ "HGB-§264-Abs1-Satz5": "Kleinstkapitalgesellschaften (§ 267a) brauchen den Jahresabschluss nicht um einen Anhang zu erweitern, wenn sie",
+ "HGB-§264-Abs1-Satz5-Nr1": "die in § 268 Absatz 7 genannten Angaben,",
+ "HGB-§264-Abs1-Satz5-Nr2": "die in § 285 Nummer 9 Buchstabe c genannten Angaben und",
+ "HGB-§264-Abs1-Satz5-Nr3": "im Falle einer Aktiengesellschaft die in § 160 Absatz 3 Satz 2 des Aktiengesetzes genannten Angaben",
+ "HGB-§264-Abs1-Satz5-Schluss": "unter der Bilanz angeben.",
+ "HGB-§264d-Satz1": "Eine Kapitalgesellschaft ist kapitalmarktorientiert, wenn sie einen organisierten Markt im Sinn des § 2 Absatz 11 des Wertpapierhandelsgesetzes durch von ihr ausgegebene Wertpapiere im Sinn des § 2 Absatz 1 des Wertpapierhandelsgesetzes in Anspruch nimmt oder die Zulassung solcher Wertpapiere zum Handel an einem organisierten Markt beantragt hat.",
+ "HGB-§267-Abs1-Satz1": "Kleine Kapitalgesellschaften sind solche, die mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:",
+ "HGB-§267-Abs1-Nr1": "7 500 000 Euro Bilanzsumme.",
+ "HGB-§267-Abs1-Nr2": "15 000 000 Euro Umsatzerlöse in den zwölf Monaten vor dem Abschlußstichtag.",
+ "HGB-§267-Abs1-Nr3": "Im Jahresdurchschnitt fünfzig Arbeitnehmer.",
+ "HGB-§267-Abs2-Satz1": "Mittelgroße Kapitalgesellschaften sind solche, die mindestens zwei der drei in Absatz 1 bezeichneten Merkmale überschreiten und jeweils mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:",
+ "HGB-§267-Abs2-Nr1": "25 000 000 Euro Bilanzsumme.",
+ "HGB-§267-Abs2-Nr2": "50 000 000 Euro Umsatzerlöse in den zwölf Monaten vor dem Abschlußstichtag.",
+ "HGB-§267-Abs2-Nr3": "Im Jahresdurchschnitt zweihundertfünfzig Arbeitnehmer.",
+ "HGB-§267-Abs3-Satz1": "Große Kapitalgesellschaften sind solche, die mindestens zwei der drei in Absatz 2 bezeichneten Merkmale überschreiten.",
+ "HGB-§267-Abs3-Satz2": "Eine Kapitalgesellschaft im Sinn des § 264d gilt stets als große.",
+ "HGB-§267-Abs4-Satz1": "Die Rechtsfolgen der Merkmale nach den Absätzen 1 bis 3 Satz 1 treten nur ein, wenn sie an den Abschlußstichtagen von zwei aufeinanderfolgenden Geschäftsjahren über- oder unterschritten werden.",
+ "HGB-§267-Abs4-Satz2": "Im Falle der Umwandlung oder Neugründung treten die Rechtsfolgen schon ein, wenn die Voraussetzungen des Absatzes 1, 2 oder 3 am ersten Abschlußstichtag nach der Umwandlung oder Neugründung vorliegen.",
+ "HGB-§267-Abs4-Satz3": "Satz 2 findet im Falle des Formwechsels keine Anwendung, sofern der formwechselnde Rechtsträger eine Kapitalgesellschaft oder eine Personenhandelsgesellschaft im Sinne des § 264a Absatz 1 ist.",
+ "HGB-§267-Abs4a-Satz1": "Die Bilanzsumme setzt sich aus den Posten zusammen, die in den Buchstaben A bis E des § 266 Absatz 2 aufgeführt sind.",
+ "HGB-§267-Abs4a-Satz2": "Ein auf der Aktivseite ausgewiesener Fehlbetrag (§ 268 Absatz 3) wird nicht in die Bilanzsumme einbezogen.",
+ "HGB-§267-Abs5-Satz1": "Als durchschnittliche Zahl der Arbeitnehmer gilt der vierte Teil der Summe aus den Zahlen der jeweils am 31. März, 30. Juni, 30. September und 31. Dezember beschäftigten Arbeitnehmer einschließlich der im Ausland beschäftigten Arbeitnehmer, jedoch ohne die zu ihrer Berufsausbildung Beschäftigten.",
+ "HGB-§267-Abs6-Satz1": "Informations- und Auskunftsrechte der Arbeitnehmervertretungen nach anderen Gesetzen bleiben unberührt.",
+ "HGB-§267a-Abs1-Satz1": "Kleinstkapitalgesellschaften sind kleine Kapitalgesellschaften, die mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:",
+ "HGB-§267a-Abs1-Nr1": "450 000 Euro Bilanzsumme;",
+ "HGB-§267a-Abs1-Nr2": "900 000 Euro Umsatzerlöse in den zwölf Monaten vor dem Abschlussstichtag;",
+ "HGB-§267a-Abs1-Nr3": "im Jahresdurchschnitt zehn Arbeitnehmer.",
+ "HGB-§267a-Abs1-Satz2": "§ 267 Absatz 4 bis 6 gilt entsprechend.",
+ "HGB-§267a-Abs2-Satz1": "Die in diesem Gesetz für kleine Kapitalgesellschaften (§ 267 Absatz 1) vorgesehenen besonderen Regelungen gelten für Kleinstkapitalgesellschaften entsprechend, soweit nichts anderes geregelt ist.",
+ "HGB-§267a-Abs3-Satz1": "Keine Kleinstkapitalgesellschaften sind:",
+ "HGB-§267a-Abs3-Nr1": "Investmentgesellschaften im Sinne des § 1 Absatz 11 des Kapitalanlagegesetzbuchs,",
+ "HGB-§267a-Abs3-Nr2": "Unternehmensbeteiligungsgesellschaften im Sinne des § 1a Absatz 1 des Gesetzes über Unternehmensbeteiligungsgesellschaften oder",
+ "HGB-§267a-Abs3-Nr3": "Unternehmen, deren einziger Zweck darin besteht, Beteiligungen an anderen Unternehmen zu erwerben sowie die Verwaltung und Verwertung dieser Beteiligungen wahrzunehmen, ohne dass sie unmittelbar oder mittelbar in die Verwaltung dieser Unternehmen eingreifen, wobei die Ausübung der ihnen als Aktionär oder Gesellschafter zustehenden Rechte außer Betracht bleibt.",
+ "HGB-§316-Abs1-Satz1": "Der Jahresabschluß und der Lagebericht von Kapitalgesellschaften, die nicht kleine im Sinne des § 267 Abs. 1 sind, sind durch einen Abschlußprüfer zu prüfen.",
+ "HGB-§316-Abs1-Satz2": "Hat keine Prüfung stattgefunden, so kann der Jahresabschluß nicht festgestellt werden.",
+ "HGB-§316-Abs2-Satz1": "Der Konzernabschluß und der Konzernlagebericht von Kapitalgesellschaften sind durch einen Abschlußprüfer zu prüfen.",
+ "HGB-§316-Abs2-Satz2": "Hat keine Prüfung stattgefunden, so kann der Konzernabschluss nicht gebilligt werden.",
+ "HGB-§316-Abs3-Satz1": "Werden der Jahresabschluß, der Konzernabschluß, der Lagebericht oder der Konzernlagebericht nach Vorlage des Prüfungsberichts geändert, so hat der Abschlußprüfer diese Unterlagen erneut zu prüfen, soweit es die Änderung erfordert.",
+ "HGB-§316-Abs3-Satz2": "Über das Ergebnis der Prüfung ist zu berichten; der Bestätigungsvermerk ist entsprechend zu ergänzen.",
+ "HGB-§316-Abs3-Satz3": "Die Sätze 1 und 2 gelten entsprechend für diejenige Wiedergabe des Jahresabschlusses, des Lageberichts, des Konzernabschlusses und des Konzernlageberichts, welche eine Kapitalgesellschaft, die als Inlandsemittent (§ 2 Absatz 14 des Wertpapierhandelsgesetzes) Wertpapiere (§ 2 Absatz 1 des Wertpapierhandelsgesetzes) begibt und keine Kapitalgesellschaft im Sinne des § 327a ist, für Zwecke der Offenlegung erstellt hat."
+};
+const EXAMPLE1 = "**A. Gefundene Textstellen**\n\n| Thema | Fundstelle | Wörtliches Zitat |\n|---|---|---|\n| Prüfungspflicht von Kapitalgesellschaften | § 316 Abs. 1 Satz 1 · [HGB-§316-Abs1-Satz1] | „Der Jahresabschluß und der Lagebericht von Kapitalgesellschaften, die nicht kleine im Sinne des § 267 Abs. 1 sind, sind durch einen Abschlußprüfer zu prüfen.\" |\n| Folge einer unterbliebenen Prüfung | § 316 Abs. 1 Satz 2 · [HGB-§316-Abs1-Satz2] | „Hat keine Prüfung stattgefunden, so kann der Jahresabschluß nicht festgestellt werden.\" |\n| Kleine Kapitalgesellschaften | § 267 Abs. 1 Satz 1 · [HGB-§267-Abs1-Satz1] | „Kleine Kapitalgesellschaften sind solche, die mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:\" |\n| Größenmerkmal Bilanzsumme | § 267 Abs. 1 Nr. 1 · [HGB-§267-Abs1-Nr1] | „6 000 000 Euro Bilanzsumme.\" |\n| Größenmerkmal Umsatzerlöse | § 267 Abs. 1 Nr. 2 · [HGB-§267-Abs1-Nr2] | „12 000 000 Euro Umsatzerlöse in den zwölf Monaten vor dem Abschlußstichtag.\" |\n| Größenmerkmal Arbeitnehmer | § 267 Abs. 1 Nr. 3 · [HGB-§267-Abs1-Nr3] | „Im Jahresdurchschnitt fünfzig Arbeitnehmer.\" |\n| Mittelgroße Kapitalgesellschaften | § 267 Abs. 2 Satz 1 · [HGB-§267-Abs2-Satz1] | „Mittelgroße Kapitalgesellschaften sind solche, die mindestens zwei der drei in Absatz 1 bezeichneten Merkmale überschreiten und jeweils mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:\" |\n| Bedeutung mehrerer Abschlussstichtage | § 267 Abs. 4 Satz 2 · [HGB-§267-Abs4-Satz2] | „Im Falle der Umwandlung oder Neugründung treten die Rechtsfolgen schon ein, wenn die Voraussetzungen des Absatzes 1, 2 oder 3 am ersten Abschlußstichtag nach der Umwandlung oder Neugründung vorliegen.\" |\n| Ermittlung der Arbeitnehmerzahl | § 267 Abs. 5 · [HGB-§267-Abs5-Satz1] | „Als durchschnittliche Zahl der Arbeitnehmer gilt der vierte Teil der Summe aus den Zahlen der jeweils am 31. März, 30. Juni, 30. September und 31. Dezember beschäftigten Arbeitnehmer einschließlich der im Ausland beschäftigten Arbeitnehmer, jedoch ohne die zu ihrer Berufsausbildung Beschäftigten.\" |\n\nSuchbegründung: Die Stellen zu § 267 Abs. 1 enthalten die Größenmerkmale. Diese Schwellenwerte gelten unverändert seit dem Bilanzrichtlinie-Umsetzungsgesetz von 2015. Die Stelle zu § 316 Abs. 1 nennt die Pflicht zur Prüfung.\n\n**B. Möglicherweise zusätzlich relevante Stellen**\n\n§ 267 Abs. 4a (Zusammensetzung der Bilanzsumme) · [HGB-§267-Abs4a-Satz1]: „Die Bilanzsumme setzt sich aus den Posten zusammen, die in den Buchstaben A bis E des § 266 Absatz 2 aufgeführt sind.\"\n\n**C. Nicht gefundene Punkte**\n\nKeine. Alle fünf angefragten Themenbereiche sind durch Textstellen abgedeckt.\n\n**D. Einordnung**\n\nDa die Rheinland Components GmbH in beiden Geschäftsjahren mindestens zwei der drei Merkmale überschreitet, ist sie als mittelgroße Kapitalgesellschaft einzustufen und daher nach § 316 Abs. 1 HGB prüfungspflichtig.\n\nPrüfhinweis: Diese Ausgabe ist nur eine Such- und Zitierhilfe. Sie enthält keine rechtliche Bewertung und keine verbindliche Antwort.\n";
+const EXAMPLE2 = `Gefundene Textstellen:\n\n| Thema | Fundstelle | Wörtliches Zitat |\n|---|---|---|\n| Kleine Kapitalgesellschaften | § 267 Abs. 1 Satz 1 · [HGB-§267-Abs1-Satz1] | „Kleine Kapitalgesellschaften sind solche, die mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:" |\n| Konzernbezug der Größenklassen | § 267 Abs. 7 · [HGB-§267-Abs7-Satz1] | „Bei Konzernunternehmen sind die Merkmale auf Grundlage des Konzernabschlusses zu ermitteln." |\n| Prüfungspflicht | § 316 Abs. 1 Satz 1 · [HGB-§316-Abs1-Satz1] | „Der Jahresabschluss und der Lagebericht von Kapitalgesellschaften, die nicht kleine im Sinne des § 267 Abs. 1 sind, sind durch einen Abschlussprüfer zu prüfen." |`;
+
+const ID_RE = /HGB-§\s?(\d+[a-z]?)-Abs\s?(\d+[a-z]?)(?:-Satz\s?(\d+))?(?:-Nr\s?(\d+))?(-Schluss)?/g;
+
+function canon(m){ let s = "HGB-§"+m[1]+"-Abs"+m[2]; if(m[3]) s += "-Satz"+m[3]; if(m[4]) s += "-Nr"+m[4]; if(m[5]) s += "-Schluss"; return s; }
+function norm(s){ return s.replace(/[„“”"«»]/g,'"').replace(/[’‘]/g,"'").replace(/ | | /g," ").replace(/\s+/g," ").trim(); }
+function stripQuotes(s){ return s.replace(/^["\s]+|["\s]+$/g,""); }
+function tokens(s){ return norm(s).split(" ").filter(Boolean); }
+
+function extractQuote(segment){
+  // first quoted string within segment
+  const m = segment.match(/[„"“]([^“”"„]+)[“”"]/);
+  return m ? m[1].trim() : null;
+}
+
+function diffWords(a,b){
+  // LCS on tokens, returns html
+  const A=tokens(a), B=tokens(b); const n=A.length, m=B.length;
+  const dp=Array.from({length:n+1},()=>new Array(m+1).fill(0));
+  for(let i=n-1;i>=0;i--) for(let j=m-1;j>=0;j--) dp[i][j]= A[i]===B[j] ? dp[i+1][j+1]+1 : Math.max(dp[i+1][j],dp[i][j+1]);
+  let i=0,j=0,out=[];
+  while(i<n&&j<m){ if(A[i]===B[j]){out.push(esc(A[i]));i++;j++;} else if(dp[i+1][j]>=dp[i][j+1]){out.push("<del>"+esc(A[i])+"</del>");i++;} else {out.push("<ins>"+esc(B[j])+"</ins>");j++;} }
+  while(i<n){out.push("<del>"+esc(A[i])+"</del>");i++;} while(j<m){out.push("<ins>"+esc(B[j])+"</ins>");j++;}
+  return out.join(" ");
+}
+function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function check(text){
+  const found=[]; let m; const seen=new Set();
+  ID_RE.lastIndex=0;
+  const matches=[]; while((m=ID_RE.exec(text))!==null){ matches.push({id:canon(m), start:m.index, end:ID_RE.lastIndex}); }
+  matches.forEach((mm,k)=>{
+    const segEnd = (k+1<matches.length) ? matches[k+1].start : text.length;
+    // limit segment to the same line / table row when possible
+    let seg = text.slice(mm.end, segEnd);
+    const nl = seg.indexOf("\n"); if(nl>-1 && nl<seg.length-1){ const rest=seg.slice(nl); if(extractQuote(seg.slice(0,nl))) seg=seg.slice(0,nl); }
+    const q = extractQuote(seg);
+    const truth = INDEX[mm.id];
+    let status, html;
+    if(!truth){ status="bad"; html = `<div class="lab">Befund</div><div class="q">ID im Index nicht vorhanden. Das Zitat stammt nicht aus dem bereitgestellten Text — halluzinierte Fundstelle.</div>` + (q?`<div class="lab">Vom Modell geliefert</div><div class="q">„${esc(q)}"</div>`:""); }
+    else if(!q){ status="none"; html = `<div class="lab">Befund</div><div class="q">ID vorhanden, aber kein Zitat in Anführungszeichen dahinter gefunden. Amtlicher Wortlaut zur Kontrolle:</div><div class="q">„${esc(truth)}"</div>`; }
+    else if(norm(stripQuotes(q))===norm(truth)){ status="ok"; html = `<div class="lab">Amtlicher Wortlaut — identisch</div><div class="q">„${esc(truth)}"</div>`; }
+    else { status="warn"; html = `<div class="lab">Abweichung — <del>Modell</del> / <ins>amtlich</ins></div><div class="q">${diffWords(q,truth)}</div><div class="lab">Amtlicher Wortlaut (überschreibt das Modellzitat)</div><div class="q">„${esc(truth)}"</div>`; }
+    const label = {ok:"verifiziert",warn:"Wortlaut weicht ab",bad:"ID unbekannt",none:"kein Zitat"}[status];
+    found.push({id:mm.id,status,html,label,dup:seen.has(mm.id)}); seen.add(mm.id);
+  });
+  return found;
+}
+
+function render(res){
+  const out=document.getElementById("out"), sum=document.getElementById("sum");
+  if(!res.length){ out.innerHTML='<p class="empty">Keine Zitat-ID gefunden. IDs müssen dem Muster HGB-§267-Abs1-Nr1 folgen.</p>'; sum.innerHTML=""; return; }
+  const c={ok:0,warn:0,bad:0,none:0}; res.forEach(r=>c[r.status]++);
+  sum.innerHTML = `<div class="kpi"><div class="n">${res.length}</div><div class="l">IDs geprüft</div></div><div class="kpi ok"><div class="n">${c.ok}</div><div class="l">verifiziert</div></div><div class="kpi warn"><div class="n">${c.warn}</div><div class="l">Wortlaut weicht ab</div></div><div class="kpi bad"><div class="n">${c.bad}</div><div class="l">ID unbekannt</div></div>`;
+  out.innerHTML = res.map((r,i)=>`<div class="res ${r.status}"><span class="id">${i+1}. ${esc(r.id)}</span><span class="badge">${r.label}</span>${r.html}</div>`).join("");
+}
+
+document.getElementById("run").onclick=()=>render(check(document.getElementById("inp").value));
+document.getElementById("ex1").onclick=()=>{document.getElementById("inp").value=EXAMPLE1; render(check(EXAMPLE1));};
+document.getElementById("ex2").onclick=()=>{document.getElementById("inp").value=EXAMPLE2; render(check(EXAMPLE2));};
+document.getElementById("clr").onclick=()=>{document.getElementById("inp").value=""; document.getElementById("out").innerHTML='<p class="empty">Noch nichts geprüft.</p>'; document.getElementById("sum").innerHTML="";};
+document.getElementById("idx").innerHTML = Object.entries(INDEX).map(([k,v])=>`<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join("");
+</script>
+</body>
+</html>

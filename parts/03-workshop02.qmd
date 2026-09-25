@@ -1,6 +1,9 @@
 ---
-title: "Workshop 2 — Prozessmodellierung, Automatisierung, 4D-Use-Case"
+title: "Workshop 2 — Discern in vier Ebenen"
 subtitle: "Freitag, 25.09.2026 · 09:00–13:00 · Campus Südstadt"
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
 ::: th-color-bar
@@ -11,126 +14,183 @@ subtitle: "Freitag, 25.09.2026 · 09:00–13:00 · Campus Südstadt"
 ::: lernziel-box
 #### Was Sie nach diesem Workshop können
 
-- Sie können einfache Qualitätsprüfungen von GenAI-Outputs in Prompts einbauen (**Qualitätsprüfung durch Prompt-Engineering**).
-- Sie verstehen die Möglichkeiten und Grenzen von RAG und Techniken der detaillierteren Qualitätsprüfung (**deterministische Prüfung, RAGAS, Goldstandard**).
-- Sie verstehen die drei Säulen von **Diligence** (Creation, Transparency, Deployment).
-- Sie können einen einfachen Prozess modellieren (Aktivität, Entscheidungspunkt, Swimlane).
-- Sie können einen einfachen **Bot in UiPath** lesen und in Grundzügen erklären.
+- **Delegate** — entscheiden, welche Prüfung Sie einem Skript, welche einem Modell und welche nur sich selbst überlassen.
+- **Describe** — einen Suchprompt so bauen, dass seine Antworten prüfbar werden: Quellenbindung, Zitat-IDs, festes Format.
+- **Discern** — einen GenAI-Output auf vier Ebenen testen (Prompt-Patterns, Prüfskript, LLM-Juror, Goldstandard) und sagen, welchen Fehler jede Ebene findet und welchen nicht.
+- **Diligence** — für einen durchgerutschten Fehler die Verantwortung zuordnen und eine eigene Wenn-Dann-Schutzregel daraus ableiten.
 :::
 
 ## Vorbereitung
 
-- **Zugang** zur BPMN-Modellierungsumgebung (Signavio Academic Edition oder Alternative wie bpmn.io) prüfen, alternativ Stift und Papier.
-- **UiPath-Account** in der Cloud anlegen oder Screencast-Ersatzmaterial bereitstellen — siehe [Quickstart](../appendix/quickstart.qmd).
-- Optional: die [Wissensbasis](../appendix/wissensbasis.qmd) zu RAG, RAGAS und Prompt-Patterns überfliegen.
+- **Zugang** zu einem RAG-System mit Datei-Upload prüfen (GWDG Academic Cloud RAG/Arcana, NotebookLM, ChatGPT oder Claude mit Upload) — siehe [Quickstart](../appendix/quickstart.qmd).
+- Den [HGB-Auszug](../data/hgb-auszug-pruefungspflicht.txt){target="_blank"} (§§ 264, 264d, 267, 267a, 316) herunterladen; er wird in Übung 4 in das RAG-System hochgeladen.
+- Zwei eigene Dokumente als PDF bereitlegen: die **Prüfungsordnung** (Übung 1) und das **Modulhandbuch** oder ein anderes Dokument aus dem Studienalltag (Recap B).
+- Optional: die [Wissensbasis](../appendix/wissensbasis.qmd) zu RAG, RAGAS, Goldstandard und Prompt-Patterns überfliegen.
 
 ## Inhalte des Workshops
 
 :::: week-card
 ::: card-header
-🟦 Block 0 — Recap und Brückenfrage · 5 Min
+🟦 Block 0 — Recap: Wo stehen wir im 4D-Kreis?
+· 15 Min
 :::
 
-Was ist aus Workshop 1 hängen geblieben? Brücke von **Describe** (Tag 1) zu **Discern** und **Diligence** (Tag 2) — von der präzisen Beschreibung zur systematischen Output-Prüfung und persönlichen Verantwortung.
+Der rote Faden beider Tage ist das **AI-Fluency-Framework** nach @dakan2025framework mit seinen vier Kompetenzen.
+Tag 1 hat **Delegate** und **Describe** behandelt und mit der Test-Suite einen ersten Schritt in **Discern** gemacht.
+Heute steht Discern im Mittelpunkt — die verschiedenen Möglichkeiten, die Qualität eines GenAI-Outputs zu testen — und am Ende schließt **Diligence** den Kreis: Wer trägt die Verantwortung für das, was keine Prüfung gefunden hat?
 
-![Vom Discern zur Diligence — die Output-Prüfung am Tisch wird im Berufsalltag zur dokumentierten Verantwortung.](../images/discernment-to-diligence.png){fig-alt="Schematische Darstellung des Übergangs von der einzelnen Output-Prüfung (Discern) zur systematischen, dokumentierten Verantwortungsübernahme (Diligence)"}
+![Das 4D-Framework als Kreislauf — Delegation, Description, Discernment, Diligence. Tag 1: die ersten beiden Stationen und der Einstieg in die dritte. Tag 2: Discernment in der Tiefe, Diligence als Abschluss. Adaptiert nach Dakan & Feller (2025).](../images/ai-fluency.png){fig-align="center" width="70%" fig-alt="Kreislauf aus vier Stationen mit Pfeilen: (1) Delegation — Spezifikation und Aufgabenstellung, (2) Description — Anweisung, (3) Discernment — Bewertung, (4) Diligence — Zielprüfung"}
+
+Was ist aus Workshop 1 hängen geblieben?
+Zwei Einstiege im Browser — ohne Konto, ohne Installation.
+
+**Begriffs-Memory (5 Min, Einzel oder zu zweit).** Begriffe aus Workshop 1 ihren Definitionen zuordnen: fünf Paare pro Runde, zwei Minuten Zeit, sechs Runden von *LLM* und *Token* bis *Faithfulness* und *Diligence*.
+Runde 1 enthält die Grundbegriffe, danach wird gemischt.
+Wer nach zwei Runden aufhört, hat den Kern; wer alle sechs spielt, hat das Vokabular des Tages.
+In neuem Tab öffnen: [Begriffs-Memory — LLM-Grundbegriffe](../interactions/begriffs-memory.html){target="_blank"} (am besten am Computer spielen).
+
+<iframe src="../interactions/begriffs-memory.html" width="100%" height="760" style="border:1px solid #e6e6ea;" title="Begriffs-Memory — LLM-Grundbegriffe">
+
+</iframe>
+
+**Recap-Quiz (6 Min, Plenum).** Zwölf Multiple-Choice-Fragen zu den Kernpunkten von gestern — Process vs. Cognitive Automation, die vier D, die drei Konfigurationen, Harness und Jagged Frontier, RTF und CREATE, RAG, Faithfulness, Red-Green-TDD und als Brückenfrage die Haftung.
+Am Beamer zeigen, per Handzeichen abstimmen, auflösen; jede Auflösung nennt die Fundstelle im Skript.
+Zum Selbstdurchlauf: [Recap-Quiz — Workshop 1](../interactions/recap-quiz-w1.html){target="_blank"}.
+
+Einstieg in die Qualitätsprüfung von "Discern": Welche Themen bei Ihrem gestrigen Tutor-Bot müssten auf jeden Fall geprüft werden?
+
+➡️ [Recap A — Prozessmodellierung mit Mermaid](04-uebungen-w2-2026-ws.qmd#sec-mermaid){.assignment-badge} · 18 Min · Delegate
+➡️ [Recap B — Prompt-Patterns am Studienalltag](04-uebungen-w2-2026-ws.qmd#sec-prompt-patterns-recap){.assignment-badge} · 12 Min · Describe
 ::::
 
 :::: week-card
 ::: card-header
-🟦 Block 1 — Qualitätssicherung von GenAI-Outputs in drei Schichten · 15 Min
+🟦 Block 1 — Qualitätssicherung von GenAI-Outputs in vier Ebenen · 20 Min
 :::
 
-Qualitätssicherung von GenAI-Outputs folgt dem Prinzip *Defense in Depth* — keine einzelne Maßnahme genügt, die Schichten fangen jeweils andere Fehlerklassen ab [@reason2000human]. Drei Schichten greifen ineinander.
+Qualitätssicherung von GenAI-Outputs folgt dem Prinzip *Defense in Depth* — keine einzelne Maßnahme genügt, die Schichten fangen jeweils andere Fehlerklassen ab [@reason2000human].
+Vier Ebenen greifen ineinander; die Abbildung fasst die Ebenen 3 und 4 als „Testmanagement" zusammen, die Übungen trennen sie, weil sie verschiedene Fehler finden.
+
+![Das Schweizer-Käse-Modell nach Reason (2000) — jede Prüfebene ist eine Scheibe mit Löchern. Ein Fehler erreicht den Mandanten nur, wenn die Löcher aller Scheiben in einer Linie liegen; jede zusätzliche Ebene verschiebt die Löcher. In den Übungen prüfen Sie an eigenen Dokumenten und am HGB, welche Scheibe welche Fehlerklasse stoppt — und welche sie durchlässt.](../images/defense-in-depth-swiss-cheese-model.jpg){fig-align="center" width="70%" fig-alt="Vier hintereinander stehende Käsescheiben mit Löchern; ein roter Pfeil von „Hazards" rechts oben zu „Losses" links unten trifft in jeder Scheibe genau ein Loch und kommt so durch alle Schichten"}
+
+Im 4D-Framework heißt diese Kompetenz **Discern**, und sie hat drei Facetten [@dakan2025framework].
+*Product Discernment* fragt, ob der einzelne Output stimmt — das prüfen die Ebenen 1 und 2.
+*Process Discernment* fragt, wie das Modell zu seiner Antwort gekommen ist — die Fact Check List in Ebene 1 und der Juror in Ebene 3 legen das offen.
+*Performance Discernment* fragt, wie verlässlich das System über viele Anfragen arbeitet — die Domäne von RAGAS und Goldstandard.
+Der Workshop geht die vier Ebenen von innen nach außen durch, vom einzelnen Prompt bis zum Test des ganzen Systems.
 
 ![Drei Ebenen der RAG-Qualitätsprüfung — Prompt-Engineering, deterministische Prüfung und Goldstandard-Tests greifen wie Schichten einer Defense in Depth ineinander.](../images/discernment-drei-ebenen-der-rag-qualitaetspruefung.png){fig-alt="Schichtendarstellung der drei Qualitätsprüfungs-Ebenen: Prompt-Engineering als innerste Schicht, deterministische Prüfung in der Mitte, Goldstandard-Tests als äußere Schicht"}
 
-**Schicht 1 — Prompt-Engineering** diszipliniert das Modell innerhalb seiner Antwort. Konkret nach @white2023prompt sechs Patterns aus dem Prompt-Pattern-Katalog: **Context Manager** begrenzt den Antwortraum auf den retrieveten Text und verbietet Rückgriff auf Trainingswissen. **Persona** weist dem Modell die Rolle eines wortgetreuen Textanalysten ohne Entscheidungskompetenz zu. **Template** erzwingt eine feste Ausgabestruktur (Sachverhalt → einschlägige Stellen → Auslegungsoptionen → Grenzen → Fact Check → Selbstprüfung). **Fact Check List** zwingt das Modell, am Ende offenzulegen, welche Aussagen Folgerungen sind und gegengeprüft werden müssen. **Reflection** instruiert zur Selbstprüfung vor Abgabe. **Alternative Approaches** verlangt mehrere Auslegungsoptionen statt einer Entscheidung. Diese Schicht senkt Halluzinationen, kontrolliert aber nicht den Wortlaut der zitierten Stellen.
+**Ebene 1 — Prompt-Engineering** diszipliniert das Modell innerhalb seiner Antwort.
+Konkret nach @white2023prompt sechs Patterns aus dem Prompt-Pattern-Katalog: **Context Manager** begrenzt den Antwortraum auf den zentralen Textinhalt (**R**AG) und verbietet Rückgriff auf Trainingswissen.
+**Persona** weist dem Modell die Rolle eines wortgetreuen Textanalysten ohne Entscheidungskompetenz zu.
+**Template** erzwingt eine feste Ausgabestruktur (Sachverhalt → einschlägige Stellen → Auslegungsoptionen → Grenzen → Fact Check → Selbstprüfung).
+**Fact Check List** zwingt das Modell, am Ende offenzulegen, welche Aussagen Folgerungen sind und gegengeprüft werden müssen.
+**Reflection** instruiert zur Selbstprüfung vor Abgabe.
+**Alternative Approaches** verlangt mehrere Auslegungsoptionen statt einer Entscheidung.
+Diese Schicht senkt Halluzinationen, kontrolliert aber nicht den Wortlaut der zitierten Stellen.
 
-**Schicht 2 — Deterministische Prüfung** nimmt dem Modell den Stift aus der Hand. *Deterministic Quoting* nach @yeung2024deterministic trennt die Aufgabe „richtige Stelle auswählen" (Sprachmodell) von „Wortlaut wiedergeben" (deterministisches Skript). Das Modell markiert Zitate mit kanonischen IDs (z. B. `HGB-§267-Abs1-Satz1`); ein nachgeschaltetes Skript schlägt den echten Wortlaut im Index nach und überschreibt den vom Modell gelieferten Text. Existiert die ID nicht im Index, ist sie halluziniert. Yeung berichtet für den so geprüften Bereich *zero false positives*.
+**Ebene 2 — Deterministische Prüfung** nimmt dem Modell den Stift aus der Hand.
+*Deterministic Quoting* nach @yeung2024deterministic trennt die Aufgabe „richtige Stelle auswählen" (Sprachmodell) von „Wortlaut wiedergeben" (deterministisches Skript).
+Das Modell markiert Zitate mit kanonischen IDs (z. B. `HGB-§267-Abs1-Satz1`); ein nachgeschaltetes Skript schlägt den echten Wortlaut im Index nach und überschreibt den vom Modell gelieferten Text.
+Existiert die ID nicht im Index, ist sie halluziniert.
+Yeung berichtet für den so geprüften Bereich *zero false positives*.
 
-**Schicht 3 — Testmanagement** misst die statistische Qualität des Systems über viele Antworten. Ein einfaches und weitgehend automatisiertes Werkzeug dafür: **RAGAS** [@es2024ragas] mit vier Kernmetriken — *Faithfulness* (passt die Antwort zu den Quellen?), *Answer Relevance* (beantwortet sie die Frage?), *Context Precision* (sind die relevanten Chunks weit oben?), *Context Recall* (wurden alle relevanten Chunks gefunden?). Wichtige Warnung: die Faithfulness-Bewertung selbst wird von einem Sprachmodell vorgenommen und unterschätzt systematisch die tatsächliche Halluzinationsrate [@magesh2025hallucination]. RAGAS taugt für *Grobeinschätzung der Qualität* und *relative Bewertung* (wird mein System schlechter, wenn ich das Modell oder den Prompt ändere?), nicht für absolute Zertifizierung. Einen absoluten Befund liefert nur ein manuell kuratierter **Goldstandard** — eine Sammlung typischer Berufsfragen mit expertengeprüften Soll-Antworten, gegen die das System regelmäßig läuft.
+**Ebene 3 — Automatische Prüfung** misst die statistische Qualität des Systems über viele Antworten.
+Ein einfaches und weitgehend automatisiertes Werkzeug dafür: **RAGAS** [@es2024ragas] mit vier Kernmetriken — *Faithfulness* (passt die Antwort zu den Quellen?), *Answer Relevance* (beantwortet sie die Frage?), *Context Precision* (sind die relevanten Chunks weit oben?), *Context Recall* (wurden alle relevanten Chunks gefunden?).
+Wichtige Warnung: die Faithfulness-Bewertung selbst wird von einem Sprachmodell vorgenommen, und Sprachmodelle erkennen Fehler in Modellantworten nur mit niedrigem Recall — sie übersehen einen erheblichen Teil und bleiben deutlich hinter menschlichen Prüfern zurück [@kamoi2024realmistake].
+RAGAS taugt für *Grobeinschätzung der Qualität* und *relative Bewertung* (wird mein System schlechter, wenn ich das Modell oder den Prompt ändere?), nicht für absolute Zertifizierung.
+Diese Ebene sieht, ob eine Antwort *zum Kontext* passt — nicht, ob sie *zur Frage* passt.
+
+**Ebene 4 — Goldstandard** schließt genau diese Lücke.
+Ein manuell kuratierter Goldstandard ist eine Sammlung typischer Berufsfragen mit expertengeprüften Soll-Fundstellen und Soll-Antworten, gegen die das System regelmäßig läuft.
+Nur er findet den Fehler „richtiges Zitat, falsche Norm" — ein Zitat, das wörtlich stimmt und im Kontext steht, aber nicht die Stelle ist, die die Frage verlangt. Der Goldstandard ist die einzige Stelle, an der menschliche Fachurteile in den Prüfkreislauf eintreten, und er braucht deshalb selbst eine Qualitätsregel: Was zählt als korrekt, und wer entscheidet bei Dissens?
 
 ![RAGAS-Metriken und Goldstandard im Zusammenspiel — automatisierte Grobeinschätzung trifft auf expertengeprüften Referenzkanon.](../images/discernment-ragas-standard.png){fig-alt="Schematische Darstellung der vier RAGAS-Kernmetriken Faithfulness, Answer Relevance, Context Precision und Context Recall im Kontext eines Goldstandard-Testsets"}
 
-Vertiefung in der [Wissensbasis · Primer Qualitätsprüfung](../appendix/wissensbasis.qmd#sec-primer-qualitaetspruefung) und [Primer Goldstandard](../appendix/wissensbasis.qmd#sec-primer-goldstandard). Pattern-Details unter [Prompt-Pattern-Katalog](../appendix/wissensbasis.qmd#sec-prompt-patterns).
+Vertiefung in der [Wissensbasis · Primer Qualitätsprüfung](../appendix/wissensbasis.qmd#sec-primer-qualitaetspruefung) und [Primer Goldstandard](../appendix/wissensbasis.qmd#sec-primer-goldstandard).
+Pattern-Details unter [Prompt-Pattern-Katalog](../appendix/wissensbasis.qmd#sec-prompt-patterns).
+
+➡️ [Übung 1 — Prüfungsordnung mit zweistufigem Dialog-Prompt](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung){.assignment-badge} · 30 Min
+➡️ [Übung 2 — RAGAS-Metriken mit Tutor-Bot verstehen](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor){.assignment-badge} · 15 Min
+➡️ [Übung 3 — Tutor-Bot systematisch prüfen](04-uebungen-w2-2026-ws.qmd#sec-test-suite){.assignment-badge} · 22 Min
+➡️ [Übung 4 — RAG-Suchübung HGB-Prüfungspflicht](04-uebungen-w2-2026-ws.qmd#sec-rag-hgb){.assignment-badge} · 45 Min (kurz: 30 Min)
 ::::
 
 :::: week-card
 ::: card-header
-🟧 Block 2 — Diligence vertieft · 15 Min
+🟧 Block 2 — Diligence: Verantwortung für den durchgerutschten Fehler · 15 Min
 :::
+
+Die HGB-Suchübung endet mit einer Fundstelle, die das Modell vermutlich übersehen hat — und womöglich mit einer, die wörtlich stimmt und trotzdem nicht die Stelle ist, die die Frage verlangt.
+Dass so etwas überhaupt jemand findet, hängt an einem Menschen, der die Antwort gegen einen Goldstandard hält — und daran, wer sich für sie verantwortlich fühlt.
+Genau das ist **Diligence**, die vierte Kompetenz des 4D-Frameworks: Die Output-Prüfung am Tisch wird im Berufsalltag zur dokumentierten Verantwortung.
+
+![Vom Discern zur Diligence — die Output-Prüfung am Tisch wird im Berufsalltag zur dokumentierten Verantwortung.](../images/discernment-to-diligence.png){fig-alt="Schematische Darstellung des Übergangs von der einzelnen Output-Prüfung (Discern) zur systematischen, dokumentierten Verantwortungsübernahme (Diligence)"}
 
 Drei Säulen [@dakan2025framework]:
 
-**Creation Diligence — verantwortlicher Umgang während der Erzeugung.** Verantwortungsvoller Umgang mit KI-Tools unter Einhaltung ethischer und rechtlicher Best Practices; Bewusstsein für Verzerrungen, Mängel, Auswirkungen auf Interessengruppen; Fähigkeit, Verzerrungen und ethische Risiken in KI-generierten Inhalten zu erkennen und zu mindern. *Ziel:* Gewährleistung eines verantwortungsvollen und sozialbewussten Einsatzes von KI.
+**Creation Diligence — verantwortlicher Umgang während der Erzeugung.** Verantwortungsvoller Umgang mit KI-Tools unter Einhaltung ethischer und rechtlicher Best Practices; Bewusstsein für Verzerrungen, Mängel, Auswirkungen auf Interessengruppen; Fähigkeit, Verzerrungen und ethische Risiken in KI-generierten Inhalten zu erkennen und zu mindern.
+*Ziel:* Gewährleistung eines verantwortungsvollen und sozialbewussten Einsatzes von KI.
 
-**Transparency Diligence — Offenlegung gegenüber Stakeholdern.** Transparenz und Verantwortlichkeit bei der Verbreitung des Endprodukts; Verständnis für die Erwartungen und Normen des Publikums, der Branche und der Rechtsordnung; Fähigkeit, die Art der KI-Beteiligung klar zu kommunizieren. *Ziel:* Wahrung von Vertrauen und Integrität. EU AI Act Art. 50 setzt seit 2025 explizite Transparenzpflichten für generative Outputs.
+**Transparency Diligence — Offenlegung gegenüber Stakeholdern.** Transparenz und Verantwortlichkeit bei der Verbreitung des Endprodukts; Verständnis für die Erwartungen und Normen des Publikums, der Branche und der Rechtsordnung; Fähigkeit, die Art der KI-Beteiligung klar zu kommunizieren.
+*Ziel:* Wahrung von Vertrauen und Integrität.
+EU AI Act Art. 50 setzt seit 2025 explizite Transparenzpflichten für generative Outputs.
 
-**Deployment Diligence — Verantwortung für Verifikation und Veröffentlichung.** Verantwortung für die Verifikation von KI-Outputs übernehmen, einschließlich gründlicher Faktenprüfung; angemessene Sicherheitsprüfungen vor der Freigabe; Risiken und Auswirkungen veröffentlichter KI-Inhalte verstehen und verantworten. *Ziel:* Sicherstellung von Qualität, Sicherheit und Verlässlichkeit. Im Berufsstand übersetzt: Wer haftet, wenn der KI-Output Schaden anrichtet? Antwort: immer Sie als Berufsträger:in, nie der Anbieter.
+**Deployment Diligence — Verantwortung für Verifikation und Veröffentlichung.** Verantwortung für die Verifikation von KI-Outputs übernehmen, einschließlich gründlicher Faktenprüfung; angemessene Sicherheitsprüfungen vor der Freigabe; Risiken und Auswirkungen veröffentlichter KI-Inhalte verstehen und verantworten.
+*Ziel:* Sicherstellung von Qualität, Sicherheit und Verlässlichkeit.
+Im Berufsstand übersetzt: Wer haftet, wenn der KI-Output Schaden anrichtet?
+Antwort: immer Sie als Berufsträger:in, nie der Anbieter.
 
 Berufsrechtlicher Rahmen für Tax/Audit/Advisory:
 
 - **WPO § 43** — Berufsgrundsätze für Wirtschaftsprüfer: Eigenverantwortlichkeit, Gewissenhaftigkeit, Verschwiegenheit, Unabhängigkeit.
 - **StBerG § 57** — gleichgelagerte Pflichten für Steuerberater. Verschwiegenheit ist eine Berufspflicht, kein Vertragsthema; ihre Verletzung ist Straftat nach § 203 StGB.
 - **DSGVO Art. 5** — Datenschutz-Grundsätze, insbesondere *Zweckbindung* und *Datenminimierung*. Free-Tier-Anbieter trainieren in der Regel auf Eingaben — damit ist Mandantenbezug ausgeschlossen.
-::::
 
-:::: week-card
-::: card-header
-🟦 Block 3 — BPMN und Prozessmodellierung · 15 Min
-:::
-
-**BPMN** (Business Process Model and Notation) ist eine bildliche Sprache zur Beschreibung von Geschäftsprozessen — Aktivitäten als abgerundete Rechtecke, Entscheidungen als Rauten, Verantwortlichkeiten als Schwimmbahnen [@omg2014bpmn]. Bezug zu Workshop 1: BPMN ist die *Sprache*, in der wir entscheiden, welche Aktivitäten sich für *Process Automation* (Bot) und welche für *Cognitive Automation* (Sprachmodell) eignen — das setzt das gestrige Diagnose-Quiz operativ um.
-
-Für die heutige Übung beginnen Sie niederschwellig mit **Mermaid** ([mermaid.live](https://mermaid.live){target="_blank"}) als textbasierter Notation und wechseln dann zu **Signavio Academic Edition** für die standardisierte BPMN-2.0-Modellierung mit Swimlanes.
-
-![Automatisierungs-Generationen — die heutigen Probleme mit GenAI ähneln denen, die ERP, RPA und Advanced Analytics in ihren Anfangsjahren hatten.](../images/automation-struggles-are-not-new-digitalization-erp-rpa-adv-analytics_AI-genai.png){fig-alt="Vergleichende Darstellung der Einführungsphasen von ERP, RPA, Advanced Analytics und GenAI mit jeweils ähnlichen Hürden"}
-
-*Direkt zur Hand (3 Min):* Skizzieren Sie auf Papier den Prozess *„Spesenabrechnung freigeben"* mit höchstens fünf Aktivitäten und einem Entscheidungspunkt — Vergleich am Tisch.
-::::
-
-:::: week-card
-::: card-header
-🟦 Block 4 — Process Automation mit UiPath · 10 Min
-:::
-
-**RPA** (Robotic Process Automation) — Software-Roboter, die genau das tun, was ein Mensch in einer Anwendung tun würde, nur reproduzierbar und ohne Ermüdung. **UiPath** ist eine der führenden RPA-Plattformen; mit **Studio Web** läuft die Entwicklung browserbasiert. Bezug zum gestrigen Diagnose-Quiz: Die Items, die Sie als *Process Automation* eingeordnet haben, sind die Kandidaten für UiPath-Bots.
-
-![GenAI-Tech-Stack mit Datenqualität, Tool-Integration und Process Intelligence als Fundament. Adaptiert nach Willcocks & Lacity (2024).](../images/genai-tech-stack-data-quality-integration-process-intelligence-willcocks-lacity-2024.png){fig-alt="Geschichteter Tech-Stack mit Datenqualität als Basis, darüber Tool-Integration und Process Intelligence, mit GenAI als oberster Schicht"}
-
-*Direkt zur Hand (2 Min):* Lassen Sie sich von Ihrem starken Modell beschreiben, wie ein einfacher Mandanten-Anschreiben-Bot in UiPath aufgebaut wäre — Excel-Adressliste lesen, Word-Vorlage befüllen, Datei speichern. Anschließend in der Übung mit der Studio-Web-Oberfläche abgleichen.
+➡️ [Übung 5 — Diligence-Risiko-Recherche im Best-of-N](04-uebungen-w2-2026-ws.qmd#sec-diligence-bestof-n){.assignment-badge}
+· 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)
+➡️ [Abschluss — Regelwand](04-uebungen-w2-2026-ws.qmd#sec-regelwand){.assignment-badge} · 5 Min Plenum, Socrative
 ::::
 
 ## Diskussionsfragen
 
-- Welche der drei Qualitätssicherungs-Schichten ist in Ihrem Berufsfeld am ehesten praktisch umsetzbar — Prompt-Engineering, Deterministic Quoting oder Goldstandard-Tests?
-- An welcher Stelle Ihres BPMN-Modells wäre *Cognitive Automation* sinnvoller als *Process Automation*?
+- Welche der vier Prüfebenen ist in Ihrem Berufsfeld am ehesten praktisch umsetzbar — Prompt-Engineering, Deterministic Quoting, RAGAS oder ein Goldstandard? Und welche wäre die erste, die Sie morgen aufbauen würden?
+- Ein Zitat ist wörtlich korrekt, vom Skript verifiziert und vom Juror gestützt — und trotzdem die falsche Stelle. Wer im Team merkt das, und wann? <!-- - An welcher Stelle Ihres BPMN-Modells wäre *Cognitive Automation* sinnvoller als *Process Automation*? -->
 - Welche Diligence-Pflicht aus WPO § 43, StBerG § 57 oder DSGVO Art. 5 wird in Ihrer typischen KI-Nutzung am ehesten verletzt — und an welcher Stelle des Workflows?
 - Wie würden Sie *Transparency Diligence* in der Mandantenkommunikation dokumentieren, ohne den Mandanten zu verunsichern?
 
 ## Aufgaben
 
 ::: callout-note
-## Acht Übungen plus Vertiefung und Hausaufgaben
+## Zwei Recaps, vier Discern-Übungen, eine Diligence-Übung
 
-**In-class — Discern und Diligence zuerst, dann Modellierung und Automatisierung:**
+**Recaps zu Tag 1 (in Block 0):** [Recap A — Prozessmodellierung mit Mermaid](04-uebungen-w2-2026-ws.qmd#sec-mermaid){.assignment-badge} [Recap B — Prompt-Patterns am Studienalltag](04-uebungen-w2-2026-ws.qmd#sec-prompt-patterns-recap){.assignment-badge}
 
-[Übung 1 — Prüfungsordnung mit zweistufigem Dialog-Prompt (Describe + Discern)](04-uebungen-w2.qmd#sec-pruefungsordnung){.assignment-badge} [Übung 2 — RAG-Evaluation mit Tutor-Bot verstehen (Describe + Discern)](04-uebungen-w2.qmd#sec-ragas-tutor){.assignment-badge} [Übung 3 — Tutor-Bot systematisch prüfen (Discern)](04-uebungen-w2.qmd#sec-test-suite){.assignment-badge} [Übung 4 — RAG-Suchübung HGB-Prüfungspflicht (Discern)](04-uebungen-w2.qmd#sec-rag-hgb){.assignment-badge} [Übung 5 — Diligence-Risiko-Recherche im Best-of-N (Diligence)](04-uebungen-w2.qmd#sec-diligence-bestof-n){.assignment-badge} [Übung 6 — Prozessmodellierung mit Mermaid](04-uebungen-w2.qmd#sec-mermaid){.assignment-badge} [Übung 7 — BPMN-Modellierung in Signavio](04-uebungen-w2.qmd#sec-bpmn){.assignment-badge} [Übung 8 — UiPath Mandanten-Anschreiben](04-uebungen-w2.qmd#sec-uipath){.assignment-badge}
+**Discern (nach Block 1):** [Übung 1 — Prüfungsordnung mit zweistufigem Dialog-Prompt](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung){.assignment-badge} [Übung 2 — RAGAS-Metriken mit Tutor-Bot verstehen](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor){.assignment-badge} [Übung 3 — Tutor-Bot systematisch prüfen](04-uebungen-w2-2026-ws.qmd#sec-test-suite){.assignment-badge} [Übung 4 — RAG-Suchübung HGB-Prüfungspflicht](04-uebungen-w2-2026-ws.qmd#sec-rag-hgb){.assignment-badge}
 
-**Vertiefung (optional in-class oder als Hausaufgabe):**
+**Diligence (nach Block 2):** [Übung 5 — Diligence-Risiko-Recherche im Best-of-N](04-uebungen-w2-2026-ws.qmd#sec-diligence-bestof-n){.assignment-badge} [Abschluss — Regelwand](04-uebungen-w2-2026-ws.qmd#sec-regelwand){.assignment-badge} · optional für schnelle Teams: [Übung 6 — Integrierter 4D-Use-Case](04-uebungen-w2-2026-ws.qmd#sec-4d-usecase){.assignment-badge}
 
-[Übung 9 — Integrierter 4D-Use-Case](04-uebungen-w2.qmd#sec-4d-usecase){.assignment-badge} [UiPath-Vertiefung Excel-zu-PDF (Hausaufgabe)](05-hausaufgaben.qmd#sec-uipath-vertiefung){.assignment-badge}
+**Hausaufgabe bis zur In-Company-Session:** [BPMN-Modellierung in Signavio](04-uebungen-w2-2026-ws.qmd#sec-bpmn){.assignment-badge}
 
-Die ersten fünf Übungen vertiefen **Discern** (zweistufiger Quellenbindungs-Prompt an der Prüfungsordnung, Tutor-geführtes Verstehen von RAGAS, Test-Suite am Tutor-Bot aus W1, RAG-Suchhilfe im HGB) und **Diligence** (Best-of-N-Risikorecherche). Anschließend gewöhnen Sie sich an Prozessmodellierung — erst niedrigschwellig mit **Mermaid**, dann fachgerecht in **Signavio**. Den Abschluss bildet das Kennenlernen von **UiPath Studio Web** an einem Mandanten-Anschreiben-Bot.
+Die Recaps holen Delegate und Describe von gestern in zwei kurzen Übungen zurück: ein Prozessdiagramm mit *P/C/H/M*-Markierung und ein Alltagsprompt, umgebaut mit den Patterns nach White et al. (2023) — denselben sechs, die Block 1 als Ebene 1 der Qualitätsprüfung einführt.
+Übung 1 wendet die Patterns an der eigenen Prüfungsordnung an und prüft den Output gegen ein Protokoll; Übung 2 erklärt die RAGAS-Metriken sokratisch; Übung 3 zieht die Test-Suite von gestern am eigenen Tutor-Bot durch; Übung 4 hegt ein RAG-System im HGB auf die Rolle der reinen Suchhilfe ein.
+Übung 5 generiert aus einer Diligence-Definition Risikofälle im Best-of-N und leitet eine Wenn-Dann-Schutzregel ab — der Übergang von Discern zu **Diligence**; die Regeln aller Paare landen zum Abschluss in einer Socrative-Regelwand und werden in die In-Company-Session mitgenommen.
 :::
 
 ## Hintergrund / Werkzeuge / Ressourcen
 
-- **Wissensbasis** — [Prompt-Pattern-Katalog nach White](../appendix/wissensbasis.qmd#sec-prompt-patterns) · [RAG-Grundlagen](../appendix/wissensbasis.qmd#sec-rag) · [Primer Qualitätsprüfung](../appendix/wissensbasis.qmd#sec-primer-qualitaetspruefung) · [Primer Goldstandard](../appendix/wissensbasis.qmd#sec-primer-goldstandard) · [BPMN-Grundlagen](../appendix/wissensbasis.qmd#sec-bpmn) · [RPA-Grundlagen](../appendix/wissensbasis.qmd#sec-rpa) · [Recht und Berufsstand](../appendix/wissensbasis.qmd#sec-recht).
+- **Wissensbasis** — [Prompt-Pattern-Katalog nach White](../appendix/wissensbasis.qmd#sec-prompt-patterns) · [RAG-Grundlagen](../appendix/wissensbasis.qmd#sec-rag) · [Primer Qualitätsprüfung](../appendix/wissensbasis.qmd#sec-primer-qualitaetspruefung) · [Primer Goldstandard](../appendix/wissensbasis.qmd#sec-primer-goldstandard) · [Recht und Berufsstand](../appendix/wissensbasis.qmd#sec-recht).
+- **Material und Werkzeuge der Übungen** — [HGB-Auszug](../data/hgb-auszug-pruefungspflicht.txt){target="_blank"} (§§ 264, 264d, 267, 267a, 316) · [Mermaid Live Editor](https://mermaid.live){target="_blank"} · [Signavio Academic Edition](https://academic.signavio.com/p/explorer){target="_blank"} / [bpmn.io](https://bpmn.io){target="_blank"} · [Mermaid-Prozessdiagramme mit KI](../appendix/wissensbasis.qmd#sec-mermaid-ki) · [BPMN-Grundlagen](../appendix/wissensbasis.qmd#sec-bpmn).
 - **Originalmaterial** — Cheat Sheet und Practical Overview zu Diligence aus @dakan2025framework.
+
+```{=html}
+<!-- Auskommentiert am 24.09.2026 (BPMN/RPA):
+- [BPMN-Grundlagen](../appendix/wissensbasis.qmd#sec-bpmn) · [RPA-Grundlagen](../appendix/wissensbasis.qmd#sec-rpa)
 - **Standardreferenz BPMN** — @omg2014bpmn.
 - **Service-Automation-Continuum** — @lacity2021becoming und @willcocks2024evolution als Vertiefung zur strategischen Einordnung.
+-->
+```
 
 ## Weiterführend
 
@@ -138,7 +198,7 @@ Die ersten fünf Übungen vertiefen **Discern** (zweistufiger Quellenbindungs-Pr
 - @yeung2024deterministic — *Deterministic Quoting* als praktisches Verfahren gegen Zitat-Halluzinationen.
 - @es2024ragas — *RAGAS: Automated Evaluation of Retrieval Augmented Generation*.
 - @magesh2025hallucination — empirische Studie zu Halluzinationsraten in juristischen RAG-Systemen.
-- @lacity2016new · @coombs2020strategic · @davenport2018artificial — drei klassische Texte zur Service-Automatisierung und intelligenter Automation in Wissensarbeit.
+- @rajpurkar2018squad2 — *Know What You Don't Know* — das SQuAD-2.0-Prinzip unbeantwortbarer Fragen, nach dem Item 8 des Goldstandards gebaut ist. <!-- - @lacity2016new · @coombs2020strategic · @davenport2018artificial — drei klassische Texte zur Service-Automatisierung und intelligenter Automation in Wissensarbeit. -->
 
 ## Tutor
 
@@ -149,5 +209,12 @@ Die ersten fünf Übungen vertiefen **Discern** (zweistufiger Quellenbindungs-Pr
 
 Vorschlag-Prompt für diesen Workshop:
 
-> Ich arbeite in Workshop 2 am Block *Qualitätssicherung von GenAI-Outputs*. Erklären Sie mir am Beispiel eines HGB-RAG-Systems, wie die drei Schichten (Prompt-Engineering nach White, Deterministic Quoting nach Yeung, Goldstandard-Tests mit RAGAS) ineinandergreifen. Welche Schicht würden Sie zuerst aufbauen, wenn ich morgen anfangen müsste — und warum?
+> Ich arbeite in Workshop 2 am Block *Qualitätssicherung von GenAI-Outputs*.
+> Erklären Sie mir am Beispiel eines HGB-RAG-Systems, wie die vier Ebenen (Prompt-Engineering nach White, Deterministic Quoting nach Yeung, automatische Prüfung mit RAGAS, manuell kuratierter Goldstandard) ineinandergreifen — und welchen Fehler jede Ebene findet, den die anderen nicht sehen.
+> Welche Ebene würden Sie zuerst aufbauen, wenn ich morgen anfangen müsste — und warum?
+:::
+
+## Referenzen
+
+::: {#refs}
 :::

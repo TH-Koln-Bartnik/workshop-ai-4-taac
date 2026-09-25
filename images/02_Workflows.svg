@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#77736A"/></marker><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C77659"/></marker></defs><rect width="1600" height="900" fill="#F5F2EB"/>
+<text x="72" y="66" text-anchor="start" font-family="sans-serif" font-size="19" font-weight="600" fill="#C77659">LLM-NUTZUNGSFORMEN   /   02</text>
+<text x="72" y="137" text-anchor="start" font-family="serif" font-size="44" font-weight="400" fill="#292824">Vorgegebene Workflows strukturieren die Arbeit.</text>
+<text x="72" y="184" text-anchor="start" font-family="sans-serif" font-size="24" font-weight="400" fill="#77746D">Drei Muster für wiederkehrende Aufgaben mit bekannten Bearbeitungswegen.</text>
+<path d="M72 818 H1528" stroke="#D8D3C8"/>
+<text x="72" y="854" text-anchor="start" font-family="sans-serif" font-size="18" font-weight="400" fill="#77746D">Eigene Darstellung nach Anthropic (2024)</text>
+<text x="1528" y="854" text-anchor="end" font-family="sans-serif" font-size="18" font-weight="400" fill="#77746D">Beispiel: Lieferantenbewertung</text>
+<text x="72" y="282" text-anchor="start" font-family="serif" font-size="27" font-weight="400" fill="#292824">Prompt Chaining</text>
+<text x="72" y="316" text-anchor="start" font-family="sans-serif" font-size="21" font-weight="400" fill="#77746D">Feste Schrittfolge</text>
+<rect x="405" y="250" width="290" height="86" rx="13" fill="#EAD7C9" stroke="#77736A" stroke-width="1.7"/>
+<text x="550" y="302" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="400" fill="#292824">Daten extrahieren</text>
+<rect x="795" y="250" width="290" height="86" rx="13" fill="#EAD7C9" stroke="#77736A" stroke-width="1.7"/>
+<text x="940" y="302" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="400" fill="#292824">Angebote vergleichen</text>
+<rect x="1185" y="250" width="310" height="86" rx="13" fill="#EAD7C9" stroke="#77736A" stroke-width="1.7"/>
+<text x="1340" y="302" text-anchor="middle" font-family="sans-serif" font-size="23" font-weight="400" fill="#292824">Empfehlung formulieren</text>
+<path d="M695 293 H790" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<path d="M1085 293 H1180" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<text x="72" y="457" text-anchor="start" font-family="serif" font-size="27" font-weight="400" fill="#292824">Routing</text>
+<text x="72" y="491" text-anchor="start" font-family="sans-serif" font-size="21" font-weight="400" fill="#77746D">Einen Weg auswählen</text>
+<rect x="405" y="420" width="290" height="86" rx="13" fill="#EAD7C9" stroke="#77736A" stroke-width="1.7"/>
+<text x="550" y="472" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="400" fill="#292824">Anfrage einordnen</text>
+<rect x="905" y="375" width="380" height="72" rx="13" fill="#FFFDFA" stroke="#77736A" stroke-width="1.7"/>
+<text x="1095" y="420" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="400" fill="#292824">Kaufmännische Prüfung</text>
+<rect x="905" y="480" width="380" height="72" rx="13" fill="#FFFDFA" stroke="#77736A" stroke-width="1.7"/>
+<text x="1095" y="525" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="400" fill="#292824">Technische Prüfung</text>
+<path d="M695 447 H790 V411 H900" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<path d="M695 479 H755 V516 H900" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<text x="1345" y="465" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="600" fill="#C77659">ODER</text>
+<text x="72" y="658" text-anchor="start" font-family="serif" font-size="27" font-weight="400" fill="#292824">Parallelization</text>
+<text x="72" y="692" text-anchor="start" font-family="sans-serif" font-size="21" font-weight="400" fill="#77746D">Gleichzeitig bearbeiten</text>
+<rect x="405" y="625" width="220" height="86" rx="13" fill="#FFFDFA" stroke="#77736A" stroke-width="1.7"/>
+<text x="515" y="677" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="400" fill="#292824">Angebot</text>
+<rect x="780" y="578" width="315" height="72" rx="13" fill="#EAD7C9" stroke="#77736A" stroke-width="1.7"/>
+<text x="937.5" y="623" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="400" fill="#292824">Preis prüfen</text>
+<rect x="780" y="684" width="315" height="72" rx="13" fill="#EAD7C9" stroke="#77736A" stroke-width="1.7"/>
+<text x="937.5" y="729" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="400" fill="#292824">Technik prüfen</text>
+<rect x="1250" y="625" width="245" height="86" rx="13" fill="#FFFDFA" stroke="#77736A" stroke-width="1.7"/>
+<text x="1372.5" y="677" text-anchor="middle" font-family="sans-serif" font-size="23" font-weight="400" fill="#292824">Zusammenführen</text>
+<path d="M625 653 H700 V614 H775" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<path d="M625 683 H675 V720 H775" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<path d="M1095 614 H1160 V650 H1245" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+<path d="M1095 720 H1185 V686 H1245" fill="none" stroke="#77736A" stroke-width="2.5"  marker-end="url(#g)"/>
+</svg>

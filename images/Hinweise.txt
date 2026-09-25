@@ -1,0 +1,5 @@
+Fünf eigene Ablaufgrafiken nach Anthropic (2024, 2025).
+Gestaltung angelehnt an Anthropics technische Illustrationen.
+PNG: 2400 × 1350 Pixel, 16:9. SVG: skalierbare und bearbeitbare Originale.
+Die Lieferantenbeispiele sind eigene didaktische Anwendungen.
+Folie 5 kombiniert das Orchestrator-Workers-Muster mit recherchierenden Unteragenten.

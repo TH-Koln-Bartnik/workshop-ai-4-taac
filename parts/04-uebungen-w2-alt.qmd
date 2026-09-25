@@ -1,7 +1,9 @@
 ---
-title: "Übungen Workshop 2"
-subtitle: "Discern und Diligence zuerst, dann Modellierung und Automatisierung"
+title: "Übungen Workshop 2 — ALTE VERSION (Stand 23.09.2026)"
+subtitle: "Nicht im Online-Skript eingebunden. Zum Wiedereinbau in _quarto.yml den Pfad parts/04-uebungen-w2.qmd durch diese Datei ersetzen."
 ---
+
+<!-- ARCHIV: Diese Datei ist die vollständige alte Übungsseite (Übungen 1–9 mit Prüfungsordnung, RAGAS-Tutor, Test-Suite, HGB-RAG, Best-of-N, Mermaid, BPMN/Signavio, UiPath, 4D-Use-Case). Sie wird von Quarto nicht gerendert, weil sie in _quarto.yml nicht gelistet ist. Die Links auf 05-hausaufgaben.qmd zeigen auf eine ebenfalls nicht mehr gelistete Seite. -->
 
 ::: th-color-bar
 :::

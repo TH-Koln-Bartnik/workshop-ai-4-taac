@@ -1,0 +1,339 @@
+---
+title: "Übungen Workshop 2 — fachlich vertiefte Fassung (Test-Version)"
+subtitle: "Discern in vier Ebenen — Prompt, deterministische Prüfung, automatische Prüfung, Goldstandard · Diligence zum Schluss"
+search: false
+format:
+  html:
+    include-in-header:
+      text: '<meta name="robots" content="noindex, nofollow">'
+---
+
+<!-- TEST-VERSION. Diese Datei ist bewusst NICHT in _quarto.yml gelistet und erscheint deshalb weder in der Seitenleiste noch in der Suche noch in der Vor/Zurück-Navigation. Render einzeln mit:
+     quarto render drafts/untested-draft-ws2-uebungen-fachlich-vertieft.qmd --profile single --to html
+     (Profil in _quarto-single.yml: project.type default). Output: docs/drafts/untested-draft-ws2-uebungen-fachlich-vertieft.html
+     Die im Workshop verwendete einfache Fassung liegt unter parts/04-uebungen-w2-2026-ws.qmd. -->
+
+```{=html}
+<div style="background:#c8102e;color:#fff;padding:0.8rem 1.2rem;margin:0 0 1.2rem 0;border-radius:4px;font-weight:700;font-size:1.1rem;letter-spacing:0.02em;">
+⚠ TEST-VERSION — IN DER FACHLICHEN PRÜFUNG
+</div>
+```
+
+::: {.callout-important}
+## Status dieser Seite
+
+Diese Fassung der Übungen ist ein **ungeprüfter Entwurf** und nicht Teil des Workshop-Skripts. Sie ist nur über diesen direkten Link erreichbar und wird derzeit von Berufsträgern (WP/StB) fachlich gegengelesen — insbesondere die HGB-Fundstellen, die Vier-Fehler-Antwort, der Goldstandard und die berufsrechtlichen Formulierungen in Übung 5. Rückmeldungen bitte direkt an Prof. Dr. Roman Bartnik. Die im Workshop eingesetzte Fassung steht unter [Übungen Workshop 2 — 2026-WS](../parts/04-uebungen-w2-2026-ws.html).
+:::
+
+
+
+::: th-color-bar
+:::
+
+::: lernziel-box
+#### Was Sie nach diesen Übungen können
+
+- (Recap Delegate) Präziser beschreiben mit Mermaid Prozessdiagrammen
+- (Recap Describe) Präziser Prompten mit Systemprompts
+- **Discern**: Systematische Qualitätsprüfung von KI-Ergebnissen auf 3 Ebenen durchführen.
+- **Diligence**: Transparenz und Sorgfalt vor der Inbetriebnahme.
+:::
+
+Alle vier Übungen laufen am selben Fall und an derselben präparierten Antwort. Der Fall ist die Rheinland Components GmbH aus dem HGB-Auszug; die Antwort ist eine Modellausgabe, in die vier Fehler eingebaut sind — einer pro Prüfebene. Wer die Übungen nacheinander durchläuft, sieht am Ende in einer Matrix, welche Ebene welchen Fehler gefangen hat und welche ihn durchgelassen hat. Das ist das Käsescheibenmodell aus Block 1 [@reason2000human], nur diesmal selbst erhoben. Eine kurze fünfte Übung nimmt den Fehler, der durch drei Scheiben gefallen ist, und fragt nach Verantwortung und Schutzregel — der Schritt von Discern zu Diligence.
+
+| Abschnitt | Ebene | Dauer |
+|------------------------|------------------------|------------------------|
+| Einstieg — die Vier-Fehler-Antwort lesen | — | 5 Min |
+| Übung 1 — Suchprompt mit Patterns und Best-of-N | 1 Prompt-Engineering | 25–30 Min |
+| Übung 2 — Fehlerjagd, dann Prüfskript | 2 Deterministische Prüfung | 30 Min |
+| Übung 3 — Faithfulness mit Juror-Prompt, vorher/nachher | 3 Automatische Prüfung | 20 Min |
+| Übung 4 — Goldstandard anwenden, Dissens abstimmen | 4 Goldstandard | 25 Min |
+| Debrief — Matrix Fehler × Ebene | — | 15 Min |
+| Übung 5 — Diligence: Wer haftet für Zeile vier? | Diligence | 12 Min |
+
+## Material und Setup {#sec-w2-material}
+
+**Der Fall: Rheinland Components GmbH.** Kapitalgesellschaft mit Sitz in Köln. Geschäftsjahr 2024: Bilanzsumme 7,8 Mio. €, Umsatzerlöse 14,9 Mio. €, Arbeitnehmer im Jahresdurchschnitt 51. Geschäftsjahr 2025: Bilanzsumme 7,6 Mio. €, Umsatzerlöse 15,2 Mio. €, Arbeitnehmer im Jahresdurchschnitt 49. Die Gesellschaft ist nicht kapitalmarktorientiert im Sinne des § 264d HGB und wurde weder neu gegründet noch umgewandelt. Die Geschäftsführung fragt, welche HGB-Textstellen relevant sein könnten, um zu prüfen, ob Jahresabschluss und Lagebericht für 2025 durch einen Abschlussprüfer geprüft werden müssen. Der Fall ist fiktiv; **keine persönlichen oder vertraulichen Daten** ergänzen.
+
+**Der Gesetzestext.** [HGB-Auszug mit Zitat-IDs](../data/hgb-auszug-pruefungspflicht.txt){target="_blank"} — §§ 264 Abs. 1, 264d, 267, 267a, 316 im amtlichen Wortlaut (gesetze-im-internet.de, Stand 24.09.2026). Jeder Satz und jede Nummer trägt eine ID nach dem Muster `HGB-§267-Abs1-Nr1`. Diese Datei laden Sie in Ihr RAG-System; sie ist zugleich der Index, gegen den das Prüfskript in Übung 2 arbeitet.
+
+**Das RAG-System.** GWDG Academic Cloud (RAG/Arcana), NotebookLM, ChatGPT oder Claude mit Datei-Upload. Temperature auf 0 oder maximal 0,1, ein instruktionstreues Modell. Den HGB-Auszug hochladen, bevor Sie den ersten Prompt setzen.
+
+**Die Vier-Fehler-Antwort.** [Als Textdatei zum Kopieren](../data/vier-fehler-antwort.txt){target="_blank"} — dieselbe Antwort steht im Einstieg unten. Sie wurde vom Dozenten präpariert und sieht aus wie eine gute Antwort auf den Kurzprompt aus Übung 1.
+
+**Das Prüfskript.** [Deterministic Quoting — Prüfskript für HGB-Zitate](../interactions/deterministic-quoting.html){target="_blank"} — läuft im Browser, ohne Installation, ohne KI.
+
+## Einstieg — Die Vier-Fehler-Antwort {#sec-w2-einstieg}
+
+**Modus:** Einzel · **Dauer:** 5 Min · **4D-Bezug:** Discern, erste Sichtung.
+
+Lesen Sie die folgende Antwort einmal durch, so wie Sie sie im Berufsalltag lesen würden: zügig, mit dem Blick auf Brauchbarkeit. Markieren Sie höchstens drei Stellen, die Ihnen verdächtig vorkommen, und schreiben Sie zu jeder ein Stichwort. Noch keine Diskussion, noch kein Nachschlagen. Sie werden diese Antwort heute viermal prüfen — mit vier verschiedenen Werkzeugen. Heben Sie Ihre drei Stichworte für das Debrief auf.
+
+::: callout-note
+## Die Vier-Fehler-Antwort (Ausgabe eines RAG-Systems auf den Kurzprompt)
+
+**A. Gefundene Textstellen**
+
+| Thema | Fundstelle | Wörtliches Zitat |
+|----------|-----------|--------------------------|
+| Prüfungspflicht von Kapitalgesellschaften | § 316 Abs. 1 Satz 1 · [HGB-§316-Abs1-Satz1] | „Der Jahresabschluß und der Lagebericht von Kapitalgesellschaften, die nicht kleine im Sinne des § 267 Abs. 1 sind, sind durch einen Abschlußprüfer zu prüfen." |
+| Folge einer unterbliebenen Prüfung | § 316 Abs. 1 Satz 2 · [HGB-§316-Abs1-Satz2] | „Hat keine Prüfung stattgefunden, so kann der Jahresabschluß nicht festgestellt werden." |
+| Kleine Kapitalgesellschaften | § 267 Abs. 1 Satz 1 · [HGB-§267-Abs1-Satz1] | „Kleine Kapitalgesellschaften sind solche, die mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:" |
+| Größenmerkmal Bilanzsumme | § 267 Abs. 1 Nr. 1 · [HGB-§267-Abs1-Nr1] | „6 000 000 Euro Bilanzsumme." |
+| Größenmerkmal Umsatzerlöse | § 267 Abs. 1 Nr. 2 · [HGB-§267-Abs1-Nr2] | „12 000 000 Euro Umsatzerlöse in den zwölf Monaten vor dem Abschlußstichtag." |
+| Größenmerkmal Arbeitnehmer | § 267 Abs. 1 Nr. 3 · [HGB-§267-Abs1-Nr3] | „Im Jahresdurchschnitt fünfzig Arbeitnehmer." |
+| Mittelgroße Kapitalgesellschaften | § 267 Abs. 2 Satz 1 · [HGB-§267-Abs2-Satz1] | „Mittelgroße Kapitalgesellschaften sind solche, die mindestens zwei der drei in Absatz 1 bezeichneten Merkmale überschreiten und jeweils mindestens zwei der drei nachstehenden Merkmale nicht überschreiten:" |
+| Bedeutung mehrerer Abschlussstichtage | § 267 Abs. 4 Satz 2 · [HGB-§267-Abs4-Satz2] | „Im Falle der Umwandlung oder Neugründung treten die Rechtsfolgen schon ein, wenn die Voraussetzungen des Absatzes 1, 2 oder 3 am ersten Abschlußstichtag nach der Umwandlung oder Neugründung vorliegen." |
+| Ermittlung der Arbeitnehmerzahl | § 267 Abs. 5 · [HGB-§267-Abs5-Satz1] | „Als durchschnittliche Zahl der Arbeitnehmer gilt der vierte Teil der Summe aus den Zahlen der jeweils am 31. März, 30. Juni, 30. September und 31. Dezember beschäftigten Arbeitnehmer einschließlich der im Ausland beschäftigten Arbeitnehmer, jedoch ohne die zu ihrer Berufsausbildung Beschäftigten." |
+
+Suchbegründung: Die Stellen zu § 267 Abs. 1 enthalten die Größenmerkmale. Diese Schwellenwerte gelten unverändert seit dem Bilanzrichtlinie-Umsetzungsgesetz von 2015. Die Stelle zu § 316 Abs. 1 nennt die Pflicht zur Prüfung.
+
+**B. Möglicherweise zusätzlich relevante Stellen**
+
+§ 267 Abs. 4a (Zusammensetzung der Bilanzsumme) · [HGB-§267-Abs4a-Satz1]: „Die Bilanzsumme setzt sich aus den Posten zusammen, die in den Buchstaben A bis E des § 266 Absatz 2 aufgeführt sind."
+
+**C. Nicht gefundene Punkte**
+
+Keine. Alle fünf angefragten Themenbereiche sind durch Textstellen abgedeckt.
+
+**D. Einordnung**
+
+Da die Rheinland Components GmbH in beiden Geschäftsjahren mindestens zwei der drei Merkmale überschreitet, ist sie als mittelgroße Kapitalgesellschaft einzustufen und daher nach § 316 Abs. 1 HGB prüfungspflichtig.
+
+Prüfhinweis: Diese Ausgabe ist nur eine Such- und Zitierhilfe. Sie enthält keine rechtliche Bewertung und keine verbindliche Antwort.
+:::
+
+## Übung 1 — Ebene 1: Suchprompt mit Patterns und Best-of-N {#sec-w2-prompt}
+
+**Modus:** in-class · Paare (Variante A) oder Einzel (Variante B) · **Dauer:** 25–30 Min · **4D-Bezug:** Describe und Discern — der Prompt diszipliniert das Modell, die Output-Prüfung zeigt, wie weit die Disziplin trägt.
+
+Die erste Prüfebene arbeitet vollständig innerhalb der Modellantwort. Sechs Muster aus dem Prompt-Pattern-Katalog von @white2023prompt sind im Suchprompt unten als Blöcke markiert: **[CM]** Context Manager, **[P]** Persona, **[T]** Template, **[AA]** Alternative Approaches, **[FCL]** Fact Check List, **[R]** Reflection. Jeder Block verhindert eine bestimmte Fehlerklasse — welche, finden Sie in dieser Übung selbst heraus. Der Dozent wählt am Tag eine der beiden Varianten; beide enden mit demselben Best-of-N-Schritt.
+
+::: callout-tip
+## Suchprompt mit Zitat-IDs zum Kopieren (System- oder Initial-Prompt)
+
+> **[P] Rolle.** Du bist eine quellengebundene Suchhilfe für Gesetzestexte im Bereich Wirtschaftsprüfung und Rechnungslegung. Deine Aufgabe ist ausschließlich, passende Textstellen aus dem bereitgestellten Gesetzestext zu finden und wörtlich wiederzugeben. Du hast keine Entscheidungskompetenz.
+>
+> **[CM] Quellenbindung.** Du arbeitest nur mit dem bereitgestellten Material. Du darfst kein eigenes Wissen verwenden, keine Rechtsprechung, keine Kommentarliteratur, keine Angaben zu Gesetzesänderungen oder Geltungszeiträumen, die nicht im Material stehen. Wenn eine passende Textstelle nicht im bereitgestellten Material enthalten ist, schreibe: „Im bereitgestellten Material wurde keine passende Textstelle gefunden." Du darfst keine rechtliche Bewertung vornehmen, keine Subsumtion durchführen, nicht interpretieren und keine abschließende Antwort geben.
+>
+> **Aufgabe.** Suche im bereitgestellten Gesetzestext nach Textstellen, die für die folgende Frage relevant sein könnten: [HIER FRAGE EINFÜGEN].
+>
+> **Arbeitsregeln.** (1) Gib ausschließlich Textstellen zurück, die im bereitgestellten Material enthalten sind. (2) Zitiere wörtlich, Zeichen für Zeichen, einschließlich alter Rechtschreibung. (3) Gib zu jeder Textstelle die Fundstelle an — Paragraph · Absatz · Satz oder Nummer — **und die im Text angegebene ID in eckigen Klammern, zum Beispiel [HGB-§267-Abs1-Nr1]**. (4) Erkläre nicht, was die Textstelle rechtlich bedeutet. (5) Verwende keine Formulierungen wie „Das bedeutet …", „Daraus folgt …", „Die Gesellschaft ist …". (6) Eine sehr kurze neutrale Suchbegründung ist erlaubt: „Diese Stelle enthält Begriffe zur Prüfungspflicht", „Diese Stelle enthält Größenmerkmale".
+>
+> **[AA] Mehrere Stellen.** Wenn mehrere Textstellen relevant sein könnten, gib alle an und ordne sie thematisch. Führe Stellen, die nur möglicherweise relevant sind, in einem eigenen Abschnitt auf, statt sie wegzulassen oder stillschweigend auszuwählen.
+>
+> **[T] Antwortformat.** A. Gefundene Textstellen als Tabelle mit den Spalten Thema · Fundstelle mit ID · Wörtliches Zitat. B. Möglicherweise zusätzlich relevante Stellen. C. Nicht gefundene Punkte — welche angefragten Themen hast du im Material nicht belegen können? D. Prüfhinweis: „Diese Ausgabe ist nur eine Such- und Zitierhilfe. Sie enthält keine rechtliche Bewertung und keine verbindliche Antwort."
+>
+> **[FCL] Prüfliste.** E. Liste am Ende jede Aussage deiner Antwort auf, die kein wörtliches Zitat ist — jede Suchbegründung, jede Einordnung, jeden Satz zwischen den Zitaten — und markiere sie als „nicht aus dem Material belegt".
+>
+> **[R] Selbstprüfung.** Prüfe vor der Ausgabe jede Zeile: Trägt jedes Zitat eine ID aus dem Material? Steht irgendwo eine Bewertung, Folgerung oder ein Ja/Nein? Streiche sie. Fehlt in Abschnitt C ein Thema, das du nicht belegen konntest? Ergänze es.
+:::
+
+**Die Suchfrage (in den Prompt einsetzen).** Welche Textstellen im bereitgestellten HGB-Text könnten relevant sein, um zu prüfen, ob Jahresabschluss und Lagebericht der Rheinland Components GmbH für das Geschäftsjahr 2025 prüfungspflichtig sind? Gesucht sind Stellen zu: (1) Prüfungspflicht von Kapitalgesellschaften, (2) kleine Kapitalgesellschaften, (3) mittelgroße Kapitalgesellschaften, (4) Größenmerkmale Bilanzsumme, Umsatzerlöse, Arbeitnehmer, (5) Bedeutung mehrerer Abschlussstichtage oder Geschäftsjahre.
+
+### Variante A — Pattern-Ablation (25 Min, Paare)
+
+Jedes Paar bekommt vom Dozenten einen der sechs Blöcke zugewiesen — [CM], [P], [T], [AA], [FCL] oder [R].
+
+**Schritt 1 — Referenzlauf (5 Min).** Vollständigen Prompt setzen, Suchfrage stellen, Antwort speichern. Das ist Ihr Referenzlauf.
+
+**Schritt 2 — Ablation (7 Min).** Denselben Prompt ohne Ihren Block in einen neuen Chat setzen (Block komplett löschen, Rest unverändert), dieselbe Frage stellen, Antwort speichern.
+
+**Schritt 3 — Vergleich (5 Min).** Gehen Sie beide Antworten mit dem Prüfprotokoll unten durch. Was ist ohne den Block anders — eine Subsumtion, ein fehlender Abschnitt C, Zitate ohne ID, eine Stelle aus dem Trainingswissen, eine stillschweigende Auswahl? Notieren Sie in einem Satz: *Ohne Block X trat in diesem Lauf Fehler Y auf.* Das ist eine Beobachtung aus einem Lauf pro Bedingung, kein Nachweis — ob der Block den Fehler verlässlich verhindert, kann ein einzelner Vergleich nicht zeigen, weil schon die Streuung zwischen zwei Läufen desselben Prompts den Unterschied erklären kann. Wie groß diese Streuung ist, messen Sie in Schritt 4. Falls sich nichts ändert: auch das ist ein Befund — das Modell hält die Regel auch ohne Anweisung, oder Ihr Block wird von einem anderen mit abgedeckt.
+
+**Schritt 4 — Best-of-N (8 Min).** Siehe unten, gemeinsam für beide Varianten.
+
+Im Plenum entsteht aus den sechs Paar-Befunden die Tabelle *Pattern → Versagensklasse*, die genau die Aussage von Block 1 ist — nur diesmal selbst erhoben, als Beobachtung dieser Sitzung. Nach Schritt 4 gehört eine Frage dazu: Welches Paar würde seinen Befund nach drei Läufen noch unterschreiben?
+
+### Variante B — Aufbau von null (30 Min, Einzel)
+
+**Schritt 1 — Naiver Prompt (3 Min).** Ohne System-Prompt, nur die Frage: *„Ist die Rheinland Components GmbH für das Geschäftsjahr 2025 prüfungspflichtig? Zahlen: 2024 Bilanzsumme 7,8 Mio. €, Umsatz 14,9 Mio. €, 51 Arbeitnehmer; 2025 Bilanzsumme 7,6 Mio. €, Umsatz 15,2 Mio. €, 49 Arbeitnehmer."* Antwort speichern. Lesen Sie sie mit dem Prüfprotokoll: Wie viele Zeilen sind rot?
+
+**Schritt 2 — Baukarte (15 Min).** Fügen Sie die Blöcke in dieser Reihenfolge hinzu, jeweils in einem neuen Chat mit derselben Suchfrage, und notieren Sie nach jedem Schritt in einem Halbsatz, was sich geändert hat: **[P]** Rolle → **[CM]** Quellenbindung → **[T]** Antwortformat → **[AA]** Mehrere Stellen → **[FCL]** Prüfliste → **[R]** Selbstprüfung. Nach [CM] sollte die Subsumtion verschwinden; nach [T] wird die Antwort vergleichbar; nach [FCL] sehen Sie zum ersten Mal, wie viel in der Antwort *nicht* Zitat ist.
+
+**Schritt 3 — Best-of-N (8 Min).** Siehe unten.
+
+### Best-of-N — gemeinsam für beide Varianten (8 Min)
+
+Best-of-N heißt: mehrere Kandidaten erzeugen, den besten begründet auswählen. Bei einem Suchprompt ist das mehr als Komfort — die Streuung zwischen den Läufen ist ein Messwert für die Verlässlichkeit.
+
+Lassen Sie den vollständigen Prompt **dreimal** laufen (jeweils neuer Chat, oder „Regenerate", oder ein zweites Modell mit identischem Prompt und Material). Tragen Sie die zitierten IDs in die Tabelle ein.
+
+| ID | Lauf 1 | Lauf 2 | Lauf 3 | stabil / instabil |
+|---|---|---|---|---|
+| HGB-§316-Abs1-Satz1 | | | | |
+| HGB-§267-Abs1-Satz1 | | | | |
+| HGB-§267-Abs1-Nr1 … Nr3 | | | | |
+| HGB-§267-Abs2-Satz1 | | | | |
+| HGB-§267-Abs4-Satz1 | | | | |
+| HGB-§267-Abs4-Satz2 | | | | |
+| weitere … | | | | |
+
+**Stabile Belege** erscheinen in allen drei Läufen, **instabile** nur in einem oder zwei. Wählen Sie dann die beste Antwort nach drei Kriterien: keine Subsumtion, jedes Zitat mit ID, Abschnitt C nennt ehrlich, was nicht belegt wurde. Heben Sie **die beste und die schwächste Antwort** auf — beide brauchen Sie in Übung 2 und 3.
+
+**Prüfprotokoll** — für den Referenzlauf, die Ablation, jeden Baukarten-Schritt und für die Vier-Fehler-Antwort aus dem Einstieg.
+
+| Prüffrage | Ja / Nein · Befund |
+|---|---|
+| Enthält die Antwort ausschließlich wörtliche Textstellen plus neutrale Suchbegründung? | |
+| Trägt jedes Zitat eine ID aus dem Material? | |
+| Verzichtet die Antwort auf „daraus folgt", „ist prüfungspflichtig", „ist einzustufen"? | |
+| Nennt Abschnitt C ehrlich nicht belegte Themen — oder steht dort „Keine"? | |
+| Steht irgendwo eine Aussage über Geltungszeiträume, Gesetzesänderungen oder Rechtsprechung? | |
+| Wurde § 267 Abs. 4 Satz 1 gefunden? | |
+| Gibt es Zitate, die nicht aus dem bereitgestellten Material stammen können? | |
+
+**Think-Pair-Share (4 Min).** Welcher Block hat den größten Unterschied gemacht — und welcher gar keinen? Welche ID war in Ihren drei Läufen instabil, und was heißt das für eine Mandantenanfrage, die Sie nur einmal stellen? Welche Zeile des Prüfprotokolls wird die Vier-Fehler-Antwort rot — und welche Zeilen bleiben grün, obwohl Sie ihr nicht trauen?
+
+## Übung 2 — Ebene 2: Fehlerjagd, dann Prüfskript {#sec-w2-deterministisch}
+
+**Modus:** in-class · Einzel · **Dauer:** 30 Min (10 + 20) · **4D-Bezug:** Discern — die Prüfung verlässt das Sprachmodell.
+
+Die zweite Ebene nimmt dem Modell den Stift aus der Hand. *Deterministic Quoting* nach @yeung2024deterministic trennt „richtige Stelle auswählen" (Sprachmodell) von „Wortlaut wiedergeben" (Skript): Das Modell liefert IDs, ein Skript schlägt den echten Wortlaut nach und überschreibt, was das Modell geschrieben hat. Fehlt die ID im Index, ist das Zitat durch diese Quelle nicht verifiziert — ob durch Halluzination, Tippfehler oder eine Stelle außerhalb des Auszugs, entscheidet das Skript nicht. Sie üben das zuerst selbst als Skript, dann mit dem Skript.
+
+**Teil 1 — Fehlerjagd von Hand (10 Min).** Öffnen Sie den [HGB-Auszug mit IDs](../data/hgb-auszug-pruefungspflicht.txt){target="_blank"} neben der Vier-Fehler-Antwort. Gehen Sie die Zitate der Antwort von oben nach unten durch und tun Sie genau das, was ein Skript täte, nicht mehr: ID im Auszug suchen — existiert sie? Wortlaut Zeichen für Zeichen vergleichen — identisch? Sie dürfen dabei nicht nachdenken, ob die Stelle zur Frage passt. Markieren Sie: ✔ identisch, ✘ Abweichung (was genau?), ? ID nicht vorhanden. Zwei Zitate der Antwort halten diesem Vergleich nicht stand.
+
+**Teil 2 — Prüfskript (20 Min).** Öffnen Sie das [Prüfskript](../interactions/deterministic-quoting.html){target="_blank"}.
+
+1. Klicken Sie *Beispiel laden: Vier-Fehler-Antwort* und dann *Prüfen*. Vergleichen Sie den Befund mit Ihrer Handprüfung. Stimmen Ihre Markierungen mit den Farben des Skripts überein?
+2. Klicken Sie *Beispiel laden: unbekannte ID*. Was macht das Skript mit einer Fundstelle, die es nicht kennt — und was mit einem Zitat in neuer Rechtschreibung?
+3. Fügen Sie nun Ihre **beste Antwort aus Übung 1** ein und prüfen Sie. Notieren Sie: IDs geprüft · verifiziert · Wortlaut weicht ab · ID unbekannt. Dann dieselbe Prüfung für Ihre **schwächste Antwort**.
+
+| Antwort | IDs geprüft | verifiziert | Wortlaut weicht ab | ID unbekannt |
+|---|---|---|---|---|
+| Vier-Fehler-Antwort | | | | |
+| Beste Antwort (Übung 1) | | | | |
+| Schwächste Antwort (Übung 1) | | | | |
+
+**Der entscheidende Blick.** Das Skript setzt bei der Vier-Fehler-Antwort acht Zitate auf grün. Lesen Sie das Zitat zu „Bedeutung mehrerer Abschlussstichtage" noch einmal — es ist verifiziert, Wort für Wort amtlich. Ist es die richtige Stelle für den Fall? Notieren Sie Ihre Antwort in einem Satz; Sie kommen in Übung 4 darauf zurück. Und lesen Sie die Suchbegründung unter der Tabelle: Was sagt das Skript dazu? Nichts — sie enthält keine ID.
+
+**Erweiterung für schnelle Studierende.** Bitten Sie Ihr Modell, das Zitat zu § 267 Abs. 1 Nr. 2 „in moderner Rechtschreibung und mit Tausenderpunkten" wiederzugeben, und prüfen Sie erneut. Das Skript markiert eine Abweichung, die inhaltlich keine ist. Wie würden Sie das Skript ändern, damit es Formatierung toleriert, Zahlen aber nicht — und was riskieren Sie damit?
+
+**Think-Pair-Share (4 Min).** Welchen Fehler der Vier-Fehler-Antwort hat diese Ebene gefunden, den Ebene 1 nicht sehen konnte? Welche Fehler hat sie durchgelassen — und warum kann ein Skript, das keinen Satz versteht, sie prinzipiell nicht finden?
+
+## Übung 3 — Ebene 3: Faithfulness mit Juror-Prompt, vorher und nachher {#sec-w2-ragas}
+
+**Modus:** in-class · Paare · **Dauer:** 20 Min · **4D-Bezug:** Discern — die Prüfung wird automatisiert, und der Prüfer ist selbst ein Sprachmodell.
+
+Die dritte Ebene misst nicht eine Antwort, sondern die Qualität des Systems über viele Antworten. Das Werkzeug dafür ist RAGAS [@es2024ragas]; die wichtigste seiner Metriken ist **Faithfulness**: der Anteil der Behauptungen in einer Antwort, die sich aus dem gelieferten Kontext belegen lassen. Sie brauchen dafür weder Python noch einen Schlüssel — RAGAS lässt die Bewertung ohnehin von einem Sprachmodell vornehmen, und genau das tun Sie jetzt mit einem Juror-Prompt. Die richtige Nutzung ist der *Vergleich*: Bewegt sich der Wert in die erwartete Richtung, wenn ich den Prompt verbessere? Für absolute Aussagen taugt er nicht: Sprachmodelle als Prüfer erkennen Fehler in Modellantworten nur mit niedrigem Recall — sie übersehen einen erheblichen Teil — und bleiben deutlich hinter menschlichen Prüfern zurück [@kamoi2024realmistake]; ein menschlich annotiertes Korpus, an dem sich ein Juror für RAG-Antworten messen lässt, ist RAGTruth [@niu2024ragtruth].
+
+::: callout-tip
+## Juror-Prompt für Faithfulness zum Kopieren
+
+> Du bist ein strenger, wortkarger Prüfer. Du erhältst einen KONTEXT (einen Gesetzestext-Auszug mit Zitat-IDs) und eine ANTWORT (die Ausgabe eines Suchsystems). Du bewertest ausschließlich, ob die ANTWORT durch den KONTEXT gedeckt ist. Eigenes Wissen über das HGB ist verboten — was nicht im KONTEXT steht, gilt als nicht gestützt, auch wenn du es für wahr hältst.
+>
+> **Schritt 1 — Zerlegen.** Zerlege die ANTWORT in einzelne, atomare Behauptungen und nummeriere sie. Ein wörtliches Zitat mit Fundstelle ist eine Behauptung der Form „An Stelle [ID] steht der Wortlaut …". Jeder Satz der Suchbegründung, jede Einordnung, jede Aussage über Geltung, Änderung oder Folge ist eine eigene Behauptung. Der Prüfhinweis am Ende zählt nicht.
+>
+> **Schritt 2 — Prüfen.** Bewerte jede Behauptung gegen den KONTEXT als GESTÜTZT (folgt direkt aus dem Wortlaut an der genannten oder einer anderen Stelle des KONTEXTS) oder NICHT GESTÜTZT (im KONTEXT nicht enthalten, abweichend oder widersprochen). Begründe jede Bewertung in höchstens einem Halbsatz mit ID.
+>
+> **Schritt 3 — Rechnen.** Faithfulness = Anzahl GESTÜTZT geteilt durch Anzahl aller Behauptungen, als Bruch und als Dezimalzahl mit zwei Stellen.
+>
+> **Schritt 4 — Ausgeben.** Zuerst die nummerierte Liste mit Bewertung, dann der Wert, dann eine Liste nur der NICHT GESTÜTZTEN Behauptungen. Keine Empfehlung, kein Kommentar, keine Höflichkeit.
+>
+> KONTEXT: [HGB-Auszug einfügen] — ANTWORT: [zu prüfende Antwort einfügen]
+:::
+
+**Schritt 1 — Vier-Fehler-Antwort (6 Min).** Juror-Prompt, HGB-Auszug als KONTEXT, Vier-Fehler-Antwort als ANTWORT. Wert notieren. Lesen Sie die Liste der nicht gestützten Behauptungen: Ist die Suchbegründung dabei? Die Einordnung in Abschnitt D? Die beiden falschen Zahlen aus Übung 2?
+
+**Schritt 2 — Vorher/Nachher (8 Min).** Dieselbe Prüfung für Ihre **schwächste** und Ihre **beste** Antwort aus Übung 1 — schwächste zuerst. Bewegt sich der Wert in die erwartete Richtung? Um wie viel?
+
+| Antwort | Behauptungen | gestützt | Faithfulness | nicht gestützt (Stichworte) |
+|---|---|---|---|---|
+| Vier-Fehler-Antwort | | | | |
+| Schwächste Antwort (Übung 1) | | | | |
+| Beste Antwort (Übung 1) | | | | |
+
+**Schritt 3 — Juror gegen Juror (3 Min).** Vergleichen Sie Ihren Wert für die Vier-Fehler-Antwort mit dem des Nachbarpaars. Gleiche Antwort, gleicher Kontext, gleicher Prompt — gleicher Wert? Wenn nicht: Woran liegt es, an der Zerlegung oder an der Bewertung? Das ist die Streuung, die in jeder RAGAS-Zahl steckt.
+
+**Erweiterung für schnelle Studierende.** Bauen Sie die zweite Generierungs-Metrik nach: *Answer Relevance*. Lassen Sie das Modell aus der Antwort drei Fragen erzeugen, die diese Antwort beantworten würde, und vergleichen Sie sie mit der Originalfrage. Wie nah liegen sie beieinander — und was passiert mit dem Wert, wenn Sie Abschnitt D aus der Antwort streichen?
+
+**Think-Pair-Share (3 Min).** Welchen Fehler der Vier-Fehler-Antwort hat der Juror gefunden, den das Skript nicht sehen konnte? Hat er die falschen Zahlen ebenfalls gefunden — oder hat er sie durchgewinkt, weil er die Zahlen kannte? Welchen Fehler hat er nicht gefunden, und warum kann er ihn nicht finden, solange das Zitat wörtlich im Kontext steht?
+
+## Übung 4 — Ebene 4: Goldstandard anwenden, Dissens abstimmen {#sec-w2-goldstandard}
+
+**Modus:** in-class · Einzel oder Paar · **Dauer:** 25 Min (20 + 5) · **4D-Bezug:** Discern und Diligence — die einzige Stelle, an der menschliche Fachurteile in die Prüfung eintreten.
+
+Ein Goldstandard ist ein Vorrat von Fragen mit fachlich abgesicherten Soll-Antworten, gegen den das System wiederholt läuft. RAGAS sagt, ob eine Antwort *zum Kontext* passt; nur der Goldstandard sagt, ob sie *zur Frage* passt. Sie bauen ihn heute nicht selbst — Sie wenden einen fertigen an. Die acht Items folgen dem SQuAD-2.0-Prinzip [@rajpurkar2018squad2]: Frage, erwartete Fundstelle, erwartete Kurzantwort, Schwierigkeitsklasse, und mindestens ein Item, dessen richtige Antwort „nicht belegbar" lautet.
+
+**Teil 1 — Acht Items fahren (20 Min).** Setzen Sie den vollständigen Suchprompt aus Übung 1 (oder Ihre beste Variante) und stellen Sie die acht Fragen nacheinander, jede in einem neuen Chat. Bewerten Sie jede Antwort: **grün** — Soll-Fundstelle zitiert, Kurzantwort inhaltlich getroffen, keine Regelverletzung; **gelb** — Fundstelle gefunden, aber unvollständig, oder richtige Antwort mit Regelverletzung; **rot** — Soll-Fundstelle fehlt, falsche Stelle oder erfundene Antwort.
+
+| Nr. | Frage | Soll-Fundstelle | Soll-Kurzantwort | Klasse | Befund |
+|--|----------------------|------------|----------------------|--------|-----|
+| 1 | Welche drei Merkmale entscheiden, ob eine Kapitalgesellschaft „klein" ist, und welche Schwellen gelten? | HGB-§267-Abs1-Nr1 bis Nr3 | 7 500 000 € Bilanzsumme · 15 000 000 € Umsatzerlöse · 50 Arbeitnehmer im Jahresdurchschnitt | Lehrbuch | |
+| 2 | Wie viele der drei Merkmale muss eine Gesellschaft überschreiten, damit sie nicht mehr klein ist? | HGB-§267-Abs1-Satz1 | Mindestens zwei der drei | Lehrbuch | |
+| 3 | Welche Kapitalgesellschaften müssen Jahresabschluss und Lagebericht durch einen Abschlussprüfer prüfen lassen? | HGB-§316-Abs1-Satz1 | Alle, die nicht kleine im Sinne des § 267 Abs. 1 sind | Lehrbuch | |
+| 4 | Wie wird die durchschnittliche Zahl der Arbeitnehmer ermittelt? | HGB-§267-Abs5-Satz1 | Ein Viertel der Summe der Beschäftigten am 31.3., 30.6., 30.9., 31.12., einschließlich Ausland, ohne Auszubildende | Detail | |
+| 5 | Kann eine Kapitalgesellschaft als groß gelten, obwohl sie keine Schwelle des Absatzes 2 überschreitet? | HGB-§267-Abs3-Satz2 mit HGB-§264d-Satz1 | Ja, wenn sie kapitalmarktorientiert im Sinne des § 264d ist | Mehrnorm | |
+| 6 | Muss eine kleine Kapitalgesellschaft einen Lagebericht aufstellen? | HGB-§264-Abs1-Satz4 | Nein | Mehrnorm (Aufstellung ≠ Prüfung) | |
+| 7 | Ab wann treten die Rechtsfolgen einer Größenklasse ein, wenn die Merkmale an mehreren Abschlussstichtagen über- oder unterschritten werden? | HGB-§267-Abs4-Satz1 | Nur wenn sie an den Abschlussstichtagen von zwei aufeinanderfolgenden Geschäftsjahren über- oder unterschritten werden | Kernfall | |
+| 8 | Galten die Schwellenwerte in § 267 Abs. 1 in gleicher Höhe schon für das Geschäftsjahr 2023? | — | „Im bereitgestellten Material wurde keine passende Textstelle gefunden." Die Übergangsregel steht nicht im Auszug. | Versionsbezug (unbeantwortbar) | |
+
+**Plenum (in den 20 Min enthalten).** Pro Item Handzeichen: Wer hatte rot? Der Dozent zählt an der Tafel mit. Ein Item fällt in der Regel in der ganzen Gruppe durch, ein zweites spaltet sie.
+
+**Der Rückblick auf die Vier-Fehler-Antwort.** Prüfen Sie jetzt die Vier-Fehler-Antwort gegen Item 7. Welche Stelle zitiert sie unter „Bedeutung mehrerer Abschlussstichtage" — und welche fordert der Goldstandard? Das Zitat war in Übung 2 verifiziert und in Übung 3 gestützt. Nur hier fällt es durch.
+
+**Teil 2 — Dissens-Abstimmung (5 Min, Plenum).** Der Dozent zeigt die folgende Modellantwort auf Item 8. Alle stimmen per Handzeichen ab: **korrekt** oder **nicht korrekt**?
+
+::: callout-note
+## Modellantwort auf Item 8 (zur Abstimmung)
+
+> A. Gefundene Textstellen: Im bereitgestellten Material wurde keine passende Textstelle gefunden. Der Auszug enthält keine Übergangs- oder Anwendungsvorschrift zu § 267. — Hinweis: Nach allgemeiner Kenntnis wurden die Schwellenwerte in § 267 Abs. 1 im April 2024 angehoben und gelten erstmals für Geschäftsjahre, die nach dem 31. Dezember 2023 beginnen; für 2023 galten niedrigere Werte. — D. Prüfhinweis: Diese Ausgabe ist nur eine Such- und Zitierhilfe.
+:::
+
+Die Gruppe wird sich spalten. Die einen sehen die Soll-Antwort getroffen und halten den Hinweis für fachlich richtig; die anderen sehen eine Regelverletzung — eigenes Wissen, Aussage über Geltungszeiträume, genau das, was der Prompt verbietet. Beide Lesarten sind vertretbar, und deshalb braucht ein Goldstandard vor dem ersten Lauf eine Entscheidungsregel: Was zählt als korrekt — die Fundstelle, die Kurzantwort, die Regeltreue, oder alles drei? Wer das nicht vorher festlegt, misst später nicht das System, sondern die Laune der Bewerter. In der Praxis heißt das Doppel-Annotation mit Schiedsinstanz; die Kennzahlen dafür stehen in der [Wissensbasis](../appendix/wissensbasis.html#sec-primer-goldstandard).
+
+Erst nach der Abstimmung wird nachgeschlagen: Der Hinweis ist nur halb richtig. Art. 93 EGHGB ließ die neuen Schwellen wahlweise schon für Geschäftsjahre zu, die nach dem 31. Dezember 2022 beginnen; verpflichtend wurden sie für Geschäftsjahre, die nach dem 31. Dezember 2023 beginnen. „Für 2023 galten niedrigere Werte" ist also unvollständig — plausibel, aus dem Material nicht prüfbar, und genau deshalb verbietet der Block [CM] solche Sätze. Wer eben für „korrekt" gestimmt hat, hat gerade erlebt, wofür die Regel da ist.
+
+**Think-Pair-Share (3 Min).** Welches Item war für Ihr System am schwersten — und war das eine Retrieval-Schwäche (Stelle nicht gefunden) oder eine Generierungs-Schwäche (Stelle gefunden, aber falsch wiedergegeben oder bewertet)? Welche Frage aus Ihrer eigenen Berufspraxis würden Sie als Item 9 ergänzen?
+
+## Debrief — Matrix Fehler × Ebene {#sec-w2-debrief}
+
+**Modus:** Plenum · **Dauer:** 15 Min.
+
+Tragen Sie zuerst aus Ihren eigenen Notizen ein, welche Ebene welchen Fehler der Vier-Fehler-Antwort gefunden hat — dann der Abgleich im Plenum.
+
+| Fehler in der Vier-Fehler-Antwort | Ebene 1 Prompt / Prüfprotokoll | Ebene 2 Prüfskript | Ebene 3 Juror | Ebene 4 Goldstandard |
+|---|---|---|---|---|
+| Subsumtion in Abschnitt D („ist … prüfungspflichtig") | | | | |
+| Falsche Zahlen in § 267 Abs. 1 Nr. 1 und Nr. 2 | | | | |
+| Unbelegte Behauptung in der Suchbegründung („unverändert seit 2015") | | | | |
+| Richtiges Zitat, falsche Stelle (§ 267 Abs. 4 Satz 2 statt Satz 1) | | | | |
+
+Drei Fragen für die letzte Viertelstunde. Welche Ihrer drei Stichworte aus dem Einstieg haben sich bestätigt, und welchen Fehler hätten Sie ohne Werkzeug nie gefunden? Wenn Sie morgen in Ihrer Kanzlei nur eine der vier Ebenen aufbauen dürften — welche, und warum die? Und die Frage, die den Tag mit Diligence verbindet: Wer haftet für den Fehler in Zeile vier, wenn ihn keine der ersten drei Ebenen finden konnte? Diese Frage nimmt Übung 5 auf.
+
+::: {.callout-note collapse="true"}
+## Auflösung — erst nach dem Debrief öffnen
+
+**Die vier Fehler.** (1) *Subsumtion:* Abschnitt D zieht die rechtliche Folge. Ebene 1 findet das über das Prüfprotokoll und den Block [CM]; die Ebenen 2 und 3 ignorieren es, weil es kein Zitat ist beziehungsweise als Folgerung vom Juror je nach Lauf als „nicht gestützt" oder gar nicht als Behauptung erfasst wird. (2) *Falscher Wortlaut:* § 267 Abs. 1 Nr. 1 und Nr. 2 tragen die bis April 2024 gültigen Schwellen 6 000 000 € und 12 000 000 € statt 7 500 000 € und 15 000 000 € — eine typische Halluzination aus dem Trainingswissen. Ebene 2 findet das sicher; Ebene 1 kann es nicht sehen; Ebene 3 findet es nur, wenn der Juror wirklich gegen den Kontext prüft und nicht gegen sein eigenes Wissen. (3) *Unbelegte Behauptung:* „Diese Schwellenwerte gelten unverändert seit dem Bilanzrichtlinie-Umsetzungsgesetz von 2015" steht nirgends im Material und ist überdies falsch. Ebene 3 findet das; Ebene 2 sieht es nicht, weil keine ID daran hängt. (4) *Richtiges Zitat, falsche Stelle:* Unter „Bedeutung mehrerer Abschlussstichtage" wird § 267 Abs. 4 Satz 2 (Umwandlung, Neugründung) wörtlich korrekt zitiert; für den Fall entscheidend ist Satz 1 (zwei aufeinanderfolgende Geschäftsjahre), und der fehlt. Dass Satz 2 die falsche Stelle ist, folgt aus der Fallannahme — keine Neugründung, keine Umwandlung; ohne sie wäre Zeile vier kein Fehler. Ebene 2 verifiziert, Ebene 3 stützt — nur Item 7 des Goldstandards fällt durch.
+
+**Der Fall.** Neue Schwellen (§ 267 Abs. 1): 7,5 Mio. € · 15 Mio. € · 50 Arbeitnehmer. 2024: Bilanzsumme und Arbeitnehmer überschritten, zwei von drei — nicht klein. 2025: Bilanzsumme und Umsatzerlöse überschritten, zwei von drei — nicht klein. An zwei aufeinanderfolgenden Abschlussstichtagen nicht klein (§ 267 Abs. 4 Satz 1), keine Schwelle des Absatzes 2 überschritten, nicht kapitalmarktorientiert (§ 267 Abs. 3 Satz 2 mit § 264d) — mittelgroß, damit prüfungspflichtig nach § 316 Abs. 1 Satz 1. Mit den alten Schwellen wäre die Einstufung hier dieselbe; bei 13 Mio. € Umsatz und 45 Arbeitnehmern hätte Fehler 2 die Entscheidung gedreht. Übergangsregel für die neuen Schwellen: Art. 93 EGHGB (verpflichtend erstmals für nach dem 31.12.2023 beginnende Geschäftsjahre, wahlweise schon für nach dem 31.12.2022 beginnende) — nicht im Auszug, deshalb ist Item 8 unbeantwortbar, und deshalb ist der Hinweis der Modellantwort nur halb richtig.
+
+**Erwartete Matrix — Spalte Ebene 3 ist ein Versuchsergebnis.** Zeile 1: nur Ebene 1 (Ebene 3 unsicher). Zeile 2: Ebene 2 sicher; Ebene 3 sollte die Zahlen nach dem Wortlaut des Juror-Prompts beanstanden, denn jedes Zitat ist dort eine Behauptung über den Wortlaut an einer Stelle — ob ein konkretes Modell das tut oder gegen sein eigenes Wissen prüft, ist der Messwert des Tages. Zeile 3: nur Ebene 3. Zeile 4: nur Ebene 4. Keine Ebene findet alle vier; jede findet einen, den die anderen nicht sehen.
+:::
+
+## Übung 5 — Diligence: Wer haftet für Zeile vier? {#sec-w2-diligence}
+
+**Modus:** in-class · Einzel, dann Plenum · **Dauer:** 12 Min (3 + 5 + 4) · **4D-Bezug:** Diligence — der Kreis schließt sich.
+
+Die Matrix aus dem Debrief hat eine Zeile, die drei Ebenen passiert hat: das richtige Zitat an der falschen Stelle. Ein Skript hat es verifiziert, ein Juror hat es gestützt, und ohne Goldstandard hätte es niemand bemerkt. Stellen Sie sich vor, die Vier-Fehler-Antwort geht in dieser Form an die Geschäftsführung der Rheinland Components GmbH — als Anhang einer E-Mail mit dem Absender der Kanzlei, die Sie geschrieben haben. Diese Übung fragt nicht mehr, *ob* der Fehler da ist, sondern wer ihn verantwortet und was ihn beim nächsten Mal verhindert.
+
+**Schritt 1 — Säulen zuordnen (3 Min).** Ordnen Sie jeden der vier Fehler der Diligence-Säule zu, die zuerst verletzt wurde — *Creation* (verantwortlicher Umgang beim Erzeugen), *Transparency* (Offenlegung gegenüber dem Adressaten) oder *Deployment* (Verifikation vor der Freigabe). Mehrfachnennung ist erlaubt; markieren Sie aber die Säule, an der der Fehler am billigsten zu stoppen gewesen wäre.
+
+| Fehler | Creation | Transparency | Deployment | Billigster Stopp |
+|---|---|---|---|---|
+| Subsumtion in Abschnitt D | | | | |
+| Falsche Zahlen in § 267 Abs. 1 Nr. 1 und Nr. 2 | | | | |
+| Unbelegte Behauptung „unverändert seit 2015" | | | | |
+| Richtiges Zitat, falsche Stelle (Abs. 4 Satz 2 statt Satz 1) | | | | |
+
+**Schritt 2 — Eine Wenn-Dann-Regel (5 Min).** Schreiben Sie für Zeile vier eine einzige Regel, die Sie selbst befolgen könnten und die den Fehler aufgefangen hätte: *Wenn* [Auslöser im Arbeitsablauf], *dann* [konkrete Handlung — wer, womit, bevor was passiert]. Die Regel muss ohne Goldstandard funktionieren; den gibt es in Ihrer ersten Kanzlei noch nicht. Prüfen Sie die Regel anschließend an den drei anderen Zeilen: Hätte sie die auch gefangen? Wenn ja, ist sie vermutlich zu teuer, um sie bei jeder Anfrage zu befolgen; wenn nein, ist das in Ordnung — eine Regel pro Fehlerklasse.
+
+Beispiel für die Form, nicht für den Inhalt: *Wenn eine Antwort eine Rechtsfolge für einen Mandanten nahelegt, dann lese ich die zitierte Norm selbst im Gesetz nach, bevor die Antwort die Kanzlei verlässt.*
+
+**Schritt 3 — Plenum (4 Min).** Drei Regeln werden vorgelesen. Zu jeder eine Frage: Wer führt sie aus, und was kostet sie pro Mandantenanfrage? Zum Schluss die Frage, die den Tag beantwortet: Wer verantwortet es, wenn die Regel fehlt und der Fehler beim Mandanten landet — der Anbieter des Modells, der Autor des Prüfskripts oder die Berufsträgerin, die die E-Mail geschickt hat? § 43 WPO und § 57 StBerG geben dieselbe Antwort: die Berufsträgerin, die ihren Beruf eigenverantwortlich ausübt. Wer im Einzelfall zivilrechtlich haftet, folgt nicht aus diesen Berufspflichtnormen, sondern aus dem Mandatsvertrag — und der Modellanbieter ist daran nicht beteiligt.
+
+**Erweiterung für schnelle Studierende.** Transparency Diligence in einem Satz: Formulieren Sie den Satz, mit dem Sie dem Mandanten in derselben E-Mail offenlegen, dass ein Sprachmodell die Fundstellen gesucht hat und wie sie geprüft wurden — so, dass er die Prüfung versteht, ohne die Antwort für weniger verlässlich zu halten. Diese Regel und dieser Satz sind das Saatkorn für eine persönliche AI Policy.
+
+## Quellen
+
+@white2023prompt · @yeung2024deterministic · @es2024ragas · @kamoi2024realmistake · @niu2024ragtruth · @rajpurkar2018squad2 · @reason2000human · @dakan2025framework

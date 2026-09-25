@@ -38,12 +38,16 @@ book:
       chapters:
         - parts/01-workshop01.qmd
         - parts/02-uebungen-w1.qmd
-    # Für den 24.09. ausgeblendet (nur Workshop-Tag 1 zeigen) — vor dem 25.09. wieder einkommentieren:
-    # - part: "Teil 2 — Workshop 2 (Fr, 25.09.)"
-    #   chapters:
-    #     - parts/03-workshop02.qmd
-    #     - parts/04-uebungen-w2.qmd
+    - part: "Teil 2 — Workshop 2 (Fr, 25.09.)"
+      chapters:
+        - parts/03-workshop02.qmd
+        - parts/04-uebungen-w2-2026-ws.qmd
+    # Übungen W2, Fassung 2026-WS (einfache Variante): Recap Mermaid/Signavio + Recap Prompt-Patterns, dann die bewährten Übungen ohne UiPath.
+    # Fachlich vertiefte Fassung (Vier-Fehler-Antwort, Prüfskript, Juror, Goldstandard) bewusst NICHT gelistet — sie liegt als unverlinkte
+    # Testseite unter drafts/untested-draft-ws2-uebungen-fachlich-vertieft.qmd und wird separat gerendert:
+    #     quarto render drafts/untested-draft-ws2-uebungen-fachlich-vertieft.qmd --profile single --to html
     # Hausaufgaben aus dem Online-Skript entfernt; Quelle bleibt erhalten unter parts/05-hausaufgaben.qmd
+    # Ungekürzte alte Übungsseite W2 (inkl. UiPath) archiviert: parts/04-uebungen-w2-alt.qmd (nicht gerendert).
     - part: "Anhang"
       chapters:
         - appendix/quickstart.qmd

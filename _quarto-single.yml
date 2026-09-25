@@ -1,0 +1,6 @@
+# Profil für Einzelseiten außerhalb des Buchs (z. B. unverlinkte Test-Entwürfe in drafts/).
+# Aufruf:  quarto render drafts/<datei>.qmd --profile single --to html
+# Ergebnis landet unter docs/drafts/<datei>.html — erreichbar nur per direktem Link,
+# nicht über Seitenleiste, Suche oder Vor/Zurück-Navigation des Buchs.
+project:
+  type: default
