@@ -385,15 +385,15 @@ Ein BPMN-Modell beantwortet vier Fragen sichtbar: *Wer* macht *was* in welcher *
 
 Ein gutes BPMN-Modell ist auch ohne Erklärung verständlich. Vor dem ersten eigenen Modell empfiehlt sich, zwei bis drei Beispiele aus Lehrbüchern oder offiziellen BPMN-Galerien zu lesen. Wer fünf Standard-Symbole sicher unterscheidet, kann achtzig Prozent der praxisrelevanten Modelle entziffern.
 
-### Modellieren in Signavio (Academic Edition)
+### Modellieren mit dem Camunda Desktop Modeler
 
-Studierende der TH Köln nutzen [Signavio Academic Edition](https://academic.signavio.com/p/explorer) (kostenfrei mit Hochschul-E-Mail). Vorgehen: nach Login einen neuen Diagrammtyp *BPMN 2.0* anlegen, mit *Start-Ereignis* beginnen, *Aktivitäten* aus der Symbolpalette ziehen, mit *Sequenzflüssen* verbinden, *Pool* und *Lanes* nach Rollen aufsetzen, ein *XOR-Gateway* für die erste Entscheidung einbauen, mit einem *Ende-Ereignis* abschließen. Diagramm als PNG oder PDF exportieren. Wer Signavio nicht nutzen kann, weicht auf [bpmn.io](https://bpmn.io) aus — gleiches Symbol-Set, kleinerer Funktionsumfang.
+Signavio Academic Edition steht Studierenden aktuell nicht mehr zur Verfügung. Empfohlenes Werkzeug: der [Camunda Desktop Modeler](https://docs.camunda.io/downloads/) — kostenfreier Download für Windows, macOS und Linux, kein Account nötig. Eine kurze Einführung geben die Videos auf dem offiziellen [Camunda-YouTube-Kanal](https://www.youtube.com/user/camundaVideo) (Suchbegriff „Camunda Desktop Modeler Tutorial"). Vorgehen: nach der Installation ein neues *BPMN*-Diagramm anlegen, mit *Start-Ereignis* beginnen, *Aktivitäten* aus der Symbolpalette ziehen, mit *Sequenzflüssen* verbinden, *Pool* und *Lanes* nach Rollen aufsetzen, ein *XOR-Gateway* für die erste Entscheidung einbauen, mit einem *Ende-Ereignis* abschließen. Diagramm als PNG oder PDF exportieren. Wer nichts installieren möchte oder kann, weicht auf [bpmn.io](https://bpmn.io) aus — dieselbe quelloffene Modellierungs-Engine (bpmn-js) im Browser, ohne Anmeldung, mit kleinerem Funktionsumfang.
 
 ### Prozessdenken vor Werkzeugwahl
 
 Ein gutes BPMN-Modell zwingt zur Klärung *wer macht was wann mit welchem Input und welchem Output* — die Voraussetzung für jede sinnvolle Automatisierungsentscheidung. Erst nach dem Modell entscheidet sich, welche Aktivität sich für Process Automation (regelbasiertes RPA) und welche für Cognitive Automation (KI-gestützt) eignet.
 
-*Querverweise:* [Workshop 2, Block I](../parts/03-workshop02.qmd) · [Hausaufgabe — BPMN-Modellierung in Signavio](../parts/04-uebungen-w2-2026-ws.qmd#sec-bpmn).
+*Querverweise:* [Workshop 2, Block I](../parts/03-workshop02.qmd) · [Hausaufgabe — BPMN-Modellierung im Camunda Desktop Modeler](../parts/04-uebungen-w2-2026-ws.qmd#sec-bpmn).
 
 ## Retrieval-Augmented Generation (RAG) {#sec-rag}
 
@@ -437,7 +437,7 @@ Kreative Aufgaben ohne Quellenbedarf — RAG bringt nichts, wenn die Aufgabe ein
 
 ### Warum Mermaid in der Prozessmodellierung?
 
-Mermaid ist die niedrigste Einstiegshürde in Prozessdiagramme: keine Installation, keine Maus-Klickerei, sofortige visuelle Rückmeldung. Für ein erstes Modell, eine Skizze oder eine Brainstorm-Variante reicht Mermaid vollkommen. Wer von dort zu BPMN 2.0 in Signavio wechselt, hat den gedanklichen Aufwand bereits hinter sich — Aktivitäten, Entscheidungen, Reihenfolge — und arbeitet dort nur noch an Notationspräzision und Swimlanes.
+Mermaid ist die niedrigste Einstiegshürde in Prozessdiagramme: keine Installation, keine Maus-Klickerei, sofortige visuelle Rückmeldung. Für ein erstes Modell, eine Skizze oder eine Brainstorm-Variante reicht Mermaid vollkommen. Wer von dort zu BPMN 2.0 im Camunda Desktop Modeler wechselt, hat den gedanklichen Aufwand bereits hinter sich — Aktivitäten, Entscheidungen, Reihenfolge — und arbeitet dort nur noch an Notationspräzision und Swimlanes.
 
 ### Mit KI gebaute Mermaid-Diagramme
 
@@ -470,13 +470,13 @@ Sprachmodelle sind beim Mermaid-Erzeugen erstaunlich verlässlich, weil die Synt
 4. Visuell prüfen: Fehlen Schritte? Sind die Entscheidungen sinnvoll verzweigt?
 5. Iterieren: dem Modell mitteilen, was fehlt oder zu viel ist — der zweite Lauf wird in 80 Prozent der Fälle deutlich besser.
 6. Diagramm als PNG oder SVG exportieren.
-7. Bei Bedarf in Signavio überführen für die saubere BPMN-Variante mit Swimlanes.
+7. Bei Bedarf in den Camunda Desktop Modeler überführen für die saubere BPMN-Variante mit Swimlanes.
 
 ### Wann KI-Erzeugung sinnvoll ist — und wann nicht
 
 KI-erzeugte Mermaid-Diagramme sind dort sinnvoll, wo die kognitive Hauptarbeit *vor* dem Diagramm liegt — also in der Klärung, was eigentlich passiert. Das Modell übernimmt die Notations-Last und liefert den Erst-Entwurf, der Mensch übernimmt die Korrektur. Wo die kognitive Hauptarbeit *im* Diagramm liegt — etwa bei kontrovers verhandelten Prozessen oder Audit-relevanten Modellen mit hoher Rechtsverbindlichkeit — schadet die KI-Erzeugung mehr, als sie nützt: Studierende übernehmen den Erst-Entwurf zu früh und überspringen den eigenen Modellierungsschritt.
 
-*Querverweise:* [Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate)](../parts/04-uebungen-w2-2026-ws.qmd#sec-mermaid) · [Hausaufgabe — BPMN in Signavio](../parts/04-uebungen-w2-2026-ws.qmd#sec-bpmn) · [BPMN-Grundlagen](#sec-bpmn).
+*Querverweise:* [Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate)](../parts/04-uebungen-w2-2026-ws.qmd#sec-mermaid) · [Hausaufgabe — BPMN im Camunda Desktop Modeler](../parts/04-uebungen-w2-2026-ws.qmd#sec-bpmn) · [BPMN-Grundlagen](#sec-bpmn).
 
 ## Primer — Optionen der Qualitätsprüfung im juristischen RAG {#sec-primer-qualitaetspruefung}
 

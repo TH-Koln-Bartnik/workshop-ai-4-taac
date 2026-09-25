@@ -23,7 +23,7 @@ editor:
 ## Vorbereitung
 
 - **Zugang** zu einem RAG-System mit Datei-Upload prüfen (GWDG Academic Cloud RAG/Arcana, NotebookLM, ChatGPT oder Claude mit Upload) — siehe [Quickstart](../appendix/quickstart.qmd).
-- Den [HGB-Auszug](../data/hgb-auszug-pruefungspflicht.txt){target="_blank"} (§§ 264, 264d, 267, 267a, 316) herunterladen; er wird in Übung 7 in das RAG-System hochgeladen.
+- Den [HGB-Auszug](../data/hgb-auszug-pruefungspflicht.txt){target="_blank"} (§§ 264, 264d, 267, 267a, 316) herunterladen; er wird in Übung 8 in das RAG-System hochgeladen.
 - Zwei eigene Dokumente als PDF bereitlegen: die **Prüfungsordnung** (Übung 5) und das **Modulhandbuch** oder ein anderes Dokument aus dem Studienalltag (Übung 4, Recap Describe).
 - **Zugang zur DigiBib** mit der TH-Kennung testen ([Fachgebiet Wirtschaft](https://thb-koeln.digibib.net/eres/subject-area/Wirtschaft?defaults=on){target="_blank"} → Business Source Premier) und ein Werkzeug mit Deep-Research-Modus bereithalten (ChatGPT, Gemini oder Perplexity) — beides für Übung 1 und 2.
 - Optional: die [Wissensbasis](../appendix/wissensbasis.qmd) zu RAG, RAGAS, Goldstandard und Prompt-Patterns überfliegen.
@@ -127,7 +127,8 @@ Pattern-Details unter [Prompt-Pattern-Katalog](../appendix/wissensbasis.qmd#sec-
 
 ➡️ [Übung 5 — Prüfungsordnung mit zweistufigem Dialog-Prompt](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung){.assignment-badge} · 30 Min
 ➡️ [Übung 6 — RAGAS-Metriken mit Tutor-Bot verstehen](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor){.assignment-badge} · 15 Min
-➡️ [Übung 7 — RAG-Suchübung HGB-Prüfungspflicht](04-uebungen-w2-2026-ws.qmd#sec-rag-hgb){.assignment-badge} · 30 Min (Kurzvariante; lang: 45 Min)
+➡️ [Übung 7 — RAGAS-Prüfprozess für einen KI-gestützten Workflow](04-uebungen-w2-2026-ws.qmd#sec-ragas-workflow-onet){.assignment-badge} · 15 Min
+➡️ [Übung 8 — RAG-Suchübung HGB-Prüfungspflicht](04-uebungen-w2-2026-ws.qmd#sec-rag-hgb){.assignment-badge} · 30 Min (Kurzvariante; lang: 45 Min)
 ::::
 
 :::: week-card
@@ -161,7 +162,7 @@ Berufsrechtlicher Rahmen für Tax/Audit/Advisory:
 - **StBerG § 57** — gleichgelagerte Pflichten für Steuerberater. Verschwiegenheit ist eine Berufspflicht, kein Vertragsthema; ihre Verletzung ist Straftat nach § 203 StGB.
 - **DSGVO Art. 5** — Datenschutz-Grundsätze, insbesondere *Zweckbindung* und *Datenminimierung*. Free-Tier-Anbieter trainieren in der Regel auf Eingaben — damit ist Mandantenbezug ausgeschlossen.
 
-➡️ [Übung 8 — Diligence-Risiko-Recherche im Best-of-N](04-uebungen-w2-2026-ws.qmd#sec-diligence-bestof-n){.assignment-badge}
+➡️ [Übung 9 — Diligence-Risiko-Recherche im Best-of-N](04-uebungen-w2-2026-ws.qmd#sec-diligence-bestof-n){.assignment-badge}
 · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)
 ::::
 
@@ -175,28 +176,28 @@ Berufsrechtlicher Rahmen für Tax/Audit/Advisory:
 ## Aufgaben
 
 ::: callout-note
-## Zwei Recherche-Übungen, zwei Recaps, drei Discern-Übungen, eine Diligence-Übung
+## Zwei Recherche-Übungen, zwei Recaps, vier Discern-Übungen, eine Diligence-Übung
 
 **Recherche zum Einstieg (Block 0, 15 Min):** [Übung 1 — Benchmarking per Deep Research](04-uebungen-w2-2026-ws.qmd#sec-deep-research-benchmark){.assignment-badge} [Übung 2 — Suchstrategie-1-Pager für Business Source Premier](04-uebungen-w2-2026-ws.qmd#sec-suchstrategie-bsp){.assignment-badge}
 
 **Recaps zu Tag 1 (in Block 0):** [Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate)](04-uebungen-w2-2026-ws.qmd#sec-mermaid){.assignment-badge} [Übung 4 — Prompt-Patterns am Studienalltag (Recap Describe)](04-uebungen-w2-2026-ws.qmd#sec-prompt-patterns-recap){.assignment-badge}
 
-**Discern (nach Block 1):** [Übung 5 — Prüfungsordnung mit zweistufigem Dialog-Prompt](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung){.assignment-badge} [Übung 6 — RAGAS-Metriken mit Tutor-Bot verstehen](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor){.assignment-badge} [Übung 7 — RAG-Suchübung HGB-Prüfungspflicht](04-uebungen-w2-2026-ws.qmd#sec-rag-hgb){.assignment-badge}
+**Discern (nach Block 1):** [Übung 5 — Prüfungsordnung mit zweistufigem Dialog-Prompt](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung){.assignment-badge} [Übung 6 — RAGAS-Metriken mit Tutor-Bot verstehen](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor){.assignment-badge} [Übung 7 — RAGAS-Prüfprozess für einen KI-gestützten Workflow](04-uebungen-w2-2026-ws.qmd#sec-ragas-workflow-onet){.assignment-badge} [Übung 8 — RAG-Suchübung HGB-Prüfungspflicht](04-uebungen-w2-2026-ws.qmd#sec-rag-hgb){.assignment-badge}
 
-**Diligence (nach Block 2):** [Übung 8 — Diligence-Risiko-Recherche im Best-of-N](04-uebungen-w2-2026-ws.qmd#sec-diligence-bestof-n){.assignment-badge}
+**Diligence (nach Block 2):** [Übung 9 — Diligence-Risiko-Recherche im Best-of-N](04-uebungen-w2-2026-ws.qmd#sec-diligence-bestof-n){.assignment-badge}
 
-**Hausaufgabe bis zur In-Company-Session:** [BPMN-Modellierung in Signavio](04-uebungen-w2-2026-ws.qmd#sec-bpmn){.assignment-badge} [Deep-Research-Bericht gegen die Evidenz halten](04-uebungen-w2-2026-ws.qmd#sec-deep-research-check){.assignment-badge}
+**Hausaufgabe bis zur In-Company-Session:** [BPMN-Modellierung im Camunda Desktop Modeler](04-uebungen-w2-2026-ws.qmd#sec-bpmn){.assignment-badge} [Deep-Research-Bericht gegen die Evidenz halten](04-uebungen-w2-2026-ws.qmd#sec-deep-research-check){.assignment-badge}
 
 Zwei Recherche-Übungen eröffnen den Tag an seiner Leitfrage — wie Arbeitsprozesse in Tax, Audit & Advisory automatisiert und mit generativer KI unterstützt werden und was die Forschung dazu belegt: Übung 1 delegiert das Praxis-Benchmarking an einen Deep-Research-Lauf und legt vorab den Prüfmaßstab fest, Übung 2 baut dieselbe Frage als dokumentierte Suchstrategie in Business Source Premier mit Peer-Review-Limiter und VHB-Journalfilter.
 Die Recaps holen Delegate und Describe von gestern in zwei kurzen Übungen zurück: ein Prozessdiagramm mit *P/C/H/M*-Markierung und ein Alltagsprompt, umgebaut mit den Patterns nach White et al. (2023) — denselben sechs, die Block 1 als Ebene 1 der Qualitätsprüfung einführt.
-Übung 5 wendet die Patterns an der eigenen Prüfungsordnung an und prüft den Output gegen ein Protokoll; Übung 6 erklärt die RAGAS-Metriken sokratisch; Übung 7 hegt ein RAG-System im HGB auf die Rolle der reinen Suchhilfe ein.
-Übung 8 generiert aus einer Diligence-Definition Risikofälle im Best-of-N und leitet eine Wenn-Dann-Schutzregel ab — der Übergang von Discern zu **Diligence** und das Saatkorn für die eigene Personal AI Policy.
+Übung 5 wendet die Patterns an der eigenen Prüfungsordnung an und prüft den Output gegen ein Protokoll; Übung 6 erklärt die RAGAS-Metriken sokratisch; Übung 7 überträgt sie auf einen eigenen KI-Workflow für eine reale O\*NET-Aufgabe; Übung 8 hegt ein RAG-System im HGB auf die Rolle der reinen Suchhilfe ein.
+Übung 9 generiert aus einer Diligence-Definition Risikofälle im Best-of-N und leitet eine Wenn-Dann-Schutzregel ab — der Übergang von Discern zu **Diligence** und das Saatkorn für die eigene Personal AI Policy.
 :::
 
 ## Hintergrund / Werkzeuge / Ressourcen
 
 - **Wissensbasis** — [Prompt-Pattern-Katalog nach White](../appendix/wissensbasis.qmd#sec-prompt-patterns) · [RAG-Grundlagen](../appendix/wissensbasis.qmd#sec-rag) · [Primer Qualitätsprüfung](../appendix/wissensbasis.qmd#sec-primer-qualitaetspruefung) · [Primer Goldstandard](../appendix/wissensbasis.qmd#sec-primer-goldstandard) · [Recht und Berufsstand](../appendix/wissensbasis.qmd#sec-recht).
-- **Material und Werkzeuge der Übungen** — [HGB-Auszug](../data/hgb-auszug-pruefungspflicht.txt){target="_blank"} (§§ 264, 264d, 267, 267a, 316) · [Mermaid Live Editor](https://mermaid.live){target="_blank"} · [Signavio Academic Edition](https://academic.signavio.com/p/explorer){target="_blank"} / [bpmn.io](https://bpmn.io){target="_blank"} · [Mermaid-Prozessdiagramme mit KI](../appendix/wissensbasis.qmd#sec-mermaid-ki) · [BPMN-Grundlagen](../appendix/wissensbasis.qmd#sec-bpmn).
+- **Material und Werkzeuge der Übungen** — [HGB-Auszug](../data/hgb-auszug-pruefungspflicht.txt){target="_blank"} (§§ 264, 264d, 267, 267a, 316) · [Mermaid Live Editor](https://mermaid.live){target="_blank"} · [Camunda Desktop Modeler](https://docs.camunda.io/downloads/){target="_blank"} / [bpmn.io](https://bpmn.io){target="_blank"} · [Mermaid-Prozessdiagramme mit KI](../appendix/wissensbasis.qmd#sec-mermaid-ki) · [BPMN-Grundlagen](../appendix/wissensbasis.qmd#sec-bpmn).
 - **Skills** — [Agent-Skills-Spezifikation und Beispiele (anthropics/skills)](https://github.com/anthropics/skills){target="_blank"} · [skills.sh — Verzeichnis](https://www.skills.sh/){target="_blank"} · [awesome-agent-skills — kuratierte Sammlung](https://github.com/VoltAgent/awesome-agent-skills){target="_blank"} · Beispiel [Analyzing Financial Statements](https://github.com/danedane/anthropic_skills/blob/main/skills/analyzing-financial-statements/SKILL.md){target="_blank"} (Kennzahlen per Python-Skript — Ebene 2) · Hintergrund: @zhang2025skills.
 - **Originalmaterial** — Cheat Sheet und Practical Overview zu Diligence aus @dakan2025framework.
 

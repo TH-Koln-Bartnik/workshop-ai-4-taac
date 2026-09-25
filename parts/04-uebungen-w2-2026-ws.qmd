@@ -1,9 +1,9 @@
 ---
 title: "Übungen Workshop 2 — 2026-WS"
-subtitle: "Zwei Recherche-Übungen, zwei Recaps (Delegate, Describe), dann Discern an eigenen Dokumenten und am HGB, zum Schluss Diligence"
+subtitle: "Zwei Recherche-Übungen, zwei Recaps (Delegate, Describe), dann Discern an eigenen Dokumenten, im eigenen Berufsbild und am HGB, zum Schluss Diligence"
 ---
 
-<!-- Fassung 2026-WS vom 24.09.2026 (einfache Variante). Aufbau (Stand 25.09.2026, durchnummeriert): Übung 1 Deep-Research-Benchmarking und Übung 2 Suchstrategie Business Source Premier (Recherche, 15 Min), Übung 3 Mermaid/Signavio (Recap Delegate), Übung 4 Prompt-Patterns nach White (Recap Describe), danach die bewährten Übungen der Vorfassung ohne UiPath als Übung 5–8; Tutor-Bot-Test-Suite (vormals Übung 7), Regelwand-Abschluss und optionaler 4D-Use-Case (vormals Übung 10) am 25.09. auf Wunsch von Roman komplett gestrichen (siehe CHANGELOG). Anker unverändert. Die ausführliche fachliche Fassung (Vier-Fehler-Antwort, Prüfskript, Juror-Prompt, Goldstandard) liegt als unverlinkte Testseite unter drafts/untested-draft-ws2-uebungen-fachlich-vertieft.qmd (Render nur mit --profile single, siehe README) und wartet auf die fachliche Prüfung; die ungekürzte Vorfassung mit UiPath unter parts/04-uebungen-w2-alt.qmd (wird nicht gerendert). -->
+<!-- Fassung 2026-WS vom 24.09.2026 (einfache Variante). Aufbau (Stand 25.09.2026, durchnummeriert): Übung 1 Deep-Research-Benchmarking und Übung 2 Suchstrategie Business Source Premier (Recherche, 15 Min), Übung 3 Mermaid/Camunda Desktop Modeler (Recap Delegate; Signavio-Zugang am 25.09. nachmittags durch Camunda Desktop Modeler ersetzt, siehe CHANGELOG), Übung 4 Prompt-Patterns nach White (Recap Describe), danach die bewährten Übungen der Vorfassung ohne UiPath als Übung 5–6 und 8–9; Tutor-Bot-Test-Suite (vormals Übung 7), Regelwand-Abschluss und optionaler 4D-Use-Case (vormals Übung 10) am 25.09. auf Wunsch von Roman komplett gestrichen (siehe CHANGELOG). Übung 7 neu (25.09. nachmittags): RAGAS-Prüfprozess für einen KI-gestützten Workflow an einer O\*NET-Aufgabe (13-2011.00 Accountants and Auditors), zwischen RAGAS-Tutor und RAG-Suchübung HGB eingefügt. Anker unverändert. Die ausführliche fachliche Fassung (Vier-Fehler-Antwort, Prüfskript, Juror-Prompt, Goldstandard) liegt als unverlinkte Testseite unter drafts/untested-draft-ws2-uebungen-fachlich-vertieft.qmd (Render nur mit --profile single, siehe README) und wartet auf die fachliche Prüfung; die ungekürzte Vorfassung mit UiPath unter parts/04-uebungen-w2-alt.qmd (wird nicht gerendert). -->
 
 ::: th-color-bar
 :::
@@ -12,26 +12,28 @@ subtitle: "Zwei Recherche-Übungen, zwei Recaps (Delegate, Describe), dann Disce
 #### Was Sie nach diesen Übungen können
 
 - **Recherche (Übung 1 und 2)** — einen Deep-Research-Auftrag so lesen, dass klar ist, welche Quellengruppen und welche Prüfregel er dem Modell vorgibt, und dieselbe Frage als dokumentierte **Suchstrategie in Business Source Premier** mit Peer-Review-Limiter und VHB-Journalfilter anlegen,
-- **Übung 3 (Recap Delegate)** — einen einfachen Prozess in **Mermaid** modellieren, jede Aktivität als Process-, Cognitive- oder Hybrid-Automation einordnen und sagen, welche Konfiguration (LLM allein, erweitertes LLM, Agent) sie übernehmen könnte — und als Hausaufgabe bis zur In-Company-Session dasselbe Modell als BPMN in **Signavio**,
+- **Übung 3 (Recap Delegate)** — einen einfachen Prozess in **Mermaid** modellieren, jede Aktivität als Process-, Cognitive- oder Hybrid-Automation einordnen und sagen, welche Konfiguration (LLM allein, erweitertes LLM, Agent) sie übernehmen könnte — und als Hausaufgabe bis zur In-Company-Session dasselbe Modell als BPMN im **Camunda Desktop Modeler**,
 - **Übung 4 (Recap Describe)** — einen Alltagsprompt mit drei bis sechs **Prompt-Patterns** nach White et al. (2023) so umbauen, dass die Antwort belegt, strukturiert und prüfbar wird,
 - die eigene **Prüfungsordnung** mit einem zweistufigen Dialog-Prompt quellengebunden befragen und die Output-Qualität gegen ein Prüfprotokoll abklopfen,
 - die vier **RAGAS-Metriken** mit Hilfe eines Tutor-Bots in eigenen Worten und Analogien erklären,
+- für eine reale Berufsaufgabe aus **O\*NET** einen **RAGAS-Prüfprozess** für einen KI-gestützten Workflow entwickeln,
 - eine **RAG-Suche im HGB** so einhegen, dass die KI nur als quellengebundene Suchhilfe agiert,
 - aus einer **Diligence-Definition** mehrere Risikofälle im Best-of-N-Schema generieren und einen aussagekräftigen auswählen.
 :::
 
-Die Seite beginnt mit zwei kurzen Recherche-Übungen (15 Min) zur Frage des Tages — wie Arbeitsprozesse in Tax, Audit & Advisory automatisiert und mit generativer KI unterstützt werden und was die Forschung dazu belegt: ein Deep-Research-Lauf für das Praxis-Benchmarking und eine dokumentierte Suchstrategie in Business Source Premier für die begutachtete Evidenz. Dann folgen zwei Recaps zu den Kompetenzen von gestern: **Delegate** am Prozessdiagramm — erst wer die Aktivitäten eines Prozesses benennen kann, kann sagen, welche davon eine KI übernehmen soll — und **Describe** an einem Prompt aus dem Studienalltag, umgebaut mit den Patterns aus dem Katalog von @white2023prompt. Dann folgen vier Übungen zu **Discern** und **Diligence**: zwei Verstehens-Übungen zu Quellenbindung und RAG-Evaluation, die RAG-Suche im HGB und die Diligence-Übung im Best-of-N. Die Übungen greifen ineinander: Übung 5 sucht die Patterns aus Übung 4 im großen System-Prompt wieder, Übung 7 setzt an der Aktivität an, die Sie in Übung 3 markiert haben. Den Schluss bildet Übung 8, die aus einer Diligence-Definition Risikofälle im Best-of-N ableitet und eine Wenn-Dann-Schutzregel formuliert.
+Die Seite beginnt mit zwei kurzen Recherche-Übungen (15 Min) zur Frage des Tages — wie Arbeitsprozesse in Tax, Audit & Advisory automatisiert und mit generativer KI unterstützt werden und was die Forschung dazu belegt: ein Deep-Research-Lauf für das Praxis-Benchmarking und eine dokumentierte Suchstrategie in Business Source Premier für die begutachtete Evidenz. Dann folgen zwei Recaps zu den Kompetenzen von gestern: **Delegate** am Prozessdiagramm — erst wer die Aktivitäten eines Prozesses benennen kann, kann sagen, welche davon eine KI übernehmen soll — und **Describe** an einem Prompt aus dem Studienalltag, umgebaut mit den Patterns aus dem Katalog von @white2023prompt. Dann folgen fünf Übungen zu **Discern** und **Diligence**: zwei Verstehens-Übungen zu Quellenbindung und RAG-Evaluation, ein eigener RAGAS-Prüfprozess an einer O\*NET-Aufgabe, die RAG-Suche im HGB und die Diligence-Übung im Best-of-N. Die Übungen greifen ineinander: Übung 5 sucht die Patterns aus Übung 4 im großen System-Prompt wieder, Übung 7 wendet die RAGAS-Metriken aus Übung 6 auf einen selbst gewählten Fall an, Übung 8 setzt an der Aktivität an, die Sie in Übung 3 markiert haben. Den Schluss bildet Übung 9, die aus einer Diligence-Definition Risikofälle im Best-of-N ableitet und eine Wenn-Dann-Schutzregel formuliert.
 
 | Abschnitt | 4D | Dauer |
 |------------------------|------------------------|------------------------|
 | Übung 1 — Benchmarking per Deep Research (Hausaufgabe: Bericht prüfen) | Delegate · Discern | 6 Min |
 | Übung 2 — Suchstrategie-1-Pager für Business Source Premier (inkl. Think-Pair-Share zu 1 und 2) | Describe · Discern | 9 Min |
-| Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate; Hausaufgabe: BPMN in Signavio) | Delegate | 18 Min |
+| Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate; Hausaufgabe: BPMN mit Camunda Desktop Modeler) | Delegate | 18 Min |
 | Übung 4 — Prompt-Patterns am Studienalltag (Recap Describe) | Describe | 12 Min |
 | Übung 5 — Prüfungsordnung mit zweistufigem Dialog-Prompt | Describe · Discern | 30 Min |
 | Übung 6 — RAGAS-Metriken mit Tutor-Bot verstehen | Discern | 15 Min |
-| Übung 7 — RAG-Suchübung HGB-Prüfungspflicht | Discern · Diligence | 30 Min (Kurzvariante; lang: 45 Min) |
-| Übung 8 — Diligence-Risiko-Recherche im Best-of-N | Diligence | 22 Min |
+| Übung 7 — RAGAS-Prüfprozess für einen KI-gestützten Workflow (O\*NET-Aufgabe) | Describe · Discern | 15 Min |
+| Übung 8 — RAG-Suchübung HGB-Prüfungspflicht | Discern · Diligence | 30 Min (Kurzvariante; lang: 45 Min) |
+| Übung 9 — Diligence-Risiko-Recherche im Best-of-N | Diligence | 22 Min |
 
 ## Übung 1 — Benchmarking per Deep Research {#sec-deep-research-benchmark}
 
@@ -242,19 +244,19 @@ Wer den Mermaid-Code lieber von einem Sprachmodell schreiben lässt, findet die 
 
 **Think-Pair-Share (4 Min).** Vergleichen Sie Ihre *P/C/H/M*-Markierungen mit denen Ihres Nachbarn: Wo sind Sie sich uneinig — und liegt das am Prozess oder an der Einschätzung, was ein Modell heute kann? Welche Stelle Ihres Diagramms ließ sich in Mermaid leichter zeichnen als auf Papier, wo stieß die Notation an Grenzen?
 
-### Hausaufgabe bis zur In-Company-Session — BPMN-Modellierung in Signavio {#sec-bpmn}
+### Hausaufgabe bis zur In-Company-Session — BPMN-Modellierung im Camunda Desktop Modeler {#sec-bpmn}
 
 **Modus:** Hausaufgabe · Einzel oder Paar · **Dauer:** ca. 30 Min · **Abgabe:** zur nächsten Sitzung (In-Company-Session mit den Wirtschaftsprüfern, nächste Woche) · **4D-Bezug:** Delegate / Brücke zu *Process vs. Cognitive Automation*.
 
-Anders als bei Mermaid sind in Signavio die Symbole standardisiert (BPMN 2.0.2, @omg2014bpmn), Zuständigkeiten lassen sich über Swimlanes sichtbar machen, und das Modell ist auditierbar — die Notation, in der Prozesse in Kanzleien und Prüfungsgesellschaften tatsächlich dokumentiert werden. Hintergrund: [Wissensbasis · BPMN-Grundlagen](../appendix/wissensbasis.qmd#sec-bpmn).
+Anders als bei Mermaid sind im Camunda Desktop Modeler die Symbole standardisiert (BPMN 2.0.2, @omg2014bpmn), Zuständigkeiten lassen sich über Swimlanes sichtbar machen, und das Modell ist auditierbar — die Notation, in der Prozesse in Kanzleien und Prüfungsgesellschaften tatsächlich dokumentiert werden. Hintergrund: [Wissensbasis · BPMN-Grundlagen](../appendix/wissensbasis.qmd#sec-bpmn).
 
-**Schritt 1 — Account anlegen (5 Min).** [Signavio Academic Edition](https://academic.signavio.com/p/explorer){target="_blank"} — kostenfrei mit Hochschul-E-Mail, kein Download nötig. Wer keinen Account anlegen kann oder möchte, nutzt [bpmn.io](https://bpmn.io){target="_blank"} ohne Anmeldung.
+**Schritt 1 — Werkzeug einrichten (5 Min).** Signavio Academic Edition steht Studierenden aktuell nicht mehr zur Verfügung. Stattdessen: [Camunda Desktop Modeler](https://docs.camunda.io/downloads/){target="_blank"} herunterladen und installieren — kostenfrei, kein Account nötig, für Windows, macOS und Linux. Eine kurze Einführung geben die Videos auf dem offiziellen [Camunda-YouTube-Kanal](https://www.youtube.com/user/camundaVideo){target="_blank"} (Suchbegriff „Camunda Desktop Modeler Tutorial"). Wer nichts installieren möchte, nutzt als Alternative [bpmn.io](https://bpmn.io){target="_blank"} im Browser, ohne Anmeldung.
 
-**Schritt 2 — Modellieren (20 Min).** Sachverhalt: **Rechnungseingang in einer mittelgroßen Steuerkanzlei** — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung. Reicher als die Mandantenanfrage oben; wer mag, übernimmt stattdessen den eigenen Mermaid-Prozess aus Übung 3. In Signavio einen neuen Diagrammtyp *BPMN 2.0* anlegen. Mindestens zwei Rollen identifizieren und als Swimlanes setzen (z. B. *Sachbearbeiter* und *Partner*). Mindestens fünf Aktivitäten platzieren und mit Sequenzflüssen verbinden. Mindestens einen XOR-Entscheidungspunkt einsetzen. Jede Aktivität mit *P*, *C*, *H* oder *M* markieren und in einem Satz pro Aktivität begründen.
+**Schritt 2 — Modellieren (20 Min).** Sachverhalt: **Rechnungseingang in einer mittelgroßen Steuerkanzlei** — Posteingang, Erfassung, sachliche Prüfung, Freigabe, Buchung, Zahlung. Reicher als die Mandantenanfrage oben; wer mag, übernimmt stattdessen den eigenen Mermaid-Prozess aus Übung 3. Im Camunda Desktop Modeler ein neues *BPMN*-Diagramm anlegen. Mindestens zwei Rollen identifizieren und als Swimlanes setzen (z. B. *Sachbearbeiter* und *Partner*). Mindestens fünf Aktivitäten platzieren und mit Sequenzflüssen verbinden. Mindestens einen XOR-Entscheidungspunkt einsetzen. Jede Aktivität mit *P*, *C*, *H* oder *M* markieren und in einem Satz pro Aktivität begründen.
 
 **Schritt 3 — Export und Mitbringen (5 Min).** Diagramm als PNG oder PDF exportieren und zur In-Company-Session mitbringen. Dort ist es der Ausgangspunkt: Welche der markierten Aktivitäten laufen in der Praxis der Wirtschaftsprüfer heute bereits automatisiert, welche nicht — und warum?
 
-**Wer noch Zeit hat:** Eine Aktivität, die heute *H* (Hybrid) ist, in zwei aufeinanderfolgende Aktivitäten zerlegen — eine reine Process-Aktivität, eine reine Cognitive-Aktivität. Das ist der Hauptmechanismus, mit dem reale Workflows automatisierbar werden. Welche Stelle aus dem Mermaid-Diagramm sieht in Signavio anders aus? Wo wirkt BPMN überdimensioniert, wo zahlt sich die strikte Notation aus?
+**Wer noch Zeit hat:** Eine Aktivität, die heute *H* (Hybrid) ist, in zwei aufeinanderfolgende Aktivitäten zerlegen — eine reine Process-Aktivität, eine reine Cognitive-Aktivität. Das ist der Hauptmechanismus, mit dem reale Workflows automatisierbar werden. Welche Stelle aus dem Mermaid-Diagramm sieht im Camunda Desktop Modeler anders aus? Wo wirkt BPMN überdimensioniert, wo zahlt sich die strikte Notation aus?
 
 ## Übung 4 — Prompt-Patterns am Studienalltag (Recap Describe) {#sec-prompt-patterns-recap}
 
@@ -360,7 +362,31 @@ Direkt im Anschluss an den zweistufigen Quellenbindungs-Prompt verstehen Sie das
 
 **Think-Pair-Share (3 Min).** Welche der vier Metriken ist in der Steuer-, Audit- oder Advisory-Praxis am wichtigsten? Wo überschätzt RAGAS Ihrer Einschätzung nach die Sicherheit eines Systems — und wo zeigt es echte Schwächen?
 
-## Übung 7 — RAG-Suchübung HGB-Prüfungspflicht {#sec-rag-hgb}
+## Übung 7 — RAGAS-Prüfprozess für einen KI-gestützten Workflow entwickeln {#sec-ragas-workflow-onet}
+
+**Modus:** in-class · Einzelarbeit · **Dauer:** 15 Min (12 Min Übung + 3 Min TPS) · **4D-Bezug:** Describe und Discern — einen verstandenen Prüfprozess auf eine selbst gewählte Aufgabe übertragen.
+
+Übung 6 hat die vier RAGAS-Metriken an einer allgemeinen Erklärung verstehen lassen. Diese Übung wendet sie an: Sie entwerfen einen RAGAS-Prüfprozess für eine reale Tätigkeit aus Ihrem künftigen Berufsfeld. Aufgabenanker ist, wie schon in [Workshop 1, Übung 2](02-uebungen-w1.qmd#sec-uebung-2), das O\*NET-Profil [13-2011.00 *Accountants and Auditors*](https://www.onetonline.org/link/summary/13-2011.00){target="_blank"} — konkret zwei seiner Kernaufgaben (*Core Tasks*) aus der [vollständigen Aufgabenliste](https://www.onetonline.org/link/details/13-2011.00){target="_blank"}: „Process invoices for payment" und „Review accounts for discrepancies and reconcile differences".
+
+**Setup.** Ein starkes Modell mit Chat-Oberfläche (Claude, ChatGPT, Gemini). Keine Datei nötig.
+
+**Schritt 1 — Aufgabe wählen (2 Min).** Eine der beiden Aufgaben oben wählen — oder sich in der Aufgabenliste eine eigene mit hoher Bedeutung (*Importance*) suchen.
+
+**Schritt 2 — Workflow und Prüfschema erarbeiten lassen (7 Min).** Prompt unten kopieren, die gewählte Aufgabe einsetzen, absenden. Der Prompt fragt in zwei Schritten: erst nach einem möglichen Workflow, dann — Schritt für Schritt, eine Metrik nach der anderen — nach dem RAGAS-Prüfschema dafür.
+
+::: callout-tip
+## Prompt zum Kopieren
+
+> Ich arbeite als Werkstudent/in in der Wirtschaftsprüfung. Meine Aufgabe: Für die folgende Tätigkeit soll ich einen RAGAS-Prüfprozess für einen KI-gestützten Workflow entwickeln — [O\*NET-Aufgabe einsetzen, z. B. „Process invoices for payment" oder „Review accounts for discrepancies and reconcile differences", O\*NET-Profil 13-2011.00 Accountants and Auditors]. Schlagen Sie mir zunächst einen möglichen KI-gestützten Workflow für diese Aufgabe vor, mit den Schritten, an denen das Modell in fremdem Material sucht (Retrieval). Erarbeiten Sie danach Schritt für Schritt ein RAGAS-Prüfschema für diesen Workflow — gehen Sie dabei die vier Metriken Faithfulness, Answer Relevance, Context Precision und Context Recall einzeln durch und erklären Sie für jede: Woher stammt der Kontext? Was wäre hier der Goldstandard? Woran erkenne ich einen Verstoß? Fragen Sie nach, wenn Ihnen Informationen zum Workflow fehlen.
+:::
+
+**Schritt 3 — Gegenprüfen (3 Min).** Zwei Fragen an den Output. Erstens: Enthält der vorgeschlagene Workflow überhaupt einen Retrieval-Schritt — eine Stelle, an der das Modell in fremdem Material sucht, bevor es antwortet? Ohne Retrieval greift RAGAS nicht, und der Output sollte das selbst sagen. Zweitens: Nennt das Modell von sich aus die Warnung aus Block 1 — dass die Faithfulness-Prüfung selbst von einem Sprachmodell vorgenommen wird und solche Prüfer Fehler nur mit niedrigem Recall erkennen [@kamoi2024realmistake]? Wenn nicht, gezielt nachfragen.
+
+**Erweiterung für schnelle Studierende.** Wiederholen Sie die Übung mit der jeweils anderen der beiden Aufgaben oder einer eigenen aus der Liste. Vergleichen Sie: Bei welcher Aufgabe lässt sich der Goldstandard leichter formulieren — und warum?
+
+**Think-Pair-Share (3 Min).** Welche der vier Metriken war am schwersten zu operationalisieren, und was sagt das über die Aufgabe aus? An welcher Stelle des Workflows würden Sie zusätzlich zu RAGAS eine deterministische Prüfung wie in Übung 8 einbauen?
+
+## Übung 8 — RAG-Suchübung HGB-Prüfungspflicht {#sec-rag-hgb}
 
 **Modus:** in-class oder Hausaufgabe · Einzel oder Paar · **Dauer:** 30 Min in der Kurzvariante (vollständig: 45 Min) · **4D-Bezug:** Discern und Diligence (insbesondere Deployment Diligence).
 
@@ -432,7 +458,7 @@ Setup: RAG-System in der GWDG Academic Cloud (RAG/Arcana oder vergleichbar), HGB
 
 **Reflexionsfragen.** Hat das Modell echte Sucharbeit geleistet oder doch interpretiert? Welche Normstellen wurden gefunden, welche möglicherweise übersehen? Wie stark hängt die Ausgabe vom hochgeladenen Dokumentausschnitt ab? Welche Risiken bleiben trotz RAG bestehen?
 
-## Übung 8 — Diligence-Risiko-Recherche im Best-of-N {#sec-diligence-bestof-n}
+## Übung 9 — Diligence-Risiko-Recherche im Best-of-N {#sec-diligence-bestof-n}
 
 **Modus:** in-class · Paare · **Dauer:** 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum) · **4D-Bezug:** Diligence, mindestens eine der drei Säulen.
 

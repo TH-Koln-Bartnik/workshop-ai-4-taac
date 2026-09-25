@@ -10,7 +10,7 @@ subtitle: "Was Sie vor Workshop 1 einrichten"
 #### Was Sie nach diesem Quickstart haben
 
 - mindestens zwei KI-Zugänge auf Free-Tier-Niveau,
-- ein eingerichtetes BPMN-Tool (Signavio oder bpmn.io) für Workshop 2,
+- ein eingerichtetes BPMN-Tool (Camunda Desktop Modeler oder bpmn.io) für Workshop 2,
 - Klarheit über Daten- und Vertraulichkeitsregeln im Workshop-Kontext,
 - den Tutor-Link in einem Browser-Tab geöffnet.
 :::
@@ -21,8 +21,8 @@ subtitle: "Was Sie vor Workshop 1 einrichten"
    - Mindestens zwei aus: Claude (claude.ai), ChatGPT (chat.openai.com), Gemini (gemini.google.com), Perplexity (perplexity.ai).
    - Free-Tier reicht für alle Workshop-Übungen.
 2. **BPMN-Werkzeug bereitstellen**
-   - Signavio über Hochschul-Account (falls verfügbar) oder
-   - [bpmn.io](https://bpmn.io){target="_blank"} als freie Web-Variante.
+   - [Camunda Desktop Modeler](https://docs.camunda.io/downloads/){target="_blank"} — kostenfreier Download, kein Account nötig (Signavio steht Studierenden aktuell nicht mehr zur Verfügung) oder
+   - [bpmn.io](https://bpmn.io){target="_blank"} als freie Web-Variante ohne Installation.
 3. **UiPath-Vorbereitung (für Workshop 2)**
    - UiPath Cloud-Account (kostenlos) oder
    - Screencast-Ersatzmaterialien aus dem Workshop-Repo.

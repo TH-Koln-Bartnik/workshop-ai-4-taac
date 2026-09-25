@@ -21,10 +21,10 @@ subtitle: "Häufige Stolpersteine in den Workshops und ihre Auflösung"
 - **Tool kennt System-Prompt-Funktion nicht?** → Free-Tier-Variante ohne Custom Instructions: Prompt vor jeder Anfrage manuell voranstellen.
 :::
 
-## BPMN / Signavio
+## BPMN / Camunda Desktop Modeler
 
 ::: {.callout-warning}
-- **Modell rendert nicht?** → Browser-Cache leeren, alternativ in bpmn.io importieren.
+- **Diagramm lässt sich nicht öffnen oder rendert nicht?** → Aktuelle Version des Camunda Desktop Modeler installieren und Datei neu laden; bei bpmn.io alternativ Browser-Cache leeren oder Datei neu importieren.
 - **Sequenzfluss verbindet falsche Aktivitäten?** → Ankerpunkte erneut setzen, ggf. Aktivität löschen und neu zeichnen.
 - **Diagramm wird zu groß für eine Seite?** → Sub-Prozess als Collapsed-Aktivität auslagern.
 :::

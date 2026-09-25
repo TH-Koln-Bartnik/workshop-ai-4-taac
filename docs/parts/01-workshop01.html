@@ -443,14 +443,13 @@ Tutor: Allgemeiner Tutor
 <li><strong>RAGAS-Idee</strong> — eine Bewertung von Antworten aus Sprachmodell + Speicher (RAG, Retrieval-Augmented-Generation Systemen) entlang weniger Kerngrößen: <em>Faithfulness</em> (passt die Antwort zu den abgerufenen Quellen?), <em>Answer Relevance</em> (beantwortet sie die Frage?), <em>Context Precision</em> und <em>Context Recall</em> (wurden die richtigen Quellen abgerufen?) <span class="citation" data-cites="es2024ragas">(<a href="03-workshop02.html#ref-es2024ragas" role="doc-biblioref">Es et al., 2024</a>)</span>. Im Kern: ein Test-Set aus Fragen mit erwarteten Antworten, das Sie immer wieder durchlaufen lassen.</li>
 <li><strong>Red-Green-TDD nach Willison</strong> — Testfälle zuerst. Sie schreiben fünf bis zehn Beispielfragen mit gewünschten Antworten, lassen den Agenten durchlaufen, markieren <em>rot</em> (fehlerhaft), <em>gelb</em> (teilweise) oder <em>grün</em> (korrekt). Dann iterieren Sie Prompt, Modell und Harness, bis möglichst viele Tests grün werden <span class="citation" data-cites="willison2025redgreen">(<a href="03-workshop02.html#ref-willison2025redgreen" role="doc-biblioref">Willison, 2025</a>)</span>. Die Methode kommt aus dem Test-Driven Development der Software-Entwicklung.</li>
 </ul>
-<p>Übersetzung auf Tax/Audit: Eine kleine Sammlung typischer Berufsfragen (Anwendung des Reverse-Charge-Verfahrens, Going-Concern-Prüfung, Behandlung von Rückstellungen) wird zur Test-Suite. Genau das bauen Sie in der nächsten Übung — zum Tutor-Bot aus Übung 3.</p>
-<p>➡️ <a href="../parts/04-uebungen-w2-2026-ws.html#sec-test-suite" class="assignment-badge">Übung 4 — Tutor-Bot systematisch prüfen (Vertiefung: Übung 3 in Workshop 2)</a> · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)</p>
+<p>Übersetzung auf Tax/Audit: Eine kleine Sammlung typischer Berufsfragen (Anwendung des Reverse-Charge-Verfahrens, Going-Concern-Prüfung, Behandlung von Rückstellungen) wird zur Test-Suite — probieren Sie das gleich an Ihrem eigenen Tutor-Bot aus Übung 3 aus.</p>
 </div>
 <div class="week-card">
 <div class="card-header">
 <p>🟧 Block 6 — Abschluss und Brücke zu Tag 2 · 9 Min</p>
 </div>
-<p>Kurzer Rückblick auf die vier Übungen: Welche der drei Konfigurationen (LLM allein, erweitertes LLM, Agent) ist Ihnen heute am vertrautesten geworden? Welche Test-Frage aus Übung 4 würde morgen im echten Berufsalltag bestehen? Brücke zu Workshop 2: <strong>Diligence</strong> als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.</p>
+<p>Kurzer Rückblick auf die drei Übungen: Welche der drei Konfigurationen (LLM allein, erweitertes LLM, Agent) ist Ihnen heute am vertrautesten geworden? Welche Ihrer Testfragen an den Tutor-Bot würde morgen im echten Berufsalltag bestehen? Brücke zu Workshop 2: <strong>Diligence</strong> als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.</p>
 </div>
 </section>
 <section id="diskussionsfragen" class="level2">
@@ -470,12 +469,12 @@ Tutor: Allgemeiner Tutor
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Vier Übungen im Workshop, eingebettet in die Inputs
+Drei Übungen im Workshop, eingebettet in die Inputs
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p><a href="../parts/02-uebungen-w1.html#sec-uebung-1" class="assignment-badge">Übung 1 — Diagnose-Quiz</a> <a href="../parts/02-uebungen-w1.html#sec-uebung-2" class="assignment-badge">Übung 2 — Karriereentwicklung</a> <a href="../parts/02-uebungen-w1.html#sec-uebung-3" class="assignment-badge">Übung 3 — Prompt-Umbau und Tutor-Bot</a></p>
-<p>Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine <strong>Erweiterungsfrage für schnelle Studierende</strong> — wer früh fertig ist, vertieft, statt zu warten. Die Discern-Übung <em>Tutor-Bot systematisch prüfen</em> wird in Workshop 2 als <a href="../parts/04-uebungen-w2-2026-ws.html#sec-test-suite">Übung 7 — Tutor-Bot Test-Suite</a> vertieft; davor stehen zwei kurze Recaps zu Delegate und Describe, der zweistufige <a href="../parts/04-uebungen-w2-2026-ws.html#sec-pruefungsordnung">Quellenbindungs-Prompt an der eigenen Prüfungsordnung</a> und das <a href="../parts/04-uebungen-w2-2026-ws.html#sec-ragas-tutor">Tutor-geführte Verstehen der RAGAS-Metriken</a>.</p>
+<p>Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine <strong>Erweiterungsfrage für schnelle Studierende</strong> — wer früh fertig ist, vertieft, statt zu warten. In Workshop 2 folgen zunächst zwei kurze Recaps zu Delegate und Describe, dann der zweistufige <a href="../parts/04-uebungen-w2-2026-ws.html#sec-pruefungsordnung">Quellenbindungs-Prompt an der eigenen Prüfungsordnung</a> und das <a href="../parts/04-uebungen-w2-2026-ws.html#sec-ragas-tutor">Tutor-geführte Verstehen der RAGAS-Metriken</a>.</p>
 </div>
 </div>
 </section>
@@ -488,13 +487,13 @@ Vier Übungen im Workshop, eingebettet in die Inputs
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-BPMN-Modell in Signavio (bis nächste Woche)
+BPMN-Modell mit dem Camunda Desktop Modeler (bis nächste Woche)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>Signavio Academic Edition</strong> — Account anlegen unter <a href="https://academic.signavio.com/p/explorer" class="uri">https://academic.signavio.com/p/explorer</a> (kostenfrei mit Hochschul-E-Mail, kein Download nötig; Alternative ohne Account: <a href="https://bpmn.io" class="uri">https://bpmn.io</a>).</li>
-<li>Den Rechnungseingangsprozess einer Steuerkanzlei als BPMN-Diagramm modellieren und die Aktivitäten als Process-, Cognitive-, Hybrid- oder Mensch-Aktivität markieren — Aufgabenstellung unter <a href="../parts/04-uebungen-w2-2026-ws.html#sec-bpmn">Hausaufgabe — BPMN-Modellierung in Signavio</a>.</li>
+<li><strong>Camunda Desktop Modeler</strong> — kostenfreier Download unter <a href="https://docs.camunda.io/downloads/" class="uri">https://docs.camunda.io/downloads/</a> (kein Account nötig, für Windows, macOS und Linux); eine kurze Einführung geben die Videos auf dem offiziellen <a href="https://www.youtube.com/user/camundaVideo">Camunda-YouTube-Kanal</a>. Signavio Academic Edition steht Studierenden aktuell nicht mehr zur Verfügung; wer nichts installieren möchte, nutzt ersatzweise <a href="https://bpmn.io" class="uri">https://bpmn.io</a> im Browser.</li>
+<li>Den Rechnungseingangsprozess einer Steuerkanzlei als BPMN-Diagramm modellieren und die Aktivitäten als Process-, Cognitive-, Hybrid- oder Mensch-Aktivität markieren — Aufgabenstellung unter <a href="../parts/04-uebungen-w2-2026-ws.html#sec-bpmn">Hausaufgabe — BPMN-Modellierung im Camunda Desktop Modeler</a>.</li>
 <li>Diagramm als PNG oder PDF exportieren und zur In-Company-Session mitbringen.</li>
 </ul>
 </div>
@@ -1191,74 +1190,73 @@ Willison, S. (2025). <em>Red-Green Test-Driven Development for Agentic Engineeri
 <span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**RAGAS-Idee** — eine Bewertung von Antworten aus Sprachmodell + Speicher (RAG, Retrieval-Augmented-Generation Systemen) entlang weniger Kerngrößen: *Faithfulness* (passt die Antwort zu den abgerufenen Quellen?), *Answer Relevance* (beantwortet sie die Frage?), *Context Precision* und *Context Recall* (wurden die richtigen Quellen abgerufen?) <span class="co">[</span><span class="ot">@es2024ragas</span><span class="co">]</span>. Im Kern: ein Test-Set aus Fragen mit erwarteten Antworten, das Sie immer wieder durchlaufen lassen.</span>
 <span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Red-Green-TDD nach Willison** — Testfälle zuerst. Sie schreiben fünf bis zehn Beispielfragen mit gewünschten Antworten, lassen den Agenten durchlaufen, markieren *rot* (fehlerhaft), *gelb* (teilweise) oder *grün* (korrekt). Dann iterieren Sie Prompt, Modell und Harness, bis möglichst viele Tests grün werden <span class="co">[</span><span class="ot">@willison2025redgreen</span><span class="co">]</span>. Die Methode kommt aus dem Test-Driven Development der Software-Entwicklung.</span>
 <span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>Übersetzung auf Tax/Audit: Eine kleine Sammlung typischer Berufsfragen (Anwendung des Reverse-Charge-Verfahrens, Going-Concern-Prüfung, Behandlung von Rückstellungen) wird zur Test-Suite. Genau das bauen Sie in der nächsten Übung — zum Tutor-Bot aus Übung 3.</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>Übersetzung auf Tax/Audit: Eine kleine Sammlung typischer Berufsfragen (Anwendung des Reverse-Charge-Verfahrens, Going-Concern-Prüfung, Behandlung von Rückstellungen) wird zur Test-Suite — probieren Sie das gleich an Ihrem eigenen Tutor-Bot aus Übung 3 aus.</span>
 <span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>➡️ <span class="co">[</span><span class="ot">Übung 4 — Tutor-Bot systematisch prüfen (Vertiefung: Übung 3 in Workshop 2)</span><span class="co">](04-uebungen-w2-2026-ws.qmd#sec-test-suite)</span>{.assignment-badge} · 22 Min (15 Min Übung + 4 Min TPS + 3 Min Plenum)</span>
-<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>::::</span>
-<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>:::: week-card</span>
-<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>::: card-header</span>
-<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>🟧 Block 6 — Abschluss und Brücke zu Tag 2 · 9 Min</span>
-<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>Kurzer Rückblick auf die vier Übungen: Welche der drei Konfigurationen (LLM allein, erweitertes LLM, Agent) ist Ihnen heute am vertrautesten geworden? Welche Test-Frage aus Übung 4 würde morgen im echten Berufsalltag bestehen? Brücke zu Workshop 2: **Diligence** als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.</span>
-<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>::::</span>
-<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a><span class="fu">## Diskussionsfragen</span></span>
-<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>An welcher Stelle in Ihrem Studium würde ein Tutor-Bot Sie heute schon ersetzen — und an welcher nicht?</span>
-<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 9 des Diagnose-Quiz (OCR plus ERP-Einspielung) ist ein Hybrid aus *Cognitive* und *Process*. Wo verläuft die Grenze in einem realen Workflow Ihrer Wahl?</span>
-<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Welche Konfiguration aus *LLM allein · erweitertes LLM · Agent* passt zu welcher Aufgabenklasse Ihres Studienalltags? Wo lohnt sich der Aufpreis für ein stärkeres Modell?</span>
-<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wann ist eine Test-Suite mit fünf Fragen aussagekräftiger als eine spontane Qualitätsprüfung? Wann nicht?</span>
-<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aufgaben</span></span>
-<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vier Übungen im Workshop, eingebettet in die Inputs</span></span>
-<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Übung 1 — Diagnose-Quiz</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-1)</span>{.assignment-badge} <span class="co">[</span><span class="ot">Übung 2 — Karriereentwicklung</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-2)</span>{.assignment-badge} <span class="co">[</span><span class="ot">Übung 3 — Prompt-Umbau und Tutor-Bot</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-3)</span>{.assignment-badge}</span>
-<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine **Erweiterungsfrage für schnelle Studierende** — wer früh fertig ist, vertieft, statt zu warten. Die Discern-Übung *Tutor-Bot systematisch prüfen* wird in Workshop 2 als <span class="co">[</span><span class="ot">Übung 7 — Tutor-Bot Test-Suite</span><span class="co">](04-uebungen-w2-2026-ws.qmd#sec-test-suite)</span> vertieft; davor stehen zwei kurze Recaps zu Delegate und Describe, der zweistufige <span class="co">[</span><span class="ot">Quellenbindungs-Prompt an der eigenen Prüfungsordnung</span><span class="co">](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung)</span> und das <span class="co">[</span><span class="ot">Tutor-geführte Verstehen der RAGAS-Metriken</span><span class="co">](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor)</span>.</span>
-<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hausaufgabe bis zur In-Company-Session</span></span>
-<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>Für Workshop 2 am Freitag brauchen Sie keine neuen Accounts. Bis zur In-Company-Session mit den Wirtschaftsprüfern in der kommenden Woche steht eine Modellierungsaufgabe an:</span>
-<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## BPMN-Modell in Signavio (bis nächste Woche)</span></span>
-<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Signavio Academic Edition** — Account anlegen unter <span class="ot">&lt;https://academic.signavio.com/p/explorer&gt;</span> (kostenfrei mit Hochschul-E-Mail, kein Download nötig; Alternative ohne Account: <span class="ot">&lt;https://bpmn.io&gt;</span>).</span>
-<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Den Rechnungseingangsprozess einer Steuerkanzlei als BPMN-Diagramm modellieren und die Aktivitäten als Process-, Cognitive-, Hybrid- oder Mensch-Aktivität markieren — Aufgabenstellung unter <span class="co">[</span><span class="ot">Hausaufgabe — BPMN-Modellierung in Signavio</span><span class="co">](04-uebungen-w2-2026-ws.qmd#sec-bpmn)</span>.</span>
-<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Diagramm als PNG oder PDF exportieren und zur In-Company-Session mitbringen.</span>
-<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hintergrund / Werkzeuge / Ressourcen</span></span>
-<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Originalmaterial 4D-Framework** — Cheat Sheet und Practical Overview von @dakan2025framework.</span>
-<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Begleitlehrbuch** — <span class="co">[</span><span class="ot">Kapitel 2.4 *How to speak*</span><span class="co">](https://th-koln-bartnik.github.io/genai4teaching/kapitel02.html#sec-how-to-speak)</span>{target="_blank"} und <span class="co">[</span><span class="ot">Kapitel 7 *Tutor-Prompt-Sammlung*</span><span class="co">](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html#sec-general-tutor)</span>{target="_blank"}.</span>
-<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**O\*NET-Berufsbild** — <span class="co">[</span><span class="ot">Accountants and Auditors (13-2011.00)</span><span class="co">](https://www.onetonline.org/link/summary/13-2011.00)</span>{target="_blank"} als Faktenbasis für Übung 2.</span>
-<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Vergleichsplattform** — <span class="co">[</span><span class="ot">arena.ai</span><span class="co">](https://arena.ai)</span>{target="_blank"} mit Side-by-Side-Modus für Übung 2.</span>
-<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a><span class="fu">## Weiterführend</span></span>
-<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@mollick2024cointelligence — *Co-intelligence: Living and working with AI* (Begleitlektüre zum Studium).</span>
-<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@dellacqua2023navigating — *Navigating the jagged technological frontier* (HBS Working Paper, empirisch zur Produktivitätswirkung).</span>
-<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@grootendorst2025visual — *A visual guide to LLM agents* (visuelle Erklärung des Harness-Konzepts und der drei Konfigurationen).</span>
-<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@willison2025redgreen — *Red-green test-driven development for agentic engineering* (didaktisch klare Einführung in TDD für KI-Systeme).</span>
-<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@es2024ragas — *RAGAS: Automated evaluation of retrieval augmented generation* (Originalpaper zur Bewertung von RAG-Systemen).</span>
-<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutor</span></span>
-<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutor öffnen</span></span>
-<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Tutor — KI in Tax, Audit &amp; Advisory →</span><span class="co">](https://chatgpt.com/g/g-6a03076b4da88191b9e9ae9580a0c2ce-ki-tutor-fur-workshop-auditing-tax-advisory)</span>{target="_blank"}</span>
-<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a>Vorschlag-Prompt für diesen Workshop:</span>
-<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Ich bereite Workshop 1 (AI Fluency Framework) im Modul *KI in Tax, Audit &amp; Advisory* vor. Bitte erklären Sie mir die Unterscheidung *Process Automation* versus *Cognitive Automation* an einem konkreten Beispiel meiner Wahl: </span><span class="co">[</span><span class="ot">Beispiel einfügen</span><span class="co">]</span><span class="at">. Fragen Sie mich nach meinem Vorwissen, geben Sie eine kurze Laien-Erklärung vor jedem Fachbegriff und stellen Sie am Ende drei Diagnose-Fragen, mit denen ich mein Verständnis selbst prüfen kann.</span></span>
-<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a><span class="at">:::</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>:::: week-card</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>::: card-header</span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>🟧 Block 6 — Abschluss und Brücke zu Tag 2 · 9 Min</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>Kurzer Rückblick auf die drei Übungen: Welche der drei Konfigurationen (LLM allein, erweitertes LLM, Agent) ist Ihnen heute am vertrautesten geworden? Welche Ihrer Testfragen an den Tutor-Bot würde morgen im echten Berufsalltag bestehen? Brücke zu Workshop 2: **Diligence** als vierte Kompetenz — Verantwortung, Transparenz, Verifikation. Konkret morgen: berufsrechtliche Pflichten (WPO § 43, StBerG § 57, DSGVO), Personal AI Policy.</span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="fu">## Diskussionsfragen</span></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>An welcher Stelle in Ihrem Studium würde ein Tutor-Bot Sie heute schon ersetzen — und an welcher nicht?</span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item 9 des Diagnose-Quiz (OCR plus ERP-Einspielung) ist ein Hybrid aus *Cognitive* und *Process*. Wo verläuft die Grenze in einem realen Workflow Ihrer Wahl?</span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Welche Konfiguration aus *LLM allein · erweitertes LLM · Agent* passt zu welcher Aufgabenklasse Ihres Studienalltags? Wo lohnt sich der Aufpreis für ein stärkeres Modell?</span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wann ist eine Test-Suite mit fünf Fragen aussagekräftiger als eine spontane Qualitätsprüfung? Wann nicht?</span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aufgaben</span></span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a><span class="fu">## Drei Übungen im Workshop, eingebettet in die Inputs</span></span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Übung 1 — Diagnose-Quiz</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-1)</span>{.assignment-badge} <span class="co">[</span><span class="ot">Übung 2 — Karriereentwicklung</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-2)</span>{.assignment-badge} <span class="co">[</span><span class="ot">Übung 3 — Prompt-Umbau und Tutor-Bot</span><span class="co">](02-uebungen-w1.qmd#sec-uebung-3)</span>{.assignment-badge}</span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kurzer Plenum-Auflösung. Innerhalb jeder Übung gibt es eine **Erweiterungsfrage für schnelle Studierende** — wer früh fertig ist, vertieft, statt zu warten. In Workshop 2 folgen zunächst zwei kurze Recaps zu Delegate und Describe, dann der zweistufige <span class="co">[</span><span class="ot">Quellenbindungs-Prompt an der eigenen Prüfungsordnung</span><span class="co">](04-uebungen-w2-2026-ws.qmd#sec-pruefungsordnung)</span> und das <span class="co">[</span><span class="ot">Tutor-geführte Verstehen der RAGAS-Metriken</span><span class="co">](04-uebungen-w2-2026-ws.qmd#sec-ragas-tutor)</span>.</span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hausaufgabe bis zur In-Company-Session</span></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>Für Workshop 2 am Freitag brauchen Sie keine neuen Accounts. Bis zur In-Company-Session mit den Wirtschaftsprüfern in der kommenden Woche steht eine Modellierungsaufgabe an:</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a><span class="fu">## BPMN-Modell mit dem Camunda Desktop Modeler (bis nächste Woche)</span></span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Camunda Desktop Modeler** — kostenfreier Download unter <span class="ot">&lt;https://docs.camunda.io/downloads/&gt;</span> (kein Account nötig, für Windows, macOS und Linux); eine kurze Einführung geben die Videos auf dem offiziellen <span class="co">[</span><span class="ot">Camunda-YouTube-Kanal</span><span class="co">](https://www.youtube.com/user/camundaVideo)</span>. Signavio Academic Edition steht Studierenden aktuell nicht mehr zur Verfügung; wer nichts installieren möchte, nutzt ersatzweise <span class="ot">&lt;https://bpmn.io&gt;</span> im Browser.</span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Den Rechnungseingangsprozess einer Steuerkanzlei als BPMN-Diagramm modellieren und die Aktivitäten als Process-, Cognitive-, Hybrid- oder Mensch-Aktivität markieren — Aufgabenstellung unter <span class="co">[</span><span class="ot">Hausaufgabe — BPMN-Modellierung im Camunda Desktop Modeler</span><span class="co">](04-uebungen-w2-2026-ws.qmd#sec-bpmn)</span>.</span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Diagramm als PNG oder PDF exportieren und zur In-Company-Session mitbringen.</span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hintergrund / Werkzeuge / Ressourcen</span></span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Originalmaterial 4D-Framework** — Cheat Sheet und Practical Overview von @dakan2025framework.</span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Begleitlehrbuch** — <span class="co">[</span><span class="ot">Kapitel 2.4 *How to speak*</span><span class="co">](https://th-koln-bartnik.github.io/genai4teaching/kapitel02.html#sec-how-to-speak)</span>{target="_blank"} und <span class="co">[</span><span class="ot">Kapitel 7 *Tutor-Prompt-Sammlung*</span><span class="co">](https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html#sec-general-tutor)</span>{target="_blank"}.</span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**O\*NET-Berufsbild** — <span class="co">[</span><span class="ot">Accountants and Auditors (13-2011.00)</span><span class="co">](https://www.onetonline.org/link/summary/13-2011.00)</span>{target="_blank"} als Faktenbasis für Übung 2.</span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Vergleichsplattform** — <span class="co">[</span><span class="ot">arena.ai</span><span class="co">](https://arena.ai)</span>{target="_blank"} mit Side-by-Side-Modus für Übung 2.</span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a><span class="fu">## Weiterführend</span></span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@mollick2024cointelligence — *Co-intelligence: Living and working with AI* (Begleitlektüre zum Studium).</span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@dellacqua2023navigating — *Navigating the jagged technological frontier* (HBS Working Paper, empirisch zur Produktivitätswirkung).</span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@grootendorst2025visual — *A visual guide to LLM agents* (visuelle Erklärung des Harness-Konzepts und der drei Konfigurationen).</span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@willison2025redgreen — *Red-green test-driven development for agentic engineering* (didaktisch klare Einführung in TDD für KI-Systeme).</span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>@es2024ragas — *RAGAS: Automated evaluation of retrieval augmented generation* (Originalpaper zur Bewertung von RAG-Systemen).</span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutor</span></span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tutor öffnen</span></span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Tutor — KI in Tax, Audit &amp; Advisory →</span><span class="co">](https://chatgpt.com/g/g-6a03076b4da88191b9e9ae9580a0c2ce-ki-tutor-fur-workshop-auditing-tax-advisory)</span>{target="_blank"}</span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a>Vorschlag-Prompt für diesen Workshop:</span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Ich bereite Workshop 1 (AI Fluency Framework) im Modul *KI in Tax, Audit &amp; Advisory* vor. Bitte erklären Sie mir die Unterscheidung *Process Automation* versus *Cognitive Automation* an einem konkreten Beispiel meiner Wahl: </span><span class="co">[</span><span class="ot">Beispiel einfügen</span><span class="co">]</span><span class="at">. Fragen Sie mich nach meinem Vorwissen, geben Sie eine kurze Laien-Erklärung vor jedem Fachbegriff und stellen Sie am Ende drei Diagnose-Fragen, mit denen ich mein Verständnis selbst prüfen kann.</span></span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a><span class="at">:::</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

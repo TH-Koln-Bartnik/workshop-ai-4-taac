@@ -313,7 +313,7 @@ div.csl-indent {
   <li><a href="#wozu-modellieren" id="toc-wozu-modellieren" class="nav-link" data-scroll-target="#wozu-modellieren">Wozu modellieren?</a></li>
   <li><a href="#kernsymbole" id="toc-kernsymbole" class="nav-link" data-scroll-target="#kernsymbole">Kernsymbole</a></li>
   <li><a href="#lesen-vor-zeichnen" id="toc-lesen-vor-zeichnen" class="nav-link" data-scroll-target="#lesen-vor-zeichnen">Lesen vor Zeichnen</a></li>
-  <li><a href="#modellieren-in-signavio-academic-edition" id="toc-modellieren-in-signavio-academic-edition" class="nav-link" data-scroll-target="#modellieren-in-signavio-academic-edition">Modellieren in Signavio (Academic Edition)</a></li>
+  <li><a href="#modellieren-mit-dem-camunda-desktop-modeler" id="toc-modellieren-mit-dem-camunda-desktop-modeler" class="nav-link" data-scroll-target="#modellieren-mit-dem-camunda-desktop-modeler">Modellieren mit dem Camunda Desktop Modeler</a></li>
   <li><a href="#prozessdenken-vor-werkzeugwahl" id="toc-prozessdenken-vor-werkzeugwahl" class="nav-link" data-scroll-target="#prozessdenken-vor-werkzeugwahl">Prozessdenken vor Werkzeugwahl</a></li>
   </ul></li>
   <li><a href="#sec-rag" id="toc-sec-rag" class="nav-link" data-scroll-target="#sec-rag">Retrieval-Augmented Generation (RAG)</a>
@@ -792,14 +792,14 @@ Was ist BPMN?
 <h3 class="anchored" data-anchor-id="lesen-vor-zeichnen">Lesen vor Zeichnen</h3>
 <p>Ein gutes BPMN-Modell ist auch ohne Erklärung verständlich. Vor dem ersten eigenen Modell empfiehlt sich, zwei bis drei Beispiele aus Lehrbüchern oder offiziellen BPMN-Galerien zu lesen. Wer fünf Standard-Symbole sicher unterscheidet, kann achtzig Prozent der praxisrelevanten Modelle entziffern.</p>
 </section>
-<section id="modellieren-in-signavio-academic-edition" class="level3">
-<h3 class="anchored" data-anchor-id="modellieren-in-signavio-academic-edition">Modellieren in Signavio (Academic Edition)</h3>
-<p>Studierende der TH Köln nutzen <a href="https://academic.signavio.com/p/explorer">Signavio Academic Edition</a> (kostenfrei mit Hochschul-E-Mail). Vorgehen: nach Login einen neuen Diagrammtyp <em>BPMN 2.0</em> anlegen, mit <em>Start-Ereignis</em> beginnen, <em>Aktivitäten</em> aus der Symbolpalette ziehen, mit <em>Sequenzflüssen</em> verbinden, <em>Pool</em> und <em>Lanes</em> nach Rollen aufsetzen, ein <em>XOR-Gateway</em> für die erste Entscheidung einbauen, mit einem <em>Ende-Ereignis</em> abschließen. Diagramm als PNG oder PDF exportieren. Wer Signavio nicht nutzen kann, weicht auf <a href="https://bpmn.io">bpmn.io</a> aus — gleiches Symbol-Set, kleinerer Funktionsumfang.</p>
+<section id="modellieren-mit-dem-camunda-desktop-modeler" class="level3">
+<h3 class="anchored" data-anchor-id="modellieren-mit-dem-camunda-desktop-modeler">Modellieren mit dem Camunda Desktop Modeler</h3>
+<p>Signavio Academic Edition steht Studierenden aktuell nicht mehr zur Verfügung. Empfohlenes Werkzeug: der <a href="https://docs.camunda.io/downloads/">Camunda Desktop Modeler</a> — kostenfreier Download für Windows, macOS und Linux, kein Account nötig. Eine kurze Einführung geben die Videos auf dem offiziellen <a href="https://www.youtube.com/user/camundaVideo">Camunda-YouTube-Kanal</a> (Suchbegriff „Camunda Desktop Modeler Tutorial”). Vorgehen: nach der Installation ein neues <em>BPMN</em>-Diagramm anlegen, mit <em>Start-Ereignis</em> beginnen, <em>Aktivitäten</em> aus der Symbolpalette ziehen, mit <em>Sequenzflüssen</em> verbinden, <em>Pool</em> und <em>Lanes</em> nach Rollen aufsetzen, ein <em>XOR-Gateway</em> für die erste Entscheidung einbauen, mit einem <em>Ende-Ereignis</em> abschließen. Diagramm als PNG oder PDF exportieren. Wer nichts installieren möchte oder kann, weicht auf <a href="https://bpmn.io">bpmn.io</a> aus — dieselbe quelloffene Modellierungs-Engine (bpmn-js) im Browser, ohne Anmeldung, mit kleinerem Funktionsumfang.</p>
 </section>
 <section id="prozessdenken-vor-werkzeugwahl" class="level3">
 <h3 class="anchored" data-anchor-id="prozessdenken-vor-werkzeugwahl">Prozessdenken vor Werkzeugwahl</h3>
 <p>Ein gutes BPMN-Modell zwingt zur Klärung <em>wer macht was wann mit welchem Input und welchem Output</em> — die Voraussetzung für jede sinnvolle Automatisierungsentscheidung. Erst nach dem Modell entscheidet sich, welche Aktivität sich für Process Automation (regelbasiertes RPA) und welche für Cognitive Automation (KI-gestützt) eignet.</p>
-<p><em>Querverweise:</em> <a href="../parts/03-workshop02.html">Workshop 2, Block I</a> · <a href="../parts/04-uebungen-w2-2026-ws.html#sec-bpmn">Hausaufgabe — BPMN-Modellierung in Signavio</a>.</p>
+<p><em>Querverweise:</em> <a href="../parts/03-workshop02.html">Workshop 2, Block I</a> · <a href="../parts/04-uebungen-w2-2026-ws.html#sec-bpmn">Hausaufgabe — BPMN-Modellierung im Camunda Desktop Modeler</a>.</p>
 </section>
 </section>
 <section id="sec-rag" class="level2">
@@ -862,7 +862,7 @@ Was ist Mermaid?
 </div>
 <section id="warum-mermaid-in-der-prozessmodellierung" class="level3">
 <h3 class="anchored" data-anchor-id="warum-mermaid-in-der-prozessmodellierung">Warum Mermaid in der Prozessmodellierung?</h3>
-<p>Mermaid ist die niedrigste Einstiegshürde in Prozessdiagramme: keine Installation, keine Maus-Klickerei, sofortige visuelle Rückmeldung. Für ein erstes Modell, eine Skizze oder eine Brainstorm-Variante reicht Mermaid vollkommen. Wer von dort zu BPMN 2.0 in Signavio wechselt, hat den gedanklichen Aufwand bereits hinter sich — Aktivitäten, Entscheidungen, Reihenfolge — und arbeitet dort nur noch an Notationspräzision und Swimlanes.</p>
+<p>Mermaid ist die niedrigste Einstiegshürde in Prozessdiagramme: keine Installation, keine Maus-Klickerei, sofortige visuelle Rückmeldung. Für ein erstes Modell, eine Skizze oder eine Brainstorm-Variante reicht Mermaid vollkommen. Wer von dort zu BPMN 2.0 im Camunda Desktop Modeler wechselt, hat den gedanklichen Aufwand bereits hinter sich — Aktivitäten, Entscheidungen, Reihenfolge — und arbeitet dort nur noch an Notationspräzision und Swimlanes.</p>
 </section>
 <section id="mit-ki-gebaute-mermaid-diagramme" class="level3">
 <h3 class="anchored" data-anchor-id="mit-ki-gebaute-mermaid-diagramme">Mit KI gebaute Mermaid-Diagramme</h3>
@@ -896,13 +896,13 @@ Was ist Mermaid?
 <li>Visuell prüfen: Fehlen Schritte? Sind die Entscheidungen sinnvoll verzweigt?</li>
 <li>Iterieren: dem Modell mitteilen, was fehlt oder zu viel ist — der zweite Lauf wird in 80 Prozent der Fälle deutlich besser.</li>
 <li>Diagramm als PNG oder SVG exportieren.</li>
-<li>Bei Bedarf in Signavio überführen für die saubere BPMN-Variante mit Swimlanes.</li>
+<li>Bei Bedarf in den Camunda Desktop Modeler überführen für die saubere BPMN-Variante mit Swimlanes.</li>
 </ol>
 </section>
 <section id="wann-ki-erzeugung-sinnvoll-ist-und-wann-nicht" class="level3">
 <h3 class="anchored" data-anchor-id="wann-ki-erzeugung-sinnvoll-ist-und-wann-nicht">Wann KI-Erzeugung sinnvoll ist — und wann nicht</h3>
 <p>KI-erzeugte Mermaid-Diagramme sind dort sinnvoll, wo die kognitive Hauptarbeit <em>vor</em> dem Diagramm liegt — also in der Klärung, was eigentlich passiert. Das Modell übernimmt die Notations-Last und liefert den Erst-Entwurf, der Mensch übernimmt die Korrektur. Wo die kognitive Hauptarbeit <em>im</em> Diagramm liegt — etwa bei kontrovers verhandelten Prozessen oder Audit-relevanten Modellen mit hoher Rechtsverbindlichkeit — schadet die KI-Erzeugung mehr, als sie nützt: Studierende übernehmen den Erst-Entwurf zu früh und überspringen den eigenen Modellierungsschritt.</p>
-<p><em>Querverweise:</em> <a href="../parts/04-uebungen-w2-2026-ws.html#sec-mermaid">Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate)</a> · <a href="../parts/04-uebungen-w2-2026-ws.html#sec-bpmn">Hausaufgabe — BPMN in Signavio</a> · <a href="#sec-bpmn">BPMN-Grundlagen</a>.</p>
+<p><em>Querverweise:</em> <a href="../parts/04-uebungen-w2-2026-ws.html#sec-mermaid">Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate)</a> · <a href="../parts/04-uebungen-w2-2026-ws.html#sec-bpmn">Hausaufgabe — BPMN im Camunda Desktop Modeler</a> · <a href="#sec-bpmn">BPMN-Grundlagen</a>.</p>
 </section>
 </section>
 <section id="sec-primer-qualitaetspruefung" class="level2">
@@ -1935,15 +1935,15 @@ Yeung, M. (2024). <em>Deterministic Quoting: Making <span>LLMs</span> Safer for 
 <span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>Ein gutes BPMN-Modell ist auch ohne Erklärung verständlich. Vor dem ersten eigenen Modell empfiehlt sich, zwei bis drei Beispiele aus Lehrbüchern oder offiziellen BPMN-Galerien zu lesen. Wer fünf Standard-Symbole sicher unterscheidet, kann achtzig Prozent der praxisrelevanten Modelle entziffern.</span>
 <span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modellieren in Signavio (Academic Edition)</span></span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modellieren mit dem Camunda Desktop Modeler</span></span>
 <span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>Studierende der TH Köln nutzen <span class="co">[</span><span class="ot">Signavio Academic Edition</span><span class="co">](https://academic.signavio.com/p/explorer)</span> (kostenfrei mit Hochschul-E-Mail). Vorgehen: nach Login einen neuen Diagrammtyp *BPMN 2.0* anlegen, mit *Start-Ereignis* beginnen, *Aktivitäten* aus der Symbolpalette ziehen, mit *Sequenzflüssen* verbinden, *Pool* und *Lanes* nach Rollen aufsetzen, ein *XOR-Gateway* für die erste Entscheidung einbauen, mit einem *Ende-Ereignis* abschließen. Diagramm als PNG oder PDF exportieren. Wer Signavio nicht nutzen kann, weicht auf <span class="co">[</span><span class="ot">bpmn.io</span><span class="co">](https://bpmn.io)</span> aus — gleiches Symbol-Set, kleinerer Funktionsumfang.</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>Signavio Academic Edition steht Studierenden aktuell nicht mehr zur Verfügung. Empfohlenes Werkzeug: der <span class="co">[</span><span class="ot">Camunda Desktop Modeler</span><span class="co">](https://docs.camunda.io/downloads/)</span> — kostenfreier Download für Windows, macOS und Linux, kein Account nötig. Eine kurze Einführung geben die Videos auf dem offiziellen <span class="co">[</span><span class="ot">Camunda-YouTube-Kanal</span><span class="co">](https://www.youtube.com/user/camundaVideo)</span> (Suchbegriff „Camunda Desktop Modeler Tutorial"). Vorgehen: nach der Installation ein neues *BPMN*-Diagramm anlegen, mit *Start-Ereignis* beginnen, *Aktivitäten* aus der Symbolpalette ziehen, mit *Sequenzflüssen* verbinden, *Pool* und *Lanes* nach Rollen aufsetzen, ein *XOR-Gateway* für die erste Entscheidung einbauen, mit einem *Ende-Ereignis* abschließen. Diagramm als PNG oder PDF exportieren. Wer nichts installieren möchte oder kann, weicht auf <span class="co">[</span><span class="ot">bpmn.io</span><span class="co">](https://bpmn.io)</span> aus — dieselbe quelloffene Modellierungs-Engine (bpmn-js) im Browser, ohne Anmeldung, mit kleinerem Funktionsumfang.</span>
 <span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a><span class="fu">### Prozessdenken vor Werkzeugwahl</span></span>
 <span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>Ein gutes BPMN-Modell zwingt zur Klärung *wer macht was wann mit welchem Input und welchem Output* — die Voraussetzung für jede sinnvolle Automatisierungsentscheidung. Erst nach dem Modell entscheidet sich, welche Aktivität sich für Process Automation (regelbasiertes RPA) und welche für Cognitive Automation (KI-gestützt) eignet.</span>
 <span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>*Querverweise:* <span class="co">[</span><span class="ot">Workshop 2, Block I</span><span class="co">](../parts/03-workshop02.qmd)</span> · <span class="co">[</span><span class="ot">Hausaufgabe — BPMN-Modellierung in Signavio</span><span class="co">](../parts/04-uebungen-w2-2026-ws.qmd#sec-bpmn)</span>.</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>*Querverweise:* <span class="co">[</span><span class="ot">Workshop 2, Block I</span><span class="co">](../parts/03-workshop02.qmd)</span> · <span class="co">[</span><span class="ot">Hausaufgabe — BPMN-Modellierung im Camunda Desktop Modeler</span><span class="co">](../parts/04-uebungen-w2-2026-ws.qmd#sec-bpmn)</span>.</span>
 <span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a><span class="fu">## Retrieval-Augmented Generation (RAG) {#sec-rag}</span></span>
 <span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a></span>
@@ -1987,7 +1987,7 @@ Yeung, M. (2024). <em>Deterministic Quoting: Making <span>LLMs</span> Safer for 
 <span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a><span class="fu">### Warum Mermaid in der Prozessmodellierung?</span></span>
 <span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>Mermaid ist die niedrigste Einstiegshürde in Prozessdiagramme: keine Installation, keine Maus-Klickerei, sofortige visuelle Rückmeldung. Für ein erstes Modell, eine Skizze oder eine Brainstorm-Variante reicht Mermaid vollkommen. Wer von dort zu BPMN 2.0 in Signavio wechselt, hat den gedanklichen Aufwand bereits hinter sich — Aktivitäten, Entscheidungen, Reihenfolge — und arbeitet dort nur noch an Notationspräzision und Swimlanes.</span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>Mermaid ist die niedrigste Einstiegshürde in Prozessdiagramme: keine Installation, keine Maus-Klickerei, sofortige visuelle Rückmeldung. Für ein erstes Modell, eine Skizze oder eine Brainstorm-Variante reicht Mermaid vollkommen. Wer von dort zu BPMN 2.0 im Camunda Desktop Modeler wechselt, hat den gedanklichen Aufwand bereits hinter sich — Aktivitäten, Entscheidungen, Reihenfolge — und arbeitet dort nur noch an Notationspräzision und Swimlanes.</span>
 <span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a><span class="fu">### Mit KI gebaute Mermaid-Diagramme</span></span>
 <span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a></span>
@@ -2020,13 +2020,13 @@ Yeung, M. (2024). <em>Deterministic Quoting: Making <span>LLMs</span> Safer for 
 <span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Visuell prüfen: Fehlen Schritte? Sind die Entscheidungen sinnvoll verzweigt?</span>
 <span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Iterieren: dem Modell mitteilen, was fehlt oder zu viel ist — der zweite Lauf wird in 80 Prozent der Fälle deutlich besser.</span>
 <span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Diagramm als PNG oder SVG exportieren.</span>
-<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Bei Bedarf in Signavio überführen für die saubere BPMN-Variante mit Swimlanes.</span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Bei Bedarf in den Camunda Desktop Modeler überführen für die saubere BPMN-Variante mit Swimlanes.</span>
 <span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a><span class="fu">### Wann KI-Erzeugung sinnvoll ist — und wann nicht</span></span>
 <span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a>KI-erzeugte Mermaid-Diagramme sind dort sinnvoll, wo die kognitive Hauptarbeit *vor* dem Diagramm liegt — also in der Klärung, was eigentlich passiert. Das Modell übernimmt die Notations-Last und liefert den Erst-Entwurf, der Mensch übernimmt die Korrektur. Wo die kognitive Hauptarbeit *im* Diagramm liegt — etwa bei kontrovers verhandelten Prozessen oder Audit-relevanten Modellen mit hoher Rechtsverbindlichkeit — schadet die KI-Erzeugung mehr, als sie nützt: Studierende übernehmen den Erst-Entwurf zu früh und überspringen den eigenen Modellierungsschritt.</span>
 <span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>*Querverweise:* <span class="co">[</span><span class="ot">Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate)</span><span class="co">](../parts/04-uebungen-w2-2026-ws.qmd#sec-mermaid)</span> · <span class="co">[</span><span class="ot">Hausaufgabe — BPMN in Signavio</span><span class="co">](../parts/04-uebungen-w2-2026-ws.qmd#sec-bpmn)</span> · <span class="co">[</span><span class="ot">BPMN-Grundlagen</span><span class="co">](#sec-bpmn)</span>.</span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>*Querverweise:* <span class="co">[</span><span class="ot">Übung 3 — Prozessmodellierung mit Mermaid (Recap Delegate)</span><span class="co">](../parts/04-uebungen-w2-2026-ws.qmd#sec-mermaid)</span> · <span class="co">[</span><span class="ot">Hausaufgabe — BPMN im Camunda Desktop Modeler</span><span class="co">](../parts/04-uebungen-w2-2026-ws.qmd#sec-bpmn)</span> · <span class="co">[</span><span class="ot">BPMN-Grundlagen</span><span class="co">](#sec-bpmn)</span>.</span>
 <span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a><span class="fu">## Primer — Optionen der Qualitätsprüfung im juristischen RAG {#sec-primer-qualitaetspruefung}</span></span>
 <span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a></span>

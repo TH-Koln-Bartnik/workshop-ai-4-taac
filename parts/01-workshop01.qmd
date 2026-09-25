@@ -179,10 +179,10 @@ Jede Übung dauert maximal 15 Minuten und schließt mit Think-Pair-Share und kur
 Für Workshop 2 am Freitag brauchen Sie keine neuen Accounts. Bis zur In-Company-Session mit den Wirtschaftsprüfern in der kommenden Woche steht eine Modellierungsaufgabe an:
 
 ::: callout-note
-## BPMN-Modell in Signavio (bis nächste Woche)
+## BPMN-Modell mit dem Camunda Desktop Modeler (bis nächste Woche)
 
-- **Signavio Academic Edition** — Account anlegen unter <https://academic.signavio.com/p/explorer> (kostenfrei mit Hochschul-E-Mail, kein Download nötig; Alternative ohne Account: <https://bpmn.io>).
-- Den Rechnungseingangsprozess einer Steuerkanzlei als BPMN-Diagramm modellieren und die Aktivitäten als Process-, Cognitive-, Hybrid- oder Mensch-Aktivität markieren — Aufgabenstellung unter [Hausaufgabe — BPMN-Modellierung in Signavio](04-uebungen-w2-2026-ws.qmd#sec-bpmn).
+- **Camunda Desktop Modeler** — kostenfreier Download unter <https://docs.camunda.io/downloads/> (kein Account nötig, für Windows, macOS und Linux); eine kurze Einführung geben die Videos auf dem offiziellen [Camunda-YouTube-Kanal](https://www.youtube.com/user/camundaVideo). Signavio Academic Edition steht Studierenden aktuell nicht mehr zur Verfügung; wer nichts installieren möchte, nutzt ersatzweise <https://bpmn.io> im Browser.
+- Den Rechnungseingangsprozess einer Steuerkanzlei als BPMN-Diagramm modellieren und die Aktivitäten als Process-, Cognitive-, Hybrid- oder Mensch-Aktivität markieren — Aufgabenstellung unter [Hausaufgabe — BPMN-Modellierung im Camunda Desktop Modeler](04-uebungen-w2-2026-ws.qmd#sec-bpmn).
 - Diagramm als PNG oder PDF exportieren und zur In-Company-Session mitbringen.
 :::
 
